@@ -1,0 +1,65 @@
+body {
+   width: 1200px;
+   margin: 0px auto;
+}
+#header {
+   height: 150px;
+   width: 1200px;
+   margin: 0px auto;
+  // background-color: black;
+  // background-image: url(/Resources/Images/socImage.gif);
+  // background-size: 100%;
+}
+#header img {
+   position: absolute;
+   //left: 0;
+   //top: 0;
+   width: 1200px;
+   height: 172px;
+   margin-left: auto;
+   margin-right: auto;
+   top: 0;
+   opacity: 0.4;
+}
+
+#header h1 {
+   text-align: center;
+   //color: #F8F8F8;
+   //color: yellow;
+}
+#header h2 {
+   text-align: center;
+   //color: green;
+}
+/*#header-content {
+   margin: auto;
+   width: 60%;
+   padding: 10px;
+   text-align: center;
+}*/
+#navigation {
+   list-style-type: none;
+   margin: 0px auto;
+  // padding: 0;
+   width: 1160px;
+  // margin-left: auto;
+   //margin-right: auto;
+   overflow: hidden;
+   background-color: #808080;
+}
+#navigation li {
+   float: left;
+}
+#navigation li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-family: "Arial", sans-serif;
+}
+#navigation li a:hover {
+   background-color: #333333;
+}
+
+
