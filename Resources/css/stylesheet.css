@@ -2,18 +2,19 @@ body {
    width: 1200px;
    margin: 0px auto;
 }
+h1 {
+   font-family: "Arial", sans-serif;
+}
+h2 {
+   font-family: "Arial", sans-serif;
+}
 #header {
    height: 150px;
    width: 1200px;
    margin: 0px auto;
-  // background-color: black;
-  // background-image: url(/Resources/Images/socImage.gif);
-  // background-size: 100%;
 }
 #header img {
    position: absolute;
-   //left: 0;
-   //top: 0;
    width: 1200px;
    height: 172px;
    margin-left: auto;
@@ -24,26 +25,14 @@ body {
 
 #header h1 {
    text-align: center;
-   //color: #F8F8F8;
-   //color: yellow;
 }
 #header h2 {
    text-align: center;
-   //color: green;
 }
-/*#header-content {
-   margin: auto;
-   width: 60%;
-   padding: 10px;
-   text-align: center;
-}*/
 #navigation {
    list-style-type: none;
    margin: 0px auto;
-  // padding: 0;
    width: 1160px;
-  // margin-left: auto;
-   //margin-right: auto;
    overflow: hidden;
    background-color: #808080;
 }
@@ -61,5 +50,26 @@ body {
 #navigation li a:hover {
    background-color: #333333;
 }
-
-
+.roster {
+   border-collapse:collapse;
+   border: 1px solid #A0A0A0;
+}
+.roster th {
+   background-color: #880000;
+   color: white;
+   text-align: left;
+}
+.roster th, td {
+   padding: 20px;
+   font-family: "Arial", sans-serif;
+}
+.roster td {
+   text-align: left;
+   border-bottom: 1px solid #A0A0A0;
+}
+.roster tr:nth-child(odd) {
+   background-color: #D0D0D0;
+}
+.form-header {
+   text-align: center;
+}
