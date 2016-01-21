@@ -1,18 +1,49 @@
+/*
+ * Last Updated Spring 2016
+ * Brandon Tobin
+ * University of Utah
+ * This is the styling file for my CS 4540 website.
+ */
+
+/* 
+ * Constrain the body of the webpage to 1200px
+ * Move the margin over to the right so that it lines up with the header
+ * image and navigation bar
+ */
 body {
    width: 1200px;
    margin: 0px auto;
 }
+
+/*
+ * Make the font of h1 and h2 to Arial, or some other sans-serif font 
+ * if the browser doesn't support it.
+ */
 h1 {
    font-family: "Arial", sans-serif;
 }
+
 h2 {
    font-family: "Arial", sans-serif;
 }
+
+/*
+ * Set the dimensions of the height and width of the header
+ * Move the header over to the right so it is more centered.
+ */
 #header {
    height: 200px;
    width: 1200px;
    margin: 0px auto;
 }
+
+/*
+ * Set the position of the image in the header to absolute.
+ * Set the width and height of the picture.
+ * Set the margins of the header so it is positioned correctly.
+ * Make the top position so that it is at the very top of the webpage.
+ * Make the picture somewhat transparent. 
+ */
 #header img {
    position: absolute;
    width: 1200px;
@@ -23,12 +54,23 @@ h2 {
    opacity: 0.4;
 }
 
+/*
+ * Make the font of h1 and h2 centered.
+ */
 #header h1 {
    text-align: center;
 }
+
 #header h2 {
    text-align: center;
 }
+
+/*
+ * Change the unordered list so that it is horizontal. 
+ * Set the margin so that it is more centered on the page.
+ * Set the width so that it spans the whole body of the page.
+ * Set the background color of the navigation bar.
+ */
 #navigation {
    list-style-type: none;
    margin: 0px auto;
@@ -36,9 +78,23 @@ h2 {
    overflow: hidden;
    background-color: #808080;
 }
+
+/*
+ * Set the li elements so that they are aligned to the left.
+ */
 #navigation li {
    float: left;
 }
+
+/*
+ * Set the links in the li elements so that they are of block shape.
+ * Set the color of the link text to white.
+ * Center the link text.
+ * Add padding so that the text looks better in the block.
+ * Remove the line under the link text.
+ * Change the text to Arial.
+ * Make the link block change background colors when hovered.
+ */
 #navigation li a {
    display: block;
    color: white;
@@ -50,26 +106,56 @@ h2 {
 #navigation li a:hover {
    background-color: #333333;
 }
+
+/*
+ * Creates the table used on the student roster page, the student forms page, and the form page.
+ * Collapse the borders so that they are one line.
+ * Set a border around the table.
+ */
 .roster {
    border-collapse:collapse;
    border: 1px solid #A0A0A0;
 }
+
+/*
+ * Change the background of the table header.
+ * Set the text to white.
+ * Align the text to the left.
+ */
 .roster th {
    background-color: #880000;
    color: white;
    text-align: left;
 }
+
+/*
+ * Set the padding for th and td elements.
+ * Set the text of the elements to Arial.
+ */
 .roster th, td {
    padding: 20px;
    font-family: "Arial", sans-serif;
 }
+
+/*
+ * Align the text of td elements to the left.
+ * Put a border at the bottom of td elements.
+ */
 .roster td {
    text-align: left;
    border-bottom: 1px solid #A0A0A0;
 }
+
+/*
+ * Band the table rows.
+ */
 .roster tr:nth-child(odd) {
    background-color: #D0D0D0;
 }
+
+/*
+ * Center the form header.
+ */
 .form-header {
    text-align: center;
 }
