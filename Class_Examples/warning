@@ -1,0 +1,3 @@
+
+Please note that without an index.html file (or index.php, etc) the web page will default
+to the content of the directory.  This is ALMOST CERTAINLY NOT WHAT YOU WANT.
