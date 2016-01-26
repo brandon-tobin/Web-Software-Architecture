@@ -18,7 +18,10 @@ class Student_Form
     public $semester_Admitted;
     public $num_semesters;
     public $advisor;
-    public $committee;
+    public $committee0;
+    public $committee1;
+    public $committee2;
+    public $committee3;
 
     // Not sure if needed
     public $activity1;
@@ -81,8 +84,11 @@ class Student_Form
         $this->semester_Admitted = 'Fall 2015';
         $this->num_semesters = 1;
         $this->advisor = 'Peter James';
-        $this->committee = ["Peter", "Jim", "Joe", "Mark"];
-        $this->activity1 = 1;
+        $this->committee0 = "Peter";
+	$this->committee1 = "Jim";
+	$this->committee2 = "Joe";
+	$this->committee3 = "Mark";
+        $this->activity1 = "1 Semester";
         $this->completed1 = 'Fall 2015';
         $this->question1 = 'YES';
         $this->question2 = 'The student is on track and making good progress.';
