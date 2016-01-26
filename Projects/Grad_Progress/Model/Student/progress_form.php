@@ -222,10 +222,6 @@ class Student_Form
         $this->semester_Admitted = 'Fall 2013';
         $this->num_semesters = 3;
         $this->advisor = 'James Good';
-        $this->committee0 = 'Peter';
-        $this->committee1 = 'Jim';
-        $this->committee2 = 'Joe';
-        $this->committee3 = 'Mark';
         $this->activity1 = '2 Semesters';
         $this->completed1 = 'Fall 2015';
         $this->acceptable1 = 'Acceptable Progress';
