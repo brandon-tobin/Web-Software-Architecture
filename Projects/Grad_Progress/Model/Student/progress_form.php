@@ -81,7 +81,7 @@ class Student_Form
         $this->semester_Admitted = 'Fall 2015';
         $this->num_semesters = 1;
         $this->advisor = 'Peter James';
-        $this->committee = 'Peter, Jim, Joe, Mark';
+        $this->committee = ["Peter", "Jim", "Joe", "Mark"];
         $this->activity1 = 1;
         $this->completed1 = 'Fall 2015';
         $this->question1 = 'YES';
