@@ -7,6 +7,9 @@
  *
  */
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 set_include_path("../../Model/Student/" .PATH_SEPARATOR . "../../View/Student/");
 
 require_once 'progress_form.php';
@@ -15,6 +18,6 @@ $id = $_GET['id'];
 
 $form = new Student_Form($id);
 
-require "student_form_view.php";
+require "progress_form_view.php";
 
 ?>
