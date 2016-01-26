@@ -78,56 +78,56 @@ echo "
 	  </tr>
 	  <tr>
 	   <td>Identify Advisor</td>
-	   <td><u>$form->activity1</u></td>
-	   <td>2 semesters</td>
+	   <td>$form->activity1</td>
+	   <td>$form->acceptable1</td>
 	   <td>$form->completed1</td>
 	  </tr>
 	  <tr>
 	   <td>Program of study approved by advisor and initial committee</td>
-	   <td>$form->activity2 semesters</td>
-	   <td>5 semesters</td>
+	   <td>$form->activity2</td>
+	   <td>$form->acceptable2</td>
 	   <td>$form->completed2</td>
 	  </tr>
 	  <tr>
            <td>Complete teaching mentorship</td>
-           <td>$form->activity3 semesters</td>
-           <td>6 semesters</td>
+           <td>$form->activity3</td>
+           <td>$form->acceptable3</td>
            <td>$form->completed3</td>
           </tr>
 	  <tr>
            <td>Complete required courses</td>
-           <td>$form->activity4 semesters</td>
-           <td>6 semesters</td>
+           <td>$form->activity4</td>
+           <td>$form->acceptable4</td>
            <td>$form->completed4</td>
           </tr>
 	  <tr>
            <td>Full committee formed</td>
-           <td>$form->activity5 semesters</td>
-           <td>7 semesters</td>
+           <td>$form->activity5</td>
+           <td>$form->acceptable5</td>
            <td>$form->completed5</td>
           </tr>
 	  <tr>
            <td>Program of Study approved by committee</td>
-           <td>$form->activity6 semesters</td>
-           <td>7 semesters</td>
+           <td>$form->activity6</td>
+           <td>$form->acceptable6</td>
            <td>$form->completed6</td>
           </tr>
 	  <tr>
            <td>Written qualifier</td>
-           <td>$form->activity7 semesters</td>
-           <td>6 semesters</td>
+           <td>$form->activity7</td>
+           <td>$form->acceptable7</td>
            <td>$form->completed7</td>
           </tr>
 	  <tr>
            <td>Oral qualifier/Proposal</td>
-           <td>$form->activity8 semesters</td>
-           <td>8 semesters</td>
+           <td>$form->activity8</td>
+           <td>$form->acceptable8</td>
            <td>$form->completed8</td>
           </tr>
 	  <tr>
            <td>Dissertation defense</td>
-           <td>$form->activity9 semesters</td>
-           <td>12 semesters</td>
+           <td>$form->activity9</td>
+           <td>$form->acceptable9</td>
            <td>$form->completed9</td>
           </tr>
 	 </table>
