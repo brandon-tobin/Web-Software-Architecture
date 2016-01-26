@@ -72,13 +72,13 @@ echo "
 	  <table class=\"roster\">
 	  <tr>
 	   <th>Activity</th>
-	   <th>Good Progress</th>
-	   <th>Acceptable Progress</th>
+	   <th>Number of Semesters</th>
+	   <th>Good / Acceptable</th>
 	   <th>Completed Semester</th>
 	  </tr>
 	  <tr>
 	   <td>Identify Advisor</td>
-	   <td><u>$form->activity1 semester</u></td>
+	   <td><u>$form->activity1</u></td>
 	   <td>2 semesters</td>
 	   <td>$form->completed1</td>
 	  </tr>
