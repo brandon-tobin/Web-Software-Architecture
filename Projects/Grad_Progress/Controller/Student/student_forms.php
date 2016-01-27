@@ -12,7 +12,7 @@ ini_set("display_errors", 1);
 
 set_include_path("../../Model/Student/" .PATH_SEPARATOR . "../../View/Student/");
 
-require_once 'student_forms.php';
+require_once 'student.php';
 
 $id = $_GET['id'];
 
