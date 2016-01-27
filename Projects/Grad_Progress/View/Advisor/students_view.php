@@ -75,7 +75,7 @@ echo "
               <td>{$advisor->student_Array[2 + $i*6]}</td>
               <td>{$advisor->student_Array[3 + $i*6]}</td>
               <td>{$advisor->student_Array[4 + $i*6]}</td>
-              <td>{$advisor->student_Array[5 + $i*6]}</td>
+              <td><a href=\"{$advisor->student_Array[5 + $i*6]}\">View</a></td>
               </tr>";
           }
 
