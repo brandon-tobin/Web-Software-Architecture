@@ -68,10 +68,10 @@ echo "
      {
        echo "
        <tr>
-	   <td>{$student->form_Records_Array[0]}</td>
-	   <td>{$student->form_Records_Array[1]}</td>
-	   <td>{$student->form_Records_Array[2]}</td>
-	   <td><a href=\"{$student->form_Records_Array[3]}\">Link</a></td>
+	   <td>{$student->form_Records_Array[0 + $i*4]}</td>
+	   <td>{$student->form_Records_Array[1 + $i*4]}</td>
+	   <td>{$student->form_Records_Array[2 + $i*4]}</td>
+	   <td><a href=\"{$student->form_Records_Array[3 + $i*4]}\">Link</a></td>
  	  </tr>";
      }
 
