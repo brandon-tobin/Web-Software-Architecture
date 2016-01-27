@@ -18,10 +18,7 @@ class Student_Form
     public $semester_Admitted;
     public $num_semesters;
     public $advisor;
-    public $committee0;
-    public $committee1;
-    public $committee2;
-    public $committee3;
+    public $committee;
 
     // Not sure if needed
     public $activity1;
@@ -93,10 +90,7 @@ class Student_Form
         $this->semester_Admitted = 'Fall 2015';
         $this->num_semesters = 1;
         $this->advisor = 'Peter James';
-        $this->committee0 = 'Peter';
-	    $this->committee1 = 'Jim';
-	    $this->committee2 = 'Joe';
-	    $this->committee3 = 'Mark';
+        $this->committee = array("Peter", "Jim", "Joe", "Mark");
         $this->activity1 = '1 Semester';
         $this->completed1 = 'Fall 2015';
         $this->acceptable1 = 'Good Progress';
@@ -114,10 +108,7 @@ class Student_Form
         $this->semester_Admitted = 'Fall 2013';
         $this->num_semesters = 3;
         $this->advisor = 'James Good';
-        $this->committee0 = 'Peter';
-        $this->committee1 = 'Jim';
-        $this->committee2 = 'Joe';
-        $this->committee3 = 'Mark';
+        $this->committee = array("Peter", "Jim", "Joe", "Mark");
         $this->activity1 = '2 Semesters';
         $this->completed1 = 'Fall 2015';
         $this->acceptable1 = 'Acceptable Progress';
@@ -135,10 +126,7 @@ class Student_Form
         $this->semester_Admitted = 'Fall 2013';
         $this->num_semesters = 3;
         $this->advisor = 'Peter James';
-        $this->committee0 = 'Peter';
-        $this->committee1 = 'Jim';
-        $this->committee2 = 'Joe';
-        $this->committee3 = 'Mark';
+        $this->committee = array("Peter", "Jim", "Joe", "Mark");
         $this->activity1 = '2 Semesters';
         $this->completed1 = 'Fall 2015';
         $this->acceptable1 = 'Acceptable Progress';
@@ -156,10 +144,7 @@ class Student_Form
         $this->semester_Admitted = 'Spring 2011';
         $this->num_semesters = 10;
         $this->advisor = 'Brandon Barnes';
-        $this->committee0 = 'Peter';
-        $this->committee1 = 'Jim';
-        $this->committee2 = 'Joe';
-        $this->committee3 = 'Mark';
+        $this->committee = array("Peter", "Jim", "Joe", "Mark");
         $this->activity1 = '1 Semester';
         $this->completed1 = 'Spring 2011';
         $this->acceptable1 = 'Good Progress';
@@ -201,10 +186,7 @@ class Student_Form
         $this->semester_Admitted = 'Fall 2013';
         $this->num_semesters = 3;
         $this->advisor = 'James Good';
-        $this->committee0 = 'Peter';
-        $this->committee1 = 'Jim';
-        $this->committee2 = 'Joe';
-        $this->committee3 = 'Mark';
+        $this->committee = array("Peter", "Jim", "Joe", "Mark");
         $this->activity1 = '2 Semesters';
         $this->completed1 = 'Fall 2015';
         $this->acceptable1 = 'Acceptable Progress';
@@ -222,6 +204,7 @@ class Student_Form
         $this->semester_Admitted = 'Fall 2013';
         $this->num_semesters = 3;
         $this->advisor = 'James Good';
+        $this->committee = array("Peter", "Jim", "Joe", "Mark");
         $this->activity1 = '2 Semesters';
         $this->completed1 = 'Fall 2015';
         $this->acceptable1 = 'Acceptable Progress';
