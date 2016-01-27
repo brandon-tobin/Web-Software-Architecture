@@ -52,7 +52,7 @@ echo "
 	  <li><a href=\"student_list.html\">Back</a></li>
 	 </ul>
 
-         <h1>Anne's Forms</h1>
+         <h1>$student->student_First_Name's Forms</h1>
 
      	 <!-- Table containing $student->student_First_Name's forms -->
          <table class=\"roster\">
