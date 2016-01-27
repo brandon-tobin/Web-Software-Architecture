@@ -7,16 +7,16 @@
           <!-- Brandon Tobin --> 
           <!-- University of Utah --> 
        
-          <!-- This page contains a list of all graduate students  --> 
+          <!-- This page contains a list of all advisors  -->
 
 
-          <title>Student Roster</title> 
+          <title>Advisors</title>
       
           <!-- Meta Information about Page -->
           <meta charset="utf-8"/>
           <meta name="AUTHOR"      content="Brndon Tobin"/>
           <meta name="keywords"    content="HTML, Projects"/>
-          <meta name="description" content="List of graduate students"/>
+          <meta name="description" content="List of advisors"/>
       
           <!-- ALL CSS FILES -->
            <link rel="stylesheet" href="../../../Resources/css/stylesheet.css" type="text/css"/>
@@ -31,7 +31,7 @@
           <h1>University of Utah - CS 4540</h1>
           <h2>Web Software Architecture - Spring 2016</h2>
           <h2>Brandon Tobin</h2>
-	  <h2>Grad Progress - Assignment 1</h2>
+          <h2>Grad Progress - Assignment 1</h2>
          </div>
  
 	 <!-- Navigation Bar -->
@@ -62,9 +62,9 @@
              <td><a href="Advisor/students.php?id=3">View</a></td>
          </tr>
      </table>
-     	
+
 	 <!-- Table containing students --> 
-         <table class="roster">
+     <!--    <table class="roster">
 	  <tr>
            <th>Name:</th>
            <th>Compliance:</th>
@@ -123,7 +123,7 @@
           </tr>
 
          </table>
-          
+         -->
         </body>
         
       </html> 
