@@ -30,7 +30,7 @@ echo "
           <meta name=\"description\" content=\"List of graduate students for $advisor->advisor_First_Name\"/>
 
           <!-- ALL CSS FILES -->
-           <link rel=\"stylesheet\" href=\"../../Resources/css/stylesheet.css\" type=\"text/css\"/>
+           <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
 
         </head>
 
