@@ -63,10 +63,10 @@ echo "
 	 <p><b>Advisor:</b> <u>$form->advisor</u></p>
 	 <p><b>Committee:</b></p>
 	 <ul>
-	  <li>$form->committee0</li>
-	  <li>$form->committee1</li>
-  	  <li>$form->committee2</li>
-	  <li>$form->committee3</li>
+	  <li>{$form->committee[0]}</li>
+	  <li>{$form->committee[1]}</li>
+  	  <li>{$form->committee[2]}</li>
+	  <li>{$form->committee[3]}</li>
 	 </ul>
 
 	  <table class=\"roster\">
