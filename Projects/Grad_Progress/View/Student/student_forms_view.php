@@ -17,7 +17,7 @@ echo "
           <!-- Brandon Tobin -->
           <!-- University of Utah -->
 
-          <!-- This is a list page of forms for Anne  -->
+          <!-- This is a list page of forms for $student->student_First_Name  -->
 
 
           <title>$student->student_First_Name's Forms</title>
@@ -26,7 +26,7 @@ echo "
           <meta charset=\"utf-8\"/>
           <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
           <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-          <meta name=\"description\" content=\"Anne's page of forms\"/>
+          <meta name=\"description\" content=\"$student->student_First_Name's page of forms\"/>
 
           <!-- ALL CSS FILES -->
            <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
@@ -41,15 +41,15 @@ echo "
           <h1>University of Utah - CS 4540</h1>
           <h2>Web Software Architecture - Spring 2016</h2>
           <h2>Brandon Tobin</h2>
-	  <h2>Grad Progress - Assignment 1</h2>
+	  <h2>Grad Progress - Assignment 2</h2>
          </div>
 
 	 <!-- Navigation Bar -->
 	 <ul id=\"navigation\">
-          <li><a href=\"../../index.html\">Home</a></li>
-          <li><a href=\"../../Projects/\">Projects</a></li>
-          <li><a href=\"../../Class_Examples/\">Examples</a></li>
-	  <li><a href=\"student_list.html\">Back</a></li>
+          <li><a href=\"../../../../index.html\">Home</a></li>
+          <li><a href=\"../../../../Projects/\">Projects</a></li>
+          <li><a href=\"../../../../Class_Examples/\">Examples</a></li>
+	  <li><a href=\"../../Controller\">Back</a></li>
 	 </ul>
 
          <h1>$student->student_First_Name's Forms</h1>
@@ -84,6 +84,6 @@ echo "
 
 ";
 
-
+?>
 
 
