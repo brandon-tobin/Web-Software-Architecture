@@ -46,7 +46,7 @@
 <!-- List for Grad Progress Assignments -->
 <ul>
     <li><a href="../V1/">V1</a></li>
-    <li><a href="../../V1/README.html">README - Assignment 1</a></li>
+    <li><a href="../V1/README.html">README - Assignment 1</a></li>
 </ul>
 
 <ul>
