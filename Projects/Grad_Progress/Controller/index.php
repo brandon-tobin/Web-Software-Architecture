@@ -59,7 +59,7 @@
 	   <td>January 18, 2016</td>
            <td>Current</td>
            <td>Yes</td>
-	   <td><a href="Student/progress_form.php?id=1">View</a></td>
+	   <td><a href="Student/student_forms.php?id=1">View</a></td>
           </tr>
           <tr>
            <td>Mike Jones</td>
