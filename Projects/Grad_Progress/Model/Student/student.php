@@ -40,7 +40,7 @@ class Student
     {
         $this->student_First_Name = 'Anne';
         $this->form_count = 1;
-        $this->form_Records_Array = array("January 18, 2016", "January 18, 2016", "Yes", "Link");
+        $this->form_Records_Array = array("January 18, 2016", "January 18, 2016", "Yes", "Student/progress_form.php?id=1");
     }
 
     function create_Mike()
@@ -57,17 +57,17 @@ class Student
     {
         $this->student_First_Name = 'Jessica';
         $this->form_count = 11;
-        $this->form_Records_Array = array("January 20, 2016", "January 20, 2016", "Yes", "Link",
-            "September 6, 2015", "September 20, 2015", "Yes", "Link",
-            "February 14, 2015", "February 17, 2015", "Yes", "Link",
-            "October 23, 2014", "October 23, 2014", "Yes", "Link",
-            "January 28, 2014", "January 29, 2014", "Yes", "Link",
-            "September 11, 2013", "September 11, 2013", "Yes", "Link",
-            "March 27, 2013", "March 28, 2013", "Yes", "Link",
-            "November 2, 2012", "November 2, 2012", "Yes", "Link",
-            "January 10, 2012", "January 10, 2012", "Yes", "Link",
-            "August 29, 2011", "August 30, 2011", "Yes", "Link",
-            "January 4, 2011", "January 4, 2011", "Yes", "Link");
+        $this->form_Records_Array = array("January 20, 2016", "January 20, 2016", "Yes", "Student/progress_form.php?id=4",
+            "September 6, 2015", "September 20, 2015", "Yes", "Student/progress_form.php?id=4",
+            "February 14, 2015", "February 17, 2015", "Yes", "Student/progress_form.php?id=4",
+            "October 23, 2014", "October 23, 2014", "Yes", "Student/progress_form.php?id=4",
+            "January 28, 2014", "January 29, 2014", "Yes", "Student/progress_form.php?id=4",
+            "September 11, 2013", "September 11, 2013", "Yes", "Student/progress_form.php?id=4",
+            "March 27, 2013", "March 28, 2013", "Yes", "Student/progress_form.php?id=4",
+            "November 2, 2012", "November 2, 2012", "Yes", "Student/progress_form.php?id=4",
+            "January 10, 2012", "January 10, 2012", "Yes", "Student/progress_form.php?id=4",
+            "August 29, 2011", "August 30, 2011", "Yes", "Student/progress_form.php?id=4",
+            "January 4, 2011", "January 4, 2011", "Yes", "Student/progress_form.php?id=4");
     }
 
     function create_Neal()
