@@ -83,7 +83,7 @@
            <td>January 19, 2016</td>
            <td>Current</td>
            <td>Yes</td>
-           <td><a href="student_jessica_forms_list.html">View</a></td>
+           <td><a href="Student/student_forms.php?id=4">View</a></td>
           </tr>
 	  <tr>
            <td>Neal Cates</td>
