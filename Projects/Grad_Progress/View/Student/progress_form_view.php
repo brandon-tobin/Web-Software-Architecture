@@ -18,7 +18,7 @@ echo "
           <!-- Brandon Tobin -->
           <!-- University of Utah -->
 
-          <!-- Due Process Form for Anne  -->
+          <!-- Due Process Form for $form->student_Name  -->
 
 
           <title>Due Process Form</title>
@@ -27,7 +27,7 @@ echo "
           <meta charset=\"utf-8\"/>
           <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
           <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-          <meta name=\"description\" content=\"Due Process Form for Anne\"/>
+          <meta name=\"description\" content=\"Due Process Form for $form->student_Name\"/>
 
           <!-- ALL CSS FILES -->
            <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
@@ -139,10 +139,10 @@ echo "
 
 	 <p>$form->question2</p>
 
-	 <pre><u>      Anne Smith               </u>  <u>     January 18, 2016      </u>
+	 <pre><u>      $form->student_Name               </u>  <u>     $form->date_completed      </u>
 Student Signature	 	 Date</pre>
 
-	 <pre><u>      Peter James              </u>  <u>     January 18, 2016      </u>
+	 <pre><u>      $form->advisor              </u>  <u>     $form->date_completed      </u>
 Advisor Signature                Date</pre>
 
         </body>
