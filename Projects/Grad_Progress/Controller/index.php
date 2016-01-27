@@ -47,6 +47,7 @@
 <ul>
     <li><a href="../V1/">V1</a></li>
     <li><a href="../V1/README.html">README - Assignment 1</a></li>
+    <li><a href="../V1/index.html">View Assignment 1</a></li>
 </ul>
 
 <ul>
