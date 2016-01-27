@@ -29,7 +29,7 @@ echo "
           <meta name=\"description\" content=\"Anne's page of forms\"/>
 
           <!-- ALL CSS FILES -->
-           <link rel=\"stylesheet\" href=\"../../Resources/css/stylesheet.css\" type=\"text/css\"/>
+           <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
 
         </head>
 
