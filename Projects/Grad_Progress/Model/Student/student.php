@@ -40,7 +40,7 @@ class Student
     {
         $this->student_First_Name = 'Anne';
         $this->form_count = 1;
-        $this->form_Records_Array = array("January 18, 2016", "January 18, 2016", "Yes", "Student/progress_form.php?id=1");
+        $this->form_Records_Array = array("January 18, 2016", "January 18, 2016", "Yes", "progress_form.php?id=1");
     }
 
     function create_Mike()
