@@ -67,7 +67,7 @@
 	   <td>December 23, 2014</td>
            <td>Out of Date</td>
            <td>No</td>
-	   <td><a href="student_mike_forms_list.html">View</a></td>
+	   <td><a href="Student/student_forms.php?id=2">View</a></td>
           </tr>
 	  <tr>
            <td>Brad Rust</td>
@@ -75,7 +75,7 @@
            <td>October 20, 2015</td>
            <td>Out of Date</td>
            <td>Yes</td>
-           <td><a href="student_brad_forms_list.html">View</a></td>
+           <td><a href="Student/student_forms.php?id=3">View</a></td>
           </tr>
 	  <tr>
            <td>Jessica Brown</td>
@@ -91,7 +91,7 @@
            <td>December 25, 2015</td>
            <td>Current</td>
            <td>Yes</td>
-           <td><a href="student_neal_forms_list.html">View</a></td>
+           <td><a href="Student/student_forms.php?id=5">View</a></td>
           </tr>
 	  <tr>
            <td>Sam Bradford</td>
@@ -99,7 +99,7 @@
            <td>November 10, 2012</td>
            <td>Out of Date</td>
            <td>No</td>
-           <td><a href="student_sam_forms_list.html">View</a></td>
+           <td><a href="Student/student_forms.php?id=6">View</a></td>
           </tr>
 
          </table>
