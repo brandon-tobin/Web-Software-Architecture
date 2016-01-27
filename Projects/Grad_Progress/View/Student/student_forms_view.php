@@ -69,9 +69,9 @@ echo "
        echo "
        <tr>
 	   <td>{$student->form_Records_Array[0]}</td>
-	   <td>".var_dump($student->form_Records_Array[1])."</td>
-	   <td>".var_dump($student->form_Records_Array[2])."</td>
-	   <td><a href=\"".var_dump($student->form_Records_Array[3])."\">Link</a></td>
+	   <td>{$student->form_Records_Array[1]}</td>
+	   <td>{$student->form_Records_Array[2]}</td>
+	   <td><a href=\"{$student->form_Records_Array[3]}\">Link</a></td>
  	  </tr>";
      }
 
