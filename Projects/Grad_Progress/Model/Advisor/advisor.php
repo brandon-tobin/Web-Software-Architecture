@@ -43,6 +43,7 @@ class Advisor
             "Brad Rust", "Out", "October 20, 2015", "Out of Date", "Yes", "View",
             "Neal Cates", "In", "December 25, 2015", "Current", "Yes", "View",
             "Sam Bradford", "Out", "November 10, 2012", "Out of Date", "No", "View");
+        $this->student_Count = 4;
     }
 
     function create_Brandon()
@@ -50,6 +51,7 @@ class Advisor
         $this->advisor_First_Name = 'Brandon';
         $this->advisor_Last_Name = 'Barnes';
         $this->student_Array = array("Jessica Brown", "In", "January 19, 2016", "Current", "Yes", "View");
+        $this->student_Count = 1;
     }
 
 }
