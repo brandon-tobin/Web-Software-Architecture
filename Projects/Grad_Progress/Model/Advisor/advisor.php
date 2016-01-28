@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Student List Model
+ * Advisor Model -- Represents an advisor object who has a list of students
  *
  */
 
@@ -14,6 +14,7 @@ class Advisor
     public $student_Array;
     public $student_Count;
 
+    // Constructor
     public function __construct($id)
     {
         if ($id == 1) {
@@ -27,6 +28,7 @@ class Advisor
         }
     }
 
+    // Method for creating advisor Peter
     function create_Peter()
     {
         $this->advisor_First_Name = 'Peter';
@@ -35,6 +37,7 @@ class Advisor
         $this->student_Count = 1;
     }
 
+    // Method for creating advisor Brandon
     function create_James()
     {
         $this->advisor_First_Name = 'James';
@@ -46,6 +49,7 @@ class Advisor
         $this->student_Count = 4;
     }
 
+    // Method for creating advisor Brandon
     function create_Brandon()
     {
         $this->advisor_First_Name = 'Brandon';
@@ -53,5 +57,4 @@ class Advisor
         $this->student_Array = array("Jessica Brown", "In", "January 19, 2016", "Current", "Yes", "../Student/student_forms.php?id=4");
         $this->student_Count = 1;
     }
-
 }

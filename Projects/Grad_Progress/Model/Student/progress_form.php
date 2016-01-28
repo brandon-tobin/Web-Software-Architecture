@@ -3,14 +3,13 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Progress Forms Model
+ * Progress Forms Model -- Represents a form object populated with student information
  *
  */
 
 class Student_Form
 {
     public $date_completed;
-   // public $date_modified;
     public $student_Name;
     public $student_ID;
     public $degree;
@@ -19,8 +18,6 @@ class Student_Form
     public $num_semesters;
     public $advisor;
     public $committee;
-
-    // Not sure if needed
     public $activity1;
     public $completed1;
     public $acceptable1;
@@ -48,10 +45,10 @@ class Student_Form
     public $activity9;
     public $completed9;
     public $acceptable9;
-
     public $question1;
     public $question2;
 
+    // Constructor
     public function __construct($id)
     {
         if ($id == 1)
@@ -80,6 +77,7 @@ class Student_Form
         }
     }
 
+    // Method for creating student Anne
     function create_Anne()
     {
         $this->date_completed = 'January 18, 2016';
@@ -98,6 +96,7 @@ class Student_Form
         $this->question2 = 'The student is on track and making good progress.';
     }
 
+    // Method for creating student Mike
     function create_Mike()
     {
         $this->date_completed = 'December 8, 2014';
@@ -116,6 +115,7 @@ class Student_Form
         $this->question2 = 'The student is not on track and should be removed from the program.';
     }
 
+    // Method for creating student Brad
     function create_Brad()
     {
         $this->date_completed = 'October 20, 2014';
@@ -134,6 +134,7 @@ class Student_Form
         $this->question2 = 'The student is not on track and should be removed from the program.';
     }
 
+    // Method for creating student Jessica
     function create_Jessica()
     {
         $this->date_completed = 'January 19, 2016';
@@ -176,6 +177,7 @@ class Student_Form
         $this->question2 = 'The student is on track and has made significant progress. This student should be set to graduate at the end of this semester.';
     }
 
+    // Method for creating student Neal
     function create_Neal()
     {
         $this->date_completed = 'December 25, 2015';
@@ -194,6 +196,7 @@ class Student_Form
         $this->question2 = 'The student is not on track and should be removed from the program.';
     }
 
+    // Method for creating student Sam
     function create_Sam()
     {
         $this->date_completed = 'November 10, 2012';

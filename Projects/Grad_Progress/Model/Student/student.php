@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Student Forms Model
+ * Student Forms Model -- Represents a list of forms for student
  *
  */
 
@@ -13,7 +13,7 @@ class Student
     public $form_count;
     public $form_Records_Array;
 
-
+    // Constructor
     public function __construct($id)
     {
         if ($id == 1) {
@@ -36,6 +36,7 @@ class Student
         }
     }
 
+    // Method for creating Anne's list of forms
     function create_Anne()
     {
         $this->student_First_Name = 'Anne';
@@ -43,6 +44,7 @@ class Student
         $this->form_Records_Array = array("January 18, 2016", "January 18, 2016", "Yes", "progress_form.php?id=1");
     }
 
+    // Method for creating Mike's list of forms
     function create_Mike()
     {
         $this->student_First_Name = 'Mike';
@@ -52,6 +54,7 @@ class Student
             "December 1, 2013", "December 25, 2013", "No", "progress_form.php?id=2");
     }
 
+    // Method for creating Brad's list of forms
     function create_Brad()
     {
         $this->student_First_Name = 'Brad';
@@ -61,6 +64,7 @@ class Student
             "December 1, 2013", "December 25, 2013", "No", "progress_form.php?id=3");
     }
 
+    // Method for creating Jessica's list of forms
     function create_Jessica()
     {
         $this->student_First_Name = 'Jessica';
@@ -78,6 +82,7 @@ class Student
             "January 4, 2011", "January 4, 2011", "Yes", "progress_form.php?id=4");
     }
 
+    // Method for creating Neal's list of forms
     function create_Neal()
     {
         $this->student_First_Name = 'Neal';
@@ -85,6 +90,7 @@ class Student
         $this->form_Records_Array = array("December 25, 2015", "December 25, 2015", "Yes", "progress_form.php?id=5");
     }
 
+    // Method for creating Sam's list of forms
     function create_Sam()
     {
         $this->student_First_Name = 'Sam';
