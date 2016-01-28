@@ -51,6 +51,8 @@
             </ul>
 
             <ul>
+                <li><a href="../V2/">V1</a></li>
+                <li><a href="/Projects/Grad_Progress/README.html">README - Assignment 2</a></li>
                 <li><a href="/Projects/Grad_Progress/advisors_list.php">View Assignment 2</a></li>
             </ul>
 
