@@ -50,7 +50,6 @@ echo "
                     <li><a href=\"../../../../index.html\">Home</a></li>
                     <li><a href=\"../../../../Projects/\">Projects</a></li>
                     <li><a href=\"../../../../Class_Examples/\">Examples</a></li>
-                    <li><a href=\"../../Controller\">Back</a></li>
                 </ul>
 
                 <h1 class=\"form-header\">Due Progress Advisory Document for Ph.D. Degree</h1>
