@@ -35,7 +35,7 @@ class Advisor
     {
         try {
 
-            $db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
+            $db = new PDO("mysql:host=localhost;dbname=Grad_Progress_V3;charset=utf8", 'root', '173620901');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
