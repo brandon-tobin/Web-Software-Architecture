@@ -19,7 +19,7 @@ class Advisor
     // Constructor
     public function __construct($id)
     {
-            if ($id == 1) {
+          /*  if ($id == 1) {
                 $this->create_Peter();
             }
             if ($id == 2) {
@@ -27,11 +27,12 @@ class Advisor
             }
             if ($id == 3) {
                 $this->create_Brandon();
-            }
+            }*/
+        $this->create_Peter($id);
     }
 
     // Method for creating advisor Peter
-    function create_Peter()
+    function create_Peter($id)
     {
         try {
 
@@ -39,7 +40,7 @@ class Advisor
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-            $query = "SELECT name FROM Users WHERE uid = 1";
+            $query = "SELECT name FROM Users WHERE uid = $id";
 
             $statement = $db->prepare($query);
             $statement->execute();
@@ -75,7 +76,7 @@ class Advisor
             }
 
             //$this->student_Array = array("Anne Smith", "In", "January 18, 2016", "Current", "Yes", "../Student/student_forms.php?id=1");
-            $this->student_Count = 1;
+           // $this->student_Count = 1;
         }
         catch (PDOException $ex) {
             error_log("Tobin ----> ".$ex);
