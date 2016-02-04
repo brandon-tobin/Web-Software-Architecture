@@ -63,8 +63,17 @@ echo "
                         <th>Compliance:</th>
                         <th>Form:</th>
                     </tr>";
-
-                for ($i = 0; $i < $student->form_count; $i++)
+                // Echo out all entries in student array
+                foreach ($advisor->student_Array as $row)
+                {
+                    echo "<tr>";
+                    foreach ($row as $value)
+                    {
+                        echo "<td>$value</td>";
+                    }
+                    echo "</tr>";
+                }
+               /* for ($i = 0; $i < $student->form_count; $i++)
                 {
                 echo "
                     <tr>
@@ -73,7 +82,7 @@ echo "
                         <td>{$student->form_Records_Array[2 + $i*4]}</td>
                         <td><a href=\"{$student->form_Records_Array[3 + $i*4]}\">Link</a></td>
                     </tr>";
-                }
+                }*/
 
                 echo "
                 </table>
