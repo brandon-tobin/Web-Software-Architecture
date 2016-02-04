@@ -53,7 +53,7 @@ class Student_Form
     // Constructor
     public function __construct($id, $fid)
     {
-        if ($id == 1)
+       /* if ($id == 1)
         {
             $this->create_Anne($id, $fid);
         }
@@ -76,7 +76,8 @@ class Student_Form
         if ($id == 6)
         {
             $this->create_Sam();
-        }
+        }*/
+        $this->create_Anne($id, $fid);
     }
 
     // Method for creating student Anne
