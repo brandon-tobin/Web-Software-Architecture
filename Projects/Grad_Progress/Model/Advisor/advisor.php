@@ -52,7 +52,7 @@ class Advisor
             }
             //$this->advisor_Last_Name = 'James';
 
-            $query = "SELECT date, meets_requirements, advisor_signed, Users.name, Users.uid FROM Forms INNER JOIN Advisors ON Forms.uid = Advisors.sid INNER JOIN Users ON Advisors.sid = Users.uid AND aid = 1";
+            $query = "SELECT date, meets_requirements, advisor_signed, Users.name, Users.uid FROM Forms INNER JOIN Advisors ON Forms.uid = Advisors.sid INNER JOIN Users ON Advisors.sid = Users.uid AND aid = $id";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
