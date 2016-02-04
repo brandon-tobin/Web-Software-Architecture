@@ -6,8 +6,9 @@
  * Advisor Model -- Represents an advisor object who has a list of students
  *
  */
+set_include_path("../");
 
-require '../db_config.php';
+require 'db_config.php';
 
 class Advisor
 {
