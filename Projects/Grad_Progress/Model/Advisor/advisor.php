@@ -39,7 +39,7 @@ class Advisor
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-            $query = "SELECT name FROM Users WHERE uid = 2";
+            $query = "SELECT name FROM Users WHERE uid = 1";
 
             $statement = $db->prepare($query);
             $statement->execute();
