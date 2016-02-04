@@ -62,7 +62,7 @@ class Advisor
                 $signed = false;
                 if ($row['advisor_signed'] == 1)
                     $signed = true;
-                $this->student_Array[] = array($row['name'], $row['meets_requirements'], $row['date'], "Current", $signed, "../Student/student_forms.php?id=".$row['uid']);
+                $this->student_Array[] = array($row['name'], $row['meets_requirements'], $row['date'], "Current", $signed, "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
 
             }
 
