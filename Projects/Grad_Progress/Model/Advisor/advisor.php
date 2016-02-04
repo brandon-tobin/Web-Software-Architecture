@@ -67,7 +67,7 @@ class Advisor
                 if ($row['meets_requirements'] == 1)
                     $requirementsMet = "Yes";
 
-                if (strtotime($row['date']) < strtotime('6 months ago'))
+                if (strtotime($row['date']) < strtotime('1 month ago'))
                     $isCurrent = "Yes";
 
                 $this->student_Array[] = array($row['name'], $requirementsMet, $row['date'], $isCurrent, $isSigned, "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
