@@ -36,7 +36,8 @@ class Advisor
     {
         try {
 
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V3;charset=utf8", 'root', '173620901');
+            //$db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V3;charset=utf8", 'root', '173620901');
+            $db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
@@ -86,7 +87,7 @@ class Advisor
     }
 
     // Method for creating advisor Brandon
-    function create_James()
+    /*function create_James()
     {
         $this->advisor_First_Name = 'James';
         $this->advisor_Last_Name = 'Good';
@@ -104,5 +105,5 @@ class Advisor
         $this->advisor_Last_Name = 'Barnes';
         $this->student_Array = array("Jessica Brown", "In", "January 19, 2016", "Current", "Yes", "../Student/student_forms.php?id=4");
         $this->student_Count = 1;
-    }
+    }*/
 }
