@@ -56,13 +56,13 @@ class Advisor
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            //$this->student_Array = array();
+            $this->student_Array = array();
             foreach ($result as $row)
             {
                 $signed = false;
                 if ($row['advisor_signed'] == 1)
                     $signed = true;
-                $this->student_Array = array($row['name'], $row['meets_requirements'], $row['date'], "Current", $signed, "../Student/student_forms.php?id=".$row['uid']);
+                $this->student_Array[] = array($row['name'], $row['meets_requirements'], $row['date'], "Current", $signed, "../Student/student_forms.php?id=".$row['uid']);
 
             }
 
