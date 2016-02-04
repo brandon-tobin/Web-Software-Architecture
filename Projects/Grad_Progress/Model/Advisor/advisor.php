@@ -51,7 +51,7 @@ class Advisor
             }
             //$this->advisor_Last_Name = 'James';
 
-            $query = "SELECT date, meets_requirements, advisor_signed, Users.name FROM Forms INNER JOIN Advisors ON Forms.uid = Advisors.sid INNER JOIN Users ON Advisors.sid = Users.uid AND aid = 1";
+            $query = "SELECT date, meets_requirements, advisor_signed, Users.name, Users.uid FROM Forms INNER JOIN Advisors ON Forms.uid = Advisors.sid INNER JOIN Users ON Advisors.sid = Users.uid AND aid = 1";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -62,7 +62,6 @@ class Advisor
                 $signed = false;
                 if ($row['advisor_signed'] == 1)
                     $signed = true;
-
                 $this->student_Array = array($row['name'], $row['meets_requirements'], $row['date'], "Current", $signed, "../Student/student_forms.php?id=".$row['uid']);
 
             }
