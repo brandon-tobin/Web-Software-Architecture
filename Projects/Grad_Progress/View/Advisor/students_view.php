@@ -67,7 +67,19 @@ echo "
                     </tr>";
 
                     // Echo out all entries in student array
-                    for ($i = 0; $i < $advisor->student_Count; $i++)
+                    foreach ($advisor->student_Array as $row)
+                    {
+                        echo "<tr>";
+                        foreach ($row as $value)
+                        {
+                            echo "<td>$value</td>";
+                        }
+                        echo "</tr>";
+                    }
+
+
+
+                  /*  for ($i = 0; $i < $advisor->student_Count; $i++)
                     {
                     echo "
                     <tr>
@@ -78,7 +90,9 @@ echo "
                         <td>{$advisor->student_Array[4 + $i*6]}</td>
                         <td><a href=\"{$advisor->student_Array[5 + $i*6]}\">View</a></td>
                     </tr>";
-                    }
+                    }*/
+
+
 
                     echo "
 
