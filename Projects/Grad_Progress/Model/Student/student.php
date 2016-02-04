@@ -16,8 +16,8 @@ class Student
     // Constructor
     public function __construct($id)
     {
-        if ($id == 1) {
-            $this->create_Anne();
+      /*  if ($id == 1) {
+            $this->create_Anne($id);
         }
         if ($id == 2) {
             $this->create_Mike();
@@ -33,15 +33,50 @@ class Student
         }
         if ($id == 6) {
             $this->create_Sam();
-        }
+        }*/
+        $this->create_Anne($id);
     }
 
     // Method for creating Anne's list of forms
-    function create_Anne()
+    function create_Anne($id)
     {
-        $this->student_First_Name = 'Anne';
-        $this->form_count = 1;
-        $this->form_Records_Array = array("January 18, 2016", "January 18, 2016", "Yes", "progress_form.php?id=1");
+        try {
+            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V3;charset=utf8", 'root', '173620901');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+            $query = "SELECT name FROM Users WHERE uid = $id";
+
+            $statement = $db->prepare($query);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                $this->advisor_First_Name = $row['name'];
+            }
+
+            $query = "SELECT meets_requirements, uid, fid, date, modified_date FROM Forms WHERE uid = $id";
+            $statement = $db->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $this->form_Records_Array = array();
+            foreach ($result as $row)
+            {
+                $requirementsMet = "No";
+                if ($row['meets_requirements'] == 1)
+                    $requirementsMet = "Yes";
+
+               $this->form_Records_Array[] = array($row['date'], $row['modified_date'], $requirementsMet, "<a href=\"progress_form.php?id=$id&form=".$row['fid']."\">View</a>" );
+            }
+       // $this->student_First_Name = 'Anne';
+       // $this->form_count = 1;
+       // $this->form_Records_Array = array("January 18, 2016", "January 18, 2016", "Yes", "progress_form.php?id=1");
+        }
+        catch (PDOException $ex)
+        {
+        }
     }
 
     // Method for creating Mike's list of forms
