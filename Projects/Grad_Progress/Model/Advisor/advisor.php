@@ -50,7 +50,24 @@ class Advisor
                 $this->advisor_First_Name = $row['name'];
             }
             //$this->advisor_Last_Name = 'James';
-            $this->student_Array = array("Anne Smith", "In", "January 18, 2016", "Current", "Yes", "../Student/student_forms.php?id=1");
+
+            $query = "SELECT date, meets_requirements, advisor_signed, Users.name FROM Forms INNER JOIN Advisors ON Forms.uid = Advisors.sid INNER JOIN Users ON Advisors.sid = Users.uid AND aid = 1";
+            $statement = $db->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            //$this->student_Array = array();
+            foreach ($result as $row)
+            {
+                $signed = false;
+                if ($row['advisor_signed'] == 1)
+                    $signed = true;
+
+                $this->student_Array = array($row['name'], $row['meets_requirements'], $row['date'], "Current", $signed, "../Student/student_forms.php?id=".$row['uid']);
+
+            }
+
+            //$this->student_Array = array("Anne Smith", "In", "January 18, 2016", "Current", "Yes", "../Student/student_forms.php?id=1");
             $this->student_Count = 1;
         }
         catch (PDOException $ex) {
