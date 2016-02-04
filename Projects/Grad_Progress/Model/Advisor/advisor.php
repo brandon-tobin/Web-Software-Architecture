@@ -7,6 +7,8 @@
  *
  */
 
+require '../db_config.php';
+
 class Advisor
 {
     public $advisor_First_Name;
@@ -17,24 +19,35 @@ class Advisor
     // Constructor
     public function __construct($id)
     {
-        if ($id == 1) {
-            $this->create_Peter();
+            if ($id == 1) {
+                $this->create_Peter();
+            }
+            if ($id == 2) {
+                $this->create_James();
+            }
+            if ($id == 3) {
+                $this->create_Brandon();
+            }
         }
-        if ($id == 2) {
-            $this->create_James();
-        }
-        if ($id == 3) {
-            $this->create_Brandon();
-        }
+
     }
 
     // Method for creating advisor Peter
     function create_Peter()
     {
-        $this->advisor_First_Name = 'Peter';
-        $this->advisor_Last_Name = 'James';
-        $this->student_Array = array("Anne Smith", "In", "January 18, 2016", "Current", "Yes", "../Student/student_forms.php?id=1");
-        $this->student_Count = 1;
+        try {
+
+            $db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+            $query = "SELECT name FROM users WHERE uid = 1";
+
+            $this->advisor_First_Name = 'Peter';
+            $this->advisor_Last_Name = 'James';
+            $this->student_Array = array("Anne Smith", "In", "January 18, 2016", "Current", "Yes", "../Student/student_forms.php?id=1");
+            $this->student_Count = 1;
+        }
     }
 
     // Method for creating advisor Brandon
