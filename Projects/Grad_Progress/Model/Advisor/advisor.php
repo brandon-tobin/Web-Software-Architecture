@@ -8,6 +8,7 @@
  */
 
 require '../db_config.php';
+echo "Included config file";
 
 class Advisor
 {
