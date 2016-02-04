@@ -53,7 +53,7 @@ class Student
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-                $this->advisor_First_Name = $row['name'];
+                $this->student_First_Name = $row['name'];
             }
 
             $query = "SELECT meets_requirements, uid, fid, date, modified_date FROM Forms WHERE uid = $id";
