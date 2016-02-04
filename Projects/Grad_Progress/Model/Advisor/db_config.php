@@ -7,9 +7,9 @@
  *
  */
 
-$server_name = 'localhost';
+$server_name  = 'localhost';
 $db_user_name = 'root';
-$db_password = '173620901';
-$db_name = 'Grad_Progress_V3';
+$db_password  = '173620901';
+$db_name      = 'Grad_Progress_V3';
 
 ?>
