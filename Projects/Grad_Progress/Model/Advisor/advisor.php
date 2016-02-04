@@ -43,11 +43,21 @@ class Advisor
 
             $query = "SELECT name FROM users WHERE uid = 1";
 
-            $this->advisor_First_Name = 'Peter';
-            $this->advisor_Last_Name = 'James';
+            $statement = $db->prepare($query);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                $this->advisor_First_Name = $row['name'];
+            }
+            //$this->advisor_Last_Name = 'James';
             $this->student_Array = array("Anne Smith", "In", "January 18, 2016", "Current", "Yes", "../Student/student_forms.php?id=1");
             $this->student_Count = 1;
         }
+        catch (PDOException $ex) {
+        }
+
     }
 
     // Method for creating advisor Brandon
