@@ -64,7 +64,7 @@ echo "
                         <th>Form:</th>
                     </tr>";
                 // Echo out all entries in student array
-                foreach ($advisor->student_Array as $row)
+                foreach ($student->form_Records_Array as $row)
                 {
                     echo "<tr>";
                     foreach ($row as $value)
