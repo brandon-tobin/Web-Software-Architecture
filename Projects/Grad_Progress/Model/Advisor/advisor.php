@@ -54,6 +54,7 @@ class Advisor
             $this->student_Count = 1;
         }
         catch (PDOException $ex) {
+            error_log("Tobin ----> ".$ex);
         }
 
     }
