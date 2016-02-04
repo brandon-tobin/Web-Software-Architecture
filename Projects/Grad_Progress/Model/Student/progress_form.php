@@ -47,13 +47,15 @@ class Student_Form
     public $acceptable9;
     public $question1;
     public $question2;
+    public $completedActivity;
+    public $uncompletedActivity;
 
     // Constructor
-    public function __construct($id)
+    public function __construct($id, $fid)
     {
         if ($id == 1)
         {
-            $this->create_Anne();
+            $this->create_Anne($id, $fid);
         }
         if ($id == 2)
         {
@@ -78,22 +80,95 @@ class Student_Form
     }
 
     // Method for creating student Anne
-    function create_Anne()
+    function create_Anne($id, $fid)
     {
-        $this->date_completed = 'January 18, 2016';
-        $this->student_Name = 'Anne Smith';
-        $this->student_ID = 'u0123456';
-        $this->degree = 'Computer Science';
-        $this->track = 'Networking';
-        $this->semester_Admitted = 'Fall 2015';
-        $this->num_semesters = 1;
-        $this->advisor = 'Peter James';
-        $this->committee = array("Peter", "Jim", "Joe", "Mark");
-        $this->activity1 = '1 Semester';
-        $this->completed1 = 'Fall 2015';
-        $this->acceptable1 = 'Good Progress';
-        $this->question1 = 'YES';
-        $this->question2 = 'The student is on track and making good progress.';
+        try {
+            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V3;charset=utf8", 'root', '173620901');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+            $query = "SELECT name FROM Users WHERE uid IN (SELECT aid FROM Advisors WHERE sid = $id)";
+            $statement = $db->prepare($query);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                $this->advisor = $row['name'];
+            }
+
+            $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee WHERE sid = $id)";
+            $statement = $db->prepare($query);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                $this->committee = array($row['name']);
+            }
+
+            $query = "SELECT Forms.date, Forms.uid, Forms.progress_description, Forms.student_signed, Forms.student_signed_date, Forms.advisor_signed, Forms.advisor_signed_date, Students.degree, Students.track, Students.semester_admitted, Users.name FROM Forms INNER JOIN Students ON Forms.uid = Students.uid INNER JOIN Users ON Forms.uid = Users.uid AND Forms.uid = 345678 AND Forms.fid = 1";
+            $statement = $db->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                $this->date_completed = $row['date'];
+                $this->student_Name = $row['name'];
+                $this->student_ID = $row['uid'];
+                $this->degree = $row['degree'];
+                $this->track = $row['track'];
+                $this->semester_Admitted = $row['semester_admitted'];
+
+
+            }
+
+            // Need to calculate how many semesters the student has been in the program
+
+            $this->uncompletedActivity = array("Identify Advisor", "Program of study approved by advisor and initial committee", "Complete teaching mentorship", "Complete required courses", "Full committee formed", "Program of Study approved by committee", "Written qualifier", "Oral qualifier/Proposal", "Dissertation defense");
+
+            $this->completedActivity = array();
+
+            $query = "SELECT activity, date_completed FROM Activities WHERE sid = $id";
+            $statement = $db->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+               $key = array_search($row['activity'], $this->uncompletedActivity);
+                if ($key != 0 || $key != false)
+                    unset($this->uncompletedActivity[$key]);
+
+                $this->completedActivity[] = array($row['activity'], $row['date_completed']);
+            }
+        }
+        catch (PDOException $ex) {
+        }
+
+
+
+
+
+
+
+
+
+
+
+      //  $this->date_completed = 'January 18, 2016';
+      //  $this->student_Name = 'Anne Smith';
+      //  $this->student_ID = 'u0123456';
+      //  $this->degree = 'Computer Science';
+      //  $this->track = 'Networking';
+      //  $this->semester_Admitted = 'Fall 2015';
+      //  $this->num_semesters = 1;
+      //  $this->advisor = 'Peter James';
+      //  $this->committee = array("Peter", "Jim", "Joe", "Mark");
+      //  $this->activity1 = '1 Semester';
+      //  $this->completed1 = 'Fall 2015';
+      //  $this->acceptable1 = 'Good Progress';
+     //   $this->question1 = 'YES';
+      //  $this->question2 = 'The student is on track and making good progress.';
     }
 
     // Method for creating student Mike

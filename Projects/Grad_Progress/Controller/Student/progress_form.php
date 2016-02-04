@@ -15,9 +15,10 @@ require_once 'progress_form.php';
 
 // Get the id out of the url
 $id = $_GET['id'];
+$fid = $_GET['form'];
 
 // Create a new form object
-$form = new Student_Form($id);
+$form = new Student_Form($id, $fid);
 
 // Require the form view for display
 require "progress_form_view.php";
