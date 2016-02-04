@@ -59,10 +59,18 @@ class Advisor
             $this->student_Array = array();
             foreach ($result as $row)
             {
-                $signed = false;
+                $isSigned = "No";
+                $requirementsMet = "No";
+                $isCurrent = "No";
                 if ($row['advisor_signed'] == 1)
-                    $signed = true;
-                $this->student_Array[] = array($row['name'], $row['meets_requirements'], $row['date'], "Current", $signed, "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
+                    $isSigned = "Yes";
+                if ($row['meets_requirements'] == 1)
+                    $requirementsMet = "Yes";
+
+                if (strtotime($row['date']) < strtotime('6 months ago'))
+                    $isCurrent = "Yes";
+
+                $this->student_Array[] = array($row['name'], $requirementsMet, $row['date'], $isCurrent, $isSigned, "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
 
             }
 
