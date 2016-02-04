@@ -8,7 +8,6 @@
  */
 
 require '../db_config.php';
-echo "Included config file";
 
 class Advisor
 {
@@ -29,8 +28,6 @@ class Advisor
             if ($id == 3) {
                 $this->create_Brandon();
             }
-        }
-
     }
 
     // Method for creating advisor Peter
