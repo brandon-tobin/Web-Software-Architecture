@@ -96,24 +96,6 @@ echo "
 
                 echo "
 
-
-
-
-
-
-                   <!-- <td>Peter:</td>
-                    <td><a href=\"Advisor/students.php?id=1\">View</a></td>
-                </tr>
-                <tr>
-                    <td>James:</td>
-                    <td><a href=\"Advisor/students.php?id=2\">View</a></td>
-                </tr>
-                <tr>
-                    <td>Brandon:</td>
-                    <td><a href=\"Advisor/students.php?id=3\">View</a></td>
-                </tr>
-            </table>-->
-
         </body>
 
     </html>
