@@ -177,7 +177,39 @@ class Student_Form
 
                 // Check to see if the progress was good or acceptable
                 $acceptable = "";
-                if ((strpos($row['activity'], 'Identify') !== false) && $activity_semesters == 1)
+                if ((strpos($row['activity'], 'Identify Advisor') !== false) && $activity_semesters == 1)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else if ((strpos($row['activity'], 'Program of study approved by advisor and initial committee') !== false) && $activity_semesters == 4)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else if ((strpos($row['activity'], 'Complete teaching mentorship') !== false) && $activity_semesters == 4)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else if ((strpos($row['activity'], 'Complete required courses') !== false) && $activity_semesters == 5)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else if ((strpos($row['activity'], 'Full committee formed') !== false) && $activity_semesters == 6)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else if ((strpos($row['activity'], 'Program of Study approved by committee') !== false) && $activity_semesters == 6)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else if ((strpos($row['activity'], 'Written qualifier') !== false) && $activity_semesters == 5)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else if ((strpos($row['activity'], 'Oral qualifier/Proposal') !== false) && $activity_semesters == 7)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else if ((strpos($row['activity'], 'Dissertation defense') !== false) && $activity_semesters == 10)
                 {
                     $acceptable = "Good Progress";
                 }
