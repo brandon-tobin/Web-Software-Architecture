@@ -126,6 +126,14 @@ class Student_Form
             }
 
             // Need to calculate how many semesters the student has been in the program
+            $admit_Date = strtotime($this->semester_Admitted);
+            $current_Date = getdate();
+            $time_since_admitted = $current_Date - $admit_Date;
+            $this->num_semesters = $time_since_admitted;
+           // if (strpos($this->semester_Admitted, 'Fall') !== false)
+           // {
+          //      $admin_Date =
+          //  }
 
             $this->uncompletedActivity = array("Identify Advisor", "Program of study approved by advisor and initial committee", "Complete teaching mentorship", "Complete required courses", "Full committee formed", "Program of Study approved by committee", "Written qualifier", "Oral qualifier/Proposal", "Dissertation defense");
 
