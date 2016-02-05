@@ -61,12 +61,14 @@ echo "
                 <p><b>Semester Admitted:</b> <u>$form->semester_Admitted</u> <b># of semesters in the program</b> <u>$form->num_semesters</u></p>
                 <p><b>Advisor:</b> <u>$form->advisor</u></p>
                 <p><b>Committee:</b></p>
-                <ul>
-                    <li>{$form->committee[0]}</li>
-                    <li>{$form->committee[1]}</li>
-                    <li>{$form->committee[2]}</li>
-                    <li>{$form->committee[3]}</li>
-                </ul>
+                <ul>";
+
+                    foreach ($form->committee as $row)
+                    {
+                        echo "<li>$row</li>";
+                    }
+
+                echo "<ul>
 
                 <table class=\"roster\">
                     <tr>
