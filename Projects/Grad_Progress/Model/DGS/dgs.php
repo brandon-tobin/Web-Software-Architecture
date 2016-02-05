@@ -50,6 +50,8 @@ class DGS
             foreach ($result as $row) {
                 $this->students_arr[] = array($row['name'], "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
             }
+
+            var_dump($this->students_arr);
         }
         catch (PDOException $ex) {
         }
