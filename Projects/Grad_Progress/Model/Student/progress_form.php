@@ -109,7 +109,7 @@ class Student_Form
                 array_push($this->committee, $row['name']);
             }
 
-            $query = "SELECT Forms.date, Forms.uid, Forms.progress_description, Forms.student_signed, Forms.student_signed_date, Forms.advisor_signed, Forms.advisor_signed_date, Students.degree, Students.track, Students.semester_admitted, Users.name FROM Forms INNER JOIN Students ON Forms.uid = Students.uid INNER JOIN Users ON Forms.uid = Users.uid AND Forms.uid = $id AND Forms.fid = $fid";
+            $query = "SELECT Forms.date, Forms.uid, Forms.meets_requirements, Forms.progress_description, Forms.student_signed, Forms.student_signed_date, Forms.advisor_signed, Forms.advisor_signed_date, Students.degree, Students.track, Students.semester_admitted, Users.name FROM Forms INNER JOIN Students ON Forms.uid = Students.uid INNER JOIN Users ON Forms.uid = Users.uid AND Forms.uid = $id AND Forms.fid = $fid";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -121,8 +121,8 @@ class Student_Form
                 $this->degree = $row['degree'];
                 $this->track = $row['track'];
                 $this->semester_Admitted = $row['semester_admitted'];
-
-
+                $this->question1 = $row['meets_requirements'];
+                $this->question2 = $row['progress_description'];
             }
 
             // Calculate how many semesters in the program
