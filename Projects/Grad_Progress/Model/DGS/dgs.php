@@ -42,13 +42,13 @@ class DGS
                 $this->advisors[] = array($row['name'], "<a href=\"../Advisor/students.php?id=".$row['aid']."\">View</a>");
             }
 
-            $query = "SELECT Students.uid, Users.name FROM Students INNER JOIN Users ON Students.uid = Users.uid GROUP BY uid";
+            $query = "SELECT Students.uid, Users.name as name2 FROM Students INNER JOIN Users ON Students.uid = Users.uid GROUP BY uid";
             $statement = $db->prepare($query);
             $statement->execute();
 
             $this->students_arr = array();
             foreach ($result as $row) {
-                $this->students_arr[] = array($row['name'], "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
+                $this->students_arr[] = array($row['name2'], "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
             }
 
             var_dump($this->students_arr);
