@@ -15,13 +15,13 @@ class DGS
     public $students_arr;
 
     // Constructor
-    public function __construct($id)
+    public function __construct()
     {
-        $this->create_DGS($id);
+        $this->create_DGS();
     }
 
     // Method for creating a DGS view
-    function create_DGS($id)
+    function create_DGS()
     {
         try {
 
@@ -30,7 +30,7 @@ class DGS
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-
+            // Query the database for all advisors and format it to be shown in the view.
             $query = "SELECT Advisors.aid, Users.name FROM Advisors INNER JOIN Users ON Advisors.aid = Users.uid GROUP BY aid";
             $statement = $db->prepare($query);
             $statement->execute();
@@ -42,6 +42,7 @@ class DGS
                 $this->advisors[] = array($row['name'], "<a href=\"../Advisor/students.php?id=".$row['aid']."\">View</a>");
             }
 
+            // Query the database for all students and format it to be shown in the view.
             $query = "SELECT Students.uid, Users.name FROM Students INNER JOIN Users ON Students.uid = Users.uid GROUP BY uid";
             $statement = $db->prepare($query);
             $statement->execute();

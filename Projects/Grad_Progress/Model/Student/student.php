@@ -27,6 +27,7 @@ class Student
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
+            // Query the database to get the name of the student
             $query = "SELECT name FROM Users WHERE uid = $id";
 
             $statement = $db->prepare($query);
@@ -38,6 +39,7 @@ class Student
                 $this->student_First_Name = $row['name'];
             }
 
+            // Query the database to get the information required to display the list of student forms
             $query = "SELECT meets_requirements, uid, fid, date, modified_date FROM Forms WHERE uid = $id";
             $statement = $db->prepare($query);
             $statement->execute();

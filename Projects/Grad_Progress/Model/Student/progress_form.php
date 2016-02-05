@@ -37,6 +37,7 @@ class Student_Form
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
+            // Query the database to find out which advisor is related to this student.
             $query = "SELECT name FROM Users WHERE uid IN (SELECT aid FROM Advisors WHERE sid = $id)";
             $statement = $db->prepare($query);
             $statement->execute();
@@ -47,6 +48,7 @@ class Student_Form
                 $this->advisor = $row['name'];
             }
 
+            // Query the database to find out which committee memebers are related to this student
             $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee WHERE sid = $id)";
             $statement = $db->prepare($query);
             $statement->execute();
@@ -58,6 +60,7 @@ class Student_Form
                 array_push($this->committee, $row['name']);
             }
 
+            // Get all of the information required to display the student's progress form.
             $query = "SELECT Forms.date, Forms.uid, Forms.meets_requirements, Forms.progress_description, Forms.student_signed, Forms.student_signed_date, Forms.advisor_signed, Forms.advisor_signed_date, Students.degree, Students.track, Students.semester_admitted, Users.name FROM Forms INNER JOIN Students ON Forms.uid = Students.uid INNER JOIN Users ON Forms.uid = Users.uid AND Forms.uid = $id AND Forms.fid = $fid";
             $statement = $db->prepare($query);
             $statement->execute();

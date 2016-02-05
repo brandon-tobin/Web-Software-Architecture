@@ -12,9 +12,7 @@ require 'db_config.php';
 class Advisor
 {
     public $advisor_First_Name;
-    public $advisor_Last_Name;
     public $student_Array;
-    public $student_Count;
 
     // Constructor
     public function __construct($id)
@@ -32,6 +30,7 @@ class Advisor
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
+            // Query the database to get the name of the advisor
             $query = "SELECT name FROM Users WHERE uid = $id";
 
             $statement = $db->prepare($query);
@@ -43,6 +42,7 @@ class Advisor
                 $this->advisor_First_Name = $row['name'];
             }
 
+            // Query the database to get information about the students that are linked to the advisor and format it to be displayed in the view
             $query = "SELECT meets_requirements, advisor_signed, Users.name, Users.uid, max(date) as date FROM Forms INNER JOIN Advisors ON Forms.uid = Advisors.sid INNER JOIN Users ON Advisors.sid = Users.uid AND aid = $id GROUP BY name";
             $statement = $db->prepare($query);
             $statement->execute();

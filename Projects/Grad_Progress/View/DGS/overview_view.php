@@ -18,16 +18,16 @@ echo "
         <!-- Brandon Tobin -->
         <!-- University of Utah -->
 
-        <!-- This page contains a list of all advisors  -->
+        <!-- This page contains a list of all advisors and students for the DGS -->
 
 
-        <title>Advisors</title>
+        <title>DGS Overview</title>
 
         <!-- Meta Information about Page -->
         <meta charset=\"utf-8\"/>
         <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
         <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-        <meta name=\"description\" content=\"List of advisors\"/>
+        <meta name=\"description\" content=\"List of advisors and students for the DGS\"/>
 
         <!-- ALL CSS FILES -->
         <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
