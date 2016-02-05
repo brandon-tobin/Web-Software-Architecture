@@ -57,7 +57,7 @@ echo "
             <!-- Table containing advisors -->
             <table class=\"roster\">
                 <tr>
-                    <th>Name:</th>
+                    <th>Namae:</th>
                     <th>Profile:</th>
                 </tr>
                 <tr>";
