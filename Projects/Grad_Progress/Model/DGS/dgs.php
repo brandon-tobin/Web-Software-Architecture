@@ -12,7 +12,7 @@
 class DGS
 {
     public $advisors;
-    public $students;
+    public $students_arr;
 
     // Constructor
     public function __construct($id)
@@ -46,9 +46,9 @@ class DGS
             $statement = $db->prepare($query);
             $statement->execute();
 
-            $this->students = array();
+            $this->students_arr = array();
             foreach ($result as $row) {
-                $this->students[] = array($row['name'], "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
+                $this->students_arr[] = array($row['name'], "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
             }
         }
         catch (PDOException $ex) {
