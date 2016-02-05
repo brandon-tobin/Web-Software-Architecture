@@ -43,7 +43,7 @@ echo "
                     <h1>University of Utah - CS 4540</h1>
                     <h2>Web Software Architecture - Spring 2016</h2>
                     <h2>Brandon Tobin</h2>
-                    <h2>Grad Progress - Assignment 2</h2>
+                    <h2>Grad Progress - Assignment 3</h2>
                 </div>
 
                 <!-- Navigation Bar -->
@@ -73,16 +73,6 @@ echo "
                     }
                     echo "</tr>";
                 }
-               /* for ($i = 0; $i < $student->form_count; $i++)
-                {
-                echo "
-                    <tr>
-                        <td>{$student->form_Records_Array[0 + $i*4]}</td>
-                        <td>{$student->form_Records_Array[1 + $i*4]}</td>
-                        <td>{$student->form_Records_Array[2 + $i*4]}</td>
-                        <td><a href=\"{$student->form_Records_Array[3 + $i*4]}\">Link</a></td>
-                    </tr>";
-                }*/
 
                 echo "
                 </table>
