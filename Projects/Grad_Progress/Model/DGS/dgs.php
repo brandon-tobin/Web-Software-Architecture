@@ -11,12 +11,6 @@
 
 class DGS
 {
-    public $advisor_First_Name;
-    public $advisor_Last_Name;
-    public $student_Array;
-    public $student_Count;
-
-
     public $advisors;
     public $students;
 
@@ -45,7 +39,7 @@ class DGS
 
             $this->advisors = array();
             foreach ($result as $row) {
-                $this->advisors[] = array($row['name'], "<a href=\"students.php?id=".$row['aid'].">View</a>");
+                $this->advisors[] = array($row['name'], "<a href=\"students.php?id=".$row['aid']."\">View</a>");
             }
 
             $query = "SELECT Students.uid, Users.name FROM Students INNER JOIN Users ON Students.uid = Users.uid GROUP BY uid";
@@ -54,45 +48,8 @@ class DGS
 
             $this->students = array();
             foreach ($result as $row) {
-                $this->students[] = array($row['name'], "<a href=\"../Student/student_forms.php?id=".$row['uid'].">View</a>");
+                $this->students[] = array($row['name'], "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
             }
-
-
-
-
-/*
-            $query = "SELECT name FROM Users WHERE uid = $id";
-
-            $statement = $db->prepare($query);
-            $statement->execute();
-
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach ($result as $row) {
-                $this->advisor_First_Name = $row['name'];
-            }
-
-            $query = "SELECT meets_requirements, advisor_signed, Users.name, Users.uid, max(date) as date FROM Forms INNER JOIN Advisors ON Forms.uid = Advisors.sid INNER JOIN Users ON Advisors.sid = Users.uid AND aid = $id GROUP BY name";
-            $statement = $db->prepare($query);
-            $statement->execute();
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-            $this->student_Array = array();
-            foreach ($result as $row) {
-                $isSigned = "No";
-                $requirementsMet = "No";
-                $isCurrent = "Not Current";
-                if ($row['advisor_signed'] == 1)
-                    $isSigned = "Yes";
-                if ($row['meets_requirements'] == 1)
-                    $requirementsMet = "Yes";
-
-                if (strtotime($row['date']) > strtotime('-6 month'))
-                    $isCurrent = "Current";
-
-                $this->student_Array[] = array($row['name'], $requirementsMet, $row['date'], $isCurrent, $isSigned, "<a href=\"../Student/student_forms.php?id=" . $row['uid'] . "\">View</a>");
-
-            }*/
         }
         catch (PDOException $ex) {
         }
