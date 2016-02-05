@@ -39,7 +39,7 @@ class DGS
 
             $this->advisors = array();
             foreach ($result as $row) {
-                $this->advisors[] = array($row['name'], "<a href=\"students.php?id=".$row['aid']."\">View</a>");
+                $this->advisors[] = array($row['name'], "<a href=\"../Advisor/students.php?id=".$row['aid']."\">View</a>");
             }
 
             $query = "SELECT Students.uid, Users.name FROM Students INNER JOIN Users ON Students.uid = Users.uid GROUP BY uid";
