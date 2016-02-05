@@ -93,9 +93,9 @@ echo "
                     {
                         echo "<tr>";
                         echo "<td>$row</td>";
-                        echo "N/A";
-                        echo "N/A";
-                        echo "N/A";
+                        echo "<td>N/A</td>";
+                        echo "<td>N/A</td>";
+                        echo "<td>N/A</td>";
                         echo "</tr>";
                     }
 
