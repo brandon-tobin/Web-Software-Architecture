@@ -63,7 +63,7 @@ echo "
                 <tr>";
 
                 // Echo out all advisors
-                foreach ($DGS->advisors as $row)
+                foreach ($dgs->advisors as $row)
                 {
                     echo "<tr>";
                     foreach ($row as $value)
@@ -84,7 +84,7 @@ echo "
                 <tr>";
 
                 // Echo out all Students
-                foreach ($DGS->students as $row)
+                foreach ($dgs->students as $row)
                 {
                     echo "<tr>";
                     foreach ($row as $value)
