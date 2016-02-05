@@ -135,7 +135,7 @@ class Student_Form
             {
                 $admit_Date = "1 June 2015";
             }
-            $this->num_semesters = $admit_Date;
+            $this->num_semesters = strtotime($admit_Date);
            // $this->num_semesters = "TEst";
 
 
