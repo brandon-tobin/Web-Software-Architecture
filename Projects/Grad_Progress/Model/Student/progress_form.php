@@ -140,7 +140,6 @@ class Student_Form
                 $admit_Date = strtotime("1 January $year");
                 $current_Date = strtotime("today");
                 $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
-                //$this->num_semesters = $year;
                 $this->num_semesters = $elapsed_time;
             }
 
@@ -159,7 +158,25 @@ class Student_Form
                 if ($key != 0 || $key != false)
                     unset($this->uncompletedActivity[$key]);
 
-                $this->completedActivity[] = array($row['activity'], $row['date_completed']);
+                $activity_semesters = "";
+                if (strpos($row['date_completed'], 'Fall') !== false)
+                {
+                    $year = substr($row['date_completed'], 4, 5);
+                    $admit_Date = strtotime("1 June $year");
+                    $current_Date = strtotime("today");
+                    $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
+                    $activity_semesters = $elapsed_time;
+                }
+                else
+                {
+                    $year = substr($row['date_completed'], 6, 9);
+                    $admit_Date = strtotime("1 January $year");
+                    $current_Date = strtotime("today");
+                    $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
+                    $activity_semesters = $elapsed_time;
+                }
+
+                $this->completedActivity[] = array($row['activity'], $activity_semesters, $row['date_completed']);
             }
         }
         catch (PDOException $ex) {
