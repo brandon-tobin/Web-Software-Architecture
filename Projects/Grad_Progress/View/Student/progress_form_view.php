@@ -111,13 +111,11 @@ echo "
 
                 <p>$form->question2</p>
 
-                <pre><u>      $form->student_Name               </u>  <u>     $form->date_completed      </u>
-                Student Signature	 	 Date</pre>
+                <pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
 
-                <pre><u>      $form->advisor              </u>  <u>     $form->date_completed      </u>
-                Advisor Signature                Date</pre>
+                <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
 
-            </body>
+             </body>
 
     </html>
 
