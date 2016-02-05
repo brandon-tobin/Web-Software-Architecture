@@ -43,6 +43,8 @@
 
             <h1>Grad Progress Versions</h1>
 
+            <p><a href="/DGS/overview.php">Click here for the current version.</a></p>
+
             <!-- List for Grad Progress Assignments -->
             <ul>
                 <li><a href="../V1/">V1</a></li>
@@ -51,9 +53,14 @@
             </ul>
 
             <ul>
-                <li><a href="../V2/">V2</a></li>
                 <li><a href="../V2/README.html">README - Assignment 2</a></li>
                 <li><a href="../V2/advisors_list.php">View Assignment 2</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="../V3/README.html">README - Assignment 3</a></li>
+                <li><a href="../V3/schema.html">Schema</a></li>
+                <li><a href="../V3/DGS/overview.php">View Assignment 3</a></li>
             </ul>
 
         </body>
