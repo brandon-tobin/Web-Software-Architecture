@@ -57,10 +57,9 @@ echo "
             <!-- Table containing advisors -->
             <table class=\"roster\">
                 <tr>
-                    <th>Namae:</th>
+                    <th>Name:</th>
                     <th>Profile:</th>
-                </tr>
-                <tr>";
+                </tr>";
 
                 // Echo out all advisors
                 foreach ($dgs->advisors as $row)
@@ -82,8 +81,7 @@ echo "
                 <tr>
                     <th>Name:</th>
                     <th>Profile:</th>
-                </tr>
-                <tr>";
+                </tr>";
 
                 // Echo out all Students
                 foreach ($dgs->students as $row)
