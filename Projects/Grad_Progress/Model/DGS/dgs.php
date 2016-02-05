@@ -42,7 +42,7 @@ class DGS
                 $this->advisors[] = array($row['name'], "<a href=\"../Advisor/students.php?id=".$row['aid']."\">View</a>");
             }
 
-            $query = "SELECT Students.uid, Users.name as FROM Students INNER JOIN Users ON Students.uid = Users.uid GROUP BY uid";
+            $query = "SELECT Students.uid, Users.name FROM Students INNER JOIN Users ON Students.uid = Users.uid GROUP BY uid";
             $statement = $db->prepare($query);
             $statement->execute();
 
