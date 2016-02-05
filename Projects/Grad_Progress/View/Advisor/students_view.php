@@ -43,7 +43,7 @@ echo "
                     <h1>University of Utah - CS 4540</h1>
                     <h2>Web Software Architecture - Spring 2016</h2>
                     <h2>Brandon Tobin</h2>
-                    <h2>Grad Progress - Assignment 2</h2>
+                    <h2>Grad Progress - Assignment 3</h2>
                 </div>
 
                 <!-- Navigation Bar -->
@@ -76,23 +76,6 @@ echo "
                         }
                         echo "</tr>";
                     }
-
-
-
-                  /*  for ($i = 0; $i < $advisor->student_Count; $i++)
-                    {
-                    echo "
-                    <tr>
-                        <td>{$advisor->student_Array[0 + $i*6]}</td>
-                        <td>{$advisor->student_Array[1 + $i*6]}</td>
-                        <td>{$advisor->student_Array[2 + $i*6]}</td>
-                        <td>{$advisor->student_Array[3 + $i*6]}</td>
-                        <td>{$advisor->student_Array[4 + $i*6]}</td>
-                        <td><a href=\"{$advisor->student_Array[5 + $i*6]}\">View</a></td>
-                    </tr>";
-                    }*/
-
-
 
                     echo "
 

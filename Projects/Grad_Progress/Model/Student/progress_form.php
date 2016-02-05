@@ -18,33 +18,6 @@ class Student_Form
     public $num_semesters;
     public $advisor;
     public $committee;
-    public $activity1;
-    public $completed1;
-    public $acceptable1;
-    public $activity2;
-    public $completed2;
-    public $acceptable2;
-    public $activity3;
-    public $completed3;
-    public $acceptable3;
-    public $activity4;
-    public $completed4;
-    public $acceptable4;
-    public $activity5;
-    public $completed5;
-    public $acceptable5;
-    public $activity6;
-    public $completed6;
-    public $acceptable6;
-    public $activity7;
-    public $completed7;
-    public $acceptable7;
-    public $activity8;
-    public $completed8;
-    public $acceptable8;
-    public $activity9;
-    public $completed9;
-    public $acceptable9;
     public $question1;
     public $question2;
     public $completedActivity;
@@ -53,35 +26,11 @@ class Student_Form
     // Constructor
     public function __construct($id, $fid)
     {
-       /* if ($id == 1)
-        {
-            $this->create_Anne($id, $fid);
-        }
-        if ($id == 2)
-        {
-            $this->create_Mike();
-        }
-        if ($id == 3)
-        {
-            $this->create_Brad();
-        }
-        if ($id == 4)
-        {
-            $this->create_Jessica();
-        }
-        if ($id == 5)
-        {
-            $this->create_Neal();
-        }
-        if ($id == 6)
-        {
-            $this->create_Sam();
-        }*/
-        $this->create_Anne($id, $fid);
+        $this->create_Student_Form($id, $fid);
     }
 
-    // Method for creating student Anne
-    function create_Anne($id, $fid)
+    // Method for creating student form
+    function create_Student_Form($id, $fid)
     {
         try {
             $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V3;charset=utf8", 'root', '173620901');
@@ -132,16 +81,13 @@ class Student_Form
 
             // Calculate how many semesters in the program
             $admit_Date = "";
-            if (strpos($this->semester_Admitted, 'Fall') !== false)
-            {
+            if (strpos($this->semester_Admitted, 'Fall') !== false) {
                 $year = substr($this->semester_Admitted, 4, 5);
                 $admit_Date = strtotime("1 June $year");
                 $current_Date = strtotime("today");
                 $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
                 $this->num_semesters = $elapsed_time;
-            }
-            else
-            {
+            } else {
                 $year = substr($this->semester_Admitted, 6, 9);
                 $admit_Date = strtotime("1 January $year");
                 $current_Date = strtotime("today");
@@ -160,20 +106,17 @@ class Student_Form
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-               $key = array_search($row['activity'], $this->uncompletedActivity);
+                $key = array_search($row['activity'], $this->uncompletedActivity);
                 if ($key !== 0 || $key !== false)
                     unset($this->uncompletedActivity[$key]);
 
                 $activity_semesters = "";
-                if (strpos($row['date_completed'], 'Fall') !== false)
-                {
+                if (strpos($row['date_completed'], 'Fall') !== false) {
                     $year = substr($row['date_completed'], 4, 5);
                     $completion_date = strtotime("1 June $year");
                     $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                     $activity_semesters = $elapsed_time;
-                }
-                else
-                {
+                } else {
                     $year = substr($row['date_completed'], 6, 9);
                     $completion_date = strtotime("1 January $year");
                     $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
@@ -182,44 +125,25 @@ class Student_Form
 
                 // Check to see if the progress was good or acceptable
                 $acceptable = "";
-                if ((strpos($row['activity'], 'Identify Advisor') !== false) && $activity_semesters == 1)
-                {
+                if ((strpos($row['activity'], 'Identify Advisor') !== false) && $activity_semesters == 1) {
                     $acceptable = "Good Progress";
-                }
-                else if ((strpos($row['activity'], 'Program of study approved by advisor and initial committee') !== false) && $activity_semesters == 4)
-                {
+                } else if ((strpos($row['activity'], 'Program of study approved by advisor and initial committee') !== false) && $activity_semesters == 4) {
                     $acceptable = "Good Progress";
-                }
-                else if ((strpos($row['activity'], 'Complete teaching mentorship') !== false) && $activity_semesters == 4)
-                {
+                } else if ((strpos($row['activity'], 'Complete teaching mentorship') !== false) && $activity_semesters == 4) {
                     $acceptable = "Good Progress";
-                }
-                else if ((strpos($row['activity'], 'Complete required courses') !== false) && $activity_semesters == 5)
-                {
+                } else if ((strpos($row['activity'], 'Complete required courses') !== false) && $activity_semesters == 5) {
                     $acceptable = "Good Progress";
-                }
-                else if ((strpos($row['activity'], 'Full committee formed') !== false) && $activity_semesters == 6)
-                {
+                } else if ((strpos($row['activity'], 'Full committee formed') !== false) && $activity_semesters == 6) {
                     $acceptable = "Good Progress";
-                }
-                else if ((strpos($row['activity'], 'Program of Study approved by committee') !== false) && $activity_semesters == 6)
-                {
+                } else if ((strpos($row['activity'], 'Program of Study approved by committee') !== false) && $activity_semesters == 6) {
                     $acceptable = "Good Progress";
-                }
-                else if ((strpos($row['activity'], 'Written qualifier') !== false) && $activity_semesters == 5)
-                {
+                } else if ((strpos($row['activity'], 'Written qualifier') !== false) && $activity_semesters == 5) {
                     $acceptable = "Good Progress";
-                }
-                else if ((strpos($row['activity'], 'Oral qualifier/Proposal') !== false) && $activity_semesters == 7)
-                {
+                } else if ((strpos($row['activity'], 'Oral qualifier/Proposal') !== false) && $activity_semesters == 7) {
                     $acceptable = "Good Progress";
-                }
-                else if ((strpos($row['activity'], 'Dissertation defense') !== false) && $activity_semesters == 10)
-                {
+                } else if ((strpos($row['activity'], 'Dissertation defense') !== false) && $activity_semesters == 10) {
                     $acceptable = "Good Progress";
-                }
-                else
-                {
+                } else {
                     $acceptable = "Acceptable Progress";
                 }
 
@@ -228,149 +152,5 @@ class Student_Form
         }
         catch (PDOException $ex) {
         }
-
-
-
-
-
-
-
-
-
-
-
-      //  $this->date_completed = 'January 18, 2016';
-      //  $this->student_Name = 'Anne Smith';
-      //  $this->student_ID = 'u0123456';
-      //  $this->degree = 'Computer Science';
-      //  $this->track = 'Networking';
-      //  $this->semester_Admitted = 'Fall 2015';
-      //  $this->num_semesters = 1;
-      //  $this->advisor = 'Peter James';
-      //  $this->committee = array("Peter", "Jim", "Joe", "Mark");
-      //  $this->activity1 = '1 Semester';
-      //  $this->completed1 = 'Fall 2015';
-      //  $this->acceptable1 = 'Good Progress';
-     //   $this->question1 = 'YES';
-      //  $this->question2 = 'The student is on track and making good progress.';
-    }
-
-    // Method for creating student Mike
-    function create_Mike()
-    {
-        $this->date_completed = 'December 8, 2014';
-        $this->student_Name = 'Mike Jones';
-        $this->student_ID = 'u0234567';
-        $this->degree = 'Computer Science';
-        $this->track = 'Data';
-        $this->semester_Admitted = 'Fall 2013';
-        $this->num_semesters = 3;
-        $this->advisor = 'James Good';
-        $this->committee = array("Peter", "Jim", "Joe", "Mark");
-        $this->activity1 = '2 Semesters';
-        $this->completed1 = 'Fall 2015';
-        $this->acceptable1 = 'Acceptable Progress';
-        $this->question1 = 'NO';
-        $this->question2 = 'The student is not on track and should be removed from the program.';
-    }
-
-    // Method for creating student Brad
-    function create_Brad()
-    {
-        $this->date_completed = 'October 20, 2014';
-        $this->student_Name = 'Brad Rust';
-        $this->student_ID = 'u0567899';
-        $this->degree = 'Computer Science';
-        $this->track = 'Data';
-        $this->semester_Admitted = 'Fall 2013';
-        $this->num_semesters = 3;
-        $this->advisor = 'Peter James';
-        $this->committee = array("Peter", "Jim", "Joe", "Mark");
-        $this->activity1 = '2 Semesters';
-        $this->completed1 = 'Fall 2015';
-        $this->acceptable1 = 'Acceptable Progress';
-        $this->question1 = 'NO';
-        $this->question2 = 'The student is not on track and should be removed from the program.';
-    }
-
-    // Method for creating student Jessica
-    function create_Jessica()
-    {
-        $this->date_completed = 'January 19, 2016';
-        $this->student_Name = 'Jessica Brown';
-        $this->student_ID = 'u0345678';
-        $this->degree = 'Computer Science';
-        $this->track = 'Databases';
-        $this->semester_Admitted = 'Spring 2011';
-        $this->num_semesters = 10;
-        $this->advisor = 'Brandon Barnes';
-        $this->committee = array("Peter", "Jim", "Joe", "Mark");
-        $this->activity1 = '1 Semester';
-        $this->completed1 = 'Spring 2011';
-        $this->acceptable1 = 'Good Progress';
-        $this->activity2 = '4 Semesters';
-        $this->completed2 = 'Spring 2013';
-        $this->acceptable2 = 'Good Progress';
-        $this->activity3 = '4 Semesters';
-        $this->completed3 = 'Spring 2013';
-        $this->acceptable3 = 'Good Progress';
-        $this->activity4 = '5 Semesters';
-        $this->completed4 = 'Fall 2013';
-        $this->acceptable4 = 'Good Progress';
-        $this->activity5 = '6 Semesters';
-        $this->completed5 = 'Spring 2014';
-        $this->acceptable5 = 'Good Progress';
-        $this->activity6 = '6 Semesters';
-        $this->completed6 = 'Spring 2014';
-        $this->acceptable6 = 'Good Progress';
-        $this->activity7 = '5 Semesters';
-        $this->completed7 = 'Fall 2013';
-        $this->acceptable7 = 'Good Progress';
-        $this->activity8 = '7 Semesters';
-        $this->completed8 = 'Fall 2014';
-        $this->acceptable8 = 'Good Progress';
-        $this->activity9 = '10 Semesters';
-        $this->completed9 = 'Spring 2015';
-        $this->acceptable9 = 'Good Progress';
-        $this->question1 = 'YES';
-        $this->question2 = 'The student is on track and has made significant progress. This student should be set to graduate at the end of this semester.';
-    }
-
-    // Method for creating student Neal
-    function create_Neal()
-    {
-        $this->date_completed = 'December 25, 2015';
-        $this->student_Name = 'Neal Cates';
-        $this->student_ID = 'u0456789';
-        $this->degree = 'Computer Science';
-        $this->track = 'Data';
-        $this->semester_Admitted = 'Fall 2013';
-        $this->num_semesters = 3;
-        $this->advisor = 'James Good';
-        $this->committee = array("Peter", "Jim", "Joe", "Mark");
-        $this->activity1 = '2 Semesters';
-        $this->completed1 = 'Fall 2015';
-        $this->acceptable1 = 'Acceptable Progress';
-        $this->question1 = 'NO';
-        $this->question2 = 'The student is not on track and should be removed from the program.';
-    }
-
-    // Method for creating student Sam
-    function create_Sam()
-    {
-        $this->date_completed = 'November 10, 2012';
-        $this->student_Name = 'Sam Bradford';
-        $this->student_ID = 'u0678999';
-        $this->degree = 'Computer Science';
-        $this->track = 'Data';
-        $this->semester_Admitted = 'Fall 2013';
-        $this->num_semesters = 3;
-        $this->advisor = 'James Good';
-        $this->committee = array("Peter", "Jim", "Joe", "Mark");
-        $this->activity1 = '2 Semesters';
-        $this->completed1 = 'Fall 2015';
-        $this->acceptable1 = 'Acceptable Progress';
-        $this->question1 = 'NO';
-        $this->question2 = 'The student is not on track and should be removed from the program.';
     }
 }
