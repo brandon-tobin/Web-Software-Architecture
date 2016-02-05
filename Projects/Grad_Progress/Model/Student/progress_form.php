@@ -135,8 +135,8 @@ class Student_Form
             {
                 $admit_Date = "1 June 2015";
             }
-            $this->num_semesters = strtotime($admit_Date);
-           // $this->num_semesters = "TEst";
+           // $this->num_semesters = strtotime($admit_Date);
+            $this->num_semesters = strtotime("today");
 
 
             $this->uncompletedActivity = array("Identify Advisor", "Program of study approved by advisor and initial committee", "Complete teaching mentorship", "Complete required courses", "Full committee formed", "Program of Study approved by committee", "Written qualifier", "Oral qualifier/Proposal", "Dissertation defense");
