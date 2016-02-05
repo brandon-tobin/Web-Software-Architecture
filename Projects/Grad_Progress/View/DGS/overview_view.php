@@ -96,8 +96,6 @@ echo "
                     echo "</tr>";
                 }
 
-                //var_dump($dgs->students_arr);
-
                 echo "
 
             </table>
