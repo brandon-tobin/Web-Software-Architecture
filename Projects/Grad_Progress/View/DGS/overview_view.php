@@ -86,12 +86,12 @@ echo "
                 </tr>";
 
                 // Echo out all Students
-                foreach ($dgs->students as $row)
+                foreach ($dgs->students as $rows)
                 {
                     echo "<tr>";
-                    foreach ($row as $value)
+                    foreach ($rows as $values)
                     {
-                        echo "<td>$value</td>";
+                        echo "<td>$values</td>";
                     }
                     echo "</tr>";
                 }
