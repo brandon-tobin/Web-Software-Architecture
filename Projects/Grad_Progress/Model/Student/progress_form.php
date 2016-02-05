@@ -136,7 +136,7 @@ class Student_Form
             }
             else
             {
-                $year = substr($this->semester_Admitted, 4, 5);
+                $year = substr($this->semester_Admitted, 6, 9);
                 $admit_Date = strtotime("1 January $year");
                 $current_Date = strtotime("today");
                 $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
