@@ -177,7 +177,7 @@ class Student_Form
 
                 // Check to see if the progress was good or acceptable
                 $acceptable = "";
-                if ((strpos($row['activity'], 'Identify') == true) && $activity_semesters == 1)
+                if ((strpos($row['activity'], 'Identify') !== false) && $activity_semesters == 1)
                 {
                     $acceptable = "Good Progress";
                 }
