@@ -75,6 +75,8 @@ echo "
 
                 echo "
 
+            <h1>Graduate Students</h1>
+
             <!-- Table containing advisors -->
             <table class=\"roster\">
                 <tr>
