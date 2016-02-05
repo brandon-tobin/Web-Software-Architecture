@@ -135,7 +135,7 @@ class Student_Form
             {
                 $admit_Date = strtotime("1 June 2015");
                 $current_Date = strtotime("today");
-                $elapsed_time = (floor(($current_Date - $admit_Date) / 2628000) / 6) + 1;
+                $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6));
                 $this->num_semesters = $elapsed_time;
             }
            // $this->num_semesters = strtotime($admit_Date);
