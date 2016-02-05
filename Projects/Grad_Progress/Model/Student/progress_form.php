@@ -130,7 +130,7 @@ class Student_Form
             $current_Date = strtotime(getdate());
             $time_since_admitted = $current_Date - $admit_Date;
            // $this->num_semesters = $time_since_admitted;
-            $this->num_semesters = $admit_Date;
+            $this->num_semesters = $current_Date;
            // if (strpos($this->semester_Admitted, 'Fall') !== false)
            // {
           //      $admin_Date =
