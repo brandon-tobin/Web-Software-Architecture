@@ -74,6 +74,8 @@ echo "
 
                 echo "
 
+            </table>
+
             <h1>Graduate Students</h1>
 
             <!-- Table containing advisors -->
@@ -95,6 +97,8 @@ echo "
                 }
 
                 echo "
+
+            </table>
 
         </body>
 
