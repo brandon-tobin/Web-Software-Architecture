@@ -218,7 +218,7 @@ class Student_Form
                     $acceptable = "Acceptable Progress";
                 }
 
-                $this->completedActivity[] = array($row['activity'], $acceptable, $activity_semesters, $row['date_completed']);
+                $this->completedActivity[] = array($row['activity'], $activity_semesters, $acceptable, $row['date_completed']);
             }
         }
         catch (PDOException $ex) {
