@@ -175,7 +175,18 @@ class Student_Form
                     $activity_semesters = $elapsed_time;
                 }
 
-                $this->completedActivity[] = array($row['activity'], $activity_semesters, $row['date_completed']);
+                // Check to see if the progress was good or acceptable
+                $acceptable = "";
+                if ((strpos($row['activity'], 'Identify Advisor') === true) && $activity_semesters == 1)
+                {
+                    $acceptable = "Good Progress";
+                }
+                else
+                {
+                    $acceptable = "Acceptable Progress";
+                }
+
+                $this->completedActivity[] = array($row['activity'], $acceptable, $activity_semesters, $row['date_completed']);
             }
         }
         catch (PDOException $ex) {

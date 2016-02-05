@@ -84,9 +84,8 @@ echo "
                         echo "<tr>";
                         foreach ($row as $value)
                         {
-                            echo "<td></td>";
-                            echo "<td></td>";
                             echo "<td>$value</td>";
+
                         }
                         echo "</tr>";
                     }
