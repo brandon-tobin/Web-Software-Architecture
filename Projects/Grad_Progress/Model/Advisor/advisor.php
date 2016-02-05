@@ -27,7 +27,7 @@ class Advisor
     {
         try {
 
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V3;charset=utf8", 'root', '173620901');
+            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V3;charset=utf8", 'Grad_Application', '173620901');
             //$db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -64,7 +64,8 @@ class Advisor
                 $this->student_Array[] = array($row['name'], $requirementsMet, $row['date'], $isCurrent, $isSigned, "<a href=\"../Student/student_forms.php?id=" . $row['uid'] . "\">View</a>");
 
             }
-        } catch (PDOException $ex) {
+        }
+        catch (PDOException $ex) {
         }
 
     }
