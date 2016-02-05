@@ -7,7 +7,7 @@
  *
  */
 
-require 'db_config.php';
+//require 'db_config.php';
 
 class DGS
 {
