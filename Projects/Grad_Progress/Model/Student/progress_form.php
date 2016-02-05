@@ -133,7 +133,7 @@ class Student_Form
            // $this->num_semesters = $current_Date;
             if (strpos($this->semester_Admitted, 'Fall') !== false)
             {
-                $year = substr($this->semester_Admitted, 4, 4);
+                $year = substr($this->semester_Admitted, 4, 5);
                 $admit_Date = strtotime("1 June ".substr($this->semester_Admitted, 4, 5));
                 $current_Date = strtotime("today");
                 $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
