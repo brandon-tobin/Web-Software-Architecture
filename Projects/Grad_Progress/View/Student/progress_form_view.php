@@ -68,7 +68,7 @@ echo "
                         echo "<li>$row</li>";
                     }
 
-                echo "<ul>
+                echo "</ul>
 
                 <table class=\"roster\">
                     <tr>
