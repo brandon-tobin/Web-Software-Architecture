@@ -33,36 +33,39 @@ $myarray["joe"] = "zachary";
 // Appending "f" with index 7
 $myarray[] = "d";
 
+
+
 // Ugly display of the array
-echo("<p>");
-print_r($myarray);
-echo("</p>");
+$output = print_r($myarray,true);
+echo("<h2>The default print_r representation of an array</h2>
+      <p>$output</p>");
 
-// Nicer display of the array
-echo("HERE<p>");
-foreach ($myarray as $key => &$value)
-{
-        echo "$key: $value<br/>";
-	$myarray[2] = "";
-	$myarray[10] = "jim";
-	$value = "hello";
-}
-echo("DONE $myarray[10]</p>");
+// Using A Loop
 
-print_r($myarray);
-    ?>
+echo("<h2>Basic For Loop Printout of an Array</h2>");
 
-    <p>Here are all of the incoming headers:</p>
 
-    <pre>
-      <?php 
-foreach ($headers as $name => $value)
-{
-        echo "$name: $value\n";
-}
-      ?>
+for ($i=0;$i<count($myarray);$i++)
+  {
+    echo ("<p>myarray[\$i] is $myarray[$i]</p>");
+  }
+?>
 
-    </pre>
+
+
+<h2>Same using an ordered list</h2>
+
+<ol>
+
+<?php
+
+for ($i=0;$i<count($myarray);$i++)
+  {
+    echo ("<li>myarray[$i] is $myarray[$i]</li>");
+  }
+?>
+</ol>
+  
     
   </body>
 </html>

@@ -39,6 +39,7 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../../Projects/">Projects</a></li>
                 <li><a href="../../../Class_Examples/">Examples</a></li>
+		<li><a href="../../../Projects/V3/schema.html">Database Schema</a></li>
             </ul>
 
             <h1>Grad Progress Versions</h1>

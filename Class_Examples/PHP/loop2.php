@@ -21,6 +21,8 @@
       $headers = getallheaders();
     ?>
     
+    <h2> Building a Table via Code</h2>
+
     <p>Here are all of the incoming headers:</p>
     
     <table border="1">
@@ -33,6 +35,31 @@
       ?>
       
     </table>
+
+    <hr/>
+
+    <h2> Demo of the reference parameter in a for each loop </h2>
+
+    <?php
+        // Watch what happens with reference
+        foreach ($myarray as $key => &$value)
+        {
+                echo "$key: $value<br/>";
+        	$myarray[2] = "";
+        	$myarray[10] = "jim";
+        	$value = "hello";
+        }
+
+        echo("DONE $myarray[10]</p>");
+
+        <p> The Whole Array </p>
+
+        print_r($myarray);
+    ?>
+
+    <hr/>
+
+
     
   </body>
 </html>
