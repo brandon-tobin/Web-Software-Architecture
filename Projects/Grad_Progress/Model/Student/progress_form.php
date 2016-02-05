@@ -145,7 +145,7 @@ class Student_Form
             }
 
 
-            $this->uncompletedActivity = array("Program of study approved by advisor and initial committee", "Complete teaching mentorship", "Complete required courses", "Full committee formed", "Program of Study approved by committee", "Written qualifier", "Oral qualifier/Proposal", "Dissertation defense");
+          //  $this->uncompletedActivity = array("Program of study approved by advisor and initial committee", "Complete teaching mentorship", "Complete required courses", "Full committee formed", "Program of Study approved by committee", "Written qualifier", "Oral qualifier/Proposal", "Dissertation defense");
 
             $this->completedActivity = array();
 
@@ -155,9 +155,9 @@ class Student_Form
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-               $key = array_search($row['activity'], $this->uncompletedActivity);
-                if ($key != 0 || $key != false)
-                    unset($this->uncompletedActivity[$key]);
+              // $key = array_search($row['activity'], $this->uncompletedActivity);
+              //  if ($key != 0 || $key != false)
+                  //  unset($this->uncompletedActivity[$key]);
 
                 $activity_semesters = "";
                 if (strpos($row['date_completed'], 'Fall') !== false)
