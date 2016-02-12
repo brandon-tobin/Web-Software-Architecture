@@ -40,6 +40,8 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $stmt->bindValue(4, $username);
             $stmt->bindValue(5, $password);
 
+            error_log("Tobin is logging: made it here");
+
             $stmt->execute();
         }
         catch (PDOException $ex)
