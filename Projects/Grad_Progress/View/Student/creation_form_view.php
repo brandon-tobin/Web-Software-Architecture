@@ -62,6 +62,7 @@
                         <tr>
                             <td><label for="name">Full Name:</label></td>
                             <td><input type="text" size="20" name="name" id="name" /></td>
+                            <span style="color:red"><?php echo $nameError ?></span>
                         </tr>
                         <tr>
                             <td><label for="uid">uID Number, No u:</label></td>
@@ -70,10 +71,12 @@
                         <tr>
                             <td><label for="username">Username:</label></td>
                             <td><input type="text" size="20" name="username" id="username" /></td>
+                            <span style="color:red"><?php echo $loginError ?></span>
                         </tr>
                         <tr>
                             <td><label for="password">Password</label></td>
                             <td><input type="password" size="20" name="password" id="password" /></td>
+                            <span style="color:red"><?php echo $passwordError ?></span>
                         </tr>
                         <tr>
                             <td><label for="selection_box">Please select account type.</label></td>
