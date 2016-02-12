@@ -11,7 +11,7 @@
 set_include_path("../../Model/Student/" .PATH_SEPARATOR . "../../View/Student/");
 
 // Require the model file once
-//require_once 'student.php';
+require_once 'creation_form.php';
 
 // Get the id out of the url
 //$id = $_GET['id'];
