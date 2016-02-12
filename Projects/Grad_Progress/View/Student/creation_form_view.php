@@ -57,6 +57,10 @@
                     <table>
                         <tr>
                             <td><label for="username">Username:</label></td>
+                            <td><input type="text" size="20" name="username" id="username" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Password</label></td>
                             <td><input type="password" size="20" name="password" id="password" /></td>
                         </tr>
                         <tr>
@@ -64,12 +68,5 @@
                         </tr>
                     </table>
                 </form>
-
-
-
-
             </body>
         </html>
-";
-
-?>
