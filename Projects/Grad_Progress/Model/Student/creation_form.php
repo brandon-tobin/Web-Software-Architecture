@@ -43,6 +43,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             error_log("Tobin is logging: made it here");
 
             $stmt->execute();
+            $db->commit();
         }
         catch (PDOException $ex)
         {
