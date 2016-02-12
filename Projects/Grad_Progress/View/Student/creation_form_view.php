@@ -66,6 +66,15 @@
                             <td><input type="password" size="20" name="password" id="password" /></td>
                         </tr>
                         <tr>
+                            <td><label for="selection_box">Please select account type.</label></td>
+                            <td>
+                                <select>
+                                    <option value="student">Student</option>
+                                    <option value="faculty">Faculty</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="2"><input type="submit" value="Submit" /></td>
                         </tr>
                     </table>

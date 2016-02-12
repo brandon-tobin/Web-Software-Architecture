@@ -1,7 +1,18 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: brand
- * Date: 2/6/2016
- * Time: 6:19 PM
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * Progress Forms Model -- Represents a form object populated with student information
+ *
  */
+
+// If submission, process the submission
+$nameError = '';
+$loginError = '';
+$passwordError = '';
+
+if (isset($_REQUEST['password']) && isset($_REQUEST['username']))
+{
+
+}
