@@ -1,4 +1,4 @@
-<?php
+
 /**
  * Author: Brandon Tobin
  * Date: Spring 2016
@@ -7,11 +7,9 @@
  *
  */
 
-echo "
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
-    <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
-
-        <html lang=\"en\">
+        <html lang="en">
 
             <head>
 
@@ -24,21 +22,21 @@ echo "
                 <title>Due Process Form</title>
 
                 <!-- Meta Information about Page -->
-                <meta charset=\"utf-8\"/>
-                <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
-                <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"Due Process Form for $form->student_Name\"/>
+                <meta charset="utf-8"/>
+                <meta name="AUTHOR"      content="Brndon Tobin"/>
+                <meta name="keywords"    content="HTML, Projects"/>
+                <meta name="description" content="Due Process Form for $form->student_Name"/>
 
                 <!-- ALL CSS FILES -->
-                <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
+                <link rel="stylesheet" href="../../../../Resources/css/stylesheet.css" type="text/css"/>
 
             </head>
 
             <body>
 
                 <!-- Header -->
-                <div id=\"header\">
-                    <img src=\"/Resources/Images/uofufootball.jpg\" alt=\"Rice Eccles Stadium\" />
+                <div id="header">
+                    <img src="/Resources/Images/uofufootball.jpg" alt="Rice Eccles Stadium" />
                     <h1>University of Utah - CS 4540</h1>
                     <h2>Web Software Architecture - Spring 2016</h2>
                     <h2>Brandon Tobin</h2>
@@ -46,13 +44,26 @@ echo "
                 </div>
 
                 <!-- Navigation Bar -->
-                <ul id=\"navigation\">
-                    <li><a href=\"../../../../index.html\">Home</a></li>
-                    <li><a href=\"../../../../Projects/\">Projects</a></li>
-                    <li><a href=\"../../../../Class_Examples/\">Examples</a></li>
+                <ul id="navigation">
+                    <li><a href="../../../../index.html">Home</a></li>
+                    <li><a href="../../../../Projects/">Projects</a></li>
+                    <li><a href="../../../../Class_Examples/">Examples</a></li>
                 </ul>
 
-                <h1 class=\"form-header\">Due Progress Advisory Document for Ph.D. Degree</h1>
+                <h1 class="form-header">New User Creation Form</h1>
+
+                <!-- Creation form for new user -->
+                <form method="post">
+                    <table>
+                        <tr>
+                            <td><label for="username">Username:</label></td>
+                            <td><input type="password" size="20" name="password" id="password" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Submit" /></td>
+                        </tr>
+                    </table>
+                </form>
 
 
 
