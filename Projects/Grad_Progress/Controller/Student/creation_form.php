@@ -20,6 +20,6 @@ require_once 'creation_form.php';
 //$student = new Student($id);
 
 // Require the student_forms view for display
-require "creation_form_view.php";
+//require "creation_form_view.php";
 
 ?>
