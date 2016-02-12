@@ -48,7 +48,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
         }
 
         // Perform simple validations
-        if ($name == '')
+        /*if ($name == '')
         {
             $nameError = 'Enter your full name';
         }
@@ -61,7 +61,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
         if ($username == '')
         {
             $loginError = 'Pick a valid username';
-        }
+        }*/
 
         require '../../View/Student/creation_form_view.php';
 
