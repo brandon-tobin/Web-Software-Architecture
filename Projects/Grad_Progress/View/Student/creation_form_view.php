@@ -52,6 +52,8 @@
 
                 <h1 class="form-header">New User Creation Form</h1>
 
+                <p>Please fill in the information below to register for a new user account.</p>
+
                 <!-- Creation form for new user -->
                 <form method="post">
                     <table>
