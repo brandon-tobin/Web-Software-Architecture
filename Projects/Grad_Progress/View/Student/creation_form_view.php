@@ -54,9 +54,19 @@
 
                 <p>Please fill in the information below to register for a new user account.</p>
 
+                <span style="color:red"><?php echo $nameError ?></span>
+
                 <!-- Creation form for new user -->
                 <form method="post">
                     <table>
+                        <tr>
+                            <td><label for="name">Full Name:</label></td>
+                            <td><input type="text" size="20" name="name" id="name" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="uid">uID Number, No u:</label></td>
+                            <td><input type="text" size="20" name="uid" id="uid" /></td>
+                        </tr>
                         <tr>
                             <td><label for="username">Username:</label></td>
                             <td><input type="text" size="20" name="username" id="username" /></td>
@@ -68,9 +78,9 @@
                         <tr>
                             <td><label for="selection_box">Please select account type.</label></td>
                             <td>
-                                <select>
-                                    <option value="student">Student</option>
-                                    <option value="faculty">Faculty</option>
+                                <select name="account_type" id="account_type">
+                                    <option value="S">Student</option>
+                                    <option value="F">Faculty</option>
                                 </select>
                             </td>
                         </tr>
