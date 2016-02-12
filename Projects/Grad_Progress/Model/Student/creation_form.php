@@ -44,7 +44,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
         }
         catch (PDOException $ex)
         {
-
+            echo "$ex";
         }
 
         // Perform simple validations
