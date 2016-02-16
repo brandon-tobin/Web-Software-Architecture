@@ -46,8 +46,8 @@
                 <!-- Navigation Bar -->
                 <ul id="navigation">
                     <li><a href="../../../../index.html">Home</a></li>
-                    <li><a href="../../../../Projects/">Projects</a></li>
-                    <li><a href="../../../../Class_Examples/">Examples</a></li>
+                    <li><a href="../../../">Projects</a></li>
+                    <li><a href="../../../../Class_Examples">Examples</a></li>
                 </ul>
 
                 <h1 class="form-header">New User Creation Form</h1>
