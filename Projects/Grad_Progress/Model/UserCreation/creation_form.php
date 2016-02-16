@@ -66,11 +66,11 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $loginError = 'Pick a valid username';
         }
 
-        require '../../View/Student/creation_form_view.php';
+        require '../../View/UserCreation/creation_form_view.php';
 
     }
     else
     {
-        require '../../View/Student/creation_form_view.php';
+        require '../../View/UserCreation/creation_form_view.php';
     }
 }
