@@ -76,7 +76,12 @@
                         <tr>
                             <td><label for="password">Password</label></td>
                             <td><input type="password" size="20" name="password" id="password" /></td>
-                            <span style="color:red"><?php echo $passwordError ?></span>
+                            <td><span style="color:red"><?php echo $passwordError ?></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Confirm Password</label></td>
+                            <td><input type="password" size="20" name="password" id="password" /></td>
+                            <td><span style="color:red"><?php echo $passwordError ?></span></td>
                         </tr>
                         <tr>
                             <td><label for="selection_box">Please select account type.</label></td>
