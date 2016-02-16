@@ -54,7 +54,7 @@
 
                 <p>Please fill in the information below to register for a new user account.</p>
 
-               // <span style="color:red"><?php echo $nameError ?></span>
+               <!-- <span style="color:red"><?php echo $nameError ?></span> -->
 
                 <!-- Creation form for new user -->
                 <form method="post" action="">
@@ -62,7 +62,7 @@
                         <tr>
                             <td><label for="name">Full Name:</label></td>
                             <td><input type="text" size="20" name="name" id="name" /></td>
-                            <span style="color:red"><?php echo $nameError ?></span>
+                            <td><span style="color:red"><?php echo $nameError ?></span></td>
                         </tr>
                         <tr>
                             <td><label for="uid">uID Number, No u:</label></td>
@@ -71,7 +71,7 @@
                         <tr>
                             <td><label for="username">Username:</label></td>
                             <td><input type="text" size="20" name="username" id="username" /></td>
-                            <span style="color:red"><?php echo $loginError ?></span>
+                            <td><span style="color:red"><?php echo $loginError ?></span></td>
                         </tr>
                         <tr>
                             <td><label for="password">Password</label></td>
