@@ -8,7 +8,7 @@
  */
 
 // Set the include path for the model and view
-set_include_path("../../Model/Student/" .PATH_SEPARATOR . "../../View/Student/");
+set_include_path("../../Model/UserCreation/" .PATH_SEPARATOR . "../../View/UserCreation/");
 
 // Require the model file once
 require_once 'creation_form.php';
@@ -20,6 +20,6 @@ require_once 'creation_form.php';
 //$student = new Student($id);
 
 // Require the student_forms view for display
-//require "creation_form_view.php";
+require "creation_form_view.php";
 
 ?>
