@@ -57,7 +57,7 @@
                 <span style="color:red"><?php echo $nameError ?></span>
 
                 <!-- Creation form for new user -->
-                <form method="post">
+                <form method="post" action="">
                     <table>
                         <tr>
                             <td><label for="name">Full Name:</label></td>
