@@ -61,12 +61,12 @@
                     <table>
                         <tr>
                             <td><label for="name">Full Name:</label></td>
-                            <td><input type="text" size="20" name="name" id="name" /></td>
+                            <td><input type="text" name="name" id="name" required/></td>
                             <td><span style="color:red"><?php echo $nameError ?></span></td>
                         </tr>
                         <tr>
-                            <td><label for="uid">uID Number, No u:</label></td>
-                            <td><input type="text" size="20" name="uid" id="uid" /></td>
+                            <td><label for="uid">uID Number</label></td>
+                            <td><input type="text" size="20" name="uid" id="uid" placeholder="0123456" /></td>
                         </tr>
                         <tr>
                             <td><label for="username">Username:</label></td>
