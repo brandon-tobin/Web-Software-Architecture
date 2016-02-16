@@ -54,7 +54,7 @@
 
                 <p>Please fill in the information below to register for a new user account.</p>
 
-                <span style="color:red"><?php echo $nameError ?></span>
+               // <span style="color:red"><?php echo $nameError ?></span>
 
                 <!-- Creation form for new user -->
                 <form method="post" action="">
