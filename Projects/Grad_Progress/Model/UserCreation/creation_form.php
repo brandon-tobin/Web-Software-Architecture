@@ -44,23 +44,22 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
         } catch (PDOException $ex) {
             error_log("Tobin is logging:   " . $ex->getMessage());
         }
-
-        // Perform simple validations
-        if ($name == '') {
-            $nameError = 'Enter your full name';
-        }
-
-        if ($password == '') {
-            $passwordError = 'Enter a valid password';
-        }
-
-        if ($username == '') {
-            $loginError = 'Pick a valid username';
-        }
-
-        // require '../../View/UserCreation/creation_form_view.php';
-
     }
+
+    // Perform simple validations
+    if ($name == '') {
+        $nameError = 'Enter your full name';
+    }
+
+    if ($password == '') {
+        $passwordError = 'Enter a valid password';
+    }
+
+    if ($username == '') {
+        $loginError = 'Pick a valid username';
+    }
+
+     require '../../View/UserCreation/creation_form_view.php';
 }
 else
 {
