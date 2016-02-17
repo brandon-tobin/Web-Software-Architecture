@@ -39,8 +39,8 @@ class New_Student_Form
             }
 
             date_default_timezone_set('America/Denver');
-
-            $this->date_completed = getdate();
+            $timestamp = time();
+            $this->date_completed = date("d-m-Y (D) H:i:s", $timestamp);
 
         }catch (PDOException $ex)
         {
