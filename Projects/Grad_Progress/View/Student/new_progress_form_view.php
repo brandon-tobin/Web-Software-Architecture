@@ -75,6 +75,8 @@ echo "
                     echo "
                     </select>
 
+                    <br />
+
                     <label for=\"committee\">Committee:</label>
                     <select name=\"committee1\" id=\"committee1\">
 
@@ -89,6 +91,8 @@ echo "
                     echo "
                     </select>
 
+                    <br />
+
                     <select name=\"committee2\" id=\"committee2\">
 
                     ";
@@ -102,6 +106,8 @@ echo "
                     echo "
                     </select>
 
+                    <br />
+
                     <select name=\"committee3\" id=\"committee3\">
 
                     ";
@@ -114,6 +120,8 @@ echo "
 
                     echo "
                     </select>
+
+                    <br />
 
                     <select name=\"committee4\" id=\"committee4\">
 
