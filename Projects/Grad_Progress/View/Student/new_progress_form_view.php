@@ -55,8 +55,66 @@ echo "
                 <h1 class=\"form-header\">Due Progress Advisory Document for Ph.D. Degree</h1>
 
                 <!-- Due Progress Form -->
-                <p><b>Student Name:</b><u>$form->student_Name</u> <b>Student ID #</b> <u>$form->student_ID</u></p>
+                <p><b>Date:</b><u>$form->date_completed</u></p>
+                <p><b>Student Name:</b><u> $form->student_Name</u> <b>Student ID #</b> <u>$form->student_ID</u></p>
                 <p><b>Degree:</b> <u>$form->degree</u> <b>Track:</b> <u>$form->track</u></p>
+                <p><b>Semester Admitted:</b> <u>$form->semester_Admitted</u> <b># of semesters in the program</b> <u>$form->num_semesters</u></p>
+                <p><b>Advisor:</b> <u>$form->advisor</u></p>
+                <p><b>Committee:</b></p>
+                <ul>";
+
+                    // Echo out the committee members
+                    foreach ($form->committee as $row)
+                    {
+                        echo "<li>$row</li>";
+                    }
+
+                echo "</ul>
+
+                <table class=\"roster\">
+                    <tr>
+                        <th>Activity</th>
+                        <th>Number of Semesters</th>
+                        <th>Good / Acceptable</th>
+                        <th>Completed Semester</th>
+                    </tr>";
+
+                    // Echo out all activities for the form
+                    foreach ($form->completedActivity as $row)
+                    {
+                        echo "<tr>";
+                        foreach ($row as $value)
+                        {
+                            echo "<td>$value</td>";
+
+                        }
+                        echo "</tr>";
+                    }
+
+                    foreach ($form->uncompletedActivity as $row)
+                    {
+                        echo "<tr>";
+                        echo "<td>$row</td>";
+                        echo "<td>N/A</td>";
+                        echo "<td>N/A</td>";
+                        echo "<td>N/A</td>";
+                        echo "</tr>";
+                    }
+
+                echo "
+
+                </table>
+
+                <ol>
+                    <li>Has the student met due progress requirements? $form->question1</li>
+                    <li>Describe the progress the student has made during the past year.</li>
+                </ol>
+
+                <p>$form->question2</p>
+
+                <pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
+
+                <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
 
              </body>
 
