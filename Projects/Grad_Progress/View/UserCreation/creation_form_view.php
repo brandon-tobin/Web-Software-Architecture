@@ -101,6 +101,21 @@
                             <td><input type="radio" name="degree" value="Computing">Computing</td>
                         </tr>
                         <tr>
+                            <td><label for="track">Track:</label></td>
+                            <td>
+                                <select name="account_type" id="account_type">
+                                    <option value="Networking">Networking</option>
+                                    <option value="Data">Data</option>
+                                    <option value="Databases">Databases</option>
+                                    <option value="Algorithms">Algorithms</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="date">Date:</label></td>
+                            <td><input type="date" name="date" /></td>
+                        </tr>
+                        <tr>
                             <td colspan="2"><input type="submit" value="Submit" /></td>
                         </tr>
                     </table>
