@@ -8,6 +8,7 @@ class New_Student_Form
     public $track;
     public $semester_Admitted;
     public $date_completed;
+    public $advisor_array;
 
     // Constructor
     public function __construct($id)
@@ -25,7 +26,7 @@ class New_Student_Form
 
             // Get all of the information required to display the student's progress form.
             $query = "SELECT Users.uid, Users.name, Students.degree, Students.track, Students.semester_admitted
-                        FROM Users INNER JOIN Students ON Users.uid = Students.uid WHERE Users.uid = $id;";
+                        FROM Users INNER JOIN Students ON Users.uid = Students.uid WHERE Users.uid = $id";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +41,18 @@ class New_Student_Form
 
             date_default_timezone_set('America/Denver');
             $timestamp = time();
-            $this->date_completed = date("m-d-Y", $timestamp);
+            $this->date_completed = date("Y-m-d", $timestamp);
+
+            $query = "SELECT name FROM Users WHERE position = 'F'";
+            $statement = $db->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $this->advisor_array = array();
+            foreach ($result as $row) {
+                array_push($this->advisor_array, $row['name']);
+            }
+
 
         }catch (PDOException $ex)
         {
