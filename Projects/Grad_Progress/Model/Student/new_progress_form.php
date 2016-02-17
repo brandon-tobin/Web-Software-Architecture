@@ -40,7 +40,7 @@ class New_Student_Form
             }
         }catch (PDOException $ex)
         {
-
+            error_log("Tobin bad happened! " . $ex->getMessage());
         }
 
     }
