@@ -75,8 +75,11 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             error_log("Tobin is logging:   " . $ex->getMessage());
         }
     }
+    else
+    {
+        require '../../View/UserCreation/creation_form_view.php';
+    }
 
-    //require '../../View/UserCreation/creation_form_view.php';
 
 
 
