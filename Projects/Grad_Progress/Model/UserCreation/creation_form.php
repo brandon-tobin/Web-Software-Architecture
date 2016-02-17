@@ -69,7 +69,6 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $db->commit();
 
             require '../../View/UserCreation/creation_success_view.php';
-            require '../../View/UserCreation/creation_form_view.php';
 
         } catch (PDOException $ex) {
             error_log("Tobin is logging:   " . $ex->getMessage());
@@ -79,10 +78,6 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     {
         require '../../View/UserCreation/creation_form_view.php';
     }
-
-
-
-
 }
 else
 {
