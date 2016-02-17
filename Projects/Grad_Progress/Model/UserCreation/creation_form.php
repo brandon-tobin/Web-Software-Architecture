@@ -74,6 +74,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
 
         } catch (PDOException $ex) {
             error_log("Tobin is logging:   " . $ex->getMessage());
+            require '../../View/UserCreation/creation_fail_view.php';
         }
     }
     else
