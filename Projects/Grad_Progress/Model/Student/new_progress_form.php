@@ -8,6 +8,7 @@ class New_Student_Form
     public $track;
     public $semester_Admitted;
 
+
     // Constructor
     public function __construct($id)
     {
