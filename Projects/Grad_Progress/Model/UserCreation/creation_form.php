@@ -15,13 +15,16 @@ $confirmedPasswordError = '';
 $uidError = '';
 
 if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])
-    && isset($_REQUEST['confirmedPassword']) && isset($_REQUEST[''])) {
+    && isset($_REQUEST['confirmedPassword']) && isset($_REQUEST['degree']) && isset($_REQUEST['track']) && isset($_REQUEST['date'])) {
     $name = trim($_REQUEST['name']);
     $uid = trim($_REQUEST['uid']);
     $username = trim($_REQUEST['username']);
     $password = trim($_REQUEST['password']);
     $confirmedPassword = trim($_REQUEST['confirmedPassword']);
     $position = trim($_REQUEST['account_type']);
+    $degree = trim($_REQUEST['degree']);
+    $track = trim($_REQUEST['track']);
+    $date = trim($_REQUEST['date']);
 
     // Perform simple validations
     if ($name == '') {
@@ -67,6 +70,18 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
 
             $stmt->execute();
             $db->commit();
+
+            if ($position == 'S')
+            {
+                $db->beginTransaction();
+                $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, ?)");
+                $stmt->bindValue(1, $uid);
+                $stmt->bindValue(2, $degree);
+                $stmt->bindValue(3, $track);
+                $stmt->bindValue(4, $date);
+                $stmt->execute();
+                $db->commit();
+            }
 
             require '../../View/UserCreation/creation_success_view.php';
         } catch (PDOException $ex) {
