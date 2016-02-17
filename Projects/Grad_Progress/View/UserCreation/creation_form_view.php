@@ -65,6 +65,8 @@
                         <tr>
                             <td><label for="uid">uID Number</label></td>
                             <td><input type="text" size="20" name="uid" id="uid" placeholder="0123456" /></td>
+                            <td><span style="color:red"><?php echo $uidError ?></span></td>
+
                         </tr>
                         <tr>
                             <td><label for="username">Username:</label></td>
