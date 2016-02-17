@@ -11,13 +11,34 @@
 $nameError = '';
 $loginError = '';
 $passwordError = '';
+$confirmedPasswordError = '';
 
-if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])) {
+if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])
+    && isset($_REQUEST['confirmedPassword'])) {
     $name = trim($_REQUEST['name']);
     $uid = trim($_REQUEST['uid']);
     $username = trim($_REQUEST['username']);
     $password = trim($_REQUEST['password']);
+    $confirmedPassword = trim($_REQUEST['confirmedPassword']);
     $position = trim($_REQUEST['account_type']);
+
+    // Perform simple validations
+    if ($name == '') {
+        $nameError = 'Enter your full name';
+    }
+
+    if ($password == '') {
+        $passwordError = 'Enter a valid password';
+    }
+
+    if (strcmp($password, $confirmedPassword) != 0) {
+        $confirmedPasswordError = 'Passwords do not match';
+    }
+
+    if ($username == '') {
+        $loginError = 'Pick a valid username';
+    }
+
 
     // If all information for creating an account is provided, create the user account.
     if ($username != '' && $password != '') {
@@ -48,20 +69,10 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
         }
     }
 
-    // Perform simple validations
-    if ($name == '') {
-        $nameError = 'Enter your full name';
-    }
+    require '../../View/UserCreation/creation_form_view.php';
 
-    if ($password == '') {
-        $passwordError = 'Enter a valid password';
-    }
 
-    if ($username == '') {
-        $loginError = 'Pick a valid username';
-    }
 
-     require '../../View/UserCreation/creation_form_view.php';
 }
 else
 {
