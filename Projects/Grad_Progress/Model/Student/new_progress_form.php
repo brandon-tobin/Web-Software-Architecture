@@ -24,7 +24,7 @@ class New_Student_Form
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
             // Get all of the information required to display the student's progress form.
-            $query = "SELECT SELECT Users.uid, Users.name, Students.degree, Students.track, Students.semester_admitted
+            $query = "SELECT Users.uid, Users.name, Students.degree, Students.track, Students.semester_admitted
                         FROM Users INNER JOIN Students ON Users.uid = Students.uid WHERE Users.uid = $id;";
             $statement = $db->prepare($query);
             $statement->execute();
