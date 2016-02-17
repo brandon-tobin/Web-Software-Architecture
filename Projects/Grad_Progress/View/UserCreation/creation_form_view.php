@@ -92,6 +92,14 @@
                                 </select>
                             </td>
                         </tr>
+                    </table>
+                    <p>Only continue filling in information if you are a student</p>
+                    <table>
+                        <tr>
+                            <td><label for="degree">Degree:</label></td>
+                            <td><input type="radio" name="degree" value="Computer Science" checked>Computer Science</td>
+                            <td><input type="radio" name="degree" value="Computing">Computing</td>
+                        </tr>
                         <tr>
                             <td colspan="2"><input type="submit" value="Submit" /></td>
                         </tr>
