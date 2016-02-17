@@ -45,7 +45,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     }
 
     // If all information for creating an account is provided, create the user account.
-    if ($nameError == '' && $passwordError = '' && $confirmedPasswordError == '' && $loginError == '' && $uidError == '')
+    if ($nameError == '' && $passwordError == '' && $confirmedPasswordError == '' && $loginError == '' && $uidError == '')
     {
         error_log("Tobin is logging: made it big");
 
@@ -78,6 +78,8 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     }
     else
     {
+        error_log("Tobin is logging: did not make it");
+
         require '../../View/UserCreation/creation_form_view.php';
     }
 }
