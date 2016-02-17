@@ -14,8 +14,6 @@ $passwordError = '';
 $confirmedPasswordError = '';
 $uidError = '';
 
-// Booleans to see if we should process the request in the database
-
 if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])
     && isset($_REQUEST['confirmedPassword'])) {
     $name = trim($_REQUEST['name']);
@@ -46,11 +44,8 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
         $uidError = 'Invalid uID';
     }
 
-
-
     // If all information for creating an account is provided, create the user account.
-    //if ($username != '' && $password != '') {
-    if ($nameError == '' && $passwordError = '' && $confirmedPasswordError == '' && $loginError == '')
+    if ($nameError == '' && $passwordError = '' && $confirmedPasswordError == '' && $loginError == '' && $uidError == '')
     {
         //$account_type = isset($_REQUEST['account_type']);
 
@@ -74,12 +69,14 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $db->commit();
 
             require '../../View/UserCreation/creation_success_view.php';
+            require '../../View/UserCreation/creation_form_view.php';
+
         } catch (PDOException $ex) {
             error_log("Tobin is logging:   " . $ex->getMessage());
         }
     }
 
-    require '../../View/UserCreation/creation_form_view.php';
+    //require '../../View/UserCreation/creation_form_view.php';
 
 
 
