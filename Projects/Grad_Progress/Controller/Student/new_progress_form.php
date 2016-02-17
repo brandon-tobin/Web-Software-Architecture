@@ -18,7 +18,7 @@ $id = $_GET['id'];
 //$fid = $_GET['form'];
 
 // Create a new student form object
-$form = new Student_Form($id);
+$form = new New_Student_Form($id);
 
 // Require the form view for display
 require "progress_form_view.php";
