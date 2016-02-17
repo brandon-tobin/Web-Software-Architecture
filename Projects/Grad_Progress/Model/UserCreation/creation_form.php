@@ -40,7 +40,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
         $loginError = 'Pick a valid username';
     }
 
-    if (!(preg_match('/^\d{7}$/', $uid))) {
+    if (!(preg_match('/\d{7}/', $uid))) {
         $uidError = 'Invalid uID';
     }
 
