@@ -85,6 +85,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
 
             require '../../View/UserCreation/creation_success_view.php';
         } catch (PDOException $ex) {
+            error_log('Tobin message: ' . $ex->getMessage());
             require '../../View/UserCreation/creation_fail_view.php';
         }
     }
