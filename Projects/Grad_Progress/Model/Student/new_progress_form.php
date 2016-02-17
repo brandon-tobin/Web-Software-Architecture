@@ -7,7 +7,7 @@ class New_Student_Form
     public $degree;
     public $track;
     public $semester_Admitted;
-
+    public $date_completed;
 
     // Constructor
     public function __construct($id)
@@ -36,8 +36,12 @@ class New_Student_Form
                 $this->degree = $row['degree'];
                 $this->track = $row['track'];
                 $this->semester_Admitted = $row['semester_admitted'];
-
             }
+
+            date_default_timezone_set('America/Denver');
+
+            $this->date_completed = getdate();
+
         }catch (PDOException $ex)
         {
             error_log("Tobin bad happened! " . $ex->getMessage());
