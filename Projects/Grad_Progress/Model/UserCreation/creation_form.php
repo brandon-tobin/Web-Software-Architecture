@@ -27,7 +27,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     $track = trim($_REQUEST['track']);
     $date = trim($_REQUEST['date']);
 
-    error_log('Tobin made it here!!!');
+    error_log('Tobin position is' . $position);
 
     // Perform simple validations
     if ($name == '') {
