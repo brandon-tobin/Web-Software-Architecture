@@ -73,13 +73,12 @@
                         </tr>
                         <tr>
                             <td><label for="password">Password</label></td>
-                            <td><input type="
-                            password" size="20" name="password" id="password" /></td>
+                            <td><input type="password" size="20" name="password" id="password" /></td>
                             <td><span style="color:red"><?php echo $passwordError ?></span></td>
                         </tr>
                         <tr>
                             <td><label for="password">Confirm Password</label></td>
-                            <td><input type="confirmedPassword" size="20" name="confirmedPassword" id="confirmedPassword" /></td>
+                            <td><input type="password" size="20" name="confirmedPassword" id="confirmedPassword" /></td>
                             <td><span style="color:red"><?php echo $confirmedPasswordError ?></span></td>
                         </tr>
                         <tr>
