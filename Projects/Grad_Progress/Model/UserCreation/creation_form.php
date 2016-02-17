@@ -41,6 +41,8 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
 
             $stmt->execute();
             $db->commit();
+
+            require '../../View/UserCreation/creation_success_view.php';
         } catch (PDOException $ex) {
             error_log("Tobin is logging:   " . $ex->getMessage());
         }
