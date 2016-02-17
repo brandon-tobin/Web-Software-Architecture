@@ -76,8 +76,10 @@ echo "
                     </select>
 
                     <br />
+                    <br />
 
                     <label for=\"committee\">Committee:</label>
+                    <br />
                     <select name=\"committee1\" id=\"committee1\">
 
                     ";
