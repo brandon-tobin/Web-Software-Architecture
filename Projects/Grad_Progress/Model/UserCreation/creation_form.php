@@ -15,7 +15,8 @@ $confirmedPasswordError = '';
 $uidError = '';
 
 if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])
-    && isset($_REQUEST['confirmedPassword']) && isset($_REQUEST['degree']) && isset($_REQUEST['track']) && isset($_REQUEST['date'])) {
+    && isset($_REQUEST['confirmedPassword'])) {
+    //&& isset($_REQUEST['degree']) && isset($_REQUEST['track']) && isset($_REQUEST['date'])) {
     $name = trim($_REQUEST['name']);
     $uid = trim($_REQUEST['uid']);
     $username = trim($_REQUEST['username']);
