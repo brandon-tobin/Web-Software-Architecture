@@ -138,37 +138,36 @@ echo "
                     echo "
                     </select>
 
+                    <br />
+
                     <table class=\"roster\">
                         <tr>
                             <th>Activity</th>
                             <th>Number of Semesters</th>
                             <th>Good / Acceptable</th>
                             <th>Completed Semester</th>
-                        </tr>";
+                        </tr>
+                        <tr>
+                            <td>Identify Advisor</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
 
-                        // Echo out all activities for the form
-                        foreach ($form->completedActivity as $row)
-                        {
-                            echo "<tr>";
-                            foreach ($row as $value)
-                            {
-                                echo "<td>$value</td>";
 
-                            }
-                            echo "</tr>";
-                        }
 
-                        foreach ($form->uncompletedActivity as $row)
-                        {
-                            echo "<tr>";
-                            echo "<td>$row</td>";
-                            echo "<td>N/A</td>";
-                            echo "<td>N/A</td>";
-                            echo "<td>N/A</td>";
-                            echo "</tr>";
-                        }
 
-                    echo "
+
+
+
+
+
+
+
+
+
+
+
 
                     </table>
 
