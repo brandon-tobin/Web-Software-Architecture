@@ -74,7 +74,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $stmt->execute();
             $db->commit();
 
-           /* if ($position == 'S')
+            if ($position == 'S')
             {
                 $db->beginTransaction();
                 $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, ?)");
@@ -85,7 +85,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
                 $stmt->execute();
                 $db->commit();
             }
-*/
+
             require '../../View/UserCreation/creation_success_view.php';
         } catch (PDOException $ex) {
             error_log('Tobin message: ' . $ex->getMessage());
