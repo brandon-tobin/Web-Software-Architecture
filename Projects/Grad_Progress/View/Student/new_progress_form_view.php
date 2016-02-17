@@ -61,8 +61,8 @@ echo "
                 <p><b>Semester Admitted:</b> <u>$form->semester_Admitted</u> <b># of semesters in the program</b> <u>$form->num_semesters</u></p>
 
                 <form method='post'>
-                    <label for=\"selection\">Advisor:</label>
-                    <select name=\"account_type\" id=\"account_type\">
+                    <label for=\"advisor\">Advisor:</label>
+                    <select name=\"advisor\" id=\"advisor\">
 
                     ";
 
@@ -73,18 +73,60 @@ echo "
                     }
 
                     echo "
+                    </select>
 
-                    <p><b>Advisor:</b> <u>$form->advisor</u></p>
-                    <p><b>Committee:</b></p>
-                    <ul>";
+                    <label for=\"committee\">Committee:</label>
+                    <select name=\"committee1\" id=\"committee1\">
 
-                        // Echo out the committee members
-                        foreach ($form->committee as $row)
-                        {
-                            echo "<li>$row</li>";
-                        }
+                    ";
 
-                    echo "</ul>
+                    // Echo out the possible committee members
+                    foreach ($form->committee_array as $row)
+                    {
+                        echo "<option value=\"$row\">$row</option>";
+                    }
+
+                    echo "
+                    </select>
+
+                    <select name=\"committee2\" id=\"committee2\">
+
+                    ";
+
+                    // Echo out the possible committee members
+                    foreach ($form->committee_array as $row)
+                    {
+                        echo "<option value=\"$row\">$row</option>";
+                    }
+
+                    echo "
+                    </select>
+
+                    <select name=\"committee3\" id=\"committee3\">
+
+                    ";
+
+                    // Echo out the possible committee members
+                    foreach ($form->committee_array as $row)
+                    {
+                        echo "<option value=\"$row\">$row</option>";
+                    }
+
+                    echo "
+                    </select>
+
+                    <select name=\"committee4\" id=\"committee4\">
+
+                    ";
+
+                    // Echo out the possible committee members
+                    foreach ($form->committee_array as $row)
+                    {
+                        echo "<option value=\"$row\">$row</option>";
+                    }
+
+                    echo "
+                    </select>
 
                     <table class=\"roster\">
                         <tr>

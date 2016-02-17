@@ -9,6 +9,7 @@ class New_Student_Form
     public $semester_Admitted;
     public $date_completed;
     public $advisor_array;
+    public $committee_array;
 
     // Constructor
     public function __construct($id)
@@ -49,9 +50,13 @@ class New_Student_Form
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             $this->advisor_array = array();
+            $this->committee_array = array();
             foreach ($result as $row) {
                 array_push($this->advisor_array, $row['name']);
+                array_push($this->committee_array, $row['name']);
             }
+
+
 
 
         }catch (PDOException $ex)
