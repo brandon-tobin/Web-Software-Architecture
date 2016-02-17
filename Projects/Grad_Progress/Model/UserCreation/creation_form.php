@@ -47,6 +47,8 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     // If all information for creating an account is provided, create the user account.
     if ($nameError == '' && $passwordError = '' && $confirmedPasswordError == '' && $loginError == '' && $uidError == '')
     {
+        error_log("Tobin is logging: made it big");
+
         //$account_type = isset($_REQUEST['account_type']);
 
         try {
