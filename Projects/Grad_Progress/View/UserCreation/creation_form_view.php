@@ -19,7 +19,7 @@
 
                 <!-- Due Process Form for $form->student_Name  -->
 
-                <title>Due Process Form</title>
+                <title>Account Creation</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset="utf-8"/>
@@ -53,8 +53,6 @@
                 <h1 class="form-header">New User Creation Form</h1>
 
                 <p>Please fill in the information below to register for a new user account.</p>
-
-               <!-- <span style="color:red"><?php echo $nameError ?></span> -->
 
                 <!-- Creation form for new user -->
                 <form method="post" action="">
