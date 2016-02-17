@@ -105,7 +105,7 @@ echo "
 
                 </table>
 
-                <ol>
+                <!--<ol>
                     <li>Has the student met due progress requirements? $form->question1</li>
                     <li>Describe the progress the student has made during the past year.</li>
                 </ol>
@@ -115,7 +115,7 @@ echo "
                 <pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
 
                 <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
-
+-->
              </body>
 
     </html>
