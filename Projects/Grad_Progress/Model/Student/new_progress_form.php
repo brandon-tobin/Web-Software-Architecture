@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST))
+if (isset($_POST['submit']))
 {
     error_log("Made it here TOBIN!!!");
 }
