@@ -169,6 +169,8 @@ if (isset($_POST['submit']))
         $stmt->execute();
         $db->commit();
     }
+
+    require("../../View/Student/student_forms_view.php?id=$student_ID");
 }
 
 class New_Student_Form
