@@ -2,7 +2,7 @@
 
 if (isset($_REQUEST['submit']))
 {
-    process_form();
+    error_log("Made it here TOBIN!!!");
 }
 
 class New_Student_Form
@@ -69,10 +69,7 @@ class New_Student_Form
         return;
     }
 }
-    function process_form ()
-    {
-        error_log("Tobin made it here!!!!!!");
-    }
+
 
 
 
