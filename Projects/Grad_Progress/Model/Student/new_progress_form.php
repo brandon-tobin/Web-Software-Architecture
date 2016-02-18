@@ -48,7 +48,7 @@ if (isset($_POST['submit']))
 
     // Insert into the forms table
     $db->beginTransaction();
-    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description) VALUES ($form_ID, $student_ID, $date_complete,
+    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description) VALUES ($form_ID, $student_ID, CURDATE(),
               $requirements_met, ?)");
     $stmt->bindValue(1, $comments);
     $stmt->execute();
