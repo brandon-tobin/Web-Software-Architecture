@@ -143,7 +143,7 @@ if (isset($_POST['submit']))
     //{
 
         $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES ($student_ID, Identify Advisor, $semester_completed1)");
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES ($student_ID, Identify Advisor, \"$semester_completed1\")");
         $stmt->execute();
         $db->commit();
    // }
