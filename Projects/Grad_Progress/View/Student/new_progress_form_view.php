@@ -205,7 +205,7 @@ echo "
                     <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
                 -->
 
-                <input type=\"submit\" value=\"submit\" />
+                <input type=\"submit\" value=\"Submit\" />
 
                 </form>
              </body>

@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['submit']))
+if (isset($_REQUEST['submit']))
 {
     process_form();
 }
