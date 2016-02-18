@@ -235,7 +235,7 @@ class New_Student_Form
 
         require "new_progress_form_view.php";
 
-        return;
+       // return;
     }
 }
 
