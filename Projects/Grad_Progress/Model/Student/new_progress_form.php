@@ -42,12 +42,22 @@ if (isset($_POST['submit']))
 
     $form_ID = $result['fid'] + 1;
 
+    date_default_timezone_set('America/Denver');
+    $timestamp = time();
+    $date = date("Y-m-d", $timestamp);
 
-    error_log("Tobin!!! Form ID IS " . $form_ID);
+    $query = "ISERT INTO Forms (fid, uid, date, meets_requirements, progress_description) VALUES ($form_ID, $student_ID, $date,
+              $requirements_met, $comments)";
 
-   /* foreach ($result as $row) {
-        $form_ID = $row['fid'];
-    }*/
+    $db->beginTransaction();
+
+    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description) VALUES ($form_ID, $student_ID, $date,
+              $requirements_met, ?)");
+
+    $stmt->bindValue(1, $comments);
+
+    $stmt->execute();
+    $db->commit();
 }
 
 class New_Student_Form
