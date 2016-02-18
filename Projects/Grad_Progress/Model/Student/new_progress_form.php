@@ -233,6 +233,8 @@ class New_Student_Form
             error_log("Tobin bad happened! " . $ex->getMessage());
         }
 
+        require "new_progress_form_view.php";
+
         return;
     }
 }
