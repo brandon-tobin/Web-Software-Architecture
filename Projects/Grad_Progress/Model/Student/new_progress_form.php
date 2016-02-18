@@ -1,5 +1,10 @@
 <?php
 
+if (isset($_POST['submit']))
+{
+    process_form();
+}
+
 class New_Student_Form
 {
     public $student_Name;
@@ -57,15 +62,17 @@ class New_Student_Form
             }
 
 
-
-
-        }catch (PDOException $ex)
-        {
+        } catch (PDOException $ex) {
             error_log("Tobin bad happened! " . $ex->getMessage());
         }
 
         return;
     }
 }
+    function process_form ()
+    {
+        error_log("Tobin made it here!!!!!!");
+    }
 
-error_log("Tobin made it here!!!!!!");
+
+
