@@ -67,7 +67,7 @@ if (isset($_POST['submit']))
                               ($student_ID, \"Program of Study approved by committee\", \"$semester_completed6\"),
                               ($student_ID, \"Written qualifier\", \"$semester_completed7\"),
                               ($student_ID, \"Oral qualifier/Proposal\", \"$semester_completed8\"),
-                              ($student_ID, \"Dissertation defense\", \"$semester_completed9\"))");
+                              ($student_ID, \"Dissertation defense\", \"$semester_completed9\")");
     }
     else if ($activity8 != 0)
     {
