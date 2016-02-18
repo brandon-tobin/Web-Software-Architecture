@@ -64,6 +64,7 @@ class New_Student_Form
             error_log("Tobin bad happened! " . $ex->getMessage());
         }
 
+        return;
     }
 }
 
