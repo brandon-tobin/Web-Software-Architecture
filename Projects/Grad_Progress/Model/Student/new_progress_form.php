@@ -42,6 +42,8 @@ if (isset($_POST['submit']))
 
     $form_ID = $result['fid'] + 1;
 
+    error_log("TOBIN!!! FID IS : " . $form_ID);
+
     date_default_timezone_set('America/Denver');
     $timestamp = time();
     $date_complete = date("Y-mm-dd", $timestamp);
