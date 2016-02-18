@@ -75,79 +75,96 @@ if (isset($_POST['submit']))
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, Identify Advisor, $semester_completed1),
-                              ($student_ID, Program of study approved by advisor and initial committee, $semester_completed2),
-                              ($student_ID, Complete teaching mentorship, $semester_completed3),
-                              ($student_ID, Complete required courses, $semester_completed4),
-                              ($student_ID, Full committee formed, $semester_completed5),
-                              ($student_ID, Program of Study approved by committee, $semester_completed6),
-                              ($student_ID, Written qualifier, $semester_completed7),
-                              ($student_ID, Oral qualifier/Proposal, $semester_completed8)");
+                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
+                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
+                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
+                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
+                              ($student_ID, \"Full committee formed\", \"$semester_completed5\"),
+                              ($student_ID, \"Program of Study approved by committee\", \"$semester_completed6\"),
+                              ($student_ID, \"Written qualifier\", \"$semester_completed7\"),
+                              ($student_ID, \"Oral qualifier/Proposal\", \"$semester_completed8\")");
+        $stmt->execute();
+        $db->commit();
     }
     else if ($activity7 != 0)
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, Identify Advisor, $semester_completed1),
-                              ($student_ID, Program of study approved by advisor and initial committee, $semester_completed2),
-                              ($student_ID, Complete teaching mentorship, $semester_completed3),
-                              ($student_ID, Complete required courses, $semester_completed4),
-                              ($student_ID, Full committee formed, $semester_completed5),
-                              ($student_ID, Program of Study approved by committee, $semester_completed6),
-                              ($student_ID, Written qualifier, $semester_completed7)");
+                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
+                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
+                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
+                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
+                              ($student_ID, \"Full committee formed\", \"$semester_completed5\"),
+                              ($student_ID, \"Program of Study approved by committee\", \"$semester_completed6\"),
+                              ($student_ID, \"Written qualifier\", \"$semester_completed7\")");
+        $stmt->execute();
+        $db->commit();
     }
     else if ($activity6 != 0)
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, Identify Advisor, $semester_completed1),
-                              ($student_ID, Program of study approved by advisor and initial committee, $semester_completed2),
-                              ($student_ID, Complete teaching mentorship, $semester_completed3),
-                              ($student_ID, Complete required courses, $semester_completed4),
-                              ($student_ID, Full committee formed, $semester_completed5),
-                              ($student_ID, Program of Study approved by committee, $semester_completed6)");
+                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
+                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
+                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
+                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
+                              ($student_ID, \"Full committee formed\", \"$semester_completed5\"),
+                              ($student_ID, \"Program of Study approved by committee\", \"$semester_completed6\")");
+        $stmt->execute();
+        $db->commit();
     }
     else if ($activity5 != 0)
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, Identify Advisor, $semester_completed1),
-                              ($student_ID, Program of study approved by advisor and initial committee, $semester_completed2),
-                              ($student_ID, Complete teaching mentorship, $semester_completed3),
-                              ($student_ID, Complete required courses, $semester_completed4),
-                              ($student_ID, Full committee formed, $semester_completed5)");
+                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
+                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
+                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
+                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
+                              ($student_ID, \"Full committee formed\", \"$semester_completed5\")");
+        $stmt->execute();
+        $db->commit();
     }
     else if ($activity4 != 0)
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, Identify Advisor, $semester_completed1),
-                              ($student_ID, Program of study approved by advisor and initial committee, $semester_completed2),
-                              ($student_ID, Complete teaching mentorship, $semester_completed3),
-                              ($student_ID, Complete required courses, $semester_completed4)");
+                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
+                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
+                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
+                              ($student_ID, \"Complete required courses\", \"$semester_completed4\")");
+        $stmt->execute();
+        $db->commit();
     }
     else if ($activity3 != 0)
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, Identify Advisor, $semester_completed1),
-                              ($student_ID, Program of study approved by advisor and initial committee, $semester_completed2),
-                              ($student_ID, Complete teaching mentorship, $semester_completed3)");
+                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
+                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
+                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\")");
+        $stmt->execute();
+        $db->commit();
     }
     else if ($activity2 != 0)
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, Identify Advisor, $semester_completed1),
-                              ($student_ID, Program of study approved by advisor and initial committee, $semester_completed2)");
+                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
+                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\")");
+        $stmt->execute();
+        $db->commit();
     }
     else if ($activity1 != 0)
     {
         $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES ($student_ID, \"Identify Advisor\", \"$semester_completed1\")");
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
+                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\")");
         $stmt->execute();
         $db->commit();
     }
+
+
 }
 
 class New_Student_Form

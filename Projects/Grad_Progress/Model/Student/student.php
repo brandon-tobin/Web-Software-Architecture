@@ -23,7 +23,7 @@ class Student
     function create_Student($id)
     {
         try {
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V3;charset=utf8", 'Grad_Application', '173620901');
+            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
