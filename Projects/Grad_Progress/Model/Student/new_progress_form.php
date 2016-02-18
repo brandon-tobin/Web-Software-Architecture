@@ -55,7 +55,7 @@ if (isset($_POST['submit']))
     $db->commit();
 
     // Insert into the activities table
-    if ($activity9 != 0)
+    /*if ($activity9 != 0)
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
@@ -138,13 +138,16 @@ if (isset($_POST['submit']))
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
                               ($student_ID, Identify Advisor, $semester_completed1),
                               ($student_ID, Program of study approved by advisor and initial committee, $semester_completed2)");
-    }
-    else if ($activity1 != 0)
-    {
+    }*/
+   // else if ($activity1 != 0)
+    //{
+
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
                               ($student_ID, Identify Advisor, $semester_completed1)");
-    }
+        $stmt->execute();
+        $db->commit();
+   // }
 }
 
 class New_Student_Form
