@@ -44,14 +44,11 @@ if (isset($_POST['submit']))
 
     date_default_timezone_set('America/Denver');
     $timestamp = time();
-    $date = date("Y-m-d", $timestamp);
-
-    $query = "ISERT INTO Forms (fid, uid, date, meets_requirements, progress_description) VALUES ($form_ID, $student_ID, $date,
-              $requirements_met, $comments)";
+    $date_complete = date("Y-m-d", $timestamp);
 
     $db->beginTransaction();
 
-    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description) VALUES ($form_ID, $student_ID, $date,
+    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description) VALUES ($form_ID, $student_ID, $date_complete,
               $requirements_met, ?)");
 
     $stmt->bindValue(1, $comments);
