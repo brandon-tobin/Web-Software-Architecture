@@ -42,12 +42,12 @@ if (isset($_POST['submit']))
 
     $form_ID = $result['fid'] + 1;
 
-   // date_default_timezone_set('America/Denver');
-   // $timestamp = time();
-   // $date_complete = date("Y-mm-dd", $timestamp);
+    date_default_timezone_set('America/Denver');
+    $timestamp = time();
+    $date_complete = date("Y-mm-dd", $timestamp);
 
-    $datetime = $_POST['date'];
-    $date_complete = mysql_real_escape_string($datetime);
+   // $datetime = $_POST['date'];
+   // $date_complete = mysql_real_escape_string($datetime);
 
     $db->beginTransaction();
 
