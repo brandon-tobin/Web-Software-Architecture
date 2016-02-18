@@ -144,14 +144,12 @@ echo "
                         <tr>
                             <th>Activity</th>
                             <th>Number of Semesters</th>
-                            <th>Good / Acceptable</th>
                             <th>Completed Semester</th>
                         </tr>
                         <tr>
                             <td>Identify Advisor</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><input type=\"number\" name=\"activity1\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed1\" placeholder=\"Fall Year\"</td>
                         </tr>
 
 
