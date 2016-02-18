@@ -149,32 +149,56 @@ echo "
                         <tr>
                             <td>Identify Advisor</td>
                             <td><input type=\"number\" name=\"activity1\" min=\"0\" max=\"20\" value=\"0\" /></td>
-                            <td><input type=\"text\" name=\"semester_completed1\" placeholder=\"Fall Year\"</td>
+                            <td><input type=\"text\" name=\"semester_completed1\" placeholder=\"Semester Year\"</td>
                         </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        <tr>
+                            <td>Program of study approved by advisor and initial committee</td>
+                            <td><input type=\"number\" name=\"activity2\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed2\" placeholder=\"Semester Year\"</td>
+                        </tr>
+                        <tr>
+                            <td>Complete teaching mentorship</td>
+                            <td><input type=\"number\" name=\"activity3\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed3\" placeholder=\"Semester Year\"</td>
+                        </tr>
+                        <tr>
+                            <td>Completed required courses</td>
+                            <td><input type=\"number\" name=\"activity4\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed4\" placeholder=\"Semester Year\"</td>
+                        </tr>
+                        <tr>
+                            <td>Full committee formed</td>
+                            <td><input type=\"number\" name=\"activity5\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed5\" placeholder=\"Semester Year\"</td>
+                        </tr>
+                        <tr>
+                            <td>Program of Study approved by committee</td>
+                            <td><input type=\"number\" name=\"activity6\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed6\" placeholder=\"Semester Year\"</td>
+                        </tr>
+                        <tr>
+                            <td>Written qualifier</td>
+                            <td><input type=\"number\" name=\"activity7\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed7\" placeholder=\"Semester Year\"</td>
+                        </tr>
+                        <tr>
+                            <td>Oral qualifier/Proposal</td>
+                            <td><input type=\"number\" name=\"activity8\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed8\" placeholder=\"Semester Year\"</td>
+                        </tr>
+                        <tr>
+                            <td>Dissertation Defense</td>
+                            <td><input type=\"number\" name=\"activity9\" min=\"0\" max=\"20\" value=\"0\" /></td>
+                            <td><input type=\"text\" name=\"semester_completed9\" placeholder=\"Semester Year\"</td>
+                        </tr>
 
                     </table>
 
                     <ol>
-                        <li>Has the student met due progress requirements? $form->question1</li>
+                        <li>Has the student met due progress requirements? <input type=\"radio\" name=\"requirements_met\" value=\"0\" checked>No <input type=\"radio\" name=\"requirements_met\" value=\"1\">Yes
                         <li>Describe the progress the student has made during the past year.</li>
+                        <TEXTAREA NAME=\"comments\" COLS=40 ROWS=6></TEXTAREA>
                     </ol>
-
-                    <p>$form->question2</p>
 
                     <pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
 
