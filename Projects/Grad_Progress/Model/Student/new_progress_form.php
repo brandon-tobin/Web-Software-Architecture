@@ -41,7 +41,7 @@ if (isset($_POST['submit']))
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $form_ID = $row['fid'];
+        $form_ID = $row['fid'] + 1;
     }
 
   //  $form_ID = $result['fid'] + 1;
