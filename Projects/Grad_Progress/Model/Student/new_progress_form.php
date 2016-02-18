@@ -163,8 +163,6 @@ if (isset($_POST['submit']))
         $stmt->execute();
         $db->commit();
     }
-
-
 }
 
 class New_Student_Form
@@ -222,7 +220,6 @@ class New_Student_Form
                 array_push($this->advisor_array, $row['name']);
                 array_push($this->committee_array, $row['name']);
             }
-
 
         } catch (PDOException $ex) {
             error_log("Tobin bad happened! " . $ex->getMessage());
