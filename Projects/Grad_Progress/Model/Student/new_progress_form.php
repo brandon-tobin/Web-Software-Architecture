@@ -40,7 +40,11 @@ if (isset($_POST['submit']))
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    $form_ID = $result['fid'] + 1;
+    foreach ($result as $row) {
+        $form_ID = $row['fid'];
+    }
+
+  //  $form_ID = $result['fid'] + 1;
 
     error_log("TOBIN!!! FID IS : " . $form_ID);
 
