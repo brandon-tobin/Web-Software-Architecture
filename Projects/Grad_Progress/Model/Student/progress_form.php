@@ -164,44 +164,130 @@ class Student_Form
                 {
                     $this->activity2 = $row['activity'];
                     $this->completed_activity2 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
                 else if ($row['activity'] == 3)
                 {
                     $this->activity3 = $row['activity'];
                     $this->completed_activity3 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
                 else if ($row['activity'] == 4)
                 {
                     $this->activity4 = $row['activity'];
                     $this->completed_activity4 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
                 else if ($row['activity'] == 5)
                 {
                     $this->activity5 = $row['activity'];
                     $this->completed_activity5 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
                 else if ($row['activity'] == 6)
                 {
                     $this->activity6 = $row['activity'];
                     $this->completed_activity6 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
                 else if ($row['activity'] == 7)
                 {
                     $this->activity7 = $row['activity'];
                     $this->completed_activity7 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
                 else if ($row['activity'] == 8)
                 {
                     $this->activity8 = $row['activity'];
                     $this->completed_activity8 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
                 else if ($row['activity'] == 9)
                 {
                     $this->activity9 = $row['activity'];
                     $this->completed_activity9 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
-
-                $i++;
             }
 
 
