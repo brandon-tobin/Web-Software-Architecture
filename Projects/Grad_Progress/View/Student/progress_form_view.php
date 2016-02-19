@@ -85,45 +85,54 @@ echo "
                         echo "<tr>
                             <td>Identify Advisor</td>
                             <td></td>
+                            <td></td>
                             <td>$form->completed_activity1</td>
                         </tr>
                         <tr>
                             <td>Program of study approved by advisor and initial committee</td>
+                            <td></td>
                             <td></td>
                             <td>$form->completed_activity2</td>
                         </tr>
                         <tr>
                             <td>Complete teaching mentorship</td>
                             <td></td>
+                            <td></td>
                             <td>$form->completed_activity3</td>
                         </tr>
                         <tr>
                             <td>Complete required courses</td>
+                            <td></td>
                             <td></td>
                             <td>$form->completed_activity4</td>
                         </tr>
                         <tr>
                             <td>Full committee formed</td>
                             <td></td>
+                            <td></td>
                             <td>$form->completed_activity5</td>
                         </tr>
                         <tr>
                             <td>Program of Study approved by committee</td>
+                            <td></td>
                             <td></td>
                             <td>$form->completed_activity6</td>
                         </tr>
                         <tr>
                             <td>Written qualifier</td>
                             <td></td>
+                            <td></td>
                             <td>$form->completed_activity7</td>
                         </tr>
                         <tr>
                             <td>Oral qualifier/Proposal</td>
                             <td></td>
+                            <td></td>
                             <td>$form->completed_activity8</td>
                         </tr>
                         <tr>
                             <td>Dissertation defense</td>
+                            <td></td>
                             <td></td>
                             <td>$form->completed_activity9</td>
                         </tr>";
