@@ -51,7 +51,7 @@ if (isset($_POST['submit']))
     // Insert into the forms table
     $db->beginTransaction();
     $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date)
-                          VALUES ($form_ID, $student_ID,". $form_Date.", $requirements_met, ?, CURDATE())");
+                          VALUES ($form_ID, $student_ID, '". $form_Date."', $requirements_met, ?, CURDATE())");
     $stmt->bindValue(1, $comments);
     $stmt->execute();
     $db->commit();
