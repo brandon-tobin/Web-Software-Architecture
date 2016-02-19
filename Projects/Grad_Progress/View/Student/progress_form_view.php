@@ -84,13 +84,13 @@ echo "
                    // {
                         echo "<tr>
                             <td>Identify Advisor</td>
-                            <td></td>
+                            <td>$form->number_semesters1</td>
                             <td></td>
                             <td>$form->completed_activity1</td>
                         </tr>
                         <tr>
                             <td>Program of study approved by advisor and initial committee</td>
-                            <td>$form->number_semesters1</td>
+                            <td>$form->number_semesters2</td>
                             <td></td>
                             <td>$form->completed_activity2</td>
                         </tr>
