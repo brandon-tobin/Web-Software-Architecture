@@ -45,13 +45,13 @@ if (isset($_POST['submit']))
     // Set the timezone
     date_default_timezone_set('America/Denver');
 
-    $form_Date = date("Y-m-d", strtotime($form_Date));
+    //$form_Date = date("Y-m-d", strtotime($form_Date));
 
     error_log("TOBIN DATE IS : " .$form_Date);
     // Insert into the forms table
     $db->beginTransaction();
     $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date)
-                          VALUES ($form_ID, $student_ID, $form_Date, $requirements_met, ?, CURDATE())");
+                          VALUES ($form_ID, $student_ID,". $form_Date.", $requirements_met, ?, CURDATE())");
     $stmt->bindValue(1, $comments);
     $stmt->execute();
     $db->commit();
