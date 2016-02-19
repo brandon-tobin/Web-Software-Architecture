@@ -45,6 +45,8 @@ if (isset($_POST['submit']))
     // Set the timezone
     date_default_timezone_set('America/Denver');
 
+    $form_Date = date("Y-m-d", strtotime($form_Date));
+
     error_log("TOBIN DATE IS : " .$form_Date);
     // Insert into the forms table
     $db->beginTransaction();
