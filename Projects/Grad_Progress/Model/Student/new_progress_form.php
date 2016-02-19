@@ -122,125 +122,6 @@ if (isset($_POST['submit']))
         $db->commit();
     }
 
-
-
-
-
-
-
-
-
-
-
-   /* if ($activity9 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
-                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
-                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
-                              ($student_ID, \"Full committee formed\", \"$semester_completed5\"),
-                              ($student_ID, \"Program of Study approved by committee\", \"$semester_completed6\"),
-                              ($student_ID, \"Written qualifier\", \"$semester_completed7\"),
-                              ($student_ID, \"Oral qualifier/Proposal\", \"$semester_completed8\"),
-                              ($student_ID, \"Dissertation defense\", \"$semester_completed9\")");
-        $stmt->execute();
-        $db->commit();
-    }
-    else if ($activity8 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
-                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
-                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
-                              ($student_ID, \"Full committee formed\", \"$semester_completed5\"),
-                              ($student_ID, \"Program of Study approved by committee\", \"$semester_completed6\"),
-                              ($student_ID, \"Written qualifier\", \"$semester_completed7\"),
-                              ($student_ID, \"Oral qualifier/Proposal\", \"$semester_completed8\")");
-        $stmt->execute();
-        $db->commit();
-    }
-    else if ($activity7 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
-                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
-                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
-                              ($student_ID, \"Full committee formed\", \"$semester_completed5\"),
-                              ($student_ID, \"Program of Study approved by committee\", \"$semester_completed6\"),
-                              ($student_ID, \"Written qualifier\", \"$semester_completed7\")");
-        $stmt->execute();
-        $db->commit();
-    }
-    else if ($activity6 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
-                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
-                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
-                              ($student_ID, \"Full committee formed\", \"$semester_completed5\"),
-                              ($student_ID, \"Program of Study approved by committee\", \"$semester_completed6\")");
-        $stmt->execute();
-        $db->commit();
-    }
-    else if ($activity5 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
-                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
-                              ($student_ID, \"Complete required courses\", \"$semester_completed4\"),
-                              ($student_ID, \"Full committee formed\", \"$semester_completed5\")");
-        $stmt->execute();
-        $db->commit();
-    }
-    else if ($activity4 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
-                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\"),
-                              ($student_ID, \"Complete required courses\", \"$semester_completed4\")");
-        $stmt->execute();
-        $db->commit();
-    }
-    else if ($activity3 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\"),
-                              ($student_ID, \"Complete teaching mentorship\", \"$semester_completed3\")");
-        $stmt->execute();
-        $db->commit();
-    }
-    else if ($activity2 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\"),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$semester_completed2\")");
-        $stmt->execute();
-        $db->commit();
-    }
-    else if ($activity1 != 0)
-    {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$semester_completed1\")");
-        $stmt->execute();
-        $db->commit();
-    }*/
-
     require("../../View/UserCreation/creation_success_view.php");
 }
 
@@ -254,6 +135,8 @@ class New_Student_Form
     public $date_completed;
     public $advisor_array;
     public $committee_array;
+    public $advisor;
+    public $committee;
 
     // Constructor
     public function __construct($id)
@@ -288,6 +171,30 @@ class New_Student_Form
             $timestamp = time();
             $this->date_completed = date("Y-m-d", $timestamp);
 
+            // Query the database to find out which advisor is related to this student.
+            $query = "SELECT name FROM Users WHERE uid IN (SELECT aid FROM Advisors WHERE sid = $id)";
+            $statement = $db->prepare($query);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                $this->advisor = $row['name'];
+            }
+
+            // Query the database to find out which committee memebers are related to this student
+            $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee WHERE sid = $id)";
+            $statement = $db->prepare($query);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $this->committee = array();
+            foreach ($result as $row) {
+                array_push($this->committee, $row['name']);
+            }
+
+
             $query = "SELECT name FROM Users WHERE position = 'F'";
             $statement = $db->prepare($query);
             $statement->execute();
@@ -303,8 +210,6 @@ class New_Student_Form
         } catch (PDOException $ex) {
             error_log("Tobin bad happened! " . $ex->getMessage());
         }
-
-       // require "../../View/Student/new_progress_form_view.php";
 
         return;
     }

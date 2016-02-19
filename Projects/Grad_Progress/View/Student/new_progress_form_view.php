@@ -61,32 +61,49 @@ echo "
                 <p><b>Semester Admitted:</b> <u>$form->semester_Admitted</u> <b># of semesters in the program</b> <u>$form->num_semesters</u></p>
 
                 <form method='post'>
+                ";
+
+                if ($form->advisor != '')
+                {
+                    echo "<p><b>Advisor:</b> <u>$form->advisor</u></p>";
+                }
+                else {
+                    echo "
                     <label for=\"advisor\">Advisor:</label>
                     <select name=\"advisor\" id=\"advisor\">
-
                     ";
 
                     // Echo out the possible advisors
-                    foreach ($form->advisor_array as $row)
-                    {
+                    foreach ($form->advisor_array as $row) {
                         echo "<option value=\"$row\">$row</option>";
                     }
 
                     echo "
-                    </select>
+                    </select>";
+                }
+                    echo "
+                    <br />
+                    <br />";
 
-                    <br />
-                    <br />
+                if ($form->committee != '')
+                {
+                    echo "<ul>";
+                    // Echo out the committee members
+                    foreach ($form->committee as $row)
+                    {
+                        echo "<li>$row</li>";
+                    }
+                    echo "</ul>";
+                }
+                else {
+                    echo "
 
                     <label for=\"committee\">Committee:</label>
                     <br />
-                    <select name=\"committee1\" id=\"committee1\">
-
-                    ";
+                    <select name=\"committee1\" id=\"committee1\">";
 
                     // Echo out the possible committee members
-                    foreach ($form->committee_array as $row)
-                    {
+                    foreach ($form->committee_array as $row) {
                         echo "<option value=\"$row\">$row</option>";
                     }
 
@@ -100,8 +117,7 @@ echo "
                     ";
 
                     // Echo out the possible committee members
-                    foreach ($form->committee_array as $row)
-                    {
+                    foreach ($form->committee_array as $row) {
                         echo "<option value=\"$row\">$row</option>";
                     }
 
@@ -115,8 +131,7 @@ echo "
                     ";
 
                     // Echo out the possible committee members
-                    foreach ($form->committee_array as $row)
-                    {
+                    foreach ($form->committee_array as $row) {
                         echo "<option value=\"$row\">$row</option>";
                     }
 
@@ -130,13 +145,14 @@ echo "
                     ";
 
                     // Echo out the possible committee members
-                    foreach ($form->committee_array as $row)
-                    {
+                    foreach ($form->committee_array as $row) {
                         echo "<option value=\"$row\">$row</option>";
                     }
 
                     echo "
-                    </select>
+                    </select>";
+                }
+                    echo "
 
                     <br />
 
