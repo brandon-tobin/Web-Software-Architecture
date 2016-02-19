@@ -42,8 +42,6 @@ if (isset($_POST['submit']))
         error_log("TOBIN STUDENT IS : " .$student_ID);
     }
 
-    $form_Date = date("Y-m-d", $form_Date);
-
     // Set the timezone
     date_default_timezone_set('America/Denver');
 
