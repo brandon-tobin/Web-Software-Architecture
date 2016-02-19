@@ -36,7 +36,7 @@ if (isset($_POST['submit']))
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $form_Date = $row['date'];
+        $form_Date = date($row['date']);
        // error_log("TOBIN DATE IS : " .$form_Date);
         error_log("TOBIN Form IS : " .$form_ID);
         error_log("TOBIN STUDENT IS : " .$student_ID);
@@ -49,7 +49,7 @@ if (isset($_POST['submit']))
     // Insert into the forms table
     $db->beginTransaction();
     $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date)
-                          VALUES ($form_ID, $student_ID, STR_TO_DATE($form_Date), $requirements_met, ?, CURDATE())");
+                          VALUES ($form_ID, $student_ID, $form_Date, $requirements_met, ?, CURDATE())");
     $stmt->bindValue(1, $comments);
     $stmt->execute();
     $db->commit();
