@@ -52,6 +52,11 @@ echo "
                 <li><a href=\"../../../Class_Examples/\">Examples</a></li>
             </ul>
 
+            <p>Important Links</p>
+            <p>Create New User</p>
+            <p><a href='../../Controller/UserCreation/creation_form.php'>Create New User</a></p>
+
+
             <h1>Graduate Advisors</h1>
 
             <!-- Table containing advisors -->
