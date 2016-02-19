@@ -47,21 +47,78 @@ if (isset($_POST['submit']))
     $db->commit();
 
     // Insert into the activities table
-    $db->beginTransaction();
-    $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified) VALUES
-                              ($student_ID, \"Identify Advisor\", \"$updated_date1\", CURDATE()),
-                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$updated_date2\", CURDATE()),
-                              ($student_ID, \"Complete teaching mentorship\", \"$updated_date3\", CURDATE()),
-                              ($student_ID, \"Complete required courses\", \"$updated_date4\", CURDATE()),
-                              ($student_ID, \"Full committee formed\", \"$updated_date5\", CURDATE()),
-                              ($student_ID, \"Program of Study approved by committee\", \"$updated_date6\", CURDATE()),
-                              ($student_ID, \"Written qualifier\", \"$updated_date7\", CURDATE()),
-                              ($student_ID, \"Oral qualifier/Proposal\", \"$updated_date8\", CURDATE()),
-                              ($student_ID, \"Dissertation defense\", \"$updated_date9\")", CURDATE());
-    $stmt->execute();
-    $db->commit();
-
-
+    if ($updated_date1 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 1, \"$updated_date1\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($updated_date2 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 2, \"$updated_date2\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($updated_date3 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 3, \"$updated_date3\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($updated_date4 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 4, \"$updated_date4\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($updated_date5 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 5, \"$updated_date5\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($updated_date6 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 6, \"$updated_date6\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($updated_date7 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 7, \"$updated_date7\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($updated_date8 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 8, \"$updated_date8\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($updated_date9 != '')
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 9, \"$updated_date9\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
 }
 
 class Student_Form
