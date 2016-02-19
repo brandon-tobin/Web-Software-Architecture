@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Progress Form View -- View for displaying the student's form
+ * User Creation Form View -- View for displaying the the user creation form
  *
  */-->
 
@@ -25,7 +25,7 @@
                 <meta charset="utf-8"/>
                 <meta name="AUTHOR"      content="Brndon Tobin"/>
                 <meta name="keywords"    content="HTML, Projects"/>
-                <meta name="description" content="Due Process Form for $form->student_Name"/>
+                <meta name="description" content="Landing page for account creation"/>
 
                 <!-- ALL CSS FILES -->
                 <link rel="stylesheet" href="../../../../Resources/css/stylesheet.css" type="text/css"/>

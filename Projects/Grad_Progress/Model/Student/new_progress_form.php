@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * New Progress Forms Model -- Represents a new form object
+ *
+ */
+
 if (isset($_POST['submit']))
 {
     $student_ID = $_GET['id'];
@@ -186,8 +194,6 @@ if (isset($_POST['submit']))
         $stmt->execute();
         $db->commit();
     }
-
-    require("../../View/UserCreation/creation_success_view.php");
 }
 
 class New_Student_Form

@@ -16,7 +16,7 @@
             <meta charset="utf-8"/>
             <meta name="AUTHOR"      content="Brndon Tobin"/>
             <meta name="keywords"    content="HTML, Projects"/>
-            <meta name="description" content="Due Process Form for $form->student_Name"/>
+            <meta name="description" content="Landing page for successful account creation"/>
 
             <!-- ALL CSS FILES -->
             <link rel="stylesheet" href="../../../../Resources/css/stylesheet.css" type="text/css"/>

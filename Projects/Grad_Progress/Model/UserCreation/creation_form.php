@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Progress Forms Model -- Represents a form object populated with student information
+ * User Creation Model -- Represents a form for creating new users
  *
  */
 

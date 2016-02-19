@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Progress Forms Model -- Represents a form object populated with student information
+ * Edit Progress Forms Model -- Represents an editable form object populated with student information
  *
  */
 
