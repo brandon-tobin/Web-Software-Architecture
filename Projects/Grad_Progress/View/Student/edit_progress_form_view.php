@@ -71,6 +71,8 @@ echo "
 
                 echo "</ul>
 
+                <form>
+
                 <table class=\"roster\">
                     <tr>
                         <th>Activity</th>
@@ -159,7 +161,11 @@ echo "
 
                 <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
 
+                <input type=\"submit\" name=\"submit\" value=\"Submit\" />
+
              </body>
+
+             </form>
 
     </html>
 
