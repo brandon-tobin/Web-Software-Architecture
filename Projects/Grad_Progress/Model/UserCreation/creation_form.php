@@ -51,10 +51,6 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     // If all information for creating an account is provided, create the user account.
     if ($nameError == '' && $passwordError == '' && $confirmedPasswordError == '' && $loginError == '' && $uidError == '')
     {
-        error_log("Tobin is logging: made it big");
-
-        //$account_type = isset($_REQUEST['account_type']);
-
         try {
             $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -74,13 +70,12 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
 
             if ($position == 'S')
             {
-                date_default_timezone_set('America/Denver');
                 $db->beginTransaction();
-                $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, CURDATE())");
+                $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, ?)");
                 $stmt->bindValue(1, $uid);
                 $stmt->bindValue(2, $degree);
                 $stmt->bindValue(3, $track);
-               // $stmt->bindValue(4, $date);
+                $stmt->bindValue(4, $date);
                 $stmt->execute();
                 $db->commit();
             }

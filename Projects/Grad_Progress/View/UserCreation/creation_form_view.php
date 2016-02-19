@@ -113,8 +113,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="date">Date:</label></td>
-                            <!--<td><input type="date" name="date" placeholder="MM/DD/YYYY"/></td>-->
+                            <td><label for="date">Date Admitted:</label></td>
+                            <td><input type="date" name="date" placeholder="MM/DD/YYYY"/></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="submit" value="Submit" /></td>
