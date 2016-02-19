@@ -9,6 +9,58 @@
 
 if (isset($_POST['submit']))
 {
+    $student_ID = $_GET['id'];
+    $form_ID = $_GET['form'];
+    $updated_date1 = trim($_REQUEST['updated_date1']);
+    $updated_date2 = trim($_REQUEST['updated_date2']);
+    $updated_date3 = trim($_REQUEST['updated_date3']);
+    $updated_date4 = trim($_REQUEST['updated_date4']);
+    $updated_date5 = trim($_REQUEST['updated_date5']);
+    $updated_date6 = trim($_REQUEST['updated_date6']);
+    $updated_date7 = trim($_REQUEST['updated_date7']);
+    $updated_date8 = trim($_REQUEST['updated_date8']);
+    $updated_date9 = trim($_REQUEST['updated_date9']);
+    $requirements_met = trim($_REQUEST['requirements_met']);
+    $comments = trim($_REQUEST['comments']);
+
+    // Create a DB connection
+    $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+    // Get original form date
+    $query = "SELECT date FROM Forms WHERE uid = $student_ID AND fid = $form_ID";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($result as $row) {
+        $form_Date = $row['date'];
+    }
+
+    // Insert into the forms table
+    $db->beginTransaction();
+    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date)
+                          VALUES ($form_ID, $student_ID, $form_Date, $requirements_met, ?, CURDATE())");
+    $stmt->bindValue(1, $comments);
+    $stmt->execute();
+    $db->commit();
+
+    // Insert into the activities table
+    $db->beginTransaction();
+    $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified) VALUES
+                              ($student_ID, \"Identify Advisor\", \"$updated_date1\", CURDATE()),
+                              ($student_ID, \"Program of study approved by advisor and initial committee\", \"$updated_date2\", CURDATE()),
+                              ($student_ID, \"Complete teaching mentorship\", \"$updated_date3\", CURDATE()),
+                              ($student_ID, \"Complete required courses\", \"$updated_date4\", CURDATE()),
+                              ($student_ID, \"Full committee formed\", \"$updated_date5\", CURDATE()),
+                              ($student_ID, \"Program of Study approved by committee\", \"$updated_date6\", CURDATE()),
+                              ($student_ID, \"Written qualifier\", \"$updated_date7\", CURDATE()),
+                              ($student_ID, \"Oral qualifier/Proposal\", \"$updated_date8\", CURDATE()),
+                              ($student_ID, \"Dissertation defense\", \"$updated_date9\")", CURDATE());
+    $stmt->execute();
+    $db->commit();
+
 
 }
 
