@@ -45,7 +45,7 @@ if (isset($_POST['submit']))
     }
 
     // Get the advisor's id
-    $query = "SELECT uid FROM Users WHERE nanme = \"$advisor\"";
+    $query = "SELECT uid FROM Users WHERE name = \"$advisor\"";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -61,7 +61,7 @@ if (isset($_POST['submit']))
     $db->commit();
 
     // Get the committee member's ids
-    $query = "SELECT uid FROM Users WHERE nanme = \"$committee1\"";
+    $query = "SELECT uid FROM Users WHERE name = \"$committee1\"";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -71,7 +71,7 @@ if (isset($_POST['submit']))
     }
 
     // Get the committee member's ids
-    $query = "SELECT uid FROM Users WHERE nanme = \"$committee2\"";
+    $query = "SELECT uid FROM Users WHERE name = \"$committee2\"";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -81,7 +81,7 @@ if (isset($_POST['submit']))
     }
 
     // Get the committee member's ids
-    $query = "SELECT uid FROM Users WHERE nanme = \"$committee3\"";
+    $query = "SELECT uid FROM Users WHERE name = \"$committee3\"";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -91,7 +91,7 @@ if (isset($_POST['submit']))
     }
 
     // Get the committee member's ids
-    $query = "SELECT uid FROM Users WHERE nanme = \"$committee4\"";
+    $query = "SELECT uid FROM Users WHERE name = \"$committee4\"";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
