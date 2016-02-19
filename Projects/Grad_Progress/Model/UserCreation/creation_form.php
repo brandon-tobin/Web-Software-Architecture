@@ -71,7 +71,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             if ($position == 'S')
             {
                 $db->beginTransaction();
-                $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, ?)");
+                $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, \"?\")");
                 $stmt->bindValue(1, $uid);
                 $stmt->bindValue(2, $degree);
                 $stmt->bindValue(3, $track);
