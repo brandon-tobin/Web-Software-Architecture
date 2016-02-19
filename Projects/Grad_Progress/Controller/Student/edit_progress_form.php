@@ -22,6 +22,6 @@ $fid = $_GET['form'];
 $form = new Student_Form($id, $fid);
 
 // Require the form view for display
-require "new_progress_form_view.php";
+require "edit_progress_form_view.php";
 
 ?>
