@@ -79,7 +79,7 @@ echo "
                 </table>
 
                 <h1>Create New Form</h1>
-                <p><a href='../UserCreation/creation_form.php?id=$student->student_ID'</p>
+                <p><a href='../UserCreation/creation_form.php?id=$student->student_ID'>Create Form</a></p>
 
 
 
