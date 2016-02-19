@@ -84,7 +84,7 @@ echo "
                     <br />";
                 }
 
-                if ($form->committee != '')
+                if (sizeof($form->committee) != 0)
                 {
                     echo "<p>Committee:</p>
                           <ul>";

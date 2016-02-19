@@ -209,8 +209,6 @@ class New_Student_Form
                 array_push($this->committee, $row['name']);
             }
 
-            error_log("TOBIN committee contains: " . sizeof($this->committee));
-
             $query = "SELECT name FROM Users WHERE position = 'F'";
             $statement = $db->prepare($query);
             $statement->execute();
