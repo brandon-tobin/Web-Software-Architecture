@@ -79,6 +79,7 @@ echo "
                 </table>
 
                 <h1>Create New Form</h1>
+                <p>$student->creation_form_link</p>
 
 
 
