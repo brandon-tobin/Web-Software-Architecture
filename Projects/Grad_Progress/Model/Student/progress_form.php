@@ -198,6 +198,12 @@ class Student_Form
                 $i++;
             }
 
+            date_default_timezone_set('America/Denver');
+            $admit_Date = strtotime($this->semester_Admitted);
+            error_log("TOBIN!!!! Admit_DATE IS " .$admit_Date);
+            $current_Date = strtotime("today");
+            $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
+            $this->num_semesters = $elapsed_time;
 
             /*foreach ($result as $row) {
                 $key = array_search($row['activity'], $this->uncompletedActivity);
