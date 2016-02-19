@@ -169,7 +169,7 @@ class Student_Form
                         $this->number_semesters1 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters1 == 1)
+                    if ($this->number_semesters1 <= 1)
                         $this->acceptable1 = 'Good Progress';
                     else
                         $this->acceptable1 = 'Acceptable Progress';
@@ -190,7 +190,7 @@ class Student_Form
                         $this->number_semesters2 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters2 == 4)
+                    if ($this->number_semesters2 <= 4)
                         $this->acceptable2 = 'Good Progress';
                     else
                         $this->acceptable2 = 'Acceptable Progress';
@@ -211,7 +211,7 @@ class Student_Form
                         $this->number_semesters3 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters3 == 4)
+                    if ($this->number_semesters3 <= 4)
                         $this->acceptable3 = 'Good Progress';
                     else
                         $this->acceptable3 = 'Acceptable Progress';
@@ -232,7 +232,7 @@ class Student_Form
                         $this->number_semesters4 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters4 == 5)
+                    if ($this->number_semesters4 <= 5)
                         $this->acceptable4 = 'Good Progress';
                     else
                         $this->acceptable4 = 'Acceptable Progress';
@@ -253,7 +253,7 @@ class Student_Form
                         $this->number_semesters5 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters5 == 6)
+                    if ($this->number_semesters5 <= 6)
                         $this->acceptable5 = 'Good Progress';
                     else
                         $this->acceptable5 = 'Acceptable Progress';
@@ -274,7 +274,7 @@ class Student_Form
                         $this->number_semesters6 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters6 == 6)
+                    if ($this->number_semesters6 <= 6)
                         $this->acceptable6 = 'Good Progress';
                     else
                         $this->acceptable6 = 'Acceptable Progress';
@@ -295,7 +295,7 @@ class Student_Form
                         $this->number_semesters7 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters7 == 5)
+                    if ($this->number_semesters7 <= 5)
                         $this->acceptable7 = 'Good Progress';
                     else
                         $this->acceptable7 = 'Acceptable Progress';
@@ -316,7 +316,7 @@ class Student_Form
                         $this->number_semesters8 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters8 == 7)
+                    if ($this->number_semesters8 <= 7)
                         $this->acceptable8 = 'Good Progress';
                     else
                         $this->acceptable8 = 'Acceptable Progress';
@@ -337,7 +337,7 @@ class Student_Form
                         $this->number_semesters9 = $elapsed_time;
                     }
 
-                    if ($this->number_semesters9 == 10)
+                    if ($this->number_semesters9 <= 10)
                         $this->acceptable9 = 'Good Progress';
                     else
                         $this->acceptable9 = 'Acceptable Progress';
