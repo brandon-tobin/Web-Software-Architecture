@@ -36,7 +36,7 @@ if (isset($_POST['submit']))
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $form_Date = date($row['date']);
+        $form_Date = $row['date'];
        // error_log("TOBIN DATE IS : " .$form_Date);
         error_log("TOBIN Form IS : " .$form_ID);
         error_log("TOBIN STUDENT IS : " .$student_ID);
