@@ -38,6 +38,9 @@ if (isset($_POST['submit']))
         $form_Date = $row['date'];
     }
 
+    // Set the timezone
+    date_default_timezone_set('America/Denver');
+
     // Insert into the forms table
     $db->beginTransaction();
     $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date)
