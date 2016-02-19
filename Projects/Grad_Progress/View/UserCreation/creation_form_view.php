@@ -114,7 +114,7 @@
                         </tr>
                         <tr>
                             <td><label for="date">Date Admitted:</label></td>
-                            <td><input type="date" name="date" placeholder="MM/DD/YYYY"/></td>
+                            <td><input type="date" name="date" placeholder="YYYY-MM-DD"/></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="submit" value="Submit" /></td>

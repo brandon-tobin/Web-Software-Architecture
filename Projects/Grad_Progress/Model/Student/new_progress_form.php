@@ -44,18 +44,68 @@ if (isset($_POST['submit']))
         $form_ID = $row['fid'] + 1;
     }
 
+    // Get the advisor's id
+    $query = "SELECT uid FROM Uorms WHERE nanme = \"$advisor\"";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($result as $row) {
+        $advisor_ID = $row['fid'] + 1;
+    }
+
     // Insert into the Advisors table
     $db->beginTransaction();
-    $stmt = $db->prepare("INSERT INTO Advisors (aid, sid) VALUES ($advisor, $student_ID)");
+    $stmt = $db->prepare("INSERT INTO Advisors (aid, sid) VALUES ($advisor_ID, $student_ID)");
     $stmt->execute();
     $db->commit();
 
+    // Get the committee member's ids
+    $query = "SELECT uid FROM Uorms WHERE nanme = \"$committee1\"";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($result as $row) {
+        $committee1_ID = $row['fid'] + 1;
+    }
+
+    // Get the committee member's ids
+    $query = "SELECT uid FROM Uorms WHERE nanme = \"$committee2\"";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($result as $row) {
+        $committee2_ID = $row['fid'] + 1;
+    }
+
+    // Get the committee member's ids
+    $query = "SELECT uid FROM Uorms WHERE nanme = \"$committee3\"";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($result as $row) {
+        $committee3_ID = $row['fid'] + 1;
+    }
+
+    // Get the committee member's ids
+    $query = "SELECT uid FROM Uorms WHERE nanme = \"$committee4\"";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($result as $row) {
+        $committee4_ID = $row['fid'] + 1;
+    }
+
     // Insert into the Committee table
     $db->beginTransaction();
-    $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES ($student_ID, $committee1),
-                          ($student_ID, $committee2),
-                          ($student_ID, $committee3),
-                          ($student_ID, $committee4)");
+    $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES ($student_ID, $committee1_ID),
+                          ($student_ID, $committee2_ID),
+                          ($student_ID, $committee3_ID),
+                          ($student_ID, $committee4_ID)");
     $stmt->execute();
     $db->commit();
 
