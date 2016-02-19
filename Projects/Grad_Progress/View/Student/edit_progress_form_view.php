@@ -1,11 +1,11 @@
 <?php
 /**
-* Author: Brandon Tobin
-* Date: Spring 2016
-*
-* Progress Form View -- View for displaying the student's form
-*
-*/
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * Progress Form View -- View for displaying the student's form
+ *
+ */
 
 echo "
 
@@ -58,16 +58,16 @@ echo "
                 <p><b>Date:</b> <u>$form->date_completed</u></p>
                 <p><b>Student Name:</b><u>$form->student_Name</u> <b>Student ID #</b> <u>$form->student_ID</u></p>
                 <p><b>Degree:</b> <u>$form->degree</u> <b>Track:</b> <u>$form->track</u></p>
-                <p><b>Semester Admitted:</b> <u>$form->semester_Admitted</u> <b># of semesters in the program</b> <u>$form->num_semesters</u></p>
+                <p><b>Date Admitted:</b> <u>$form->semester_Admitted</u> <b># of semesters in the program</b> <u>$form->num_semesters</u></p>
                 <p><b>Advisor:</b> <u>$form->advisor</u></p>
                 <p><b>Committee:</b></p>
                 <ul>";
 
-                    // Echo out the committee members
-                    foreach ($form->committee as $row)
-                    {
-                        echo "<li>$row</li>";
-                    }
+                // Echo out the committee members
+                foreach ($form->committee as $row)
+                {
+                    echo "<li>$row</li>";
+                }
 
                 echo "</ul>
 
@@ -79,27 +79,65 @@ echo "
                         <th>Completed Semester</th>
                     </tr>";
 
-                    // Echo out all activities for the form
-                    foreach ($form->completedActivity as $row)
-                    {
-                        echo "<tr>";
-                        foreach ($row as $value)
-                        {
-                            echo "<td>$value</td>";
+                            // Echo out all activities for the form
+                            //foreach ($form->completedActivity as $row)
+                            // {
+                            echo "<tr>
+                            <td>Identify Advisor</td>
+                            <td>$form->number_semesters1</td>
+                            <td>$form->acceptable1</td>
+                            <td>$form->completed_activity1</td>
+                        </tr>
+                        <tr>
+                            <td>Program of study approved by advisor and initial committee</td>
+                            <td>$form->number_semesters2</td>
+                            <td>$form->acceptable2</td>
+                            <td>$form->completed_activity2</td>
+                        </tr>
+                        <tr>
+                            <td>Complete teaching mentorship</td>
+                            <td>$form->number_semesters3</td>
+                            <td>$form->acceptable3</td>
+                            <td>$form->completed_activity3</td>
+                        </tr>
+                        <tr>
+                            <td>Complete required courses</td>
+                            <td>$form->number_semesters4</td>
+                            <td>$form->acceptable4</td>
+                            <td>$form->completed_activity4</td>
+                        </tr>
+                        <tr>
+                            <td>Full committee formed</td>
+                            <td>$form->number_semesters5</td>
+                            <td>$form->acceptable5</td>
+                            <td>$form->completed_activity5</td>
+                        </tr>
+                        <tr>
+                            <td>Program of Study approved by committee</td>
+                            <td>$form->number_semesters6</td>
+                            <td>$form->acceptable6</td>
+                            <td>$form->completed_activity6</td>
+                        </tr>
+                        <tr>
+                            <td>Written qualifier</td>
+                            <td>$form->number_semesters7</td>
+                            <td>$form->acceptable7</td>
+                            <td>$form->completed_activity7</td>
+                        </tr>
+                        <tr>
+                            <td>Oral qualifier/Proposal</td>
+                            <td>$form->number_semesters8</td>
+                            <td>$form->acceptable8</td>
+                            <td>$form->completed_activity8</td>
+                        </tr>
+                        <tr>
+                            <td>Dissertation defense</td>
+                            <td>$form->number_semesters9</td>
+                            <td>$form->acceptable9</td>
+                            <td>$form->completed_activity9</td>
+                        </tr>";
 
-                        }
-                        echo "</tr>";
-                    }
 
-                    foreach ($form->uncompletedActivity as $row)
-                    {
-                        echo "<tr>";
-                        echo "<td>$row</td>";
-                        echo "<td>N/A</td>";
-                        echo "<td>N/A</td>";
-                        echo "<td>N/A</td>";
-                        echo "</tr>";
-                    }
 
                 echo "
 
