@@ -82,19 +82,20 @@ class edit_progress_form {
 
             // Calculate how many semesters in the program
             $admit_Date = "";
-            if (strpos($this->semester_Admitted, 'Fall') !== false) {
-                $year = substr($this->semester_Admitted, 4, 5);
-                $admit_Date = strtotime("1 June $year");
+           // if (strpos($this->semester_Admitted, 'Fall') !== false) {
+                //$year = substr($this->semester_Admitted, 4, 5);
+               // $admit_Date = strtotime("1 June $year");
+                $admit_Date = $this->semester_Admitted;
                 $current_Date = strtotime("today");
                 $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
                 $this->num_semesters = $elapsed_time;
-            } else {
+           /* } else {
                 $year = substr($this->semester_Admitted, 6, 9);
                 $admit_Date = strtotime("1 January $year");
                 $current_Date = strtotime("today");
                 $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
                 $this->num_semesters = $elapsed_time;
-            }
+            }*/
 
 
             $this->uncompletedActivity = array("Identify Advisor", "Program of study approved by advisor and initial committee", "Complete teaching mentorship", "Complete required courses", "Full committee formed", "Program of Study approved by committee", "Written qualifier", "Oral qualifier/Proposal", "Dissertation defense");
