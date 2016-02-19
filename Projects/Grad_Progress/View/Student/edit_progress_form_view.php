@@ -86,7 +86,7 @@ echo "
                             <td>Identify Advisor</td>
                             <td>$form->number_semesters1</td>
                             <td>$form->acceptable1</td>
-                            <td>$form->completed_activity1</td>
+                            <td><input type=\"text\" name=\"updated_date1\" value=\"$form->completed_activity1\" /></td>
                         </tr>
                         <tr>
                             <td>Program of study approved by advisor and initial committee</td>
