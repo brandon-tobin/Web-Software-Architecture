@@ -37,7 +37,7 @@ if (isset($_POST['submit']))
 
     foreach ($result as $row) {
         $form_Date = $row['date'];
-        error_log("TOBIN DATE IS : " .$form_Date);
+       // error_log("TOBIN DATE IS : " .$form_Date);
         error_log("TOBIN Form IS : " .$form_ID);
         error_log("TOBIN STUDENT IS : " .$student_ID);
     }
@@ -45,6 +45,7 @@ if (isset($_POST['submit']))
     // Set the timezone
     date_default_timezone_set('America/Denver');
 
+    error_log("TOBIN DATE IS : " .$form_Date);
     // Insert into the forms table
     $db->beginTransaction();
     $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date)
