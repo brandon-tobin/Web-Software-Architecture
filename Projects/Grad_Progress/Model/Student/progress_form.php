@@ -343,54 +343,6 @@ class Student_Form
                         $this->acceptable9 = 'Acceptable Progress';
                 }
             }
-
-
-
-            /*foreach ($result as $row) {
-                $key = array_search($row['activity'], $this->uncompletedActivity);
-                if ($key !== 0 || $key !== false)
-                    unset($this->uncompletedActivity[$key]);
-
-                $activity_semesters = "";
-                if (strpos($row['date_completed'], 'Fall') !== false) {
-                    $year = substr($row['date_completed'], 4, 5);
-                    $completion_date = strtotime("1 June $year");
-                    $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
-                    $activity_semesters = $elapsed_time;
-                } else {
-                    $year = substr($row['date_completed'], 6, 9);
-                    $completion_date = strtotime("1 January $year");
-                    $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
-                    $activity_semesters = $elapsed_time;
-                }
-
-                // Check to see if the progress was good or acceptable
-                $acceptable = "";
-                if ((strpos($row['activity'], '1') !== false) && $activity_semesters == 1) {
-                    $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], '2') !== false) && $activity_semesters == 4) {
-                    $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], '3') !== false) && $activity_semesters == 4) {
-                    $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], '4') !== false) && $activity_semesters == 5) {
-                    $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], '5') !== false) && $activity_semesters == 6) {
-                    $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], '6') !== false) && $activity_semesters == 6) {
-                    $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], '7') !== false) && $activity_semesters == 5) {
-                    $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], '8') !== false) && $activity_semesters == 7) {
-                    $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], '9') !== false) && $activity_semesters == 10) {
-                    $acceptable = "Good Progress";
-                } else {
-                    $acceptable = "Acceptable Progress";
-                }
-
-                $this->completedActivity[] = array($row['activity'], $activity_semesters, $acceptable, $row['date_completed']);
-
-            }*/
         }
         catch (PDOException $ex) {
         }

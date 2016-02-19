@@ -58,7 +58,7 @@ echo "
                 <p><b>Date:</b> <u>$form->date_completed</u></p>
                 <p><b>Student Name:</b><u>$form->student_Name</u> <b>Student ID #</b> <u>$form->student_ID</u></p>
                 <p><b>Degree:</b> <u>$form->degree</u> <b>Track:</b> <u>$form->track</u></p>
-                <p><b>Semester Admitted:</b> <u>$form->semester_Admitted</u> <b># of semesters in the program</b> <u>$form->num_semesters</u></p>
+                <p><b>Date Admitted:</b> <u>$form->semester_Admitted</u> <b># of semesters in the program</b> <u>$form->num_semesters</u></p>
                 <p><b>Advisor:</b> <u>$form->advisor</u></p>
                 <p><b>Committee:</b></p>
                 <ul>";
