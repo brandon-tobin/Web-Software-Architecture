@@ -25,30 +25,39 @@ class Student_Form
     public $activity1;
     public $completed_activity1;
     public $number_semesters1;
+    public $acceptable1;
     public $activity2;
     public $completed_activity2;
     public $number_semesters2;
+    public $acceptable2;
     public $activity3;
     public $completed_activity3;
     public $number_semesters3;
+    public $acceptable3;
     public $activity4;
     public $completed_activity4;
     public $number_semesters4;
+    public $acceptable4;
     public $activity5;
     public $completed_activity5;
     public $number_semesters5;
+    public $acceptable5;
     public $activity6;
     public $completed_activity6;
     public $number_semesters6;
+    public $acceptable6;
     public $activity7;
     public $completed_activity7;
     public $number_semesters7;
+    public $acceptable7;
     public $activity8;
     public $completed_activity8;
     public $number_semesters8;
+    public $acceptable8;
     public $activity9;
     public $completed_activity9;
     public $number_semesters9;
+    public $acceptable9;
 
     // Constructor
     public function __construct($id, $fid)
@@ -159,6 +168,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters1 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters1 == 1)
+                        $this->acceptable1 = 'Good Progress';
+                    else
+                        $this->acceptable1 = 'Acceptable Progress';
                 }
                 else if ($row['activity'] == 2)
                 {
@@ -175,6 +189,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters2 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters2 == 4)
+                        $this->acceptable2 = 'Good Progress';
+                    else
+                        $this->acceptable2 = 'Acceptable Progress';
                 }
                 else if ($row['activity'] == 3)
                 {
@@ -191,6 +210,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters3 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters3 == 4)
+                        $this->acceptable3 = 'Good Progress';
+                    else
+                        $this->acceptable3 = 'Acceptable Progress';
                 }
                 else if ($row['activity'] == 4)
                 {
@@ -207,6 +231,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters4 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters4 == 5)
+                        $this->acceptable4 = 'Good Progress';
+                    else
+                        $this->acceptable4 = 'Acceptable Progress';
                 }
                 else if ($row['activity'] == 5)
                 {
@@ -223,6 +252,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters5 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters5 == 6)
+                        $this->acceptable5 = 'Good Progress';
+                    else
+                        $this->acceptable5 = 'Acceptable Progress';
                 }
                 else if ($row['activity'] == 6)
                 {
@@ -239,6 +273,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters6 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters6 == 6)
+                        $this->acceptable6 = 'Good Progress';
+                    else
+                        $this->acceptable6 = 'Acceptable Progress';
                 }
                 else if ($row['activity'] == 7)
                 {
@@ -255,6 +294,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters7 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters7 == 5)
+                        $this->acceptable7 = 'Good Progress';
+                    else
+                        $this->acceptable7 = 'Acceptable Progress';
                 }
                 else if ($row['activity'] == 8)
                 {
@@ -271,6 +315,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters8 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters8 == 7)
+                        $this->acceptable8 = 'Good Progress';
+                    else
+                        $this->acceptable8 = 'Acceptable Progress';
                 }
                 else if ($row['activity'] == 9)
                 {
@@ -287,6 +336,11 @@ class Student_Form
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters9 = $elapsed_time;
                     }
+
+                    if ($this->number_semesters9 == 10)
+                        $this->acceptable9 = 'Good Progress';
+                    else
+                        $this->acceptable9 = 'Acceptable Progress';
                 }
             }
 
