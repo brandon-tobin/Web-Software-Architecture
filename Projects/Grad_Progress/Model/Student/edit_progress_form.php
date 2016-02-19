@@ -11,6 +11,7 @@ if (isset($_POST['submit']))
 {
     $student_ID = $_GET['id'];
     $form_ID = $_GET['form'];
+    $form_Date = '';
     $updated_date1 = trim($_REQUEST['updated_date1']);
     $updated_date2 = trim($_REQUEST['updated_date2']);
     $updated_date3 = trim($_REQUEST['updated_date3']);
