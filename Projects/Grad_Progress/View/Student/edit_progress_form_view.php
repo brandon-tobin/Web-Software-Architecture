@@ -144,11 +144,16 @@ echo "
                 </table>
 
                 <ol>
-                    <li>Has the student met due progress requirements? $form->question1</li>
+                    <li>Has the student met due progress requirements?";
+                    if ($form->question1 == 1)
+                        echo "<input type=\"radio\" name=\"requirements_met\" value=\"0\" >No <input type=\"radio\" name=\"requirements_met\" value=\"1\" checked>Yes</li>";
+                    else
+                        echo "<input type=\"radio\" name=\"requirements_met\" value=\"0\" checked>No <input type=\"radio\" name=\"requirements_met\" value=\"1\">Yes</li>";
+                    echo "
                     <li>Describe the progress the student has made during the past year.</li>
-                </ol>
+                    <TEXTAREA NAME=\"comments\" COLS=40 ROWS=6 value=\"$form->question2\"></TEXTAREA>
 
-                <p>$form->question2</p>
+                </ol>
 
                 <pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
 

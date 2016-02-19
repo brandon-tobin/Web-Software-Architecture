@@ -113,11 +113,11 @@ class Student_Form
                 $this->question2 = $row['progress_description'];
             }
 
-            if ($this->question1 == 1)
+            /*if ($this->question1 == 1)
                 $this->question1 = "Yes";
             else
                 $this->question1 = "No";
-
+            */
             // Calculate how many semesters in the program
             $admit_Date = "";
             if (strpos($this->semester_Admitted, 'Fall') !== false) {
