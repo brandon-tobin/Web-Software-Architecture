@@ -45,7 +45,7 @@ if (isset($_POST['submit']))
     }
 
     // Get the advisor's id
-    $query = "SELECT uid FROM Uorms WHERE nanme = \"$advisor\"";
+    $query = "SELECT uid FROM Users WHERE nanme = \"$advisor\"";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
