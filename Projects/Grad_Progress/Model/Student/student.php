@@ -13,6 +13,7 @@ class Student
     public $form_count;
     public $form_Records_Array;
     public $creation_form_link;
+    public $student_ID;
 
     // Constructor
     public function __construct($id)
@@ -56,7 +57,7 @@ class Student
                $this->form_Records_Array[] = array($row['date'], $row['modified_date'], $requirementsMet, "<a href=\"progress_form.php?id=$id&form=".$row['fid']."\">View</a>" , "<a href=\"edit_progress_form.php?id=$id&form=".$row['fid']."\">Edit</a>");
             }
 
-            $creation_form_link = "<a href=\"../UserCreation/creation_form.php?$id\">Create</a>";
+            $this->student_ID = $id;
         }
         catch (PDOException $ex)
         {
