@@ -62,6 +62,7 @@ echo "
                         <th>Date Last Modified:</th>
                         <th>Compliance:</th>
                         <th>Form:</th>
+                        <th>Edit Form:</th>
                     </tr>";
                 // Echo out all entries in student array
                 foreach ($student->form_Records_Array as $row)

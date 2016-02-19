@@ -52,7 +52,7 @@ class Student
                 if ($row['meets_requirements'] == 1)
                     $requirementsMet = "Yes";
 
-               $this->form_Records_Array[] = array($row['date'], $row['modified_date'], $requirementsMet, "<a href=\"progress_form.php?id=$id&form=".$row['fid']."\">View</a>" , "<a href=\"edit_progress_form.php?id=$id&form=".$row['fid']."\">View</a>");
+               $this->form_Records_Array[] = array($row['date'], $row['modified_date'], $requirementsMet, "<a href=\"progress_form.php?id=$id&form=".$row['fid']."\">View</a>" , "<a href=\"edit_progress_form.php?id=$id&form=".$row['fid']."\">Edit</a>");
             }
         }
         catch (PDOException $ex)
