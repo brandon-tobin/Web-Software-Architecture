@@ -151,7 +151,7 @@ echo "
                         echo "<input type=\"radio\" name=\"requirements_met\" value=\"0\" checked>No <input type=\"radio\" name=\"requirements_met\" value=\"1\">Yes</li>";
                     echo "
                     <li>Describe the progress the student has made during the past year.</li>
-                    <TEXTAREA NAME=\"comments\" COLS=40 ROWS=6 value=\"$form->question2\"></TEXTAREA>
+                    <TEXTAREA NAME=\"comments\" COLS=40 ROWS=6>$form->question2</TEXTAREA>
 
                 </ol>
 
