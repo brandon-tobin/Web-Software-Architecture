@@ -53,8 +53,7 @@ echo "
             </ul>
 
             <p>Important Links</p>
-            <p>Create New User</p>
-            <p><a href='../../Controller/UserCreation/creation_form.php'>Create New User</a></p>
+            <p><a href='../UserCreation/creation_form_view.php'>Create New User</a></p>
 
 
             <h1>Graduate Advisors</h1>
