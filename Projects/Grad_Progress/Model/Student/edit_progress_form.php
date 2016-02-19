@@ -36,6 +36,9 @@ if (isset($_POST['submit']))
 
     foreach ($result as $row) {
         $form_Date = $row['date'];
+        error_log("TOBIN DATE IS : " .$form_Date);
+        error_log("TOBIN Form IS : " .$form_ID);
+        error_log("TOBIN STUDENT IS : " .$student_ID);
     }
 
     // Set the timezone
