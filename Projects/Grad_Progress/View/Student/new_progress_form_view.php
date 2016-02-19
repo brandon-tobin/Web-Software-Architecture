@@ -87,7 +87,8 @@ echo "
 
                 if ($form->committee != '')
                 {
-                    echo "<ul>";
+                    echo "<p>Committee:</p>
+                          <ul>";
                     // Echo out the committee members
                     foreach ($form->committee as $row)
                     {
