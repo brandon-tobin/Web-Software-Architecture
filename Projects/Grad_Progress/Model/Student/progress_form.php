@@ -142,7 +142,7 @@ class Student_Form
                 {
                     $this->activity1 = $row['activity'];
                     $this->completed_activity1 = $row['date_completed'];
-                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                    /*if (strpos($row['date_completed'], 'Fall') !== false) {
                         $year = substr($row['date_completed'], 4, 5);
                         $completion_date = strtotime("1 June $year");
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
@@ -152,7 +152,13 @@ class Student_Form
                         $completion_date = strtotime("1 January $year");
                         $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
                         $this->number_semesters1 = $elapsed_time;
-                    }
+                    }*/
+                    date_default_timezone_set('America/Denver');
+                    $admit_Date = strtotime($this->semester_Admitted);
+                    error_log("TOBIN!!!! Admit_DATE IS " .$admit_Date);
+                    $current_Date = strtotime("today");
+                    $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
+                    $this->num_semesters = $elapsed_time;
                 }
                 else if ($row['activity'] == 2)
                 {
