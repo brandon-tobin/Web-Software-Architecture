@@ -51,7 +51,7 @@ if (isset($_POST['submit']))
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $advisor_ID = $row['fid'] + 1;
+        $advisor_ID = $row['uid'];
     }
 
     // Insert into the Advisors table
@@ -67,17 +67,17 @@ if (isset($_POST['submit']))
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $committee1_ID = $row['fid'] + 1;
+        $committee1_ID = $row['uid'];
     }
 
-    // Get the committee member's ids
+       // Get the committee member's ids
     $query = "SELECT uid FROM Users WHERE name = \"$committee2\"";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $committee2_ID = $row['fid'] + 1;
+        $committee2_ID = $row['uid'];
     }
 
     // Get the committee member's ids
@@ -87,7 +87,7 @@ if (isset($_POST['submit']))
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $committee3_ID = $row['fid'] + 1;
+        $committee3_ID = $row['uid'];
     }
 
     // Get the committee member's ids
@@ -97,7 +97,7 @@ if (isset($_POST['submit']))
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $committee4_ID = $row['fid'] + 1;
+        $committee4_ID = $row['uid'];
     }
 
     // Insert into the Committee table
