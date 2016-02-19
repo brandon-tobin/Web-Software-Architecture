@@ -71,7 +71,7 @@ echo "
 
                 echo "</ul>
 
-                <form>
+                <form method=\"post\">
 
                 <table class=\"roster\">
                     <tr>
