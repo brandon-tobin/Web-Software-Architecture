@@ -57,7 +57,82 @@ if (isset($_POST['submit']))
     $db->commit();
 
     // Insert into the activities table
+    if ($activity1 != 0)
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 1, \"$semester_completed1\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($activity2 != 0)
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 2, \"$semester_completed2\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($activity3 != 0)
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 3, \"$semester_completed3\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($activity4 != 0)
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 4, \"$semester_completed4\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($activity5 != 0)
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 5, \"$semester_completed5\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($activity6 != 0)
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 6, \"$semester_completed6\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+    if ($activity7 != 0)
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 7, \"$semester_completed7\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
     if ($activity9 != 0)
+    {
+        $db->beginTransaction();
+        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+                              VALUES ($student_ID, 9, \"$semester_completed9\", CURDATE())");
+        $stmt->execute();
+        $db->commit();
+    }
+
+
+
+
+
+
+
+
+
+
+
+   /* if ($activity9 != 0)
     {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed) VALUES
@@ -164,7 +239,7 @@ if (isset($_POST['submit']))
                               ($student_ID, \"Identify Advisor\", \"$semester_completed1\")");
         $stmt->execute();
         $db->commit();
-    }
+    }*/
 
     require("../../View/UserCreation/creation_success_view.php");
 }

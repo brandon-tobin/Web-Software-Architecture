@@ -15,7 +15,6 @@ require_once 'new_progress_form.php';
 
 // Get the id out of the url
 $id = $_GET['id'];
-//$fid = $_GET['form'];
 
 // Create a new student form object
 $form = new New_Student_Form($id);
