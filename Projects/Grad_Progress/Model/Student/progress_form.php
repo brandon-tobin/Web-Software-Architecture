@@ -129,47 +129,47 @@ class Student_Form
             $i = 1;
             foreach ($result as $row)
             {
-                if ($i == 1)
+                if ($row['activity'] == 1)
                 {
                     $this->activity1 = $row['activity'];
                     $this->completed_activity1 = $row['date_completed'];
                 }
-                else if ($i == 2)
+                else if ($row['activity'] == 2)
                 {
                     $this->activity2 = $row['activity'];
                     $this->completed_activity2 = $row['date_completed'];
                 }
-                else if ($i == 3)
+                else if ($row['activity'] == 3)
                 {
                     $this->activity3 = $row['activity'];
                     $this->completed_activity3 = $row['date_completed'];
                 }
-                else if ($i == 4)
+                else if ($row['activity'] == 4)
                 {
                     $this->activity4 = $row['activity'];
                     $this->completed_activity4 = $row['date_completed'];
                 }
-                else if ($i == 5)
+                else if ($row['activity'] == 5)
                 {
                     $this->activity5 = $row['activity'];
                     $this->completed_activity5 = $row['date_completed'];
                 }
-                else if ($i == 6)
+                else if ($row['activity'] == 6)
                 {
                     $this->activity6 = $row['activity'];
                     $this->completed_activity6 = $row['date_completed'];
                 }
-                else if ($i == 7)
+                else if ($row['activity'] == 7)
                 {
                     $this->activity7 = $row['activity'];
                     $this->completed_activity7 = $row['date_completed'];
                 }
-                else if ($i == 8)
+                else if ($row['activity'] == 8)
                 {
                     $this->activity8 = $row['activity'];
                     $this->completed_activity8 = $row['date_completed'];
                 }
-                else if ($i == 9)
+                else if ($row['activity'] == 9)
                 {
                     $this->activity9 = $row['activity'];
                     $this->completed_activity9 = $row['date_completed'];
