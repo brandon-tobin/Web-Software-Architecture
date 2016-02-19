@@ -37,6 +37,10 @@ if (isset($_POST['submit']))
 
     foreach ($result as $row) {
         $form_Date = $row['date'];
+        $student_signed = $row['student_signed'];
+        $student_signed_date = $row['student_signed_date'];
+        $advisor_signed = $row['advisor_signed'];
+        $advisor_signed_date = $row['advisor_signed_date'];
     }
 
     // Set the timezone
@@ -44,8 +48,8 @@ if (isset($_POST['submit']))
 
     // Insert into the forms table
     $db->beginTransaction();
-    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date)
-                          VALUES ($form_ID, $student_ID, '". $form_Date."', $requirements_met, ?, CURDATE())");
+    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date, student_signed, student_signed_date, advisor_signed, advisor_signed_date)
+                          VALUES ($form_ID, $student_ID, '". $form_Date."', $requirements_met, ?, CURDATE(), $student_signed, '". $student_signed_date ."', $advisor_signed, '". $advisor_signed_date ."')");
     $stmt->bindValue(1, $comments);
     $stmt->execute();
     $db->commit();
