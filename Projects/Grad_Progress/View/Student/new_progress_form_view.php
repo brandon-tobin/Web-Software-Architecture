@@ -79,11 +79,10 @@ echo "
                     }
 
                     echo "
-                    </select>";
-                }
-                    echo "
+                    </select>
                     <br />
                     <br />";
+                }
 
                 if ($form->committee != '')
                 {
