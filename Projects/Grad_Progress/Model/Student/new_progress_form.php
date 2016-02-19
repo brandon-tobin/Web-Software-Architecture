@@ -34,7 +34,7 @@ if (isset($_POST['submit']))
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-    // Get all of the information required to display the student's progress form.
+    // Get the id of the next form
     $query = "SELECT COUNT(fid) as fid FROM Forms WHERE uid = $student_ID";
     $statement = $db->prepare($query);
     $statement->execute();
@@ -43,6 +43,21 @@ if (isset($_POST['submit']))
     foreach ($result as $row) {
         $form_ID = $row['fid'] + 1;
     }
+
+    // Insert into the Advisors table
+    $db->beginTransaction();
+    $stmt = $db->prepare("INSERT INTO Advisors (aid, sid) VALUES ($advisor, $student_ID)");
+    $stmt->execute();
+    $db->commit();
+
+    // Insert into the Committee table
+    $db->beginTransaction();
+    $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES ($student_ID, $committee1),
+                          ($student_ID, $committee2),
+                          ($student_ID, $committee3),
+                          ($student_ID, $committee4)");
+    $stmt->execute();
+    $db->commit();
 
     date_default_timezone_set('America/Denver');
     $timestamp = time();
