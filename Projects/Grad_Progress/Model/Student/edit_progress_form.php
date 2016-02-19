@@ -37,17 +37,11 @@ if (isset($_POST['submit']))
 
     foreach ($result as $row) {
         $form_Date = $row['date'];
-       // error_log("TOBIN DATE IS : " .$form_Date);
-        error_log("TOBIN Form IS : " .$form_ID);
-        error_log("TOBIN STUDENT IS : " .$student_ID);
     }
 
     // Set the timezone
     date_default_timezone_set('America/Denver');
 
-    //$form_Date = date("Y-m-d", strtotime($form_Date));
-
-    error_log("TOBIN DATE IS : " .$form_Date);
     // Insert into the forms table
     $db->beginTransaction();
     $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date)
@@ -57,6 +51,7 @@ if (isset($_POST['submit']))
     $db->commit();
 
     // Insert into the activities table
+    error_log("TOBIN updated_date1 contains : " .$updated_date1);
     if ($updated_date1 != '')
     {
         $db->beginTransaction();
