@@ -85,7 +85,7 @@ class edit_progress_form {
            // if (strpos($this->semester_Admitted, 'Fall') !== false) {
                 //$year = substr($this->semester_Admitted, 4, 5);
                // $admit_Date = strtotime("1 June $year");
-                $admit_Date = $this->semester_Admitted;
+                $admit_Date = strtotime($this->semester_Admitted);
                 $current_Date = strtotime("today");
                 $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
                 $this->num_semesters = $elapsed_time;
