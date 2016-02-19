@@ -11,7 +11,6 @@ if (isset($_POST['submit']))
 {
     $student_ID = $_GET['id'];
     $form_ID = $_GET['form'];
-    $form_Date = '';
     $updated_date1 = trim($_REQUEST['updated_date1']);
     $updated_date2 = trim($_REQUEST['updated_date2']);
     $updated_date3 = trim($_REQUEST['updated_date3']);
@@ -24,13 +23,14 @@ if (isset($_POST['submit']))
     $requirements_met = trim($_REQUEST['requirements_met']);
     $comments = trim($_REQUEST['comments']);
 
+
     // Create a DB connection
     $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
     // Get original form date
-    $query = "SELECT date FROM Forms WHERE uid = $student_ID AND fid = $form_ID";
+    $query = "SELECT date, student_signed, student_signed_date, advisor_signed, advisor_signed_date FROM Forms WHERE uid = $student_ID AND fid = $form_ID";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
