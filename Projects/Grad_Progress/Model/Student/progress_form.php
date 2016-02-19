@@ -22,6 +22,24 @@ class Student_Form
     public $question2;
     public $completedActivity;
     public $uncompletedActivity;
+    public $activity1;
+    public $completed_activity1;
+    public $activity2;
+    public $completed_activity2;
+    public $activity3;
+    public $completed_activity3;
+    public $activity4;
+    public $completed_activity4;
+    public $activity5;
+    public $completed_activity5;
+    public $activity6;
+    public $completed_activity6;
+    public $activity7;
+    public $completed_activity7;
+    public $activity8;
+    public $completed_activity8;
+    public $activity9;
+    public $completed_activity9;
 
     // Constructor
     public function __construct($id, $fid)
@@ -108,7 +126,60 @@ class Student_Form
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($result as $row) {
+            $i = 1;
+            foreach ($result as $row)
+            {
+                if ($i == 1)
+                {
+                    $this->activity1 = $row['activity'];
+                    $this->completed_activity1 = $row['date_completed'];
+                }
+                else if ($i == 2)
+                {
+                    $this->activity2 = $row['activity'];
+                    $this->completed_activity2 = $row['date_completed'];
+                }
+                else if ($i == 3)
+                {
+                    $this->activity3 = $row['activity'];
+                    $this->completed_activity3 = $row['date_completed'];
+                }
+                else if ($i == 4)
+                {
+                    $this->activity4 = $row['activity'];
+                    $this->completed_activity4 = $row['date_completed'];
+                }
+                else if ($i == 5)
+                {
+                    $this->activity5 = $row['activity'];
+                    $this->completed_activity5 = $row['date_completed'];
+                }
+                else if ($i == 6)
+                {
+                    $this->activity6 = $row['activity'];
+                    $this->completed_activity6 = $row['date_completed'];
+                }
+                else if ($i == 7)
+                {
+                    $this->activity7 = $row['activity'];
+                    $this->completed_activity7 = $row['date_completed'];
+                }
+                else if ($i == 8)
+                {
+                    $this->activity8 = $row['activity'];
+                    $this->completed_activity8 = $row['date_completed'];
+                }
+                else if ($i == 9)
+                {
+                    $this->activity9 = $row['activity'];
+                    $this->completed_activity9 = $row['date_completed'];
+                }
+
+                $i++;
+            }
+
+
+            /*foreach ($result as $row) {
                 $key = array_search($row['activity'], $this->uncompletedActivity);
                 if ($key !== 0 || $key !== false)
                     unset($this->uncompletedActivity[$key]);
@@ -128,30 +199,31 @@ class Student_Form
 
                 // Check to see if the progress was good or acceptable
                 $acceptable = "";
-                if ((strpos($row['activity'], 'Identify Advisor') !== false) && $activity_semesters == 1) {
+                if ((strpos($row['activity'], '1') !== false) && $activity_semesters == 1) {
                     $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], 'Program of study approved by advisor and initial committee') !== false) && $activity_semesters == 4) {
+                } else if ((strpos($row['activity'], '2') !== false) && $activity_semesters == 4) {
                     $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], 'Complete teaching mentorship') !== false) && $activity_semesters == 4) {
+                } else if ((strpos($row['activity'], '3') !== false) && $activity_semesters == 4) {
                     $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], 'Complete required courses') !== false) && $activity_semesters == 5) {
+                } else if ((strpos($row['activity'], '4') !== false) && $activity_semesters == 5) {
                     $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], 'Full committee formed') !== false) && $activity_semesters == 6) {
+                } else if ((strpos($row['activity'], '5') !== false) && $activity_semesters == 6) {
                     $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], 'Program of Study approved by committee') !== false) && $activity_semesters == 6) {
+                } else if ((strpos($row['activity'], '6') !== false) && $activity_semesters == 6) {
                     $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], 'Written qualifier') !== false) && $activity_semesters == 5) {
+                } else if ((strpos($row['activity'], '7') !== false) && $activity_semesters == 5) {
                     $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], 'Oral qualifier/Proposal') !== false) && $activity_semesters == 7) {
+                } else if ((strpos($row['activity'], '8') !== false) && $activity_semesters == 7) {
                     $acceptable = "Good Progress";
-                } else if ((strpos($row['activity'], 'Dissertation defense') !== false) && $activity_semesters == 10) {
+                } else if ((strpos($row['activity'], '9') !== false) && $activity_semesters == 10) {
                     $acceptable = "Good Progress";
                 } else {
                     $acceptable = "Acceptable Progress";
                 }
 
                 $this->completedActivity[] = array($row['activity'], $activity_semesters, $acceptable, $row['date_completed']);
-            }
+
+            }*/
         }
         catch (PDOException $ex) {
         }
