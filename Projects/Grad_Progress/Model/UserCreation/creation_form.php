@@ -27,8 +27,6 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     $track = trim($_REQUEST['track_type']);
     $date = trim($_REQUEST['date']);
 
-    error_log("Tobin position is" . $position);
-
     // Perform simple validations
     if ($name == '') {
         $nameError = 'Enter your full name';
@@ -76,12 +74,13 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
 
             if ($position == 'S')
             {
+                date_default_timezone_set('America/Denver');
                 $db->beginTransaction();
-                $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, ?)");
+                $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, CURDATE())");
                 $stmt->bindValue(1, $uid);
                 $stmt->bindValue(2, $degree);
                 $stmt->bindValue(3, $track);
-                $stmt->bindValue(4, $date);
+               // $stmt->bindValue(4, $date);
                 $stmt->execute();
                 $db->commit();
             }
