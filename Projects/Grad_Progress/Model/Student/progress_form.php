@@ -24,22 +24,31 @@ class Student_Form
     public $uncompletedActivity;
     public $activity1;
     public $completed_activity1;
+    public $number_semesters1;
     public $activity2;
     public $completed_activity2;
+    public $number_semesters2;
     public $activity3;
     public $completed_activity3;
+    public $number_semesters3;
     public $activity4;
     public $completed_activity4;
+    public $number_semesters4;
     public $activity5;
     public $completed_activity5;
+    public $number_semesters5;
     public $activity6;
     public $completed_activity6;
+    public $number_semesters6;
     public $activity7;
     public $completed_activity7;
+    public $number_semesters7;
     public $activity8;
     public $completed_activity8;
+    public $number_semesters8;
     public $activity9;
     public $completed_activity9;
+    public $number_semesters9;
 
     // Constructor
     public function __construct($id, $fid)
@@ -133,6 +142,17 @@ class Student_Form
                 {
                     $this->activity1 = $row['activity'];
                     $this->completed_activity1 = $row['date_completed'];
+                    if (strpos($row['date_completed'], 'Fall') !== false) {
+                        $year = substr($row['date_completed'], 4, 5);
+                        $completion_date = strtotime("1 June $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    } else {
+                        $year = substr($row['date_completed'], 6, 9);
+                        $completion_date = strtotime("1 January $year");
+                        $elapsed_time = floor((floor(($completion_date - $admit_Date) / 2628000) / 6)) + 1;
+                        $this->number_semesters1 = $elapsed_time;
+                    }
                 }
                 else if ($row['activity'] == 2)
                 {

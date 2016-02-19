@@ -90,7 +90,7 @@ echo "
                         </tr>
                         <tr>
                             <td>Program of study approved by advisor and initial committee</td>
-                            <td></td>
+                            <td>$form->number_semesters1</td>
                             <td></td>
                             <td>$form->completed_activity2</td>
                         </tr>
