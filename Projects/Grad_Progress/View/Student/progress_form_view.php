@@ -42,7 +42,7 @@ echo "
 
                 echo (getNavigation());
 
-                echo (pageDataHeader("Due Progress Advisory Document for Ph.D. Degree"))
+                echo (pageDataHeader("Due Progress Advisory Document for Ph.D. Degree"));
 
                 echo "
 
