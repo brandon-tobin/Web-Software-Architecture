@@ -36,8 +36,7 @@ echo "
 
             <body>";
 
-                require "../partials/header.php";
-
+                $this->load->view('../partials/header.php');
             echo "
                 <!-- Navigation Bar -->
                 <ul id=\"navigation\">
