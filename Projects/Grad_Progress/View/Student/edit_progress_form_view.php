@@ -37,7 +37,7 @@ echo "
 
             <body>";
 
-                getHeader();
+                echo (getHeader());
 
             echo "
                 <!-- Navigation Bar -->
