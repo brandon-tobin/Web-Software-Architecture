@@ -7,7 +7,7 @@
  *
  */
 
-require '../db.php';
+require '../../Model/db.php';
 
 class Student_Form
 {
