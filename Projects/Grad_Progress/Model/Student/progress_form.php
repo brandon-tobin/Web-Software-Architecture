@@ -71,10 +71,6 @@ class Student_Form
     function create_Student_Form($id, $fid)
     {
         try {
-            /*$db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);*/
-
             $db = openDBConnection();
 
             // Query the database to find out which advisor is related to this student.
@@ -150,7 +146,6 @@ class Student_Form
 
             date_default_timezone_set('America/Denver');
             $admit_Date = strtotime($this->semester_Admitted);
-            error_log("TOBIN!!!! Admit_DATE IS " .$admit_Date);
             $current_Date = strtotime("today");
             $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
             $this->num_semesters = $elapsed_time;

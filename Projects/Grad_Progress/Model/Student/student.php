@@ -7,6 +7,8 @@
  *
  */
 
+require '../../Model/db.php';
+
 class Student
 {
     public $student_First_Name;
@@ -25,9 +27,7 @@ class Student
     function create_Student($id)
     {
         try {
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $db = openDBConnection();
 
             // Query the database to get the name of the student
             $query = "SELECT name FROM Users WHERE uid = $id";

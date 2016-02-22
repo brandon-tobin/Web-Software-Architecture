@@ -7,7 +7,7 @@
  *
  */
 
-require 'db_config.php';
+require '../../Model/db.php';
 
 class Advisor
 {
@@ -24,11 +24,7 @@ class Advisor
     function create_Advisor($id)
     {
         try {
-
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-            //$db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $db = openDBConnection();
 
             // Query the database to get the name of the advisor
             $query = "SELECT name FROM Users WHERE uid = $id";

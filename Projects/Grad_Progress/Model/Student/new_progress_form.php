@@ -8,6 +8,8 @@
  *
  */
 
+require '../../Model/db.php';
+
 if (isset($_POST['submit']))
 {
     $student_ID = $_GET['id'];
@@ -38,9 +40,7 @@ if (isset($_POST['submit']))
     $comments = trim($_REQUEST['comments']);
 
     // Get highest form number for user
-    $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $db = openDBConnection();
 
     // Get the id of the next form
     $query = "SELECT COUNT(fid) as fid FROM Forms WHERE uid = $student_ID";
@@ -219,9 +219,7 @@ class New_Student_Form
     function create_Student_Form($id)
     {
         try {
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $db = openDBConnection();
 
             // Get all of the information required to display the student's progress form.
             $query = "SELECT Users.uid, Users.name, Students.degree, Students.track, Students.semester_admitted

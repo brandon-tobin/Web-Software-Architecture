@@ -7,7 +7,7 @@
  *
  */
 
-//require 'db_config.php';
+require '../../Model/db.php';
 
 class DGS
 {
@@ -24,11 +24,7 @@ class DGS
     function create_DGS()
     {
         try {
-
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-            //$db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $db = openDBConnection();
 
             // Query the database for all advisors and format it to be shown in the view.
             $query = "SELECT Advisors.aid, Users.name FROM Advisors INNER JOIN Users ON Advisors.aid = Users.uid GROUP BY aid";

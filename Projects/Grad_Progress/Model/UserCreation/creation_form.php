@@ -16,7 +16,7 @@ $uidError = '';
 
 if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])
     && isset($_REQUEST['confirmedPassword'])) {
-    //&& isset($_REQUEST['degree']) && isset($_REQUEST['track']) && isset($_REQUEST['date'])) {
+
     $name = trim($_REQUEST['name']);
     $uid = trim($_REQUEST['uid']);
     $username = trim($_REQUEST['username']);
@@ -52,9 +52,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     if ($nameError == '' && $passwordError == '' && $confirmedPasswordError == '' && $loginError == '' && $uidError == '')
     {
         try {
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $db = openDBConnection();
 
             $db->beginTransaction();
 

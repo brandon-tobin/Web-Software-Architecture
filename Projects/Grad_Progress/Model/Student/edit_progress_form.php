@@ -7,7 +7,7 @@
  *
  */
 
-require '../db.php';
+require '../../Model/db.php';
 
 if (isset($_POST['submit']))
 {
@@ -27,10 +27,6 @@ if (isset($_POST['submit']))
 
 
     // Create a DB connection
-    /*$db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);*/
-
     $db = openDBConnection();
 
     // Get original form date
@@ -194,9 +190,7 @@ class Student_Form
     function create_Student_Form($id, $fid)
     {
         try {
-            $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $db = openDBConnection();
 
             // Query the database to find out which advisor is related to this student.
             $query = "SELECT name FROM Users WHERE uid IN (SELECT aid FROM Advisors WHERE sid = $id)";
