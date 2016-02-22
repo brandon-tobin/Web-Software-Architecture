@@ -8,7 +8,7 @@
  */
 
 // Set the include path for the model and view
-set_include_path("../../Model/Student/" .PATH_SEPARATOR . "../../View/Student/");
+set_include_path("../../Model/Student/" .PATH_SEPARATOR . "../../View/Student/" .PATH_SEPARATOR . "../../View/");
 
 // Require the model file once
 require_once 'edit_progress_form.php';
