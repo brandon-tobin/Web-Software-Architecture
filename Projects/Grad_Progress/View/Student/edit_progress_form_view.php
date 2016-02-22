@@ -6,7 +6,7 @@
  * Progress Form View -- View for displaying the student's form
  *
  */
-require ('../partials/header.php');
+require ('../../View/partials/header.php');
 
 echo "
 
