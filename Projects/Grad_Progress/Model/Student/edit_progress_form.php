@@ -7,6 +7,8 @@
  *
  */
 
+require '../db.php';
+
 if (isset($_POST['submit']))
 {
     $student_ID = $_GET['id'];
@@ -25,9 +27,11 @@ if (isset($_POST['submit']))
 
 
     // Create a DB connection
-    $db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
+    /*$db = new PDO("mysql:host=localhost;dbname=Grad_Prog_V4;charset=utf8", 'Grad_Application', '173620901');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);*/
+
+    $db = openDBConnection();
 
     // Get original form date
     $query = "SELECT date, student_signed, student_signed_date, advisor_signed, advisor_signed_date FROM Forms WHERE uid = $student_ID AND fid = $form_ID";
