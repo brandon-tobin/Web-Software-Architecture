@@ -6,6 +6,7 @@
  * Progress Form View -- View for displaying the student's form
  *
  */
+require ('../partials/header.php');
 
 echo "
 
@@ -36,7 +37,8 @@ echo "
 
             <body>";
 
-                $this->load->view('../partials/header.php');
+                getHeader();
+
             echo "
                 <!-- Navigation Bar -->
                 <ul id=\"navigation\">
