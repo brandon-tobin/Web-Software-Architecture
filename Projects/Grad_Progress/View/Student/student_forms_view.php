@@ -7,6 +7,8 @@
  *
  */
 
+require('../../View/Partials/partial_view.php');
+
 echo "
 
     <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
@@ -35,25 +37,15 @@ echo "
 
             </head>
 
-            <body>
+            <body>";
 
-                <!-- Header -->
-                <div id=\"header\">
-                    <img src=\"/Resources/Images/uofufootball.jpg\" alt=\"Rice Eccles Stadium\" />
-                    <h1>University of Utah - CS 4540</h1>
-                    <h2>Web Software Architecture - Spring 2016</h2>
-                    <h2>Brandon Tobin</h2>
-                    <h2>Grad Progress - Assignment 4</h2>
-                </div>
+                echo (getHeader());
 
-                <!-- Navigation Bar -->
-                <ul id=\"navigation\">
-                    <li><a href=\"../../../../index.html\">Home</a></li>
-                    <li><a href=\"../../../../Projects/\">Projects</a></li>
-                    <li><a href=\"../../../../Class_Examples/\">Examples</a></li>
-                </ul>
+                echo (getNavigation());
 
-                <h1>$student->student_First_Name's Forms</h1>
+                echo (pageDataHeader("$student->student_First_Name's Forms"));
+
+                echo "
 
                 <!-- Table containing $student->student_First_Name's forms -->
                 <table class=\"roster\">
