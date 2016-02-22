@@ -6,7 +6,7 @@
  * Progress Form View -- View for displaying the student's form
  *
  */
-require ('../../View/partials/header.php');
+require('../../View/Partials/partial_view.php');
 
 echo "
 
@@ -39,13 +39,10 @@ echo "
 
                 echo (getHeader());
 
+                echo (getNavigation());
+
             echo "
-                <!-- Navigation Bar -->
-                <ul id=\"navigation\">
-                    <li><a href=\"../../../../index.html\">Home</a></li>
-                    <li><a href=\"../../../../Projects/\">Projects</a></li>
-                    <li><a href=\"../../../../Class_Examples/\">Examples</a></li>
-                </ul>
+
 
                 <h1 class=\"form-header\">Due Progress Advisory Document for Ph.D. Degree</h1>
 
