@@ -27,3 +27,8 @@ function getNavigation()
         <li><a href=\"../../../../Class_Examples/\">Examples</a></li>
     </ul>";
 }
+
+function pageDataHeader($title)
+{
+    return "<h1 class=\"form-header\">$title</h1>";
+}

@@ -41,10 +41,9 @@ echo "
 
                 echo (getNavigation());
 
-            echo "
+                echo (pageDataHeader("Due Progress Advisory Document for Ph.D. Degree"));
 
-
-                <h1 class=\"form-header\">Due Progress Advisory Document for Ph.D. Degree</h1>
+                 echo "
 
                 <!-- Due Progress Form -->
                 <p><b>Date:</b> <u>$form->date_completed</u></p>
