@@ -14,18 +14,19 @@ $passwordError = '';
 $confirmedPasswordError = '';
 $uidError = '';
 
-if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])
-    && isset($_REQUEST['confirmedPassword'])) {
+//if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])
+//    && isset($_REQUEST['confirmedPassword'])) {
+if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['confirmedPassword'])) {
 
     $name = trim($_REQUEST['name']);
     $uid = trim($_REQUEST['uid']);
     $username = trim($_REQUEST['username']);
     $password = trim($_REQUEST['password']);
     $confirmedPassword = trim($_REQUEST['confirmedPassword']);
-    $position = trim($_REQUEST['account_type']);
-    $degree = trim($_REQUEST['degree']);
-    $track = trim($_REQUEST['track_type']);
-    $date = trim($_REQUEST['date']);
+    //$position = trim($_REQUEST['account_type']);
+    //$degree = trim($_REQUEST['degree']);
+    //$track = trim($_REQUEST['track_type']);
+    //$date = trim($_REQUEST['date']);
 
     // Perform simple validations
     if ($name == '') {
@@ -66,7 +67,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $stmt->execute();
             $db->commit();
 
-            if ($position == 'S')
+            /*if ($position == 'S')
             {
                 $db->beginTransaction();
                 $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, \"?\")");
@@ -76,7 +77,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
                 $stmt->bindValue(4, $date);
                 $stmt->execute();
                 $db->commit();
-            }
+            }*/
 
             require '../../View/UserCreation/creation_success_view.php';
         } catch (PDOException $ex) {
