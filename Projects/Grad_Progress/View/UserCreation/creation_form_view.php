@@ -94,7 +94,7 @@
                             </td>
                         </tr>
                     </table>
-                    <p>Only continue filling in information if you are a student</p>
+                    <!--<p>Only continue filling in information if you are a student</p>
                     <table>
                         <tr>
                             <td><label for="degree">Degree:</label></td>
@@ -119,7 +119,7 @@
                         <tr>
                             <td colspan="2"><input type="submit" value="Submit" /></td>
                         </tr>
-                    </table>
+                    </table>-->
                 </form>
             </body>
         </html>
