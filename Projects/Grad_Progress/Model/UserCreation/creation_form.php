@@ -62,9 +62,9 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $stmt = $db->prepare("INSERT INTO Users (uid, name, position, username, password) VALUES (?, ?, ?, ?, ?)");
             $stmt->bindValue(1, $uid);
             $stmt->bindValue(2, $name);
-            $stmt->bindValue(3, $position);
-            $stmt->bindValue(4, $username);
-            $stmt->bindValue(5, $password);
+            //$stmt->bindValue(3, $position);
+            $stmt->bindValue(3, $username);
+            $stmt->bindValue(4, $password);
 
             $stmt->execute();
             $db->commit();
