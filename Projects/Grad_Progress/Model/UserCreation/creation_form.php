@@ -7,7 +7,12 @@
  *
  */
 
-require '../../Model/db.php';
+require '../../Model/Functions/db.php';
+
+require '../../Model/Functions/authentication.php';
+
+// Use HTTPS
+redirectToHTTPS();
 
 // If submission, process the submission
 $nameError = '';
