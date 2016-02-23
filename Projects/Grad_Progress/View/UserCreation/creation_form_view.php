@@ -85,13 +85,13 @@
                             <td><span style="color:red"><?php echo $confirmedPasswordError ?></span></td>
                         </tr>
                         <tr>
-                            <td><label for="selection_box">Please select account type.</label></td>
+                            <!--<td><label for="selection_box">Please select account type.</label></td>
                             <td>
                                 <select name="account_type" id="account_type">
                                     <option value="S">Student</option>
                                     <option value="F">Faculty</option>
                                 </select>
-                            </td>
+                            </td>-->
                         </tr>
                     </table>
                     <!--<p>Only continue filling in information if you are a student</p>
