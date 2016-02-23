@@ -7,6 +7,8 @@
  *
  */
 
+require '../../Model/db.php';
+
 // If submission, process the submission
 $nameError = '';
 $loginError = '';
