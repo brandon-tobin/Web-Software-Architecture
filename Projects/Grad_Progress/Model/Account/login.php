@@ -6,7 +6,7 @@
  * Time: 9:19 PM
  */
 
-
+require ('../../Model/Functions/db.php');
 
 require ('../../Model/Functions/authentication.php');
 
