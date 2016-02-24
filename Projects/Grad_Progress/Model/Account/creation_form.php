@@ -95,15 +95,15 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             require '../../View/Student/account_home_view.php';
         } catch (PDOException $ex) {
             error_log('Tobin message: ' . $ex->getMessage());
-            require '../../View/UserCreation/creation_fail_view.php';
+            require '../../View/Account/creation_fail_view.php';
         }
     }
     else
     {
-        require '../../View/UserCreation/creation_form_view.php';
+        require '../../View/Account/creation_form_view.php';
     }
 }
 else
 {
-    require '../../View/UserCreation/creation_form_view.php';
+    require '../../View/Account/creation_form_view.php';
 }
