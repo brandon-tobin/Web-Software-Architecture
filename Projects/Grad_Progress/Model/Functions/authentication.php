@@ -135,6 +135,7 @@ function verify_Login($role)
         changeSessionID();
         if ($role == '' || in_array($role, $_SESSION['roles']))
         {
+            error_log("TOBIN RETURNING!!!!!");
             return;
         }
         else

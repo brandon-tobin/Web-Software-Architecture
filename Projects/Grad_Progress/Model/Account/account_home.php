@@ -15,7 +15,7 @@ error_log("Made it here!!!!!!!");
 
 redirectToHTTPS();
 
-verify_Login('');
+verify_Login('user');
 
 $role = $_SESSION['roles'];
 
