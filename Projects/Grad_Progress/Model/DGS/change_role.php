@@ -159,7 +159,6 @@ class User_Roles
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             $this->username = array();
-            $this->role = array();
             foreach ($result as $row) {
                 $this->username[] = array($row['username'], $row['role']);
                // $this->role[] = $row['role'];

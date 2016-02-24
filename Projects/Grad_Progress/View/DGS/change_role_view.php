@@ -51,6 +51,13 @@
             </tr>
 
             <?php
+            if (is_array($dgs->username))
+            {
+                echo "Is array";
+            }
+            else
+                echo "Is not an array";
+
 
             foreach ($dgs->username as $row)
             {
@@ -63,16 +70,5 @@
             ?>
 
         </table>
-
-        <p>Account created successful.</p>
-
-        <p>Here are a few things you can do in your account.</p>
-
-        <ul>
-            <li>Update Advisor</li>
-            <li>Update Committee</li>
-            <li>View your forms</li>
-        </ul>
-
     </body>
 </html>
