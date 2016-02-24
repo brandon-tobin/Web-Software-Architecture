@@ -60,6 +60,20 @@ echo "
         </ul>";
     }
 
+    if (in_array("advisor", $_SESSION['roles']))
+    {
+        echo "<p>Click here to view your students</p>";
+    }
+
+    if (in_array("dgs", $_SESSION['roles']))
+    {
+        echo "
+        <ul>
+            <li>View Students</li>
+            <li>View Advisors</li>
+        </ul>";
+    }
+
     echo "
 
 

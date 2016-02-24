@@ -16,7 +16,7 @@ error_log("Made it here!!!!!!!");
 
 //redirectToHTTPS();
 
-verify_Login('student');
+verify_Login('advisor');
 
 //$role = $_SESSION['roles'];
 
