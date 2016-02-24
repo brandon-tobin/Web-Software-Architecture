@@ -66,7 +66,7 @@ function verify_Login($role)
         if ($role == '' || (isset($_SESSION['roles']) && in_array($role, $_SESSION['roles'])))
         {
             error_log("TOBIN User is logged in and Role is correct!!!!");
-            return true;
+            return $_SESSION['realname'];
         }
         else{
             error_log("TOBIN User is logged but the Role is incorrect!!!!");
