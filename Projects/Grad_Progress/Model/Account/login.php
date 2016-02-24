@@ -8,6 +8,8 @@
 
 require("../Functions/authentication.php");
 
+error_log("Made it here!!!!!!!");
+
 redirectToHTTPS();
 
 verify_Login('');
