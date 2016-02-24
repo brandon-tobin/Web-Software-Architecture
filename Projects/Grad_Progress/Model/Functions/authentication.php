@@ -70,6 +70,7 @@ function verify_Login($role)
         }
         else{
             error_log("TOBIN User is logged but the Role is incorrect!!!!");
+            require ('../../View/Account/bad_role.php');
             exit();
         }
     }
@@ -143,6 +144,7 @@ function verify_Login($role)
         else
         {
             error_log("TOBIN User is logged but the Role is incorrect!!!!");
+            require ('../../View/Account/bad_role.php');
             exit();
         }
     }

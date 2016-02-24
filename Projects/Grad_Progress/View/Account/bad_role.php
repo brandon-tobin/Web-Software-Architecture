@@ -42,17 +42,9 @@
             <li><a href="../DGS/overview.php">DGS Overview</a></li>
         </ul>
 
-        <h1 class="form-header">New User Creation Form</h1>
+        <h1 class="form-header">Access Forbidden</h1>
 
-        <p>Account created successful.</p>
-
-        <p>Here are a few things you can do in your account.</p>
-
-        <ul>
-            <li>Update Advisor</li>
-            <li>Update Committee</li>
-            <li>View your forms</li>
-        </ul>
+        <p>You do not have the credentials to view this page.</p>
 
     </body>
 </html>
