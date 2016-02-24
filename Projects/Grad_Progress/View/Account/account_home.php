@@ -49,7 +49,7 @@ echo "
 
     <p>Please click on one of the links below to perform an action.</p>";
 
-    if ($role == 'student')
+    if ($this->role == 'student')
     {
         echo "
         <ul>
