@@ -69,7 +69,7 @@ echo "
     {
         echo "
         <ul>
-            <li>View Students</li>
+            <li><a href=\"DGS/overview.php\">View Students</a></li>
             <li>View Advisors</li>
         </ul>";
     }
