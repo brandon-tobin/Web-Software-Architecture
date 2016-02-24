@@ -50,13 +50,28 @@ echo "
 
     <p>Please click on one of the links below to perform an action.</p>";
 
-    if (in_array("user", $_SESSION['roles']))
+    if (in_array("student", $_SESSION['roles']))
     {
         echo "
         <ul>
             <li>Update Advisor</li>
             <li>Update Committee</li>
             <li>View your forms</li>
+        </ul>";
+    }
+
+    if (in_array("advisor", $_SESSION['roles']))
+    {
+        echo "<p>Click here to view your students</p>";
+    }
+
+    if (in_array("dgs", $_SESSION['roles']))
+    {
+        echo "
+        <ul>
+            <li>View Students</li>
+            <li>View Advisors</li>
+            <li>Change User Role</li>
         </ul>";
     }
 
