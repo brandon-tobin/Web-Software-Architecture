@@ -114,14 +114,14 @@ function verify_Login($role)
                 else
                 {
                     $message = "Username or password is incorrect.";
-                    // require view for login
+                    require ("../../View/Account/login_view.php");
                     exit();
                 }
             }
             else
             {
                 $message = "Username or password is incorrect.";
-                // require view for login
+                require ("../../View/Account/login_view.php");
                 exit();
             }
         }
@@ -145,7 +145,8 @@ function verify_Login($role)
     }
     else
     {
-        error_log("TOBIN User is logged but the Role is incorrect!!!!");
+       // error_log("TOBIN User is logged but the Role is incorrect!!!!");
+        require ("../../View/Account/login_view.php");
         exit();
     }
 
