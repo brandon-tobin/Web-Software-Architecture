@@ -12,7 +12,7 @@ echo "
         <!-- Brandon Tobin -->
         <!-- University of Utah -->
 
-        <!-- Due Process Form for $form->student_Name  -->
+        <!-- Account Home View  -->
 
         <title>Account Home</title>
 
