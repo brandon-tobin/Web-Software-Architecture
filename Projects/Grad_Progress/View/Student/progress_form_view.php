@@ -72,8 +72,6 @@ echo "
                     </tr>";
 
                     // Echo out all activities for the form
-                    //foreach ($form->completedActivity as $row)
-                   // {
                         echo "<tr>
                             <td>Identify Advisor</td>
                             <td>$form->number_semesters1</td>
@@ -128,16 +126,6 @@ echo "
                             <td>$form->acceptable9</td>
                             <td>$form->completed_activity9</td>
                         </tr>";
-
-                    /*foreach ($form->uncompletedActivity as $row)
-                    {
-                        echo "<tr>";
-                        echo "<td>$row</td>";
-                        echo "<td>N/A</td>";
-                        echo "<td>N/A</td>";
-                        echo "<td>N/A</td>";
-                        echo "</tr>";
-                    }*/
 
                 echo "
 
