@@ -10,4 +10,4 @@ require("../Functions/authentication.php");
 
 redirectToHTTPS();
 
-verify_Login();
+verify_Login('');
