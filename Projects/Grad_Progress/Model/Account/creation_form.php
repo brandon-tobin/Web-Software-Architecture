@@ -70,7 +70,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             //$stmt->bindValue(3, $position);
             $stmt->bindValue(3, $username);
             $hashedPassword = computeHash($password, makeSalt());
-            $stmt->bindValue(4, $password);
+            $stmt->bindValue(4, $hashedPassword);
             $stmt->execute();
 
             $stmt = $db->prepare("INSERT INTO Roles (uid, role) VALUES (?,?)");
