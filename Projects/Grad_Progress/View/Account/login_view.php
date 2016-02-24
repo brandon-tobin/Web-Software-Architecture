@@ -44,7 +44,7 @@
 
         <h1 class="form-header">Please Log In</h1>
 
-        <p id="error"><?php echo $message ?></p>
+        <!--<p id="error"><?php echo $message ?></p>-->
 
         <form method="post">
 
