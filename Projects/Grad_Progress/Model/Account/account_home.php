@@ -9,11 +9,11 @@
 error_log("Made it here!!!!!!!");
 
 
-require ('../../Model/Functions/authentication.php');
+require ('../../Model/Functions/authenticatin.php');
 
 error_log("Made it here!!!!!!!");
 
-redirectToHTTPS();
+//redirectToHTTPS();
 
 verify_Login('user');
 
