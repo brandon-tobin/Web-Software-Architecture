@@ -14,7 +14,7 @@ set_include_path("../../Model/DGS/" .PATH_SEPARATOR . "../../View/DGS/");
 require_once 'change_role.php';
 
 // Create a new advisor object
-$change_role = new User_Roles();
+$dgs = new User_Roles();
 
 // Require the advisor view for display
 require "change_role_view.php";

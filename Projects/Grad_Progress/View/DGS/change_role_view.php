@@ -52,7 +52,7 @@
 
             <?php
 
-            foreach ($change_role->username as $row)
+            foreach ($dgs->username as $row)
             {
                 echo "<tr>";
                 foreach ($row as $value) {
