@@ -13,4 +13,11 @@ require ('../../Model/Functions/authentication.php');
 
 redirectToHTTPS();
 
-verify_Login('');
+if (verify_role(''))
+{
+    require ('../../View/Account/account_home.php');
+}
+else
+{
+    verify_Login('');
+}
