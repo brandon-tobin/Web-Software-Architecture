@@ -6,6 +6,8 @@
  * Time: 3:52 PM
  */
 
+require ('db.php');
+
 // Changes the session ID
 function changeSessionID()
 {
