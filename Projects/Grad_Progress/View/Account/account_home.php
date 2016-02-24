@@ -60,6 +60,11 @@ echo "
             <li>View your forms</li>
         </ul>";
     }
+else
+{
+    echo "Incorrect User Role";
+}
+
 
    /* if (in_array("advisor", $_SESSION['roles']))
     {
