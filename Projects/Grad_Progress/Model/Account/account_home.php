@@ -5,6 +5,8 @@
  * Date: 2/23/2016
  * Time: 10:08 PM
  */
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 require ('../../Model/Functions/authentication.php');
 

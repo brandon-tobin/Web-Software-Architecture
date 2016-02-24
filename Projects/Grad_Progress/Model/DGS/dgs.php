@@ -49,8 +49,6 @@ class DGS
             foreach ($result as $row) {
                 $this->students_arr[] = array($row['name'], "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
             }
-
-            error_log("Made it here");
         }
         catch (PDOException $ex) {
         }
