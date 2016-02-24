@@ -6,10 +6,7 @@
  * Time: 10:08 PM
  */
 
-error_log("Made it here!!!!!!!");
-
-
-require ('../../Model/Functions/authenticatin.php');
+require ('../../Model/Functions/authentication.php');
 
 error_log("Made it here!!!!!!!");
 
