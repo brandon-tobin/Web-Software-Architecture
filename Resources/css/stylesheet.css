@@ -159,3 +159,10 @@ h2 {
 .form-header {
    text-align: center;
 }
+
+/*
+ * Red font for error messages
+ */
+#error {
+   color: red;
+}
