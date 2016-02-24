@@ -60,7 +60,10 @@
                 echo "Is array";
             }
             else
+            {
                 echo "Is not an array";
+                echo $dgs->username;
+            }
 
 
             foreach ($dgs->username as $row)
