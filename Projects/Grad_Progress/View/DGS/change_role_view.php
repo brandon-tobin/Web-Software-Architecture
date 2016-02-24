@@ -52,20 +52,6 @@
 
             <?php
 
-            error_reporting(E_ALL);
-            ini_set("display_errors", 1);
-
-            if (is_array($dgs->username))
-            {
-                echo "Is array";
-            }
-            else
-            {
-                echo "Is not an array";
-                echo $dgs->username;
-            }
-
-
             foreach ($dgs->username as $row)
             {
                 echo "<tr>";
