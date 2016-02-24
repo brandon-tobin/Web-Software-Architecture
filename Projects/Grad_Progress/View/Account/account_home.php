@@ -46,7 +46,8 @@ echo "
         <li><a href=\"../DGS/overview.php\">DGS Overview</a></li>
     </ul>
 
-    <h1 class=\"form-header\">Welcome Back "; echo $_SESSION['realname']; echo " : Account Home</h1>
+    <h1 class=\"form-header\">Welcome Back "; echo $_SESSION['realname']; echo "</h1>
+    <h1 class=\"form-header\">Account Home</h1>
 
     <p>Please click on one of the links below to perform an action.</p>";
 
