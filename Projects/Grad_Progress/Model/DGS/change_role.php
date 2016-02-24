@@ -152,7 +152,7 @@ class User_Roles
             $db = openDBConnection();
 
             // Query the database to find out which advisor is related to this student.
-            $query = "SELECT * FROM Roles)";
+            $query = "SELECT username, role FROM Roles)";
             $statement = $db->prepare($query);
             $statement->execute();
 
