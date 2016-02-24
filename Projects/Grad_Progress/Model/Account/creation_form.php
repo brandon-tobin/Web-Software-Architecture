@@ -73,8 +73,8 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $stmt->bindValue(4, $hashedPassword);
             $stmt->execute();
 
-            $stmt = $db->prepare("INSERT INTO Roles (uid, role) VALUES (?,?)");
-            $stmt->bindValue(1, $uid);
+            $stmt = $db->prepare("INSERT INTO Roles (username, role) VALUES (?,?)");
+            $stmt->bindValue(1, $username);
             $stmt->bindValue(2, "user");
             $stmt->execute();
 
