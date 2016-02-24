@@ -14,6 +14,6 @@ error_log("Made it here!!!!!!!");
 
 verify_Login('user');
 
-$role = $_SESSION['roles'];
+//$role = $_SESSION['roles'];
 
 require ('../../View/Account/account_home.php');

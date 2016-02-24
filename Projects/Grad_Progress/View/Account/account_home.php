@@ -49,7 +49,7 @@ echo "
 
     <p>Please click on one of the links below to perform an action.</p>";
 
-    if ($this->role == 'student')
+    if (in_array("user", $_SESSION['roles']))
     {
         echo "
         <ul>
