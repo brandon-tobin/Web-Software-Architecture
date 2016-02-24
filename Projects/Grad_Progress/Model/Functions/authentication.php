@@ -57,6 +57,8 @@ function verify_Login($role)
     // Redirect to use HTTPS
     redirectToHTTPS();
 
+    error_log("MADE IT HERE!!!!");
+
     // Check to see if user is logged in
     if (isset($_SESSION['userid']))
     {
