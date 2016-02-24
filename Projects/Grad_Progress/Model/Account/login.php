@@ -6,9 +6,10 @@
  * Time: 9:19 PM
  */
 
+
+
 require ('../../Model/Functions/authentication.php');
 
-error_log("Made it here!!!!!!!");
 
 redirectToHTTPS();
 
