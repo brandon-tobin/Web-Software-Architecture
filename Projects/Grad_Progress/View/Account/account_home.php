@@ -69,8 +69,8 @@ echo "
     {
         echo "
         <ul>
-            <li><a href=\"../DGS/overview.php\">View Students</a></li>
-            <li>View Advisors</li>
+            <li><a href=\"../DGS/overview.php\">View Students and Advisors</a></li>
+            <li>Update a User's Role</li>
         </ul>";
     }
 

@@ -9,6 +9,8 @@
 
 require '../../Model/Functions/db.php';
 
+verify_Login('dgs');
+
 class DGS
 {
     public $advisors;
