@@ -7,6 +7,9 @@
  *
  */
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 require '../../Model/Functions/db.php';
 
 require '../../Model/Functions/authentication.php';
