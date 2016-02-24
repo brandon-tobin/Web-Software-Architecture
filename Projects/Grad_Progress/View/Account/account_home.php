@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-
 echo "
     <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
@@ -51,7 +50,7 @@ echo "
 
     <p>Please click on one of the links below to perform an action.</p>";
 
-    if (in_array("user", $_SESSION['roles']))
+    if (in_array("student", $_SESSION['roles']))
     {
         echo "
         <ul>
@@ -60,26 +59,6 @@ echo "
             <li>View your forms</li>
         </ul>";
     }
-else
-{
-    echo "Incorrect User Role";
-}
-
-
-   /* if (in_array("advisor", $_SESSION['roles']))
-    {
-        echo "<p>Click here to view your students</p>";
-    }
-
-    if (in_array("dgs", $_SESSION['roles']))
-    {
-        echo "
-        <ul>
-            <li>View Students</li>
-            <li>View Advisors</li>
-            <li>Change User Role</li>
-        </ul>";
-    }*/
 
     echo "
 
