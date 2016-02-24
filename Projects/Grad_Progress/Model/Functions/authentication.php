@@ -11,9 +11,8 @@ ini_set("display_errors", 1);
 // Changes the session ID
 function changeSessionID()
 {
-    // Ask browser to delete existing cookie
-    setcookie("PHPSESSID", "", time()-3600, "/");
-
+    // Ask the browser to delete the existing cookie
+    setcookie("PHPSESSID", "", time() - 3600, "/");
     // Change the session ID and send it to the browser in a secure cookie
     $server = $_SERVER['SERVER_NAME'];
     $secure = usingHTTPS();
