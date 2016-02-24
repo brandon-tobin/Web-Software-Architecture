@@ -7,7 +7,7 @@
  *
  */
 
-require '../../Model/db.php';
+require '../../Model/Functions/db.php';
 
 class DGS
 {
