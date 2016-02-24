@@ -56,7 +56,7 @@
             {
                 echo "<tr>";
                 foreach ($row as $value) {
-                    echo "<td>$row</td>";
+                    echo "<td>$value</td>";
                 }
                 echo "</tr>";
             }
