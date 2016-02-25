@@ -11,6 +11,8 @@ require '../../Model/Functions/db.php';
 
 require '../../Model/Functions/authentication.php';
 
+error_log("TOBIN MADE IT HERE!!!!! CS 4540");
+
 // Use HTTPS
 redirectToHTTPS();
 
