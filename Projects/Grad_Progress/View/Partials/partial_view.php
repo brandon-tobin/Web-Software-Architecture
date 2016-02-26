@@ -31,6 +31,11 @@ function getNavigation()
 function getNavBar($role)
 {
 
+    if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
+    {
+        verify_Login('');
+    }
+
     if (in_array('dgs', $role))
     {
         return "
@@ -78,14 +83,6 @@ function getNavBar($role)
         </ul>
         </form>";
     }
-
-    if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
-    {
-       verify_Login('');
-    }
-
-
-
 }
 
 function pageDataHeader($title)
