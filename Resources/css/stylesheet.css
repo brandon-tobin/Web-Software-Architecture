@@ -204,10 +204,10 @@ h2 {
  * Make the link block change background colors when hovered.
  */
 #navBar li a {
-   display: block;
+   /*display: block;*/
    color: white;
    text-align: center;
-   padding: 14px 16px;
+   /*padding: 14px 16px;*/
    text-decoration: none;
    font-family: "Arial", sans-serif;
 }
