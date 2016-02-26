@@ -63,6 +63,8 @@
             ?>
         </table>
 
+        <p>Please select the username and roll you wish to change the user to.</p>
+
         <form method="post">
             <label for="user">Advisor:</label>
             <select name="user" id="user">
