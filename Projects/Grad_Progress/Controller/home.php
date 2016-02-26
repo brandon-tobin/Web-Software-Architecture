@@ -32,7 +32,7 @@
 
         echo (getNavigation());
 
-        echo (getNavBar());
+        echo (getNavBar(''));
 
         echo (pageDataHeader("Welcome to the Graduate Student System!"));
 

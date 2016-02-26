@@ -62,6 +62,15 @@ function getNavBar($role)
             <li><a href=\"../Account/logout.php\">Logout</a></li>
         </ul>";
     }
+    else
+    {
+        return "
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li><a>Welcome Please Login To Continue</a></li>
+
+        </ul>";
+    }
 
 
 }
