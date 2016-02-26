@@ -52,22 +52,30 @@ class Update_Info
     function user_info()
     {
         try {
-            $uid = $_SESSION['userid'];
+            $this->uid = $_SESSION['userid'];
 
-            error_log("TOBIN!!!! UID is : " . $uid);
+            error_log("TOBIN!!!! UID is : " . $this->uid);
+            error_log("TOBIN!!!! Name is : " . $_SESSION['realname']);
+            error_log("TOBIN!!!! Username is : " . $_SESSION['login']);
 
             $db = openDBConnection();
 
             // Query the database to find out which advisor is related to this student.
-            $query = "SELECT Users.uid, Users.name, Users.position, Users.username, Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = ?; ";
+            $query = "SELECT Users.name, Users.position, Users.username, Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = ?; ";
             $statement = $db->prepare($query);
+            $statement->bindValue(1, $this->uid);
             $statement->execute();
 
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            $this->username = array();
+            //$this->username = array();
             foreach ($result as $row) {
-                $this->username[] = array($row['username'], $row['role']);
+                $this->name = $row['name'];
+                $this->position = $row['position'];
+                $this->username = $row['username'];
+                $this->degree = $row['degree'];
+                $this->track = $row['track'];
+                $this->semester_admitted = $row['semester_admitted'];
             }
         }
         catch (PDOException $ex) {
