@@ -58,13 +58,17 @@ echo "
             <li>Update Advisor</li>
             <li>Update Committee</li>
             <li>View your forms</li>
-            <li>Logout</li>
+            <li><a href=\"logout.php\">Logout</a></li>
         </ul>";
     }
 
     if (in_array("advisor", $_SESSION['roles']))
     {
-        echo "<p>Click here to view your students</p>";
+        echo "
+        <ul>
+            <li>Click here to view your students</li>
+            <li><a href=\"logout.php\">Logout</a></li>
+        </ul>";
     }
 
     if (in_array("dgs", $_SESSION['roles']))
@@ -73,6 +77,7 @@ echo "
         <ul>
             <li><a href=\"../DGS/overview.php\">View Students and Advisors</a></li>
             <li><a href=\"../DGS/change_role.php\">Change User Role</a></li>
+            <li><a href=\"logout.php\">Logout</a></li>
         </ul>";
     }
 
