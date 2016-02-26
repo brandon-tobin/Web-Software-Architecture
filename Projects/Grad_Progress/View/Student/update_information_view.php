@@ -125,6 +125,74 @@
                     <td><input type="text" size="20" name="semester_admitted" id="semester_admitted" value=<?php echo $info->semester_admitted?> /></td>
                 </tr>
                 <tr>
+                    <td>Advisor: </td>
+                    <td><?php echo $info->advisor?></td>
+                </tr>
+                <tr>
+                    <td><label for="advisor">Select New Advisor</label></td>
+                    <td>
+                        <select name="advisor" id="advisor">
+                            <?php
+                            // Echo out the possible advisors
+                            foreach ($info->all_advisors as $row) {
+                            echo "<option value=\"$row\">$row</option>";
+                            }?>
+                        </select>
+                    </td>
+                    <td><label for="new_advisor_checked">Check if you want to update advisor.</label></td>
+                    <td><input type="checkbox" name="new_advisor_checked" id="new_advisor_checked"</td>
+                </tr>
+                <tr>
+                    <td>Current Committee:</td>
+                    <td>
+                        <ul>
+                            <?php
+                            foreach ($info->committee as $row)
+                            {
+                                echo "<li>$row</li>";
+                            }
+                            ?>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="committee">Select New Committee Members</label></td>
+                    <td>
+                        <select name="committee1" id="committee1">
+                            <?php
+                            // Echo out the possible committee members
+                            foreach ($info->all_committee as $row) {
+                            echo "<option value=\"$row\">$row</option>";
+                            }?>
+                        </select>
+                        <br />
+                        <select name=\"committee2\" id=\"committee2\">
+                            <?php
+                            // Echo out the possible committee members
+                            foreach ($info->all_committee as $row) {
+                            echo "<option value=\"$row\">$row</option>";
+                            }?>
+                        </select>
+                        <br />
+                        <select name=\"committee3\" id=\"committee3\">
+                            <?php
+                            // Echo out the possible committee members
+                            foreach ($info->all_committee as $row) {
+                            echo "<option value=\"$row\">$row</option>";
+                            }?>
+                        </select>
+                        <select name=\"committee4\" id=\"committee4\">
+                            <?php
+                            // Echo out the possible committee members
+                            foreach ($info->all_committee as $row) {
+                            echo "<option value=\"$row\">$row</option>";
+                            }?>
+                        </select>";
+                    </td>
+                    <td><label for="new_committee_checked">Check if you want to update committee.</label></td>
+                    <td><input type="checkbox" name="new_committee_checked" id="new_committee_checked"</td>
+                </tr>
+                <tr>
                     <?php
                     if ($info->first_submission == true)
                         echo "<td colspan=\"2\"><input type=\"submit\" name=\"submit\" value=\"Submit\" /></td>";

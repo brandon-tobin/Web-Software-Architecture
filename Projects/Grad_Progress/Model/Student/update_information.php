@@ -65,6 +65,10 @@ class Update_Info
     public $track;
     public $semester_admitted;
     public $first_submission;
+    public $advisor;
+    public $all_advisors;
+    public $committee;
+    public $all_committee;
 
 
     // Constructor
@@ -107,6 +111,56 @@ class Update_Info
             foreach ($result as $row)
             {
                 $this->position = $row['role'];
+            }
+
+            $query = "SELECT Users.name FROM Advisors INNER JOIN Users ON Advisors.aid = Users.uid WHERE Advisors.sid = ?;";
+            $statement = $db->prepare(($query));
+            $statement->bindValue(1, $this->uid);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row)
+            {
+                $this->advisor = $row['name'];
+            }
+
+            $query = "SELECT Users.name FROM Advisors INNER JOIN Users ON Advisors.aid = Users.uid;";
+            $statement = $db->prepare(($query));
+            $statement->bindValue(1, $this->uid);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $this->all_advisors = array();
+            foreach ($result as $row)
+            {
+                array_push($this->all_advisors, $row['name']);
+            }
+
+            $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee WHERE sid = ?;";
+            $statement = $db->prepare(($query));
+            $statement->bindValue(1, $this->uid);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $this->committee = array();
+            foreach ($result as $row)
+            {
+                array_push($this->committee, $row['name']);
+            }
+
+            $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee);";
+            $statement = $db->prepare(($query));
+            $statement->bindValue(1, $this->uid);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $this->all_committee = array();
+            foreach ($result as $row) {
+                array_push($this->all_committee, $row['name']);
             }
 
             if ($this->degree == '' && $this->track == '' && $this->semester_admitted == '')
