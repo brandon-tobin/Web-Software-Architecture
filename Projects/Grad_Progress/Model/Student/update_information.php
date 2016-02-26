@@ -61,6 +61,8 @@ if (isset($_POST['submit']))
     //}
 
     $db->commit();
+
+    require ('../../View/Account/account_home.php');
 }
 
 if (isset($_POST['Submit']))
