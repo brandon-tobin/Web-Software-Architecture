@@ -82,7 +82,8 @@
                 <option value="staff">staff</option>
                 <option value="dgs">dgs</option>
             </select>
-            <input type="submit" name="submit" value="Submit"/>
+
+            <input type="submit" name="submit" value="Submit" />
         </form>
     </body>
 </html>

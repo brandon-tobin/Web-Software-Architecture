@@ -5,8 +5,8 @@
  * Date: 2/23/2016
  * Time: 3:52 PM
  */
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 
 // Changes the session ID
 function changeSessionID()
@@ -112,6 +112,8 @@ function verify_Login($role)
                         $roles[] = $row['role'];
                     }
                     $_SESSION['roles'] = $roles;
+
+                    session_start();
                 }
                 else
                 {
