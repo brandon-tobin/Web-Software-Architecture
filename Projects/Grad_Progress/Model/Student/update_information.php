@@ -49,7 +49,7 @@ class Update_Info
     }
 
     // Method for creating student form
-    function create_roles()
+    function user_info()
     {
         try {
             $uid = $_SESSION['userid'];
