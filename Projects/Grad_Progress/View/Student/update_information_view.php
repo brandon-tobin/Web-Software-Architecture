@@ -64,13 +64,13 @@
                     <?php
                     if ($info->degree == 'Computing')
                     {
-                        echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" /></td>
-                              <td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" checked/></td>";
+                        echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" />Computer Science</td>
+                              <td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" checked/>Computing</td>";
                     }
                     else
                     {
-                        echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" checked/></td>
-                              <td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" /></td>";
+                        echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" checked/>Computer Science</td>
+                              <td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" />Computing</td>";
                     }
                     ?>
                 </tr>
