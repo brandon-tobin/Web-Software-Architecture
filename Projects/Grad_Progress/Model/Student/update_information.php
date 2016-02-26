@@ -63,7 +63,7 @@ class Update_Info
             $db = openDBConnection();
 
             // Query the database to find out which advisor is related to this student.
-            $query = "SELECT Users.position,Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = $this->uid; ";
+            $query = "SELECT Users.position,Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = $this->uid;";
             $statement = $db->prepare($query);
            // $statement->bindValue(1, $this->uid);
             $statement->execute();
@@ -78,6 +78,7 @@ class Update_Info
             }
         }
         catch (PDOException $ex) {
+            error_log("TOBIN ACCESS FAILED MESSAGE IS: " . $ex->getMessage());
         }
     }
 }
