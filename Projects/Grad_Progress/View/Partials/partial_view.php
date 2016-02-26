@@ -35,7 +35,7 @@ function getNavBar($role)
         return "
         <!-- Nav Bar -->
         <ul id=\"navBar\">
-            <li>Welcome".$_SESSION['realname']."</li>
+            <li><a>Welcome".$_SESSION['realname']."</a></li>
             <li><a href=\"../Account/account_home.php\">Account Home</a></li>
         </ul>";
     }
