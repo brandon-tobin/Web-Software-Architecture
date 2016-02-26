@@ -147,6 +147,7 @@
                     <td>
                         <ul>
                             <?php
+                            if (sizeof($info->committee) != 0)
                             foreach ($info->committee as $row)
                             {
                                 echo "<li>$row</li>";
