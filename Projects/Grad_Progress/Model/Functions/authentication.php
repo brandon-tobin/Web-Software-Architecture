@@ -83,8 +83,6 @@ function verify_Login($role)
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
 
-        session_start();
-
         try
         {
             $DBH = openDBConnection();
