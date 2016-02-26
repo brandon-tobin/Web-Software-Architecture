@@ -167,7 +167,7 @@
                             }?>
                         </select>
                         <br />
-                        <select name=\"committee2\" id=\"committee2\">
+                        <select name="committee2" id="committee2">
                             <?php
                             // Echo out the possible committee members
                             foreach ($info->all_committee as $row) {
@@ -175,7 +175,7 @@
                             }?>
                         </select>
                         <br />
-                        <select name=\"committee3\" id=\"committee3\">
+                        <select name="committee3" id="committee3">
                             <?php
                             // Echo out the possible committee members
                             foreach ($info->all_committee as $row) {
@@ -183,7 +183,7 @@
                             }?>
                         </select>
                         <br />
-                        <select name=\"committee4\" id=\"committee4\">
+                        <select name="committee4" id="committee4">
                             <?php
                             // Echo out the possible committee members
                             foreach ($info->all_committee as $row) {
