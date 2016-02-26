@@ -1,6 +1,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+require('../../View/Partials/partial_view.php');
+
 echo "
     <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
