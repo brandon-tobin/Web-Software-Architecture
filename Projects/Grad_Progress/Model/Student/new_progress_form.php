@@ -11,6 +11,8 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
+verify_Login('student');
+
 if (isset($_POST['submit']))
 {
     $student_ID = $_GET['id'];

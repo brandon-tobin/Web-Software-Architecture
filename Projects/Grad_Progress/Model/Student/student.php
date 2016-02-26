@@ -10,6 +10,8 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
+verify_Login('student');
+
 class Student
 {
     public $student_First_Name;
