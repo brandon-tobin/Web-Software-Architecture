@@ -59,5 +59,7 @@ unset($_SESSION['roles']);
 
         <h1 class="form-header">You have logged out.</h1>
 
+        <p><a href="login.php">Login</a></p>
+
     </body>
 </html>
