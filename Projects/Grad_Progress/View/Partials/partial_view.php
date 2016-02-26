@@ -73,8 +73,6 @@ function getNavBar($role)
         if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
         {
             navBar_Login('');
-            //header ("Location: ../Grad_Progress/View/Account/account_home.php");
-            require ('../View/Account/account_home.php');
         }
 
         return "

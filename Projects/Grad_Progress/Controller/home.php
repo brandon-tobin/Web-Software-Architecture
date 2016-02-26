@@ -34,6 +34,11 @@
 
         echo (getNavBar(''));
 
+        if (isset($_SESSION['userid']))
+        {
+            header ("Location: ../Grad_Progress/View/Account/account_home.php");
+        }
+
         echo (pageDataHeader("Welcome to the Graduate Student System!"));
 
         ?>
