@@ -27,26 +27,18 @@ echo "
 
     </head>
 
-    <body>
+    <body>";
 
-    <!-- Header -->
-    <div id=\"header\">
-        <img src=\"/Resources/Images/uofufootball.jpg\" alt=\"Rice Eccles Stadium\" />
-        <h1>University of Utah - CS 4540</h1>
-        <h2>Web Software Architecture - Spring 2016</h2>
-        <h2>Brandon Tobin</h2>
-        <h2>Grad Progress - Assignment 4</h2>
-    </div>
+    echo (getHeader());
 
-    <!-- Navigation Bar -->
-    <ul id=\"navigation\">
-        <li><a href=\"../../../../index.html\">Home</a></li>
-        <li><a href=\"../../../\">Projects</a></li>
-        <li><a href=\"../../../../Class_Examples\">Examples</a></li>
-        <li><a href=\"../DGS/overview.php\">DGS Overview</a></li>
-    </ul>
+    echo (getNavigation());
 
-    <h1 class=\"form-header\">Welcome Back "; echo $_SESSION['realname']; echo "</h1>
+    echo (getNavBar($_SESSION['roles']));
+
+    echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
+
+    echo "
+
     <h1 class=\"form-header\">Account Home</h1>
 
     <p>Please click on one of the links below to perform an action.</p>";
