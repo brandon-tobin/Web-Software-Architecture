@@ -14,8 +14,7 @@ set_include_path("../../Model/Student/" .PATH_SEPARATOR . "../../View/Student/")
 require_once 'student.php';
 
 // Get the id out of the url
-//$id = $_GET['id'];
-$id = $_SESSION['userid'];
+$id = $_GET['id'];
 
 // Create a new student object
 $student = new Student($id);

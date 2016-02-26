@@ -53,10 +53,11 @@ echo "
 
     if (in_array("student", $_SESSION['roles']))
     {
+        $uid = $_SESSION['userid'];
         echo "
         <ul>
             <li><a href=\"../Student/update_information.php\">Update Information, Advisor, Committee</a></li>
-            <li><a href=\"../Student/student_forms.php\">View your forms</a></li>
+            <li><a href=\"../Student/student_forms.php?id=$uid\">View your forms</a></li>
             <li><a href=\"logout.php\">Logout</a></li>
         </ul>";
     }
