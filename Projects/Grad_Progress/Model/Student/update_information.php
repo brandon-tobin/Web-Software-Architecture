@@ -121,7 +121,7 @@ if (isset($_POST['Submit']))
 
         $db->beginTransaction();
         // Delete the student's committee
-        $stmt = $db->prepare("DELETE FROM Committee WHERE uid = ?");
+        $stmt = $db->prepare("DELETE FROM Committee WHERE sid = ?");
         $stmt->bindValue(1, $_SESSION['userid']);
         $stmt->execute();
 
