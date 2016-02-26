@@ -212,7 +212,7 @@ class Update_Info
                 $this->advisor = $row['name'];
             }
 
-            $query = "SELECT Users.name FROM Advisors INNER JOIN Users ON Advisors.aid = Users.uid;";
+            $query = "SELECT DISTINCT Users.name FROM Advisors INNER JOIN Users ON Advisors.aid = Users.uid;";
             $statement = $db->prepare(($query));
             $statement->bindValue(1, $this->uid);
             $statement->execute();
