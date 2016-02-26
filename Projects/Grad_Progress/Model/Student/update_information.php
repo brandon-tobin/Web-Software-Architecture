@@ -47,7 +47,7 @@ if (isset($_POST['submit']))
         $committee3 = trim($_REQUEST['committee3']);
         $committee4 = trim($_REQUEST['committee4']);
 
-        $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES ((?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?)),
+        $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES (?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?)),
                               (?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?))");
         $stmt->bindValue(1, $_SESSION['userid']);
         $stmt->bindValue(2, $committee1);
