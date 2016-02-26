@@ -242,19 +242,11 @@ class New_Student_Form
             $timestamp = time();
             $this->date_completed = date("Y-m-d", $timestamp);
 
-            if (strpos($this->semester_Admitted, 'Fall') !== false) {
-                $year = substr($this->semester_Admitted, 4, 5);
-                $admit_Date = strtotime("1 June $year");
-                $current_Date = strtotime("today");
-                $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
-                $this->num_semesters = $elapsed_time;
-            } else {
-                $year = substr($this->semester_Admitted, 6, 9);
-                $admit_Date = strtotime("1 January $year");
-                $current_Date = strtotime("today");
-                $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
-                $this->num_semesters = $elapsed_time;
-            }
+            date_default_timezone_set('America/Denver');
+            $admit_Date = strtotime($this->semester_Admitted);
+            $current_Date = strtotime("today");
+            $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
+            $this->num_semesters = $elapsed_time;
 
             // Query the database to find out which advisor is related to this student.
             $query = "SELECT name FROM Users WHERE uid IN (SELECT aid FROM Advisors WHERE sid = $id)";

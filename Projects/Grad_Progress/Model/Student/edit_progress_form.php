@@ -232,7 +232,7 @@ class Student_Form
                 $this->question2 = $row['progress_description'];
             }
 
-            if (strpos($this->semester_Admitted, 'Fall') !== false) {
+            /*if (strpos($this->semester_Admitted, 'Fall') !== false) {
                 $year = substr($this->semester_Admitted, 4, 5);
                 $admit_Date = strtotime("1 June $year");
                 $current_Date = strtotime("today");
@@ -244,7 +244,7 @@ class Student_Form
                 $current_Date = strtotime("today");
                 $elapsed_time = floor((floor(($current_Date - $admit_Date) / 2628000) / 6)) + 1;
                 $this->num_semesters = $elapsed_time;
-            }
+            }*/
 
             $query = "SELECT activity, date_completed FROM Activities WHERE sid = $id";
             $statement = $db->prepare($query);
