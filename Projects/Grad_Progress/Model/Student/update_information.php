@@ -91,8 +91,6 @@ class Update_Info
 
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            error_log("TOBIN RESULT IS : " . var_dump($result));
-
             foreach ($result as $row) {
                 $this->degree = $row['degree'];
                 $this->track = $row['track'];
