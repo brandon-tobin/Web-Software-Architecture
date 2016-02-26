@@ -38,11 +38,13 @@ echo "
 
         <body>";
 
-            echo (getHeader());
+        echo (getHeader());
 
-            echo (getNavigation());
+        echo (getNavigation());
 
-            echo "
+        echo (getNavBar($_SESSION['roles']));
+
+        echo "
 
             <p>Important Links</p>
             <p><a href='../UserCreation/creation_form.php'>Create New User</a></p>

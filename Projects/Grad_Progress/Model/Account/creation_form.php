@@ -92,7 +92,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
                 $db->commit();
             }*/
 
-            require '../../View/Student/account_home_view.php';
+            require '../../View/Account/account_home.php';
         } catch (PDOException $ex) {
             error_log('Tobin message: ' . $ex->getMessage());
             require '../../View/Account/creation_fail_view.php';

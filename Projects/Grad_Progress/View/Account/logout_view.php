@@ -2,6 +2,7 @@
 
 require ('../../Model/Functions/db.php');
 require ('../../Model/Functions/authentication.php');
+require ('../../View/Partials/partial_view.php');
 
 session_start();
 
@@ -40,24 +41,17 @@ unset($_SESSION['roles']);
 
     <body>
 
-        <!-- Header -->
-        <div id="header">
-            <img src="/Resources/Images/uofufootball.jpg" alt="Rice Eccles Stadium" />
-            <h1>University of Utah - CS 4540</h1>
-            <h2>Web Software Architecture - Spring 2016</h2>
-            <h2>Brandon Tobin</h2>
-            <h2>Grad Progress - Assignment 4</h2>
-        </div>
+        <?php
 
-        <!-- Navigation Bar -->
-        <ul id="navigation">
-            <li><a href="../../../../index.html">Home</a></li>
-            <li><a href="../../../">Projects</a></li>
-            <li><a href="../../../../Class_Examples">Examples</a></li>
-            <li><a href="../DGS/overview.php">DGS Overview</a></li>
-        </ul>
+        echo (getHeader());
 
-        <h1 class="form-header">You have logged out.</h1>
+        echo (getNavigation());
+
+        echo (getNavBar($_SESSION['roles']));
+
+        echo (pageDataHeader("You have logged out."));
+
+        ?>
 
         <p><a href="account_home.php">Login</a></p>
 

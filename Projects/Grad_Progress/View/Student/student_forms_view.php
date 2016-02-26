@@ -43,6 +43,8 @@ echo "
 
                 echo (getNavigation());
 
+                echo (getNavBar($_SESSION['roles']));
+
                 echo (pageDataHeader("$student->student_First_Name's Forms"));
 
                 echo "

@@ -1,3 +1,4 @@
+<?php require('../../View/Partials/partial_view.php'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html lang="en">
@@ -25,24 +26,17 @@
 
     <body>
 
-        <!-- Header -->
-        <div id="header">
-            <img src="/Resources/Images/uofufootball.jpg" alt="Rice Eccles Stadium" />
-            <h1>University of Utah - CS 4540</h1>
-            <h2>Web Software Architecture - Spring 2016</h2>
-            <h2>Brandon Tobin</h2>
-            <h2>Grad Progress - Assignment 4</h2>
-        </div>
+        <?php
 
-        <!-- Navigation Bar -->
-        <ul id="navigation">
-            <li><a href="../../../../index.html">Home</a></li>
-            <li><a href="../../../">Projects</a></li>
-            <li><a href="../../../../Class_Examples">Examples</a></li>
-            <li><a href="../DGS/overview.php">DGS Overview</a></li>
-        </ul>
+        echo (getHeader());
 
-        <h1 class="form-header">Please Log In</h1>
+        echo (getNavigation());
+
+        echo (getNavBar($_SESSION['roles']));
+
+        echo (pageDataHeader("Please Log In"));
+
+        ?>
 
         <p id="error"><?php echo $message ?></p>
 
