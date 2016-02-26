@@ -42,7 +42,7 @@
             <li><a href="../DGS/overview.php">DGS Overview</a></li>
         </ul>
 
-        <h1 class="form-header">User Roles</h1>
+        <h1 class="form-header">Change User Roles</h1>
 
         <table class="roster">
             <tr>
@@ -61,7 +61,27 @@
                 echo "</tr>";
             }
             ?>
-
         </table>
+
+        <form method="post">
+            <label for="user">Advisor:</label>
+            <select name="user" id="user">
+                <?php
+                // Echo out the possible advisors
+                foreach ($dgs->username as $row) {
+                echo "<option value=\"$row\">$row</option>";
+                }
+                ?>
+            </select>
+            <label for="role">Advisor:</label>
+            <select name="role" id="role">
+                <?php
+                // Echo out the possible advisors
+                foreach ($form->advisor_array as $row) {
+                echo "<option value=\"$row\">$row</option>";
+                }
+                ?>
+            </select>
+        </form>
     </body>
 </html>

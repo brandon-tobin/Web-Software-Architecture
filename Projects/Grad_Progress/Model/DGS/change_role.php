@@ -140,7 +140,6 @@ verify_Login('dgs');
 class User_Roles
 {
     public $username;
-   // public $role;
 
     // Constructor
     public function __construct()
@@ -164,7 +163,6 @@ class User_Roles
             $this->username = array();
             foreach ($result as $row) {
                 $this->username[] = array($row['username'], $row['role']);
-               // $this->role[] = $row['role'];
             }
         }
         catch (PDOException $ex) {
