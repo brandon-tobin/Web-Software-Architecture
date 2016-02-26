@@ -52,7 +52,7 @@ if (isset($_POST['Submit']))
     $stmt->bindValue(1, $degree);
     $stmt->bindValue(2, $track);
     $stmt->bindValue(3, $semester_admitted);
-    $stmt->bindValue(4, $uid);
+    $stmt->bindValue(4, $_SESSION['userid']);
     $stmt->execute();
 
     $stmt = $db->prepare("UPDATE Users SET name = ? WHERE uid = ?; ");
