@@ -21,6 +21,7 @@ if (isset($_POST['submit']))
     $username = trim($_REQUEST['username']);
     $role = trim($_REQUEST['role']);
 
+    error_log("TOBIN Username is " . $username . "and new role should be " . $role);
     // Create a DB connection
     $db = openDBConnection();
     $db->beginTransaction();
