@@ -18,6 +18,7 @@ if (isset($_POST['submit']))
     $degree = trim($_REQUEST['degree']);
     $track = trim($_REQUEST['track']);
     $semester_admitted = trim($_REQUEST['semester_admitted']);
+    $advisor = trim($_REQUEST['advisor']);
 
     // Create a DB connection
     $db = openDBConnection();
@@ -31,6 +32,33 @@ if (isset($_POST['submit']))
     $stmt->bindValue(4, $semester_admitted);
     $stmt->execute();
 
+    //if ($_REQUEST['new_advisor_checked'])
+    //{
+        $stmt = $db->prepare("INSERT INTO Advisors (aid, sid) VALUES ((SELECT uid FROM Users WHERE name = ?), ?)");
+        $stmt->bindValue(1, $advisor);
+        $stmt->bindValue(2, $_SESSION['userid']);
+        $stmt->execute();
+    //}
+
+    //if ($_REQUEST['new_committee_checked'])
+    //{
+        $committee1 = trim($_REQUEST['committee1']);
+        $committee2 = trim($_REQUEST['committee2']);
+        $committee3 = trim($_REQUEST['committee3']);
+        $committee4 = trim($_REQUEST['committee4']);
+
+        $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES (((SELECT uid FROM Users WHERE name = ?), ?),
+                              ((SELECT uid FROM Users WHERE name = ?), ?), ((SELECT uid FROM Users WHERE name = ?), ?), ((SELECT uid FROM Users WHERE name = ?), ?))");
+        $stmt->bindValue(1, $_SESSION['userid']);
+        $stmt->bindValue(2, $committee1);
+        $stmt->bindValue(3, $_SESSION['userid']);
+        $stmt->bindValue(4, $committee2);
+        $stmt->bindValue(5, $_SESSION['userid']);
+        $stmt->bindValue(6, $committee3);
+        $stmt->bindValue(7, $_SESSION['userid']);
+        $stmt->bindValue(8, $committee4);
+    //}
+
     $db->commit();
 }
 
@@ -39,20 +67,79 @@ if (isset($_POST['Submit']))
     $degree = trim($_REQUEST['degree']);
     $track = trim($_REQUEST['track']);
     $semester_admitted = trim($_REQUEST['semester_admitted']);
+    $advisor = trim($_REQUEST['advisor']);
+
+
+
 
     // Create a DB connection
     $db = openDBConnection();
+
     $db->beginTransaction();
 
-    // Update the roll
+    // Update the student
     $stmt = $db->prepare("UPDATE Students SET degree = ?, track = ?, semester_admitted = ? WHERE uid = ?; ");
     $stmt->bindValue(1, $degree);
     $stmt->bindValue(2, $track);
     $stmt->bindValue(3, $semester_admitted);
     $stmt->bindValue(4, $_SESSION['userid']);
     $stmt->execute();
-
     $db->commit();
+
+
+
+    if (isset($_REQUEST['new_advisor_checked']))
+    {
+        // Get advisor uid
+        /*$stmt = $db->prepare("SELECT uid FROM Users WHERE name = ?");
+        $stmt->bindValue(1, $advisor);
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($result as $row)
+        {
+            $aid = $row['uid'];
+        }*/
+
+        // Update the student advisor
+        $stmt = $db->prepare("UPDATE Advisors SET aid = (SELECT uid FROM Users WHERE name = ?) WHERE uid = ?");
+        $stmt->bindValue(1, $advisor);
+        $stmt->bindValue(2, $_SESSION['userid']);
+        $db->commit();
+
+    }
+
+    if (isset($_REQUEST['new_committee_checked']))
+    {
+        $committee1 = trim($_REQUEST['committee1']);
+        $committee2 = trim($_REQUEST['committee2']);
+        $committee3 = trim($_REQUEST['committee3']);
+        $committee4 = trim($_REQUEST['committee4']);
+
+        $db->beginTransaction();
+        // Delete the student's committee
+        $stmt = $db->prepare("DELETE FROM Committee WHERE uid = ?");
+        $stmt->bindValue(1, $_SESSION['userid']);
+        $stmt->execute();
+
+        // Update the student committee
+        $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES ((?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?)),
+                              (?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?)))");
+        $stmt->bindValue(1, $_SESSION['userid']);
+        $stmt->bindValue(2, $committee1);
+        $stmt->bindValue(3, $_SESSION['userid']);
+        $stmt->bindValue(4, $committee2);
+        $stmt->bindValue(5, $_SESSION['userid']);
+        $stmt->bindValue(6, $committee3);
+        $stmt->bindValue(7, $_SESSION['userid']);
+        $stmt->bindValue(8, $committee4);
+        $stmt->execute();
+        $db->commit();
+    }
+
+
+
+
 }
 
 class Update_Info
