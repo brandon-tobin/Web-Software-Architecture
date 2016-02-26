@@ -7,7 +7,8 @@
  *
  */
 
-require '../../Model/db.php';
+require '../Functions/db.php';
+require '../Functions/authentication.php';
 
 class Student
 {
