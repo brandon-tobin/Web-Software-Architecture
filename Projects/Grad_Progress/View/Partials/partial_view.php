@@ -52,7 +52,15 @@ function getNavBar($role)
     }
     else if (in_array('student', $role))
     {
-
+        return "
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li><a>Welcome ".$_SESSION['realname']."</a></li>
+            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+            <li><a href=\"../Student/update_information.php\">Update Information</a></li>
+            <li><a href=\"../Student/student_forms.php?id=".$_SESSION['userid']."\">Change User Role</a></li>
+            <li><a href=\"logout.php\">Logout</a></li>
+        </ul>";
     }
 
 
