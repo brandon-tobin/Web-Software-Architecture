@@ -3,6 +3,8 @@
 /**
  * This file contains the partial views for simplifying the code in the main view files.
  */
+require ('../../Model/Functions/db.php');
+require ('../../Model/Functions/authentication.php');
 
 function getHeader()
 {
