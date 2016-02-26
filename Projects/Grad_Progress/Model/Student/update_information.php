@@ -87,7 +87,7 @@ class Update_Info
 
             foreach ($result as $row)
             {
-                $this->position = $row['position'];
+                $this->position = $row['role'];
             }
         }
         catch (PDOException $ex) {
