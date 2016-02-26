@@ -82,7 +82,7 @@ function getNavBar($role)
 
     if (isset($_REQUEST['submit']))
     {
-        echo "Made it here";
+        error_log("Made it here!!!!!!!!!!!!!");
     }
 
 
