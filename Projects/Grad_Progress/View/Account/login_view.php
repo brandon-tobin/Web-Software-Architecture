@@ -32,8 +32,6 @@
 
         echo (getNavigation());
 
-        echo (getNavBar($_SESSION['roles']));
-
         echo (pageDataHeader("Please Log In"));
 
         ?>

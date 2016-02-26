@@ -47,8 +47,6 @@ unset($_SESSION['roles']);
 
         echo (getNavigation());
 
-        echo (getNavBar($_SESSION['roles']));
-
         echo (pageDataHeader("You have logged out."));
 
         ?>
