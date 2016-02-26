@@ -3,8 +3,7 @@
 /**
  * This file contains the partial views for simplifying the code in the main view files.
  */
-require ('../Model/Functions/db.php');
-require ('../Model/Functions/authentication.php');
+
 
 function getHeader()
 {
@@ -33,10 +32,6 @@ function getNavigation()
 function getNavBar($role)
 {
 
-    if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
-    {
-        verify_Login('');
-    }
 
     if (in_array('dgs', $role))
     {
@@ -72,6 +67,14 @@ function getNavBar($role)
     }
     else
     {
+        require ('../Model/Functions/db.php');
+        require ('../Model/Functions/authentication.php');
+
+        if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
+        {
+            navBar_Login('');
+        }
+
         return "
         <form method=\"post\">
         <!-- Nav Bar -->
