@@ -8,7 +8,6 @@
  */
 
 require '../../Model/Functions/db.php';
-
 require '../../Model/Functions/authentication.php';
 
 class Student

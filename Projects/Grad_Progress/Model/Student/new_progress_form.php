@@ -8,7 +8,8 @@
  *
  */
 
-require '../../Model/db.php';
+require '../../Model/Functions/db.php';
+require '../../Model/Functions/authentication.php';
 
 if (isset($_POST['submit']))
 {
