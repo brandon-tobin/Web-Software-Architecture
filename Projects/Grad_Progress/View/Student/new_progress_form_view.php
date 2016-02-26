@@ -55,11 +55,11 @@ echo "
                 <form method='post'>
                 ";
 
-                if ($form->advisor != '')
-                {
+                //if ($form->advisor != '')
+                //{
                     echo "<p><b>Advisor:</b> <u>$form->advisor</u></p>";
-                }
-                else {
+               // }
+                /*else {
                     echo "
                     <label for=\"advisor\">Advisor:</label>
                     <select name=\"advisor\" id=\"advisor\">
@@ -74,11 +74,11 @@ echo "
                     </select>
                     <br />
                     <br />";
-                }
+                }*/
 
-                if (sizeof($form->committee) != 0)
-                {
-                    echo "<p>Committee:</p>
+                //if (sizeof($form->committee) != 0)
+                //{
+                    echo "<p><b>Committee:</b></p>
                           <ul>";
                     // Echo out the committee members
                     foreach ($form->committee as $row)
@@ -86,8 +86,8 @@ echo "
                         echo "<li>$row</li>";
                     }
                     echo "</ul>";
-                }
-                else {
+                //}
+                /*else {
                     echo "
 
                     <label for=\"committee\">Committee:</label>
@@ -143,7 +143,7 @@ echo "
 
                     echo "
                     </select>";
-                }
+                }*/
                     echo "
 
                     <br />
