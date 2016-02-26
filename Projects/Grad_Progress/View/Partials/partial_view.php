@@ -31,11 +31,6 @@ function getNavigation()
 function getNavBar($role)
 {
 
-    if (isset($_REQUEST['submit']))
-    {
-        error_log("Made it here!!!!!!!!!!!!!");
-    }
-
     if (in_array('dgs', $role))
     {
         return "
@@ -82,10 +77,12 @@ function getNavBar($role)
             <li><a><input type=\"submit\" name=\"submit\" value=\"Submit\" /></li>
         </ul>
         </form>";
-
-
     }
 
+    if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
+    {
+       verify_Login('');
+    }
 
 
 
