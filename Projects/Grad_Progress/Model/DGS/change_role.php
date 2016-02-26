@@ -16,6 +16,25 @@ require '../../Model/Functions/authentication.php';
 
 verify_Login('dgs');
 
+if (isset($_POST['submit']))
+{
+    $username = trim($_REQUEST['username']);
+    $role = trim($_REQUEST['role']);
+
+    // Create a DB connection
+    $db = openDBConnection();
+    $db->beginTransaction();
+
+    // Update the roll
+    $stmt = $db->prepare("UPDATE Roles SET role = ? WHERE username = ?; ");
+    $stmt->bindValue(1, $role);
+    $stmt->bindValue(2, $username);
+    $stmt->execute();
+
+    $db->commit();
+}
+
+
 /*if (isset($_POST['submit']))
 {
     $student_ID = $_GET['id'];
