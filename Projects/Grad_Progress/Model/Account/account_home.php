@@ -16,7 +16,7 @@ error_log("Made it here!!!!!!!");
 
 //redirectToHTTPS();
 
-verify_Login('dgs');
+verify_Login($_SESSION['roles']);
 
 //$role = $_SESSION['roles'];
 

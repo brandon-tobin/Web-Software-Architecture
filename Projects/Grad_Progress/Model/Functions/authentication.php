@@ -53,13 +53,23 @@ function verify_role($role)
     return false;
 }
 
+/*function get_role()
+{
+    // Check to see if user is logged in
+    if (isset($_SESSION['userid']))
+    {
+        if (in_array("student", $_SESSION))
+    }
+
+}*/
+
+
 function verify_Login($role)
 {
     // Redirect to use HTTPS
     redirectToHTTPS();
 
     session_start();
-
 
     // Check to see if user is logged in
     if (isset($_SESSION['userid']))
