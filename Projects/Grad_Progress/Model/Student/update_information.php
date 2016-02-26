@@ -62,7 +62,7 @@ if (isset($_POST['submit']))
 
     $db->commit();
 
-    require ('../../View/Account/account_home.php');
+    //require ('../../View/Account/account_home.php');
 }
 
 if (isset($_POST['Submit']))
@@ -140,7 +140,7 @@ if (isset($_POST['Submit']))
         $db->commit();
     }
 
-    require ('../../View/Account/account_home.php');
+    //require ('../../View/Account/account_home.php');
 }
 
 class Update_Info
