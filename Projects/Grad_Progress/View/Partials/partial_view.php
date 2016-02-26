@@ -28,13 +28,17 @@ function getNavigation()
     </ul>";
 }
 
-function getNavBar()
+function getNavBar($role)
 {
-    return "
-    <!-- Nav Bar -->
-    <ul id=\"navBar\">
-        <li><a href=\"../../Controller/Account/account_home.php\">Account Home</a></li>
-    </ul>";
+    if ($role == 'dgs')
+    {
+        return "
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+        </ul>";
+    }
+
 
 }
 
