@@ -65,6 +65,7 @@ function getNavBar($role)
     else
     {
         return "
+        <form method=\"post\">
         <!-- Nav Bar -->
         <ul id=\"navBar\">
             <li>Welcome Please Login To Continue</li>
@@ -73,9 +74,15 @@ function getNavBar($role)
             <li><label for=\"password\">Password</label></li>
             <li><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></li>
             <li><a><input type=\"submit\" value=\"Submit\" /></li>
+        </ul>
+        </form>";
 
 
-        </ul>";
+    }
+
+    if (isset($_REQUEST['submit']))
+    {
+        echo "Made it here";
     }
 
 
