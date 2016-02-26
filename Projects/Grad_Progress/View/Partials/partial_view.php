@@ -28,6 +28,16 @@ function getNavigation()
     </ul>";
 }
 
+function getNavBar()
+{
+    return "
+    <!-- Nav Bar -->
+    <ul id=\"navBar\">
+        <li><a href=\"../../Controller/Account/account_home.php\">Account Home</a></li>
+    </ul>";
+
+}
+
 function pageDataHeader($title)
 {
     return "<h1 class=\"form-header\">$title</h1>";

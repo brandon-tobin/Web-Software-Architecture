@@ -166,3 +166,45 @@ h2 {
 #error {
    color: red;
 }
+
+/*
+ * Change the unordered list so that it is horizontal.
+ * Set the margin so that it is more centered on the page.
+ * Set the width so that it spans the whole body of the page.
+ * Set the background color of the navigation bar.
+ */
+#navBar {
+   list-style-type: none;
+   margin: 0px auto;
+   width: 1160px;
+   overflow: hidden;
+   background-color: #880000;
+}
+
+/*
+ * Set the li elements so that they are aligned to the left.
+ */
+#navBar li {
+   float: left;
+}
+
+/*
+ * Set the links in the li elements so that they are of block shape.
+ * Set the color of the link text to white.
+ * Center the link text.
+ * Add padding so that the text looks better in the block.
+ * Remove the line under the link text.
+ * Change the text to Arial.
+ * Make the link block change background colors when hovered.
+ */
+#navBar li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-family: "Arial", sans-serif;
+}
+#navBar li a:hover {
+   background-color: #333333;
+}

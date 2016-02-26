@@ -41,6 +41,8 @@ echo "
 
                 echo (getNavigation());
 
+                echo (getNavBar());
+
                 echo (pageDataHeader("Due Progress Advisory Document for Ph.D. Degree"));
 
                  echo "
