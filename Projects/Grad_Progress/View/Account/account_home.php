@@ -56,8 +56,7 @@ echo "
         echo "
         <ul>
             <li><a href=\"../Student/update_information.php\">Update Information, Advisor, Committee</a></li>
-            <li>Update Committee</li>
-            <li>View your forms</li>
+            <li><a href=\"../Student/student_forms.php\">View your forms</a></li>
             <li><a href=\"logout.php\">Logout</a></li>
         </ul>";
     }
