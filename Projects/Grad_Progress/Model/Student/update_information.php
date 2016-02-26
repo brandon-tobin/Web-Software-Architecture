@@ -11,9 +11,9 @@ require '../../Model/Functions/db.php';
 
 require '../../Model/Functions/authentication.php';
 
-verify_Login('dgs');
+verify_Login('student');
 
-if (isset($_POST['submit']))
+/*if (isset($_POST['submit']))
 {
     $username = trim($_REQUEST['user']);
     $role = trim($_REQUEST['role']);
@@ -29,7 +29,7 @@ if (isset($_POST['submit']))
     $stmt->execute();
 
     $db->commit();
-}
+}*/
 
 class Update_Info
 {
@@ -53,15 +53,17 @@ class Update_Info
     {
         try {
             $this->uid = $_SESSION['userid'];
+            $this->name = $_SESSION['realname'];
+            $this->username = $_SESSION['login'];
 
-            error_log("TOBIN!!!! UID is : " . $this->uid);
-            error_log("TOBIN!!!! Name is : " . $_SESSION['realname']);
-            error_log("TOBIN!!!! Username is : " . $_SESSION['login']);
+            //error_log("TOBIN!!!! UID is : " . $this->uid);
+            //error_log("TOBIN!!!! Name is : " . $_SESSION['realname']);
+            //error_log("TOBIN!!!! Username is : " . $_SESSION['login']);
 
             $db = openDBConnection();
 
             // Query the database to find out which advisor is related to this student.
-            $query = "SELECT Users.name, Users.position, Users.username, Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = ?; ";
+            $query = "SELECT Users.position,Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = ?; ";
             $statement = $db->prepare($query);
             $statement->bindValue(1, $this->uid);
             $statement->execute();
@@ -70,9 +72,9 @@ class Update_Info
 
             //$this->username = array();
             foreach ($result as $row) {
-                $this->name = $row['name'];
+                //$this->name = $row['name'];
                 $this->position = $row['position'];
-                $this->username = $row['username'];
+                //$this->username = $row['username'];
                 $this->degree = $row['degree'];
                 $this->track = $row['track'];
                 $this->semester_admitted = $row['semester_admitted'];

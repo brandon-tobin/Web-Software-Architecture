@@ -42,48 +42,43 @@
             <li><a href="../DGS/overview.php">DGS Overview</a></li>
         </ul>
 
-        <h1 class="form-header">Change User Roles</h1>
+        <h1 class="form-header">User Information</h1>
 
-        <table class="roster">
-            <tr>
-                <th>Username</th>
-                <th>Role</th>
-            </tr>
+        <form method="post" action="">
+            <table>
+                <tr>
+                    <td><label for="name">Full Name:</label></td>
+                    <td><input type="text" name="name" id="name" value=<?php echo $info->name?> /></td>
+                </tr>
+                <tr>
+                    <td><label for="uid">uID Number:</label></td>
+                    <td><input type="text" size="20" name="uid" id="uid" value=<?php echo $info->uid?> /></td>
 
-            <?php
-
-            foreach ($dgs->username as $row)
-            {
-                echo "<tr>";
-                foreach ($row as $value) {
-                    echo "<td>$value</td>";
-                }
-                echo "</tr>";
-            }
-            ?>
-        </table>
-
-        <p>Please select the username and roll you wish to change the user to.</p>
-
-        <form method="post">
-            <label for="user">Advisor:</label>
-            <select name="user" id="user">
-                <?php
-                // Echo out the Usernames
-                foreach ($dgs->username as $row) {
-                echo "<option value=\"$row[0]\">$row[0]</option>";
-                }
-                ?>
-            </select>
-            <label for="role">Advisor:</label>
-            <select name="role" id="role">
-                <option value="student">student</option>
-                <option value="faculty">faculty</option>
-                <option value="staff">staff</option>
-                <option value="dgs">dgs</option>
-            </select>
-
-            <input type="submit" name="submit" value="Submit" />
+                </tr>
+                <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td><input type="text" size="20" name="username" value=<?php echo $info->username?> /></td>
+                </tr>
+                <tr>
+                    <td><label for="degree">Degree:</label></td>
+                    <td><input type="degree" size="20" name="degree" id="degree" value=<?php echo $info->degree?> /></td>
+                </tr>
+                <tr>
+                    <td><label for="track">Track:</label></td>
+                    <td><input type="track" size="20" name="track" id="track" value=<?php echo $info->track?> /></td>
+                </tr>
+                <tr>
+                    <td><label for="position">Position:</label></td>
+                    <td><input type="position" size="20" name="position" id="position" value=<?php echo $info->position?> /></td>
+                </tr>
+                <tr>
+                    <td><label for="semester_admitted">Semester Admitted:</label></td>
+                    <td><input type="semester_admitted" size="20" name="semester_admitted" id="semester_admitted" value=<?php echo $info->semester_admitted?> /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
         </form>
     </body>
 </html>
