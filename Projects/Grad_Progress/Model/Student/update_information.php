@@ -25,10 +25,11 @@ if (isset($_POST['submit']))
     $db->beginTransaction();
 
     // Update the roll
-    $stmt = $db->prepare("INSERT INTO Students (degree, track, semester_admitted) VALUES (?, ?, ?)");
-    $stmt->bindValue(1, $degree);
-    $stmt->bindValue(2, $track);
-    $stmt->bindValue(3, $semester_admitted);
+    $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, ?)");
+    $stmt->bindValue(1, $_SESSION['userid']);
+    $stmt->bindValue(2, $degree);
+    $stmt->bindValue(3, $track);
+    $stmt->bindValue(4, $semester_admitted);
     $stmt->execute();
 
     $db->commit();
