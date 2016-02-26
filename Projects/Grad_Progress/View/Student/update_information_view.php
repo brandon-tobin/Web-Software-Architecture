@@ -38,8 +38,6 @@
 
         ?>
 
-        <h1 class="form-header">User Information</h1>
-
         <form method="post" action="">
             <table>
                 <tr>
