@@ -53,15 +53,23 @@ function verify_role($role)
     return false;
 }
 
-/*function get_role()
+function get_role()
 {
     // Check to see if user is logged in
     if (isset($_SESSION['userid']))
     {
-        if (in_array("student", $_SESSION))
+        if (in_array("student", $_SESSION['roles']))
+            return "student";
+        else if (in_array("staff", $_SESSION['roles']))
+            return "staff";
+        else if (in_array("faculty", $_SESSION['roles']))
+            return "faculty";
+        else if (in_array("dgs", $_SESSION['roles']))
+            return "dgs";
+        else
+            return;
     }
-
-}*/
+}
 
 
 function verify_Login($role)

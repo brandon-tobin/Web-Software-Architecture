@@ -12,13 +12,13 @@ require '../../Model/Functions/db.php';
 
 require ('../../Model/Functions/authentication.php');
 
-error_log("Made it here!!!!!!! The session role is : " .$_SESSION['roles']);
+//error_log("Made it here!!!!!!! The session role is : " .$_SESSION['roles']);
 
 //redirectToHTTPS();
 
+$role = get_role();
 
-
-verify_Login($_SESSION['roles']);
+verify_Login($role);
 
 //$role = $_SESSION['roles'];
 
