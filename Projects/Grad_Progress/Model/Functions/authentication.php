@@ -58,6 +58,9 @@ function verify_Login($role)
     // Redirect to use HTTPS
     redirectToHTTPS();
 
+    session_start();
+
+
     // Check to see if user is logged in
     if (isset($_SESSION['userid']))
     {
@@ -83,7 +86,6 @@ function verify_Login($role)
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
 
-        session_start();
 
         try
         {
