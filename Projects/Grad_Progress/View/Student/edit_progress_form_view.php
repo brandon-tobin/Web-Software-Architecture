@@ -41,7 +41,7 @@ echo "
 
                 echo (getNavigation());
 
-                echo (getNavBar());
+                echo (getNavBar($_SESSION['role']));
 
                 echo (pageDataHeader("Due Progress Advisory Document for Ph.D. Degree"));
 

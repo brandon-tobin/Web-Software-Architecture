@@ -30,13 +30,25 @@ function getNavigation()
 
 function getNavBar($role)
 {
-    if ($role == 'dgs')
+    if (in_array('dgs', $role))
     {
         return "
         <!-- Nav Bar -->
         <ul id=\"navBar\">
             <li><a href=\"../Account/account_home.php\">Account Home</a></li>
         </ul>";
+    }
+    else if (in_array('faculty', $role))
+    {
+
+    }
+    else if (in_array('staff', $role))
+    {
+
+    }
+    else if (in_array('student', $role))
+    {
+
     }
 
 
