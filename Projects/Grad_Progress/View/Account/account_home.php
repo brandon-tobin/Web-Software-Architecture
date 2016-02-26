@@ -58,6 +58,7 @@ echo "
             <li>Update Advisor</li>
             <li>Update Committee</li>
             <li>View your forms</li>
+            <li>Logout</li>
         </ul>";
     }
 
