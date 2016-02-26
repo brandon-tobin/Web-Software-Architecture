@@ -56,6 +56,7 @@ class Advisor
                 if ($row['meets_requirements'] == 1)
                     $requirementsMet = "Yes";
 
+                date_default_timezone_set('America/Denver');
                 if (strtotime($row['date']) > strtotime('-6 month'))
                     $isCurrent = "Current";
 
