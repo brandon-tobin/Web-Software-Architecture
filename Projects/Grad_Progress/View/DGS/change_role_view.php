@@ -69,7 +69,7 @@
                 <?php
                 // Echo out the possible advisors
                 foreach ($dgs->username as $row) {
-                echo "<option value=\"$row\">$row</option>";
+                echo "<option value=\"$row[0]\">$row[0]</option>";
                 }
                 ?>
             </select>
