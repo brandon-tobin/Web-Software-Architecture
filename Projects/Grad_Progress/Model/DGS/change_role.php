@@ -19,7 +19,7 @@ error_log("VERIFIED ROLE");
 
 if (isset($_POST['submit']))
 {
-    $username = trim($_REQUEST['username']);
+    $username = trim($_REQUEST['user']);
     $role = trim($_REQUEST['role']);
 
     error_log("TOBIN Username is " . $username . "and new role should be " . $role);
