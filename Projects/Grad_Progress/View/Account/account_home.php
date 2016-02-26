@@ -55,7 +55,7 @@ echo "
     {
         echo "
         <ul>
-            <li>Update Advisor</li>
+            <li><a href=\"../Student/update_information.php\">Update Information, Advisor, Committee</li>
             <li>Update Committee</li>
             <li>View your forms</li>
             <li><a href=\"logout.php\">Logout</a></li>
