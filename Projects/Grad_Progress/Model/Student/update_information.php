@@ -153,7 +153,6 @@ class Update_Info
 
             $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee);";
             $statement = $db->prepare(($query));
-            $statement->bindValue(1, $this->uid);
             $statement->execute();
 
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
