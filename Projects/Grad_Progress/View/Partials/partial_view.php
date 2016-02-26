@@ -68,10 +68,11 @@ function getNavBar($role)
         <!-- Nav Bar -->
         <ul id=\"navBar\">
             <li><a>Welcome Please Login To Continue</a></li>
-            <li><label for=\"username\">Username</label></li>
-            <li><input type=\"text\" size=\"20\" name=\"username\" id=\"username\" /></li>
-            <li><label for=\"password\">Password</label></li>
-            <li><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></li>
+            <li><a><label for=\"username\">Username</label></a></li>
+            <li><a><input type=\"text\" size=\"20\" name=\"username\" id=\"username\" /></a></li>
+            <li><a><label for=\"password\">Password</label></a></li>
+            <li><a><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></a></li>
+            <li><a><input type=\"submit\" value=\"Submit\" /></a></li>
 
 
         </ul>";
