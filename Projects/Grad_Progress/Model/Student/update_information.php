@@ -162,7 +162,7 @@ class Update_Info
                 array_push($this->all_committee, $row['name']);
             }
 
-            var_dump($this->all_committee);
+            error_log("COMMITTEE CONSIST OF : " . var_dump($this->all_committee));
 
             if ($this->degree == '' && $this->track == '' && $this->semester_admitted == '')
                 $this->first_submission = true;
