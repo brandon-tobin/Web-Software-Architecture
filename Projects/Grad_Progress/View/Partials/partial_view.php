@@ -30,6 +30,12 @@ function getNavigation()
 
 function getNavBar($role)
 {
+
+    if (isset($_REQUEST['submit']))
+    {
+        error_log("Made it here!!!!!!!!!!!!!");
+    }
+
     if (in_array('dgs', $role))
     {
         return "
@@ -73,17 +79,14 @@ function getNavBar($role)
             <li><input type=\"text\" size=\"20\" name=\"username\" id=\"username\" /></li>
             <li><label for=\"password\">Password</label></li>
             <li><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></li>
-            <li><a><input type=\"submit\" value=\"Submit\" /></li>
+            <li><a><input type=\"submit\" name=\"submit\" value=\"Submit\" /></li>
         </ul>
         </form>";
 
 
     }
 
-    if (isset($_REQUEST['submit']))
-    {
-        error_log("Made it here!!!!!!!!!!!!!");
-    }
+
 
 
 }
