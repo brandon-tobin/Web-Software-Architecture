@@ -138,7 +138,7 @@ class Update_Info
                 array_push($this->all_advisors, $row['name']);
             }
 
-            $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee WHERE sid = ?;";
+            $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee WHERE sid = ?);";
             $statement = $db->prepare(($query));
             $statement->bindValue(1, $this->uid);
             $statement->execute();
@@ -151,7 +151,7 @@ class Update_Info
                 array_push($this->committee, $row['name']);
             }
 
-            $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee WHERE facultyid = 1);";
+            $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee);";
             $statement = $db->prepare(($query));
             $statement->execute();
 
