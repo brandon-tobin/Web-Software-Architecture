@@ -18,6 +18,7 @@ function changeSessionID()
     $secure = usingHTTPS();
     session_set_cookie_params(0, "/", $server, $secure, true);
     session_regenerate_id(true);
+    session_start();
 }
 
 function usingHTTPS()
@@ -113,7 +114,6 @@ function verify_Login($role)
                     }
                     $_SESSION['roles'] = $roles;
 
-                    session_start();
                 }
                 else
                 {
