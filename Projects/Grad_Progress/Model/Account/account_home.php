@@ -12,9 +12,11 @@ require '../../Model/Functions/db.php';
 
 require ('../../Model/Functions/authentication.php');
 
-error_log("Made it here!!!!!!!");
+error_log("Made it here!!!!!!! The session role is : " .$_SESSION['roles']);
 
 //redirectToHTTPS();
+
+
 
 verify_Login($_SESSION['roles']);
 
