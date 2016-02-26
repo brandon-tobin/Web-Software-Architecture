@@ -51,10 +51,10 @@
                     <td><input type="text" name="name" id="name" value=<?php echo $info->name?> /></td>
                 </tr>
                 <tr>
-                    <td>uID Number:</td>
-                    <td><?php echo $info->uid?></td>
-                    <!--<td><label for="uid">uID Number:</label></td>
-                    <td><input type="text" size="20" name="uid" id="uid" value=<?php echo $info->uid?> /></td>-->
+                    <!--<td>uID Number:</td>
+                    <td><?php echo $info->uid?></td>-->
+                    <td><label for="uid">uID Number:</label></td>
+                    <td><input type="text" size="20" name="uid" id="uid" value=<?php echo $info->uid?> disabled/></td>
                 </tr>
                 <tr>
                     <td>Username:</td>
