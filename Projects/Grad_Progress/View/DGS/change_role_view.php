@@ -67,7 +67,7 @@
             <label for="user">Advisor:</label>
             <select name="user" id="user">
                 <?php
-                // Echo out the possible advisors
+                // Echo out the Usernames
                 foreach ($dgs->username as $row) {
                 echo "<option value=\"$row[0]\">$row[0]</option>";
                 }
@@ -75,12 +75,10 @@
             </select>
             <label for="role">Advisor:</label>
             <select name="role" id="role">
-                <?php
-                // Echo out the possible advisors
-                foreach ($form->advisor_array as $row) {
-                echo "<option value=\"$row\">$row</option>";
-                }
-                ?>
+                <option value="student">student</option>
+                <option value="faculty">faculty</option>
+                <option value="staff">staff</option>
+                <option value="dgs">dgs</option>
             </select>
         </form>
     </body>
