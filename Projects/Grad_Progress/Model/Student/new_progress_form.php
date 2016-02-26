@@ -54,7 +54,7 @@ if (isset($_POST['submit']))
     }
 
     // Get the advisor's id
-    $query = "SELECT uid FROM Users WHERE name = \"$advisor\"";
+    /*$query = "SELECT uid FROM Users WHERE name = \"$advisor\"";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -116,7 +116,7 @@ if (isset($_POST['submit']))
                           ($student_ID, $committee3_ID),
                           ($student_ID, $committee4_ID)");
     $stmt->execute();
-    $db->commit();
+    $db->commit();*/
 
     date_default_timezone_set('America/Denver');
     $timestamp = time();
