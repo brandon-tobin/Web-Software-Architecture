@@ -63,7 +63,7 @@ class Update_Info
             $db = openDBConnection();
 
             // Query the database to find out which advisor is related to this student.
-            $query = "SELECT Users.position,Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = $this->uid;";
+            $query = "SELECT Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = $this->uid;";
             $statement = $db->prepare($query);
            // $statement->bindValue(1, $this->uid);
             $statement->execute();
@@ -73,10 +73,21 @@ class Update_Info
             error_log("TOBIN RESULT IS : " . var_dump($result));
 
             foreach ($result as $row) {
-                $this->position = $row['position'];
                 $this->degree = $row['degree'];
                 $this->track = $row['track'];
                 $this->semester_admitted = $row['semester_admitted'];
+            }
+
+            $query = "SELECT role FROM Roles WHERE username = ?";
+            $statement = $db->prepare($query);
+            $statement->bindValue(1, $this->username);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row)
+            {
+                $this->position = $row['position'];
             }
         }
         catch (PDOException $ex) {
