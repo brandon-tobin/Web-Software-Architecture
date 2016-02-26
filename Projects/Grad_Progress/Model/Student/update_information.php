@@ -36,6 +36,7 @@ if (isset($_POST['submit']))
 
 if (isset($_POST['Submit']))
 {
+    $uid = trim($_REQUEST['uid']);
     $name = trim($_REQUEST['name']);
     $degree = trim($_REQUEST['degree']);
     $track = trim($_REQUEST['track']);
@@ -50,7 +51,7 @@ if (isset($_POST['Submit']))
     $stmt->bindValue(1, $degree);
     $stmt->bindValue(2, $track);
     $stmt->bindValue(3, $semester_admitted);
-    $stmt->bindValue(4, $_SESSION['userid']);
+    $stmt->bindValue(4, $uid);
     $stmt->execute();
 
     $stmt = $db->prepare("UPDATE Users SET name = ? WHERE uid = ?; ");
