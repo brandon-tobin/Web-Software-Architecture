@@ -63,18 +63,15 @@ class Update_Info
             $db = openDBConnection();
 
             // Query the database to find out which advisor is related to this student.
-            $query = "SELECT Users.position,Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = ?; ";
+            $query = "SELECT Users.position,Students.degree, Students.track, Students.semester_admitted FROM Users INNER JOIN Students ON Users.uid = Students.uid AND Users.uid = $this->uid; ";
             $statement = $db->prepare($query);
-            $statement->bindValue(1, $this->uid);
+           // $statement->bindValue(1, $this->uid);
             $statement->execute();
 
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            //$this->username = array();
             foreach ($result as $row) {
-                //$this->name = $row['name'];
                 $this->position = $row['position'];
-                //$this->username = $row['username'];
                 $this->degree = $row['degree'];
                 $this->track = $row['track'];
                 $this->semester_admitted = $row['semester_admitted'];
