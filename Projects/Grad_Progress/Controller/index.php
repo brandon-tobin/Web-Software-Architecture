@@ -44,7 +44,7 @@
 
             <h1>Grad Progress Versions</h1>
 
-            <h2><a href="/Projects/Grad_Progress/DGS/overview.php">Click here for the current version.</a></h2>
+            <h2><a href="/Projects/Grad_Progress/home.php">Click here for the current version.</a></h2>
 
             <!-- List for Grad Progress Assignments -->
             <ul>
