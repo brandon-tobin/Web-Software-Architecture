@@ -14,7 +14,6 @@ function changeSessionID()
     // Ask the browser to delete the existing cookie
     setcookie("PHPSESSID", "", time() - 3600, "/");
     // Change the session ID and send it to the browser in a secure cookie
-    session_start();
     $server = $_SERVER['SERVER_NAME'];
     $secure = usingHTTPS();
     session_set_cookie_params(0, "/", $server, $secure, true);
@@ -83,6 +82,8 @@ function verify_Login($role)
     {
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
+
+        session_start();
 
         try
         {
