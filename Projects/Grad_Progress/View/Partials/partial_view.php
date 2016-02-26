@@ -37,6 +37,8 @@ function getNavBar($role)
         <ul id=\"navBar\">
             <li><a>Welcome ".$_SESSION['realname']."</a></li>
             <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+            <li><a href=\"../DGS/change_role.php\">Change User Role</a></li>
+            <li><a href=\"logout.php\">Logout</a></li>
         </ul>";
     }
     else if (in_array('faculty', $role))
