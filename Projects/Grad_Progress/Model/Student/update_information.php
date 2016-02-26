@@ -255,7 +255,7 @@ class Update_Info
             if ($this->degree == '' && $this->track == '' && $this->semester_admitted == '')
                 $this->first_submission = true;
 
-            require ('../../View/Student/update_information_view.php');
+            //require ('../../View/Student/update_information_view.php');
         }
         catch (PDOException $ex) {
             error_log("TOBIN ACCESS FAILED MESSAGE IS: " . $ex->getMessage());

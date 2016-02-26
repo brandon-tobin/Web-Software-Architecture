@@ -8,7 +8,7 @@
  */
 
 // Set the include path for the model and view
-set_include_path("../../Model/Student/");
+set_include_path("../../Model/Student/" .PATH_SEPARATOR . "../../View/Student/");
 
 // Require the model file once
 require_once 'update_information.php';
@@ -17,6 +17,6 @@ require_once 'update_information.php';
 $info = new Update_Info();
 
 // Require the form view for display
-//require "update_information_view.php";
+require "update_information_view.php";
 
 ?>
