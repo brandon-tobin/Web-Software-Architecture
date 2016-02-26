@@ -61,11 +61,59 @@
                 </tr>
                 <tr>
                     <td><label for="degree">Degree:</label></td>
-                    <td><input type="degree" size="20" name="degree" id="degree" value=<?php echo $info->degree?> /></td>
+                    <?php
+                    if ($info->degree == 'Computing')
+                    {
+                        echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" /></td>
+                              <td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" checked/></td>";
+                    }
+                    else
+                    {
+                        echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" checked/></td>
+                              <td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" /></td>";
+                    }
+                    ?>
                 </tr>
                 <tr>
                     <td><label for="track">Track:</label></td>
-                    <td><input type="track" size="20" name="track" id="track" value=<?php echo $info->track?> /></td>
+                    <td>
+                        <select name="track" id="track">
+                            <?php
+                            if ($info->track == 'Networking' || $info->track == '')
+                            {
+                                echo "
+                                <option value=\"Networking\" selected>Networking</option>
+                                <option value=\"Data\">Data</option>
+                                <option value=\"Databases\">Databases</option>
+                                <option value=\"Algorithms\">Algorithms</option>";
+                            }
+                            else if ($info->track == 'Data')
+                            {
+                                echo "
+                                <option value=\"Networking\">Networking</option>
+                                <option value=\"Data\" selected>Data</option>
+                                <option value=\"Databases\">Databases</option>
+                                <option value=\"Algorithms\">Algorithms</option>";
+                            }
+                            else if ($info->track == 'Databases')
+                            {
+                                echo "
+                                <option value=\"Networking\">Networking</option>
+                                <option value=\"Data\">Data</option>
+                                <option value=\"Databases\" selected>Databases</option>
+                                <option value=\"Algorithms\">Algorithms</option>";
+                            }
+                            else if ($info->track == 'Algorithms')
+                            {
+                                echo "
+                                <option value=\"Networking\">Networking</option>
+                                <option value=\"Data\">Data</option>
+                                <option value=\"Databases\">Databases</option>
+                                <option value=\"Algorithms\" selected>Algorithms</option>";
+                            }
+                            ?>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="position">Position:</label></td>
@@ -73,7 +121,7 @@
                 </tr>
                 <tr>
                     <td><label for="semester_admitted">Semester Admitted:</label></td>
-                    <td><input type="semester_admitted" size="20" name="semester_admitted" id="semester_admitted" value=<?php echo $info->semester_admitted?> /></td>
+                    <td><input type="text" size="20" name="semester_admitted" id="semester_admitted" value=<?php echo $info->semester_admitted?> /></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" value="Submit" /></td>
