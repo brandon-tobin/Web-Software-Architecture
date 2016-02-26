@@ -129,7 +129,12 @@
                     <td><input type="text" size="20" name="semester_admitted" id="semester_admitted" value=<?php echo $info->semester_admitted?> /></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="Submit" /></td>
+                    <?php
+                    if ($info->first_submission == true)
+                        echo "<td colspan=\"2\"><input type=\"submit\" name=\"submit\" value=\"Submit\" /></td>";
+                    else
+                        echo "<td colspan=\"2\"><input type=\"submit\" name=\"Submit\" value=\"Submit\" /></td>"
+                    ?>
                 </tr>
             </table>
         </form>

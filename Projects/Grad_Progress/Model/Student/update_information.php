@@ -13,23 +13,53 @@ require '../../Model/Functions/authentication.php';
 
 verify_Login('student');
 
-/*if (isset($_POST['submit']))
+if (isset($_POST['submit']))
 {
-    $username = trim($_REQUEST['user']);
-    $role = trim($_REQUEST['role']);
+    //$name = trim($_REQUEST['name']);
+    $degree = trim($_REQUEST['degree']);
+    $track = trim($_REQUEST['track']);
+    $semester_admitted = trim($_REQUEST['semester_admitted']);
 
     // Create a DB connection
     $db = openDBConnection();
     $db->beginTransaction();
 
     // Update the roll
-    $stmt = $db->prepare("UPDATE Roles SET role = ? WHERE username = ?; ");
-    $stmt->bindValue(1, $role);
-    $stmt->bindValue(2, $username);
+    $stmt = $db->prepare("INSERT INTO Students (degree, track, semester_admitted) VALUES (?, ?, ?)");
+    $stmt->bindValue(1, $degree);
+    $stmt->bindValue(2, $track);
+    $stmt->bindValue(3, $semester_admitted);
     $stmt->execute();
 
     $db->commit();
-}*/
+}
+
+if (isset($_POST['Submit']))
+{
+    $name = trim($_REQUEST['name']);
+    $degree = trim($_REQUEST['degree']);
+    $track = trim($_REQUEST['track']);
+    $semester_admitted = trim($_REQUEST['semester_admitted']);
+
+    // Create a DB connection
+    $db = openDBConnection();
+    $db->beginTransaction();
+
+    // Update the roll
+    $stmt = $db->prepare("UPDATE Students SET degree = ?, track = ?, semester_admitted = ? WHERE uid = ?; ");
+    $stmt->bindValue(1, $degree);
+    $stmt->bindValue(2, $track);
+    $stmt->bindValue(3, $semester_admitted);
+    $stmt->bindValue(4, $_SESSION['userid']);
+    $stmt->execute();
+
+    $stmt = $db->prepare("UPDATE Users SET name = ? WHERE uid = ?; ");
+    $stmt->bindValue(1, $name);
+    $stmt->bindValue(2, $_SESSION['userid']);
+    $stmt->execute();
+
+    $db->commit();
+}
 
 class Update_Info
 {
@@ -40,6 +70,7 @@ class Update_Info
     public $degree;
     public $track;
     public $semester_admitted;
+    public $first_submission;
 
 
     // Constructor
@@ -89,6 +120,9 @@ class Update_Info
             {
                 $this->position = $row['role'];
             }
+
+            if ($this->degree == '' && $this->track == '' && $this->semester_admitted == '')
+                $this->first_submission = true;
         }
         catch (PDOException $ex) {
             error_log("TOBIN ACCESS FAILED MESSAGE IS: " . $ex->getMessage());
