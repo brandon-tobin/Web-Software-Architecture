@@ -57,6 +57,7 @@ if (isset($_POST['submit']))
         $stmt->bindValue(6, $committee3);
         $stmt->bindValue(7, $_SESSION['userid']);
         $stmt->bindValue(8, $committee4);
+        $stmt->execute();
     //}
 
     $db->commit();
