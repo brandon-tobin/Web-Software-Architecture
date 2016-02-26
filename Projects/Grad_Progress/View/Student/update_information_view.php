@@ -47,20 +47,16 @@
         <form method="post" action="">
             <table>
                 <tr>
-                    <td><label for="name">Full Name:</label></td>
-                    <td><input type="text" name="name" id="name" value=<?php echo $info->name?> /></td>
+                    <td>Full Name:</td>
+                    <td><?php echo $info->name?></td>
                 </tr>
                 <tr>
-                    <!--<td>uID Number:</td>
-                    <td><?php echo $info->uid?></td>-->
-                    <td><label for="uid">uID Number:</label></td>
-                    <td><input type="text" size="20" name="uid" id="uid" value=<?php echo $info->uid?> disabled/></td>
+                    <td>uID Number:</td>
+                    <td><?php echo $info->uid?></td>
                 </tr>
                 <tr>
                     <td>Username:</td>
                     <td><?php echo $info->username?></td>
-                    <!--<td><label for="username">Username:</label></td>
-                    <td><input type="text" size="20" name="username" value=<?php echo $info->username?> /></td>-->
                 </tr>
                 <tr>
                     <td><label for="degree">Degree:</label></td>
