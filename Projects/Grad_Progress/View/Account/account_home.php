@@ -71,7 +71,7 @@ echo "
         echo "
         <ul>
             <li><a href=\"../DGS/overview.php\">View Students and Advisors</a></li>
-            <li>Update a User's Role</li>
+            <li><a href=\"../DGS/change_role_view.php\">Change User Role</a></li>
         </ul>";
     }
 
