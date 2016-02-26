@@ -212,5 +212,6 @@ h2 {
    font-family: "Arial", sans-serif;
 }
 #navBar li a:hover {
+   display:block;
    background-color: #333333;
 }
