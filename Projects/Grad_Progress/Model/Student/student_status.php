@@ -15,6 +15,7 @@ verify_Login('student');
 class New_Student_Status
 {
     public $student_status;
+    public $advisor_approval;
 
 
     // Constructor
@@ -30,7 +31,7 @@ class New_Student_Status
             $db = openDBConnection();
 
             // Query the database to get the name of the student
-            $query = "SELECT meets_requirements FROM Forms WHERE uid = $id AND fid = (SELECT count(*) FROM Forms WHERE uid = $id)";
+            $query = "SELECT meets_requirements, advisor_signed FROM Forms WHERE uid = $id AND fid = (SELECT count(*) FROM Forms WHERE uid = $id)";
 
             $statement = $db->prepare($query);
             $statement->execute();
@@ -48,6 +49,15 @@ class New_Student_Status
             else
             {
                 $this->student_status = "Not on track and does not meet requirements";
+            }
+
+            if ($this->advisor_approval == 1)
+            {
+                $this->advisor_approval = "Status has been approved by your advisor.";
+            }
+            else
+            {
+                $this->advisor_approval = "Status has not yet been approved by your advisor";
             }
 
         }
