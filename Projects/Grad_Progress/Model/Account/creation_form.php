@@ -21,7 +21,7 @@ $passwordError = '';
 $confirmedPasswordError = '';
 $uidError = '';
 
-if ($_REQUEST['submit'] == 'Cancel')
+if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == 'Cancel')
 {
     header("Location: ../home.php");
 }
