@@ -40,6 +40,16 @@ class New_Student_Status
             foreach ($result as $row) {
                 $this->student_status = $row['meets_requirements'];
             }
+
+            if ($this->student_status == 1)
+            {
+                $this->student_status = "On track and meets requirements.";
+            }
+            else
+            {
+                $this->student_status = "Not on track and does not meet requirements";
+            }
+
         }
         catch (PDOException $ex)
         {
