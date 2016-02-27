@@ -45,19 +45,18 @@ echo "
 
     <p>Please click on one of the links below to perform an action.</p>";
 
-    if (in_array("student", $_SESSION['roles']))
+    if (in_array("dgs", $_SESSION['roles']))
     {
-        $uid = $_SESSION['userid'];
         echo "
-        <p>Student Options:</p>
-        <ul>
-            <li><a href=\"../Student/update_information.php\">Update Information, Advisor, Committee</a></li>
-            <li><a href=\"../Student/student_forms.php?id=$uid\">View your forms</a></li>
-            <li><a href=\"logout.php\">Logout</a></li>
-        </ul>";
+            <p>DGS Options:</p>
+            <ul>
+                <li><a href=\"../DGS/overview.php\">View Students and Advisors</a></li>
+                <li><a href=\"../DGS/change_role.php\">Change User Role</a></li>
+                <li><a href=\"logout.php\">Logout</a></li>
+            </ul>";
     }
 
-    if (in_array("faculty", $_SESSION['roles']))
+    else if (in_array("faculty", $_SESSION['roles']))
     {
         echo "
         <p>Faculty Options:</p>
@@ -67,15 +66,16 @@ echo "
         </ul>";
     }
 
-    if (in_array("dgs", $_SESSION['roles']))
+    else if (in_array("student", $_SESSION['roles']))
     {
+        $uid = $_SESSION['userid'];
         echo "
-        <p>DGS Options:</p>
-        <ul>
-            <li><a href=\"../DGS/overview.php\">View Students and Advisors</a></li>
-            <li><a href=\"../DGS/change_role.php\">Change User Role</a></li>
-            <li><a href=\"logout.php\">Logout</a></li>
-        </ul>";
+            <p>Student Options:</p>
+            <ul>
+                <li><a href=\"../Student/update_information.php\">Update Information, Advisor, Committee</a></li>
+                <li><a href=\"../Student/student_forms.php?id=$uid\">View your forms</a></li>
+                <li><a href=\"logout.php\">Logout</a></li>
+            </ul>";
     }
 
     echo "
