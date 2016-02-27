@@ -35,14 +35,12 @@
 
         echo (getNavBar(''));
 
+        echo (pageDataHeader("Welcome to the Graduate Student System!"));
+
         if (isset($_SESSION['userid']))
         {
-            //header ("Location: ../View/Account/account_home.php");
-            echo "Welcome back ".$_SESSION['realname']."! Please click on a link below to continue.";
-            //require ('../View/Account/account_home.php');
+            echo "<h2>Welcome back ".$_SESSION['realname']."! Please click on a link below to continue.</h2>";
         }
-
-        echo (pageDataHeader("Welcome to the Graduate Student System!"));
 
         ?>
 
