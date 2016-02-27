@@ -36,7 +36,7 @@ function getNavBar($role)
         return "
         <!-- Nav Bar -->
         <ul id=\"navBar\">
-            <li><a>Welcome ".$_SESSION['realname']."</a></li>
+            <li>Welcome ".$_SESSION['realname']."</li>
             <li><a href=\"../Account/account_home.php\">Account Home</a></li>
             <li><a href=\"../DGS/overview.php\">View Students and Advisors</a></li>
             <li><a href=\"../DGS/change_role.php\">Change User Role</a></li>
@@ -45,7 +45,12 @@ function getNavBar($role)
     }
     else if (in_array('faculty', $role))
     {
-
+        return "
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li>Welcome ".$_SESSION['realname']."</li>
+            <li><a href=\"../Advisor/students.php\">View Students</a></li>
+        </ul>";
     }
     else if (in_array('staff', $role))
     {

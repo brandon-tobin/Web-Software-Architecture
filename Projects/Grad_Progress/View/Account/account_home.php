@@ -56,11 +56,11 @@ echo "
         </ul>";
     }
 
-    if (in_array("advisor", $_SESSION['roles']))
+    if (in_array("faculty", $_SESSION['roles']))
     {
         echo "
         <ul>
-            <li>Click here to view your students</li>
+            <li><a href=\"../Advisor/students.php?id=".$_SESSION['userid']."\">Click here to view your students</a></li>
             <li><a href=\"logout.php\">Logout</a></li>
         </ul>";
     }
