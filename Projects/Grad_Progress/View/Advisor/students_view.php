@@ -43,9 +43,7 @@ echo "
 
             echo (getNavigation());
 
-            $roles = array();
-            array_push($roles, 'faculty');
-            echo (getNavBar($roles));
+            echo (getNavBar($_SESSION['roles']));
 
             echo (pageDataHeader("Graduate Students"));
 
