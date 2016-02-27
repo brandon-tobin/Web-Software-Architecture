@@ -11,7 +11,7 @@ unset($_SESSION['realname']);
 unset($_SESSION['login']);
 unset($_SESSION['roles']);
 
-header("Location: ../../Controller/home.php");
+header("Location: ../Controller/home.php");
 
 //require ('../../Controller/home.php');
 
@@ -55,7 +55,7 @@ header("Location: ../../Controller/home.php");
 
         <p><a href="account_home.php">Login</a></p>
 
-        <p><a href="home.php">Main Home Page</a></p>
+        <p><a href="../../Controller/home.php">Main Home Page</a></p>
 
     </body>
 </html>
