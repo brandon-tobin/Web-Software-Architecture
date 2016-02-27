@@ -11,7 +11,7 @@ unset($_SESSION['realname']);
 unset($_SESSION['login']);
 unset($_SESSION['roles']);
 
-require ('../../Controller/home.php');
+require ('../../home.php');
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
