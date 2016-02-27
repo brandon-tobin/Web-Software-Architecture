@@ -11,7 +11,7 @@ unset($_SESSION['realname']);
 unset($_SESSION['login']);
 unset($_SESSION['roles']);
 
-header("Location: ../Controller/home.php");
+header("Location: ../home.php");
 
 //require ('../../Controller/home.php');
 
