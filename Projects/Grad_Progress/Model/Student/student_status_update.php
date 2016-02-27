@@ -37,7 +37,7 @@ if (isset($_REQUEST['submit']))
     $stmt->bindValue(3, $_SESSION['userid']);
     $stmt->bindValue(4, $fid);
     $stmt->execute();
-    $db->commit();
+    //$db->commit();
 }
 
 
