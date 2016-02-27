@@ -45,8 +45,6 @@ echo "
 
     <p>Please click on one of the links below to perform an action.</p>";
 
-    echo var_dump($_SESSION['roles']);
-
     if (in_array("student", $_SESSION['roles']))
     {
         $uid = $_SESSION['userid'];
