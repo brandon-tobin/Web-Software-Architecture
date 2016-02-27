@@ -40,7 +40,9 @@
 
                 echo (getNavigation());
 
-                echo (getNavBar(''));
+                $roles = array();
+                array_push($roles, 'register');
+                echo (getNavBar($roles));
 
                 echo (pageDataHeader("New User Creation Form"));
 
