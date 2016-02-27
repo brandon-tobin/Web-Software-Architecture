@@ -71,6 +71,23 @@ function getNavBar($role)
             <li><a href=\"../Account/logout.php\">Logout</a></li>
         </ul>";
     }
+    else if (in_array('register', $role))
+    {
+       // require('../../Model/Functions/authentication.php');
+       // require('../../Model/Functions/db.php');
+        return "
+        <form method=\"post\">
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li>Welcome Please Login To Continue</li>
+            <li><label for=\"username\">Username</label></li>
+            <li><input type=\"text\" size=\"20\" name=\"username\" id=\"username\" /></li>
+            <li><label for=\"password\">Password</label></li>
+            <li><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></li>
+            <li><a><input type=\"submit\" name=\"submit\" value=\"Submit\" /></li>
+        </ul>
+        </form>";
+    }
     else
     {
         require ('../Model/Functions/db.php');
