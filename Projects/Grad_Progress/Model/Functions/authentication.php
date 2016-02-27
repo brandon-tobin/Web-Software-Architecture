@@ -1,10 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Tobin
- * Date: 2/23/2016
- * Time: 3:52 PM
- */
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * Helper  functions for the system
+ *
+*/
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 
@@ -22,16 +23,16 @@ function changeSessionID()
 
 function usingHTTPS()
 {
-  //  return isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] != "off");
+    return isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] != "off");
 }
 
 function redirectToHTTPS()
 {
     if (!usingHTTPS())
     {
-        //$redirect = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        //header("Location:$redirect");
-        //exit();
+        $redirect = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        header("Location:$redirect");
+        exit();
     }
 }
 
@@ -285,8 +286,6 @@ function navBar_Login($role)
     }
 
 }
-
-
 
 // Generate random salt
 function makeSalt()

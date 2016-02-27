@@ -17,7 +17,7 @@
                 <!-- Brandon Tobin -->
                 <!-- University of Utah -->
 
-                <!-- Due Process Form for $form->student_Name  -->
+                <!-- Account Creation -->
 
                 <title>Account Creation</title>
 

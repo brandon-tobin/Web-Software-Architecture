@@ -1,16 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: brand
- * Date: 2/23/2016
- * Time: 9:19 PM
- */
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * Login Model
+ *
+*/
 
 require ('../../Model/Functions/db.php');
 
 require ('../../Model/Functions/authentication.php');
-
-
-redirectToHTTPS();
 
 verify_Login('');

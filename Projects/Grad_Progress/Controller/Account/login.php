@@ -1,9 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: brand
- * Date: 2/23/2016
- * Time: 9:18 PM
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * Login Controller
+ *
  */
 
 // Set the include path for the model and view

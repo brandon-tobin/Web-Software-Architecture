@@ -9,7 +9,7 @@
         <!-- Brandon Tobin -->
         <!-- University of Utah -->
 
-        <!-- View for updating user roles  -->
+        <!-- View for updating user information  -->
 
         <title>User Roles</title>
 
@@ -17,7 +17,7 @@
         <meta charset="utf-8"/>
         <meta name="AUTHOR"      content="Brndon Tobin"/>
         <meta name="keywords"    content="HTML, Projects"/>
-        <meta name="description" content="Landing page for updating user roles"/>
+        <meta name="description" content="Landing page for updating user information"/>
 
         <!-- ALL CSS FILES -->
         <link rel="stylesheet" href="../../../../Resources/css/stylesheet.css" type="text/css"/>

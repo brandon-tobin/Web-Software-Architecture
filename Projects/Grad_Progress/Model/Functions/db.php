@@ -1,4 +1,12 @@
 <?php
+/**
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * Helper Function for opening DB connections
+ *
+*/
+
 
 function openDBConnection()
 {

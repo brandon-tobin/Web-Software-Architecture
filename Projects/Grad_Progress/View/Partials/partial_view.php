@@ -73,8 +73,6 @@ function getNavBar($role)
     }
     else if (in_array('register', $role))
     {
-       // require('../../Model/Functions/authentication.php');
-       // require('../../Model/Functions/db.php');
         return "
         <form method=\"post\">
         <!-- Nav Bar -->

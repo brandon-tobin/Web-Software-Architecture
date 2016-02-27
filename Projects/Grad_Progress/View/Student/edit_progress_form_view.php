@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Progress Form View -- View for displaying the student's form
+ * Progress Form View -- View for editing student forms
  *
  */
 require('../../View/Partials/partial_view.php');
@@ -20,7 +20,7 @@ echo "
                 <!-- Brandon Tobin -->
                 <!-- University of Utah -->
 
-                <!-- Due Process Form for $form->student_Name  -->
+                <!-- Edit Due Process Form for $form->student_Name  -->
 
                 <title>Due Process Form</title>
 
@@ -28,7 +28,7 @@ echo "
                 <meta charset=\"utf-8\"/>
                 <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"Due Process Form for $form->student_Name\"/>
+                <meta name=\"description\" content=\"Edit due Process Form for $form->student_Name\"/>
 
                 <!-- ALL CSS FILES -->
                 <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
@@ -75,8 +75,6 @@ echo "
                     </tr>";
 
                             // Echo out all activities for the form
-                            //foreach ($form->completedActivity as $row)
-                            // {
                             echo "<tr>
                             <td>Identify Advisor</td>
                             <td>$form->number_semesters1</td>

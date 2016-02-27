@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Progress Forms Controller
+ * Edit Progress Forms Controller
  *
  */
 

@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * DGS for showing list of students and advisors Controller
+ * DGS for changing user roles
  *
  */
 

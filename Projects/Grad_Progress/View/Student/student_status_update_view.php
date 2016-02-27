@@ -9,7 +9,7 @@
         <!-- Brandon Tobin -->
         <!-- University of Utah -->
 
-        <!-- Due Process Form for $form->student_Name  -->
+        <!-- Update student status  -->
 
         <title>Login</title>
 
@@ -17,7 +17,7 @@
         <meta charset="utf-8"/>
         <meta name="AUTHOR"      content="Brndon Tobin"/>
         <meta name="keywords"    content="HTML, Projects"/>
-        <meta name="description" content="Landing page for successful account creation"/>
+        <meta name="description" content="Landing page for updating a student status"/>
 
         <!-- ALL CSS FILES -->
         <link rel="stylesheet" href="../../../../Resources/css/stylesheet.css" type="text/css"/>

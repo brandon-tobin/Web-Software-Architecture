@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Student Forms Model -- Represents a list of forms for student
+ * Model for updating a student status
  *
  */
 

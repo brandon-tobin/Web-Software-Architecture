@@ -9,7 +9,7 @@
             <!-- Brandon Tobin -->
             <!-- University of Utah -->
 
-            <!-- Due Process Form for $form->student_Name  -->
+            <!-- Failed Account Creation -->
 
             <title>Account Creation Failed</title>
 

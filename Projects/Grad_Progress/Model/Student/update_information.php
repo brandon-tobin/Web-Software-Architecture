@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * Model to allow the DGS to change the role of a user.
+ * Model to allow the student to change their information.
  *
  */
 
@@ -55,8 +55,6 @@ if (isset($_POST['submit']))
     $stmt->execute();
 
     $db->commit();
-
-    //require ('../../View/Account/account_home.php');
 }
 
 if (isset($_POST['Submit']))

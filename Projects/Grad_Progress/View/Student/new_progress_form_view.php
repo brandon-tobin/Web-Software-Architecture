@@ -21,7 +21,7 @@ echo "
                 <!-- Brandon Tobin -->
                 <!-- University of Utah -->
 
-                <!-- Due Process Form for $form->student_Name  -->
+                <!-- New Due Process Form for $form->student_Name  -->
 
                 <title>Due Process Form</title>
 
@@ -29,7 +29,7 @@ echo "
                 <meta charset=\"utf-8\"/>
                 <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"Due Process Form for $form->student_Name\"/>
+                <meta name=\"description\" content=\"New Due Process Form for $form->student_Name\"/>
 
                 <!-- ALL CSS FILES -->
                 <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
@@ -57,29 +57,8 @@ echo "
                 <form method='post'>
                 ";
 
-                //if ($form->advisor != '')
-                //{
                     echo "<p><b>Advisor:</b> <u>$form->advisor</u></p>";
-               // }
-                /*else {
-                    echo "
-                    <label for=\"advisor\">Advisor:</label>
-                    <select name=\"advisor\" id=\"advisor\">
-                    ";
 
-                    // Echo out the possible advisors
-                    foreach ($form->advisor_array as $row) {
-                        echo "<option value=\"$row\">$row</option>";
-                    }
-
-                    echo "
-                    </select>
-                    <br />
-                    <br />";
-                }*/
-
-                //if (sizeof($form->committee) != 0)
-                //{
                     echo "<p><b>Committee:</b></p>
                           <ul>";
                     // Echo out the committee members
@@ -88,64 +67,7 @@ echo "
                         echo "<li>$row</li>";
                     }
                     echo "</ul>";
-                //}
-                /*else {
-                    echo "
 
-                    <label for=\"committee\">Committee:</label>
-                    <br />
-                    <select name=\"committee1\" id=\"committee1\">";
-
-                    // Echo out the possible committee members
-                    foreach ($form->committee_array as $row) {
-                        echo "<option value=\"$row\">$row</option>";
-                    }
-
-                    echo "
-                    </select>
-
-                    <br />
-
-                    <select name=\"committee2\" id=\"committee2\">
-
-                    ";
-
-                    // Echo out the possible committee members
-                    foreach ($form->committee_array as $row) {
-                        echo "<option value=\"$row\">$row</option>";
-                    }
-
-                    echo "
-                    </select>
-
-                    <br />
-
-                    <select name=\"committee3\" id=\"committee3\">
-
-                    ";
-
-                    // Echo out the possible committee members
-                    foreach ($form->committee_array as $row) {
-                        echo "<option value=\"$row\">$row</option>";
-                    }
-
-                    echo "
-                    </select>
-
-                    <br />
-
-                    <select name=\"committee4\" id=\"committee4\">
-
-                    ";
-
-                    // Echo out the possible committee members
-                    foreach ($form->committee_array as $row) {
-                        echo "<option value=\"$row\">$row</option>";
-                    }
-
-                    echo "
-                    </select>";
-                }*/
                     echo "
 
                     <br />
@@ -209,11 +131,6 @@ echo "
                         <li>Describe the progress the student has made during the past year.</li>
                         <TEXTAREA NAME=\"comments\" COLS=40 ROWS=6></TEXTAREA>
                     </ol>
-
-                    <!--<pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
-
-                    <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
-                -->
 
                 <input type=\"submit\" name=\"submit\" value=\"Submit\" />
 

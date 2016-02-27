@@ -8,7 +8,6 @@
  */
 
 // Set the include path for the model and view
-//set_include_path("../../Model/UserCreation/" .PATH_SEPARATOR . "../../View/UserCreation/");
 set_include_path("../../Model/Account");
 
 // Require the model file once

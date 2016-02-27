@@ -1,6 +1,12 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+/**
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * The view for displaying the account home page.
+ *
+ */
+
 require('../../View/Partials/partial_view.php');
 
 echo "
@@ -22,7 +28,7 @@ echo "
         <meta charset=\"utf-8\"/>
         <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
         <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-        <meta name=\"description\" content=\"Landing page for successful account creation\"/>
+        <meta name=\"description\" content=\"Landing page for the account home\"/>
 
         <!-- ALL CSS FILES -->
         <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>

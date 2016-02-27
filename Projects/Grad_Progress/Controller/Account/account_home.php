@@ -1,9 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: brand
- * Date: 2/23/2016
- * Time: 10:08 PM
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * Account Home Controller
+ *
  */
 // Set the include path for the model and view
 set_include_path("../../Model/Account/");

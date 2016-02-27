@@ -17,7 +17,7 @@
         <meta charset="utf-8"/>
         <meta name="AUTHOR"      content="Brndon Tobin"/>
         <meta name="keywords"    content="HTML, Projects"/>
-        <meta name="description" content="Landing page for user trying to access"/>
+        <meta name="description" content="Landing page for user trying to access a page without the correct permissions"/>
 
         <!-- ALL CSS FILES -->
         <link rel="stylesheet" href="../../../../Resources/css/stylesheet.css" type="text/css"/>
