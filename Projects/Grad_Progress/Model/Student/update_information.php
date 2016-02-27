@@ -32,33 +32,27 @@ if (isset($_POST['submit']))
     $stmt->bindValue(4, $semester_admitted);
     $stmt->execute();
 
-    //if ($_REQUEST['new_advisor_checked'])
-    //{
-        $stmt = $db->prepare("INSERT INTO Advisors (aid, sid) VALUES ((SELECT uid FROM Users WHERE name = ?), ?)");
-        $stmt->bindValue(1, $advisor);
-        $stmt->bindValue(2, $_SESSION['userid']);
-        $stmt->execute();
-    //}
+    $stmt = $db->prepare("INSERT INTO Advisors (aid, sid) VALUES ((SELECT uid FROM Users WHERE name = ?), ?)");
+    $stmt->bindValue(1, $advisor);
+    $stmt->bindValue(2, $_SESSION['userid']);
+    $stmt->execute();
 
-    //if ($_REQUEST['new_committee_checked'])
-    //{
-        $committee1 = trim($_REQUEST['committee1']);
-        $committee2 = trim($_REQUEST['committee2']);
-        $committee3 = trim($_REQUEST['committee3']);
-        $committee4 = trim($_REQUEST['committee4']);
+    $committee1 = trim($_REQUEST['committee1']);
+    $committee2 = trim($_REQUEST['committee2']);
+    $committee3 = trim($_REQUEST['committee3']);
+    $committee4 = trim($_REQUEST['committee4']);
 
-        $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES (?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?)),
-                              (?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?))");
-        $stmt->bindValue(1, $_SESSION['userid']);
-        $stmt->bindValue(2, $committee1);
-        $stmt->bindValue(3, $_SESSION['userid']);
-        $stmt->bindValue(4, $committee2);
-        $stmt->bindValue(5, $_SESSION['userid']);
-        $stmt->bindValue(6, $committee3);
-        $stmt->bindValue(7, $_SESSION['userid']);
-        $stmt->bindValue(8, $committee4);
-        $stmt->execute();
-    //}
+    $stmt = $db->prepare("INSERT INTO Committee (sid, facultyid) VALUES (?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?)),
+                          (?, (SELECT uid FROM Users WHERE name = ?)), (?, (SELECT uid FROM Users WHERE name = ?))");
+    $stmt->bindValue(1, $_SESSION['userid']);
+    $stmt->bindValue(2, $committee1);
+    $stmt->bindValue(3, $_SESSION['userid']);
+    $stmt->bindValue(4, $committee2);
+    $stmt->bindValue(5, $_SESSION['userid']);
+    $stmt->bindValue(6, $committee3);
+    $stmt->bindValue(7, $_SESSION['userid']);
+    $stmt->bindValue(8, $committee4);
+    $stmt->execute();
 
     $db->commit();
 
@@ -71,9 +65,6 @@ if (isset($_POST['Submit']))
     $track = trim($_REQUEST['track']);
     $semester_admitted = trim($_REQUEST['semester_admitted']);
     $advisor = trim($_REQUEST['advisor']);
-
-
-
 
     // Create a DB connection
     $db = openDBConnection();
@@ -89,21 +80,8 @@ if (isset($_POST['Submit']))
     $stmt->execute();
     $db->commit();
 
-
-
     if (isset($_REQUEST['new_advisor_checked']))
     {
-        // Get advisor uid
-        /*$stmt = $db->prepare("SELECT uid FROM Users WHERE name = ?");
-        $stmt->bindValue(1, $advisor);
-
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($result as $row)
-        {
-            $aid = $row['uid'];
-        }*/
-
         // Update the student advisor
         $stmt = $db->prepare("UPDATE Advisors SET aid = (SELECT uid FROM Users WHERE name = ?) WHERE uid = ?");
         $stmt->bindValue(1, $advisor);
@@ -139,8 +117,6 @@ if (isset($_POST['Submit']))
         $stmt->execute();
         $db->commit();
     }
-
-    //require ('../../View/Account/account_home.php');
 }
 
 class Update_Info
@@ -250,12 +226,8 @@ class Update_Info
                 array_push($this->all_committee, $row['name']);
             }
 
-            error_log("COMMITTEE CONSIST OF : " . var_dump($this->all_committee));
-
             if ($this->degree == '' && $this->track == '' && $this->semester_admitted == '')
                 $this->first_submission = true;
-
-            //require ('../../View/Student/update_information_view.php');
         }
         catch (PDOException $ex) {
             error_log("TOBIN ACCESS FAILED MESSAGE IS: " . $ex->getMessage());

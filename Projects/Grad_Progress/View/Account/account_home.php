@@ -71,7 +71,7 @@ echo "
         echo "
             <p>Student Options:</p>
             <ul>
-                <li><a href=\"../Student/update_information.php\">Update Information, Advisor, Committee</a></li>
+                <li><a href=\"../Student/update_information.php\">View/Update Information, Advisor, Committee</a></li>
                 <li><a href=\"../Student/student_forms.php?id=".$_SESSION['userid']."\">View your forms</a></li>
                 <li><a href=\"../Student/student_status.php?id=".$_SESSION['userid']."\">Student Status</a></li>
                 <li><a href=\"../Student/student_status_update.php?id=".$_SESSION['userid']."\">Update Student Status</a></li>

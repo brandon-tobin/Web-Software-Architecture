@@ -111,8 +111,6 @@
                 <tr>
                     <td>Position:</td>
                     <td><?php echo $info->position?></td>
-                    <!--<td><label for="position">Position:</label></td>
-                    <td><input type="position" size="20" name="position" id="position" value=<?php echo $info->position?> /></td>-->
                 </tr>
                 <tr>
                     <td><label for="semester_admitted">Semester Admitted:</label></td>

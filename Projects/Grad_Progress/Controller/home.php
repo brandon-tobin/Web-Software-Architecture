@@ -44,6 +44,12 @@
 
         ?>
 
+        <p>Below are some actions you can do.</p>
+
+        <ul><a href="Account/login.php">Login</a></ul>
+        <ul><a href="Account/creation_form.php">Register</a></ul>
+        <ul><a href="Account/account_home.php">Account Home</a></ul>
+
         </body>
 
     </html>
