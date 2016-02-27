@@ -68,12 +68,12 @@ echo "
 
     else if (in_array("student", $_SESSION['roles']))
     {
-        $uid = $_SESSION['userid'];
         echo "
             <p>Student Options:</p>
             <ul>
                 <li><a href=\"../Student/update_information.php\">Update Information, Advisor, Committee</a></li>
-                <li><a href=\"../Student/student_forms.php?id=$uid\">View your forms</a></li>
+                <li><a href=\"../Student/student_forms.php?id=".$_SESSION['userid']."\">View your forms</a></li>
+                <li><a href=\"../Student/student_status.php?id=".$_SESSION['userid']."\">Student Status</a></li>
                 <li><a href=\"logout.php\">Logout</a></li>
             </ul>";
     }
