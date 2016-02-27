@@ -55,7 +55,7 @@ header("Location: ../../Controller/home.php");
 
         <p><a href="account_home.php">Login</a></p>
 
-        <p><a href="../home.php">Main Home Page</a></p>
+        <p><a href="home.php">Main Home Page</a></p>
 
     </body>
 </html>
