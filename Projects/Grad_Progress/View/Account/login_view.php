@@ -43,7 +43,7 @@
             <table>
                 <tr>
                     <td><label for="username">Username</label></td>
-                    <td><input type="text" size="20" name="username" id="username" /></td>
+                    <td><input type="text" size="20" name="username" id="username" value="username"/></td>
                 </tr>
                 <tr>
                     <td><label for="password">Password</label></td>
