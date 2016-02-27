@@ -1,4 +1,5 @@
 <?php require('../View/Partials/partial_view.php'); ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
     <html lang="en">
@@ -36,7 +37,8 @@
 
         if (isset($_SESSION['userid']))
         {
-            header ("Location: ../View/Account/account_home.php");
+            //header ("Location: ../View/Account/account_home.php");
+            echo "Welcome back ".$_SESSION['realname']."! Please click on a link below to continue.";
             //require ('../View/Account/account_home.php');
         }
 

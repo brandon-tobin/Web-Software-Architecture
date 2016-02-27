@@ -4,7 +4,6 @@
  * This file contains the partial views for simplifying the code in the main view files.
  */
 
-
 function getHeader()
 {
     return "
