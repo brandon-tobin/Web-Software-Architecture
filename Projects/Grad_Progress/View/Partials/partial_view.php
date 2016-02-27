@@ -31,8 +31,6 @@ function getNavigation()
 
 function getNavBar($role)
 {
-
-
     if (in_array('dgs', $role))
     {
         return "
@@ -58,7 +56,7 @@ function getNavBar($role)
         return "
         <!-- Nav Bar -->
         <ul id=\"navBar\">
-            <li><a>Welcome ".$_SESSION['realname']."</a></li>
+            <li><Welcome ".$_SESSION['realname']."</li>
             <li><a href=\"../Account/account_home.php\">Account Home</a></li>
             <li><a href=\"../Student/update_information.php\">Update Information</a></li>
             <li><a href=\"../Student/student_forms.php?id=".$_SESSION['userid']."\">View Forms</a></li>
