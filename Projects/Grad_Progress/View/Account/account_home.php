@@ -49,6 +49,7 @@ echo "
     {
         $uid = $_SESSION['userid'];
         echo "
+        <p>Student Options:</p>
         <ul>
             <li><a href=\"../Student/update_information.php\">Update Information, Advisor, Committee</a></li>
             <li><a href=\"../Student/student_forms.php?id=$uid\">View your forms</a></li>
@@ -59,6 +60,7 @@ echo "
     if (in_array("faculty", $_SESSION['roles']))
     {
         echo "
+        <p>Faculty Options:</p>
         <ul>
             <li><a href=\"../Advisor/students.php?id=".$_SESSION['userid']."\">Click here to view your students</a></li>
             <li><a href=\"logout.php\">Logout</a></li>
@@ -68,6 +70,7 @@ echo "
     if (in_array("dgs", $_SESSION['roles']))
     {
         echo "
+        <p>DGS Options:</p>
         <ul>
             <li><a href=\"../DGS/overview.php\">View Students and Advisors</a></li>
             <li><a href=\"../DGS/change_role.php\">Change User Role</a></li>
