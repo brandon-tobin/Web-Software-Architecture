@@ -46,7 +46,7 @@
 
         <p>Below are some actions you can do.</p>
 
-        <ul><a href="Account/account_home.php.php">Account Home</a></ul>
+        <ul><a href="Account/account_home.php">Account Home</a></ul>
         <ul><a href="Account/creation_form.php">Register</a></ul>
 
         </body>
