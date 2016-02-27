@@ -53,7 +53,7 @@ unset($_SESSION['roles']);
 
         <p><a href="account_home.php">Login</a></p>
 
-        <p><a href="../../Controller/home.php">Main Home Page</a></p>
+        <p><a href="../Controller/home.php">Main Home Page</a></p>
 
     </body>
 </html>
