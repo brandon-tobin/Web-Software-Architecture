@@ -18,12 +18,26 @@ if (isset($_REQUEST['submit']))
 
     $db = openDBConnection();
 
-    $query = "UPDATE Forms SET meets_requirements = ?, advisor_signed = ? WHERE uid = ? AND fid = (SELECT count(*) FROM Forms WHERE uid = ?)";
+    $query = "SELECT count(*) FROM Forms WHERE uid = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(1, $_SESSION['userid']);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($result as $row)
+    {
+        $fid = $row['count'];
+    }
+
+    $query = "UPDATE Forms SET meets_requirements = ?, advisor_signed = ? WHERE uid = ? AND fid = ?";
     $stmt = $db->prepare($query);
     $stmt->bindValue(1, $update);
     $stmt->bindValue(2, 0);
     $stmt->bindValue(3, $_SESSION['userid']);
-    $stmt->bindValue(4, $_SESSION['userid']);
+    $stmt->bindValue(4, $fid);
+    $stmt->execute();
+    $db->commit();
 }
 
 
