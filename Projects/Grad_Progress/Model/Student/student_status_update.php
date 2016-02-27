@@ -18,7 +18,7 @@ if (isset($_REQUEST['submit']))
 
     $db = openDBConnection();
 
-    $query = "SELECT count(*) FROM Forms WHERE uid = ?";
+    $query = "SELECT count(*) as count FROM Forms WHERE uid = ?";
     $stmt = $db->prepare($query);
     $stmt->bindValue(1, $_SESSION['userid']);
     $stmt->execute();
