@@ -68,6 +68,10 @@
                 <li><a href="../V4/README.html">README - Assignment 4</a></li>
                 <li><a href="../V4/DGS/overview.php">View Assignment 4</a></li>
             </ul>
+            <ul>
+                <li><a href="../V5/README.html">README - Assignment 5</a></li>
+                <li><a href="../V5/home.php">View Assignment 5</a></li>
+            </ul>
 
         </body>
 
