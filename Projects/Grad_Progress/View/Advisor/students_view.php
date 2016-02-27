@@ -43,7 +43,7 @@ echo "
 
             echo (getNavigation());
 
-            echo (getNavBar($_SESSION['roles']));
+            echo (getNavBar('faculty'));
 
             echo (pageDataHeader("Graduate Students"));
 
