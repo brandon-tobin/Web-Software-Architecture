@@ -21,8 +21,10 @@ $passwordError = '';
 $confirmedPasswordError = '';
 $uidError = '';
 
-//if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['account_type'])
-//    && isset($_REQUEST['confirmedPassword'])) {
+if ($_REQUEST['submit'] == 'Cancel')
+{
+    header("Location: ../home.php");
+}
 if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['confirmedPassword'])) {
 
     $name = trim($_REQUEST['name']);
@@ -30,10 +32,6 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     $username = trim($_REQUEST['username']);
     $password = trim($_REQUEST['password']);
     $confirmedPassword = trim($_REQUEST['confirmedPassword']);
-    //$position = trim($_REQUEST['account_type']);
-    //$degree = trim($_REQUEST['degree']);
-    //$track = trim($_REQUEST['track_type']);
-    //$date = trim($_REQUEST['date']);
 
     // Perform simple validations
     if ($name == '') {
@@ -42,6 +40,10 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
 
     if ($password == '') {
         $passwordError = 'Enter a valid password';
+    }
+
+    if (!(preg_match('/\d{8}/', $uid))) {
+        $passwordError = 'Password must be at least 8 characters long';
     }
 
     if (strcmp($password, $confirmedPassword) != 0) {
@@ -79,18 +81,6 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
             $stmt->execute();
 
             $db->commit();
-
-            /*if ($position == 'S')
-            {
-                $db->beginTransaction();
-                $stmt = $db->prepare("INSERT INTO Students (uid, degree, track, semester_admitted) VALUES (?, ?, ?, \"?\")");
-                $stmt->bindValue(1, $uid);
-                $stmt->bindValue(2, $degree);
-                $stmt->bindValue(3, $track);
-                $stmt->bindValue(4, $date);
-                $stmt->execute();
-                $db->commit();
-            }*/
 
             require '../../View/Account/account_home.php';
         } catch (PDOException $ex) {

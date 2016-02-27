@@ -64,7 +64,7 @@
                         </tr>
                         <tr>
                             <td><label for="username">Username:</label></td>
-                            <td><input type="text" size="20" name="username" id="username" /></td>
+                            <td><input type="text" size="20" name="username" id="username" required/></td>
                             <td><span style="color:red"><?php echo $loginError ?></span></td>
                         </tr>
                         <tr>
@@ -78,44 +78,10 @@
                             <td><span style="color:red"><?php echo $confirmedPasswordError ?></span></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="submit" value="Submit" /></td>
+                            <td><input type="submit" name="submit" value="Register" /></td>
+                            <td><input type="submit" name="submit" value="Cancel"</td>
                         </tr>
-                        <!--<tr>
-                            <td><label for="selection_box">Please select account type.</label></td>
-                            <td>
-                                <select name="account_type" id="account_type">
-                                    <option value="S">Student</option>
-                                    <option value="F">Faculty</option>
-                                </select>
-                            </td>
-                        </tr>-->
                     </table>
-                    <!--<p>Only continue filling in information if you are a student</p>
-                    <table>
-                        <tr>
-                            <td><label for="degree">Degree:</label></td>
-                            <td><input type="radio" name="degree" value="Computer Science" checked>Computer Science</td>
-                            <td><input type="radio" name="degree" value="Computing">Computing</td>
-                        </tr>
-                        <tr>
-                            <td><label for="track">Track:</label></td>
-                            <td>
-                                <select name="track_type" id="track_type">
-                                    <option value="Networking">Networking</option>
-                                    <option value="Data">Data</option>
-                                    <option value="Databases">Databases</option>
-                                    <option value="Algorithms">Algorithms</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="date">Date Admitted:</label></td>
-                            <td><input type="date" name="date" placeholder="YYYY-MM-DD"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input type="submit" value="Submit" /></td>
-                        </tr>
-                    </table>-->
                 </form>
             </body>
         </html>
