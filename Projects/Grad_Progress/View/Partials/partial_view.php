@@ -49,7 +49,7 @@ function getNavBar($role)
         <ul id=\"navBar\">
             <li>Welcome ".$_SESSION['realname']."</li>
             <li><a href=\"../Account/account_home.php\">Account Home</a></li>
-            <li><a href=\"../Advisor/students.php?id=".$_SESSION['userid']."\>View Students</a></li>
+            <li><a href=\"../Advisor/students.php?id=".$_SESSION['userid']."\">View Students</a></li>
             <li><a href=\"../Account/logout.php\">Logout</a></li>
         </ul>";
     }
