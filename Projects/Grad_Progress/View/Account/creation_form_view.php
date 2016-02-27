@@ -40,7 +40,7 @@
 
                 echo (getNavigation());
 
-                echo (getNavBar($_SESSION['roles']));
+                echo (getNavBar(''));
 
                 echo (pageDataHeader("New User Creation Form"));
 
