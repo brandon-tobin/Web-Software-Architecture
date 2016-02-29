@@ -7,6 +7,8 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 {
     //navBar_Login('');
     verify_Login('');
+
+    header("Location: Account/account_home.php");
 }
 
 ?>
@@ -80,7 +82,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                     <input type="text" class="form-control" name="username" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="password" placeholder="Password">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
                 <button type="submit" name="submit" class="btn btn-default">Sign In</button>
             </form>
