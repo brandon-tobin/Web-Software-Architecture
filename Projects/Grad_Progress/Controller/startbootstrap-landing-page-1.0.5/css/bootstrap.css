@@ -334,6 +334,7 @@ th {
   content: "\e012";
 }
 .glyphicon-ok:before {
+  font-size: 75px;
   content: "\e013";
 }
 .glyphicon-remove:before {
