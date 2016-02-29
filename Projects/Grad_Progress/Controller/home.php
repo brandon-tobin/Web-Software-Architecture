@@ -68,13 +68,10 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#about">Account Home</a>
-                </li>
-                <li>
-                    <a href="#services">Register</a>
+                    <a href="#services">Services</a>
                 </li>
             </ul>
-            <form class="navbar-form navbar-right" role="search">
+            <form class="navbar-form navbar-right">
                 <div class="form-group">
                     <input type="text" class="form-control" name="username" placeholder="Username">
                 </div>
