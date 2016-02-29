@@ -71,16 +71,17 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                     <a href="#services">Services</a>
                 </li>
             </ul>
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Password">
-                </div>
-                <button type="submit" name="submit" class="btn btn-default">Sign In</button>
-            </form>
+
         </div>
+        <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button type="submit" name="submit" class="btn btn-default">Sign In</button>
+        </form>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
