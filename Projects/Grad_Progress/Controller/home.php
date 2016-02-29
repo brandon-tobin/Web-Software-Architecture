@@ -230,15 +230,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
                         <a href="#services">Services</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#contact">Contact</a>
                     </li>
                 </ul>
                 <p class="copyright text-muted small">Copyright &copy; Brandon Tobin. All Rights Reserved</p>
