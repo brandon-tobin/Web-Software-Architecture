@@ -35,7 +35,8 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../../../../Projects/Grad_Progress/Controller/startbootstrap-landing-page-1.0.5/img/intro-bg.jpg) no-repeat center center;
+   /* background: url(../../../../Projects/Grad_Progress/Controller/startbootstrap-landing-page-1.0.5/img/intro-bg.jpg) no-repeat center center;*/
+    background: url(../../../../Resources/Images/uofufootball.jpg) no-repeat center center;
     background-size: cover;
 }
 
