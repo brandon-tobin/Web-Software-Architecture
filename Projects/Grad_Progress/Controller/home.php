@@ -66,6 +66,15 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <button type="submit" name="submit" class="btn btn-default">Sign In</button>
+            </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="#services">Services</a>
@@ -73,15 +82,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
             </ul>
 
         </div>
-        <form class="navbar-form navbar-right">
-            <div class="form-group">
-                <input type="text" class="form-control" name="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" name="password" placeholder="Password">
-            </div>
-            <button type="submit" name="submit" class="btn btn-default">Sign In</button>
-        </form>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
