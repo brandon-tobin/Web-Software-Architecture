@@ -31,7 +31,7 @@ echo "
         <meta name=\"description\" content=\"Landing page for the account home\"/>
 
         <!-- ALL CSS FILES -->
-        <!--<link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>-->
+        <link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/>
 
     </head>
 
