@@ -32,8 +32,7 @@ function getNavigation()
 {
     return "
 
-    <div class=\"row navigation-bar\">
-    <nav class=\"navbar navbar-inverse \" role=\"navigation\">
+    <nav class=\"navbar navbar-default navbar-inverse topnav \" role=\"navigation\">
         <div class=\"container topnav\">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class=\"navbar-header\">
@@ -43,7 +42,7 @@ function getNavigation()
                     <span class=\"icon-bar\"></span>
                     <span class=\"icon-bar\"></span>
                 </button>
-                <a class=\"navbar-brand\" href=\"#\">Website Links</a>
+                <a class=\"navbar-brand topnav\" href=\"#\">Website Links</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
@@ -167,7 +166,7 @@ function getNavBar($role)
     else if (in_array('student', $role))
     {
         return "
-        <!-- Navigation -->
+<!-- Navigation -->
         <nav class=\"navbar navbar-custom \" role=\"navigation\">
             <div class=\"container\">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -187,16 +186,7 @@ function getNavBar($role)
                             <a href=\"../Account/account_home.php\">Account Home</a>
                         </li>
                         <li>
-                            <a href=\"../Student/update_information.php\">Update Information</a>
-                        </li>
-                        <li>
-                            <a href=\"../Student/student_forms.php?id=".$_SESSION['userid']."\">View Forms</a>
-                        </li>
-                        <li>
-                            <a href=\"../Student/student_status.php?id=".$_SESSION['userid']."\">Student Status</a>
-                        </li>
-                        <li>
-                            <a href=\"../Student/student_status_update.php?id=".$_SESSION['userid']."\">Update Student Status</a>
+                            <a href=\"../Advisor/students.php?id=".$_SESSION['userid']."\">View Students</a>
                         </li>
                         <li>
                             <a href=\"../Account/logout.php\">Logout</a></a>
