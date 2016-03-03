@@ -34,7 +34,7 @@ function getNavigation()
 
     <div class=\"row navigation-bar\">
     <nav class=\"navbar navbar-inverse \" role=\"navigation\">
-        <div class=\"container-fluid\">
+        <div class=\"container-topnav\">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class=\"navbar-header\">
                 <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">
