@@ -41,6 +41,8 @@ echo "
 
     echo (getNavigation());
 
+    echo (getNewNavigation());
+
     echo (getNavBar($_SESSION['roles']));
 
     echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
