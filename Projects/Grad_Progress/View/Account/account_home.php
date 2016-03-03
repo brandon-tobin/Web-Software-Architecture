@@ -42,6 +42,8 @@ echo "
             <div class=\"row\">
                 <div class=\"col-lg-6 col-lg-offset-1\">";
                     echo (getHeader());
+                    echo (getNavigation());
+
                     echo "
                 </div>
             </div>
@@ -50,7 +52,6 @@ echo "
 
 ";
 
-    echo (getNavigation());
 
     echo (getNavBar($_SESSION['roles']));
 
