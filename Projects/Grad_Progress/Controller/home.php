@@ -63,7 +63,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
+                        <span class="icon-bar">Test</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
@@ -182,11 +182,9 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
         </footer>
 
         <!-- jQuery -->
-        <!--<script src="js/jquery.js"></script>-->
         <script src="../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js";
 
         <!-- Bootstrap Core JavaScript -->
-        <!--<script src="js/bootstrap.min.js"></script>-->
         <script src="../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js";
 
     </body>
