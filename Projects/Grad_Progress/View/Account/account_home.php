@@ -51,6 +51,14 @@ echo "
 
     <h1 class=\"form-header\">Account Home</h1>
 
+    <div class=\"container-fluid\">
+        <div class=\"row\">
+            <div class=\"col-lg-6\">
+
+
+
+
+
     <p>Please click on one of the links below to perform an action.</p>";
 
     if (in_array("dgs", $_SESSION['roles']))
@@ -88,6 +96,10 @@ echo "
     }
 
     echo "
+
+            </div>
+        </div>
+    </div>
 
 
     </body>
