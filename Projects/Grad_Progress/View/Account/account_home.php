@@ -50,8 +50,6 @@ echo "
 
 ";
 
-    echo (getHeader());
-
     echo (getNavigation());
 
     echo (getNavBar($_SESSION['roles']));
