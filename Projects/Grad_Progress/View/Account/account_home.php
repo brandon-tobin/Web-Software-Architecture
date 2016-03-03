@@ -40,7 +40,7 @@ echo "
     <body>
     <div class=\"container-fluid\">
         <div class=\"row\">
-            <div class=\"col-lg-6\">
+            <div class=\"col-sm-3 col-md-6 col-lg-6\">
 ";
 
     echo (getHeader());
