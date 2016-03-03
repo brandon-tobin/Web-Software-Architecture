@@ -17,7 +17,7 @@ function getHeader()
     </div>";
 }
 
-function getNavigation()
+/*function getNavigation()
 {
     return "
     <!-- Navigation Bar -->
@@ -26,12 +26,11 @@ function getNavigation()
         <li><a href=\"../../../../Projects/\">Projects</a></li>
         <li><a href=\"../../../../Class_Examples/\">Examples</a></li>
     </ul>";
-}
+}*/
 
-function getNewNavigation()
+function getNavigation()
 {
     return "
-
 
     <nav class=\"navbar navbar-inverse \" role=\"navigation\">
         <div class=\"container\">
@@ -65,7 +64,7 @@ function getNewNavigation()
     </nav>";
 }
 
-function getNewNavBar($role)
+function getNavBar($role)
 {
     if (in_array('dgs', $role))
     {
@@ -210,7 +209,7 @@ function getNewNavBar($role)
 
 
 
-function getNavBar($role)
+/*function getNavBar($role)
 {
     if (in_array('dgs', $role))
     {
@@ -291,7 +290,7 @@ function getNavBar($role)
         </ul>
         </form>";
     }
-}
+}*/
 
 function pageDataHeader($title)
 {
