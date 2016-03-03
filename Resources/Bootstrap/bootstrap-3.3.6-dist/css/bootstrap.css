@@ -4646,8 +4646,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #fff;
   background-color: #080808;
 }
-
-
 .navbar-custom {
   background-color: #880000;
   border-color: #880000;
@@ -4703,12 +4701,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #fff;
   background-color: #880000;
 }
-
-
-
-
-
-
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
     border-color: #080808;
