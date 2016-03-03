@@ -110,9 +110,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                                 <li>
                                     <a href="Account/creation_form.php" class="btn btn-default btn-lg"><span class="network-name">Register</span></a>
                                 </li>
-                                <!--<li>
-                                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                                </li>-->
                             </ul>
                         </div>
                     </div>
@@ -137,10 +134,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                         <h2 class="section-heading">Account Home</h2>
                         <p class="lead">Account Home will take you to your account homepage where you can perform specific tasks to your user account like viewing and creating student forms.</p>
                     </div>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <!--<img class="img-responsive" src="img/ipad.png" alt="">-->
-                        <!--<span class="glyphicon glyphicon-home" aria-hidden="true"></span>-->
-                    </div>
                 </div>
 
             </div>
@@ -160,10 +153,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                         <h2 class="section-heading">Register</h2>
                         <p class="lead">Register will take you to the new account registration page which will allow you to create a new user account in the Graduate Student System.</p>
                     </div>
-                    <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                        <!--<img class="img-responsive" src="img/dog.png" alt="">-->
-                        <!--<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>-->
-                    </div>
                 </div>
 
             </div>
@@ -171,58 +160,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
         </div>
         <!-- /.content-section-b -->
-
-        <!--<div class="content-section-a">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-5 col-sm-6">
-                        <hr class="section-heading-spacer">
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                        <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-                    </div>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img class="img-responsive" src="img/phones.png" alt="">
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /.content-section-a -->
-
-        <!--<a  name="contact"></a>
-        <div class="banner">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h2>Connect to Start Bootstrap:</h2>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.container -->
-
-        <!--</div>
-        <!-- /.banner -->
 
         <!-- Footer -->
         <footer>
@@ -245,10 +182,12 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
         </footer>
 
         <!-- jQuery -->
-        <script src="js/jquery.js"></script>
+        <!--<script src="js/jquery.js"></script>-->
+        <script src="../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js";
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+        <!--<script src="js/bootstrap.min.js"></script>-->
+        <script src="../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js";
 
     </body>
 
