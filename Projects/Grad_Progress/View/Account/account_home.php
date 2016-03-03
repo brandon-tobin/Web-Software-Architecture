@@ -37,7 +37,11 @@ echo "
 
     </head>
 
-    <body>";
+    <body>
+    <div class=\"container-fluid\">
+        <div class=\"row\">
+            <div class=\"col-lg-6\">
+";
 
     echo (getHeader());
 
@@ -51,9 +55,6 @@ echo "
 
     <h1 class=\"form-header\">Account Home</h1>
 
-    <div class=\"container-fluid\">
-        <div class=\"row\">
-            <div class=\"col-lg-6\">
 
 
 
