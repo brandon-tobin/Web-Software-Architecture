@@ -4649,7 +4649,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 
 
 .navbar-custom {
-  background-color: #222;
+  background-color: #880000;
   border-color: #880000;
 }
 .navbar-custom .navbar-brand {
@@ -4695,7 +4695,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-custom .navbar-collapse,
 .navbar-custom .navbar-form {
-  border-color: #101010;
+  border-color: #880000;
 }
 .navbar-custom .navbar-nav > .open > a,
 .navbar-custom .navbar-nav > .open > a:hover,
