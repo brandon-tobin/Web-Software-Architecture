@@ -39,7 +39,7 @@ echo "
 
     echo (getHeader());
 
-    echo (getNavigation());
+   // echo (getNavigation());
 
     echo (getNewNavigation());
 

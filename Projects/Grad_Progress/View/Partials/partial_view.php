@@ -83,6 +83,151 @@ function getNewNavigation()
     </nav>";
 }
 
+function getNewNavBar($role)
+{
+    if (in_array('dgs', $role))
+    {
+        return "
+
+        <!-- Bootstrap Core CSS -->
+    <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        /*padding-top: 70px;*/
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src=\"https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js\"></script>
+        <script src=\"https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js\"></script>
+    <![endif]--f>
+
+     <!-- Navigation -->
+    <!--<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">-->
+    <nav class=\"navbar navbar-inverse \" role=\"navigation\">
+        <div class=\"container\">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class=\"navbar-header\">
+                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">
+                    <span class=\"sr-only\">Toggle navigation</span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                </button>
+                <a class=\"navbar-brand\" href=\"#\">Welcome ".$_SESSION['realname']."</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                <ul class=\"nav navbar-nav\">
+                    <li>
+                        <a href=\"../Account/account_home.php\">Account Home</a>
+                    </li>
+                    <li>
+                        <a href=\"../DGS/overview.php\">View Students and Advisors</a>
+                    </li>
+                    <li>
+                        <a href=\"../DGS/change_role.php\">Change User Role</a>
+                    </li>
+                    <li>
+                        <a href=\"../Account/logout.php\">Logout</a></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>";
+
+
+
+
+
+
+       /* <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li>Welcome ".$_SESSION['realname']."</li>
+            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+            <li><a href=\"../DGS/overview.php\">View Students and Advisors</a></li>
+            <li><a href=\"../DGS/change_role.php\">Change User Role</a></li>
+            <li><a href=\"../Account/logout.php\">Logout</a></li>
+        </ul>";*/
+    }
+    else if (in_array('faculty', $role))
+    {
+        return "
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li>Welcome ".$_SESSION['realname']."</li>
+            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+            <li><a href=\"../Advisor/students.php?id=".$_SESSION['userid']."\">View Students</a></li>
+            <li><a href=\"../Account/logout.php\">Logout</a></li>
+        </ul>";
+    }
+    else if (in_array('staff', $role))
+    {
+
+    }
+    else if (in_array('student', $role))
+    {
+        return "
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li><Welcome ".$_SESSION['realname']."</li>
+            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+            <li><a href=\"../Student/update_information.php\">Update Information</a></li>
+            <li><a href=\"../Student/student_forms.php?id=".$_SESSION['userid']."\">View Forms</a></li>
+            <li><a href=\"../Student/student_status.php?id=".$_SESSION['userid']."\">Student Status</a></li>
+            <li><a href=\"../Student/student_status_update.php?id=".$_SESSION['userid']."\">Update Student Status</a></li>
+            <li><a href=\"../Account/logout.php\">Logout</a></li>
+        </ul>";
+    }
+    else if (in_array('register', $role))
+    {
+        return "
+        <form method=\"post\">
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li>Welcome Please Login To Continue</li>
+            <li><label for=\"username\">Username</label></li>
+            <li><input type=\"text\" size=\"20\" name=\"username\" id=\"username\" /></li>
+            <li><label for=\"password\">Password</label></li>
+            <li><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></li>
+            <li><a><input type=\"submit\" name=\"submit\" value=\"Submit\" /></li>
+        </ul>
+        </form>";
+    }
+    else
+    {
+        require ('../Model/Functions/db.php');
+        require ('../Model/Functions/authentication.php');
+
+        if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
+        {
+            navBar_Login('');
+        }
+
+        return "
+        <form method=\"post\">
+        <!-- Nav Bar -->
+        <ul id=\"navBar\">
+            <li>Welcome Please Login To Continue</li>
+            <li><label for=\"username\">Username</label></li>
+            <li><input type=\"text\" size=\"20\" name=\"username\" id=\"username\" /></li>
+            <li><label for=\"password\">Password</label></li>
+            <li><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></li>
+            <li><a><input type=\"submit\" name=\"submit\" value=\"Submit\" /></li>
+        </ul>
+        </form>";
+    }
+}
+
+
+
 function getNavBar($role)
 {
     if (in_array('dgs', $role))
