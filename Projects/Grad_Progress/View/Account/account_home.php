@@ -38,6 +38,9 @@ echo "
     </head>
 
     <body>
+    <div class=\"container-fluid\">
+        <div class=\"row\">
+            <div class=\"col-lg-6  col-lg-offset-1\">
 
 ";
 
@@ -54,9 +57,7 @@ echo "
     <h1 class=\"form-header\">Account Home</h1>
 
 
-<div class=\"container-fluid\">
-        <div class=\"row\">
-            <div class=\"col-lg-6  col-lg-offset-1\">
+
 
 
 
