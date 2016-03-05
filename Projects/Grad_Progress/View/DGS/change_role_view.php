@@ -34,9 +34,15 @@
 
         echo (getNavigation());
 
-        echo (getNavBar($_SESSION['roles']));
+        echo (getNavBar($_SESSION['roles'])); ?>
 
-        echo (pageDataHeader("Change User Roles"));
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <li><a href="../../Controller/Account/account_home.php">Account Home</a></li>
+            <li class="active">Change User Role</li>
+        </ol>
+
+        <?php echo (pageDataHeader("Change User Roles")); ?>
 
         ?>
 
