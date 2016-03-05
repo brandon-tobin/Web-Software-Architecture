@@ -60,7 +60,6 @@ echo "
             }
             else if (in_array('faculty', $_SESSION['roles']))
             {
-                $_SESSION['advisor'] = $advisor->advisor_ID;
                 echo "
                 <!-- Breadcrumb -->
                 <ol class=\"breadcrumb\">

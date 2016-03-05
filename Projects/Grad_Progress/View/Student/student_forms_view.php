@@ -59,7 +59,17 @@ echo "
                         <li class=\"active\">$student->student_First_Name's Forms</li>
                     </ol>";
                 }
-
+                if (in_array('faculty', $_SESSION['roles']))
+                {
+                    $_SESSION['student'] = $student->student_ID;
+                    echo "
+                    <!-- Breadcrumb -->
+                    <ol class=\"breadcrumb\">
+                        <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                        <li><a href=\"../Advisor/students.php?id=".$_SESSION['userid']."\">My Graduate Students</a></li>
+                        <li class=\"active\">$student->student_First_Name's Forms</li>
+                    </ol>";
+}
                 echo (pageDataHeader("$student->student_First_Name's Forms"));
 
                 echo "
