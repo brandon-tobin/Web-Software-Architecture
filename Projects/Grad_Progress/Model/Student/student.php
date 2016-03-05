@@ -45,7 +45,7 @@ class Student
             }
 
             // Query the database to get the information required to display the list of student forms
-            $query = "SELECT meets_requirements, uid, fid, date, modified_date FROM Forms WHERE uid = $id GROUP BY fid";
+            $query = "SELECT meets_requirements, uid, fid, date, modified_date FROM Forms WHERE uid = $id"; /* GROUP BY fid, modified_date*/
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
