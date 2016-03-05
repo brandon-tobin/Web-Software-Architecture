@@ -46,7 +46,7 @@
 
         <form method="post" action="">
             <div class="table-responsive">
-                <table class="table table-striped table-condensed">
+                <table class="table table-condensed">
                     <tr>
                         <td>Full Name:</td>
                         <td><?php echo $info->name?></td>
