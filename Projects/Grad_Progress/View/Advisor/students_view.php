@@ -73,30 +73,32 @@ echo "
             echo "
 
                 <!-- Table containing students -->
-                <table class=\"roster\">
-                    <tr>
-                        <th>Name:</th>
-                        <th>Compliance:</th>
-                        <th>Current Form Date:</th>
-                        <th>Current Form:</th>
-                        <th>Advisor Signature:</th>
-                        <th>Profile</th>
-                    </tr>";
+                <div class=\"table-responsive\">
+                    <table class=\"table table-striped table-bordered table-condensed\">
+                        <tr>
+                            <th>Name:</th>
+                            <th>Compliance:</th>
+                            <th>Current Form Date:</th>
+                            <th>Current Form:</th>
+                            <th>Advisor Signature:</th>
+                            <th>Profile</th>
+                        </tr>";
 
-                    // Echo out all entries in student array
-                    foreach ($advisor->student_Array as $row)
-                    {
-                        echo "<tr>";
-                        foreach ($row as $value)
+                        // Echo out all entries in student array
+                        foreach ($advisor->student_Array as $row)
                         {
-                            echo "<td>$value</td>";
+                            echo "<tr>";
+                            foreach ($row as $value)
+                            {
+                                echo "<td>$value</td>";
+                            }
+                            echo "</tr>";
                         }
-                        echo "</tr>";
-                    }
 
-                    echo "
+                        echo "
 
-                </table>
+                    </table>
+                </div>
 
             </body>
 
