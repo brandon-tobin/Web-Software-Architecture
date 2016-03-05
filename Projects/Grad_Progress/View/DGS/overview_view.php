@@ -58,7 +58,7 @@ echo "
 
             <!-- Table containing advisors -->
             <div class=\"table-responsive\">
-                <table class=\"table table-striped\">
+                <table class=\"table table-striped table-bordered\">
                     <tr>
                         <th>Name:</th>
                         <th>Profile:</th>
@@ -84,7 +84,7 @@ echo "
 
             <!-- Table containing advisors -->
             <div class=\"table-responsive\">
-                <table class=\"table table-striped\">
+                <table class=\"table table-striped table-bordered\">
                     <tr>
                         <th>Name:</th>
                         <th>Profile:</th>
