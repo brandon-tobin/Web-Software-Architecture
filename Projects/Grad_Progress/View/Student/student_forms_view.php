@@ -49,6 +49,7 @@ echo "
 
                 if (in_array('dgs', $_SESSION['roles']))
                 {
+                    $_SESSION['student'] = $student->student_ID;
                     echo "
                     <!-- Breadcrumb -->
                     <ol class=\"breadcrumb\">
@@ -57,10 +58,7 @@ echo "
                         <li><a href=\"../Advisor/students.php?id=".$_SESSION['advisor']."\">Graduate Students</a></li>
                         <li class=\"active\">$student->student_First_Name's Forms</li>
                     </ol>";
-
-                    echo var_dump($_SESSION);
                 }
-
 
                 echo (pageDataHeader("$student->student_First_Name's Forms"));
 
