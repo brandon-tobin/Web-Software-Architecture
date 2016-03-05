@@ -67,7 +67,7 @@
                         <?php
                         if ($info->degree == 'Computing')
                         {
-                            echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" />Computer Science<pre>   </pre>
+                            echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" />Computer Science <br />
                                   <input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" checked/>Computing</td>";
                         }
                         else
@@ -139,10 +139,9 @@
                                 foreach ($info->all_advisors as $row) {
                                 echo "<option value=\"$row\">$row</option>";
                                 }?>
-                            </select>
-                        </td>
-                        <td><label for="new_advisor_checked">Check if you want to update advisor.</label></td>
-                        <td><input type="checkbox" name="new_advisor_checked" id="new_advisor_checked"</td>
+                            </select> <br />
+                            <label for="new_advisor_checked">Check if you want to update advisor.</label>
+                            <input type="checkbox" name="new_advisor_checked" id="new_advisor_checked"</td>
                     </tr>
                     <tr>
                         <td>Current Committee:</td>
