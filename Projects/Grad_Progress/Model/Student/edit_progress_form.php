@@ -69,23 +69,23 @@ if (isset($_POST['submit']))
 
     foreach ($result as $row) {
         if ($row['activity'] == 1)
-            $act1 = $row['activity'];
+            $act1 = $row['date_completed'];
         if ($row['activity'] == 2)
-            $act2 = $row['activity'];
+            $act2 = $row['date_completed'];
         if ($row['activity'] == 3)
-            $act3 = $row['activity'];
+            $act3 = $row['date_completed'];
         if ($row['activity'] == 4)
-            $act4 = $row['activity'];
+            $act4 = $row['date_completed'];
         if ($row['activity'] == 5)
-            $act5 = $row['activity'];
+            $act5 = $row['date_completed'];
         if ($row['activity'] == 6)
-            $act6 = $row['activity'];
+            $act6 = $row['date_completed'];
         if ($row['activity'] == 7)
-            $act7 = $row['activity'];
+            $act7 = $row['date_completed'];
         if ($row['activity'] == 8)
-            $act8 = $row['activity'];
+            $act8 = $row['date_completed'];
         if ($row['activity'] == 9)
-            $act9 = $row['activity'];
+            $act9 = $row['date_completed'];
     }
 
     // Set the timezone
