@@ -44,8 +44,6 @@
 
         <?php echo (pageDataHeader("Change User Roles")); ?>
 
-        ?>
-
         <table class="roster">
             <tr>
                 <th>Username</th>
