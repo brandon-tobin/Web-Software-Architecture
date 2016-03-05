@@ -49,6 +49,17 @@ echo "
 
             echo (pageDataHeader("Graduate Students"));
 
+            if (in_array('dgs', $_SESSION['roles']))
+            {
+                echo "
+                <!-- Breadcrumb -->
+                <ol class=\"breadcrumb\">
+                    <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                    <li><a href=\"../DGS/overview.php\">DGS Overview</li>
+                    <li class=\"active\">Graduate Students</li>
+                </ol>";
+            }
+
             echo "
 
                 <!-- Table containing students -->

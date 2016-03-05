@@ -48,6 +48,12 @@ echo "
 
         echo "
 
+        <!-- Breadcrumb -->
+        <ol class=\"breadcrumb\">
+            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+            <li class=\"active\">DGS Overview</li>
+        </ol>
+
             <p>Important Links</p>
             <p><a href='../UserCreation/creation_form.php'>Create New User</a></p>
 
