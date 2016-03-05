@@ -166,7 +166,7 @@ function getNavBar($role)
     else if (in_array('student', $role))
     {
         return "
-<!-- Navigation -->
+        <!-- Navigation -->
         <nav class=\"navbar navbar-custom \" role=\"navigation\">
             <div class=\"container\">
                 <!-- Brand and toggle get grouped for better mobile display -->
