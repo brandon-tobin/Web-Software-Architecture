@@ -61,7 +61,8 @@ echo "
             }
 
             echo "
-
+                <br />
+                
                 <!-- Table containing students -->
                 <table class=\"roster\">
                     <tr>
