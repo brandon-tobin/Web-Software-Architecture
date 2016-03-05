@@ -50,6 +50,43 @@ if (isset($_POST['submit']))
         $advisor_signed_date = $row['advisor_signed_date'];
     }
 
+    // Activities / possible activities
+    $act1 = "";
+    $act2 = "";
+    $act3 = "";
+    $act4 = "";
+    $act5 = "";
+    $act6 = "";
+    $act7 = "";
+    $act8 = "";
+    $act9 = "";
+
+    foreach ($result as $row) {
+        if ($row['activity'] == 1)
+            $act1 = $row['activity'];
+        if ($row['activity'] == 2)
+            $act2 = $row['activity'];
+        if ($row['activity'] == 3)
+            $act3 = $row['activity'];
+        if ($row['activity'] == 4)
+            $act4 = $row['activity'];
+        if ($row['activity'] == 5)
+            $act5 = $row['activity'];
+        if ($row['activity'] == 6)
+            $act6 = $row['activity'];
+        if ($row['activity'] == 7)
+            $act7 = $row['activity'];
+        if ($row['activity'] == 8)
+            $act8 = $row['activity'];
+        if ($row['activity'] == 9)
+            $act9 = $row['activity'];
+    }
+
+    $query = "SELECT * FROM Activities WHERE sid = $student_ID";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
     // Set the timezone
     date_default_timezone_set('America/Denver');
 
@@ -65,75 +102,102 @@ if (isset($_POST['submit']))
     error_log("TOBIN updated_date1 contains : " .$updated_date1);
     if ($updated_date1 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date1 != $act1)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 1, \"$updated_date1\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
     if ($updated_date2 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date2 != $act2)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 2, \"$updated_date2\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
     if ($updated_date3 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date3 != $act3)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 3, \"$updated_date3\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
     if ($updated_date4 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date4 != $act4)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 4, \"$updated_date4\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
     if ($updated_date5 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date5 != $act5)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 5, \"$updated_date5\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
     if ($updated_date6 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date6 != $act6)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 6, \"$updated_date6\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
     if ($updated_date7 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date7 != $act7)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 7, \"$updated_date7\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
     if ($updated_date8 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date8 != $act8)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 8, \"$updated_date8\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
     if ($updated_date9 != '')
     {
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
+        if ($updated_date9 != $act9)
+        {
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 9, \"$updated_date9\", CURDATE())");
-        $stmt->execute();
-        $db->commit();
+            $stmt->execute();
+            $db->commit();
+        }
     }
 }
 
