@@ -46,6 +46,19 @@ echo "
 
                 echo (getNavBar($_SESSION['roles']));
 
+                if (in_array('dgs', $_SESSION['roles']))
+                {
+                    echo "
+                    <!-- Breadcrumb -->
+                    <ol class=\"breadcrumb\">
+                        <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                        <li><a href=\"../DGS/overview.php\">DGS Overview</a></li>
+                        <li><a href=\"../Advisor/students.php?id=".$_SESSION['advisor']."\">Graduate Students</a></li>
+                        <li><a href=\"../Student/student_forms.php?id=".$_SESSION['student']."\">$form->student_Name's Forms</a></li>
+                        <li class=\"active\">New Due Progress Form</li>
+                    </ol>";
+                }
+
                 echo (pageDataHeader("Due Progress Advisory Document for Ph.D. Degree"));
 
                 echo "
