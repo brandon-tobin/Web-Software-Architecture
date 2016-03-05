@@ -23,17 +23,17 @@ function changeSessionID()
 
 function usingHTTPS()
 {
-    return isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] != "off");
+    //return isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] != "off");
 }
 
 function redirectToHTTPS()
 {
-    if (!usingHTTPS())
+   /* if (!usingHTTPS())
     {
         $redirect = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         header("Location:$redirect");
         exit();
-    }
+    }*/
 }
 
 function verify_role($role)
