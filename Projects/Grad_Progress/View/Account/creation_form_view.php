@@ -13,8 +13,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
 ?>
 
-
-?>
 <!--/**
  * Author: Brandon Tobin
  * Date: Spring 2016
