@@ -99,7 +99,7 @@ if (isset($_POST['submit']))
     $db->commit();
 
     // Insert into the activities table
-    error_log("TOBIN updated_date1 contains : " .$updated_date1);
+    error_log("TOBIN updated_date1 contains : " .$updated_date1 ." AND act1 contains : ".$act1);
     if ($updated_date1 != '')
     {
         if (strcmp ($updated_date1 , $act1) != 0)
