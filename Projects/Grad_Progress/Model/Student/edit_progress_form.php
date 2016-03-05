@@ -14,6 +14,7 @@ verify_Login('student');
 
 if (isset($_POST['submit']))
 {
+    echo var_dump($_SESSION);
     $student_ID = $_GET['id'];
     $form_ID = $_GET['form'];
     $updated_date1 = trim($_REQUEST['updated_date1']);
