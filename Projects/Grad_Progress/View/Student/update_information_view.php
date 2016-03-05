@@ -190,10 +190,9 @@
                                 foreach ($info->all_committee as $row) {
                                 echo "<option value=\"$row\">$row</option>";
                                 }?>
-                            </select>
-                        </td>
-                        <td><label for="new_committee_checked">Check if you want to update committee.</label></td>
-                        <td><input type="checkbox" name="new_committee_checked" id="new_committee_checked"</td>
+                            </select> <br />
+                            <label for="new_committee_checked">Check if you want to update committee.</label>
+                            <input type="checkbox" name="new_committee_checked" id="new_committee_checked"</td>
                     </tr>
                     <tr>
                         <?php
