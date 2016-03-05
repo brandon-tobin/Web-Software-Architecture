@@ -57,50 +57,54 @@ echo "
             <h1>Graduate Advisors</h1>
 
             <!-- Table containing advisors -->
-            <table class=\"table table-striped\">
-                <tr>
-                    <th>Name:</th>
-                    <th>Profile:</th>
-                </tr>";
+            <div class=\"table-responsive\">
+                <table class=\"table table-striped\">
+                    <tr>
+                        <th>Name:</th>
+                        <th>Profile:</th>
+                    </tr>";
 
-                // Echo out all advisors
-                foreach ($dgs->advisors as $row)
-                {
-                    echo "<tr>";
-                    foreach ($row as $value)
+                    // Echo out all advisors
+                    foreach ($dgs->advisors as $row)
                     {
-                        echo "<td>$value</td>";
+                        echo "<tr>";
+                        foreach ($row as $value)
+                        {
+                            echo "<td>$value</td>";
+                        }
+                        echo "</tr>";
                     }
-                    echo "</tr>";
-                }
 
-                echo "
+                    echo "
 
-            </table>
+                </table>
+            </div>
 
             <h1>Graduate Students</h1>
 
             <!-- Table containing advisors -->
-            <table class=\"table table-striped\">
-                <tr>
-                    <th>Name:</th>
-                    <th>Profile:</th>
-                </tr>";
+            <div class=\"table-responsive\">
+                <table class=\"table table-striped\">
+                    <tr>
+                        <th>Name:</th>
+                        <th>Profile:</th>
+                    </tr>";
 
-                // Echo out all Students
-                foreach ($dgs->students_arr as $row)
-                {
-                    echo "<tr>";
-                    foreach ($row as $value)
+                    // Echo out all Students
+                    foreach ($dgs->students_arr as $row)
                     {
-                        echo "<td>$value</td>";
+                        echo "<tr>";
+                        foreach ($row as $value)
+                        {
+                            echo "<td>$value</td>";
+                        }
+                        echo "</tr>";
                     }
-                    echo "</tr>";
-                }
 
-                echo "
+                    echo "
 
-            </table>
+                </table>
+            </div>
 
         </body>
 
