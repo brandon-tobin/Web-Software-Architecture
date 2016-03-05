@@ -39,7 +39,7 @@
         <!-- Breadcrumb -->
         <ol class="breadcrumb">
             <li><a href="../Account/account_home.php">Account Home</a></li>
-            <li class="active">My Status</li>
+            <li class="active">Update My Status</li>
         </ol>
 
         <?php echo (pageDataHeader("Student Status")); ?>
