@@ -55,7 +55,7 @@
                     <tr>
                         <td>uID Number:</td>
                         <td><?php echo $info->uid?></td>
-                        <td></td>
+                        <td> </td>
                     </tr>
                     <tr>
                         <td>Username:</td>
