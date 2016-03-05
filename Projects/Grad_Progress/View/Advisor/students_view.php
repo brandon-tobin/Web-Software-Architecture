@@ -64,7 +64,7 @@ echo "
                 <!-- Breadcrumb -->
                 <ol class=\"breadcrumb\">
                     <li><a href=\"../Account/account_home.php\">Account Home</a></li>
-                    <li class=\"active\">Graduate Students</li>
+                    <li class=\"active\">My Graduate Students</li>
                 </ol>";
             }
 
