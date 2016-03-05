@@ -58,6 +58,16 @@ echo "
                     <li class=\"active\">Graduate Students</li>
                 </ol>";
             }
+            else if (in_array('faculty', $_SESSION['roles']))
+            {
+                $_SESSION['advisor'] = $advisor->advisor_ID;
+                echo "
+                <!-- Breadcrumb -->
+                <ol class=\"breadcrumb\">
+                    <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                    <li class=\"active\">Graduate Students</li>
+                </ol>";
+            }
 
             echo (pageDataHeader("Graduate Students"));
 
