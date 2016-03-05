@@ -192,9 +192,9 @@ echo "
 
                 <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
 
-                <input class=\"btn btn-primary\" type=\"submit\" name=\"submit\" value=\"Submit\">
-                    <span class=\"glyphicon glyphicon-align-left\" aria-hidden=\"true\"></span>
-                </input>
+                <button class=\"btn btn-primary\" type=\"submit\" name=\"submit\" value=\"Submit\">
+                    <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>
+                </button>
 
              </body>
 
