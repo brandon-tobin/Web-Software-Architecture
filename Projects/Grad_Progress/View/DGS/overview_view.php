@@ -57,7 +57,7 @@ echo "
             <h1>Graduate Advisors</h1>
 
             <!-- Table containing advisors -->
-            <table class=\"roster\">
+            <table class=\"table table-striped\">
                 <tr>
                     <th>Name:</th>
                     <th>Profile:</th>
