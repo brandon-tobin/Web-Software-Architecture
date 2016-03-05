@@ -50,16 +50,22 @@ if (isset($_POST['submit']))
         $advisor_signed_date = $row['advisor_signed_date'];
     }
 
+    $query = "SELECT * FROM Activities WHERE sid = $student_ID";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
     // Activities / possible activities
-    $act1 = "";
-    $act2 = "";
-    $act3 = "";
-    $act4 = "";
-    $act5 = "";
-    $act6 = "";
-    $act7 = "";
-    $act8 = "";
-    $act9 = "";
+    /*  $act1 = "";
+      $act2 = "";
+      $act3 = "";
+      $act4 = "";
+      $act5 = "";
+      $act6 = "";
+      $act7 = "";
+      $act8 = "";
+      $act9 = "";*/
 
     foreach ($result as $row) {
         if ($row['activity'] == 1)
@@ -81,11 +87,6 @@ if (isset($_POST['submit']))
         if ($row['activity'] == 9)
             $act9 = $row['activity'];
     }
-
-    $query = "SELECT * FROM Activities WHERE sid = $student_ID";
-    $statement = $db->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     // Set the timezone
     date_default_timezone_set('America/Denver');
