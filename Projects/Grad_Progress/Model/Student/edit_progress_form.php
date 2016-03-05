@@ -14,12 +14,8 @@ verify_Login('student');
 
 if (isset($_POST['submit']))
 {
-    echo var_dump($_SESSION);
     $student_ID = $_GET['id'];
     $form_ID = $_GET['form'];
-
-    echo var_dump($student_ID);
-    echo var_dump($form_ID);
     $updated_date1 = trim($_REQUEST['updated_date1']);
     $updated_date2 = trim($_REQUEST['updated_date2']);
     $updated_date3 = trim($_REQUEST['updated_date3']);
@@ -57,16 +53,6 @@ if (isset($_POST['submit']))
 
 
     // Activities / possible activities
-    /*  $act1 = "";
-      $act2 = "";
-      $act3 = "";
-      $act4 = "";
-      $act5 = "";
-      $act6 = "";
-      $act7 = "";
-      $act8 = "";
-      $act9 = "";*/
-
     foreach ($result as $row) {
         if ($row['activity'] == 1)
             $act1 = $row['date_completed'];
