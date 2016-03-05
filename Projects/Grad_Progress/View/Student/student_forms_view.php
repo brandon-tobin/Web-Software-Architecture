@@ -59,7 +59,7 @@ echo "
                         <li class=\"active\">$student->student_First_Name's Forms</li>
                     </ol>";
                 }
-                if (in_array('faculty', $_SESSION['roles']))
+                else if (in_array('faculty', $_SESSION['roles']))
                 {
                     $_SESSION['student'] = $student->student_ID;
                     echo "
