@@ -50,17 +50,14 @@
                     <tr>
                         <td>Full Name:</td>
                         <td><?php echo $info->name?></td>
-                        <td></td>
                     </tr>
                     <tr>
                         <td>uID Number:</td>
                         <td><?php echo $info->uid?></td>
-                        <td> </td>
                     </tr>
                     <tr>
                         <td>Username:</td>
                         <td><?php echo $info->username?></td>
-                        <td></td>
                     </tr>
                     <tr>
                         <td><label for="degree">Degree:</label></td>
