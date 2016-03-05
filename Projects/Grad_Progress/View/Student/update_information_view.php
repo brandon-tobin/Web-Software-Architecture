@@ -72,8 +72,8 @@
                         }
                         else
                         {
-                            echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" checked/>Computer Science</td>
-                                  <td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" />Computing</td>";
+                            echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" checked/>Computer Science
+                                  <input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" />Computing</td>";
                         }
                         ?>
                     </tr>
