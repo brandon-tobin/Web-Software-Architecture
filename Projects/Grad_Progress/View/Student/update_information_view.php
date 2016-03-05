@@ -67,7 +67,7 @@
                         <?php
                         if ($info->degree == 'Computing')
                         {
-                            echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" />Computer Science
+                            echo "<td><input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computer Science\" />Computer Science <br />
                                   <input type=\"radio\" name=\"degree\" id=\"degree\" value=\"Computing\" checked/>Computing</td>";
                         }
                         else
