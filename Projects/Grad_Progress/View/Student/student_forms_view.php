@@ -47,6 +47,19 @@ echo "
 
                 echo (getNavBar($_SESSION['roles']));
 
+                if (in_array('dgs', $_SESSION['roles']))
+                {
+                    echo "
+                    <!-- Breadcrumb -->
+                    <ol class=\"breadcrumb\">
+                        <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                        <li><a href=\"../DGS/overview.php\">DGS Overview</a></li>
+                        <li><a href=\"../Advisor/students.php\">Graduate Students</a></li>
+                        <li class=\"active\">$student->student_First_Name's Forms</li>
+                    </ol>";
+                }
+
+
                 echo (pageDataHeader("$student->student_First_Name's Forms"));
 
                 echo "
