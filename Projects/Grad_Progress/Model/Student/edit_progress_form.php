@@ -104,6 +104,7 @@ if (isset($_POST['submit']))
     {
         if ($updated_date1 != $act1)
         {
+            error_log("Made it here, bad");
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
                               VALUES ($student_ID, 1, \"$updated_date1\", NOW())");
