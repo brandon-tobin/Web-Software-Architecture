@@ -45,7 +45,9 @@ class Student
             }
 
             // Query the database to get the information required to display the list of student forms
-            $query = "SELECT meets_requirements, uid, fid, date, DATE(modified_date) as modified_date FROM Forms WHERE uid = $id GROUP BY fid, modified_date";
+            //SELECT * FROM Forms WHERE (uid, modified_date) IN (SELECT uid, MAX(modified_date) FROM Forms GROUP BY uid);
+            //$query = "SELECT meets_requirements, uid, fid, date, DATE(modified_date) as modified_date FROM Forms WHERE uid = $id GROUP BY fid, modified_date";
+            $query = "SELECT meets_requirements, uid, fid, date, DATE(modified_date) as modified_date FROM Forms WHERE (uid, modified_date) IN (SELECT uid, MAX(modified_date) FROM Forms WHERE uid = $id GROUP BY uid)";
             $statement = $db->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
