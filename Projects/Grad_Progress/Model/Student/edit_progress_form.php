@@ -93,7 +93,7 @@ if (isset($_POST['submit']))
     // Insert into the forms table
     $db->beginTransaction();
     $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date, student_signed, student_signed_date, advisor_signed, advisor_signed_date)
-                          VALUES ($form_ID, $student_ID, '". $form_Date."', $requirements_met, ?, CURDATE(), $student_signed, '". $student_signed_date ."', $advisor_signed, '". $advisor_signed_date ."')");
+                          VALUES ($form_ID, $student_ID, '". $form_Date."', $requirements_met, ?, NOW(), $student_signed, '". $student_signed_date ."', $advisor_signed, '". $advisor_signed_date ."')");
     $stmt->bindValue(1, $comments);
     $stmt->execute();
     $db->commit();
@@ -106,7 +106,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 1, \"$updated_date1\", CURDATE())");
+                              VALUES ($student_ID, 1, \"$updated_date1\", NOW())");
             $stmt->execute();
             $db->commit();
         }
@@ -117,7 +117,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 2, \"$updated_date2\", CURDATE())");
+                              VALUES ($student_ID, 2, \"$updated_date2\", NOW())");
             $stmt->execute();
             $db->commit();
         }
@@ -128,7 +128,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 3, \"$updated_date3\", CURDATE())");
+                              VALUES ($student_ID, 3, \"$updated_date3\", NOW())");
             $stmt->execute();
             $db->commit();
         }
@@ -139,7 +139,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 4, \"$updated_date4\", CURDATE())");
+                              VALUES ($student_ID, 4, \"$updated_date4\", NOW())");
             $stmt->execute();
             $db->commit();
         }
@@ -150,7 +150,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 5, \"$updated_date5\", CURDATE())");
+                              VALUES ($student_ID, 5, \"$updated_date5\", NOW())");
             $stmt->execute();
             $db->commit();
         }
@@ -161,7 +161,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 6, \"$updated_date6\", CURDATE())");
+                              VALUES ($student_ID, 6, \"$updated_date6\", NOW())");
             $stmt->execute();
             $db->commit();
         }
@@ -172,7 +172,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 7, \"$updated_date7\", CURDATE())");
+                              VALUES ($student_ID, 7, \"$updated_date7\", NOW())");
             $stmt->execute();
             $db->commit();
         }
@@ -183,7 +183,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 8, \"$updated_date8\", CURDATE())");
+                              VALUES ($student_ID, 8, \"$updated_date8\", NOW())");
             $stmt->execute();
             $db->commit();
         }
@@ -194,7 +194,7 @@ if (isset($_POST['submit']))
         {
             $db->beginTransaction();
             $stmt = $db->prepare("INSERT INTO Activities (sid, activity, date_completed, date_modified)
-                              VALUES ($student_ID, 9, \"$updated_date9\", CURDATE())");
+                              VALUES ($student_ID, 9, \"$updated_date9\", NOW())");
             $stmt->execute();
             $db->commit();
         }
