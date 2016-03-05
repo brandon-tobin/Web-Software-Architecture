@@ -44,8 +44,6 @@
 
         <?php echo (pageDataHeader("Student Status")); ?>
 
-        ?>
-
         <p>Your status is currently: <?php echo $status->student_status?></p>
         <p><?php echo $status->advisor_approval ?></p>
 
