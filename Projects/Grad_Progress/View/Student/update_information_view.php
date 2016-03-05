@@ -37,9 +37,9 @@
         echo (getNavBar($_SESSION['roles'])); ?>
 
         <!-- Breadcrumb -->
-        <ol class=\"breadcrumb\">
-            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
-            <li class=\"active\">Edit My Information</li>
+        <ol class="breadcrumb">
+            <li><a href="../Account/account_home.php">Account Home</a></li>
+            <li class="active">Edit My Information</li>
         </ol>
 
         <?php echo (pageDataHeader("User Information")); ?>
