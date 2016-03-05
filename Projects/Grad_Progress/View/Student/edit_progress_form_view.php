@@ -100,6 +100,8 @@ echo "
 
                 echo "</ul>
 
+                <br />
+
                 <form method=\"post\">
 
                 <div class=\"table-responsive\">
