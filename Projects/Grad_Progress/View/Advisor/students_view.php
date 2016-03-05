@@ -51,18 +51,23 @@ echo "
 
             if (in_array('dgs', $_SESSION['roles']))
             {
-                echo "
+                /*echo "
                 <!-- Breadcrumb -->
                 <ol class=\"breadcrumb\">
                     <li><a href=\"../Account/account_home.php\">Account Home</a></li>
                     <li><a href=\"../DGS/overview.php\">DGS Overview</li>
                     <li class=\"active\">Graduate Students</li>
-                </ol>";
+                </ol>";*/
             }
 
             echo "
-                <br />
-                
+                <!-- Breadcrumb -->
+                <ol class=\"breadcrumb\">
+                    <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                    <li><a href=\"../DGS/overview.php\">DGS Overview</li>
+                    <li class=\"active\">Graduate Students</li>
+                </ol>
+
                 <!-- Table containing students -->
                 <table class=\"roster\">
                     <tr>
