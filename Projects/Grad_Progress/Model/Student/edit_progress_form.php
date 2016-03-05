@@ -102,7 +102,7 @@ if (isset($_POST['submit']))
     error_log("TOBIN updated_date1 contains : " .$updated_date1);
     if ($updated_date1 != '')
     {
-        if ($updated_date1 != $act1)
+        if (strcmp ($updated_date1 , $act1) != 0)
         {
             error_log("Made it here, bad");
             $db->beginTransaction();
