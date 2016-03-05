@@ -101,73 +101,75 @@ echo "
 
                 echo "</ul>
 
-                <table class=\"roster\">
-                    <tr>
-                        <th>Activity</th>
-                        <th>Number of Semesters</th>
-                        <th>Good / Acceptable</th>
-                        <th>Completed Semester</th>
-                    </tr>";
-
-                    // Echo out all activities for the form
-                        echo "<tr>
-                            <td>Identify Advisor</td>
-                            <td>$form->number_semesters1</td>
-                            <td>$form->acceptable1</td>
-                            <td>$form->completed_activity1</td>
-                        </tr>
+                <div class=\"table-responsive\">
+                    <table class=\"table table-striped table-bordered table-condensed\">
                         <tr>
-                            <td>Program of study approved by advisor and initial committee</td>
-                            <td>$form->number_semesters2</td>
-                            <td>$form->acceptable2</td>
-                            <td>$form->completed_activity2</td>
-                        </tr>
-                        <tr>
-                            <td>Complete teaching mentorship</td>
-                            <td>$form->number_semesters3</td>
-                            <td>$form->acceptable3</td>
-                            <td>$form->completed_activity3</td>
-                        </tr>
-                        <tr>
-                            <td>Complete required courses</td>
-                            <td>$form->number_semesters4</td>
-                            <td>$form->acceptable4</td>
-                            <td>$form->completed_activity4</td>
-                        </tr>
-                        <tr>
-                            <td>Full committee formed</td>
-                            <td>$form->number_semesters5</td>
-                            <td>$form->acceptable5</td>
-                            <td>$form->completed_activity5</td>
-                        </tr>
-                        <tr>
-                            <td>Program of Study approved by committee</td>
-                            <td>$form->number_semesters6</td>
-                            <td>$form->acceptable6</td>
-                            <td>$form->completed_activity6</td>
-                        </tr>
-                        <tr>
-                            <td>Written qualifier</td>
-                            <td>$form->number_semesters7</td>
-                            <td>$form->acceptable7</td>
-                            <td>$form->completed_activity7</td>
-                        </tr>
-                        <tr>
-                            <td>Oral qualifier/Proposal</td>
-                            <td>$form->number_semesters8</td>
-                            <td>$form->acceptable8</td>
-                            <td>$form->completed_activity8</td>
-                        </tr>
-                        <tr>
-                            <td>Dissertation defense</td>
-                            <td>$form->number_semesters9</td>
-                            <td>$form->acceptable9</td>
-                            <td>$form->completed_activity9</td>
+                            <th>Activity</th>
+                            <th>Number of Semesters</th>
+                            <th>Good / Acceptable</th>
+                            <th>Completed Semester</th>
                         </tr>";
 
-                echo "
+                        // Echo out all activities for the form
+                            echo "<tr>
+                                <td>Identify Advisor</td>
+                                <td>$form->number_semesters1</td>
+                                <td>$form->acceptable1</td>
+                                <td>$form->completed_activity1</td>
+                            </tr>
+                            <tr>
+                                <td>Program of study approved by advisor and initial committee</td>
+                                <td>$form->number_semesters2</td>
+                                <td>$form->acceptable2</td>
+                                <td>$form->completed_activity2</td>
+                            </tr>
+                            <tr>
+                                <td>Complete teaching mentorship</td>
+                                <td>$form->number_semesters3</td>
+                                <td>$form->acceptable3</td>
+                                <td>$form->completed_activity3</td>
+                            </tr>
+                            <tr>
+                                <td>Complete required courses</td>
+                                <td>$form->number_semesters4</td>
+                                <td>$form->acceptable4</td>
+                                <td>$form->completed_activity4</td>
+                            </tr>
+                            <tr>
+                                <td>Full committee formed</td>
+                                <td>$form->number_semesters5</td>
+                                <td>$form->acceptable5</td>
+                                <td>$form->completed_activity5</td>
+                            </tr>
+                            <tr>
+                                <td>Program of Study approved by committee</td>
+                                <td>$form->number_semesters6</td>
+                                <td>$form->acceptable6</td>
+                                <td>$form->completed_activity6</td>
+                            </tr>
+                            <tr>
+                                <td>Written qualifier</td>
+                                <td>$form->number_semesters7</td>
+                                <td>$form->acceptable7</td>
+                                <td>$form->completed_activity7</td>
+                            </tr>
+                            <tr>
+                                <td>Oral qualifier/Proposal</td>
+                                <td>$form->number_semesters8</td>
+                                <td>$form->acceptable8</td>
+                                <td>$form->completed_activity8</td>
+                            </tr>
+                            <tr>
+                                <td>Dissertation defense</td>
+                                <td>$form->number_semesters9</td>
+                                <td>$form->acceptable9</td>
+                                <td>$form->completed_activity9</td>
+                            </tr>";
 
-                </table>
+                    echo "
+
+                    </table>
+                </div>
 
                 <ol>
                     <li>Has the student met due progress requirements? $form->question1</li>
