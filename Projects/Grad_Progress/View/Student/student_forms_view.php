@@ -85,27 +85,29 @@ echo "
                 echo "
 
                 <!-- Table containing $student->student_First_Name's forms -->
-                <table class=\"roster\">
-                    <tr>
-                        <th>Date Created:</th>
-                        <th>Date Last Modified:</th>
-                        <th>Compliance:</th>
-                        <th>Form:</th>
-                        <th>Edit Form:</th>
-                    </tr>";
-                // Echo out all entries in student array
-                foreach ($student->form_Records_Array as $row)
-                {
-                    echo "<tr>";
-                    foreach ($row as $value)
+                <div class=\"table-responsive\">
+                    <table class=\"table table-striped table-bordered table-condensed\">
+                        <tr>
+                            <th>Date Created:</th>
+                            <th>Date Last Modified:</th>
+                            <th>Compliance:</th>
+                            <th>Form:</th>
+                            <th>Edit Form:</th>
+                        </tr>";
+                    // Echo out all entries in student array
+                    foreach ($student->form_Records_Array as $row)
                     {
-                        echo "<td>$value</td>";
+                        echo "<tr>";
+                        foreach ($row as $value)
+                        {
+                            echo "<td>$value</td>";
+                        }
+                        echo "</tr>";
                     }
-                    echo "</tr>";
-                }
 
-                echo "
-                </table>
+                    echo "
+                    </table>
+                </div>
 
                 <h1>Create New Form</h1>
                 <p><a href='new_progress_form.php?id=$student->student_ID'>Create Form</a></p>
