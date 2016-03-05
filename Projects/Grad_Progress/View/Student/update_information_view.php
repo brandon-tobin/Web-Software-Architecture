@@ -44,8 +44,6 @@
 
         <?php echo (pageDataHeader("User Information")); ?>
 
-        ?>
-
         <form method="post" action="">
             <table>
                 <tr>
