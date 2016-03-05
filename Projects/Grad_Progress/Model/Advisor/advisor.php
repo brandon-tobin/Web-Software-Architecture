@@ -15,6 +15,7 @@ verify_Login('faculty');
 class Advisor
 {
     public $advisor_First_Name;
+    public $advisor_ID;
     public $student_Array;
 
     // Constructor
@@ -26,6 +27,7 @@ class Advisor
     // Method for creating an advisor
     function create_Advisor($id)
     {
+        $this->advisor_ID = $id;
         try {
             $db = openDBConnection();
 

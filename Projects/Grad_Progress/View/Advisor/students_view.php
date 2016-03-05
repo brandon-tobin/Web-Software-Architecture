@@ -49,6 +49,7 @@ echo "
 
             if (in_array('dgs', $_SESSION['roles']))
             {
+                $_SESSION['advisor'] = $advisor->advisor_ID;
                 echo "
                 <!-- Breadcrumb -->
                 <ol class=\"breadcrumb\">
