@@ -44,8 +44,6 @@
 
         <?php echo (pageDataHeader("Student Status")); ?>
 
-        ?>
-
         <p>Your status is currently: <?php echo $status->student_status?></p>
 
         <p>Please select the correct entry for how you would like to update your status. Please keep in mind that this operation will invalidate your most recent approval.</p>
