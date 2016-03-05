@@ -68,6 +68,16 @@ echo "
                         <li class=\"active\">Edit Process Form</li>
                     </ol>";
                 }
+                else if (in_array('student', $_SESSION['roles']))
+                {
+                    echo "
+                    <!-- Breadcrumb -->
+                    <ol class=\"breadcrumb\">
+                        <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                        <li><a href=\"../Student/student_forms.php?id=".$_SESSION['userid']."\">My Forms</a></li>
+                        <li class=\"active\">Edit Process Form</li>
+                    </ol>";
+                }
 
                 echo (pageDataHeader("Due Progress Advisory Document for Ph.D. Degree"));
 
