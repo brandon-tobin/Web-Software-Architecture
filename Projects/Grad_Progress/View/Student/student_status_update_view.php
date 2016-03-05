@@ -34,9 +34,15 @@
 
         echo (getNavigation());
 
-        echo (getNavBar($_SESSION['roles']));
+        echo (getNavBar($_SESSION['roles'])); ?>
 
-        echo (pageDataHeader("Student Status"));
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <li><a href="../Account/account_home.php">Account Home</a></li>
+            <li class="active">My Status</li>
+        </ol>
+
+        <?php echo (pageDataHeader("Student Status")); ?>
 
         ?>
 
