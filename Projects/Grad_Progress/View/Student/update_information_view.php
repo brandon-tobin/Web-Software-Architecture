@@ -195,9 +195,28 @@
                 <tr>
                     <?php
                     if ($info->first_submission == true)
-                        echo "<td colspan=\"2\"><input type=\"submit\" name=\"submit\" value=\"Submit\" /></td>";
+                    {
+                        echo "
+                        <td colspan=\"2\">
+                            <button class=\"btn btn-primary\" type=\"submit\" name=\"submit\" value=\"Submit\">
+                                Submit
+                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>
+                            </button>
+                        </td>";
+                    }
+                        //echo "<td colspan=\"2\"><input type=\"submit\" name=\"submit\" value=\"Submit\" /></td>";
                     else
-                        echo "<td colspan=\"2\"><input type=\"submit\" name=\"Submit\" value=\"Submit\" /></td>"
+                    {
+                        echo "
+                        <td colspan=\"2\">
+                            <button class=\"btn btn-primary\" type=\"submit\" name=\"Submit\" value=\"Submit\">
+                                Submit
+                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>
+                            </button>
+                        </td>";
+                    }
+
+                        //echo "<td colspan=\"2\"><input type=\"submit\" name=\"Submit\" value=\"Submit\" /></td>"
                     ?>
                 </tr>
             </table>
