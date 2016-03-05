@@ -68,7 +68,7 @@
         <p>Please select the username and roll you wish to change the user to.</p>
 
         <form method="post">
-            <label for="user">Advisor:</label>
+            <label for="user">Username:</label>
             <select name="user" id="user">
                 <?php
                 // Echo out the Usernames
@@ -77,7 +77,7 @@
                 }
                 ?>
             </select>
-            <label for="role">Advisor:</label>
+            <label for="role">Role:</label>
             <select name="role" id="role">
                 <option value="student">student</option>
                 <option value="faculty">faculty</option>
