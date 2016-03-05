@@ -44,24 +44,26 @@
 
         <?php echo (pageDataHeader("Change User Roles")); ?>
 
-        <table class="roster">
-            <tr>
-                <th>Username</th>
-                <th>Role</th>
-            </tr>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-condensed">
+                <tr>
+                    <th>Username</th>
+                    <th>Role</th>
+                </tr>
 
-            <?php
+                <?php
 
-            foreach ($dgs->username as $row)
-            {
-                echo "<tr>";
-                foreach ($row as $value) {
-                    echo "<td>$value</td>";
+                foreach ($dgs->username as $row)
+                {
+                    echo "<tr>";
+                    foreach ($row as $value) {
+                        echo "<td>$value</td>";
+                    }
+                    echo "</tr>";
                 }
-                echo "</tr>";
-            }
-            ?>
-        </table>
+                ?>
+            </table>
+        </div>
 
         <p>Please select the username and roll you wish to change the user to.</p>
 
@@ -83,7 +85,10 @@
                 <option value="dgs">dgs</option>
             </select>
 
-            <input type="submit" name="submit" value="Submit" />
+            <button class="btn btn-primary" type="submit" name="submit" value="Submit">
+                Submit
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            </button>
         </form>
     </body>
 </html>
