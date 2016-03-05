@@ -1,6 +1,6 @@
 <?php require('../../View/Partials/partial_view.php');
 
-require ('../../Model/Functions/db.php');
+//require ('../../Model/Functions/db.php');
 require ('../../Model/Functions/authentication.php');
 
 if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
@@ -52,9 +52,9 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
                 <?php
 
-                echo (getHeader());
+               // echo (getHeader());
 
-                echo (getNavigation());?>
+               // echo (getNavigation());?>
 
                 <!--//$roles = array();
                 //array_push($roles, 'register');
