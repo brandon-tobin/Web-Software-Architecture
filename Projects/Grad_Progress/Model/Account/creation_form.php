@@ -91,12 +91,15 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
     }
     else
     {
-       // require '../../View/Account/creation_form_view.php';
-        require '../../View/Account/account_home.php';
+        require('../../View/Partials/partial_view.php');
+        require '../../View/Account/creation_form_view.php';
+        //require '../../View/Account/account_home.php';
     }
 }
 else
 {
-    //require '../../View/Account/creation_form_view.php';
-    require '../../View/Account/account_home.php';
+    require('../../View/Partials/partial_view.php');
+
+    require '../../View/Account/creation_form_view.php';
+    //require '../../View/Account/account_home.php';
 }
