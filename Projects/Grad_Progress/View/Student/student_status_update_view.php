@@ -55,7 +55,7 @@
 
             <br />
             <br />
-            <button class="btn btn-primary" type="submit" name="submit" value="Submit">
+            <button class="btn btn-primary" type="submit" name="submit" value="submit">
                 Submit
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             </button>
