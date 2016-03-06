@@ -1,8 +1,8 @@
 <?php require('../../View/Partials/partial_view.php');
 
 
-require ('../Model/Functions/db.php');
-require ('../Model/Functions/authentication.php');
+require ('../../Model/Functions/db.php');
+require ('../../Model/Functions/authentication.php');
 
 if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
 {
@@ -82,7 +82,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
             <p>Account created successful.</p>
 
-            <a href="account_home.php">Click Here to Login</a>
+            <a href="account_home.php">Please use the navigation bar above to log into your account.</a>
 
         </body>
     </html>
