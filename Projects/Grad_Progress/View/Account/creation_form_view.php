@@ -97,38 +97,49 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
                 <!-- Creation form for new user -->
                 <form method="post" action="">
-                    <table>
-                        <tr>
-                            <td><label for="name">Full Name:</label></td>
-                            <td><input type="text" name="name" id="name" required/></td>
-                            <td><span style="color:red"><?php echo $nameError ?></span></td>
-                        </tr>
-                        <tr>
-                            <td><label for="uid">uID Number</label></td>
-                            <td><input type="text" size="20" name="uid" id="uid" placeholder="0123456" /></td>
-                            <td><span style="color:red"><?php echo $uidError ?></span></td>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-condensed">
+                            <tr>
+                                <td><label for="name">Full Name:</label></td>
+                                <td><input type="text" name="name" id="name" required/></td>
+                                <td><span style="color:red"><?php echo $nameError ?></span></td>
+                            </tr>
+                            <tr>
+                                <td><label for="uid">uID Number</label></td>
+                                <td><input type="text" size="20" name="uid" id="uid" placeholder="0123456" /></td>
+                                <td><span style="color:red"><?php echo $uidError ?></span></td>
 
-                        </tr>
-                        <tr>
-                            <td><label for="username">Username:</label></td>
-                            <td><input type="text" size="20" name="username" id="username" required/></td>
-                            <td><span style="color:red"><?php echo $loginError ?></span></td>
-                        </tr>
-                        <tr>
-                            <td><label for="password">Password</label></td>
-                            <td><input type="password" size="20" name="password" id="password" /></td>
-                            <td><span style="color:red"><?php echo $passwordError ?></span></td>
-                        </tr>
-                        <tr>
-                            <td><label for="password">Confirm Password</label></td>
-                            <td><input type="password" size="20" name="confirmedPassword" id="confirmedPassword" /></td>
-                            <td><span style="color:red"><?php echo $confirmedPasswordError ?></span></td>
-                        </tr>
-                        <tr>
-                            <td><input type="submit" name="submit" value="Register" /></td>
-                            <td><input type="submit" name="submit" value="Cancel"</td>
-                        </tr>
-                    </table>
+                            </tr>
+                            <tr>
+                                <td><label for="username">Username:</label></td>
+                                <td><input type="text" size="20" name="username" id="username" required/></td>
+                                <td><span style="color:red"><?php echo $loginError ?></span></td>
+                            </tr>
+                            <tr>
+                                <td><label for="password">Password</label></td>
+                                <td><input type="password" size="20" name="password" id="password" /></td>
+                                <td><span style="color:red"><?php echo $passwordError ?></span></td>
+                            </tr>
+                            <tr>
+                                <td><label for="password">Confirm Password</label></td>
+                                <td><input type="password" size="20" name="confirmedPassword" id="confirmedPassword" /></td>
+                                <td><span style="color:red"><?php echo $confirmedPasswordError ?></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-success btn-lg" type="submit" name="submit" value="Register">
+                                        Register
+                                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger btn-lg" type="submit" name="submit" value="Cancel">
+                                        Cancel
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
+                            </tr>
+                        </table>
+                    </div>
                 </form>
             </body>
         </html>
