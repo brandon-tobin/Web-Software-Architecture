@@ -1,5 +1,7 @@
 <?php
 
+require('../../View/Partials/partial_view.php');
+
 //require ('../../Model/Functions/db.php');
 //require ('../../Model/Functions/authentication.php');
 
