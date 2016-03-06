@@ -78,7 +78,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
 
             $stmt = $db->prepare("INSERT INTO Roles (username, role) VALUES (?,?)");
             $stmt->bindValue(1, $username);
-            $stmt->bindValue(2, "user");
+            $stmt->bindValue(2, "student");
             $stmt->execute();
 
             $db->commit();
