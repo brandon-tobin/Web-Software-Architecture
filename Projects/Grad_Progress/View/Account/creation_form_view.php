@@ -8,7 +8,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
     //navBar_Login('');
     verify_Login('');
 
-    header("Location: Account/account_home.php");
+    header("Location: account_home.php");
 }
 
 ?>
@@ -52,9 +52,9 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
                 <?php
 
-               // echo (getHeader());
+                echo (getHeader());
 
-               // echo (getNavigation());?>
+                echo (getNavigation());?>
 
                 <!--//$roles = array();
                 //array_push($roles, 'register');

@@ -5,7 +5,6 @@ require ('../Model/Functions/authentication.php');
 
 if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
 {
-    //navBar_Login('');
     verify_Login('');
 
     header("Location: Account/account_home.php");
