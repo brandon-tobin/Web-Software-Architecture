@@ -43,7 +43,7 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['uid']) && isset($_REQUEST['user
         $passwordError = 'Enter a valid password';
     }
 
-    if (!(preg_match('/\d{8}/', $password))) {
+    if (strlen($password) <= 8) {
         $passwordError = 'Password must be at least 8 characters long';
     }
 
