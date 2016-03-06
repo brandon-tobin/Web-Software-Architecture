@@ -1,8 +1,8 @@
 <?php require('../../View/Partials/partial_view.php');
 
 
-require ('../../Model/Functions/db.php');
-require ('../../Model/Functions/authentication.php');
+//require ('../../Model/Functions/db.php');
+//require ('../../Model/Functions/authentication.php');
 
 if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
 {
