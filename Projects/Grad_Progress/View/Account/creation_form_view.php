@@ -109,7 +109,7 @@
                 <p>Please fill in the information below to register for a new user account.</p>
 
                 <!-- Creation form for new user -->
-                <form method="post" action="">
+                <form method="post">
                     <div class="table-responsive">
                         <table class="table table-striped table-condensed">
                             <tr>
