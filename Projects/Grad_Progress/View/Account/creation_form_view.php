@@ -1,3 +1,17 @@
+<?php
+
+require ('../Model/Functions/db.php');
+require ('../Model/Functions/authentication.php');
+
+if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
+{
+    verify_Login('');
+
+    header("Location: Account/account_home.php");
+}
+
+?>
+
 <!--/**
  * Author: Brandon Tobin
  * Date: Spring 2016
@@ -89,7 +103,7 @@
                         </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <form class="navbar-form navbar-right">
+                            <form method="post" class="navbar-form navbar-right">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="username" placeholder="Username">
                                 </div>

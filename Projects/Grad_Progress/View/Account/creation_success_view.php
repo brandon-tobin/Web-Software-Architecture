@@ -1,4 +1,18 @@
-<?php require('../../View/Partials/partial_view.php'); ?>
+<?php require('../../View/Partials/partial_view.php');
+
+
+require ('../Model/Functions/db.php');
+require ('../Model/Functions/authentication.php');
+
+if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
+{
+    verify_Login('');
+
+    header("Location: Account/account_home.php");
+}
+
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
     <html lang="en">
