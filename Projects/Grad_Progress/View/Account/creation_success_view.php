@@ -42,5 +42,7 @@
 
             <p>Account created successful.</p>
 
+            <a href="account_home.php">Click Here to Login</a>
+
         </body>
     </html>
