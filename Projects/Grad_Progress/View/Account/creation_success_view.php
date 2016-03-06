@@ -82,7 +82,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
             <p>Account created successful.</p>
 
-            <a href="account_home.php">Please use the navigation bar above to log into your account.</a>
+            <p>Please use the navigation bar above to log into your account.</p>
 
         </body>
     </html>
