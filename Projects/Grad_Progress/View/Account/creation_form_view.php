@@ -1,14 +1,3 @@
-<?php
-
-if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
-{
-    verify_Login('');
-
-    header("Location: account_home.php");
-}
-
-?>
-
 <!--/**
  * Author: Brandon Tobin
  * Date: Spring 2016
