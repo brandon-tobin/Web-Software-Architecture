@@ -51,9 +51,9 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
                 <?php
 
-                echo (getHeader());
+                //echo (getHeader());
 
-                echo (getNavigation());?>
+               // echo (getNavigation());?>
 
                 <!-- Navigation -->
                 <nav class="navbar navbar-custom " role="navigation">
@@ -86,7 +86,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                 </nav>
 
 
-                <?php echo (pageDataHeader("New User Creation Form")); ?>
+                <?php //echo (pageDataHeader("New User Creation Form")); ?>
 
                 <p>Please fill in the information below to register for a new user account.</p>
 
