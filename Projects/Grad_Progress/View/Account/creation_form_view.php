@@ -5,7 +5,6 @@
 
 if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
 {
-    //navBar_Login('');
     verify_Login('');
 
     header("Location: account_home.php");
@@ -55,10 +54,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                 echo (getHeader());
 
                 echo (getNavigation());?>
-
-                <!--//$roles = array();
-                //array_push($roles, 'register');
-                //echo (getNavBar($roles));-->
 
                 <!-- Navigation -->
                 <nav class="navbar navbar-custom " role="navigation">

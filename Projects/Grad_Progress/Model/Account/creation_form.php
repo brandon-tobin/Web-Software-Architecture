@@ -7,9 +7,9 @@
  *
  */
 
-require '../../Model/Functions/db.php';
+//require '../../Model/Functions/db.php';
 
-require '../../Model/Functions/authentication.php';
+//require '../../Model/Functions/authentication.php';
 
 // Use HTTPS
 redirectToHTTPS();
