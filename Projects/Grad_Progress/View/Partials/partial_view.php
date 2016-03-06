@@ -213,7 +213,7 @@ function getNavBar($role)
     }
     else if (in_array('register', $role))
     {
-        return "
+        /*return "
         <form method=\"post\">
         <!-- Nav Bar -->
         <ul id=\"navBar\">
@@ -224,14 +224,14 @@ function getNavBar($role)
             <li><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></li>
             <li><a><input type=\"submit\" name=\"submit\" value=\"Submit\" /></li>
         </ul>
-        </form>";
+        </form>";*/
     }
     else
     {
         //require ('../Model/Functions/db.php');
         //require ('../Model/Functions/authentication.php');
 
-        if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
+        /*if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
         {
             navBar_Login('');
         }
@@ -247,7 +247,7 @@ function getNavBar($role)
             <li><input type=\"password\" size=\"20\" name=\"password\" id=\"password\" /></li>
             <li><a><input type=\"submit\" name=\"submit\" value=\"Submit\" /></li>
         </ul>
-        </form>";
+        </form>";*/
     }
 }
 
