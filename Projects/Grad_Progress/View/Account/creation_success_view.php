@@ -8,7 +8,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 {
     verify_Login('');
 
-    header("Location: Account/account_home.php");
+    header("Location: account_home.php");
 }
 
 
