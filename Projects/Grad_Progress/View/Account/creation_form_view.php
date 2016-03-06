@@ -98,7 +98,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                 <!-- Creation form for new user -->
                 <form method="post" action="">
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-condensed">
+                        <table class="table table-striped table-condensed">
                             <tr>
                                 <td><label for="name">Full Name:</label></td>
                                 <td><input type="text" name="name" id="name" required/></td>
