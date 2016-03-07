@@ -50,7 +50,7 @@ echo "
         <div class=\"col-md-6\">
 
         ";
-
+echo (getHeader());
 echo (getNavigation());
 
 echo (getNavBar($_SESSION['roles']));
