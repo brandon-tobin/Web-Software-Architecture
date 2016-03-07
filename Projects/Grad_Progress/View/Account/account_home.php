@@ -52,7 +52,7 @@ echo "
 
 
 
-    echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
+
 
     echo "
 
@@ -66,6 +66,8 @@ echo "
 echo (getNavigation());
 
 echo (getNavBar($_SESSION['roles']));
+
+echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
 
 echo "
 
