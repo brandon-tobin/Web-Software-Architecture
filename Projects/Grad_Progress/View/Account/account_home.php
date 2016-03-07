@@ -58,13 +58,13 @@ echo "
 
     echo "
 
-    <h1>Account Home</h1>
+
 
     <div class=\"container-fluid\">
         <div class=\"row\">
             <div class=\"col-lg-6  col-lg-offset-1\">
 
-
+                <h1>Account Home</h1>
 
     <p>Please click on one of the links below to perform an action.</p>";
 
