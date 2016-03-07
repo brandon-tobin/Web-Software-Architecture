@@ -61,6 +61,8 @@ echo "
     <div class=\"container-fluid\">
         <div class=\"row\">
         <div class=\"col-md-3\"></div>
+        <div class=\"col-md-6\">
+
         ";
 
 echo (getNavigation());
@@ -71,7 +73,6 @@ echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
 
 echo "
 
-            <div class=\"col-md-6  col-md-offset-1\">
 
                 <h1>Account Home</h1>
 
