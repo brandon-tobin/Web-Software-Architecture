@@ -38,20 +38,8 @@ echo "
     </head>
 
     <body>
-        <div class=\"container-fluid\">
-            <div class=\"row\">
-                <div class=\"col-lg-6 col-lg-offset-1\">";
-                    echo (getHeader());
-                    echo "
-                </div>
-            </div>
-        </div>
-        <!-- /.container-->
 
 ";
-
-
-
 
 
     echo "
@@ -113,7 +101,6 @@ echo "
     echo "
 
             </div>
-        <div class=\"col-md-3\"></div>
         </div>
     </div>
 
