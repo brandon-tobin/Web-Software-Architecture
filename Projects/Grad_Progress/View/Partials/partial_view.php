@@ -168,7 +168,7 @@ function getNavBar($role)
         return "
         <!-- Navigation -->
         <nav class=\"navbar navbar-custom \" role=\"navigation\">
-            <!--<div class=\"container-fluid\">-->
+            <div class=\"container\">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class=\"navbar-header\">
                     <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">
@@ -203,7 +203,7 @@ function getNavBar($role)
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
-            <!--</div>-->
+            </div>
             <!-- /.container -->
         </nav>";
 
