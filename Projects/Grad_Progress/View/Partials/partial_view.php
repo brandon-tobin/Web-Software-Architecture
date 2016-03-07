@@ -186,7 +186,16 @@ function getNavBar($role)
                             <a href=\"../Account/account_home.php\">Account Home</a>
                         </li>
                         <li>
-                            <a href=\"../Advisor/students.php?id=".$_SESSION['userid']."\">View Students</a>
+                            <a href=\"../Student/update_information.php\">Update Information</a>
+                        </li>
+                        <li>
+                            <a href=\"../Student/student_forms.php?id=".$_SESSION['userid']."\">View Forms</a>
+                        </li>
+                        <li>
+                            <a href=\"../Student/student_status.php?id=".$_SESSION['userid']."\">Student Status</a>
+                        </li>
+                        <li>
+                            <a href=\"../Student/student_status_update.php?id=".$_SESSION['userid']."\">Update Student Status</a>
                         </li>
                         <li>
                             <a href=\"../Account/logout.php\">Logout</a></a>
