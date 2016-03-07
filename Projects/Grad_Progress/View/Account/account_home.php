@@ -50,9 +50,7 @@ echo "
 
 ";
 
-    echo (getNavigation());
 
-    echo (getNavBar($_SESSION['roles']));
 
     echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
 
@@ -62,6 +60,15 @@ echo "
 
     <div class=\"container-fluid\">
         <div class=\"row\">
+        <div class=\"col-lg-3\"></div>
+        </div>";
+
+echo (getNavigation());
+
+echo (getNavBar($_SESSION['roles']));
+
+echo "
+
             <div class=\"col-lg-6  col-lg-offset-1\">
 
                 <h1>Account Home</h1>
