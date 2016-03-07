@@ -50,14 +50,14 @@ echo "
         <div class=\"col-md-10\">
 
         ";
-echo (getHeader());
-echo (getNavigation());
+    echo (getHeader());
+    echo (getNavigation());
 
-echo (getNavBar($_SESSION['roles']));
+    echo (getNavBar($_SESSION['roles']));
 
-echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
+    echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
 
-echo "
+    echo "
 
 
     <h1>Account Home</h1>
