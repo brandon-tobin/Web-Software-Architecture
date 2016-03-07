@@ -59,7 +59,7 @@ echo "
     <div class=\"container-fluid\">
         <div class=\"row\">
         <div class=\"col-md-3\"></div>
-        <div class=\"col-md-6\"></div>
+        <div class=\"col-md-6\">
 
         ";
 
@@ -72,7 +72,7 @@ echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
 echo "
 
 
-                <h1>Account Home</h1>
+    <h1>Account Home</h1>
 
     <p>Please click on one of the links below to perform an action.</p>";
 
