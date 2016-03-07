@@ -13,7 +13,7 @@ function getHeader()
         <h1>University of Utah - CS 4540</h1>
         <h2>Web Software Architecture - Spring 2016</h2>
         <h2>Brandon Tobin</h2>
-        <h2>Grad Progress - Assignment 5</h2>
+        <h2>Grad Progress - Assignment 6</h2>
     </div>";
 }
 
@@ -338,5 +338,8 @@ function getNavBar($role)
 
 function pageDataHeader($title)
 {
-    return "<h1 class=\"form-header\">$title</h1>";
+    return "
+    <div class=\"page-header\">
+        <h1 class=\"form-header\">$title</h1>
+    </div>";
 }
