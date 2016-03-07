@@ -167,7 +167,7 @@ function getNavBar($role)
     {
         return "
         <!-- Navigation -->
-        <nav class=\"navbar navbar-custom \" role=\"navigation\">
+        <nav class=\"navbar navbar-custom span10\" role=\"navigation\">
             <div class=\"container\">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class=\"navbar-header\">
