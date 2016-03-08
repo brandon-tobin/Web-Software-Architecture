@@ -13,10 +13,10 @@
  * Make the picture somewhat transparent.
  */
 #header img {
-  /*position: absolute;*/
+  position: absolute;
   /*width: 1200px;
   height: 221px;*/
-  width: 1200px;
+  width: 100%;
   height: 221px;
   /*width: auto;*/
   /*margin-left: auto;
