@@ -59,9 +59,7 @@ echo "
 
     echo "
 
-        </div>
-        </div>
-        </div>
+
 
     <h1>Account Home</h1>
 
@@ -103,6 +101,10 @@ echo "
 
     echo "
 
+            </div>
+        <div class=\"col-md-1\"></div>
+        </div>
+    </div>
 
 
     </body>
