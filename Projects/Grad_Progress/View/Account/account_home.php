@@ -62,12 +62,12 @@ echo "
         </div> <!-- Ending Row -->
 
         <div class=\"row\">
-            <div class=\"col-md-2\"></div>
-            <div class=\"col-md-8\">";
+            <div class=\"col-md-3\"></div>
+            <div class=\"col-md-6\">";
                 echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
                 echo "
             </div> <!-- Ending column -->
-            <div class=\"col-md-2\"></div>
+            <div class=\"col-md-3\"></div>
         </div> <!-- Ending Row -->
 
         <div class=\"row\">
