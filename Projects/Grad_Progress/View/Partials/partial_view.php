@@ -166,9 +166,10 @@ function getNavBar($role)
     else if (in_array('student', $role))
     {
         return "
+                <div class=\"col-md-10\">
         <!-- Navigation -->
         <nav class=\"navbar navbar-custom \" role=\"navigation\">
-            <div class=\"container-fluid col-md-10\">
+            <div class=\"container-fluid\">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class=\"navbar-header\">
                     <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">
@@ -205,7 +206,8 @@ function getNavBar($role)
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
-        </nav>";
+        </nav>
+        </div>";
 
 
         /*return "
