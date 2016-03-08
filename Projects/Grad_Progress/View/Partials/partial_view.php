@@ -166,7 +166,6 @@ function getNavBar($role)
     else if (in_array('student', $role))
     {
         return "
-                <div class=\"col-md-10\">
         <!-- Navigation -->
         <nav class=\"navbar navbar-custom \" role=\"navigation\">
             <div class=\"container-fluid\">
@@ -206,8 +205,7 @@ function getNavBar($role)
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
-        </nav>
-        </div>";
+        </nav>";
 
 
         /*return "

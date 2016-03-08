@@ -47,7 +47,7 @@ echo "
     <div class=\"container-fluid\">
         <div class=\"row\">
         <div class=\"col-md-1\"></div>
-        <!--<div class=\"col-md-10\">-->
+        <div class=\"col-md-10\">
 
         ";
     echo (getHeader());
@@ -58,7 +58,6 @@ echo "
     echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
 
     echo "
-
 
 
     <h1>Account Home</h1>
