@@ -24,6 +24,7 @@
   opacity: 0.4;
   background-position: center;
   background-size: cover;
+  object-fit: fill;
 }
 /*
  * Make the font of h1 and h2 centered.
