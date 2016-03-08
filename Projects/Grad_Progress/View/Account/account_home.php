@@ -46,21 +46,33 @@ echo "
 
     <div class=\"container-fluid\">
         <div class=\"row\">
-        <div class=\"col-md-1\"></div>
-        <div class=\"col-md-10\">
+            <div class=\"col-md-1\"></div>
+            <div class=\"col-md-10\">
 
         ";
-    echo (getHeader());
-    echo (getNavigation());
+            echo (getHeader());
+            echo (getNavigation());
 
-    echo (getNavBar($_SESSION['roles']));
+            echo (getNavBar($_SESSION['roles']));
 
-    echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
+            echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
 
-    echo "
+            echo "
 
+            </div> <!-- Ending column -->
+        </div> <!-- Ending Row -->
 
-    <h1>Account Home</h1>
+        <div class=\"row\">
+            <div class=\"col-md-4\"></div>
+            <div class=\"col-md-4\">
+                <h1>Account Home</h1>
+            </div> <!-- Ending column -->
+            <div class=\"col-md-4\"></div>
+        </div> <!-- Ending Row -->
+
+        <div class=\"row\">
+            <div class=\"col-md-1\"></div>
+            <div class=\"col-md-10\">
 
     <p>Please click on one of the links below to perform an action.</p>";
 
