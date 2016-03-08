@@ -9,7 +9,7 @@ function getHeader()
     return "
     <!-- Header -->
     <div id=\"header\">
-        <img src=\"../../../../Resources/Images/uofufootball.jpg\" class=\"img-rounded\" alt=\"Rice Eccles Stadium\" width=\"304\" height=\"236\">
+        <img src=\"../../../../Resources/Images/uofufootball.jpg\" class=\"img-rounded\" alt=\"Rice Eccles Stadium\" width=\"1200px\" height=\"221\">
         <!--<img src=\"../../../../Resources/Images/uofufootball.jpg\" alt=\"Rice Eccles Stadium\" />-->
         <h1>University of Utah - CS 4540</h1>
         <h2>Web Software Architecture - Spring 2016</h2>
