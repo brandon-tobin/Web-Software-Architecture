@@ -59,6 +59,7 @@ echo "
             echo "
 
             </div> <!-- Ending column -->
+            <div class=\"col-md-1\"></div> <!-- Ending column -->
         </div> <!-- Ending Row -->
 
         <div class=\"row\">
@@ -67,7 +68,7 @@ echo "
                 echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
                 echo "
             </div> <!-- Ending column -->
-            <div class=\"col-md-3\"></div>
+            <div class=\"col-md-3   \"></div>
         </div> <!-- Ending Row -->
 
         <div class=\"row\">
