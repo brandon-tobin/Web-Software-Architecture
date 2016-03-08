@@ -8,9 +8,10 @@ function getHeader()
 {
     return "
     <!-- Header -->
-    <div id=\"header\">
+    <div id=\"header\" style=\"background-image:url('../../../../Resources/Images/uofufootball.jpg');\" />
         <!--<img src=\"../../../../Resources/Images/uofufootball.jpg\" class=\"img-rounded\" alt=\"Rice Eccles Stadium\" width=\"1200px\" height=\"221\">-->
-        <img src=\"../../../../Resources/Images/uofufootball.jpg\" class=\"img-rounded img-responsive\" alt=\"Rice Eccles Stadium\" />
+        <!--<img src=\"../../../../Resources/Images/uofufootball.jpg\" class=\"img-rounded img-responsive\" alt=\"Rice Eccles Stadium\" />-->
+
         <h1>University of Utah - CS 4540</h1>
         <h2>Web Software Architecture - Spring 2016</h2>
         <h2>Brandon Tobin</h2>
