@@ -55,7 +55,6 @@ echo "
 
             echo (getNavBar($_SESSION['roles']));
 
-            echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
 
             echo "
 
@@ -64,8 +63,9 @@ echo "
 
         <div class=\"row\">
             <div class=\"col-md-4\"></div>
-            <div class=\"col-md-4\">
-                <h1>Account Home</h1>
+            <div class=\"col-md-4\">";
+                echo (pageDataHeader("Welcome Back ".$_SESSION['realname']));
+                echo "
             </div> <!-- Ending column -->
             <div class=\"col-md-4\"></div>
         </div> <!-- Ending Row -->
@@ -73,6 +73,8 @@ echo "
         <div class=\"row\">
             <div class=\"col-md-1\"></div>
             <div class=\"col-md-10\">
+
+    <h1>Account Home</h1>
 
     <p>Please click on one of the links below to perform an action.</p>";
 
