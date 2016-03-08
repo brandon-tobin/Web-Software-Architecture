@@ -21,6 +21,17 @@
   top: 0;
   opacity: 0.4;
 }
+/*
+ * Make the font of h1 and h2 centered.
+ */
+#header h1 {
+  text-align: center;
+}
+
+#header h2 {
+  text-align: center;
+}
+
 
 html {
   font-family: sans-serif;
