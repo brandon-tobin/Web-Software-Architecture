@@ -4,6 +4,24 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/*
+ * Set the position of the image in the header to absolute.
+ * Set the width and height of the picture.
+ * Set the margins of the header so it is positioned correctly.
+ * Make the top position so that it is at the very top of the webpage.
+ * Make the picture somewhat transparent.
+ */
+#header img {
+  position: absolute;
+  width: 1200px;
+  height: 221px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  opacity: 0.4;
+}
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
