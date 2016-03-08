@@ -22,6 +22,8 @@
   margin-right: auto;
   top: 0;
   opacity: 0.4;
+  background-position: center;
+  background-size: cover;
 }
 /*
  * Make the font of h1 and h2 centered.
