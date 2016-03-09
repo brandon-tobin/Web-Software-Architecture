@@ -28,6 +28,11 @@
 
     <body>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-0 col-md-1 col-lg-2"></div>
+            <div class="col-sm-12 col-md-10 col-lg-8">
+
         <?php
 
         echo (getHeader());
@@ -46,6 +51,12 @@
 
         <p>Your status is currently: <?php echo $status->student_status?></p>
         <p><?php echo $status->advisor_approval ?></p>
+
+        <?php echo (getFooter()); ?>
+
+        </div> <!-- Ending column -->
+        <div class="col-sm-0 col-md-1 col-lg-2"></div>
+    </div> <!-- Ending Row -->
 
     </body>
 </html>
