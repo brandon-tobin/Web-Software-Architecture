@@ -11,7 +11,7 @@
 
         <!-- Student Status View  -->
 
-        <title>Login</title>
+        <title>Student Status</title>
 
         <!-- Meta Information about Page -->
         <meta charset="utf-8"/>
