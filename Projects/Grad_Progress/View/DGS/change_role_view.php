@@ -28,6 +28,11 @@
 
     <body>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-0 col-md-1 col-lg-2"></div>
+            <div class="col-sm-12 col-md-10 col-lg-8">
+
         <?php
 
         echo (getHeader());
@@ -92,5 +97,8 @@
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             </button>
         </form>
+        </div> <!-- Ending Column -->
+        </div class="col-sm-0 col-md-1 col-lg-2"></div>
+    </div> <!-- Ending Row -->
     </body>
 </html>
