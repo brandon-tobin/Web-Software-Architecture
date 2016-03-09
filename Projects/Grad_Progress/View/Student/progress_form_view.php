@@ -38,7 +38,12 @@ echo "
 
             </head>
 
-            <body>";
+            <body>
+
+            <div class=\"container-fluid\">
+                <div class=\"row\">
+                    <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
+                    <div class=\"col-sm-12 col-md-10 col-lg-8\">";
 
                 echo (getHeader());
 
@@ -183,6 +188,12 @@ echo "
                 <pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
 
                 <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
+
+                ";
+
+            echo (getFooter());
+
+            echo "
 
              </body>
 
