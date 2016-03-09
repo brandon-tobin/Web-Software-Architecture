@@ -1,8 +1,5 @@
 <?php
 
-//require ('../../Model/Functions/db.php');
-//require ('../../Model/Functions/authentication.php');
-
 if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUEST['password']))
 {
     verify_Login('');
@@ -54,7 +51,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                     <div class="col-sm-12 col-md-10 col-lg-8">
 
                 <div id="header">
-                    <img src="../../../../Resources/Images/uofufootball.jpg" alt="Rice Eccles Stadium" />
                     <h1>University of Utah - CS 4540</h1>
                     <h2>Web Software Architecture - Spring 2016</h2>
                     <h2>Brandon Tobin</h2>
