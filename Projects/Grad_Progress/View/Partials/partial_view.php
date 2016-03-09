@@ -337,7 +337,8 @@ function getFooter()
 {
     return "
     <!-- Footer -->
-        <footer class=\"footer\">
+        <div class=\"navbar navbar-default navbar-fixed-bottom\">
+        <!--<footer class=\"footer\">-->
             <div class=\"container\">
                 <div class=\"row\">
                     <!--<div class=\"col-lg-12\">-->
@@ -354,7 +355,7 @@ function getFooter()
                     </div>
                 <!--</div>-->
             </div>
-        </footer>";
+        </div>";
 }
 
 
