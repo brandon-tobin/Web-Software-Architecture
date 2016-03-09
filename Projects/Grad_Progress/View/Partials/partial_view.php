@@ -336,26 +336,10 @@ function getNavBar($role)
 function getFooter()
 {
     return "
-    <!-- Footer -->
-        <div class=\"navbar navbar-default navbar-fixed-bottom\">
-        <!--<footer class=\"footer\">-->
-            <div class=\"container\">
-                <div class=\"row\">
-                    <!--<div class=\"col-lg-12\">-->
-                        <ul class=\"list-inline\">
-                            <li>
-                                <a href=\"#\">Home</a>
-                            </li>
-                            <li class=\"footer-menu-divider\">&sdot;</li>
-                            <li>
-                                <a href=\"#services\">Services</a>
-                            </li>
-                        </ul>
-                        <p class=\"copyright text-muted small\">Copyright &copy; Brandon Tobin. All Rights Reserved</p>
-                    </div>
-                <!--</div>-->
-            </div>
-        </div>";
+    <div class=\"navbar navbar-default navbar-fixed-bottom\">
+    <div class=\"container\">
+      <p class=\"navbar-text pull-left\">© 2016 Brandon Tobin. All Rights Reserved</p>
+    </div>";
 }
 
 
