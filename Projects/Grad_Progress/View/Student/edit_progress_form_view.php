@@ -37,7 +37,12 @@ echo "
 
             </head>
 
-            <body>";
+            <body>
+
+            <div class=\"container-fluid\">
+                <div class=\"row\">
+                    <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
+                    <div class=\"col-sm-12 col-md-10 col-lg-8\">";
 
                 echo (getHeader());
 
@@ -195,7 +200,15 @@ echo "
                 <button class=\"btn btn-primary\" type=\"submit\" name=\"submit\" value=\"Submit\">
                     Submit
                     <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>
-                </button>
+                </button>";
+
+            echo (getFooter());
+
+            echo "
+
+            </div> <!-- Ending column -->
+            <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
+        </div> <!-- Ending Row -->
 
              </body>
 
