@@ -39,66 +39,81 @@ echo "
 
             </head>
 
-            <body>";
+            <body>
 
-            echo (getHeader());
+            <div class=\"container-fluid\">
+                <div class=\"row\">
+                    <div class=\"col-md-1\"></div>
+                    <div class=\"col-md-10\">
 
-            echo (getNavigation());
+        ";
 
-            echo (getNavBar($_SESSION['roles']));
+                    echo (getHeader());
 
-            if (in_array('dgs', $_SESSION['roles']))
-            {
-                $_SESSION['advisor'] = $advisor->advisor_ID;
-                echo "
-                <!-- Breadcrumb -->
-                <ol class=\"breadcrumb\">
-                    <li><a href=\"../Account/account_home.php\">Account Home</a></li>
-                    <li><a href=\"../DGS/overview.php\">DGS Overview</a></li>
-                    <li class=\"active\">Graduate Students</li>
-                </ol>";
-            }
-            else if (in_array('faculty', $_SESSION['roles']))
-            {
-                echo "
-                <!-- Breadcrumb -->
-                <ol class=\"breadcrumb\">
-                    <li><a href=\"../Account/account_home.php\">Account Home</a></li>
-                    <li class=\"active\">My Graduate Students</li>
-                </ol>";
-            }
+                    echo (getNavigation());
 
-            echo (pageDataHeader("Graduate Students"));
+                    echo (getNavBar($_SESSION['roles']));
 
-            echo "
-
-                <!-- Table containing students -->
-                <div class=\"table-responsive\">
-                    <table class=\"table table-striped table-bordered table-condensed\">
-                        <tr>
-                            <th>Name:</th>
-                            <th>Compliance:</th>
-                            <th>Current Form Date:</th>
-                            <th>Current Form:</th>
-                            <th>Advisor Signature:</th>
-                            <th>Profile</th>
-                        </tr>";
-
-                        // Echo out all entries in student array
-                        foreach ($advisor->student_Array as $row)
-                        {
-                            echo "<tr>";
-                            foreach ($row as $value)
-                            {
-                                echo "<td>$value</td>";
-                            }
-                            echo "</tr>";
-                        }
-
+                    if (in_array('dgs', $_SESSION['roles']))
+                    {
+                        $_SESSION['advisor'] = $advisor->advisor_ID;
                         echo "
+                        <!-- Breadcrumb -->
+                        <ol class=\"breadcrumb\">
+                            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                            <li><a href=\"../DGS/overview.php\">DGS Overview</a></li>
+                            <li class=\"active\">Graduate Students</li>
+                        </ol>";
+                    }
+                    else if (in_array('faculty', $_SESSION['roles']))
+                    {
+                        echo "
+                        <!-- Breadcrumb -->
+                        <ol class=\"breadcrumb\">
+                            <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                            <li class=\"active\">My Graduate Students</li>
+                        </ol>";
+                    }
 
-                    </table>
-                </div>
+                    echo (pageDataHeader("Graduate Students"));
+
+                    echo "
+
+                        <!-- Table containing students -->
+                        <div class=\"table-responsive\">
+                            <table class=\"table table-striped table-bordered table-condensed\">
+                                <tr>
+                                    <th>Name:</th>
+                                    <th>Compliance:</th>
+                                    <th>Current Form Date:</th>
+                                    <th>Current Form:</th>
+                                    <th>Advisor Signature:</th>
+                                    <th>Profile</th>
+                                </tr>";
+
+                                // Echo out all entries in student array
+                                foreach ($advisor->student_Array as $row)
+                                {
+                                    echo "<tr>";
+                                    foreach ($row as $value)
+                                    {
+                                        echo "<td>$value</td>";
+                                    }
+                                    echo "</tr>";
+                                }
+
+                                echo "
+
+                            </table>
+                        </div>";
+
+                    echo (getFooter());
+
+                    echo "
+
+                    </div> <!-- Ending column -->
+                    <div class=\"col-md-1\"></div>
+                </div> <!-- Ending Row -->
 
             </body>
 

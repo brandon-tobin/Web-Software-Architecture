@@ -39,11 +39,6 @@ echo "
 
     <body>
 
-";
-
-
-    echo "
-
     <div class=\"container-fluid\">
         <div class=\"row\">
             <div class=\"col-md-1\"></div>
