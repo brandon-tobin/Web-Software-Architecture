@@ -20,13 +20,18 @@
             <meta name="description" content="Landing page for failed account creation"/>
 
             <!-- ALL CSS FILES -->
-            <link rel="stylesheet" href="../../../../Resources/css/stylesheet.css" type="text/css"/>
+            <!--<link rel="stylesheet" href="../../../../Resources/css/stylesheet.css" type="text/css"/>-->
             <!-- Bootstrap Core CSS -->
             <link href="../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet">
 
         </head>
 
         <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-0 col-md-1 col-lg-2"></div>
+                <div class="col-sm-12 col-md-10 col-lg-8">
 
         <?php
 
@@ -41,6 +46,13 @@
         ?>
 
             <p>Account Creation Failed. Please check to make sure you do not currently have an account.</p>
+
+        <?php echo (getFooter()); ?>
+
+        </div>
+        <div class="col-sm-0 col-md-1 col-lg-2"></div>
+        </div>
+        </div>
 
         </body>
     </html>

@@ -42,6 +42,11 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
         <body>
 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-0 col-md-1 col-lg-2"></div>
+                <div class="col-sm-12 col-md-10 col-lg-8">
+
             <?php
 
             echo (getHeader());
@@ -83,6 +88,13 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
             <p>Account created successful.</p>
 
             <p>Please use the navigation bar above to log into your account.</p>
+
+            <?php echo (getFooter()); ?>
+
+            </div>
+            <div class="col-sm-0 col-md-1 col-lg-2"></div>
+            </div>
+            </div>
 
         </body>
     </html>
