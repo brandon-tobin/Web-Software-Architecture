@@ -105,15 +105,12 @@ echo "
                             </table>
                         </div>";
 
-                    echo (getFooter());
-
                     echo "
 
                     </div> <!-- Ending column -->
                     <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                 </div> <!-- Ending Row -->
-                <br />
-                <br />
+
 
             </body>
 
