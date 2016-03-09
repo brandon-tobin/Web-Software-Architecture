@@ -337,7 +337,7 @@ function getFooter()
 {
     return "
     <!-- Footer -->
-        <div class=\"footer\">
+        <footer class=\"footer\">
             <div class=\"container\">
                 <div class=\"row\">
                     <!--<div class=\"col-lg-12\">-->
@@ -354,7 +354,7 @@ function getFooter()
                     </div>
                 <!--</div>-->
             </div>
-        </div>";
+        </footer>";
 }
 
 
