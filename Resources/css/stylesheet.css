@@ -10,10 +10,10 @@
  * Move the margin over to the right so that it lines up with the header
  * image and navigation bar
  */
-/*body {
+body {
    width: 1200px;
    margin: 0px auto;
-}*/
+}
 
 /*
  * Make the font of h1 and h2 to Arial, or some other sans-serif font 
