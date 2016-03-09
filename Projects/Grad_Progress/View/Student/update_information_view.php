@@ -28,6 +28,11 @@
 
     <body>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-0 col-md-1 col-lg-2"></div>
+            <div class="col-sm-12 col-md-10 col-lg-8">
+
         <?php
 
         echo (getHeader());
@@ -215,11 +220,17 @@
                             </td>";
                         }
 
-                            //echo "<td colspan=\"2\"><input type=\"submit\" name=\"Submit\" value=\"Submit\" /></td>"
                         ?>
                     </tr>
                 </table>
             </div>
         </form>
+
+    <?php echo (getFooter()); ?>
     </body>
+
+    </div> <!-- Ending column -->
+    <div class="col-sm-0 col-md-1 col-lg-2"></div>
+    </div> <!-- Ending Row -->
+
 </html>
