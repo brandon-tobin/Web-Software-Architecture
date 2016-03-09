@@ -98,7 +98,7 @@
             </button>
         </form>
 
-        <? echo (getFooter()); ?>
+        <?php echo (getFooter()); ?>
 
         </div> <!-- Ending Column -->
         </div class="col-sm-0 col-md-1 col-lg-2"></div>
