@@ -14,9 +14,9 @@
  */
 #header img {
   position: absolute;
-  /*width: 1200px;
-  height: 221px;*/
-  width: 100%;
+  width: 20200px;
+  /*height: 221px;*/
+  /*width: 100%;*/
   height: 230px;
   object-fit: cover;
   background-size: 100% 100%;
