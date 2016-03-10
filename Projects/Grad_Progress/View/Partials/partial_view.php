@@ -333,14 +333,6 @@ function getNavBar($role)
     }
 }*/
 
-function getFooter()
-{
-    return "
-    <div class=\"navbar navbar-default navbar-static-bottom\">
-        <div class=\"container\">
-            <p class=\"navbar-text pull-left\">© 2016 Brandon Tobin. All Rights Reserved</p>
-        </div>";
-}
 
 
 function pageDataHeader($title)

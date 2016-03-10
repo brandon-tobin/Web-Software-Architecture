@@ -117,11 +117,7 @@ echo "
                 <a class=\"btn btn-success btn-lg\" href='new_progress_form.php?id=$student->student_ID' role=\"button\" >
                 Create Form
                 <span class=\"glyphicon glyphicon-list\" aria-hidden=\"true\"></span>
-                </a>
-                <br />
-                <br />";
-
-            echo (getFooter());
+                </a>";
 
             echo "
 
