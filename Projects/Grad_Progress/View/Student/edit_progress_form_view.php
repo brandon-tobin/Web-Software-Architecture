@@ -202,8 +202,6 @@ echo "
                     <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>
                 </button>";
 
-            echo (getFooter());
-
             echo "
 
             </div> <!-- Ending column -->

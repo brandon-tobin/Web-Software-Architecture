@@ -182,8 +182,6 @@ echo "
                 </button>
                 </form>";
 
-            echo (getFooter());
-
             echo "
 
             </div> <!-- Ending column -->
