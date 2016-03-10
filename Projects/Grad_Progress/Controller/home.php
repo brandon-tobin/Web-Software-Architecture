@@ -69,7 +69,7 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                     <a class="navbar-brand topnav">Welcome to the Grad Student System</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse" >
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
                             <input type="text" class="form-control" name="username" placeholder="Username">
