@@ -108,8 +108,6 @@ echo "
             </ul>";
     }
 
-    echo (getFooter());
-
     echo "
 
             </div>

@@ -52,8 +52,6 @@
         <p>Your status is currently: <?php echo $status->student_status?></p>
         <p><?php echo $status->advisor_approval ?></p>
 
-        <?php echo (getFooter()); ?>
-
         </div> <!-- Ending column -->
         <div class="col-sm-0 col-md-1 col-lg-2"></div>
     </div> <!-- Ending Row -->

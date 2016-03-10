@@ -47,8 +47,6 @@
 
             <p>Account Creation Failed. Please check to make sure you do not currently have an account.</p>
 
-        <?php echo (getFooter()); ?>
-
         </div>
         <div class="col-sm-0 col-md-1 col-lg-2"></div>
         </div>

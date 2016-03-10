@@ -105,8 +105,6 @@ echo "
                             </table>
                         </div>";
 
-                    echo (getFooter());
-
                     echo "
 
                     </div> <!-- Ending column -->

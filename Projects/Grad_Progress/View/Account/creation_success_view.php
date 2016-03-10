@@ -89,8 +89,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
 
             <p>Please use the navigation bar above to log into your account.</p>
 
-            <?php echo (getFooter()); ?>
-
             </div>
             <div class="col-sm-0 col-md-1 col-lg-2"></div>
             </div>

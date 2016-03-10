@@ -192,8 +192,6 @@ echo "
                 </div>
                 ";
 
-            echo (getFooter());
-
             echo "
 
              </body>

@@ -169,8 +169,6 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                     </div>
                 </form>
 
-            <?php echo (getFooter()); ?>
-
                 </div>
                 <div class="col-sm-0 col-md-1 col-lg-1"></div>
             </div>
