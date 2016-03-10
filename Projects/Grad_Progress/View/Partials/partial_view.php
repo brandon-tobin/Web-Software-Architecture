@@ -20,7 +20,7 @@ function getNavigation()
 {
     return "
 
-    <nav class=\"navbar navbar-default navbar-inverse topnav1 \" role=\"navigation\">
+    <nav class=\"navbar navbar-default navbar-inverse topnav \" role=\"navigation\">
         <div class=\"container topnav\">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class=\"navbar-header\">
@@ -30,7 +30,7 @@ function getNavigation()
                     <span class=\"icon-bar\"></span>
                     <span class=\"icon-bar\"></span>
                 </button>
-                <a class=\"navbar-brand topnav1\" href=\"#\">Website Links</a>
+                <a class=\"navbar-brand topnav\" href=\"#\">Website Links</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
@@ -63,7 +63,7 @@ function getNavBar($role)
         <div class=\"container\">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class=\"navbar-header\">
-                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">
+                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-2\">
                     <span class=\"sr-only\">Toggle navigation</span>
                     <span class=\"icon-bar\"></span>
                     <span class=\"icon-bar\"></span>
@@ -72,7 +72,7 @@ function getNavBar($role)
                 <a class=\"navbar-brand\" href=\"#\">Welcome ".$_SESSION['realname']."</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-2\">
                 <ul class=\"nav navbar-nav\">
                     <li>
                         <a href=\"../Account/account_home.php\">Account Home</a>
