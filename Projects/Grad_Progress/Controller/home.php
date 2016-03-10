@@ -63,8 +63,8 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar">Test</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="icon-bar">Hello</span>
+                        <span class="icon-bar">Foo</span>
                     </button>
                     <a class="navbar-brand topnav">Welcome to the Grad Student System</a>
                 </div>
