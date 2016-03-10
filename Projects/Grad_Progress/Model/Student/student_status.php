@@ -39,7 +39,7 @@ class New_Student_Status
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-                $this->student_status = $row['meets_requirements'];
+                $this->student_status = htmlspecialchars($row['meets_requirements']);
             }
 
             if ($this->student_status == 1)

@@ -40,7 +40,7 @@ class Advisor
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-                $this->advisor_First_Name = $row['name'];
+                $this->advisor_First_Name = htmlspecialchars($row['name']);
             }
 
             // Query the database to get information about the students that are linked to the advisor and format it to be displayed in the view
@@ -63,7 +63,7 @@ class Advisor
                 if (strtotime($row['date']) > strtotime('-6 month'))
                     $isCurrent = "Current";
 
-                $this->student_Array[] = array($row['name'], $requirementsMet, $row['date'], $isCurrent, $isSigned, "<a href=\"../Student/student_forms.php?id=" . $row['uid'] . "\">View</a>");
+                $this->student_Array[] = array(htmlspecialchars($row['name']), $requirementsMet, htmlspecialchars($row['date']), $isCurrent, $isSigned, "<a href=\"../Student/student_forms.php?id=" . htmlspecialchars($row['uid']) . "\">View</a>");
 
             }
         }

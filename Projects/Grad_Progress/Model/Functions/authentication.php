@@ -6,8 +6,6 @@
  * Helper  functions for the system
  *
 */
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
 
 // Changes the session ID
 function changeSessionID()
@@ -23,17 +21,17 @@ function changeSessionID()
 
 function usingHTTPS()
 {
-    //return isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] != "off");
+    return isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] != "off");
 }
 
 function redirectToHTTPS()
 {
-   /* if (!usingHTTPS())
+    if (!usingHTTPS())
     {
         $redirect = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         header("Location:$redirect");
         exit();
-    }*/
+    }
 }
 
 function verify_role($role)
@@ -132,7 +130,7 @@ function verify_Login($role)
                     $roles = array();
                     while ($row = $stmt->fetch())
                     {
-                        $roles[] = $row['role'];
+                        $roles[] = htmlspecialchars($row['role']);
                     }
                     $_SESSION['roles'] = $roles;
 
@@ -229,9 +227,9 @@ function navBar_Login($role)
                 $hashedPassword = $row['password'];
                 if (computeHash($password, $hashedPassword) == $hashedPassword)
                 {
-                    $_SESSION['userid'] = $row['uid'];
+                    $_SESSION['userid'] = htmlspecialchars($row['uid']);
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
-                    $_SESSION['login'] = $username;
+                    $_SESSION['login'] = htmlspecialchars($username);
                     $stmt->closeCursor();
                     $stmt = $DBH->prepare("SELECT role FROM Roles WHERE username = ?");
                     $stmt->bindValue(1, $username);
@@ -239,7 +237,7 @@ function navBar_Login($role)
                     $roles = array();
                     while ($row = $stmt->fetch())
                     {
-                        $roles[] = $row['role'];
+                        $roles[] = htmlspecialchars($row['role']);
                     }
                     $_SESSION['roles'] = $roles;
 

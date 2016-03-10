@@ -158,9 +158,9 @@ class Update_Info
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-                $this->degree = $row['degree'];
-                $this->track = $row['track'];
-                $this->semester_admitted = $row['semester_admitted'];
+                $this->degree = htmlspecialchars($row['degree']);
+                $this->track = htmlspecialchars($row['track']);
+                $this->semester_admitted = htmlspecialchars($row['semester_admitted']);
             }
 
             $query = "SELECT role FROM Roles WHERE username = ?";
@@ -172,7 +172,7 @@ class Update_Info
 
             foreach ($result as $row)
             {
-                $this->position = $row['role'];
+                $this->position = htmlspecialchars($row['role']);
             }
 
             $query = "SELECT Users.name FROM Advisors INNER JOIN Users ON Advisors.aid = Users.uid WHERE Advisors.sid = ?;";
@@ -184,7 +184,7 @@ class Update_Info
 
             foreach ($result as $row)
             {
-                $this->advisor = $row['name'];
+                $this->advisor = htmlspecialchars($row['name']);
             }
 
             $query = "SELECT DISTINCT Users.name FROM Advisors INNER JOIN Users ON Advisors.aid = Users.uid;";
@@ -197,7 +197,7 @@ class Update_Info
             $this->all_advisors = array();
             foreach ($result as $row)
             {
-                array_push($this->all_advisors, $row['name']);
+                array_push($this->all_advisors, htmlspecialchars($row['name']));
             }
 
             $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee WHERE sid = ?);";
@@ -210,7 +210,7 @@ class Update_Info
             $this->committee = array();
             foreach ($result as $row)
             {
-                array_push($this->committee, $row['name']);
+                array_push($this->committee, htmlspecialchars($row['name']));
             }
 
             $query = "SELECT name FROM Users WHERE uid IN (SELECT facultyid FROM Committee);";
@@ -221,7 +221,7 @@ class Update_Info
 
             $this->all_committee = array();
             foreach ($result as $row) {
-                array_push($this->all_committee, $row['name']);
+                array_push($this->all_committee, htmlspecialchars($row['name']));
             }
 
             if ($this->degree == '' && $this->track == '' && $this->semester_admitted == '')

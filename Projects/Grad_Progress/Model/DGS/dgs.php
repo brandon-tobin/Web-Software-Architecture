@@ -39,7 +39,7 @@ class DGS
 
             $this->advisors = array();
             foreach ($result as $row) {
-                $this->advisors[] = array($row['name'], "<a href=\"../Advisor/students.php?id=".$row['aid']."\">View</a>");
+                $this->advisors[] = array(htmlspecialchars($row['name']), "<a href=\"../Advisor/students.php?id=".htmlspecialchars($row['aid'])."\">View</a>");
             }
 
             // Query the database for all students and format it to be shown in the view.
@@ -51,7 +51,7 @@ class DGS
 
             $this->students_arr = array();
             foreach ($result as $row) {
-                $this->students_arr[] = array($row['name'], "<a href=\"../Student/student_forms.php?id=".$row['uid']."\">View</a>");
+                $this->students_arr[] = array(htmlspecialchars($row['name']), "<a href=\"../Student/student_forms.php?id=".htmlspecialchars($row['uid'])."\">View</a>");
             }
         }
         catch (PDOException $ex) {

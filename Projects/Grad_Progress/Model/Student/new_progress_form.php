@@ -52,7 +52,7 @@ if (isset($_POST['submit']))
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
-        $form_ID = $row['fid'] + 1;
+        $form_ID = htmlspecialchars($row['fid']) + 1;
     }
 
     date_default_timezone_set('America/Denver');
@@ -168,11 +168,11 @@ class New_Student_Form
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-                $this->student_Name = $row['name'];
-                $this->student_ID = $row['uid'];
-                $this->degree = $row['degree'];
-                $this->track = $row['track'];
-                $this->semester_Admitted = $row['semester_admitted'];
+                $this->student_Name = htmlspecialchars($row['name']);
+                $this->student_ID = htmlspecialchars($row['uid']);
+                $this->degree = htmlspecialchars($row['degree']);
+                $this->track = htmlspecialchars($row['track']);
+                $this->semester_Admitted = htmlspecialchars($row['semester_admitted']);
             }
 
             date_default_timezone_set('America/Denver');
@@ -193,7 +193,7 @@ class New_Student_Form
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-                $this->advisor = $row['name'];
+                $this->advisor = htmlspecialchars($row['name']);
             }
 
             // Query the database to find out which committee memebers are related to this student
@@ -205,7 +205,7 @@ class New_Student_Form
 
             $this->committee = array();
             foreach ($result as $row) {
-                array_push($this->committee, $row['name']);
+                array_push($this->committee, htmlspecialchars($row['name']));
             }
 
             $query = "SELECT name FROM Users WHERE position = 'F'";
@@ -216,8 +216,8 @@ class New_Student_Form
             $this->advisor_array = array();
             $this->committee_array = array();
             foreach ($result as $row) {
-                array_push($this->advisor_array, $row['name']);
-                array_push($this->committee_array, $row['name']);
+                array_push($this->advisor_array, htmlspecialchars($row['name']));
+                array_push($this->committee_array, htmlspecialchars($row['name']));
             }
 
         } catch (PDOException $ex) {

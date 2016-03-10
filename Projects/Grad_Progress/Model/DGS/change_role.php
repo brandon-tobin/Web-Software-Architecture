@@ -56,7 +56,7 @@ class User_Roles
 
             $this->username = array();
             foreach ($result as $row) {
-                $this->username[] = array($row['username'], $row['role']);
+                $this->username[] = array(htmlspecialchars($row['username']), htmlspecialchars($row['role']));
             }
         }
         catch (PDOException $ex) {

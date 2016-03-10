@@ -27,7 +27,7 @@ if (isset($_REQUEST['submit']))
 
     foreach ($result as $row)
     {
-        $fid = $row['count'];
+        $fid = htmlspecialchars($row['count']);
     }
 
     $query = "UPDATE Forms SET meets_requirements = ?, advisor_signed = ? WHERE uid = ? AND fid = ?";
@@ -65,7 +65,7 @@ class New_Student_Status_Update
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-                $this->student_status = $row['meets_requirements'];
+                $this->student_status = htmlspecialchars($row['meets_requirements']);
             }
 
             if ($this->student_status == 1)

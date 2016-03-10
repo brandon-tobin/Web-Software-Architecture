@@ -41,12 +41,10 @@ class Student
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row) {
-                $this->student_First_Name = $row['name'];
+                $this->student_First_Name = htmlspecialchars($row['name']);
             }
 
             // Query the database to get the information required to display the list of student forms
-            //SELECT * FROM Forms WHERE (uid, modified_date) IN (SELECT uid, MAX(modified_date) FROM Forms GROUP BY uid);
-            //$query = "SELECT meets_requirements, uid, fid, date, DATE(modified_date) as modified_date FROM Forms WHERE uid = $id GROUP BY fid, modified_date";
             $query = "SELECT meets_requirements, uid, fid, date, DATE(modified_date) as modified_date FROM Forms WHERE (uid, modified_date) IN (SELECT uid, MAX(modified_date) FROM Forms WHERE uid = $id GROUP BY uid)";
             $statement = $db->prepare($query);
             $statement->execute();
@@ -59,7 +57,7 @@ class Student
                 if ($row['meets_requirements'] == 1)
                     $requirementsMet = "Yes";
 
-               $this->form_Records_Array[] = array($row['date'], $row['modified_date'], $requirementsMet, "<a href=\"progress_form.php?id=$id&form=".$row['fid']."\">View</a>" , "<a href=\"edit_progress_form.php?id=$id&form=".$row['fid']."\">Edit</a>");
+               $this->form_Records_Array[] = array(htmlspecialchars($row['date']), htmlspecialchars($row['modified_date']), $requirementsMet, "<a href=\"progress_form.php?id=$id&form=".htmlspecialchars($row['fid'])."\">View</a>" , "<a href=\"edit_progress_form.php?id=$id&form=".htmlspecialchars($row['fid'])."\">Edit</a>");
             }
 
             $this->student_ID = $id;
