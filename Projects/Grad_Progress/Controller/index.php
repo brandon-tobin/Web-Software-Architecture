@@ -39,7 +39,7 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../../Projects/">Projects</a></li>
                 <li><a href="../../../Class_Examples/">Examples</a></li>
-		<li><a href="../../../Projects/V3/schema.html">Database Schema</a></li>
+		        <li><a href="../../../Projects/V3/schema.html">Database Schema</a></li>
             </ul>
 
             <h1>Grad Progress Versions</h1>
@@ -71,6 +71,10 @@
             <ul>
                 <li><a href="../V5/README.html">README - Assignment 5</a></li>
                 <li><a href="../V5/home.php">View Assignment 5</a></li>
+            </ul>
+            <ul>
+                <li><a href="../V6/README.html">README - Assignment 6</a></li>
+                <li><a href="../V6/home.php">View Assignment 6</a></li>
             </ul>
 
         </body>
