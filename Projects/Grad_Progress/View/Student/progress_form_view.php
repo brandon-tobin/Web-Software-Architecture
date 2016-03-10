@@ -185,10 +185,11 @@ echo "
 
                 <p>$form->question2</p>
 
+                <div class=\"well\">
                 <pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
 
                 <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
-
+                </div>
                 ";
 
             echo (getFooter());
