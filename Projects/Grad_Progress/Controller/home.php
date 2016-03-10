@@ -60,11 +60,11 @@ if (isset($_REQUEST['submit']) && isset($_REQUEST['username']) && isset($_REQUES
             <div class="container topnav">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar">Test</span>
-                        <span class="icon-bar">Hello</span>
-                        <span class="icon-bar">Foo</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand topnav">Welcome to the Grad Student System</a>
                 </div>
