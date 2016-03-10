@@ -193,8 +193,8 @@ echo "
 
                 </ol>
 
-                <pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>
-
+                <!--<pre><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</pre>-->
+                <div class=\"well\"><u>      $form->student_Name               </u>Student Signature  <u>     $form->date_completed      </u> Date</div>
                 <pre><u>      $form->advisor                    </u>Advisor Signature  <u>     $form->date_completed      </u> Date</pre>
 
                 <button class=\"btn btn-primary\" type=\"submit\" name=\"submit\" value=\"Submit\">
