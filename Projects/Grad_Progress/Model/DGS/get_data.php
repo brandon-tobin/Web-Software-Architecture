@@ -9,7 +9,7 @@
  *
  */
 
-var_dump("MADE IT HERE!!!!!!");
+//var_dump("MADE IT HERE!!!!!!");
 
 $verify_ajax = true;
 
@@ -24,8 +24,8 @@ if($verify_ajax &&
     die();
 }
 
-echo "<p> " . htmlspecialchars("GETTING GPA CHART!") . "</p>";
-die();
+//echo "<p> " . htmlspecialchars("GETTING GPA CHART!") . "</p>";
+//die();
 
 //session_start();
 
@@ -42,30 +42,30 @@ die();
 //{
 //    echo "<p> " . htmlspecialchars("GETTING Advisor CHART!") . "</p>";
 //}
-//if (isset($_SESSION['count']))
-//{
-//    $_SESSION['count']++;
-//}
-//else
-//{
-//    $_SESSION['count'] = 1;
-//}
-//
-//$count = $_SESSION['count'];
-//echo " <h1> AJAX has responded! For the $count time</h1>";
-//
-//if (isset($_REQUEST['message']))
-//{
-//    $message = $_REQUEST['message'];
-//
-//    echo "<p> " . htmlspecialchars($message) . "</p>";
-//}
-//
-//if (isset($_REQUEST['show_origination']))
-//{
-//    $orig = $_SERVER['HTTP_REFERER'];
-//
-//    echo "<p> AJAX request came from: $orig </p>";
-//}
+if (isset($_SESSION['count']))
+{
+    $_SESSION['count']++;
+}
+else
+{
+    $_SESSION['count'] = 1;
+}
+
+$count = $_SESSION['count'];
+echo " <h1> AJAX has responded! For the $count time</h1>";
+
+if (isset($_REQUEST['message']))
+{
+    $message = $_REQUEST['message'];
+
+    echo "<p> " . htmlspecialchars($message) . "</p>";
+}
+
+if (isset($_REQUEST['show_origination']))
+{
+    $orig = $_SERVER['HTTP_REFERER'];
+
+    echo "<p> AJAX request came from: $orig </p>";
+}
 
 
