@@ -37,12 +37,12 @@ function find_data(  )
              */
             beforeSend: function()
             {
-                var check_box = $("input[name=before_send]");
-
-                if (check_box.is(':checked'))
-                {
-                    alert ( "prepping AJAX call with data: " + $('#form_id').serialize() );
-                }
+                //var check_box = $("input[name=before_send]");
+                //
+                //if (check_box.is(':checked'))
+                //{
+                //    alert ( "prepping AJAX call with data: " + $('#form_id').serialize() );
+                //}
 
             },
 
