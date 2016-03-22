@@ -9,7 +9,8 @@
 
 require('../../View/Partials/partial_view.php');
 
-echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
+echo "
+<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
     <html lang=\"en\">
         <head>
@@ -46,8 +47,7 @@ echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR
                 <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                 <div class=\"col-sm-12 col-md-10 col-lg-8\">
 
-
-                ";;
+";
 
 
         echo (getHeader());
@@ -80,7 +80,7 @@ echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR
 
              <div id=\"content\"></div>-->
 
-             <form  id=\"form_id\"   onsubmit=\"return find_data()\">
+             <form  id=\"form_id\" onsubmit=\"return find_data()\">
 
 	  <input type=\"checkbox\" name=\"cause_error\" value=\"true\"/>Cause an Error <br/>
 	  <input type=\"checkbox\" name=\"before_send\" value=\"true\"/>Enable 'before send' alert <br/>
