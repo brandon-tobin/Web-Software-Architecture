@@ -9,7 +9,7 @@
  *
  */
 
-//var_dump("MADE IT HERE!!!!!!");
+var_dump("MADE IT HERE!!!!!!");
 
 $verify_ajax = true;
 
