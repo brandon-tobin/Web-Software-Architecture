@@ -25,11 +25,11 @@ function find_data(  )
             data: $('#form_id').serialize(),
             dataType: "html",  		      // The type of data that is getting returned.
 
-            /*success: function(response)
+            success: function(response)
             {
                 // note: this function should be removed and use only the done function below
                 console.log("success function");
-            },*/
+            },
 
             /**
              * What to do before the ajax request is sent. Perhaps gather
