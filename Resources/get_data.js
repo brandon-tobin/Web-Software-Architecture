@@ -61,7 +61,7 @@ function find_data(  )
             //}
 
             var jContent = $( "#content" ); // put data here
-            jContent.html( "<script>" + data + "</script>" );
+            jContent.html( data );
 
         } )
         .fail( function ( text, options, err )

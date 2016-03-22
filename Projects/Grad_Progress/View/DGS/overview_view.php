@@ -79,7 +79,8 @@ echo "
 
              </form>
 
-             <div id=\"content\"></div>
+             <script id=\"content\"></script>
+             <!--<div id=\"content\"></div>-->
 
             <h1>Graduate Advisors</h1>
 
