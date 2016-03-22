@@ -73,7 +73,7 @@ function find_data(  )
             // something went wrong
             var jContent = $( "#content" );
             //jContent.html( "<h2>Error - Only a programmer can fix this!! </h3>"  );
-            jContent.html(err);
+            jContent.html(text + "   " + options +"   " + err);
             console.log('Jim, error message: ' + text );
             console.log('Jim, error message: ' + options );
             console.log('Jim, error message: ' + err);
