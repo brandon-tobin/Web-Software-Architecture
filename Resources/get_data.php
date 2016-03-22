@@ -72,41 +72,40 @@ if ($formType == 'gpa')
         $gpa_chart_data = json_encode($gpa_chart_data);
 
 
-//        echo "
-//        <script>
-//        $('#columnchart').highcharts({
-//    chart: { type:'column'},
-//    title: {
-//      text: 'GPAs',
-//	x: -20 //center
-//        },
-//      subtitle: {
-//      text: 'Source: Jim',
-//	x: -20
-//        },
-//      xAxis: {
-//      title: 'credit_hours',
-//        },
-//      yAxis: {
-//      min:0,max:4,
-//      title: {
-//	text: 'GPA'
-//	  },
-//	plotLines: [{
-//	  value: 0,
-//	    width: 1,
-//	    color: '#808080'
-//            }]
-//        },
-//      legend: {
-//      layout: 'vertical',
-//	align: 'right',
-//	verticalAlign: 'middle',
-//	borderWidth: 0
-//        },
-//      series: [ $gpa_chart_data ]
-//      });
-//</script>";
+        echo "
+        $('#columnchart').highcharts({
+    chart: { type:'column'},
+    title: {
+      text: 'GPAs',
+	x: -20 //center
+        },
+      subtitle: {
+      text: 'Source: Jim',
+	x: -20
+        },
+      xAxis: {
+      title: 'credit_hours',
+        },
+      yAxis: {
+      min:0,max:4,
+      title: {
+	text: 'GPA'
+	  },
+	plotLines: [{
+	  value: 0,
+	    width: 1,
+	    color: '#808080'
+            }]
+        },
+      legend: {
+      layout: 'vertical',
+	align: 'right',
+	verticalAlign: 'middle',
+	borderWidth: 0
+        },
+      series: [ $gpa_chart_data ]
+      });
+      ";
 
 //        echo "
 //$('#linechart').highcharts({
