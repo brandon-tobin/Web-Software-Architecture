@@ -17,6 +17,8 @@
 function find_data(  )
 {
 
+    document.getElementById("content").innerHTML = "Made it to AJAX";
+
     $.ajax(
         {
             type:'POST',
