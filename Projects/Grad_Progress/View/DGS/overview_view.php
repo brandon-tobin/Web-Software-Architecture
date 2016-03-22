@@ -66,8 +66,7 @@ echo "
 
             <h1>Statistical Charts</h1>
 
-            <form id=\"form_id\" onsubmit=\"return find_data()\">
-
+             <form method=\"post\" id=\"form_id\" onsubmit=\"return find_data()\">
                 <select name=\"formlist\">
                   <option value=\"gpa\">Current Student GPAs</option>
                   <option value=\"advisor\">Advised Students Per Advisor</option>
