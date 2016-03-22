@@ -74,7 +74,12 @@ echo "
                   <!--<option value=\"opel\">Opel</option>
                   <option value=\"audi\">Audi</option>-->
                 </select>
+
+                	<input type=\"submit\" value=\"Submit\"/>
+
             </form>
+
+             <div id=\"content\"></div>
 
             <h1>Graduate Advisors</h1>
 
