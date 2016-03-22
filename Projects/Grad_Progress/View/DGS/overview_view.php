@@ -37,7 +37,7 @@ echo "
         <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
 
         <script src=\"//code.jquery.com/jquery-1.9.1.js\"></script>
-        <script src=\"get_data.js\"></script>
+        <script src=\"../../Model/DGS/get_data.js\"></script>
 
         </head>
 
