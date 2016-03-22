@@ -9,9 +9,7 @@
 
 require('../../View/Partials/partial_view.php');
 
-echo "
-
-<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
+echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
     <html lang=\"en\">
         <head>
@@ -37,7 +35,7 @@ echo "
         <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
 
         <script src=\"//code.jquery.com/jquery-1.9.1.js\"></script>
-        <script src=\"../../Model/DGS/get_data.js\"></script>
+        <script src=\"../../View/DGS/get_data.js\"></script>
 
         </head>
 
@@ -49,7 +47,7 @@ echo "
                 <div class=\"col-sm-12 col-md-10 col-lg-8\">
 
 
-                ";
+                ";;
 
 
         echo (getHeader());
