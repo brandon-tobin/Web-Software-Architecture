@@ -73,6 +73,7 @@ if ($formType == 'gpa')
 
 
         echo "
+        <script>
         $('#linechart').highcharts({
     chart: { type:'column'},
     title: {
