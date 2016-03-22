@@ -36,6 +36,9 @@ echo "
         <!-- Bootstrap Core CSS -->
         <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
 
+        <script src=\"//code.jquery.com/jquery-1.9.1.js\"></script>
+        <script src=\"get_data.js\"></script>
+
         </head>
 
         <body>
@@ -60,6 +63,18 @@ echo "
                 <li><a href=\"../Account/account_home.php\">Account Home</a></li>
                 <li class=\"active\">DGS Overview</li>
             </ol>
+
+            <h1>Statistical Charts</h1>
+
+            <form id=\"form_id\" onsubmit=\"return find_data()\">
+
+                <select name=\"formlist\">
+                  <option value=\"gpa\">Current Student GPAs</option>
+                  <option value=\"advisor\">Advised Students Per Advisor</option>
+                  <!--<option value=\"opel\">Opel</option>
+                  <option value=\"audi\">Audi</option>-->
+                </select>
+            </form>
 
             <h1>Graduate Advisors</h1>
 
