@@ -38,6 +38,9 @@ echo "
         <script src=\"//code.jquery.com/jquery-1.9.1.js\"></script>
         <script src=\"../../../../Resources/get_data.js\"></script>
 
+        <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/api/js/jquery-1.11.3.min.js\"></script>
+        <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/js/highcharts.src.js\"></script>
+
         </head>
 
         <body>
