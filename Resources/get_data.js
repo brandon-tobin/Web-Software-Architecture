@@ -22,8 +22,8 @@ function find_data(  )
     $.ajax(
         {
             type:'POST',
-            url:  $("input[name=cause_error]").is(':checked') ? "asdf" : "get_data.php",
-            //url: "get_data.php",
+            //url:  $("input[name=cause_error]").is(':checked') ? "asdf" : "get_data.php",
+            url: "get_data.php",
             data: $('#form_id').serialize(),
             dataType: "html",  		      // The type of data that is getting returned.
 
@@ -51,16 +51,16 @@ function find_data(  )
         })
         .done( function ( data )
         {
-            console.log("done function")
-            var check_box = $("input[name=on_success]");
-
-            /**
-             * What to do when the data is successfully retreived
-             */
-            if (check_box.is(':checked'))
-            {
-                alert ( "Data Rerturned Successfully!" );
-            }
+            //console.log("done function")
+            //var check_box = $("input[name=on_success]");
+            //
+            ///**
+            // * What to do when the data is successfully retreived
+            // */
+            //if (check_box.is(':checked'))
+            //{
+            //    alert ( "Data Rerturned Successfully!" );
+            //}
 
             var jContent = $( "#content" ); // put data here
             jContent.html( data );

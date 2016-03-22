@@ -66,21 +66,21 @@ echo "
 
             <h1>Statistical Charts</h1>
 
-             <!--<form method=\"post\" id=\"form_id\" onsubmit=\"return find_data()\">
+             <form method=\"post\" id=\"form_id\" onsubmit=\"return find_data()\">
                 <select name=\"formlist\" id=\"formlist\">
                   <option value=\"gpa\">Current Student GPAs</option>
                   <option value=\"advisor\">Advised Students Per Advisor</option>
                   <!--<option value=\"opel\">Opel</option>
                   <option value=\"audi\">Audi</option>-->
-                <!--</select>
+                </select>
 
                 	<input type=\"submit\" value=\"Submit\"/>
 
             </form>
 
-             <div id=\"content\"></div>-->
+             <div id=\"content\"></div>
 
-             <form  id=\"form_id\" onsubmit=\"return find_data()\">
+             <!--<form  id=\"form_id\" onsubmit=\"return find_data()\">
 
 	  <input type=\"checkbox\" name=\"cause_error\" value=\"true\"/>Cause an Error <br/>
 	  <input type=\"checkbox\" name=\"before_send\" value=\"true\"/>Enable 'before send' alert <br/>
@@ -93,7 +93,7 @@ echo "
 
 	</form>
 
-      <div id=\"content\"></div>
+      <div id=\"content\"></div>-->
 
             <h1>Graduate Advisors</h1>
 
