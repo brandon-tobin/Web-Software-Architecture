@@ -9,7 +9,7 @@
  *
  */
 
-var_dump("MADE IT HERE!!!!!!");
+//var_dump("MADE IT HERE!!!!!!");
 
 $verify_ajax = true;
 
@@ -24,24 +24,21 @@ if($verify_ajax &&
     die();
 }
 
-echo "<p> " . htmlspecialchars("GETTING GPA CHART!") . "</p>";
-die();
-
 //session_start();
 
-//$formType = trim($_REQUEST['formlist']);
-//
-//error_log("TOBIN FORMTYPE = " . $formType );
-//
-//if ($formType == 'gpa')
-//{
-//    echo "<p> " . htmlspecialchars("GETTING GPA CHART!") . "</p>";
-//}
-//
-//if ($formType == 'advisor')
-//{
-//    echo "<p> " . htmlspecialchars("GETTING Advisor CHART!") . "</p>";
-//}
+$formType = trim($_REQUEST['formlist']);
+
+error_log("TOBIN FORMTYPE = " . $formType );
+
+if ($formType == 'gpa')
+{
+    echo "<p> " . htmlspecialchars("GETTING GPA CHART!") . "</p>";
+}
+
+if ($formType == 'advisor')
+{
+    echo "<p> " . htmlspecialchars("GETTING Advisor CHART!") . "</p>";
+}
 //if (isset($_SESSION['count']))
 //{
 //    $_SESSION['count']++;
