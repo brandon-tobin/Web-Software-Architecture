@@ -79,7 +79,7 @@ echo "
 
              </form>
 
-             <script id=\"content\"></script>
+             <script id=\"content\">hello</script>
              <!--<div id=\"content\"></div>-->
 
             <h1>Graduate Advisors</h1>

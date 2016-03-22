@@ -84,7 +84,7 @@ function getNavBar($role)
                         <a href=\"../DGS/change_role.php\">Change User Role</a>
                     </li>
                     <li>
-                        <a href=\"../Account/logout.php\">Logout</a></a>
+                        <a href=\"../Account/logout.php\">Logout</a>
                     </li>
                 </ul>
             </div>
