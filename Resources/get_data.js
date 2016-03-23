@@ -31,7 +31,7 @@ function find_data(  )
             //url:  $("input[name=cause_error]").is(':checked') ? "asdf" : "get_data.php",
             url: "../../../../Resources/get_data.php",
             data: $('#form_id').serialize(),
-            dataType: "text",  		      // The type of data that is getting returned.
+            dataType: "json",  		      // The type of data that is getting returned.
 
             success: function(response)
             {
@@ -105,8 +105,8 @@ function find_data(  )
                 });
 
             weightchart.addSeries({
-                name: "GPAS",
-                data: data
+                name: data.name,
+                data: data.data
             });
         } )
         .fail( function ( text, options, err )
