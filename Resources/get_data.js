@@ -99,7 +99,6 @@ function find_data(  )
                         x: -20 //center
                     },
                     subtitle: {
-                        text: 'Source: Jim',
                         x: -20
                     },
                     xAxis: {
@@ -107,9 +106,9 @@ function find_data(  )
                         title: 'Advisors',
                     },
                     yAxis: {
-                        min: 0, max: 4,
+                       // min: 0, max: 4,
                         title: {
-                            text: 'GPA'
+                            text: 'Number of Students'
                         },
                         plotLines: [{
                             value: 0,
