@@ -15,11 +15,6 @@
 //
 //
 
-//define([
-//    'Highcharts/api/js/jquery-1.11.3.min',
-//    'Highcharts/js/highcharts.src',
-//]);
-
 function find_data(  )
 {
     var chartNum = 0;
@@ -44,15 +39,7 @@ function find_data(  )
              */
             beforeSend: function()
             {
-                //var check_box = $("input[name=before_send]");
-                //
-                //if (check_box.is(':checked'))
-                //{
-                //    alert ( "prepping AJAX call with data: " + $('#form_id').serialize() );
-                //}
-
                 chartNum = $('#formlist').val();
-
             },
 
         })
@@ -60,7 +47,7 @@ function find_data(  )
         {
 
             if (chartNum == 1) {
-                var weightchart = new Highcharts.Chart({
+                var gpaChart = new Highcharts.Chart({
                     chart: {
                         type: 'column',
                         renderTo: 'gpaChart'
@@ -95,7 +82,49 @@ function find_data(  )
                     }
                 });
 
-                weightchart.addSeries({
+                gpaChart.addSeries({
+                    name: data.name,
+                    data: data.data
+                });
+            }
+
+            if (chartNum == 2) {
+                var advisorChart = new Highcharts.Chart({
+                    chart: {
+                        type: 'line',
+                        renderTo: 'gpaChart'
+                    },
+                    title: {
+                        text: 'GPAs',
+                        x: -20 //center
+                    },
+                    subtitle: {
+                        text: 'Source: Jim',
+                        x: -20
+                    },
+                    xAxis: {
+                        title: 'credit_hours',
+                    },
+                    yAxis: {
+                        min: 0, max: 4,
+                        title: {
+                            text: 'GPA'
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 1,
+                            color: '#808080'
+                        }]
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle',
+                        borderWidth: 0
+                    }
+                });
+
+                advisorChart.addSeries({
                     name: data.name,
                     data: data.data
                 });
