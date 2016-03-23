@@ -63,7 +63,7 @@ function find_data(  )
 
            // data_series = data;
 
-            var chart_data = jQuery.parseJSON(data);
+           // var chart_data = jQuery.parseJSON(data);
 
 
             //$('#linechart').highcharts({
