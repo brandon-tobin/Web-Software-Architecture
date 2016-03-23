@@ -75,15 +75,17 @@ echo "
 
             <h1>Statistical Charts</h1>
 
-             <form method=\"post\" id=\"form_id\" class =\"selectpicker\" onchange=\"return find_data()\">
-                <select name=\"formlist\" id=\"formlist\">
-                  <option value=\"1\" selected>Current Student GPAs</option>
-                  <option value=\"2\">Students Per Advisor</option>
-                  <!--<option value=\"opel\">Opel</option>
-                      <option value=\"audi\">Audi</option>-->
-                </select>
+            <div class=\"form-group\">
+                <label for=\"form_id\">Select Graph:</label>
+                <form method=\"post\" id=\"form_id\" onchange=\"return find_data()\">
+                    <select name=\"formlist\" class=\"form-control\" id=\"formlist\">
+                      <option value=\"1\" selected>Current Student GPAs</option>
+                      <option value=\"2\">Students Per Advisor</option>
+                      <!--<option value=\"opel\">Opel</option>
+                          <option value=\"audi\">Audi</option>-->
+                    </select>
 
-             </form>
+                </form>
 
              <div id=\"gpaChart\" style=\"height:500px\"></div>
 
