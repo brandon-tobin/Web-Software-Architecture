@@ -103,10 +103,10 @@ function find_data(  )
                     },
                     xAxis: {
                         type: 'category',
-                        title: 'Advisors',
+                        title: 'Advisors'
                     },
                     yAxis: {
-                       // min: 0, max: 4,
+                        min: 0,
                         title: {
                             text: 'Number of Students'
                         },
