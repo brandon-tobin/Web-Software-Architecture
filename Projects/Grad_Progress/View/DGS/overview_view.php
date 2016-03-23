@@ -85,9 +85,7 @@ echo "
 
              </form>
 
-             <!--<div id=\"firstChart\" style=\"height:500px\"></div>-->
-
-             <div id=\"linechart\" style=\"height:500px\"></div>
+             <div id=\"gpaChart\" style=\"height:500px\"></div>
 
 
              <div id=\"content\"></div>

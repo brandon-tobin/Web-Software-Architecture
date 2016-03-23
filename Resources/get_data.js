@@ -57,10 +57,14 @@ function find_data(  )
         })
         .done( function ( data )
         {
+            var chartNum = data.substring(0, 1);
+
+            if (chartNum == 1)
+            {
                 var weightchart = new Highcharts.Chart({
                     chart: {
                         type: 'column',
-                        renderTo: 'linechart'
+                        renderTo: 'gpaChart'
                     },
                     title: {
                         text: 'GPAs',
@@ -92,10 +96,14 @@ function find_data(  )
                     }
                 });
 
-            weightchart.addSeries({
-                name: data.name,
-                data: data.data
-            });
+                weightchart.addSeries({
+                    name: data.name,
+                    data: data.data
+                });
+            }
+
+
+
         } )
         .fail( function ( text, options, err )
         {
