@@ -107,8 +107,7 @@ function find_data(  )
 }
 
 $(document).ready(function () {
-    ajaxcall();
-    setInterval(ajaxcall, 60000);
+
 
     $('#linechart').highcharts({
         chart: {type: 'column'},
