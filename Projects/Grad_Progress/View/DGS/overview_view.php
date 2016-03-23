@@ -75,7 +75,7 @@ echo "
 
             <h1>Statistical Charts</h1>
 
-             <form method=\"post\" id=\"form_id\" onchange=\"return find_data()\">
+             <form method=\"post\" id=\"form_id\" class =\"selectpicker\" onchange=\"return find_data()\">
                 <select name=\"formlist\" id=\"formlist\">
                   <option value=\"1\" selected>Current Student GPAs</option>
                   <option value=\"2\">Students Per Advisor</option>
