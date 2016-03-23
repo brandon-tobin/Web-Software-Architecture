@@ -97,10 +97,11 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     },
-                    series: [{
+                    series: [ data ]
+                    /*series: [{
                         "name": "GPAS",
                         "data": [data]
-                    }]
+                    }]*/
                 });
 
             //var jContent = $( "#linechart" );
