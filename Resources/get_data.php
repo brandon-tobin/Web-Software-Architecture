@@ -49,7 +49,8 @@ if ($formType == 'gpa')
         $db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        $query = "SELECT gpa FROM Students ORDER BY gpa ASC";
+        //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
+        $query = "select gpa, count(*) as count from Students group by gpa order by gpa asc";
         $statement = $db->prepare( $query );
         $statement->execute(  );
 
@@ -79,7 +80,9 @@ if ($formType == 'gpa')
         $gpa_chart_data->data = [];
         for ($i=0;$i<count($results);$i++)
         {
-            $gpa_chart_data->data [] = (float)$results[$i]['gpa'];
+            //$gpa_chart_data->data [] = (float)$results[$i]['gpa'];
+            //$rows[$i]=array($row['date'],$row['temp']);
+            $gpa_chart_data->data [] = array((float)$results[$i]['gpa'], (float)$results[$i]['count']);
         }
         sort( $gpa_chart_data->data );
         $gpa_chart_data = json_encode($gpa_chart_data);
