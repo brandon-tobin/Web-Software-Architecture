@@ -104,7 +104,7 @@ function find_data(  )
 
                 });
 
-            chart.addSeries({
+            weightchart.addSeries({
                 name: "GPAS",
                 data: data.data
             });
