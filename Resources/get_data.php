@@ -105,7 +105,7 @@ if ($formType == '2')
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
-        $query = "select name, count from Users, (select aid, count(*) as count from Advisors group by aid) as temp where Users.uid = temp.aid;";
+        $query = "select name, count from Users, (select aid, count(*) as count from Advisors group by aid) as temp where Users.uid = temp.aid";
         $statement = $db->prepare( $query );
         $statement->execute(  );
 
