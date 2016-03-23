@@ -61,14 +61,14 @@ if ($formType == 'gpa')
         //
         // GPA Column Chart
         //
-        $gpa_chart_data = new stdClass();
-        $gpa_chart_data->name = "Student GPAs";
-        $gpa_chart_data->data = [];
+        //$gpa_chart_data = new stdClass();
+        //$gpa_chart_data->name = "Student GPAs";
+        //$gpa_chart_data->data = [];
         for ($i=0;$i<count($results);$i++)
         {
-            $gpa_chart_data->data [] = (float)$results[$i]['gpa'];
+            $gpa_chart_data[] = (float)$results[$i]['gpa'];
         }
-        sort( $gpa_chart_data->data );
+        sort( $gpa_chart_data);
         $gpa_chart_data = json_encode($gpa_chart_data);
 
 
