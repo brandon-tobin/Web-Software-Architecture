@@ -31,7 +31,7 @@ function find_data(  )
             //url:  $("input[name=cause_error]").is(':checked') ? "asdf" : "get_data.php",
             url: "../../../../Resources/get_data.php",
             data: $('#form_id').serialize(),
-            dataType: "text",  		      // The type of data that is getting returned.
+            dataType: "json",  		      // The type of data that is getting returned.
 
             success: function(response)
             {
@@ -61,10 +61,7 @@ function find_data(  )
 
            // jContent.html( data );
 
-            data_series = data;
-
-            $.getJSON("../../../../Resources/get_data.php", function(gpa_data_series) {
-
+           // data_series = data;
 
                 //$('#linechart').highcharts({
                 var weightchart = new Highcharts.Chart({
@@ -100,9 +97,9 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     },
-                    series: gpa_data_series
+                    series: data
                 });
-            });
+
         } )
         .fail( function ( text, options, err )
         {
