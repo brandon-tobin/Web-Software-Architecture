@@ -100,7 +100,7 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     },
-                    series: chart_data
+                    series: [data]
                 });
 
         } )
