@@ -36,10 +36,12 @@ echo "
         <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
 
         <script type=\"text/javascript\" src=\"//code.jquery.com/jquery-1.9.1.js\"></script>
-        <script type=\"text/javascript\"    src=\"../../../../Resources/get_data.js\"></script>
+
 
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/api/js/jquery-1.11.3.min.js\"></script>
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/js/highcharts.src.js\"></script>
+
+        <script type=\"text/javascript\"    src=\"../../../../Resources/get_data.js\"></script>
 
 
 
@@ -78,7 +80,7 @@ echo "
                   <option value=\"gpa\" selected>Current Student GPAs</option>
                   <option value=\"advisor\">Advised Students Per Advisor</option>
                   <!--<option value=\"opel\">Opel</option>
-                  <option value=\"audi\">Audi</option>-->
+                      <option value=\"audi\">Audi</option>-->
                 </select>
 
              </form>
