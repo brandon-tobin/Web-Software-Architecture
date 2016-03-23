@@ -100,7 +100,7 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     },
-                    series: [data]
+                    series: [ {"name":"GPAS","data":[0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.8]}]
                 });
 
         } )
