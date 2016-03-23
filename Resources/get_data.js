@@ -97,7 +97,7 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     },
-                    series: [ data ]
+                    series: data
                 });
                // }
                 //    chart: {
