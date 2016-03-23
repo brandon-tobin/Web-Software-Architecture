@@ -24,7 +24,7 @@ function find_data(  )
             //url:  $("input[name=cause_error]").is(':checked') ? "asdf" : "get_data.php",
             url: "../../../../Resources/get_data.php",
             data: $('#form_id').serialize(),
-            dataType: "html",  		      // The type of data that is getting returned.
+            dataType: "text",  		      // The type of data that is getting returned.
 
             success: function(response)
             {
