@@ -49,7 +49,7 @@ echo "
 
         </head>
 
-        <body onload=\"return find_data()\">
+        <body onload=\"find_data()\">
 
         <div class=\"container-fluid\">
             <div class=\"row\">
