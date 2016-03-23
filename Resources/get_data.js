@@ -99,7 +99,10 @@ function find_data(  )
 
                 //$('#linechart').highcharts({
                 var weightchart = new Highcharts.Chart({
-                    chart: {type: 'column'},
+                    chart: {
+                        type: 'column',
+                        renderTo: "linechart"
+                    },
                     title: {
                         text: 'GPAs',
                         x: -20 //center
@@ -134,8 +137,8 @@ function find_data(  )
                     }]
                 });
 
-            var jContent = $( "#content" );
-            jContent.html(weightchart);
+            //var jContent = $( "#linechart" );
+            //jContent.html(weightchart);
 
         } )
         .fail( function ( text, options, err )
