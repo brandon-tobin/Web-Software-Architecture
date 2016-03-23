@@ -85,38 +85,41 @@ echo "
              <div id=\"content\"></div>
 
              <script>
-                   $('#linechart').highcharts({
-            chart: {type: 'column'},
-            title: {
-                text: 'GPAs',
-                x: -20 //center
-            },
-            subtitle: {
-                text: 'Source: Jim',
-                x: -20
-            },
-            xAxis: {
-                title: 'credit_hours',
-            },
-            yAxis: {
-                min: 0, max: 4,
-                title: {
-                    text: 'GPA'
-                },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0
-            },
-            series: ['0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.8,0.8,0.8,0.8,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,1,1,1,1,1,1,1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.4,1.4,1.4,1.4,1.4']}
-        });
+
+             $('#linechart').highcharts({
+      chart: {
+	plotBackgroundColor: null,
+	  plotBorderWidth: null,
+	  plotShadow: false,
+	  type: 'pie'
+	  },
+	title: {
+	text: 'Student Credit Hour Distribution'
+	  },
+	tooltip: {
+	pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	  },
+	plotOptions: {
+	pie: {
+	  allowPointSelect: true,
+	    cursor: 'pointer',
+	    dataLabels: {
+	    enabled: true,
+	      format: '<b>{point.name} </b>: {point.percentage:.1f} %',
+	      style: {
+	      color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		}
+	  }
+	}
+      },
+	series: [{
+	  name: 'Percentage',
+	    colorByPoint: true,
+	    data: [{\"name\":\"0-10\",\"y\":151},{\"name\":\"10-20\",\"y\":422},{\"name\":\"20-30\",\"y\":615},{\"name\":\"30-40\",\"y\":640},{\"name\":\"40-50\",\"y\":654},{\"name\":\"50-60\",\"y\":812},{\"name\":\"60-70\",\"y\":1113},{\"name\":\"70-80\",\"y\":1281},{\"name\":\"80-90\",\"y\":1024},{\"name\":\"90-100\",\"y\":685},{\"name\":\"100-110\",\"y\":390},{\"name\":\"110-120\",\"y\":211},{\"name\":\"120-130\",\"y\":109},{\"name\":\"130-140\",\"y\":66},{\"name\":\"140-150\",\"y\":36},{\"name\":\"150-160\",\"y\":20},{\"name\":\"160-170\",\"y\":12},{\"name\":\"170-180\",\"y\":11},{\"name\":\"180-190\",\"y\":7},{\"name\":\"190-200\",\"y\":37},]
+	    }]
+	});
+
+
         </script>
 
 
