@@ -95,7 +95,7 @@ function find_data(  )
                         renderTo: 'gpaChart'
                     },
                     title: {
-                        text: 'GPAs',
+                        text: 'Number of Students by Advisor',
                         x: -20 //center
                     },
                     subtitle: {
@@ -103,7 +103,8 @@ function find_data(  )
                         x: -20
                     },
                     xAxis: {
-                        title: 'credit_hours',
+                        type: 'category',
+                        title: 'Advisors',
                     },
                     yAxis: {
                         min: 0, max: 4,
