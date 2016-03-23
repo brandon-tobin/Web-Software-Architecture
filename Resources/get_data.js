@@ -99,10 +99,15 @@ function find_data(  )
                         align: 'right',
                         verticalAlign: 'middle',
                         borderWidth: 0
-                    },
-                    series: [ {"name":"GPAS","data":[0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.8]}]
+                    }
+                    //series: [ {"name":"GPAS","data":[0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.8]}]
+
                 });
 
+            chart.addSeries({
+                name: "GPAS",
+                data: data.data
+            });
         } )
         .fail( function ( text, options, err )
         {
