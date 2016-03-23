@@ -232,17 +232,7 @@ echo "
              * What to do no matter what
              *
              */
-            console.log('Jim, cleaning up');
-        } );
-
-    // if this
-    // disable a page submit
-    //return false;
-
-//$(document).ready(function () {
-   // find_data();
-
-        $('#linechart').highcharts({
+             $('#linechart').highcharts({
         chart: {type: 'column'},
         title: {
             text: 'GPAs',
@@ -274,6 +264,17 @@ echo "
         },
         series: [{\"name\": \"GPAS\", \"data\": data_series}]
     });
+            console.log('Jim, cleaning up');
+        } );
+
+    // if this
+    // disable a page submit
+    //return false;
+
+//$(document).ready(function () {
+   // find_data();
+
+
 //});
 }
 </script>
