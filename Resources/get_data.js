@@ -65,49 +65,64 @@ function find_data(  )
 
            // var chart_data = jQuery.parseJSON(data);
 
-
-            //$('#linechart').highcharts({
-                var weightchart = new Highcharts.Chart({
-                    chart: {
-                        type: 'column',
-                        renderTo: 'linechart'
-                    },
-                    title: {
-                        text: 'GPAs',
-                        x: -20 //center
-                    },
-                    subtitle: {
-                        text: 'Source: Jim',
-                        x: -20
-                    },
-                    xAxis: {
-                        title: 'credit_hours',
-                    },
-                    yAxis: {
-                        min: 0, max: 4,
-                        title: {
-                            text: 'GPA'
-                        },
-                        plotLines: [{
-                            value: 0,
-                            width: 1,
-                            color: '#808080'
-                        }]
-                    },
-                    legend: {
-                        layout: 'vertical',
-                        align: 'right',
-                        verticalAlign: 'middle',
-                        borderWidth: 0
-                    }
-                    //series: [ {"name":"GPAS","data":[0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.8]}]
-
+            $("#temp").highcharts(
+                {
+                    title: { text: 'Hello' },
+                    series: [{ name: "GNP", data: [1, 2, 3, 4, 3, 2, 1]}]
                 });
 
-            weightchart.addSeries({
+            var gpaChart = new Highcharts.Chart({
+                title: { text: 'Student GPAs'}
+            });
+
+            gpaChart.addSeries({
                 name: data.name,
                 data: data.data
             });
+
+
+            //$('#linechart').highcharts({
+            //    var weightchart = new Highcharts.Chart({
+            //        chart: {
+            //            type: 'column',
+            //            renderTo: 'linechart'
+            //        },
+            //        title: {
+            //            text: 'GPAs',
+            //            x: -20 //center
+            //        },
+            //        subtitle: {
+            //            text: 'Source: Jim',
+            //            x: -20
+            //        },
+            //        xAxis: {
+            //            title: 'credit_hours',
+            //        },
+            //        yAxis: {
+            //            min: 0, max: 4,
+            //            title: {
+            //                text: 'GPA'
+            //            },
+            //            plotLines: [{
+            //                value: 0,
+            //                width: 1,
+            //                color: '#808080'
+            //            }]
+            //        },
+            //        legend: {
+            //            layout: 'vertical',
+            //            align: 'right',
+            //            verticalAlign: 'middle',
+            //            borderWidth: 0
+            //        }
+            //        //series: [ {"name":"GPAS","data":[0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.8]}]
+            //
+            //    });
+            //
+            //weightchart.addSeries({
+            //    name: data.name,
+            //    data: data.data
+            //});
         } )
         .fail( function ( text, options, err )
         {
