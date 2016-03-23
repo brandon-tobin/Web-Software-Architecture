@@ -72,6 +72,7 @@ function find_data(  )
                 });
 
             var gpaChart = new Highcharts.Chart({
+                chart: { renderTo: 'linechart'},
                 title: { text: 'Student GPAs'}
             });
 
