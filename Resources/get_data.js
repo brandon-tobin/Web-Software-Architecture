@@ -23,7 +23,7 @@
 function find_data(  )
 {
 
-    var data_series = {};
+    var chartNum;
 
     $.ajax(
         {
@@ -52,13 +52,13 @@ function find_data(  )
                 //    alert ( "prepping AJAX call with data: " + $('#form_id').serialize() );
                 //}
 
+                chartNum = $('#formlist').val();
+
             },
 
         })
         .done( function ( data )
         {
-            var chartNum = data.substring(0, 1);
-
             if (chartNum == 1)
             {
                 var weightchart = new Highcharts.Chart({
