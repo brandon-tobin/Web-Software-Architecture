@@ -107,7 +107,7 @@ function find_data(  )
 }
 
 $(document).ready(function () {
-
+    find_data();
 
     $('#linechart').highcharts({
         chart: {type: 'column'},
