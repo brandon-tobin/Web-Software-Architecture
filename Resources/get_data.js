@@ -23,7 +23,7 @@
 function find_data(  )
 {
 
-    var chartNum;
+    var data_series = {};
 
     $.ajax(
         {
@@ -52,15 +52,13 @@ function find_data(  )
                 //    alert ( "prepping AJAX call with data: " + $('#form_id').serialize() );
                 //}
 
-                chartNum = $('#formlist').val();
-
             },
 
         })
         .done( function ( data )
         {
-            if (chartNum == 1)
-            {
+
+
                 var weightchart = new Highcharts.Chart({
                     chart: {
                         type: 'column',
@@ -96,14 +94,10 @@ function find_data(  )
                     }
                 });
 
-                weightchart.addSeries({
-                    name: data.name,
-                    data: data.data
-                });
-            }
-
-
-
+            weightchart.addSeries({
+                name: data.name,
+                data: data.data
+            });
         } )
         .fail( function ( text, options, err )
         {
