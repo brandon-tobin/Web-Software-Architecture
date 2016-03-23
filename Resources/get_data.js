@@ -61,16 +61,16 @@ function find_data(  )
             //    alert ( "Data Rerturned Successfully!" );
             //}
 
-           // var jContent = $( "#content" ); // put data here
+            var jContent = $( "#content" ); // put data here
 
 
-            $("#content").html(data);
-            $("#content").find("script").each(function(i) {
-                eval($(this).text());
+            //$("#content").html(data);
+           // $("#content").find("script").each(function(i) {
+             //   eval($(this).text());
 
                // jContent.script(data);
 
-            //jContent.html( data );
+            jContent.html( data );
 
         } )
         .fail( function ( text, options, err )
@@ -136,4 +136,4 @@ function find_data(  )
             },
             series: [data]
         });
-    }
+    });

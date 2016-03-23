@@ -72,8 +72,7 @@ if ($formType == 'gpa')
         $gpa_chart_data = json_encode($gpa_chart_data);
 
 
-        echo "
-       ";
+        echo $gpa_chart_data;
 
        // return $return;
 
