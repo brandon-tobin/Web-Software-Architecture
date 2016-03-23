@@ -85,7 +85,7 @@ echo "
              <div id=\"content\"></div>
 
              <script>
-                   $('#columnchart').highcharts({
+                   $('#linechart').highcharts({
             chart: {type: 'column'},
             title: {
                 text: 'GPAs',
