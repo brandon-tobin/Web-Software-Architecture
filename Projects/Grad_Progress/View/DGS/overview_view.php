@@ -239,8 +239,8 @@ echo "
     // disable a page submit
     //return false;
 
-$(document).ready(function () {
-    find_data();
+//$(document).ready(function () {
+   // find_data();
 
         $('#linechart').highcharts({
         chart: {type: 'column'},
@@ -274,7 +274,7 @@ $(document).ready(function () {
         },
         series: [{\"name\": \"GPAS\", \"data\": data_series}]
     });
-});
+//});
 }
 </script>
 
