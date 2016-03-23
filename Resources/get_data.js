@@ -91,7 +91,7 @@ function find_data(  )
             if (chartNum == 2) {
                 var advisorChart = new Highcharts.Chart({
                     chart: {
-                        type: 'column',
+                        type: 'line',
                         renderTo: 'gpaChart'
                     },
                     title: {
