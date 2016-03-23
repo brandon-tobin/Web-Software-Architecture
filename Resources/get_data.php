@@ -72,7 +72,7 @@ if ($formType == 'gpa')
         $gpa_chart_data = json_encode($gpa_chart_data);
 
 
-        $return = "
+        echo "
         $('#columnchart').highcharts({
     chart: { type:'column'},
     title: {
@@ -107,7 +107,7 @@ if ($formType == 'gpa')
       });
       ";
 
-        return $return;
+       // return $return;
 
 //        echo "
 //$('#linechart').highcharts({
