@@ -77,8 +77,8 @@ echo "
 
              <form method=\"post\" id=\"form_id\" onchange=\"return find_data()\">
                 <select name=\"formlist\" id=\"formlist\">
-                  <option value=\"gpa\" selected>Current Student GPAs</option>
-                  <option value=\"advisor\">Students Per Advisor</option>
+                  <option value=\"1\" selected>Current Student GPAs</option>
+                  <option value=\"2\">Students Per Advisor</option>
                   <!--<option value=\"opel\">Opel</option>
                       <option value=\"audi\">Audi</option>-->
                 </select>
