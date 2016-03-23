@@ -137,7 +137,7 @@ echo "
 $(document).ready(function () {
     find_data();
 
-    $('#linechart').highcharts({
+        $('#linechart').highcharts({
         chart: {type: 'column'},
         title: {
             text: 'GPAs',
