@@ -41,14 +41,13 @@ echo "
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/api/js/jquery-1.11.3.min.js\"></script>
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/js/highcharts.src.js\"></script>
 
-        <script>
+        <script type='text/javascript'>
         function find_data(  )
 {
 
     $.ajax(
         {
             type:'POST',
-            //url:  $(\"input[name=cause_error]\").is(':checked') ? \"asdf\" : \"get_data.php\",
             url: \"../../../../Resources/get_data.php\",
             data: $('#form_id').serialize(),
             dataType: \"text\",  		      // The type of data that is getting returned.
