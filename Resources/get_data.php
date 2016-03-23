@@ -107,7 +107,7 @@ if ($formType == 'gpa')
       });
       ";
 
-        return json.loads(ret);
+        return $return;
 
 //        echo "
 //$('#linechart').highcharts({
