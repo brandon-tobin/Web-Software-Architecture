@@ -63,7 +63,10 @@ function find_data(  )
 
            // data_series = data;
 
-                //$('#linechart').highcharts({
+            var chart_data = jQuery.parseJSON(data);
+
+
+            //$('#linechart').highcharts({
                 var weightchart = new Highcharts.Chart({
                     chart: {
                         type: 'column',
@@ -97,7 +100,7 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     },
-                    series: data
+                    series: chart_data
                 });
 
         } )
