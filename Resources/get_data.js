@@ -57,32 +57,6 @@ function find_data(  )
         })
         .done( function ( data )
         {
-            // jContent.script(data);
-
-           // jContent.html( data );
-
-           // data_series = data;
-
-           // var chart_data = jQuery.parseJSON(data);
-
-            //$("#temp").highcharts(
-            //    {
-            //        title: { text: 'Hello' },
-            //        series: [{ name: "GNP", data: [1, 2, 3, 4, 3, 2, 1]}]
-            //    });
-            //
-            //var gpaChart = new Highcharts.Chart({
-            //    chart: { renderTo: 'linechart'},
-            //    title: { text: 'Student GPAs'}
-            //});
-            //
-            //gpaChart.addSeries({
-            //    name: data.name,
-            //    data: data.data
-            //});
-
-
-           // $('#linechart').highcharts({
                 var weightchart = new Highcharts.Chart({
                     chart: {
                         type: 'column',
@@ -116,8 +90,6 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     }
-                    //series: [ {"name":"GPAS","data":[0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.8]}]
-
                 });
 
             weightchart.addSeries({

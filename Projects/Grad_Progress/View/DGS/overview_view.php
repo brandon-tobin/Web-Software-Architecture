@@ -49,7 +49,7 @@ echo "
 
         </head>
 
-        <body>
+        <body onload=\"return find_data()\">
 
         <div class=\"container-fluid\">
             <div class=\"row\">
@@ -84,6 +84,8 @@ echo "
                 </select>
 
              </form>
+
+             <!--<div id=\"firstChart\" style=\"height:500px\"></div>-->
 
              <div id=\"linechart\" style=\"height:500px\"></div>
 
