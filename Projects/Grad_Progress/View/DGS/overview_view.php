@@ -43,7 +43,7 @@ echo "
 
         <script type='text/javascript'>
 
-        var data_series;
+        var data_series = {};
 
         function find_data(  )
 {
