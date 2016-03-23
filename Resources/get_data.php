@@ -28,7 +28,7 @@ $formType = trim($_REQUEST['formlist']);
 
 error_log("TOBIN FORMTYPE = " . $formType );
 
-if ($formType == 'gpa')
+if ($formType == '1')
 {
     //echo "<p> " . htmlspecialchars("GETTING GPA CHART!") . "</p>";
 
