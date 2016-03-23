@@ -42,6 +42,9 @@ echo "
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/js/highcharts.src.js\"></script>
 
         <script type='text/javascript'>
+
+        var data_series;
+
         function find_data(  )
 {
 
