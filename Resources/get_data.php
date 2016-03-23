@@ -85,9 +85,9 @@ if ($formType == 'gpa')
             $gpa_chart_data->data [] = array((float)$results[$i]['gpa'], (float)$results[$i]['count']);
         }
         sort( $gpa_chart_data->data );
-        $gpa_chart_data = json_encode($gpa_chart_data);
+        $gpa_chart_data = json_encode("1".$gpa_chart_data);
 
-        print "1" . $gpa_chart_data;
+        print $gpa_chart_data;
 
        // return $return;
 
