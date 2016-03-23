@@ -65,10 +65,7 @@ function find_data(  )
 
                 //$('#linechart').highcharts({
                 var weightchart = new Highcharts.Chart({
-                    chart: {
-                        type: 'column',
-                        renderTo: "linechart"
-                    },
+                    chart: { type:'column'},
                     title: {
                         text: 'GPAs',
                         x: -20 //center
@@ -81,7 +78,7 @@ function find_data(  )
                         title: 'credit_hours',
                     },
                     yAxis: {
-                        min: 0, max: 4,
+                        min:0,max:4,
                         title: {
                             text: 'GPA'
                         },
@@ -98,11 +95,46 @@ function find_data(  )
                         borderWidth: 0
                     },
                     series: [ data ]
-                    /*series: [{
-                        "name": "GPAS",
-                        "data": [data]
-                    }]*/
                 });
+               // }
+                //    chart: {
+                //        type: 'column',
+                //        renderTo: "linechart"
+                //    },
+                //    title: {
+                //        text: 'GPAs',
+                //        x: -20 //center
+                //    },
+                //    subtitle: {
+                //        text: 'Source: Jim',
+                //        x: -20
+                //    },
+                //    xAxis: {
+                //        title: 'credit_hours',
+                //    },
+                //    yAxis: {
+                //        min: 0, max: 4,
+                //        title: {
+                //            text: 'GPA'
+                //        },
+                //        plotLines: [{
+                //            value: 0,
+                //            width: 1,
+                //            color: '#808080'
+                //        }]
+                //    },
+                //    legend: {
+                //        layout: 'vertical',
+                //        align: 'right',
+                //        verticalAlign: 'middle',
+                //        borderWidth: 0
+                //    },
+                //    series: [ data ]
+                //    /*series: [{
+                //        "name": "GPAS",
+                //        "data": [data]
+                //    }]*/
+                //});
 
             //var jContent = $( "#linechart" );
             //jContent.html(weightchart);
