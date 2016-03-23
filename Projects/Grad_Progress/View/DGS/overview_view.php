@@ -35,8 +35,8 @@ echo "
         <!-- Bootstrap Core CSS -->
         <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
 
-        <script src=\"//code.jquery.com/jquery-1.9.1.js\"></script>
-        <script src=\"../../../../Resources/get_data.js\"></script>
+        <script type=\"text/javascript\" src=\"//code.jquery.com/jquery-1.9.1.js\"></script>
+        <script type=\"text/javascript\" src=\"../../../../Resources/get_data.js\"></script>
 
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/api/js/jquery-1.11.3.min.js\"></script>
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/js/highcharts.src.js\"></script>
