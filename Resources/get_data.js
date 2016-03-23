@@ -99,7 +99,7 @@ function find_data(  )
                     },
                     series: [{
                         "name": "GPAS",
-                        "data": [data]
+                        "data": data
                     }]
                 });
 
