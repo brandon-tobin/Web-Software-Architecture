@@ -87,6 +87,8 @@ echo "
 
                 </form>
 
+            <br />
+
              <div id=\"gpaChart\" style=\"height:500px\"></div>
 
 
