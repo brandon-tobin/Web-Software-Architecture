@@ -84,7 +84,7 @@ if ($formType == 'gpa')
         sort( $gpa_chart_data->data );
         $gpa_chart_data = json_encode($gpa_chart_data);
 
-        return $gpa_chart_data;
+        print $gpa_chart_data;
 
        // return $return;
 

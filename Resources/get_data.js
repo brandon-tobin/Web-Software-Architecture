@@ -63,10 +63,13 @@ function find_data(  )
 
             data_series = data;
 
+            $.getJSON("../../../../Resources/get_data.php", function(data_series) {
+
+
                 //$('#linechart').highcharts({
                 var weightchart = new Highcharts.Chart({
                     chart: {
-                        type:'column',
+                        type: 'column',
                         renderTo: 'linechart'
                     },
                     title: {
@@ -81,7 +84,7 @@ function find_data(  )
                         title: 'credit_hours',
                     },
                     yAxis: {
-                        min:0,max:4,
+                        min: 0, max: 4,
                         title: {
                             text: 'GPA'
                         },
@@ -97,8 +100,9 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     },
-                    series: data
+                    series: data_series
                 });
+            });
         } )
         .fail( function ( text, options, err )
         {
