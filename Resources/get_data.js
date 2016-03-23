@@ -63,7 +63,7 @@ function find_data(  )
 
             data_series = data;
 
-            $.getJSON("../../../../Resources/get_data.php", function(data_series) {
+            $.getJSON("../../../../Resources/get_data.php", function(gpa_data_series) {
 
 
                 //$('#linechart').highcharts({
@@ -100,7 +100,7 @@ function find_data(  )
                         verticalAlign: 'middle',
                         borderWidth: 0
                     },
-                    series: data_series
+                    series: gpa_data_series
                 });
             });
         } )
