@@ -123,7 +123,7 @@ if ($formType == '2')
         $gpa_chart_data->data = [];
         for ($i=0;$i<count($results);$i++)
         {
-            $gpa_chart_data->data [] = array((float)$results[$i]['name'], (float)$results[$i]['count']);
+            $gpa_chart_data->data [] = array($results[$i]['name'], $results[$i]['count']);
         }
         sort( $gpa_chart_data->data );
         $gpa_chart_data = json_encode($gpa_chart_data);
