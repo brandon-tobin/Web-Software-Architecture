@@ -101,7 +101,7 @@ echo "
 
            // jContent.html( data );
 
-            data_series[0].data.push(data);
+            data_series[0].push(data);
 
 
 
