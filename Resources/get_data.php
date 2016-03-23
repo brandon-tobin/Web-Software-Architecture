@@ -73,6 +73,7 @@ if ($formType == 'gpa')
 
 
         echo "
+        <script>
         $('#columnchart').highcharts({
     chart: { type:'column'},
     title: {
@@ -105,7 +106,7 @@ if ($formType == 'gpa')
         },
       series: [ $gpa_chart_data ]
       });
-      ";
+      </script>";
 
        // return $return;
 
