@@ -41,6 +41,112 @@ echo "
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/api/js/jquery-1.11.3.min.js\"></script>
         <script type=\"text/javascript\" src=\"../../../../Resources/Highcharts/js/highcharts.src.js\"></script>
 
+
+
+
+
+        </head>
+
+        <body>
+
+        <div class=\"container-fluid\">
+            <div class=\"row\">
+                <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
+                <div class=\"col-sm-12 col-md-10 col-lg-8\">
+
+";
+
+
+        echo (getHeader());
+
+        echo (getNavigation());
+
+        echo (getNavBar($_SESSION['roles']));
+
+        echo "
+
+            <!-- Breadcrumb -->
+            <ol class=\"breadcrumb\">
+                <li><a href=\"../Account/account_home.php\">Account Home</a></li>
+                <li class=\"active\">DGS Overview</li>
+            </ol>
+
+            <h1>Statistical Charts</h1>
+
+             <form method=\"post\" id=\"form_id\" onchange=\"return find_data()\">
+                <select name=\"formlist\" id=\"formlist\">
+                  <option value=\"gpa\" selected>Current Student GPAs</option>
+                  <option value=\"advisor\">Advised Students Per Advisor</option>
+                  <!--<option value=\"opel\">Opel</option>
+                  <option value=\"audi\">Audi</option>-->
+                </select>
+
+             </form>
+
+             <div id=\"linechart\" style=\"height:500px\"></div>
+
+
+             <div id=\"content\"></div>
+
+
+            <h1>Graduate Advisors</h1>
+
+            <!-- Table containing advisors -->
+            <div class=\"table-responsive\">
+                <table class=\"table table-striped table-bordered table-condensed\">
+                    <tr>
+                        <th>Name:</th>
+                        <th>Profile:</th>
+                    </tr>";
+
+                    // Echo out all advisors
+                    foreach ($dgs->advisors as $row)
+                    {
+                        echo "<tr>";
+                        foreach ($row as $value)
+                        {
+                            echo "<td>$value</td>";
+                        }
+                        echo "</tr>";
+                    }
+
+                    echo "
+
+                </table>
+            </div>
+
+            <h1>Graduate Students</h1>
+
+            <!-- Table containing advisors -->
+            <div class=\"table-responsive\">
+                <table class=\"table table-striped table-bordered table-condensed\">
+                    <tr>
+                        <th>Name:</th>
+                        <th>Profile:</th>
+                    </tr>";
+
+                    // Echo out all Students
+                    foreach ($dgs->students_arr as $row)
+                    {
+                        echo "<tr>";
+                        foreach ($row as $value)
+                        {
+                            echo "<td>$value</td>";
+                        }
+                        echo "</tr>";
+                    }
+
+                    echo "
+
+                </table>
+            </div>";
+
+        echo "
+
+         </div> <!-- Ending column -->
+         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
+    </div> <!-- Ending Row -->
+
         <script type='text/javascript'>
 
         var data_series = {};
@@ -174,107 +280,8 @@ $(document).ready(function () {
 
 
 
-        </head>
-
-        <body>
-
-        <div class=\"container-fluid\">
-            <div class=\"row\">
-                <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
-                <div class=\"col-sm-12 col-md-10 col-lg-8\">
-
-";
 
 
-        echo (getHeader());
-
-        echo (getNavigation());
-
-        echo (getNavBar($_SESSION['roles']));
-
-        echo "
-
-            <!-- Breadcrumb -->
-            <ol class=\"breadcrumb\">
-                <li><a href=\"../Account/account_home.php\">Account Home</a></li>
-                <li class=\"active\">DGS Overview</li>
-            </ol>
-
-            <h1>Statistical Charts</h1>
-
-             <form method=\"post\" id=\"form_id\" onchange=\"return find_data()\">
-                <select name=\"formlist\" id=\"formlist\">
-                  <option value=\"gpa\" selected>Current Student GPAs</option>
-                  <option value=\"advisor\">Advised Students Per Advisor</option>
-                  <!--<option value=\"opel\">Opel</option>
-                  <option value=\"audi\">Audi</option>-->
-                </select>
-
-             </form>
-
-             <div id=\"linechart\" style=\"height:500px\"></div>
-
-
-             <div id=\"content\"></div>
-
-
-            <h1>Graduate Advisors</h1>
-
-            <!-- Table containing advisors -->
-            <div class=\"table-responsive\">
-                <table class=\"table table-striped table-bordered table-condensed\">
-                    <tr>
-                        <th>Name:</th>
-                        <th>Profile:</th>
-                    </tr>";
-
-                    // Echo out all advisors
-                    foreach ($dgs->advisors as $row)
-                    {
-                        echo "<tr>";
-                        foreach ($row as $value)
-                        {
-                            echo "<td>$value</td>";
-                        }
-                        echo "</tr>";
-                    }
-
-                    echo "
-
-                </table>
-            </div>
-
-            <h1>Graduate Students</h1>
-
-            <!-- Table containing advisors -->
-            <div class=\"table-responsive\">
-                <table class=\"table table-striped table-bordered table-condensed\">
-                    <tr>
-                        <th>Name:</th>
-                        <th>Profile:</th>
-                    </tr>";
-
-                    // Echo out all Students
-                    foreach ($dgs->students_arr as $row)
-                    {
-                        echo "<tr>";
-                        foreach ($row as $value)
-                        {
-                            echo "<td>$value</td>";
-                        }
-                        echo "</tr>";
-                    }
-
-                    echo "
-
-                </table>
-            </div>";
-
-        echo "
-
-         </div> <!-- Ending column -->
-         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
-    </div> <!-- Ending Row -->
 
 
         <!-- Chart Code -->
