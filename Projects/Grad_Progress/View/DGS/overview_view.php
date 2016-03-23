@@ -81,8 +81,8 @@ echo "
 
              <div id=\"linechart\" style=\"height:500px\"></div>
 
-             <script id=\"content\"></script>
-             <!--<div id=\"content\"></div>-->
+
+             <div id=\"content\"></div>
 
             <h1>Graduate Advisors</h1>
 
