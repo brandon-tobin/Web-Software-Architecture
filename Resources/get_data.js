@@ -18,6 +18,8 @@
 function find_data(  )
 {
 
+    var data_series = {};
+
     $.ajax(
         {
             type:'POST',
@@ -72,10 +74,40 @@ function find_data(  )
 
            // jContent.html( data );
 
-            data_series[0].data.push(data);
+            data_series = data;
 
-
-
+            $('#linechart').highcharts({
+                chart: {type: 'column'},
+                title: {
+                    text: 'GPAs',
+                    x: -20 //center
+                },
+                subtitle: {
+                    text: 'Source: Jim',
+                    x: -20
+                },
+                xAxis: {
+                    title: 'credit_hours',
+                },
+                yAxis: {
+                    min: 0, max: 4,
+                    title: {
+                        text: 'GPA'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: [{"name": "GPAS", "data": data_series}]
+            });
 
         } )
         .fail( function ( text, options, err )
@@ -106,42 +138,42 @@ function find_data(  )
     //return false;
 }
 
-$(document).ready(function () {
-    find_data();
-
-    $('#linechart').highcharts({
-        chart: {type: 'column'},
-        title: {
-            text: 'GPAs',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Source: Jim',
-            x: -20
-        },
-        xAxis: {
-            title: 'credit_hours',
-        },
-        yAxis: {
-            min: 0, max: 4,
-            title: {
-                text: 'GPA'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{"name": "GPAS", "data": data_series}]
-    });
-});
+//$(document).ready(function () {
+//    find_data();
+//
+//    $('#linechart').highcharts({
+//        chart: {type: 'column'},
+//        title: {
+//            text: 'GPAs',
+//            x: -20 //center
+//        },
+//        subtitle: {
+//            text: 'Source: Jim',
+//            x: -20
+//        },
+//        xAxis: {
+//            title: 'credit_hours',
+//        },
+//        yAxis: {
+//            min: 0, max: 4,
+//            title: {
+//                text: 'GPA'
+//            },
+//            plotLines: [{
+//                value: 0,
+//                width: 1,
+//                color: '#808080'
+//            }]
+//        },
+//        legend: {
+//            layout: 'vertical',
+//            align: 'right',
+//            verticalAlign: 'middle',
+//            borderWidth: 0
+//        },
+//        series: [{"name": "GPAS", "data": data_series}]
+//    });
+//});
 
 
     //$(document).ready(function() {
