@@ -65,7 +65,10 @@ function find_data(  )
 
                 //$('#linechart').highcharts({
                 var weightchart = new Highcharts.Chart({
-                    chart: { type:'column'},
+                    chart: {
+                        type:'column',
+                        renderTo: 'linechart'
+                    },
                     title: {
                         text: 'GPAs',
                         x: -20 //center
