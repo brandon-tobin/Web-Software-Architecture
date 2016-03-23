@@ -84,6 +84,49 @@ echo "
 
              <div id=\"content\"></div>
 
+             <script>
+                   $('#columnchart').highcharts({
+            chart: {type: 'column'},
+            title: {
+                text: 'GPAs',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Source: Jim',
+                x: -20
+            },
+            xAxis: {
+                title: 'credit_hours',
+            },
+            yAxis: {
+                min: 0, max: 4,
+                title: {
+                    text: 'GPA'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: ['0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.8,0.8,0.8,0.8,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,1,1,1,1,1,1,1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.4,1.4,1.4,1.4,1.4']}
+        });
+        </script>
+
+
+
+
+
+
+
+
+
             <h1>Graduate Advisors</h1>
 
             <!-- Table containing advisors -->
