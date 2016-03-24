@@ -57,11 +57,12 @@ function find_data(  )
                         x: -20 //center
                     },
                     subtitle: {
-                        text: 'Source: Jim',
                         x: -20
                     },
                     xAxis: {
-                        title: 'GPAs',
+                        title: {
+                            text: 'GPAs'
+                        }
                     },
                     yAxis: {
                         min: 0,
