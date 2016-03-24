@@ -115,7 +115,7 @@ function find_data(  )
                         },
                         plotLines: [{
                             value: 0,
-                            width: 1,
+                            width: 3,
                             color: '#C43737'
                         }]
                     },
