@@ -53,7 +53,7 @@ function find_data(  )
                         renderTo: 'gpaChart'
                     },
                     title: {
-                        text: 'GPAs',
+                        text: 'Student GPAs',
                         x: -20 //center
                     },
                     subtitle: {
@@ -103,8 +103,10 @@ function find_data(  )
                         x: -20
                     },
                     xAxis: {
-                        type: 'category',
-                        title: 'Advisors'
+                        title: {
+                            text: 'Advisors'
+                        },
+                        type: 'category'
                     },
                     yAxis: {
                         min: 0,
