@@ -148,23 +148,23 @@ function find_data(  )
                     subtitle: {
                         x: -20
                     },
-                    xAxis: {
-                        title: {
-                            text: 'Advisors'
-                        },
-                        type: 'category'
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Number of Students'
-                        },
-                        plotLines: [{
-                            value: 0,
-                            width: 1,
-                            color: '#808080'
-                        }]
-                    },
+                    //xAxis: {
+                    //    title: {
+                    //        text: 'Advisors'
+                    //    },
+                    //    type: 'category'
+                    //},
+                    //yAxis: {
+                    //    min: 0,
+                    //    title: {
+                    //        text: 'Number of Students'
+                    //    },
+                    //    plotLines: [{
+                    //        value: 0,
+                    //        width: 1,
+                    //        color: '#808080'
+                    //    }]
+                    //},
                     legend: {
                         layout: 'vertical',
                         align: 'right',
