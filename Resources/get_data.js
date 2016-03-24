@@ -116,7 +116,7 @@ function find_data(  )
                         plotLines: [{
                             value: 0,
                             width: 1,
-                            color: '#c43737'
+                            color: '#C43737'
                         }]
                     },
                     legend: {
