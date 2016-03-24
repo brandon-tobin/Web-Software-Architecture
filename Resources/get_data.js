@@ -165,12 +165,12 @@ function find_data(  )
                     //        color: '#808080'
                     //    }]
                     //},
-                    legend: {
-                        layout: 'vertical',
-                        align: 'right',
-                        verticalAlign: 'middle',
-                        borderWidth: 0
-                    }
+                    //legend: {
+                    //    layout: 'vertical',
+                    //    align: 'right',
+                    //    verticalAlign: 'middle',
+                    //    borderWidth: 0
+                    //}
                 });
 
                 studentCompletionChart.addSeries({
