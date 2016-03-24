@@ -144,10 +144,10 @@ function find_data(  )
                     title: {
                         text: 'Number of Activities Students Have Completed',
                         x: -20 //center
-                    },
-                    subtitle: {
-                        x: -20
-                    },
+                    }
+                    //subtitle: {
+                    //    x: -20
+                    //},
                     //xAxis: {
                     //    title: {
                     //        text: 'Advisors'
