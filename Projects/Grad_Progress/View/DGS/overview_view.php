@@ -75,6 +75,7 @@ echo "
 
             <h1>Statistical Charts</h1>
 
+            <!-- Get Form For Chart Selection -->
             <div class=\"form-group\">
                 <label for=\"form_id\">Select Graph:</label>
                 <form method=\"post\" id=\"form_id\" onchange=\"return find_data()\">
@@ -88,6 +89,7 @@ echo "
 
             <br />
 
+             <!-- Div for displaying chart returned by AJAX -->
              <div id=\"chart\" style=\"height:500px\"></div>
 
             <br />

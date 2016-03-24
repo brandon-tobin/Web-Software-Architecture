@@ -2,10 +2,10 @@
 
 /**
  *
- *  Author: H. James de St. Germain
- *  Date:   Spring 2014
+ *  Author: Brandon Tobin
+ *  Date:   Spring 2016
  *
- *  Return something for use by ajax call
+ *  Returns JSON objects containing chart data
  *
  */
 
@@ -22,16 +22,12 @@ if($verify_ajax &&
     die();
 }
 
-//session_start();
-
 $formType = trim($_REQUEST['formlist']);
 
-error_log("TOBIN FORMTYPE = " . $formType );
-
+// Check to see if the selected chart is the GPA Column Chart
+// If so, get the required data for the chart
 if ($formType == '1')
 {
-    //echo "<p> " . htmlspecialchars("GETTING GPA CHART!") . "</p>";
-
     $server_name  = 'localhost';
     $db_user_name = 'Grad_Application';
     $db_password  = '173620901';
@@ -85,6 +81,8 @@ if ($formType == '1')
     }
 }
 
+// Check to see if the selected chart is the Advisor Student Count Chart
+// If so, get the required data for the chart
 if ($formType == '2')
 {
     $server_name  = 'localhost';
@@ -140,6 +138,8 @@ if ($formType == '2')
     }
 }
 
+// Check to see if the selected chart is the Student Activity Completion Chart
+// If so, get the required data for the chart
 if ($formType == '3') {
     $server_name = 'localhost';
     $db_user_name = 'Grad_Application';

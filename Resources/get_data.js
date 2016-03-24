@@ -1,13 +1,9 @@
 /**
  *
- *  Author: H. James de St. Germain
+ *  Author: Brandon Tobin
  *  Date:   Spring 2016
  *
  *  Make an AJAX request for data using the new jquery:
- *
- *    done and fail and always
- *
- *  deferred function syntax
  *
  */
 
@@ -22,16 +18,15 @@ function find_data(  )
     $.ajax(
         {
             type:'POST',
-            //url:  $("input[name=cause_error]").is(':checked') ? "asdf" : "get_data.php",
             url: "../../../../Resources/get_data.php",
             data: $('#form_id').serialize(),
             dataType: "json",  		      // The type of data that is getting returned.
 
-            success: function(response)
-            {
-                // note: this function should be removed and use only the done function below
-                console.log("success function");
-            },
+            //success: function(response)
+            //{
+            //    // note: this function should be removed and use only the done function below
+            //    console.log("success function");
+            //},
 
             /**
              * What to do before the ajax request is sent. Perhaps gather
@@ -162,11 +157,10 @@ function find_data(  )
              */
             // something went wrong
             var jContent = $( "#content" );
-            //jContent.html( "<h2>Error - Only a programmer can fix this!! </h3>"  );
             jContent.html(text + "   " + options +"   " + err);
-            console.log('Jim, error message: ' + text );
-            console.log('Jim, error message: ' + options );
-            console.log('Jim, error message: ' + err);
+            console.log('Tobin, error message: ' + text );
+            console.log('Tobin, error message: ' + options );
+            console.log('Tobin, error message: ' + err);
         } )
         .always( function ( )
         {
@@ -174,10 +168,6 @@ function find_data(  )
              * What to do no matter what
              *
              */
-            console.log('Jim, cleaning up');
+            console.log('Tobin, cleaning up');
         } );
-
-    // if this
-    // disable a page submit
-    //return false;
 }
