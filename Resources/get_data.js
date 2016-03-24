@@ -34,13 +34,16 @@ function find_data(  )
              */
             beforeSend: function()
             {
+                // Determine which form we are dealing with
                 chartNum = $('#formlist').val();
-            },
+            }
 
         })
         .done( function ( data )
         {
 
+            // Check to see if the selected chart is the GPA Column Chart
+            // If so, set the options for the correct highchart
             if (chartNum == 1) {
                 var gpaChart = new Highcharts.Chart({
                     chart: {
@@ -84,6 +87,8 @@ function find_data(  )
                 });
             }
 
+            // Check to see if the selected chart is the Advisor Student Count Chart
+            // If so, set the options for the correct highchart
             if (chartNum == 2) {
                 var advisorChart = new Highcharts.Chart({
                     chart: {
@@ -130,6 +135,8 @@ function find_data(  )
                 });
             }
 
+            // Check to see if the selected chart is the Student Activity Completion Chart
+            // If so, set the options for the correct highchart
             if (chartNum == 3) {
                 var studentCompletionChart = new Highcharts.Chart({
                     chart: {
