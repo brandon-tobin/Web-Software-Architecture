@@ -172,7 +172,7 @@ if ($formType == '3') {
         //
 
         $gpa_chart_data = new stdClass();
-        $gpa_chart_data->name = "Activities";
+        $gpa_chart_data->name = "Activities Completed";
         $gpa_chart_data->data = [];
         for ($i = 0; $i < count($results); $i++) {
             $gpa_chart_data->data [] = array($results[$i]['name'], $results[$i]['count']);
