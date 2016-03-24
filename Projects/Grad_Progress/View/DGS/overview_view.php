@@ -81,8 +81,7 @@ echo "
                     <select name=\"formlist\" class=\"form-control\" id=\"formlist\">
                       <option value=\"1\" selected>Current Student GPAs</option>
                       <option value=\"2\">Students Per Advisor</option>
-                      <!--<option value=\"opel\">Opel</option>
-                          <option value=\"audi\">Audi</option>-->
+                      <option value=\"3\">Number of Activities Students Completed</option>
                     </select>
 
                 </form>

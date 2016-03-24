@@ -115,11 +115,11 @@ if ($formType == '2')
         $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         //
-        // GPA Column Chart
+        // Adviser Student Count
         //
 
         $gpa_chart_data = new stdClass();
-        $gpa_chart_data->name = "Advisors";
+        $gpa_chart_data->name = "Students";
         $gpa_chart_data->data = [];
         for ($i=0;$i<count($results);$i++)
         {
@@ -140,7 +140,55 @@ if ($formType == '2')
     }
 }
 
+if ($formType == '3') {
+    $server_name = 'localhost';
+    $db_user_name = 'Grad_Application';
+    $db_password = '173620901';
+    $db_name = 'Grad_Prog_V6';
+    try {
+        //
+        // The main content of the page will be in this variable
+        //
+        $output = "";
 
+        //
+        // Connect to the data base and select it.
+        //
+        $db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
+        $query = "select name, count from Users, (select sid, activity, count(*) as count FROM Activities group by sid) as temp where Users.uid = temp.sid";
+        $statement = $db->prepare($query);
+        $statement->execute();
+
+        //
+        // Fetch all the results
+        //
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        //
+        // Student Activity Completion Chart
+        //
+
+        $gpa_chart_data = new stdClass();
+        $gpa_chart_data->name = "Activities";
+        $gpa_chart_data->data = [];
+        for ($i = 0; $i < count($results); $i++) {
+            $gpa_chart_data->data [] = array($results[$i]['name'], $results[$i]['count']);
+        }
+        sort($gpa_chart_data->data);
+        $gpa_chart_data = json_encode($gpa_chart_data);
+
+        print $gpa_chart_data;
+
+    } catch (PDOException $ex) {
+        $output .= "<p>oops</p>";
+        $output .= "<p> Code: {$ex->getCode()} </p>";
+        $output .= " <p> See: dev.mysql.com/doc/refman/5.0/en/error-messages-server.html#error_er_dup_key";
+        $output .= "<pre>$ex</pre>";
+    }
+}
 
 
 

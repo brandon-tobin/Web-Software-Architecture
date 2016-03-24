@@ -132,6 +132,51 @@ function find_data(  )
                     data: data.data
                 });
             }
+
+            if (chartNum == 3) {
+                var studentCompletionChart = new Highcharts.Chart({
+                    chart: {
+                        type: 'pie',
+                        renderTo: 'gpaChart'
+                    },
+                    title: {
+                        text: 'Number of Activities Students Have Completed',
+                        x: -20 //center
+                    },
+                    subtitle: {
+                        x: -20
+                    },
+                    xAxis: {
+                        title: {
+                            text: 'Advisors'
+                        },
+                        type: 'category'
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Number of Students'
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 1,
+                            color: '#808080'
+                        }]
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle',
+                        borderWidth: 0
+                    }
+                });
+
+                studentCompletionChart.addSeries({
+                    name: data.name,
+                    data: data.data
+                });
+            }
+
         } )
         .fail( function ( text, options, err )
         {
