@@ -145,32 +145,6 @@ function find_data(  )
                         text: 'Number of Activities Students Have Completed',
                         x: -20 //center
                     }
-                    //subtitle: {
-                    //    x: -20
-                    //},
-                    //xAxis: {
-                    //    title: {
-                    //        text: 'Advisors'
-                    //    },
-                    //    type: 'category'
-                    //},
-                    //yAxis: {
-                    //    min: 0,
-                    //    title: {
-                    //        text: 'Number of Students'
-                    //    },
-                    //    plotLines: [{
-                    //        value: 0,
-                    //        width: 1,
-                    //        color: '#808080'
-                    //    }]
-                    //},
-                    //legend: {
-                    //    layout: 'vertical',
-                    //    align: 'right',
-                    //    verticalAlign: 'middle',
-                    //    borderWidth: 0
-                    //}
                 });
 
                 studentCompletionChart.addSeries({
