@@ -88,11 +88,9 @@ echo "
 
             <br />
 
-             <div id=\"gpaChart\" style=\"height:500px\"></div>
+             <div id=\"chart\" style=\"height:500px\"></div>
 
-
-             <div id=\"content\"></div>
-
+            <br />
 
             <h1>Graduate Advisors</h1>
 

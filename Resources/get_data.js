@@ -50,7 +50,7 @@ function find_data(  )
                 var gpaChart = new Highcharts.Chart({
                     chart: {
                         type: 'column',
-                        renderTo: 'gpaChart'
+                        renderTo: 'chart'
                     },
                     title: {
                         text: 'Student GPAs',
@@ -93,7 +93,7 @@ function find_data(  )
                 var advisorChart = new Highcharts.Chart({
                     chart: {
                         type: 'line',
-                        renderTo: 'gpaChart'
+                        renderTo: 'chart'
                     },
                     title: {
                         text: 'Number of Students by Advisor',
@@ -139,7 +139,7 @@ function find_data(  )
                 var studentCompletionChart = new Highcharts.Chart({
                     chart: {
                         type: 'pie',
-                        renderTo: 'gpaChart'
+                        renderTo: 'chart'
                     },
                     title: {
                         text: 'Number of Activities Students Have Completed',
