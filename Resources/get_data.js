@@ -61,12 +61,12 @@ function find_data(  )
                         x: -20
                     },
                     xAxis: {
-                        title: 'credit_hours',
+                        title: 'GPAs',
                     },
                     yAxis: {
-                        min: 0, max: 4,
+                        min: 0,
                         title: {
-                            text: 'GPA'
+                            text: 'Count'
                         },
                         plotLines: [{
                             value: 0,
