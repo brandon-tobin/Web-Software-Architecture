@@ -76,6 +76,10 @@
                 <li><a href="../V6/README.html">README - Assignment 6</a></li>
                 <li><a href="../V6/home.php">View Assignment 6</a></li>
             </ul>
+            <ul>
+                <li><a href="../V7/README.html">README - Assignment 7</a></li>
+                <li><a href="../V7/home.php">View Assignment 7</a></li>
+            </ul>
 
         </body>
 
