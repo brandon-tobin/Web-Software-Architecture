@@ -89,7 +89,8 @@
                 {
                     for (var i = 0; i < this.values.length; i++)
                     {
-                        var cell = matrix[this.i + this.values[i][0]][this.j + this.values[i][1]];
+                        //var cell = matrix[this.i + this.values[i][0]][this.j + this.values[i][1]];
+                        var cell = matrix[this.values[i][0]][this.values[i][1]];
                         cell.visible = true;
                         cell.color = this.color;
                         cell.draw();
@@ -136,7 +137,7 @@
 
                     var color = 0x00FFFF;
 
-                    super(color, 3, 0, values);
+                    super(color, 4, 0, values);
                 }
             }
 
@@ -170,7 +171,7 @@
 
                     var color = 0x800080;
 
-                    super(color, 3, 0, values);
+                    super(color, 4, 0, values);
                 }
             }
 
@@ -187,7 +188,7 @@
 
                     var color = 0x00FF00;
 
-                    super(color, 3, 0, values);
+                    super(color, 4, 0, values);
                 }
             }
 
@@ -204,7 +205,7 @@
 
                     var color = 0xFF0000;
 
-                    super(color, 3, 0, values);
+                    super(color, 4, 0, values);
                 }
             }
 
@@ -221,7 +222,7 @@
 
                     var color = 0x0000FF;
 
-                    super(color, 3, 0, values);
+                    super(color, 4, 0, values);
                 }
             }
 
@@ -238,7 +239,7 @@
 
                     var color = 0xFFA500;
 
-                    super(color, 3, 0, values);
+                    super(color, 4, 0, values);
                 }
             }
 
