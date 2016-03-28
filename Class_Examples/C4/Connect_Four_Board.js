@@ -45,7 +45,7 @@ Connect_Four_Board.prototype.constructor = Connect_Four_Board;
  *  checkers and all GUI elements (the buttons).
  * 
  */
-function Connect_Four_Board ()
+function Tetris_Board ()
 {
     //
     // Initialization (Note: placed after function definition so we can use them)
