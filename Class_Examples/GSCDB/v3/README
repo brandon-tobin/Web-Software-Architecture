@@ -1,0 +1,26 @@
+
+
+Things to notice:
+
+1) the user of verifyLogin as a "short circuit" script -- kills rest of web page if not successful
+2) in .htaccess:  DirectorIndex command
+3) in logout.php: must first start session before to unsetting variables.
+                  note: could use session_unset() to unset all at once
+4) login.php is included by the page calling the verifyLogin function.  Thus the form "submits" to 
+   the calling page.
+5) verifyLogin (in authentication.php) is doing some of A LOT of things:
+    1) checking to see if the user is logged in, 
+    2) checking to see if password/username were just submitted
+        and then validating them
+    3) returning error messages and re-prompting if password/username are wrong
+    4) checking for valid role
+6) manageOrders uses the function: createCartTable to build HTML for the card
+7) some functions return references to variables
+8) notice use of hidden field in form
+9) in register.php - notice use of php for error checking and update.  In modern apps, most (if not all) of this
+   (i.e., the error messages) would ideally be done in JavaScript
+10) notice use of PDO commit/transaction syntax for multiple queries in single function.
+11) notice that this code comes from before objects were common in PHP.  A re-write would put
+    much of the functionality into models (class files/objects)
+12) note: login.php could just as easily be in the views folder.
+

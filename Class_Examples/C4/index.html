@@ -1,0 +1,353 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Connect Four </title>
+
+    <!-- THIS FIRST -->
+    <script src="jquery.1.11.1.js"></script> <!-- 1 - JQUERY -->
+    <script src="pixi.dev.js"></script>  <!-- 2 - Pixi -->
+    <script src="hammer.js"></script>  <!-- 3 - Hammer -->
+
+    <script src="loader.js"></script>
+    <script src="../Button/button.js"></script>
+    <script src="Checker.js"></script>
+    <script src="Connect_Four_Board.js"></script>
+
+    <!-- CSS Stuff -->
+
+</head>
+<body id="body">
+
+  <div class="c4"> </div>
+
+
+<script>
+
+/**
+ * Author: H. James de St. Germain
+ * Date:   Spring 2015
+ *
+ * The "html" for the startup of a Connect 4 game.
+ *
+ * Note: most/all of these functions could be put in a standalone
+ *       javascript file.
+ *
+ */
+
+/**
+ * global variables
+ */
+var stage;  		// pixi stage - the drawing area
+var renderer;   	// create a renderer instance
+var c4; 		// the connect four game object
+var boundingbox;        // for testing purposes to see how big sprites are computed to be
+var full_screen_button; // button to change full screen mode
+
+/**
+ *
+ * 1) Build the PIXI environment
+ * 2) build the C4 object and place it on the stage
+ * 3) begin animation loop
+ * 4) setup resize event handler
+ * 5) do the initial sizing...
+ */
+function start_connect_four()
+{
+
+    stage = new PIXI.Stage(0x57A52E);
+    stage.interactive = true;
+    renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, null);
+    document.body.appendChild(renderer.view);     // add the renderer view element to the DOM
+
+
+    boundingbox = new PIXI.Graphics();
+    stage.addChild( boundingbox );
+
+    boundingbox.interactive = true;
+    boundingbox.clear();
+    boundingbox.lineStyle(2,0xffffff);
+    boundingbox.beginFill(0xFFFF0B, 0);
+    boundingbox.drawRect(0,0,window.innerWidth, window.innerHeight);
+    boundingbox.endFill();
+
+
+    setup_stage_drag();
+    
+
+    c4 = new Connect_Four_Board();
+    stage.addChild( c4 );
+
+    full_screen_button = new Button_Sprite(c4, "Full Screen", 100, 50, go_full_screen, 0, true);
+    full_screen_button.x = -100;
+    full_screen_button.y = 0;
+
+    requestAnimFrame( animate );
+
+    window.onresize = resize;
+
+    resize();
+
+
+    var hammertime = new Hammer( document.body );
+
+    hammertime.get('pinch').set( {enable: true} );
+
+    hammertime.on('pinchstart pinch', function(ev) {
+      if (ev.type == 'pinchstart')
+      {
+         console.log("start");
+	 hammertime.jim_pinch_init_scale = c4.scale.x;
+      }
+      else if (ev.type == 'pinch')
+      {
+         console.log(ev.scale);
+	 c4.scale.x = ev.scale * hammertime.jim_pinch_init_scale;
+	 c4.scale.y = ev.scale * hammertime.jim_pinch_init_scale;
+	 }
+    });
+
+}
+
+function setup_stage_drag()
+{
+    // start a drag event
+    var start_drag = function(data)
+    {
+	// stop the default event...
+	data.originalEvent.preventDefault();
+
+	// store a reference to the data
+	// The reason for tile is because of multitouch
+	// we want to track the movement of tile particular touch
+	boundingbox.data = data;
+	boundingbox.dragging = true;
+	boundingbox.touch_offset = data.getLocalPosition(stage);
+	boundingbox.c4_orig = new PIXI.Point(c4.x, c4.y);
+    };
+
+    // start a drag event
+    var stop_drag = function(data)
+    {
+	// stop the default event...
+	data.originalEvent.preventDefault();
+
+	// store a reference to the data
+	// The reason for tile is because of multitouch
+	// we want to track the movement of tile particular touch
+	boundingbox.data = data;
+	boundingbox.dragging = false;
+
+    };
+
+    // drag using mouse action
+    var drag = function(data)
+    {
+        if(boundingbox.dragging)
+        {
+            var newPosition = data.getLocalPosition(stage);
+            c4.x = boundingbox.c4_orig.x + (newPosition.x - boundingbox.touch_offset.x);
+            c4.y = boundingbox.c4_orig.y + (newPosition.y - boundingbox.touch_offset.y);
+        }
+    };
+
+    //
+    // set the callbacks for dragging a tile
+    //
+    boundingbox.mousedown = boundingbox.touchstart = start_drag;
+    boundingbox.mousemove                   = drag;
+    boundingbox.touchmove                   = drag;
+
+    boundingbox.mouseup =
+       boundingbox.mouseupoutside =
+        boundingbox.touchend =
+        boundingbox.touchendoutside = stop_drag;
+
+
+
+}
+
+/**
+ * resize the c4 sprite so that it takes up most of the screen
+ *
+ */
+function resize (event)
+{
+
+    console.log("--------------------");
+    console.log("  Window Size: " + window.innerWidth + ", " + window.innerHeight);
+    console.log("  C4 current    x,y, w,h  " + c4.position.x + ", " + c4.position.y + ": "+ c4.width   + ", " + c4.height);
+
+    boundingbox.clear();
+    boundingbox.lineStyle(2,0xffffff);
+    boundingbox.beginFill(0xFFFF0B, 0);
+    boundingbox.drawRect(0,0,window.innerWidth, window.innerHeight);
+    boundingbox.endFill();
+
+
+    //
+    // Resize Renderer Window
+    //
+    renderer.resize(window.innerWidth, window.innerHeight);
+
+    //
+    // find current c4 bounds and resize/reposition c4 board
+    //
+//    var c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
+
+    //
+    // need to compute new scale based on original size of C4 sprite, so 
+    // put back to original size
+    //
+
+    c4.scale.x = 1;  // WARNING: must compute center based on original size, not previous scaled size
+    c4.scale.y = 1;
+
+    var dw = (window.innerWidth-100)/c4.width; //c4_bounds
+    var dh = (window.innerHeight-100)/c4.height; // c4_bounds
+    var dm = Math.min(dw,dh);
+    
+    c4.scale.x = dm;
+    c4.scale.y = dm;
+
+    //
+    // find current c4 bounds and resize/reposition c4 board
+    //
+//    var c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
+    c4.position.x = (window.innerWidth/2) - (c4.width/2) +100 ;
+    c4.position.y = (window.innerHeight/2) - (c4.height/2) -15;
+
+
+
+//    renderer.render(stage);     // render the stage (required to recompute the acutal size of the sprite)
+//    c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
+    
+
+//c4.position.x = 0;
+//c4.position.y = 0;
+
+//    c4.updateTransform();
+
+//    renderer.render(stage);     // render the stage (required to recompute the acutal size of the sprite)
+//    c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
+
+//    console.log("  C4 bounds x,y, w,h  " + c4_bounds.x + ", " + c4_bounds.y + ": "+ c4_bounds.width   + ", " + c4_bounds.height);
+    console.log("  C4 final  x,y, w,h  " + c4.position.x + ", " + c4.position.y + ": "+ c4.width   + ", " + c4.height);
+
+    console.log("   scale: " + dw + ", " + dh);
+
+
+    c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
+    console.log("  C4 final bounds x,y, w,h  " + c4_bounds.x + ", " + c4_bounds.y + ": "+ c4_bounds.width   + ", " + c4_bounds.height);
+
+//    boundingbox.position.x = c4.position.x;
+//    boundingbox.position.y = c4.position.y;
+    
+//    boundingbox.clear();
+//    boundingbox.lineStyle(2,0xffffff);
+//    boundingbox.beginFill(0xFFFF0B, .1);
+//    boundingbox.drawRect(c4_bounds.x, c4_bounds.y, c4_bounds.width, c4_bounds.height);
+//    boundingbox.endFill();
+
+
+    stage.updateTransform();
+//renderer.clearBeforeRender = true;
+//c4.dirty = true;
+
+};
+
+
+
+
+//
+// put app in "full screen" mode
+//
+function go_full_screen()
+{
+
+
+    var  el = document.documentElement;
+    var  rfs =
+           el.requestFullScreen
+        || el.webkitRequestFullScreen
+        || el.mozRequestFullScreen;
+    
+    rfs.call(el);
+
+    full_screen_button.change_click_function( cancel_full_screen );
+
+}
+
+function cancel_full_screen()
+{
+
+ if (document.exitFullscreen)
+ {
+      document.exitFullscreen();
+ }
+ else if (document.msExitFullscreen)
+ {
+      document.msExitFullscreen();
+ }
+ else if (document.mozCancelFullScreen)
+ {
+      document.mozCancelFullScreen();
+ }
+ else if (document.webkitExitFullscreen)
+ {
+      document.webkitExitFullscreen();
+ }
+    full_screen_button.change_click_function( go_full_screen );
+
+}
+
+
+
+
+
+//
+// this function is called before every browser/canvas repaint
+// approximately 30 or 60 times per second
+//
+// by putting requestAnimFrame(animate) in here, we cause an animation loop
+//
+function animate()
+{
+    requestAnimFrame(animate);
+    renderer.render(stage);     // render the stage
+}
+
+/**
+ * Really not necesary (we could have added "start_connect_four" to the loader)
+ * but this allows us to print a console message when the images are loaded.
+ */
+function begin()
+{
+    console.log("images loaded, lets begin");
+    start_connect_four();
+}
+
+
+/*
+ * Before anything else, load the images necesasry for the project.
+ */
+
+var jim_loader = new Jim_Loader( begin );
+
+Button_Sprite.prepare_preload( jim_loader );
+Connect_Four_Board.prepare_preload( jim_loader );
+
+
+jim_loader.load();
+
+
+</script>
+
+</body>
+
+</html>
+
+
+

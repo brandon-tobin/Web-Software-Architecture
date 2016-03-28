@@ -1,0 +1,4 @@
+<FilesMatch "db_config_actual">
+   Order Allow,Deny
+   Deny from all
+</FilesMatch>

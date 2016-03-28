@@ -1,0 +1,114 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Connect Four </title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+	    overflow-y: hidden;
+
+        }
+    </style>
+    <!-- THIS FIRST -->
+    <script src="jquery.1.11.1.js"></script> <!-- 1 - JQUERY -->
+    <script src="pixi.dev.js"></script>  <!-- 2 - Pixi -->
+
+    <script src="Button.js"></script>
+    <script src="Checker.js"></script>
+    <script src="Connect_Four_Board.js"></script>
+
+    <!-- CSS Stuff -->
+
+</head>
+<body>
+
+  <div class="c4"> </div>
+
+
+<script>
+var stage;  		// pixi stage - the drawing area
+var renderer;   	// create a renderer instance
+
+
+function start_connect_four()
+{
+
+    stage = new PIXI.Stage(0x57A52E);
+    stage.interactive = true;
+    renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, null);
+
+    document.body.appendChild(renderer.view);     // add the renderer view element to the DOM
+
+    requestAnimFrame( animate );
+
+    function doit( e )
+    {
+       var checker;
+
+       checker = new Checker("Player 1", new PIXI.Point(300,300));
+
+       stage.addChild( checker );
+    }
+
+    var button =    new Button_Sprite( stage, "howdy", 500, 400, doit, 1, true);
+
+    button.x = 300;
+    button.y = 300;
+
+
+    button.set_title("" + window.innerWidth + "\n" + window.innerHeight);
+
+}
+
+
+//
+// this function is called before every browser/canvas repaint
+// approximately 30 or 60 times per second
+//
+// by putting requestAnimFrame(animate) in here, we cause an animation loop
+//
+function animate()
+{
+    requestAnimFrame(animate);
+
+    renderer.render(stage);     // render the stage
+
+}
+
+function begin()
+{
+    console.log("images loaded, lets begin");
+    start_connect_four();
+}
+
+//
+// once the page is loaded, load the dictionary, then start the game
+//
+$(document).ready(
+    function()
+    {
+
+    var path = "http://www.cs.utah.edu/~germain/C4/images/";
+    var assets_to_load = [];
+
+    assets_to_load.push(path + "button.png");
+    assets_to_load.push(path + "button_over.png");
+    assets_to_load.push(path + "button_down.png");
+    assets_to_load.push(path + "board.png");
+
+    var loader = new PIXI.AssetLoader( assets_to_load );
+    loader.onComplete = begin;
+    loader.load();
+
+    });
+
+
+</script>
+</body>
+
+</html>

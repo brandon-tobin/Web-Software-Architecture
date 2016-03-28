@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="author" content="H. James de St. Germain"/>
+  
+  <title>CS 4540 - UofU - Sample Canvas Work</title>
+
+</head>
+
+<body>
+  <h1>  Canvas </h1>
+
+  <canvas id="jims_work" width="500px" height="500px"/>
+
+</body>
+
+<script>
+// This is JavaScript
+// Author: H. James de St. Germain
+// Date: Spring 2016    
+
+/**
+ *  Draw a single line
+ */
+function draw_line()
+{
+  var ctx = document.getElementById("jims_work").getContext("2d");
+  ctx.fillStyle   = "#000000";
+  ctx.strokeStyle = "#ff0000";
+  ctx.lineWidth   = 5;
+  ctx.moveTo(100,100);
+  ctx.lineTo(200,200);
+  ctx.stroke();
+}
+
+
+/**
+ *  Draw a bunch of lines
+ */
+function draw_mess()
+{
+  var ctx = document.getElementById("jims_work").getContext("2d");
+
+  ctx.lineWidth   = 1;
+  ctx.strokeStyle = '#00ff00';
+
+  ctx.moveTo(100,100);
+
+  for (var i=0;i<100;i++)
+  {
+    var x = Math.random()*500;
+    var y = Math.random()*500;
+    ctx.lineTo(x,y);
+  }
+  
+  ctx.stroke();
+
+}
+
+/**
+ * Animate a circle
+ */
+
+var circle = {x:200,y:200,r:50};
+var mouse  = {x:-100000,y:-1 };
+ 
+function animate_circle_helper()
+{
+    var ctx = document.getElementById("jims_work").getContext("2d");
+
+    ctx.beginPath();
+
+    ctx.clearRect(0,0,1000,1000)
+    ctx.lineWidth   = 1;
+    ctx.strokeStyle = '#00ff00';
+    ctx.fillStyle   = '#000000';
+
+    if (mouse.x < 100||mouse.x>300)
+    {
+	// if we are not following the mouse
+	circle.x += Math.random()*4-2;
+	circle.y += Math.random()*4-2;
+    }
+    else
+    {
+	// if the mouse has moved into canvas
+	circle.x = mouse.x;
+	circle.y = mouse.y;
+    }
+
+    circle.r += Math.random()*4-2;
+
+    if (circle.r < 10)
+    {
+        circle.r = 10;
+    }
+    
+
+	
+    ctx.arc(circle.x, circle.y, circle.r, 0, 2*Math.PI);
+    ctx.fill();
+
+    ctx.closePath();
+
+    requestAnimationFrame( animate_circle_helper );
+    
+}
+
+/**
+ * How to track the mouse
+ */
+function track_mouse(e)
+{
+    console.log(e.clientX + " " + e.clientY );
+    mouse.x = e.clientX;
+    mouse.y = e.clientY - 50;
+}
+
+
+/**
+ * Start an animation cycle
+ */
+function animate_circle()
+{
+    document.getElementById("jims_work").onmousemove=track_mouse;
+    
+    requestAnimationFrame( animate_circle_helper );
+}
+
+
+if (false)  draw_line();
+if (false) draw_mess();
+if (true) animate_circle();
+
+</script>
+
+</html>
+
+
