@@ -124,6 +124,7 @@
                 }
             }
 
+            // Create subclasses for game pieces
             class CyanI extends Piece
             {
                 constructor(container)
@@ -138,10 +139,26 @@
                     var color = 0x00FFFF;
 
                     super(color, 4, 0, values);
-
-
                 }
             }
+
+            class YellowO extends Piece
+            {
+                constructor(container)
+                {
+                    var values = [
+                        [4,0],
+                        [5,0],
+                        [4,1],
+                        [5,1]
+                    ];
+
+                    var color = 0xFFFF00;
+
+                    super(color, 4, 0, values);
+                }
+            }
+
 
             class Cell
             {
@@ -186,7 +203,7 @@
                     this.build_matrix(this.board);
                     stage.addChild(this.board);
                     //this.current_piece = new Piece();
-                    this.current_piece = new CyanI();
+                    this.current_piece = select_random_piece();
                     this.draw_piece();
                     document.addEventListener('keydown', this.handle_key_presses.bind(this))
                 }
@@ -200,7 +217,7 @@
                             this.current_piece.up();
                             this.current_piece.fill(this.board_matrix);
                             //this.current_piece = new Piece();
-                            this.current_piece = new CyanI();
+                            this.current_piece = select_random_piece();
                             this.draw_piece()
                         }
                     }
@@ -270,6 +287,22 @@
                     this.outline.drawRect(0, 0, 250, 500);
                     this.outline.endFill()
                 }
+
+                select_random_piece()
+                {
+                    var random = Math.floor((Math.random() * 2) + 1);
+
+                    switch (random)
+                    {
+                        case 1:
+                            return new CyanI();
+                            break;
+                        case 2:
+                            return new YellowO();
+                            break;
+                    }
+                }
+
             }
             var stage;
             var renderer;
@@ -299,552 +332,5 @@
 
 
         </script>
-
-
-
-
-       <!-- <script>
-            eval(
-            var color_array = [0xff0000, 0x00ff00, 0x0000ff];
-            var color_index = 0;
-            class Piece {
-                constructor(container, i, j) {
-                    if (color_index % 2 == 1) {
-                        this.values = [
-                            [0, 0],
-                            [0, 1],
-                            [1, 0],
-                            [1, 1]
-                        ]
-                    } else {
-                        this.values = [
-                            [0, 0],
-                            [0, 1],
-                            [1, 1],
-                            [1, 2]
-                        ]
-                    }
-                    this.i = 0;
-                    this.j = 0;
-                    this.color = color_array[color_index];
-                    color_index = (color_index + 1) % 3
-                }
-                down() {
-                    this.j++
-                }
-                up() {
-                    this.j--
-                }
-                left() {
-                    this.i--;
-                    if (this.i < 0) {
-                        this.i = 0
-                    }
-                }
-                right() {
-                    this.i++;
-                    if (this.i > 9) {
-                        this.i = 9
-                    }
-                }
-                draw(matrix) {
-                    for (var i = 0; i < this.values.length; i++) {
-                        var cell = matrix[this.i + this.values[i][0]][this.j + this.values[i][1]];
-                        cell.visible = true;
-                        cell.color = this.color;
-                        cell.draw()
-                    }
-                }
-                fill(matrix) {
-                    for (var i = 0; i < this.values.length; i++) {
-                        var cell = matrix[this.i + this.values[i][0]][this.j + this.values[i][1]];
-                        cell.visible = true;
-                        cell.color = this.color;
-                        cell.filled = true;
-                        cell.draw()
-                    }
-                }
-                conflict(matrix) {
-                    for (var i = 0; i < this.values.length; i++) {
-                        var i_offset = this.i + this.values[i][0];
-                        var j_offset = this.j + this.values[i][1];
-                        if (j_offset >= 20) return true;
-                        var cell = matrix[i_offset][j_offset];
-                        console.log(cell);
-                        if (cell.filled) return true
-                    }
-                    return false
-                }
-            }
-            class Cell {
-                constructor(container, i, j) {
-                    this.square = new PIXI.Graphics();
-                    container.addChild(this.square);
-                    this.square.x = i * 25;
-                    this.square.y = j * 25;
-                    this.square.mouseover = function() {
-                        console.log("mouse over")
-                    };
-                    this.filled = false;
-                    this.color = 0xffffff
-                }
-                draw() {
-                    this.square.clear();
-                    this.square.beginFill(this.color);
-                    this.square.drawRect(0, 0, 25, 25);
-                    this.square.endFill()
-                }
-                set visible(value) {
-                    this.square.visible = value
-                }
-            }
-            class Tetris {
-                constructor(stage) {
-                    console.log("constructor for tetris");
-                    this.board = new PIXI.Sprite();
-                    this.outline = new PIXI.Graphics();
-                    this.board.x = 50;
-                    this.board.y = 50;
-                    this.draw_outline();
-                    this.board.addChild(this.outline);
-                    this.build_matrix(this.board);
-                    stage.addChild(this.board);
-                    this.current_piece = new Piece();
-                    this.draw_piece();
-                    document.addEventListener('keydown', this.handle_key_presses.bind(this))
-                }
-                handle_key_presses(key) {
-                    if (key.code == "ArrowDown") {
-                        this.current_piece.down();
-                        if (this.current_piece.conflict(this.board_matrix)) {
-                            this.current_piece.up();
-                            this.current_piece.fill(this.board_matrix);
-                            this.current_piece = new Piece();
-                            this.draw_piece()
-                        }
-                    }
-                    if (key.code == "ArrowLeft") {
-                        this.current_piece.left();
-                        if (this.current_piece.conflict(this.board_matrix)) {
-                            this.current_piece.right()
-                        }
-                    }
-                    if (key.code == "ArrowRight") {
-                        this.current_piece.right();
-                        if (this.current_piece.conflict(this.board_matrix)) {
-                            this.current_piece.left()
-                        }
-                    }
-                    this.clear_board();
-                    this.draw_piece()
-                }
-                draw_piece() {
-                    this.current_piece.draw(this.board_matrix)
-                }
-                build_matrix(container) {
-                    this.board_matrix = [];
-                    for (var i = 0; i < 10; i++) {
-                        this.board_matrix[i] = [];
-                        for (var j = 0; j < 20; j++) {
-                            this.board_matrix[i][j] = new Cell(container, i, j);
-                            this.board_matrix[i][j].visible = false
-                        }
-                    }
-                }
-                clear_board() {
-                    for (var i = 0; i < 10; i++) {
-                        for (var j = 0; j < 20; j++) {
-                            this.board_matrix[i][j].draw();
-                            if (this.board_matrix[i][j].filled) {
-                                this.board_matrix[i][j].visible = true
-                            } else {
-                                this.board_matrix[i][j].visible = false
-                            }
-                        }
-                    }
-                }
-                draw_outline() {
-                    this.outline.clear();
-                    this.outline.lineStyle(2, 0xCCCCCC);
-                    this.outline.beginFill();
-                    this.outline.drawRect(0, 0, 250, 500);
-                    this.outline.endFill()
-                }
-            }
-            var stage;
-            var renderer;
-
-            function doit() {
-                $("body").append("hello")
-            }
-
-            function after_load() {
-                stage = new PIXI.Container();
-                stage.interactive = true;
-                renderer = PIXI.autoDetectRenderer(500, 1000, null);
-                document.body.appendChild(renderer.view);
-                requestAnimationFrame(animate);
-                new Tetris(stage)
-            }
-
-            function animate() {
-                requestAnimationFrame(animate);
-                renderer.render(stage)
-            }
-
-            after_load();
-
-        </script>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--<script>
-            /**
-             * Author: H. James de St. Germain
-             * Date:   Spring 2015
-             *
-             * The "html" for the startup of a Connect 4 game.
-             *
-             * Note: most/all of these functions could be put in a standalone
-             *       javascript file.
-             *
-             */
-
-            /**
-             * global variables
-             */
-            var stage;  		// pixi stage - the drawing area
-            var renderer;   	// create a renderer instance
-            var c4; 		// the connect four game object
-            var boundingbox;        // for testing purposes to see how big sprites are computed to be
-            var full_screen_button; // button to change full screen mode
-
-            /**
-             *
-             * 1) Build the PIXI environment
-             * 2) build the C4 object and place it on the stage
-             * 3) begin animation loop
-             * 4) setup resize event handler
-             * 5) do the initial sizing...
-             */
-            function start_connect_four()
-            {
-
-                stage = new PIXI.Stage(0x57A52E);
-                stage.interactive = true;
-                renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, null);
-                document.body.appendChild(renderer.view);     // add the renderer view element to the DOM
-
-
-                boundingbox = new PIXI.Graphics();
-                stage.addChild( boundingbox );
-
-                boundingbox.interactive = true;
-                boundingbox.clear();
-                boundingbox.lineStyle(2,0xffffff);
-                boundingbox.beginFill(0xFFFF0B, 0);
-                boundingbox.drawRect(0,0,window.innerWidth, window.innerHeight);
-                boundingbox.endFill();
-
-
-                setup_stage_drag();
-
-
-                c4 = new Tetris_Board();
-                stage.addChild( c4 );
-
-                full_screen_button = new Button_Sprite(c4, "Full Screen", 100, 50, go_full_screen, 0, true);
-                full_screen_button.x = -100;
-                full_screen_button.y = 0;
-
-                requestAnimFrame( animate );
-
-                window.onresize = resize;
-
-                resize();
-
-
-                var hammertime = new Hammer( document.body );
-
-                hammertime.get('pinch').set( {enable: true} );
-
-                hammertime.on('pinchstart pinch', function(ev) {
-                    if (ev.type == 'pinchstart')
-                    {
-                        console.log("start");
-                        hammertime.jim_pinch_init_scale = c4.scale.x;
-                    }
-                    else if (ev.type == 'pinch')
-                    {
-                        console.log(ev.scale);
-                        c4.scale.x = ev.scale * hammertime.jim_pinch_init_scale;
-                        c4.scale.y = ev.scale * hammertime.jim_pinch_init_scale;
-                    }
-                });
-
-            }
-
-            function setup_stage_drag()
-            {
-                // start a drag event
-                var start_drag = function(data)
-                {
-                    // stop the default event...
-                    data.originalEvent.preventDefault();
-
-                    // store a reference to the data
-                    // The reason for tile is because of multitouch
-                    // we want to track the movement of tile particular touch
-                    boundingbox.data = data;
-                    boundingbox.dragging = true;
-                    boundingbox.touch_offset = data.getLocalPosition(stage);
-                    boundingbox.c4_orig = new PIXI.Point(c4.x, c4.y);
-                };
-
-                // start a drag event
-                var stop_drag = function(data)
-                {
-                    // stop the default event...
-                    data.originalEvent.preventDefault();
-
-                    // store a reference to the data
-                    // The reason for tile is because of multitouch
-                    // we want to track the movement of tile particular touch
-                    boundingbox.data = data;
-                    boundingbox.dragging = false;
-
-                };
-
-                // drag using mouse action
-                var drag = function(data)
-                {
-                    if(boundingbox.dragging)
-                    {
-                        var newPosition = data.getLocalPosition(stage);
-                        c4.x = boundingbox.c4_orig.x + (newPosition.x - boundingbox.touch_offset.x);
-                        c4.y = boundingbox.c4_orig.y + (newPosition.y - boundingbox.touch_offset.y);
-                    }
-                };
-
-                //
-                // set the callbacks for dragging a tile
-                //
-                boundingbox.mousedown = boundingbox.touchstart = start_drag;
-                boundingbox.mousemove                   = drag;
-                boundingbox.touchmove                   = drag;
-
-                boundingbox.mouseup =
-                        boundingbox.mouseupoutside =
-                                boundingbox.touchend =
-                                        boundingbox.touchendoutside = stop_drag;
-
-
-
-            }
-
-            /**
-             * resize the c4 sprite so that it takes up most of the screen
-             *
-             */
-            function resize (event)
-            {
-
-                console.log("--------------------");
-                console.log("  Window Size: " + window.innerWidth + ", " + window.innerHeight);
-                console.log("  C4 current    x,y, w,h  " + c4.position.x + ", " + c4.position.y + ": "+ c4.width   + ", " + c4.height);
-
-                boundingbox.clear();
-                boundingbox.lineStyle(2,0xffffff);
-                boundingbox.beginFill(0xFFFF0B, 0);
-                boundingbox.drawRect(0,0,window.innerWidth, window.innerHeight);
-                boundingbox.endFill();
-
-
-                //
-                // Resize Renderer Window
-                //
-                renderer.resize(window.innerWidth, window.innerHeight);
-
-                //
-                // find current c4 bounds and resize/reposition c4 board
-                //
-//    var c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
-
-                //
-                // need to compute new scale based on original size of C4 sprite, so
-                // put back to original size
-                //
-
-                c4.scale.x = 1;  // WARNING: must compute center based on original size, not previous scaled size
-                c4.scale.y = 1;
-
-                var dw = (window.innerWidth-100)/c4.width; //c4_bounds
-                var dh = (window.innerHeight-100)/c4.height; // c4_bounds
-                var dm = Math.min(dw,dh);
-
-                c4.scale.x = dm;
-                c4.scale.y = dm;
-
-                //
-                // find current c4 bounds and resize/reposition c4 board
-                //
-//    var c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
-                c4.position.x = (window.innerWidth/2) - (c4.width/2) +100 ;
-                c4.position.y = (window.innerHeight/2) - (c4.height/2) -15;
-
-
-
-//    renderer.render(stage);     // render the stage (required to recompute the acutal size of the sprite)
-//    c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
-
-
-//c4.position.x = 0;
-//c4.position.y = 0;
-
-//    c4.updateTransform();
-
-//    renderer.render(stage);     // render the stage (required to recompute the acutal size of the sprite)
-//    c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
-
-//    console.log("  C4 bounds x,y, w,h  " + c4_bounds.x + ", " + c4_bounds.y + ": "+ c4_bounds.width   + ", " + c4_bounds.height);
-                console.log("  C4 final  x,y, w,h  " + c4.position.x + ", " + c4.position.y + ": "+ c4.width   + ", " + c4.height);
-
-                console.log("   scale: " + dw + ", " + dh);
-
-
-                c4_bounds = PIXI.DisplayObjectContainer.prototype.getBounds.call(c4).clone();
-                console.log("  C4 final bounds x,y, w,h  " + c4_bounds.x + ", " + c4_bounds.y + ": "+ c4_bounds.width   + ", " + c4_bounds.height);
-
-//    boundingbox.position.x = c4.position.x;
-//    boundingbox.position.y = c4.position.y;
-
-//    boundingbox.clear();
-//    boundingbox.lineStyle(2,0xffffff);
-//    boundingbox.beginFill(0xFFFF0B, .1);
-//    boundingbox.drawRect(c4_bounds.x, c4_bounds.y, c4_bounds.width, c4_bounds.height);
-//    boundingbox.endFill();
-
-
-                stage.updateTransform();
-//renderer.clearBeforeRender = true;
-//c4.dirty = true;
-
-            };
-
-
-
-
-            //
-            // put app in "full screen" mode
-            //
-            function go_full_screen()
-            {
-
-
-                var  el = document.documentElement;
-                var  rfs =
-                        el.requestFullScreen
-                        || el.webkitRequestFullScreen
-                        || el.mozRequestFullScreen;
-
-                rfs.call(el);
-
-                full_screen_button.change_click_function( cancel_full_screen );
-
-            }
-
-            function cancel_full_screen()
-            {
-
-                if (document.exitFullscreen)
-                {
-                    document.exitFullscreen();
-                }
-                else if (document.msExitFullscreen)
-                {
-                    document.msExitFullscreen();
-                }
-                else if (document.mozCancelFullScreen)
-                {
-                    document.mozCancelFullScreen();
-                }
-                else if (document.webkitExitFullscreen)
-                {
-                    document.webkitExitFullscreen();
-                }
-                full_screen_button.change_click_function( go_full_screen );
-
-            }
-
-
-
-
-
-            //
-            // this function is called before every browser/canvas repaint
-            // approximately 30 or 60 times per second
-            //
-            // by putting requestAnimFrame(animate) in here, we cause an animation loop
-            //
-            function animate()
-            {
-                requestAnimFrame(animate);
-                renderer.render(stage);     // render the stage
-            }
-
-            /**
-             * Really not necesary (we could have added "start_connect_four" to the loader)
-             * but this allows us to print a console message when the images are loaded.
-             */
-            function begin()
-            {
-                console.log("images loaded, lets begin");
-                start_connect_four();
-            }
-
-
-            /*
-             * Before anything else, load the images necesasry for the project.
-             */
-
-            var jim_loader = new Jim_Loader( begin );
-
-            Button_Sprite.prepare_preload( jim_loader );
-            Tetris_Board.prepare_preload( jim_loader );
-
-
-            jim_loader.load();
-        </script>-->
-
     </body>
 </html>
