@@ -6,14 +6,6 @@
         <title>Tetris</title>
 
         <!-- THIS FIRST -->
-        <script src="jquery.1.11.1.js"></script> <!-- 1 - JQUERY -->
-        <script src="pixi.dev.js"></script>  <!-- 2 - Pixi -->
-        <script src="hammer.js"></script>  <!-- 3 - Hammer -->
-
-        <script src="loader.js"></script>
-        <script src="Button/button.js"></script>
-        <script src="Checker.js"></script>
-        <script src="Connect_Four_Board.js"></script>
 
         <script src="jquery-1.11.2.min.js"></script>
         <script src="pixi.js"></script>
@@ -124,31 +116,39 @@
                 }
             }
 
-            class Cell {
-                constructor(container, i, j) {
+            class Cell
+            {
+                constructor(container, i, j)
+                {
                     this.square = new PIXI.Graphics();
                     container.addChild(this.square);
                     this.square.x = i * 25;
                     this.square.y = j * 25;
+
                     this.square.mouseover = function() {
                         console.log("mouse over")
                     };
+
                     this.filled = false;
                     this.color = 0xffffff
                 }
-                draw() {
+                draw()
+                {
                     this.square.clear();
                     this.square.beginFill(this.color);
                     this.square.drawRect(0, 0, 25, 25);
                     this.square.endFill()
                 }
-                set visible(value) {
+                set visible(value)
+                {
                     this.square.visible = value
                 }
             }
 
-            class Tetris {
-                constructor(stage) {
+            class Tetris
+            {
+                constructor(stage)
+                {
                     console.log("constructor for tetris");
                     this.board = new PIXI.Sprite();
                     this.outline = new PIXI.Graphics();
@@ -162,57 +162,79 @@
                     this.draw_piece();
                     document.addEventListener('keydown', this.handle_key_presses.bind(this))
                 }
-                handle_key_presses(key) {
-                    if (key.code == "ArrowDown") {
+                handle_key_presses(key)
+                {
+                    if (key.code == "ArrowDown")
+                    {
                         this.current_piece.down();
-                        if (this.current_piece.conflict(this.board_matrix)) {
+                        if (this.current_piece.conflict(this.board_matrix))
+                        {
                             this.current_piece.up();
                             this.current_piece.fill(this.board_matrix);
                             this.current_piece = new Piece();
                             this.draw_piece()
                         }
                     }
-                    if (key.code == "ArrowLeft") {
+                    if (key.code == "ArrowLeft")
+                    {
                         this.current_piece.left();
-                        if (this.current_piece.conflict(this.board_matrix)) {
+                        if (this.current_piece.conflict(this.board_matrix))
+                        {
                             this.current_piece.right()
                         }
                     }
-                    if (key.code == "ArrowRight") {
+                    if (key.code == "ArrowRight")
+                    {
                         this.current_piece.right();
-                        if (this.current_piece.conflict(this.board_matrix)) {
+                        if (this.current_piece.conflict(this.board_matrix))
+                        {
                             this.current_piece.left()
                         }
                     }
                     this.clear_board();
                     this.draw_piece()
                 }
-                draw_piece() {
-                    this.current_piece.draw(this.board_matrix)
+
+                draw_piece()
+                {
+                    this.current_piece.draw(this.board_matrix);
                 }
-                build_matrix(container) {
+
+                build_matrix(container)
+                {
                     this.board_matrix = [];
-                    for (var i = 0; i < 10; i++) {
+                    for (var i = 0; i < 10; i++)
+                    {
                         this.board_matrix[i] = [];
-                        for (var j = 0; j < 20; j++) {
+                        for (var j = 0; j < 20; j++)
+                        {
                             this.board_matrix[i][j] = new Cell(container, i, j);
                             this.board_matrix[i][j].visible = false
                         }
                     }
                 }
-                clear_board() {
-                    for (var i = 0; i < 10; i++) {
-                        for (var j = 0; j < 20; j++) {
+
+                clear_board()
+                {
+                    for (var i = 0; i < 10; i++)
+                    {
+                        for (var j = 0; j < 20; j++)
+                        {
                             this.board_matrix[i][j].draw();
-                            if (this.board_matrix[i][j].filled) {
+                            if (this.board_matrix[i][j].filled)
+                            {
                                 this.board_matrix[i][j].visible = true
-                            } else {
+                            }
+                            else
+                            {
                                 this.board_matrix[i][j].visible = false
                             }
                         }
                     }
                 }
-                draw_outline() {
+
+                draw_outline()
+                {
                     this.outline.clear();
                     this.outline.lineStyle(2, 0xCCCCCC);
                     this.outline.beginFill();
@@ -223,11 +245,13 @@
             var stage;
             var renderer;
 
-            function doit() {
+            function doit()
+            {
                 $("body").append("hello")
             }
 
-            function after_load() {
+            function after_load()
+            {
                 stage = new PIXI.Container();
                 stage.interactive = true;
                 renderer = PIXI.autoDetectRenderer(500, 1000, null);
@@ -236,10 +260,12 @@
                 new Tetris(stage)
             }
 
-            function animate() {
+            function animate()
+            {
                 requestAnimationFrame(animate);
                 renderer.render(stage)
             }
+
             after_load();
 
 
