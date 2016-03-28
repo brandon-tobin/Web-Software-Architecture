@@ -319,7 +319,7 @@
             /**
              * Really not necesary (we could have added "start_connect_four" to the loader)
              * but this allows us to print a console message when the images are loaded.
-             *\/
+             */
             function begin()
             {
                 console.log("images loaded, lets begin");
@@ -334,7 +334,7 @@
             var jim_loader = new Jim_Loader( begin );
 
             Button_Sprite.prepare_preload( jim_loader );
-            Connect_Four_Board.prepare_preload( jim_loader );
+            Tetris_Board.prepare_preload( jim_loader );
 
 
             jim_loader.load();
