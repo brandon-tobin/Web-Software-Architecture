@@ -407,7 +407,7 @@ function Tetris_Board ()
 /**
  * prepare the preloader assets for this file
  */
-Tetris_Four_Board.prepare_preload = function( loader )
+Tetris_Board.prepare_preload = function( loader )
 {
     loader.set_preload_images("images/",     ["board.png"]);
 }
