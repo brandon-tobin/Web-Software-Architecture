@@ -225,7 +225,15 @@
                             this.current_piece.up();
                             this.current_piece.fill(this.board_matrix);
                             //this.current_piece = new Piece();
-                            this.current_piece = select_random_piece();
+
+                            var random = Math.floor((Math.random() * 2) + 1);
+
+                            if (random == 1)
+                                this.current_piece = new CyanI();
+                            else if (random == 2)
+                                this.current_piece = new YellowO();
+
+                            //this.current_piece = select_random_piece();
                             this.draw_piece()
                         }
                     }
