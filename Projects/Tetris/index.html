@@ -279,10 +279,8 @@
                     console.log("constructor for tetris");
                     this.board = new PIXI.Sprite();
                     this.outline = new PIXI.Graphics();
-                    //this.board.x = 50;
-                    //this.board.y = 50;
-                    this.board.x = 0;
-                    this.board.y = 0;
+                    this.board.x = 50;
+                    this.board.y = 50;
                     this.draw_outline();
                     this.board.addChild(this.outline);
                     this.build_matrix(this.board);
