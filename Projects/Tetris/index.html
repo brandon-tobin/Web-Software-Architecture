@@ -29,10 +29,16 @@
 
             class Piece
             {
-                constructor(container, i , j)
+                var color;
+
+               // constructor(container, i , j, color)
+                constructor (color, i, j, values)
                 {
+                    this.color = color;
+                    this.values = values;
+
                     // Set pieces based on color???
-                    if (color_index % 2 == 1)
+                    /*if (color_index % 2 == 1)
                     {
                         this.values = [
                                 [0, 0],
@@ -49,7 +55,7 @@
                                 [1, 1],
                                 [1, 2]
                         ]
-                    }
+                    }*/
                     // Set position of piece
                     this.i = 0;
                     this.j = 0;
@@ -92,7 +98,8 @@
                     }
                 }
 
-                fill(matrix) {
+                fill(matrix)
+                {
                     for (var i = 0; i < this.values.length; i++)
                     {
                         var cell = matrix[this.i + this.values[i][0]][this.j + this.values[i][1]];
@@ -104,7 +111,8 @@
                 }
                 conflict(matrix)
                 {
-                    for (var i = 0; i < this.values.length; i++) {
+                    for (var i = 0; i < this.values.length; i++)
+                    {
                         var i_offset = this.i + this.values[i][0];
                         var j_offset = this.j + this.values[i][1];
                         if (j_offset >= 20) return true;
@@ -113,6 +121,21 @@
                         if (cell.filled) return true
                     }
                     return false
+                }
+            }
+
+            class CyanI extends Piece
+            {
+                constructor(container)
+                {
+                    super("#00FFFF", 4, 0, values);
+
+                    this.values = [
+                            [4,0],
+                            [5,0],
+                            [6,0],
+                            [7,0]
+                    ]
                 }
             }
 
