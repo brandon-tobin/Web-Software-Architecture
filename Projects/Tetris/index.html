@@ -128,14 +128,15 @@
             {
                 constructor(container)
                 {
+                    this.values = [
+                        [4,0],
+                        [5,0],
+                        [6,0],
+                        [7,0]
+                    ]
                     super("#00FFFF", 4, 0, values);
 
-                    this.values = [
-                            [4,0],
-                            [5,0],
-                            [6,0],
-                            [7,0]
-                    ]
+
                 }
             }
 
@@ -181,7 +182,8 @@
                     this.board.addChild(this.outline);
                     this.build_matrix(this.board);
                     stage.addChild(this.board);
-                    this.current_piece = new Piece();
+                    //this.current_piece = new Piece();
+                    this.current_piece = new CyanI();
                     this.draw_piece();
                     document.addEventListener('keydown', this.handle_key_presses.bind(this))
                 }
@@ -194,7 +196,8 @@
                         {
                             this.current_piece.up();
                             this.current_piece.fill(this.board_matrix);
-                            this.current_piece = new Piece();
+                            //this.current_piece = new Piece();
+                            this.current_piece = new CyanI();
                             this.draw_piece()
                         }
                     }
