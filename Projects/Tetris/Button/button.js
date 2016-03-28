@@ -267,8 +267,7 @@ function Button_Sprite( gui_container, my_title, my_width, my_height, call_back,
  */
 Button_Sprite.prepare_preload = function( loader )
 {
-    //loader.set_preload_images("/Projects/Tetris/Button/",
-    loader.set_preload_images("/Button/",
+    loader.set_preload_images("/Projects/Tetris/Button/",
                                     ["button.png",
                                             "button_over.png",
                                             "button_down.png"]);
