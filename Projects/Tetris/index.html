@@ -191,26 +191,6 @@
 
             class Tetris
             {
-                select_random_piece()
-                {
-                    var random = Math.floor((Math.random() * 2) + 1);
-
-//                    switch (random)
-//                    {
-//                        case 1:
-//                            return new CyanI();
-//                            break;
-//                        case 2:
-//                            return new YellowO();
-//                            break;
-//                    }
-
-                    if (random == 1)
-                        return new CyanI();
-                    else if (random == 2)
-                        return new YellowO();
-                }
-
                 constructor(stage)
                 {
                     console.log("constructor for tetris");
@@ -308,7 +288,25 @@
                     this.outline.endFill()
                 }
 
+                static select_random_piece()
+                {
+                    var random = Math.floor((Math.random() * 2) + 1);
 
+//                    switch (random)
+//                    {
+//                        case 1:
+//                            return new CyanI();
+//                            break;
+//                        case 2:
+//                            return new YellowO();
+//                            break;
+//                    }
+
+                    if (random == 1)
+                        return new CyanI();
+                    else if (random == 2)
+                        return new YellowO();
+                }
             }
             var stage;
             var renderer;
