@@ -203,7 +203,15 @@
                     this.build_matrix(this.board);
                     stage.addChild(this.board);
                     //this.current_piece = new Piece();
-                    this.current_piece = select_random_piece();
+                   // this.current_piece = select_random_piece();
+
+                    var random = Math.floor((Math.random() * 2) + 1);
+
+                    if (random == 1)
+                        this.current_piece = new CyanI();
+                    else if (random == 2)
+                        this.current_piece = new YellowO();
+
                     this.draw_piece();
                     document.addEventListener('keydown', this.handle_key_presses.bind(this))
                 }
@@ -288,19 +296,9 @@
                     this.outline.endFill()
                 }
 
-                static select_random_piece()
+                select_random_piece()
                 {
                     var random = Math.floor((Math.random() * 2) + 1);
-
-//                    switch (random)
-//                    {
-//                        case 1:
-//                            return new CyanI();
-//                            break;
-//                        case 2:
-//                            return new YellowO();
-//                            break;
-//                    }
 
                     if (random == 1)
                         return new CyanI();
