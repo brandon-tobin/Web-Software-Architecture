@@ -159,6 +159,91 @@
                 }
             }
 
+            class PurpleT extends Piece
+            {
+                constructor(container)
+                {
+                    var values = [
+                        [4,0],
+                        [3,1],
+                        [4,1],
+                        [5,1]
+                    ];
+
+                    var color = 0x800080;
+
+                    super(color, 4, 0, values);
+                }
+            }
+
+            class GreenS extends Piece
+            {
+                constructor(container)
+                {
+                    var values = [
+                        [4,0],
+                        [5,0],
+                        [3,1],
+                        [4,1]
+                    ];
+
+                    var color = 0x00FF00;
+
+                    super(color, 4, 0, values);
+                }
+            }
+
+            class RedZ extends Piece
+            {
+                constructor(container)
+                {
+                    var values = [
+                        [3,0],
+                        [4,0],
+                        [4,1],
+                        [5,1]
+                    ];
+
+                    var color = 0xFF0000;
+
+                    super(color, 4, 0, values);
+                }
+            }
+
+            class BlueJ extends Piece
+            {
+                constructor(container)
+                {
+                    var values = [
+                        [3,0],
+                        [3,1],
+                        [4,1],
+                        [5,1]
+                    ];
+
+                    var color = 0x0000FF;
+
+                    super(color, 4, 0, values);
+                }
+            }
+
+            class OrangeL extends Piece
+            {
+                constructor(container)
+                {
+                    var values = [
+                        [5,0],
+                        [3,1],
+                        [4,1],
+                        [5,1]
+                    ];
+
+                    var color = 0xFFA500;
+
+                    super(color, 4, 0, values);
+                }
+            }
+
 
             class Cell
             {
@@ -211,6 +296,16 @@
                         this.current_piece = new CyanI();
                     else if (random == 2)
                         this.current_piece = new YellowO();
+                    else if (random == 3)
+                        this.current_piece = new PurpleT();
+                    else if (random == 4)
+                        this.current_piece = new GreenS();
+                    else if (random == 5)
+                        this.current_piece = new RedZ();
+                    else if (random == 6)
+                        this.current_piece = new BlueJ();
+                    else
+                        this.current_piece = new OrangeL();
 
                     this.draw_piece();
                     document.addEventListener('keydown', this.handle_key_presses.bind(this))
@@ -232,6 +327,16 @@
                                 this.current_piece = new CyanI();
                             else if (random == 2)
                                 this.current_piece = new YellowO();
+                            else if (random == 3)
+                                this.current_piece = new PurpleT();
+                            else if (random == 4)
+                                this.current_piece = new GreenS();
+                            else if (random == 5)
+                                this.current_piece = new RedZ();
+                            else if (random == 6)
+                                this.current_piece = new BlueJ();
+                            else
+                                this.current_piece = new OrangeL();
 
                             //this.current_piece = select_random_piece();
                             this.draw_piece()
