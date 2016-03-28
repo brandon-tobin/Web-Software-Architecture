@@ -101,7 +101,8 @@
                 {
                     for (var i = 0; i < this.values.length; i++)
                     {
-                        var cell = matrix[this.i + this.values[i][0]][this.j + this.values[i][1]];
+                        //var cell = matrix[this.i + this.values[i][0]][this.j + this.values[i][1]];
+                        var cell = matrix[this.values[i][0]][this.values[i][1]];
                         cell.visible = true;
                         cell.color = this.color;
                         cell.filled = true;
@@ -112,8 +113,10 @@
                 {
                     for (var i = 0; i < this.values.length; i++)
                     {
-                        var i_offset = this.i + this.values[i][0];
-                        var j_offset = this.j + this.values[i][1];
+                       // var i_offset = this.i + this.values[i][0];
+                       // var j_offset = this.j + this.values[i][1];
+                        var i_offset = this.values[i][0];
+                        var j_offset = this.values[i][1];
                         if (j_offset >= 20) return true;
                         var cell = matrix[i_offset][j_offset];
                         console.log(cell);
