@@ -324,7 +324,7 @@
 
                                 for (var i = 0; i < 10; i++)
                                 {
-                                    if (this.board_matrix[i][j].visible == true)
+                                    if (this.board_matrix[i][j].filled == true)
                                             filledCells++;
                                 }
 
@@ -435,9 +435,7 @@
                             }
                             else
                             {
-                                this.board_matrix[i][j].filled = false;
-                                this.board_matrix[i][j] = 0xffffff;
-                                this.board_matrix[i][j].draw();
+                                this.board_matrix[i][j] = new Cell(this.board, i, j);
                             }
                         }
                     }
