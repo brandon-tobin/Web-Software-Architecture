@@ -315,7 +315,7 @@
                         for (var i = 0; i < 10; i++)
                         {
                             var cell = new Cell(this.board, i, j);
-                            cell.filled == false;
+                            cell.filled = false;
                             if (j != 0)
                             {
                                 var aboveCell = this.board_matrix[i][j - 1];
