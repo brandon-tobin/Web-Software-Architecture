@@ -22,6 +22,8 @@
 
     <div id="score"></div>
 
+    <div id="end"></div>
+
     <!-- <div class="c4"> </div>-->
 
     </body>
@@ -293,14 +295,15 @@
                     stage.addChild(this.board);
 
                     // Randomly generate a piece
-                    var random = Math.floor((Math.random() * 3) + 1);
+                    this.select_random_piece();
+                    /*var random = Math.floor((Math.random() * 3) + 1);
 
                     if (random == 1)
                         this.current_piece = new CyanI();
                     else if (random == 2)
                         this.current_piece = new BlueJ();
                     else
-                        this.current_piece = new OrangeL();
+                        this.current_piece = new OrangeL();*/
 
                    /* if (random == 1)
                         this.current_piece = new CyanI();
@@ -395,14 +398,15 @@
                             }
 
                             // Randomly generate a piece
-                            var random = Math.floor((Math.random() * 3) + 1);
+                            this.select_random_piece();
+                            /*var random = Math.floor((Math.random() * 3) + 1);
 
                             if (random == 1)
                                 this.current_piece = new CyanI();
                             else if (random == 2)
                                 this.current_piece = new BlueJ();
                             else
-                                this.current_piece = new OrangeL();
+                                this.current_piece = new OrangeL();*/
 
                            /* if (random == 1)
                                 this.current_piece = new CyanI();
@@ -492,12 +496,87 @@
 
                 select_random_piece()
                 {
-                    var random = Math.floor((Math.random() * 2) + 1);
+                    var random = Math.floor((Math.random() * 7) + 1);
 
                     if (random == 1)
-                        return new CyanI();
-                    else if (random == 2)
-                        return new YellowO();
+                    {
+                        if (this.board_matrix[3][0].filled == true || this.board_matrix[4][0].filled == true || this.board_matrix[5][0].filled == true
+                            || this.board_matrix[6][0].filled == true)
+                        {
+                            this.end_game();
+                        }
+                        else
+                        {
+                            this.current_piece = new CyanI();
+
+                        }
+                    }
+                     else if (random == 2)
+                        if (this.board_matrix[4][0].filled == true || this.board_matrix[5][0].filled == true || this.board_matrix[4][1].filled == true
+                                || this.board_matrix[5][1].filled == true)
+                        {
+                            this.end_game();
+                        }
+                        else
+                        {
+                            this.current_piece = new YellowO();
+
+                        }
+                     else if (random == 3)
+                        if (this.board_matrix[4][0].filled == true || this.board_matrix[3][1].filled == true || this.board_matrix[4][1].filled == true
+                                || this.board_matrix[5][1].filled == true)
+                        {
+                            this.end_game();
+                        }
+                        else
+                        {
+                            this.current_piece = new PurpleT();
+                        }
+                     else if (random == 4)
+                        if (this.board_matrix[4][0].filled == true || this.board_matrix[5][0].filled == true || this.board_matrix[3][1].filled == true
+                                || this.board_matrix[4][1].filled == true)
+                        {
+                            this.end_game();
+                        }
+                        else
+                        {
+                            this.current_piece = new GreenS();
+                        }
+                     else if (random == 5)
+                        if (this.board_matrix[3][0].filled == true || this.board_matrix[4][0].filled == true || this.board_matrix[4][1].filled == true
+                                || this.board_matrix[5][1].filled == true)
+                        {
+                            this.end_game();
+                        }
+                        else
+                        {
+                            this.current_piece = new RedZ();
+                        }
+                     else if (random == 6)
+                        if (this.board_matrix[3][0].filled == true || this.board_matrix[3][1].filled == true || this.board_matrix[4][1].filled == true
+                                || this.board_matrix[5][1].filled == true)
+                        {
+                            this.end_game();
+                        }
+                        else
+                        {
+                            this.current_piece = new BlueJ();
+                        }
+                     else
+                        if (this.board_matrix[5][0].filled == true || this.board_matrix[3][1].filled == true || this.board_matrix[4][1].filled == true
+                                || this.board_matrix[5][1].filled == true)
+                        {
+                            this.end_game();
+                        }
+                        else
+                        {
+                            this.current_piece = new OrangeL();
+                        }
+                }
+
+                end_game()
+                {
+                    document.getElementById("end").innerHTML="You suck!";
                 }
             }
             var stage;
