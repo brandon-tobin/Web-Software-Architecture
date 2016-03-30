@@ -324,11 +324,13 @@
                                     cell.visible = true;
                                     cell.filled = true;
                                     this.board_matrix[i][j] = cell;
+                                    this.board_matrix.draw();
                                 }
                                 else
                                 {
-                                    cell.visible = false;
+                                    //cell.visible = false;
                                     this.board_matrix[i][j] = cell;
+                                    this.board_matrix.draw();
                                 }
                             }
                             else
