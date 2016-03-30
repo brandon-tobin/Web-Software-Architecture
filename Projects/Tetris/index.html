@@ -588,8 +588,8 @@
                 $("body").append("hello")
             }
 
-            function after_load()
-            {
+           // function after_load()
+           // {
                 stage = new PIXI.Container();
                 stage.interactive = true;
                 renderer = PIXI.autoDetectRenderer(500, 1000, null);
@@ -598,7 +598,7 @@
                 var tetris = new Tetris(stage);
                 window.setInterval(tetris.drop_piece_down(), 1000);
 
-            }
+           // }
 
             function animate()
             {
@@ -606,7 +606,7 @@
                 renderer.render(stage)
             }
 
-            after_load();
+           // after_load();
 
 
             document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
