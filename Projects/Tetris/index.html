@@ -314,28 +314,34 @@
                     {
                         for (var i = 0; i < 10; i++)
                         {
-                            var cell = new Cell(this.board, i, j);
-                            cell.filled = false;
+                            //var cell = new Cell(this.board, i, j);
+                            //cell.filled = false;
                             if (j != 0)
                             {
                                 var aboveCell = this.board_matrix[i][j - 1];
                                 if (aboveCell.filled)
                                 {
-                                    cell.color = aboveCell.color;
-                                    cell.visible = true;
-                                    cell.filled = true;
-                                    this.board_matrix[i][j] = cell;
+                                    //cell.color = aboveCell.color;
+                                    this.board_matrix[i][j].color = aboveCell.color;
+                                    //cell.visible = true;
+                                    this.board_matrix[i][j].visible = true;
+                                    //cell.filled = true;
+                                    this.board_matrix[i][j].filled = true;
+                                    //this.board_matrix[i][j] = cell;
                                 }
                                 else
                                 {
                                     //cell.visible = false;
-                                    this.board_matrix[i][j] = cell;
+                                    //this.board_matrix[i][j] = cell;
+                                    this.board_matrix[i][j].visible = false;
                                 }
                             }
                             else
                             {
-                                this.board_matrix[i][j] = cell;
+                                //this.board_matrix[i][j] = cell;
+                                this.board_matrix[i][j].visible = false;
                             }
+
                             this.board_matrix[i][j].draw();
                         }
                     }
