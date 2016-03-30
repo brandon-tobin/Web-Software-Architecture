@@ -324,6 +324,7 @@
 
                     this.draw_piece();
                     document.addEventListener('keydown', this.handle_key_presses.bind(this))
+                    this.started = true;
                 }
 
                 clear_row(row)
@@ -567,6 +568,13 @@
                         }
                 }
 
+                 drop_piece_down() {
+                     if (this.started) {
+                         this.current_piece.down();
+                     }
+                 }
+
+
                 end_game()
                 {
                     document.getElementById("end").innerHTML="You suck!";
@@ -587,7 +595,9 @@
                 renderer = PIXI.autoDetectRenderer(500, 1000, null);
                 document.body.appendChild(renderer.view);
                 requestAnimationFrame(animate);
-                new Tetris(stage)
+                var tetris = new Tetris(stage);
+                window.setInterval(tetris.drop_piece_down(), 1000);
+
             }
 
             function animate()
