@@ -88,9 +88,11 @@
 
                 right()
                 {
-                    this.i++;
-                    if (this.i > 9)
+                    //this.i++;
+                    if (this.i + 1 > 9)
                             this.i = 9;
+                    else
+                            this.i++;
                 }
 
                 draw(matrix)
@@ -295,15 +297,15 @@
                     stage.addChild(this.board);
 
                     // Randomly generate a piece
-                    this.select_random_piece();
-                    /*var random = Math.floor((Math.random() * 3) + 1);
+                    //this.select_random_piece();
+                    var random = Math.floor((Math.random() * 3) + 1);
 
                     if (random == 1)
                         this.current_piece = new CyanI();
                     else if (random == 2)
                         this.current_piece = new BlueJ();
                     else
-                        this.current_piece = new OrangeL();*/
+                        this.current_piece = new OrangeL();
 
                    /* if (random == 1)
                         this.current_piece = new CyanI();
@@ -335,32 +337,23 @@
                     {
                         for (var i = 0; i < 10; i++)
                         {
-                            //var cell = new Cell(this.board, i, j);
-                            //cell.filled = false;
                             if (j != 0)
                             {
                                 var aboveCell = this.board_matrix[i][j - 1];
                                 if (aboveCell.filled)
                                 {
-                                    //cell.color = aboveCell.color;
                                     this.board_matrix[i][j].color = aboveCell.color;
-                                    //cell.visible = true;
                                     this.board_matrix[i][j].visible = true;
-                                    //cell.filled = true;
                                     this.board_matrix[i][j].filled = true;
-                                    //this.board_matrix[i][j] = cell;
                                 }
                                 else
                                 {
-                                    //cell.visible = false;
-                                    //this.board_matrix[i][j] = cell;
                                     this.board_matrix[i][j].visible = false;
                                     this.board_matrix[i][j].filled = false;
                                 }
                             }
                             else
                             {
-                                //this.board_matrix[i][j] = cell;
                                 this.board_matrix[i][j].visible = false;
                                 this.board_matrix[i][j].filled = false;
 
@@ -398,15 +391,15 @@
                             }
 
                             // Randomly generate a piece
-                            this.select_random_piece();
-                            /*var random = Math.floor((Math.random() * 3) + 1);
+                            //this.select_random_piece();
+                            var random = Math.floor((Math.random() * 3) + 1);
 
                             if (random == 1)
                                 this.current_piece = new CyanI();
                             else if (random == 2)
                                 this.current_piece = new BlueJ();
                             else
-                                this.current_piece = new OrangeL();*/
+                                this.current_piece = new OrangeL();
 
                            /* if (random == 1)
                                 this.current_piece = new CyanI();
