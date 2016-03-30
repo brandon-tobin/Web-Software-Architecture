@@ -287,9 +287,16 @@
                     stage.addChild(this.board);
 
                     // Randomly generate a piece
-                    var random = Math.floor((Math.random() * 7) + 1);
+                    var random = Math.floor((Math.random() * 3) + 1);
 
                     if (random == 1)
+                        this.current_piece = new CyanI();
+                    else if (random == 2)
+                        this.current_piece = new BlueJ();
+                    else
+                        this.current_piece = new OrangeL();
+
+                   /* if (random == 1)
                         this.current_piece = new CyanI();
                     else if (random == 2)
                         this.current_piece = new YellowO();
@@ -302,7 +309,7 @@
                     else if (random == 6)
                         this.current_piece = new BlueJ();
                     else
-                        this.current_piece = new OrangeL();
+                        this.current_piece = new OrangeL();*/
 
                     this.draw_piece();
                     document.addEventListener('keydown', this.handle_key_presses.bind(this))
