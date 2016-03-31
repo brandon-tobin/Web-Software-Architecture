@@ -601,7 +601,11 @@
 //                        tetris.draw_piece();
 //                    }
 
-                    tetris.handle_key_presses(key.code = "ArrowDown");
+                    var e = $.Event('ArrowDown');
+                   // e.which = 65; // Character 'A'
+                    $('item').trigger(e);
+
+                   // tetris.handle_key_presses(key.code = "ArrowDown");
 
                 }
 
