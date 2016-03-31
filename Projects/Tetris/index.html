@@ -574,10 +574,10 @@
                     if (tetris.started) {
                         tetris.current_piece.down();
 
-//                        if (this.current_piece.conflict(this.board_matrix))
-//                        {
-//                            this.current_piece.up();
-//                        }
+                        if (tetris.current_piece.conflict(tetris.board_matrix))
+                        {
+                            tetris.current_piece.up();
+                        }
                         tetris.clear_board();
                         tetris.draw_piece();
                     }
