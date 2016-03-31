@@ -137,7 +137,7 @@
             // Create subclasses for game pieces
             class CyanI extends Piece
             {
-                var rotationLevel = 0;
+                var rotationLevel;
 
                 constructor(container)
                 {
@@ -149,6 +149,8 @@
                     ];
 
                     var color = 0x00FFFF;
+
+                    rotationLevel = 0;
 
                     super(color, 3, 0, values);
                 }
