@@ -576,30 +576,33 @@
 //                }
 
                 drop_piece_down() {
-                    if (tetris.started) {
-                        tetris.current_piece.down();
+//                    if (tetris.started) {
+//                        tetris.current_piece.down();
+//
+//                        if (tetris.current_piece.conflict(tetris.board_matrix))
+//                        {
+//                            tetris.current_piece.up();
+//                            tetris.current_piece.fill(tetris.board_matrix);
+//
+//
+//                            // Randomly generate a piece
+//                            //this.select_random_piece();
+//                            var random = Math.floor((Math.random() * 3) + 1);
+//
+//                            if (random == 1)
+//                                tetris.current_piece = new CyanI();
+//                            else if (random == 2)
+//                                tetris.current_piece = new BlueJ();
+//                            else
+//                                tetris.current_piece = new OrangeL()
+//                        }
+//
+//                        tetris.clear_board();
+//                        tetris.draw_piece();
+//                    }
 
-                        if (tetris.current_piece.conflict(tetris.board_matrix))
-                        {
-                            tetris.current_piece.up();
-                            tetris.current_piece.fill(tetris.board_matrix);
+                    tetris.handle_key_presses(key.code = "ArrowDown");
 
-
-                            // Randomly generate a piece
-                            //this.select_random_piece();
-                            var random = Math.floor((Math.random() * 3) + 1);
-
-                            if (random == 1)
-                                tetris.current_piece = new CyanI();
-                            else if (random == 2)
-                                tetris.current_piece = new BlueJ();
-                            else
-                                tetris.current_piece = new OrangeL()
-                        }
-
-                        tetris.clear_board();
-                        tetris.draw_piece();
-                    }
                 }
 
 
