@@ -866,6 +866,7 @@
 
                             // Randomly generate a piece
                             this.select_random_piece();
+
 //                            var random = Math.floor((Math.random() * 3) + 1);
 //
 //                            if (random == 1)
@@ -891,16 +892,15 @@
 
                             this.draw_piece();
                         }
-
-                        tetris.clear_board();
-                        tetris.draw_piece();
                     }
+                    tetris.clear_board();
+                    tetris.draw_piece();
                 }
 
                 end_game()
                 {
                     tetris.started = false;
-                    document.getElementById("end").innerHTML="You suck!";
+                    document.getElementById("end").innerHTML="Game Over";
                 }
             }
             var stage;
