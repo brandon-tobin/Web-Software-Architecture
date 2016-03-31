@@ -601,9 +601,7 @@
 //                        tetris.draw_piece();
 //                    }
 
-                    var e = $.Event('ArrowDown');
-                   // e.which = 65; // Character 'A'
-                    $('item').trigger(e);
+                    var e = $.Event("keydown", {keyCode: 40});
 
                    // tetris.handle_key_presses(key.code = "ArrowDown");
 
