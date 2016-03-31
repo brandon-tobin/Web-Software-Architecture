@@ -570,6 +570,15 @@
                         }
                 }
 
+                drop_piece_down() {
+                    if (tetris.started) {
+                        tetris.current_piece.down();
+
+                        tetris.clear_board();
+                        tetris.draw_piece();
+                    }
+                }
+
 
 
 
@@ -600,19 +609,11 @@
                 document.body.appendChild(renderer.view);
                 requestAnimationFrame(animate);
                 tetris = new Tetris(stage);
-                window.setInterval(drop_piece_down, 1000);
+                window.setInterval(tetris.drop_piece_down, 1000);
 
             }
 
 
-            function drop_piece_down() {
-                if (tetris.started) {
-                    tetris.current_piece.down();
-
-                    tetris.clear_board();
-                    tetris.draw_piece();
-                }
-            }
 
 
             after_load();
