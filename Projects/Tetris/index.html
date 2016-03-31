@@ -590,8 +590,8 @@
                 renderer.render(stage)
             }
 
-           // function after_load()
-           // {
+            function after_load()
+            {
                 stage = new PIXI.Container();
                 stage.interactive = true;
                 renderer = PIXI.autoDetectRenderer(500, 1000, null);
@@ -600,20 +600,20 @@
                 var tetris = new Tetris(stage);
                 window.setInterval(drop_piece_down, 1000);
 
-           // }
+            }
 
 
             function drop_piece_down() {
                 if (tetris.started) {
                     tetris.current_piece.down();
-                    //tetris.check_board();
+
                     tetris.clear_board();
                     tetris.draw_piece();
                 }
             }
 
 
-           // after_load();
+            after_load();
 
 
             document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
