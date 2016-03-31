@@ -195,6 +195,8 @@
 
                     super(color, 4, 0, values);
                 }
+
+                rotate(){}
             }
 
             class PurpleT extends Piece
@@ -211,6 +213,48 @@
                     var color = 0x800080;
 
                     super(color, 3, 0, values);
+                }
+
+                rotate()
+                {
+                    this.rotationLevel++;
+
+                    if (this.rotationLevel % 4 == 0)
+                    {
+                        this.values = [
+                            [1,0],
+                            [0,1],
+                            [1,1],
+                            [2,1]
+                        ];
+                    }
+                    else if (this.rotationLevel % 4 == 1)
+                    {
+                        this.values = [
+                            [0,0],
+                            [0,1],
+                            [1,1],
+                            [0,2]
+                        ];
+                    }
+                    else if (this.rotationLevel % 4 == 2)
+                    {
+                        this.values = [
+                            [0,0],
+                            [1,0],
+                            [2,0],
+                            [1,1]
+                        ];
+                    }
+                    else
+                    {
+                        this.values = [
+                            [1,0],
+                            [0,1],
+                            [1,1],
+                            [1,2]
+                        ];
+                    }
                 }
             }
 
@@ -229,6 +273,30 @@
 
                     super(color, 3, 0, values);
                 }
+
+                rotate()
+                {
+                    this.rotationLevel++;
+
+                    if (this.rotationLevel % 2 == 0)
+                    {
+                        this.values = [
+                            [1,0],
+                            [2,0],
+                            [0,1],
+                            [1,1]
+                        ];
+                    }
+                    else
+                    {
+                        this.values = [
+                            [0,0],
+                            [0,1],
+                            [1,1],
+                            [2,1]
+                        ];
+                    }
+                }
             }
 
             class RedZ extends Piece
@@ -245,6 +313,30 @@
                     var color = 0xFF0000;
 
                     super(color, 3, 0, values);
+                }
+
+                rotate()
+                {
+                    this.rotationLevel++;
+
+                    if (this.rotationLevel % 2 == 0)
+                    {
+                        this.values = [
+                            [0,0],
+                            [1,0],
+                            [1,1],
+                            [2,1]
+                        ];
+                    }
+                    else
+                    {
+                        this.values = [
+                            [1,0],
+                            [0,1],
+                            [1,1],
+                            [0,2]
+                        ];
+                    }
                 }
             }
 
@@ -747,6 +839,7 @@
             }
             var stage;
             var renderer;
+            var bgmusic = new Audio("../Resources/background.mp3");
 
             function doit()
             {
@@ -768,7 +861,13 @@
                 tetris = new Tetris(stage);
                 window.setInterval(tetris.drop_piece_down, 1000);
                 //window.setInterval(tetris.drop_piece_down_driver, 1000);
+                window.setInterval(replay_song, 21000);
 
+            }
+
+            function replay_song()
+            {
+                bgmusic.play();
             }
 
             after_load();
