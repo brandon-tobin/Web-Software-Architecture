@@ -69,6 +69,7 @@
                     // Set position of piece
                     this.i = i;
                     this.j = j;
+                    this.rotationLevel = 0;
                 }
 
                 down ()
@@ -137,8 +138,6 @@
             // Create subclasses for game pieces
             class CyanI extends Piece
             {
-                var rotationLevel;
-
                 constructor(container)
                 {
                     var values = [
@@ -150,16 +149,16 @@
 
                     var color = 0x00FFFF;
 
-                    rotationLevel = 0;
+                    //this.rotationLevel = 0;
 
                     super(color, 3, 0, values);
                 }
 
                 rotate()
                 {
-                    rotationLevel++;
+                    this.rotationLevel++;
 
-                    if (rotationLevel % 2 == 0)
+                    if (this.rotationLevel % 2 == 0)
                     {
                         this.values = [
                             [0,0],
