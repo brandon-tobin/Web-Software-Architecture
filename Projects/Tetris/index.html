@@ -570,27 +570,32 @@
                         }
                 }
 
-                drop_piece_down() {
-                    if (tetris.started) {
-                        tetris.current_piece.down();
+                drop_piece_down_driver()
+                {
+                    this.drop_piece_down();
+                }
 
-                        if (tetris.current_piece.conflict(tetris.board_matrix))
+                drop_piece_down() {
+                    if (this.started) {
+                        this.current_piece.down();
+
+                        if (this.current_piece.conflict(this.board_matrix))
                         {
-                            tetris.current_piece.up();
+                            this.current_piece.up();
 
                             // Randomly generate a piece
                             //this.select_random_piece();
                             var random = Math.floor((Math.random() * 3) + 1);
 
                             if (random == 1)
-                                tetris.current_piece = new CyanI();
+                                this.current_piece = new CyanI();
                             else if (random == 2)
-                                tetris.current_piece = new BlueJ();
+                                this.current_piece = new BlueJ();
                             else
-                                tetris.current_piece = new OrangeL()
+                                this.current_piece = new OrangeL()
                         }
-                        tetris.clear_board();
-                        tetris.draw_piece();
+                        this.clear_board();
+                        this.draw_piece();
                     }
                 }
 
@@ -622,7 +627,8 @@
                 document.body.appendChild(renderer.view);
                 requestAnimationFrame(animate);
                 tetris = new Tetris(stage);
-                window.setInterval(tetris.drop_piece_down, 1000);
+                //window.setInterval(tetris.drop_piece_down, 1000);
+                window.setInterval(tetris.drop_piece_down_driver, 1000);
 
             }
 
