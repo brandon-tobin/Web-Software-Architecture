@@ -42,10 +42,11 @@
                // var color;
 
                // constructor(container, i , j, color)
-                constructor (color, i, j, values)
+                constructor (color, i, j, width, values)
                 {
                     this.color = color;
                     this.values = values;
+                    this.width = width
 
                     // Set pieces based on color???
                     /*if (color_index % 2 == 1)
@@ -92,8 +93,8 @@
                 right()
                 {
                     //this.i++;
-                    if (this.i + 1 > 9)
-                            this.i = 9;
+                    if (this.i + this.width > 9 - this.width)
+                            this.i = 9 - this.width;
                     else
                             this.i++;
                 }
@@ -151,7 +152,7 @@
 
                     //this.rotationLevel = 0;
 
-                    super(color, 3, 0, values);
+                    super(color, 3, 0, 4, values);
                 }
 
                 rotate()
@@ -166,6 +167,8 @@
                             [2,0],
                             [3,0]
                         ];
+
+                        this.width = 4;
                     }
                     else
                     {
@@ -175,6 +178,8 @@
                             [0,2],
                             [0,3]
                         ];
+
+                        this.width = 1;
                     }
                 }
 
@@ -193,7 +198,7 @@
 
                     var color = 0xFFFF00;
 
-                    super(color, 4, 0, values);
+                    super(color, 4, 0, 2, values);
                 }
 
                 rotate(){}
@@ -212,7 +217,7 @@
 
                     var color = 0x800080;
 
-                    super(color, 3, 0, values);
+                    super(color, 3, 0, 3, values);
                 }
 
                 rotate()
@@ -227,6 +232,8 @@
                             [1,1],
                             [2,1]
                         ];
+
+                        this.width = 3;
                     }
                     else if (this.rotationLevel % 4 == 1)
                     {
@@ -236,6 +243,8 @@
                             [1,1],
                             [0,2]
                         ];
+
+                        this.width = 2;
                     }
                     else if (this.rotationLevel % 4 == 2)
                     {
@@ -245,6 +254,8 @@
                             [2,0],
                             [1,1]
                         ];
+
+                        this.width = 3;
                     }
                     else
                     {
@@ -254,6 +265,8 @@
                             [1,1],
                             [1,2]
                         ];
+
+                        this.width = 2;
                     }
                 }
             }
@@ -271,7 +284,7 @@
 
                     var color = 0x00FF00;
 
-                    super(color, 3, 0, values);
+                    super(color, 3, 0, 3, values);
                 }
 
                 rotate()
@@ -286,6 +299,8 @@
                             [0,1],
                             [1,1]
                         ];
+
+                        this.width = 3;
                     }
                     else
                     {
@@ -295,6 +310,8 @@
                             [1,1],
                             [1,2]
                         ];
+
+                        this.width = 2;
                     }
                 }
             }
@@ -312,7 +329,7 @@
 
                     var color = 0xFF0000;
 
-                    super(color, 3, 0, values);
+                    super(color, 3, 0, 3, values);
                 }
 
                 rotate()
@@ -327,6 +344,8 @@
                             [1,1],
                             [2,1]
                         ];
+
+                        this.width = 3;
                     }
                     else
                     {
@@ -336,6 +355,8 @@
                             [1,1],
                             [0,2]
                         ];
+
+                        this.width = 2;
                     }
                 }
             }
@@ -353,7 +374,7 @@
 
                     var color = 0x0000FF;
 
-                    super(color, 3, 0, values);
+                    super(color, 3, 0, 3, values);
                 }
 
                 rotate()
@@ -368,6 +389,8 @@
                             [1,1],
                             [2,1]
                         ];
+
+                        this.width = 3;
                     }
                     else if (this.rotationLevel % 4 == 1)
                     {
@@ -377,6 +400,8 @@
                             [0,1],
                             [0,2]
                         ];
+
+                        this.width = 2;
                     }
                     else if (this.rotationLevel % 4 == 2)
                     {
@@ -386,6 +411,8 @@
                             [2,0],
                             [2,1]
                         ];
+
+                        this.width = 3;
                     }
                     else
                     {
@@ -395,6 +422,8 @@
                             [0,2],
                             [1,2]
                         ];
+
+                        this.width = 2;
                     }
                 }
             }
@@ -412,7 +441,7 @@
 
                     var color = 0xFFA500;
 
-                    super(color, 3, 0, values);
+                    super(color, 3, 0, 3, values);
                 }
 
                 rotate()
@@ -427,6 +456,8 @@
                             [1,1],
                             [2,1]
                         ];
+
+                        this.width = 3;
                     }
                     else if (this.rotationLevel % 4 == 1)
                     {
@@ -436,6 +467,8 @@
                             [0,2],
                             [1,2]
                         ];
+
+                        this.width =2;
                     }
                     else if (this.rotationLevel % 4 == 2)
                     {
@@ -445,6 +478,8 @@
                             [2,0],
                             [0,1]
                         ];
+
+                        this.width = 3;
                     }
                     else
                     {
@@ -454,6 +489,8 @@
                             [1,1],
                             [1,2]
                         ];
+
+                        this.width = 2;
                     }
                 }
             }
