@@ -598,7 +598,7 @@
                 document.body.appendChild(renderer.view);
                 requestAnimationFrame(animate);
                 var tetris = new Tetris(stage);
-                window.setInterval(drop_piece_down, 1000);
+                window.setInterval(drop_piece_down(), 1000);
 
            // }
 
