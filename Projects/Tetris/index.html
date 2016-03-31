@@ -137,6 +137,8 @@
             // Create subclasses for game pieces
             class CyanI extends Piece
             {
+                var rotationLevel = 0;
+
                 constructor(container)
                 {
                     var values = [
@@ -150,6 +152,31 @@
 
                     super(color, 3, 0, values);
                 }
+
+                rotate()
+                {
+                    rotationLevel++;
+
+                    if (rotationLevel % 2 == 0)
+                    {
+                        this.values = [
+                            [0,0],
+                            [1,0],
+                            [2,0],
+                            [3,0]
+                        ];
+                    }
+                    else
+                    {
+                        this.values = [
+                            [0,0],
+                            [0,1],
+                            [0,2],
+                            [0,3]
+                        ];
+                    }
+                }
+
             }
 
             class YellowO extends Piece
@@ -438,6 +465,10 @@
                             this.current_piece.left()
                         }
                     }
+                    if (key.code == 32)
+                    {
+                        this.current_piece.rotate();
+                    }
                     this.clear_board();
                     this.draw_piece()
                 }
@@ -570,41 +601,12 @@
                         }
                 }
 
-//                drop_piece_down_driver()
-//                {
-//                    this.drop_piece_down();
-//                }
-
                 drop_piece_down() {
-//                    if (tetris.started) {
-//                        tetris.current_piece.down();
-//
-//                        if (tetris.current_piece.conflict(tetris.board_matrix))
-//                        {
-//                            tetris.current_piece.up();
-//                            tetris.current_piece.fill(tetris.board_matrix);
-//
-//
-//                            // Randomly generate a piece
-//                            //this.select_random_piece();
-//                            var random = Math.floor((Math.random() * 3) + 1);
-//
-//                            if (random == 1)
-//                                tetris.current_piece = new CyanI();
-//                            else if (random == 2)
-//                                tetris.current_piece = new BlueJ();
-//                            else
-//                                tetris.current_piece = new OrangeL()
-//                        }
-//
-//                        tetris.clear_board();
-//                        tetris.draw_piece();
-//                    }
-                    if (tetris.started) {
-
-
+                    if (tetris.started)
+                    {
                         tetris.current_piece.down();
-                        if (tetris.current_piece.conflict(tetris.board_matrix)) {
+                        if (tetris.current_piece.conflict(tetris.board_matrix))
+                        {
                             tetris.current_piece.up();
                             tetris.current_piece.fill(tetris.board_matrix);
 
@@ -619,7 +621,6 @@
 
                                 if (filledCells == 10)
                                     tetris.clear_row(j);
-
                             }
 
                             // Randomly generate a piece
@@ -632,21 +633,22 @@
                                 tetris.current_piece = new BlueJ();
                             else
                                 tetris.current_piece = new OrangeL();
-                            /* if (random == 1)
-                         this.current_piece = new CyanI();
-                         else if (random == 2)
-                         this.current_piece = new YellowO();
-                         else if (random == 3)
-                         this.current_piece = new PurpleT();
-                         else if (random == 4)
-                         this.current_piece = new GreenS();
-                         else if (random == 5)
-                         this.current_piece = new RedZ();
-                         else if (random == 6)
-                         this.current_piece = new BlueJ();
-                         else
-                         this.current_piece = new OrangeL();*/
+                                /* if (random == 1)
+                             this.current_piece = new CyanI();
+                             else if (random == 2)
+                             this.current_piece = new YellowO();
+                             else if (random == 3)
+                             this.current_piece = new PurpleT();
+                             else if (random == 4)
+                             this.current_piece = new GreenS();
+                             else if (random == 5)
+                             this.current_piece = new RedZ();
+                             else if (random == 6)
+                             this.current_piece = new BlueJ();
+                             else
+                             this.current_piece = new OrangeL();*/
                         }
+
                         tetris.clear_board();
                         tetris.draw_piece();
                     }
