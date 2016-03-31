@@ -582,6 +582,8 @@
                         if (tetris.current_piece.conflict(tetris.board_matrix))
                         {
                             tetris.current_piece.up();
+                            tetris.current_piece.fill(tetris.board_matrix);
+
 
                             // Randomly generate a piece
                             //this.select_random_piece();
@@ -594,7 +596,8 @@
                             else
                                 tetris.current_piece = new OrangeL()
                         }
-                        //tetris.clear_board();
+
+                        tetris.clear_board();
                         tetris.draw_piece();
                     }
                 }
