@@ -570,11 +570,6 @@
                         }
                 }
 
-                drop_piece_down_driver()
-                {
-                    this.drop_piece_down();
-                }
-
                 drop_piece_down() {
                     if (this.started) {
                         this.current_piece.down();
@@ -598,6 +593,13 @@
                         this.draw_piece();
                     }
                 }
+
+                drop_piece_down_driver()
+                {
+                    this.drop_piece_down();
+                }
+
+
 
 
                 end_game()
