@@ -584,6 +584,12 @@
                 $("body").append("hello")
             }
 
+            function animate()
+            {
+                requestAnimationFrame(animate);
+                renderer.render(stage)
+            }
+
            // function after_load()
            // {
                 stage = new PIXI.Container();
@@ -600,13 +606,12 @@
             function drop_piece_down(tetris) {
                 if (tetris.started) {
                     tetris.current_piece.down();
+                    //tetris.check_board();
+                    tetris.clear_board();
+                    tetris.draw_piece();
                 }
             }
-            function animate()
-            {
-                requestAnimationFrame(animate);
-                renderer.render(stage)
-            }
+
 
            // after_load();
 
