@@ -169,6 +169,9 @@
                         ];
 
                         this.width = 4;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else
                     {
@@ -234,6 +237,9 @@
                         ];
 
                         this.width = 3;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else if (this.rotationLevel % 4 == 1)
                     {
@@ -256,6 +262,9 @@
                         ];
 
                         this.width = 3;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else
                     {
@@ -301,6 +310,9 @@
                         ];
 
                         this.width = 3;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else
                     {
@@ -346,6 +358,9 @@
                         ];
 
                         this.width = 3;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else
                     {
@@ -391,6 +406,9 @@
                         ];
 
                         this.width = 3;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else if (this.rotationLevel % 4 == 1)
                     {
@@ -413,6 +431,9 @@
                         ];
 
                         this.width = 3;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else
                     {
@@ -458,6 +479,9 @@
                         ];
 
                         this.width = 3;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else if (this.rotationLevel % 4 == 1)
                     {
@@ -480,6 +504,9 @@
                         ];
 
                         this.width = 3;
+
+                        if (this.i + this.width > 10 - this.width)
+                            this.i = 10 - this.width;
                     }
                     else
                     {
@@ -838,15 +865,15 @@
                             }
 
                             // Randomly generate a piece
-                            //this.select_random_piece();
-                            var random = Math.floor((Math.random() * 3) + 1);
-
-                            if (random == 1)
-                                tetris.current_piece = new CyanI();
-                            else if (random == 2)
-                                tetris.current_piece = new BlueJ();
-                            else
-                                tetris.current_piece = new OrangeL();
+                            this.select_random_piece();
+//                            var random = Math.floor((Math.random() * 3) + 1);
+//
+//                            if (random == 1)
+//                                tetris.current_piece = new CyanI();
+//                            else if (random == 2)
+//                                tetris.current_piece = new BlueJ();
+//                            else
+//                                tetris.current_piece = new OrangeL();
                                 /* if (random == 1)
                              this.current_piece = new CyanI();
                              else if (random == 2)
