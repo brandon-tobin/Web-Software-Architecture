@@ -592,12 +592,12 @@
                 document.body.appendChild(renderer.view);
                 requestAnimationFrame(animate);
                 var tetris = new Tetris(stage);
-                window.setInterval(drop_piece_down, 3);
+                window.setInterval(drop_piece_down(tetris), 3);
 
            // }
 
 
-            function drop_piece_down() {
+            function drop_piece_down(tetris) {
                 if (tetris.started) {
                     tetris.current_piece.down();
                 }
