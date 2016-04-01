@@ -42,7 +42,7 @@ try
     $db->beginTransaction();
 
     $name = $_REQUEST['name'];
-    $score = $_REQUEST['scoreValue'];
+    $score = $_REQUEST['scorevalue'];
 
     //$query = "INSERT INTO Score VALUES($name, $score)";
     $statement = $db->prepare("INSERT INTO Score VALUES (?, ?)");
