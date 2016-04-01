@@ -36,7 +36,7 @@
     <div id ="table"></div>
 
     <div id="score">
-        <input type = "hidden" name="scoreValue" id = "scorevalue" value="0" />
+        <input type ="hidden" name="scoreValue" id = "scoreValue" value="0" />
     </div>
 
     <!--<div id="end">-->
@@ -625,7 +625,9 @@
                 {
                     globalScore += 10;
 
-                    document.getElementById("scorevalue").value = globalScore.toString();
+                   // document.getElementById("scorevalue").value = globalScore.toString();
+
+                    document.getElementById("scoreValue").value = "Johnny Bravo";
 
                     document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
 
