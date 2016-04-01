@@ -33,52 +33,6 @@ function find_data(  )
         .done( function ( data )
         {
 
-            // Check to see if the selected chart is the GPA Column Chart
-            // If so, set the options for the correct highchart
-
-
-
-                var gpaChart = new Highcharts.Chart({
-                    chart: {
-                        type: 'column',
-                        renderTo: 'chart'
-                    },
-                    title: {
-                        text: 'Student GPAs',
-                        x: -20 //center
-                    },
-                    subtitle: {
-                        x: -20
-                    },
-                    xAxis: {
-                        title: {
-                            text: 'GPAs'
-                        }
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Count'
-                        },
-                        plotLines: [{
-                            value: 0,
-                            width: 1,
-                            color: '#808080'
-                        }]
-                    },
-                    legend: {
-                        layout: 'vertical',
-                        align: 'right',
-                        verticalAlign: 'middle',
-                        borderWidth: 0
-                    }
-                });
-
-                gpaChart.addSeries({
-                    name: data.name,
-                    data: data.data
-                });
-            }
 
         } )
         .fail( function ( text, options, err )

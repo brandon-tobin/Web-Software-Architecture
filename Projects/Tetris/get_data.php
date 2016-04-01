@@ -43,6 +43,13 @@ if ($formType == '1')
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
+
+        $query = "INSERT INTO Score VALUES({$_REQUEST['name']}, {$_REQUEST['scoreValue']});";
+        $statement = $db->prepare( $query );
+        $statement->execute(  );
+
+        $db->commit();
+
         $query = "SELECT * FROM Score order by score desc limit 5;";
         $statement = $db->prepare( $query );
         $statement->execute(  );

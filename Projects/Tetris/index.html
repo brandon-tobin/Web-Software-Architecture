@@ -21,7 +21,8 @@
     </head>
     <body id="body">
 
-    <-- Area for AJAx-->
+    <!-- Area for AJAx-->
+
     <div id="pagetop" style="...">
         <form method='post' id = "nameSubmit" onsubmit="find_data()">
             <p><b>Name:</b><input type="text" name="name" id="name" /></p>
@@ -31,7 +32,9 @@
         <table></table>
     </div>
 
-    <div id="score"></div>
+    <div id="score">
+        <input type = "hidden" name="scoreValue" id = "scorevalue" />
+    </div>
 
     <!--<div id="end">-->
         <!--<form method='post' onsubmit="return find_data()">-->
@@ -618,6 +621,8 @@
                 clear_row(row)
                 {
                     globalScore += 10;
+
+                    document.getElementById("scoreValue").nodeValue = globalScore.toString();
 
                     document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
 
