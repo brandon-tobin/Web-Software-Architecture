@@ -78,7 +78,7 @@ function scoreTable($results)
 {
     echo"
         <p>Top Five Scores</p>
-        <table>
+        <table class='roster'>
             <tr>
                 <th>Name</th>
                 <th>Score</th>
