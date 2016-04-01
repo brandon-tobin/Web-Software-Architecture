@@ -71,7 +71,7 @@ h2 {
  * Set the width so that it spans the whole body of the page.
  * Set the background color of the navigation bar.
  */
-#custom_nav {
+#navigation {
    list-style-type: none;
    margin: 0px auto;
    width: 1160px;
@@ -82,7 +82,7 @@ h2 {
 /*
  * Set the li elements so that they are aligned to the left.
  */
-#custom_nav li {
+#navigation li {
    float: left;
 }
 
@@ -95,7 +95,7 @@ h2 {
  * Change the text to Arial.
  * Make the link block change background colors when hovered.
  */
-#custom_nav li a {
+#navigation li a {
    display: block;
    color: white;
    text-align: center;
@@ -103,7 +103,7 @@ h2 {
    text-decoration: none;
    font-family: "Arial", sans-serif;
 }
-#custom_nav li a:hover {
+#navigation li a:hover {
    background-color: #333333;
 }
 
