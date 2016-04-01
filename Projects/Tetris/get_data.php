@@ -75,26 +75,26 @@ catch (PDOException $ex)
     $output .= "<pre>$ex</pre>";
 }
 
-//function scoreTable($results)
-//{
-//    echo"
-//        <p>Top Five Scores</p>
-//        <table>
-//            <tr>
-//                <th>Name</th>
-//                <th>Score</th>
-//            </tr>";
-//
-//
-//    foreach ($results as $r)
-//    {
-//        echo"
-//            <tr>
-//                <td>{$r['Name']}</td>
-//                <td>{$r['Score']}</td>
-//            </tr>";
-//    }
-//    echo"
-//        </table>
-//        ";
-//}
+function scoreTable($results)
+{
+    echo"
+        <p>Top Five Scores</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>";
+
+
+    foreach ($results as $r)
+    {
+        echo"
+            <tr>
+                <td>{$r['Name']}</td>
+                <td>{$r['Score']}</td>
+            </tr>";
+    }
+    echo"
+        </table>
+        ";
+}
