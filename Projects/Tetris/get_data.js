@@ -32,7 +32,7 @@ function find_data(  )
         })
         .done( function ( data )
         {
-            var jContent = $( "#content" ); // put data here
+            var jContent = $( "#table" ); // put data here
             jContent.html( data );
 
         } )
