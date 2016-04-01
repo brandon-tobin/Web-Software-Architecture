@@ -4,13 +4,14 @@
 
 function find_data(  )
 {
-    var score;
+    var score = document.getElementById("scoreValue").value;
+
 
     $.ajax(
         {
             type:'POST',
             url: "get_data.php",
-            data: $('#nameSubmit').serialize(),
+            data: { var1: $('#nameSubmit').serialize(), var2: score },
             dataType: "html",  		      // The type of data that is getting returned.
 
             //success: function(response)
@@ -29,11 +30,10 @@ function find_data(  )
                // state = $('#state').val();
                // score = document.nameSubmit.myinput.value = '1';
 
-                alert("received score value of " + score + " in AJAX");
+                //alert("received score value of " + score + " in AJAX");
 
-                score = document.getElementById("scoreValue").value;
 
-                alert("received score value of " + score + " in AJAX");
+                //alert("received score value of " + score + " in AJAX");
             }
 
         })
