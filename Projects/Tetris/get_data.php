@@ -52,14 +52,14 @@ try
 
     $db->commit();
 
-    $query = "SELECT * FROM Score order by score desc limit 5;";
-    $statement = $db->prepare( $query );
-    $statement->execute(  );
-
-    //
-    // Fetch all the results
-    //
-    $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
+//    $query = "SELECT * FROM Score order by score desc limit 5;";
+//    $statement = $db->prepare( $query );
+//    $statement->execute(  );
+//
+//    //
+//    // Fetch all the results
+//    //
+//    $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     //scoreTable($results);
 
