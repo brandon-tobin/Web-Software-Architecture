@@ -4,14 +4,12 @@
 
 function find_data(  )
 {
-    var state = 0;
 
     $.ajax(
         {
             type:'POST',
             url: "get_data.php",
-            data: $('#nameSubmit').serialize(),
-            dataType: "json",  		      // The type of data that is getting returned.
+            dataType: "html",  		      // The type of data that is getting returned.
 
             //success: function(response)
             //{
