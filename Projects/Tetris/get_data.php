@@ -39,10 +39,12 @@ try
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
 
+    $db->beginTransaction();
+
     //$query = "INSERT INTO Score VALUES({$_REQUEST['name']}, {$_REQUEST['scoreValue']});";
     $query = "INSERT INTO Score VALUES ('Test', '10')";
-    $statement = $db->prepare( $query );
-    $statement->execute(  );
+    $statement = $db->prepare($query);
+    $statement->execute();
 
     error_log("Made it in php");
 
