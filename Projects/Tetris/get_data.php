@@ -52,18 +52,17 @@ try
 
     $db->commit();
 
-//    $query = "SELECT * FROM Score order by score desc limit 5;";
-//    $statement = $db->prepare( $query );
-//    $statement->execute(  );
-//
-//    //
-//    // Fetch all the results
-//    //
-//    $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $query = "SELECT * FROM Score order by score desc limit 5;";
+    $statement = $db->prepare( $query );
+    $statement->execute(  );
 
-    //scoreTable($results);
+    //
+    // Fetch all the results
+    //
+    $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    echo "Test";
+    scoreTable($results);
+
 
 }
 catch (PDOException $ex)
@@ -75,26 +74,26 @@ catch (PDOException $ex)
     $output .= "<pre>$ex</pre>";
 }
 
-//function scoreTable($results)
-//{
-//    echo"
-//        <p>Top Five Scores</p>
-//        <table>
-//            <tr>
-//                <th>Name</th>
-//                <th>Score</th>
-//            </tr>";
-//
-//
-//    foreach ($results as $r)
-//    {
-//        echo"
-//            <tr>
-//                <td>{$r['Name']}</td>
-//                <td>{$r['Score']}</td>
-//            </tr>";
-//    }
-//    echo"
-//        </table>
-//        ";
-//}
+function scoreTable($results)
+{
+    echo"
+        <p>Top Five Scores</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>";
+
+
+    foreach ($results as $r)
+    {
+        echo"
+            <tr>
+                <td>{$r['Name']}</td>
+                <td>{$r['Score']}</td>
+            </tr>";
+    }
+    echo"
+        </table>
+        ";
+}

@@ -28,16 +28,16 @@
     <div id="pagetop">
         <form method='post' id = "nameSubmit">
             <label for="name">Name:</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" onkeyup="score()" />
             <input type="button" name='submit' value='Submit Score' onclick="find_data()"/>
+            <input type = "hidden" name="scoreValue" id = "scorevalue" value="0" />
         </form>
     </div>
 
+    <div ontimeupdate="score()"></div>
     <div id ="table"></div>
 
-    <div id="score">
-        <input type ="hidden" name="scoreValue" id = "scoreValue" value="0" />
-    </div>
+    <div id="score"></div>
 
     <!--<div id="end">-->
         <!--<form method='post' onsubmit="return find_data()">-->
@@ -625,9 +625,7 @@
                 {
                     globalScore += 10;
 
-                   // document.getElementById("scorevalue").value = globalScore.toString();
 
-                    document.getElementById("scoreValue").value = "Johnny Bravo";
 
                     document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
 
@@ -965,6 +963,11 @@
             function change_state()
             {
                 document.getElementById("state").nodeValue= 2;
+            }
+
+            function score()
+            {
+                document.getElementById("scorevalue").value = globalScore;
             }
 
             after_load();
