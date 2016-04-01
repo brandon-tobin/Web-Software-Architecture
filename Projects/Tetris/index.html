@@ -30,15 +30,15 @@
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" onkeyup="score()" />
             <input type="button" name='submit' value='Submit Score' onclick="find_data()"/>
-            <input type = "hidden" name="scoreValue" id = "scoreValue" value="0" />
-            <input type ="hidden" name="score" id="score" value="Johnny"/>
+            <input type = "hidden" name="scoreValue" id = "scoreValue" value="" />
+            <input type ="text" name="score" id="score" value="Johnny"/>
         </form>
     </div>
 
     <div ontimeupdate="score()"></div>
     <div id ="table"></div>
 
-   <!-- <div id="score"></div>-->
+    <!--<div id="score"></div>-->
 
     <!--<div id="end">-->
         <!--<form method='post' onsubmit="return find_data()">-->
@@ -632,6 +632,10 @@
 
                     //document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
 
+                    document.getElementById("scoreValue").value = document.getElementById("score").value;
+
+                    alert("scoreValue is now " + document.getElementById("myText").value);
+
 
                     for (var j = row; j >= 0; j--)
                     {
@@ -976,8 +980,8 @@
             after_load();
 
 
-            //document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
-            document.getElementById("score").value = globalScore.toString();
+            document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
+           // document.getElementById("score").value = globalScore.toString();
 
 
         </script>
