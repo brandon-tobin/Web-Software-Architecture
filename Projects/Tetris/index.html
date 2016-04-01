@@ -31,25 +31,16 @@
             <input type="text" name="name" id="name" onkeyup="score()" />
             <input type="button" name='submit' value='Submit Score' onclick="find_data()"/>
             <input type = "hidden" name="scoreValue" id = "scoreValue" value="" />
-            <input type ="text" name="score" id="score" value="Johnny"/>
+            <!--<input type ="text" name="score" id="score" value="Johnny"/>-->
         </form>
     </div>
 
     <div ontimeupdate="score()"></div>
     <div id ="table"></div>
 
-    <!--<div id="score"></div>-->
+    <div id="score"></div>
 
-    <!--<div id="end">-->
-        <!--<form method='post' onsubmit="return find_data()">-->
-            <!--<p><b>Name:</b><input type="text" name="name" id="name" /></p>-->
-            <!--<input type="submit" name='submit' value='Submit Score'/>-->
-        <!--</form>-->
-    <!--</div>-->
-
-
-
-    <!-- <div class="c4"> </div>-->
+    <div id="end"></div>
 
     </body>
 
@@ -626,18 +617,9 @@
                 {
                     globalScore += 10;
 
-
                     document.getElementById("score").value = globalScore.toString();
 
-
-                    //document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
-
-                    //document.getElementById("scoreValue").value = document.getElementById("score").value;
-
                     document.getElementById("scoreValue").value = globalScore.toString();
-
-                    alert("scoreValue is now " + document.getElementById("scoreValue").value);
-
 
                     for (var j = row; j >= 0; j--)
                     {
@@ -933,8 +915,7 @@
                 end_game()
                 {
                     tetris.started = false;
-                    alert("scoreVal is at end " + document.getElementById("scoreValue").value);
-
+                    document.getElementById("scoreValue").value = globalScore.toString();
                     document.getElementById("end").innerHTML="Game Over";
                 }
             }

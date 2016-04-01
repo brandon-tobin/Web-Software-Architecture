@@ -41,25 +41,10 @@ try
 
     $db->beginTransaction();
 
-    //$name = $_REQUEST['name'];
-
-    //$name = $_POST['var1'['name']];
-
     $name = $_POST['var1'];
-
-    error_log("name is : " .$name);
-
-    //$score = $_REQUEST['scorevalue'];
 
     $score = $_POST['var2'];
 
-   // error_log("_POST[var2] is : " . $score);
-
-   // $score1 = $_POST['score'];
-
-   // error_log("_POST[score] is : " . $score1);
-
-    //$query = "INSERT INTO Score VALUES($name, $score)";
     $statement = $db->prepare("INSERT INTO Score VALUES (?, ?)");
     $statement->bindValue(1, $name);
     $statement->bindValue(2, $score);
