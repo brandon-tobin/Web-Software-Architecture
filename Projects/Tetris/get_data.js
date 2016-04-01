@@ -58,5 +58,7 @@ function find_data(  )
              */
             console.log('Tobin, cleaning up');
         } );
+
+    return false;
 }
 
