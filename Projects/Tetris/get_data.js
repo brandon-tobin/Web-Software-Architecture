@@ -4,6 +4,7 @@
 
 function find_data(  )
 {
+    var name = document.getElementById("name").value;
     var score = document.getElementById("scoreValue").value;
 
 
@@ -11,7 +12,7 @@ function find_data(  )
         {
             type:'POST',
             url: "get_data.php",
-            data: { var1: $('#nameSubmit').serialize(), var2: score },
+            data: { var1: name, var2: score },
             dataType: "html",  		      // The type of data that is getting returned.
 
             //success: function(response)
