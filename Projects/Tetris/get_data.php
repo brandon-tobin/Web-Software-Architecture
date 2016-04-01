@@ -8,7 +8,7 @@
 
 $verify_ajax = true;
 
-
+error_log("Made it in php");
 //
 // AJAX check
 //
