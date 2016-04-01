@@ -4,6 +4,7 @@
 
 function find_data(  )
 {
+    var score;
 
     $.ajax(
         {
@@ -26,7 +27,11 @@ function find_data(  )
             {
                 // Determine which form we are dealing with
                // state = $('#state').val();
+               // score = document.nameSubmit.myinput.value = '1';
 
+                score = document.getElementById("scoreVal").value;
+
+                alert("received score value of " + score + " in AJAX");
             }
 
         })
