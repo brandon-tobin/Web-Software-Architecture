@@ -22,7 +22,7 @@ if($verify_ajax &&
 $server_name  = 'localhost';
 $db_user_name = 'Grad_Application';
 $db_password  = '173620901';
-$db_name      = 'Grad_Prog_V6';
+$db_name      = 'Tetris';
 
 try
 {
