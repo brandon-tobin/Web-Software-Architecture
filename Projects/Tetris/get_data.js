@@ -29,7 +29,9 @@ function find_data(  )
                // state = $('#state').val();
                // score = document.nameSubmit.myinput.value = '1';
 
-                score = document.getElementById("scoreVal").value;
+                alert("received score value of " + score + " in AJAX");
+
+                score = document.getElementById("scoreValue").value;
 
                 alert("received score value of " + score + " in AJAX");
             }
