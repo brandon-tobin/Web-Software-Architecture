@@ -933,8 +933,9 @@
                 end_game()
                 {
                     tetris.started = false;
-                    document.getElementById("end").innerHTML="Game Over";
                     alert("scoreVal is at end " + document.getElementById("scoreValue").value);
+
+                    document.getElementById("end").innerHTML="Game Over";
                 }
             }
             var stage;
