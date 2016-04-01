@@ -45,7 +45,7 @@ try
     $score = $_REQUEST['score'];
 
     //$query = "INSERT INTO Score VALUES($name, $score)";
-    $statement = $db->prepare("INSERT INTO Score VALUES ($name, $score)");
+    $statement = $db->prepare("INSERT INTO Score VALUES (".$name.",". $score.")");
     $statement->execute();
 
     error_log("Made it in php");
