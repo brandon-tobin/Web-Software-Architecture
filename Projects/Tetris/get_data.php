@@ -37,7 +37,6 @@ try
     $db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
 
     $db->beginTransaction();
 
@@ -78,7 +77,7 @@ function scoreTable($results)
 {
     echo"
         <p>Top Five Scores</p>
-        <table>
+        <table class='roster'>
             <tr>
                 <th>Name</th>
                 <th>Score</th>

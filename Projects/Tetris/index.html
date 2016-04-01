@@ -6,16 +6,10 @@
         <title>Tetris</title>
 
         <!-- THIS FIRST -->
-
+        <link rel="stylesheet" href="../../Resources/css/stylesheet.css" type="text/css"/>
         <script src="jquery-1.11.2.min.js"></script>
         <script src="pixi.js"></script>
-
-
         <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
-
-
-
-        <!--<script src="tetris.js"></script>-->
         <script type="text/javascript" src="get_data.js"></script>
 
         <!-- CSS Stuff -->
@@ -33,11 +27,11 @@
             <input type="text" name="name" id="name" onkeyup="score()" />
             <input type="button" name='submit' value='Submit Score' onclick="find_data()"/>
             <input type = "hidden" name="scoreValue" id = "scoreValue" value="" />
-            <!--<input type ="text" name="score" id="score" value="Johnny"/>-->
         </form>
     </div>
 
     <div ontimeupdate="score()"></div>
+
     <div id ="table"></div>
 
     <div id="score"></div>
@@ -50,41 +44,17 @@
 
             var tetris;
 
-            var color_array = [0xff0000, 0x00ff00, 0x0000ff];
-            var color_index = 0;
-
             var globalScore = 0;
 
             class Piece
             {
-               // var color;
 
-               // constructor(container, i , j, color)
                 constructor (color, i, j, width, values)
                 {
                     this.color = color;
                     this.values = values;
-                    this.width = width
+                    this.width = width;
 
-                    // Set pieces based on color???
-                    /*if (color_index % 2 == 1)
-                    {
-                        this.values = [
-                                [0, 0],
-                                [0, 1],
-                                [1, 0],
-                                [1, 1]
-                        ]
-                    }
-                    else
-                    {
-                        this.values = [
-                                [0, 0],
-                                [0, 1],
-                                [1, 1],
-                                [1, 2]
-                        ]
-                    }*/
                     // Set position of piece
                     this.i = i;
                     this.j = j;
@@ -110,7 +80,6 @@
 
                 right()
                 {
-                    //this.i++;
                     if (this.i + this.width > 10 - this.width)
                             this.i = 10 - this.width;
                     else
@@ -641,7 +610,6 @@
                             this.current_piece.up();
                             this.current_piece.fill(this.board_matrix);
 
-                            // Insert full row code here??
                             for (var j = 0; j < 20; j++)
                             {
                                 var filledCells = 0;
@@ -659,29 +627,6 @@
 
                             // Randomly generate a piece
                             this.select_random_piece();
-//                            var random = Math.floor((Math.random() * 3) + 1);
-//
-//                            if (random == 1)
-//                                this.current_piece = new CyanI();
-//                            else if (random == 2)
-//                                this.current_piece = new BlueJ();
-//                            else
-//                                this.current_piece = new OrangeL();
-
-                           /* if (random == 1)
-                                this.current_piece = new CyanI();
-                            else if (random == 2)
-                                this.current_piece = new YellowO();
-                            else if (random == 3)
-                                this.current_piece = new PurpleT();
-                            else if (random == 4)
-                                this.current_piece = new GreenS();
-                            else if (random == 5)
-                                this.current_piece = new RedZ();
-                            else if (random == 6)
-                                this.current_piece = new BlueJ();
-                            else
-                                this.current_piece = new OrangeL();*/
 
                             this.draw_piece()
                         }
@@ -845,7 +790,7 @@
                             tetris.current_piece.up();
                             tetris.current_piece.fill(tetris.board_matrix);
 
-                            // Insert full row code here??
+                            // Remove full rows and bring everything down
                             for (var j = 0; j < 20; j++) {
                                 var filledCells = 0;
 
@@ -861,30 +806,6 @@
                             // Randomly generate a piece
                             tetris.select_random_piece();
 
-//                            var random = Math.floor((Math.random() * 3) + 1);
-//
-//                            if (random == 1)
-//                                tetris.current_piece = new CyanI();
-//                            else if (random == 2)
-//                                tetris.current_piece = new BlueJ();
-//                            else
-//                                tetris.current_piece = new OrangeL();
-                            /* if (random == 1)
-                             this.current_piece = new CyanI();
-                             else if (random == 2)
-                             this.current_piece = new YellowO();
-                             else if (random == 3)
-                             this.current_piece = new PurpleT();
-                             else if (random == 4)
-                             this.current_piece = new GreenS();
-                             else if (random == 5)
-                             this.current_piece = new RedZ();
-                             else if (random == 6)
-                             this.current_piece = new BlueJ();
-                             else
-                             this.current_piece = new OrangeL();*/
-
-                            //tetris.draw_piece();
                         }
                         tetris.clear_board();
                         tetris.draw_piece();
@@ -921,7 +842,6 @@
                 requestAnimationFrame(animate);
                 tetris = new Tetris(stage);
                 window.setInterval(tetris.drop_piece_down, 1000);
-                //window.setInterval(tetris.drop_piece_down_driver, 1000);
                 window.setInterval(replay_song, 21000);
 
             }
@@ -943,10 +863,7 @@
 
             //after_load();
 
-
             document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
-            //document.getElementById("score").value = globalScore.toString();
-
 
         </script>
 
