@@ -41,7 +41,10 @@ try
 
     $db->beginTransaction();
 
-    $query = "INSERT INTO Score VALUES({$_REQUEST['name']}, {$_REQUEST['scoreValue']})";
+    $name = $_REQUEST['name'];
+    $score = $_REQUEST['score'];
+
+    $query = "INSERT INTO Score VALUES($name, $score)";
     $statement = $db->prepare($query);
     $statement->execute();
 
