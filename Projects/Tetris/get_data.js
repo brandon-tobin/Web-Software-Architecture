@@ -7,6 +7,7 @@ function find_data(  )
     var name = document.getElementById("name").value;
     var score = document.getElementById("scoreValue").value;
 
+    alert("Name is : " + name);
 
     $.ajax(
         {

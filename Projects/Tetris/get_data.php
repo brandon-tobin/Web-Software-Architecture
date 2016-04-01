@@ -43,7 +43,9 @@ try
 
     //$name = $_REQUEST['name'];
 
-    $name = $_POST['var1'['name']];
+    //$name = $_POST['var1'['name']];
+
+    $name = $_POST['var1'];
 
     error_log("name is : " .$name);
 
