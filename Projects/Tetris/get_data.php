@@ -41,16 +41,16 @@ try
 
     $db->beginTransaction();
 
-    //$name = $_REQUEST['name'];
-    //$score = $_REQUEST['scorevalue'];
+    $name = $_REQUEST['name'];
+    $score = $_REQUEST['scorevalue'];
 
     //$query = "INSERT INTO Score VALUES($name, $score)";
-//    $statement = $db->prepare("INSERT INTO Score VALUES (?, ?)");
-//    $statement->bindValue(1, $name);
-//    $statement->bindValue(2, $score);
-//    $statement->execute();
-//
-//    $db->commit();
+    $statement = $db->prepare("INSERT INTO Score VALUES (?, ?)");
+    $statement->bindValue(1, $name);
+    $statement->bindValue(2, $score);
+    $statement->execute();
+
+    $db->commit();
 
     $query = "SELECT * FROM Score order by score desc limit 5;";
     $statement = $db->prepare( $query );
