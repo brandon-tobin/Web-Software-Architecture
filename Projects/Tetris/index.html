@@ -14,15 +14,33 @@
 
 
         <!--<script src="tetris.js"></script>-->
+        <script type="text/javascript"    src="get_data.js"></script>
 
         <!-- CSS Stuff -->
 
     </head>
     <body id="body">
 
+    <-- Area for AJAx-->
+    <div id="pagetop" style="...">
+        <form method='post' id = "nameSubmit" onsubmit="find_data()">
+            <p><b>Name:</b><input type="text" name="name" id="name" /></p>
+            <input type="submit" name='submit' value='Submit Score'/>
+        </form>
+        <input type='hidden' name='state' id = 'state'/>
+        <table></table>
+    </div>
+
     <div id="score"></div>
 
-    <div id="end"></div>
+    <!--<div id="end">-->
+        <!--<form method='post' onsubmit="return find_data()">-->
+            <!--<p><b>Name:</b><input type="text" name="name" id="name" /></p>-->
+            <!--<input type="submit" name='submit' value='Submit Score'/>-->
+        <!--</form>-->
+    <!--</div>-->
+
+
 
     <!-- <div class="c4"> </div>-->
 
@@ -899,6 +917,7 @@
                 {
                     tetris.started = false;
                     document.getElementById("end").innerHTML="Game Over";
+                    document.getElementById("state").nodeValue= 1;
                 }
             }
             var stage;
@@ -934,10 +953,18 @@
                 bgmusic.play();
             }
 
+            function change_state()
+            {
+                document.getElementById("state").nodeValue= 2;
+            }
+
             after_load();
 
 
             document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
 
+
         </script>
+
+        <script></script>
 </html>
