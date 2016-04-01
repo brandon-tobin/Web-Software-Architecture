@@ -9,6 +9,7 @@ function find_data(  )
         {
             type:'POST',
             url: "get_data.php",
+            data: $('#nameSubmit').serialize(),
             dataType: "html",  		      // The type of data that is getting returned.
 
             //success: function(response)
@@ -25,7 +26,6 @@ function find_data(  )
             {
                 // Determine which form we are dealing with
                // state = $('#state').val();
-
 
             }
 
