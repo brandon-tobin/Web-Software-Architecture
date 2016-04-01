@@ -32,7 +32,8 @@ function find_data(  )
         })
         .done( function ( data )
         {
-
+            var jContent = $( "#content" ); // put data here
+            jContent.html( data );
 
         } )
         .fail( function ( text, options, err )

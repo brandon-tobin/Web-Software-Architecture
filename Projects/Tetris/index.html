@@ -28,12 +28,11 @@
             <p><b>Name:</b><input type="text" name="name" id="name" /></p>
             <input type="submit" name='submit' value='Submit Score'/>
         </form>
-        <input type='hidden' name='state' id = 'state'/>
         <table></table>
     </div>
 
     <div id="score">
-        <input type = "hidden" name="scoreValue" id = "scorevalue" />
+        <input type = "hidden" name="scoreValue" id = "scorevalue" value="0" />
     </div>
 
     <!--<div id="end">-->
@@ -622,6 +621,7 @@
                 {
                     globalScore += 10;
 
+                    document.getElementById("scoreValue").nodeValue = globalScore.toString();
 
                     document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
 
