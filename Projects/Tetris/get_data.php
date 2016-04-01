@@ -8,7 +8,6 @@
 
 $verify_ajax = true;
 
-error_log("Made it in php");
 //
 // AJAX check
 //
@@ -45,6 +44,8 @@ try
     $statement = $db->prepare( $query );
     $statement->execute(  );
 
+    error_log("Made it in php");
+
     $db->commit();
 
     $query = "SELECT * FROM Score order by score desc limit 5;";
@@ -63,32 +64,33 @@ try
 }
 catch (PDOException $ex)
 {
+    error_log("TOBIN DB ERROR: " . $ex->getMessage());
     $output .= "<p>oops</p>";
     $output .= "<p> Code: {$ex->getCode()} </p>";
     $output .=" <p> See: dev.mysql.com/doc/refman/5.0/en/error-messages-server.html#error_er_dup_key";
     $output .= "<pre>$ex</pre>";
 }
 
-function scoreTable($results)
-{
-    echo"
-        <p>Top Five Scores</p>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Score</th>
-            </tr>";
-
-
-    foreach ($results as $r)
-    {
-        echo"
-            <tr>
-                <td>{$r['Name']}</td>
-                <td>{$r['Score']}</td>
-            </tr>";
-    }
-    echo"
-        </table>
-        ";
-}
+//function scoreTable($results)
+//{
+//    echo"
+//        <p>Top Five Scores</p>
+//        <table>
+//            <tr>
+//                <th>Name</th>
+//                <th>Score</th>
+//            </tr>";
+//
+//
+//    foreach ($results as $r)
+//    {
+//        echo"
+//            <tr>
+//                <td>{$r['Name']}</td>
+//                <td>{$r['Score']}</td>
+//            </tr>";
+//    }
+//    echo"
+//        </table>
+//        ";
+//}
