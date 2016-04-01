@@ -26,8 +26,7 @@ $formType = trim($_REQUEST['formlist']);
 
 // Check to see if the selected chart is the GPA Column Chart
 // If so, get the required data for the chart
-if ($formType == '1')
-{
+
     $server_name  = 'localhost';
     $db_user_name = 'Grad_Application';
     $db_password  = '173620901';
@@ -48,7 +47,8 @@ if ($formType == '1')
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
 
-        $query = "INSERT INTO Score VALUES({$_REQUEST['name']}, {$_REQUEST['scoreValue']});";
+        //$query = "INSERT INTO Score VALUES({$_REQUEST['name']}, {$_REQUEST['scoreValue']});";
+        $query = "INSERT INTO Score VALUES ('Test', '10')";
         $statement = $db->prepare( $query );
         $statement->execute(  );
 
@@ -73,7 +73,7 @@ if ($formType == '1')
         $output .=" <p> See: dev.mysql.com/doc/refman/5.0/en/error-messages-server.html#error_er_dup_key";
         $output .= "<pre>$ex</pre>";
     }
-}
+
 
 
 
