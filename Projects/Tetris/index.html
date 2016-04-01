@@ -634,7 +634,7 @@
 
                     document.getElementById("scoreValue").value = document.getElementById("score").value;
 
-                    alert("scoreValue is now " + document.getElementById("myText").value);
+                    alert("scoreValue is now " + document.getElementById("scoreValue").value);
 
 
                     for (var j = row; j >= 0; j--)
@@ -980,8 +980,8 @@
             after_load();
 
 
-            document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
-           // document.getElementById("score").value = globalScore.toString();
+            //document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
+            document.getElementById("score").value = globalScore.toString();
 
 
         </script>
