@@ -26,13 +26,16 @@ function find_data(  )
                 // Determine which form we are dealing with
                // state = $('#state').val();
 
-                console.log('TOBIN MADE IT HERE' );
 
             }
 
         })
         .done( function ( data )
         {
+            console.log('TOBIN MADE IT HERE' );
+
+            console.log('DATA is ' + data);
+
             var jContent = $( "#table" ); // put data here
             jContent.html( data );
 
