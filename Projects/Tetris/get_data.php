@@ -41,7 +41,12 @@ try
 
     $db->beginTransaction();
 
-    $name = $_REQUEST['name'];
+    //$name = $_REQUEST['name'];
+
+    $name = $_POST['var1'['name']];
+
+    error_log("name is : " .$name);
+
     //$score = $_REQUEST['scorevalue'];
 
     $score = $_POST['var2'];
