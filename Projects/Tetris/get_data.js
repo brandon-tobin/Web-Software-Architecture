@@ -24,7 +24,7 @@ function find_data(  )
             beforeSend: function()
             {
                 // Determine which form we are dealing with
-                state = $('#state').val();
+               // state = $('#state').val();
             }
 
         })

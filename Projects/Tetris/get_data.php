@@ -25,10 +25,11 @@ $formType = trim($_REQUEST['formlist']);
 // If so, get the required data for the chart
 if ($formType == '1')
 {
-    $server_name  = 'uofu-cs4540-6.westus.cloudapp.azure.com';
-    $db_user_name = 'faoki';
-    $db_password  = '628732387';
-    $db_name      = 'Tetris';
+    $server_name  = 'localhost';
+    $db_user_name = 'Grad_Application';
+    $db_password  = '173620901';
+    $db_name      = 'Grad_Prog_V6';
+
     try
     {
         //
