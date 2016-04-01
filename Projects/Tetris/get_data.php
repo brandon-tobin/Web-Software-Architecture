@@ -41,27 +41,27 @@ try
 
     $db->beginTransaction();
 
-    $name = $_REQUEST['name'];
-    $score = $_REQUEST['scorevalue'];
+    //$name = $_REQUEST['name'];
+    //$score = $_REQUEST['scorevalue'];
 
     //$query = "INSERT INTO Score VALUES($name, $score)";
-    $statement = $db->prepare("INSERT INTO Score VALUES (?, ?)");
-    $statement->bindValue(1, $name);
-    $statement->bindValue(2, $score);
-    $statement->execute();
-
-    $db->commit();
-
-//    $query = "SELECT * FROM Score order by score desc limit 5;";
-//    $statement = $db->prepare( $query );
-//    $statement->execute(  );
+//    $statement = $db->prepare("INSERT INTO Score VALUES (?, ?)");
+//    $statement->bindValue(1, $name);
+//    $statement->bindValue(2, $score);
+//    $statement->execute();
 //
-//    //
-//    // Fetch all the results
-//    //
-//    $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
+//    $db->commit();
 
-    //scoreTable($results);
+    $query = "SELECT * FROM Score order by score desc limit 5;";
+    $statement = $db->prepare( $query );
+    $statement->execute(  );
+
+    //
+    // Fetch all the results
+    //
+    $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    scoreTable($results);
 
     echo "Test";
 
