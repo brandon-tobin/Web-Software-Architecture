@@ -17,6 +17,8 @@
     </head>
     <body id="body">
 
+    <input type="button" id="start" onsubmit="after_load()" />
+
     <!-- Area for AJAx-->
 
     <div id="pagetop">
@@ -835,7 +837,7 @@
             function after_load() {
                 stage = new PIXI.Container();
                 stage.interactive = true;
-                renderer = PIXI.autoDetectRenderer(500, 1000, null);
+                renderer = PIXI.autoDetectRenderer(500, 750, null);
                 document.body.appendChild(renderer.view);
                 requestAnimationFrame(animate);
                 tetris = new Tetris(stage);
@@ -859,7 +861,7 @@
                 document.getElementById("scoreValue").value = globalScore;
             }
 
-            after_load();
+            //after_load();
 
             document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
 
