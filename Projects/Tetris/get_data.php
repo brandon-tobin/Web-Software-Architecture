@@ -8,6 +8,9 @@
 
 $verify_ajax = true;
 
+var_dump("FUCK");
+
+
 //
 // AJAX check
 //
