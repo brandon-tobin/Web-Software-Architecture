@@ -63,7 +63,6 @@ try
 
     scoreTable($results);
 
-    echo "Test";
 
 }
 catch (PDOException $ex)
