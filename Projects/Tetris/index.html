@@ -30,7 +30,7 @@
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" onkeyup="score()" />
             <input type="button" name='submit' value='Submit Score' onclick="find_data()"/>
-            <input type = "hidden" name="scoreValue" id = "scorevalue" value="0" />
+            <input type = "hidden" name="scoreValue" id = "scoreValue" value="0" />
         </form>
     </div>
 
@@ -967,7 +967,7 @@
 
             function score()
             {
-                document.getElementById("scorevalue").value = globalScore;
+                document.getElementById("scoreValue").value = globalScore;
             }
 
             after_load();
