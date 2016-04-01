@@ -8,8 +8,6 @@
 
 $verify_ajax = true;
 
-var_dump("FUCK");
-
 
 //
 // AJAX check
@@ -22,61 +20,54 @@ if($verify_ajax &&
     die();
 }
 
-$formType = trim($_REQUEST['formlist']);
+$server_name  = 'localhost';
+$db_user_name = 'Grad_Application';
+$db_password  = '173620901';
+$db_name      = 'Grad_Prog_V6';
 
-// Check to see if the selected chart is the GPA Column Chart
-// If so, get the required data for the chart
+try
+{
+    //
+    // The main content of the page will be in this variable
+    //
+    $output = "";
 
-    $server_name  = 'localhost';
-    $db_user_name = 'Grad_Application';
-    $db_password  = '173620901';
-    $db_name      = 'Grad_Prog_V6';
+    //
+    // Connect to the data base and select it.
+    //
+    $db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
 
-    try
-    {
-        //
-        // The main content of the page will be in this variable
-        //
-        $output = "";
+    //$query = "INSERT INTO Score VALUES({$_REQUEST['name']}, {$_REQUEST['scoreValue']});";
+    $query = "INSERT INTO Score VALUES ('Test', '10')";
+    $statement = $db->prepare( $query );
+    $statement->execute(  );
 
-        //
-        // Connect to the data base and select it.
-        //
-        $db = new PDO("mysql:host=$server_name;dbname=$db_name;charset=utf8", $db_user_name, $db_password);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        //$query = "SELECT gpa FROM Students ORDER BY gpa ASC";
+    $db->commit();
 
-        //$query = "INSERT INTO Score VALUES({$_REQUEST['name']}, {$_REQUEST['scoreValue']});";
-        $query = "INSERT INTO Score VALUES ('Test', '10')";
-        $statement = $db->prepare( $query );
-        $statement->execute(  );
+    $query = "SELECT * FROM Score order by score desc limit 5;";
+    $statement = $db->prepare( $query );
+    $statement->execute(  );
 
-        $db->commit();
+    //
+    // Fetch all the results
+    //
+    $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $query = "SELECT * FROM Score order by score desc limit 5;";
-        $statement = $db->prepare( $query );
-        $statement->execute(  );
+    //scoreTable($results);
 
-        //
-        // Fetch all the results
-        //
-        $results    = $statement->fetchAll(PDO::FETCH_ASSOC);
+    echo "Test";
 
-        scoreTable($results);
-
-    }
-    catch (PDOException $ex)
-    {
-        $output .= "<p>oops</p>";
-        $output .= "<p> Code: {$ex->getCode()} </p>";
-        $output .=" <p> See: dev.mysql.com/doc/refman/5.0/en/error-messages-server.html#error_er_dup_key";
-        $output .= "<pre>$ex</pre>";
-    }
-
-
-
-
+}
+catch (PDOException $ex)
+{
+    $output .= "<p>oops</p>";
+    $output .= "<p> Code: {$ex->getCode()} </p>";
+    $output .=" <p> See: dev.mysql.com/doc/refman/5.0/en/error-messages-server.html#error_er_dup_key";
+    $output .= "<pre>$ex</pre>";
+}
 
 function scoreTable($results)
 {
