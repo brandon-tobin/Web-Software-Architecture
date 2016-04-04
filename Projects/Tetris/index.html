@@ -37,7 +37,7 @@
     <br /><br />
 
     <!-- Start Button -->
-    <input type="button" class="button" id="start" value="Start Game" onclick="after_load()" />
+    <input type="button" class="button" style="vertical-align:middle" id="start" value="Start Game" onclick="after_load()" /><span></span>
 
     <br />
 
@@ -46,7 +46,7 @@
         <form method='post' id = "nameSubmit">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" onkeyup="score()" />
-            <input type="button" class="button" name='submit' value='Submit Score' onclick="find_data()"/>
+            <input type="button" class="button" style="vertical-align:middle" name='submit' value='Submit Score' onclick="find_data()"/><span></span>
             <input type = "hidden" name="scoreValue" id = "scoreValue" value="" />
         </form>
     </div>
