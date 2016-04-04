@@ -28,16 +28,16 @@
 
     <!-- Navigation Bar -->
     <ul id="navigation">
-        <li><a href="../.../index.html">Home</a></li>
+        <li><a href="../../index.html">Home</a></li>
         <li><a href="../index.html">Projects</a></li>
-        <li><a href="../Class_Examples/">Examples</a></li>
-        <li><a href="../Projects/V3/schema.html">Database Schema</a></li>
+        <li><a href="../../Class_Examples/">Examples</a></li>
+        <li><a href="../V3/schema.html">Database Schema</a></li>
     </ul>
 
     <br /><br />
 
     <!-- Start Button -->
-    <span><input type="button" class="button" style="vertical-align:middle" id="start" value="Start Game" onclick="after_load()"></span>
+    <input type="button" class="button" id="start" value="Start Game" onclick="after_load()">
 
     <br />
 
@@ -46,7 +46,7 @@
         <form method='post' id = "nameSubmit">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" onkeyup="score()" />
-            <span><input type="button" class="button" style="vertical-align:middle" name='submit' value='Submit Score' onclick="find_data()"/></span>
+            <input type="button" class="button" name='submit' value='Submit Score' onclick="find_data()"/>
             <input type = "hidden" name="scoreValue" id = "scoreValue" value="" />
         </form>
     </div>
