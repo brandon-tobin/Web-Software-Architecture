@@ -28,15 +28,16 @@
 
     <!-- Navigation Bar -->
     <ul id="navigation">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../Projects/">Projects</a></li>
+        <li><a href="../.../index.html">Home</a></li>
+        <li><a href="../index.html">Projects</a></li>
         <li><a href="../Class_Examples/">Examples</a></li>
         <li><a href="../Projects/V3/schema.html">Database Schema</a></li>
     </ul>
 
     <br /><br />
 
-    <input type="button" id="start" value="Start Game" onclick="after_load()" />
+    <!-- Start Button -->
+    <input type="button" class="button" id="start" value="Start Game" onclick="after_load()" />
 
     <br />
 
@@ -45,15 +46,18 @@
         <form method='post' id = "nameSubmit">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" onkeyup="score()" />
-            <input type="button" name='submit' value='Submit Score' onclick="find_data()"/>
+            <input type="button" class="button" name='submit' value='Submit Score' onclick="find_data()"/>
             <input type = "hidden" name="scoreValue" id = "scoreValue" value="" />
         </form>
     </div>
 
+    <!-- Calls the score() method when the time updates -->
     <div ontimeupdate="score()"></div>
 
+    <!-- Area for the top scores tables -->
     <div id ="table"></div>
 
+    <!-- Area to display the score. -->
     <div id="score"></div>
 
     <div id="end"></div>
@@ -66,9 +70,21 @@
 
             var globalScore = 0;
 
+            /**
+             * This class is the base class inherited by each tetris piece.
+             */
             class Piece
             {
 
+                /**
+                 * Piece Constructor
+                 *
+                 * @param color: color of the piece
+                 * @param i: starting column
+                 * @param j: starting row
+                 * @param width: width of the piece
+                 * @param values: the placement of each cell in the piece
+                 */
                 constructor (color, i, j, width, values)
                 {
                     this.color = color;
@@ -81,6 +97,9 @@
                     this.rotationLevel = 0;
                 }
 
+                /**
+                 * Moves the piece down a row
+                 */
                 down ()
                 {
                     this.j++;
@@ -91,6 +110,9 @@
                     this.j--;
                 }
 
+                /**
+                 * Moves the piece on column to the left
+                 */
                 left()
                 {
                     this.i--;
@@ -98,6 +120,9 @@
                             this.i = 0;
                 }
 
+                /**
+                 * Moves the piece one column to the right.
+                 */
                 right()
                 {
                     if (this.i + this.width > 10 - this.width)
@@ -106,6 +131,10 @@
                             this.i++;
                 }
 
+                /**
+                 * This method changes the visibility of each cell in the piece and draws it on the matrix.
+                 * @param matrix
+                 */
                 draw(matrix)
                 {
                     for (var i = 0; i < this.values.length; i++)
@@ -117,6 +146,10 @@
                     }
                 }
 
+                /**
+                 * This method fills in the blocks once the piece hits the bottom of the matrix.
+                 * @param matrix
+                 */
                 fill(matrix)
                 {
                     for (var i = 0; i < this.values.length; i++)
@@ -128,6 +161,12 @@
                         cell.draw()
                     }
                 }
+
+                /**
+                 * This method returns true if the piece has hit another piece below it and false othewise.
+                 * @param matrix
+                 * @returns {boolean}
+                 */
                 conflict(matrix)
                 {
                     for (var i = 0; i < this.values.length; i++)
@@ -143,7 +182,11 @@
                 }
             }
 
-            // Create subclasses for game pieces
+            // Subclasses for game pieces
+            /**
+             * Each subclass for the pieces contains a contructor that calls the piece constructor and a
+             * rotate method which recalulates the placement of the cells when the piece is rotated clockwise.
+             */
             class CyanI extends Piece
             {
                 constructor(container)
@@ -529,9 +572,15 @@
                 }
             }
 
-
+            /**
+             * This class creates the individual blocks used go make a tetris piece.
+             */
             class Cell
             {
+                /**
+                 * The constructor for the cell class takes in a container and an x and y coordinate of
+                 * where the cell is loacated on the game matrix.
+                 */
                 constructor(container, i, j)
                 {
                     this.square = new PIXI.Graphics();
@@ -546,6 +595,10 @@
                     this.filled = false;
                     this.color = 0xffffff
                 }
+
+                /**
+                 * This method draws the cell on the gameboard.
+                 */
                 draw()
                 {
                     this.square.clear();
@@ -553,14 +606,27 @@
                     this.square.drawRect(0, 0, 25, 25);
                     this.square.endFill()
                 }
+
+                /**
+                 * This method sets the visibility.
+                 * @param value
+                 */
                 set visible(value)
                 {
                     this.square.visible = value
                 }
             }
 
+            /**
+             * This class creates the tetris gameboards and runs the gameplay.
+             */
             class Tetris
             {
+
+                /**
+                 * The tetris constructor sets up the game matrix and begins gameplay.
+                 * @param stage
+                 */
                 constructor(stage)
                 {
                     console.log("constructor for tetris");
@@ -581,8 +647,13 @@
                     this.started = true;
                 }
 
+                /**
+                 * This method is called when a row is full and needs to be cleared.
+                 * @param row
+                 */
                 clear_row(row)
                 {
+                    // Add 10 to the score and place this value in the score and scoreValue ids.
                     globalScore += 10;
 
                     document.getElementById("score").innerHTML = globalScore.toString();
@@ -593,42 +664,56 @@
                     {
                         for (var i = 0; i < 10; i++)
                         {
+                            //If you are not looking at the first row
                             if (j != 0)
                             {
-                                var aboveCell = this.board_matrix[i][j - 1];
+                                var aboveCell = this.board_matrix[i][j - 1]; // The cell above cell i,j
+                                // If the cell abobe the current cell is filled...
                                 if (aboveCell.filled)
                                 {
+                                    // Change the current cell's color to the color of the cell above it and change
+                                    // The visibility and filled properties to true.
                                     this.board_matrix[i][j].color = aboveCell.color;
                                     this.board_matrix[i][j].visible = true;
                                     this.board_matrix[i][j].filled = true;
                                 }
+                                // If the cell above the current cell is not filled change visible and filled properties to false.
                                 else
                                 {
                                     this.board_matrix[i][j].visible = false;
                                     this.board_matrix[i][j].filled = false;
                                 }
                             }
+                            // Change visible and filled properties of cells in the top row to false.
                             else
                             {
                                 this.board_matrix[i][j].visible = false;
                                 this.board_matrix[i][j].filled = false;
                             }
 
+                            // Draw the new cell with its new properties.
                             this.board_matrix[i][j].draw();
                         }
                     }
                 }
 
+                // This method is called when a key is pressed.
                 handle_key_presses(key)
                 {
+                    // When the down arrow is pressed...
                     if (key.code == "ArrowDown")
                     {
+                        // Move the piece on row down the matrix
                         this.current_piece.down();
+
+                        // if there is a conflict...
                         if (this.current_piece.conflict(this.board_matrix))
                         {
+                            // Move the piece back up a row and fill the piece.
                             this.current_piece.up();
                             this.current_piece.fill(this.board_matrix);
 
+                            // Check for any full rows and call clear_row if there is a full row.
                             for (var j = 0; j < 20; j++)
                             {
                                 var filledCells = 0;
@@ -644,12 +729,13 @@
 
                             }
 
-                            // Randomly generate a piece
+                            // Randomly generate a new piece and draw it on the matrix
                             this.select_random_piece();
-
                             this.draw_piece()
                         }
                     }
+
+                    // If the left arrow is pressed, move the piece to the left and check for a conflict.
                     if (key.code == "ArrowLeft")
                     {
                         this.current_piece.left();
@@ -658,6 +744,8 @@
                             this.current_piece.right()
                         }
                     }
+
+                    // If the right arrow is pressed, move the piece to the right and check for a conflict.
                     if (key.code == "ArrowRight")
                     {
                         this.current_piece.right();
@@ -666,19 +754,30 @@
                             this.current_piece.left()
                         }
                     }
+
+                    // If the right arrow is pressed rotate the piece.
                     if (key.code == "ArrowUp")
                     {
                         this.current_piece.rotate();
                     }
+
+                    // Clear the board of not visible pieces and draw the new piece.
                     this.clear_board();
                     this.draw_piece()
                 }
 
+                /**
+                 * This method draws the current piece on the board.
+                 */
                 draw_piece()
                 {
                     this.current_piece.draw(this.board_matrix);
                 }
 
+                /**
+                 * This method creates a new game matrix made up of 20 rows and 10 columns of cells
+                 * @param container
+                 */
                 build_matrix(container)
                 {
                     this.board_matrix = [];
@@ -693,6 +792,9 @@
                     }
                 }
 
+                /**
+                 * This method changes the visibility for filled and not filled cells.
+                 */
                 clear_board()
                 {
                     for (var i = 0; i < 10; i++)
@@ -712,6 +814,9 @@
                     }
                 }
 
+                /**
+                 * This method draws the white boardero on the game matrix.
+                 */
                 draw_outline()
                 {
                     this.outline.clear();
@@ -722,6 +827,10 @@
                 }
 
 
+                /**
+                 * This method generates a random pieced based on a random number generator.  If there is not enough room for the piece to
+                 * spawn at the top of the board, the end_game method is called.
+                 */
                 select_random_piece()
                 {
                     var random = Math.floor((Math.random() * 7) + 1);
@@ -802,6 +911,9 @@
                         }
                 }
 
+                /**
+                 * This method is called to continuously drop the piece down even if the down button is not pressed/
+                 */
                 drop_piece_down() {
                     if (tetris.started) {
                         tetris.current_piece.down();
@@ -831,6 +943,10 @@
                     }
                 }
 
+                /**
+                 * When the game ends, change the state of the game, update the scoreValue id objectt and print out
+                 * "Game Over".
+                 */
                 end_game()
                 {
                     tetris.started = false;
@@ -838,6 +954,7 @@
                     document.getElementById("end").innerHTML="Game Over";
                 }
             }
+
             var stage;
             var renderer;
             var bgmusic = new Audio("background.mp3");
@@ -865,23 +982,23 @@
 
             }
 
+            /**
+             * This method replays the background music once it ends.
+             */
             function replay_song()
             {
                 bgmusic.play();
             }
 
-            function change_state()
-            {
-                document.getElementById("state").nodeValue= 2;
-            }
-
+            /**
+             * this method sets the value of the scoreValue element.
+             */
             function score()
             {
                 document.getElementById("scoreValue").value = globalScore;
             }
 
-            //after_load();
-
+            // Prings out the score inside the score element.
             document.getElementById("score").innerHTML="Your score is: " + globalScore.toString();
 
         </script>
