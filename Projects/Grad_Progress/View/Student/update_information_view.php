@@ -143,7 +143,7 @@
                                 }?>
                             </select> <br />
                             <label for="new_advisor_checked">Check if you want to update advisor.</label>
-                            <input type="checkbox" name="new_advisor_checked" id="new_advisor_checked" /></td>
+                            <input type="checkbox" name="new_advisor_checked" id="new_advisor_checked"</td>
                     </tr>
                     <tr>
                         <td>Current Committee:</td>
@@ -194,7 +194,7 @@
                                 }?>
                             </select> <br />
                             <label for="new_committee_checked">Check if you want to update committee.</label>
-                            <input type="checkbox" name="new_committee_checked" id="new_committee_checked" /></td>
+                            <input type="checkbox" name="new_committee_checked" id="new_committee_checked"</td>
                     </tr>
                     <tr>
                         <?php

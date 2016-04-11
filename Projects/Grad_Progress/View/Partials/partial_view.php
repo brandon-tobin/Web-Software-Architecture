@@ -168,7 +168,7 @@ function getNavBar($role)
                             <a href=\"../Student/student_status_update.php?id=".$_SESSION['userid']."\">Update Student Status</a>
                         </li>
                         <li>
-                            <a href=\"../Account/logout.php\">Logout</a>
+                            <a href=\"../Account/logout.php\">Logout</a></a>
                         </li>
                     </ul>
                 </div>
