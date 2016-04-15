@@ -25,19 +25,16 @@ class Event
         $this->create_event($id);
     }
 
-    function openDBConnection()
-    {
-        $DBH = new PDO ("mysql:host=localhost;dbname=Greek_System;charset=utf8", 'Grad_Application', '173620901');
-        $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $DBH->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        return $DBH;
-    }
 
     // Method for creating a new event
     function create_event($id)
     {
         try {
-            $db = openDBConnection();
+            //$db = openDBConnection();
+            $db = new PDO ("mysql:host=localhost;dbname=Greek_System;charset=utf8", 'Grad_Application', '173620901');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
 
             // Get all information required to display the new event creation page
             $query = "SELECT username, User.name, Organizations.name as orgName FROM User INNER JOIN Organizations ON User.orgID = Organizations.orgID";
