@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+    <html lang="en">
+        <head>
+
+            <!-- Last Updated Spring 2016 -->
+            <!-- Brandon Tobin -->
+            <!-- University of Utah -->
+
+            <!-- This is a landing page for Database Schema  -->
+
+
+            <title>Grad Progress</title>
+
+            <!-- Meta Information about Page -->
+            <meta charset="utf-8"/>
+            <meta name="AUTHOR"      content="Brndon Tobin"/>
+            <meta name="keywords"    content="HTML, Projects"/>
+            <meta name="description" content="Landing page for Database Schema"/>
+
+            <!-- ALL CSS FILES -->
+            <link rel="stylesheet" href="../../../Resources/css/stylesheet.css" type="text/css"/>
+
+        </head>
+
+        <body>
+
+            <!-- Header -->
+            <div id="header">
+                <img src="/Resources/Images/uofufootball.jpg" alt="Rice Eccles Stadium" />
+                <h1>University of Utah - CS 4540</h1>
+                <h2>Web Software Architecture - Spring 2016</h2>
+                <h2>Brandon Tobin</h2>
+                <h2>Database Schema</h2>
+            </div>
+
+            <!-- Navigation -->
+            <ul id="navigation">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../../Projects/">Projects</a></li>
+                <li><a href="../../../Class_Examples/">Examples</a></li>
+            </ul>
+
+            <h1>Database Schema</h1>
+
+	    <p>For this assignment, I partnered with Fumiko Aoki to design the database schema.</p> 
+
+	    <p>We decided to use six tables to store all of the data in the Grad Progress assignment.</p>
+
+	    <p>Below is our table for storing Advisors:</p>
+
+	    <table class="roster"> 
+	        <tr>
+		    <th>aid</th>
+		    <th>sid</th>
+	        </tr>
+		<tr>
+		    <td>Primary Key</td>
+		    <td>Primary Key / Foreign Key</td>
+		</tr>
+   	    </table>
+	    <p>MySQL Command: CREATE TABLE `Grad_Prog_V3`.`Advisors` (`aid` INT NOT NULL,`sid` INT NOT NULL,PRIMARY KEY (`aid`, `sid`))
+	       COMMENT = 'Maps advisors to students';</p>
+
+	    <p>Below is our table for storing Users:</p>
+
+	    <table class="roster">
+	        <tr>
+		    <th>uid</th>
+		    <th>name</th>
+		    <th>position</th>
+		</tr>
+		<tr>
+		    <td>Primary Key</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+	    </table>
+
+	    <p>MySQL Command:CREATE TABLE `Grad_Prog_V3`.`Users` (`uid` INT NOT NULL AUTO_INCREMENT, `name` CHAR(30) NOT NULL, 
+	       `position` CHAR(1) NOT NULL, PRIMARY KEY (`uid`), UNIQUE INDEX `uid_UNIQUE` (`uid` ASC)) COMMENT = 'Represents all users 	      in the system';</p>
+
+	    <p>Below is our table for storing Student Information:</p>
+
+	    <table class="roster">
+	        <tr>
+		    <th>uid</th>
+		    <th>degree</th>
+		    <th>track</th>
+		    <th>semester_admitted</th>
+		</tr>
+		<tr>
+		    <td>Primary Key</td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		</tr>
+	    </table>
+
+	    <p>MySQL Command:CREATE TABLE `Grad_Prog_V3`.`Students` (`uid` INT NOT NULL, `degree` CHAR(15) NOT NULL, `track` CHAR(30) 
+	       NOT NULL, `semester_admitted` VARCHAR(20) NOT NULL, PRIMARY KEY (`uid`), UNIQUE INDEX `uid_UNIQUE` (`uid` ASC)) 
+	       COMMENT = 'Holds information about the student.';</p>
+
+	    <p>Below is our table for storing Student Forms:</p>
+
+            <table class="roster">
+                <tr>
+                    <th>fid</th>
+                    <th>uid</th>
+                    <th>date</th>
+                    <th>meets_requirements</th>
+                    <th>progress_description</th>
+                    <th>student_signed</th>
+                    <th>student_signed_date</th>
+                    <th>advisor_signed</th>
+                    <th>advisor_signed_date</th>
+                    <th>modified_date</th>
+                </tr>
+                <tr>
+                    <td>Primary Key</td>
+                    <td>Primary Key / Foreign Key</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+	    <p>MySQL Command: CREATE TABLE `Grad_Prog_V3`.`Forms` (`fid` INT NOT NULL, `uid` INT NOT NULL, `date` DATE NOT NULL, 
+	       `meets_requirements` TINYINT(1) NOT NULL, `progress_description` CHAR(200) NOT NULL, `student_signed` TINYINT(1) 
+	        NOT NULL, `student_signed_date` DATE NOT NULL, `advisor_signed` TINYINT(1) NOT NULL, `advisor_signed_date` DATE NOT 
+	        NULL, `modified_date` DATE NOT NULL, PRIMARY KEY (`fid`, `uid`)) COMMENT = 'Contains student progress forms';</p>
+
+	    <p>Below is our table for mapping students to committee members</p>
+
+	    <table class="roster">
+	        <tr>
+		    <th>sid</th>
+		    <th>facultyid</th>
+		</tr>
+		<tr>
+		    <td>Primary Key</td>
+		    <td>Primary Key</td>
+		</tr>
+	    </table>
+
+	    <p>MySQL Command: CREATE TABLE `Grad_Prog_V3`.`Committee` (`sid` INT NOT NULL, `facultyid` INT NOT NULL, 
+	       PRIMARY KEY (`sid`, `facultyid`)) COMMENT = 'Maping from student to committee member';</p>
+
+
+	    <p>Below is our table for storing progress activities</p>
+
+	    <table class="roster">
+	        <tr>
+		    <th>sid</th>
+		    <th>activity</th>
+		    <th>date_completed</th>
+		</tr>
+		<tr>
+		    <td>Primary Key</td>
+		    <td>Primary Key</td>
+		    <td></td>
+		</tr>
+	    </table>
+
+	    <p>MySQL Command: CREATE TABLE `Grad_Prog_V3`.`Activities` (`sid` INT NOT NULL, `activity` CHAR(100) NOT NULL, 
+	       `date_completed` VARCHAR(20) NOT NULL, PRIMARY KEY (`sid`, `activity`)) COMMENT = 'Represents different completed 
+	        activites in the progress form';
+
+	    </body>
+
+    </html>
+
+
+
+
+
+
+
+
+
+
+
