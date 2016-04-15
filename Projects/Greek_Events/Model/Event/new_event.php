@@ -6,6 +6,8 @@
  * Time: 9:06 PM
  */
 
+require '../../Model/Functions/db.php';
+
 class Event
 {
     public $author_Name;
