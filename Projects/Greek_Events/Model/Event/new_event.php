@@ -14,8 +14,6 @@ class Event
     public $author_Username;
     public $author_Organization;
 
-
-
     //public $event_Name;
     //public $event_Location;
 
