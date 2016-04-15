@@ -1,12 +1,14 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: brand
- * Date: 4/14/2016
- * Time: 9:06 PM
+ * Author: Brandon Tobin
+ * Date: Spring 2016
+ *
+ * New Event Model -- Represents a new event object
+ *
  */
 
-require '../../Model/Functions/db.php';
+//require '../../Model/Functions/db.php';
 
 class Event
 {
@@ -21,6 +23,14 @@ class Event
     public function __construct($id)
     {
         $this->create_event($id);
+    }
+
+    function openDBConnection()
+    {
+        $DBH = new PDO ("mysql:host=localhost;dbname=Greek_System;charset=utf8", 'Grad_Application', '173620901');
+        $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $DBH->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        return $DBH;
     }
 
     // Method for creating a new event
