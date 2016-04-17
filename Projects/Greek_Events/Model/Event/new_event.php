@@ -8,7 +8,7 @@
  *
  */
 
-//require '../../Model/Functions/db.php';
+require '../../Model/Functions/db.php';
 
 class Event
 {
@@ -30,10 +30,10 @@ class Event
     function create_event($id)
     {
         try {
-            //$db = openDBConnection();
-            $db = new PDO ("mysql:host=localhost;dbname=Greek_System;charset=utf8", 'Grad_Application', '173620901');
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $db = openDBConnection();
+//            $db = new PDO ("mysql:host=localhost;dbname=Greek_System;charset=utf8", 'Grad_Application', '173620901');
+//            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 
             // Get all information required to display the new event creation page
