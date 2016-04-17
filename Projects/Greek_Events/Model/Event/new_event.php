@@ -52,6 +52,7 @@ class Event
             error_log("Tobin bad happened! " . $ex->getMessage());
         }
 
+        require('../../View/Event/new_event.php');
         return;
     }
 }
