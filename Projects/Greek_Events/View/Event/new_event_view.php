@@ -17,7 +17,7 @@ echo "
                 <!-- Brandon Tobin -->
                 <!-- University of Utah -->
 
-                <!-- New Due Process Form for $form->student_Name  -->
+                <!-- New Due Process Form for   -->
 
                 <title>Due Process Form</title>
 
@@ -25,7 +25,7 @@ echo "
                 <meta charset=\"utf-8\"/>
                 <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"New Due Process Form for $form->student_Name\"/>
+                <meta name=\"description\" content=\"New Due Process Form for \"/>
 
                 <!-- ALL CSS FILES -->
                 <!--<link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/> -->
