@@ -21,6 +21,6 @@ $id = $_GET['id'];
 $event = new event($id);
 
 // Require the form view for display
-//require "new_event.php";
+require "new_event_view.php";
 
 ?>
