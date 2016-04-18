@@ -60,8 +60,8 @@ echo "
                         <input type='text' name='description' class='form-control'>
                     </div>
                     <div class='form-group'>
-                        <label for='attend'>Who Can Attend:</label>
-                        <select multiple class='form-control' name='attend'>
+                        <label for='attend[]'>Who Can Attend:</label>
+                        <select multiple class='form-control' name='attend[]'>
                             <option>Beta Theta Pi</option>
                             <option>Delta Sigma Phi</option>
                             <option>Kappa Sigma</option>
