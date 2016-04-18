@@ -57,9 +57,9 @@ echo "
                 </div>
                 <div class='form-group'>
                     <label for='attend'>Who Can Attend</label>
-                    <selection name='attend'>
+                    <select name='attend' class='form-control'>
                         <option value='Sigma Nu'>Sigma Nu</option>
-                    </selection>
+                    </select>
                 </div>
 
             </form>
