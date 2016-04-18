@@ -22,6 +22,8 @@ if (isset($_POST['submit'])) {
         array_push($eventAttend, $names);
     }
 
+    var_dump($eventAttend);
+
     $db = openDBConnection();
 
     // Get the id of the next event
