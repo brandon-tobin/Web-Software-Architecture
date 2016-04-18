@@ -71,17 +71,13 @@ echo "
                             <option>Sigma Nu</option>
                             <option>Sigma Phi Epsilon</option>
                             <option>Triangle</option>
+                            <option>Alpha Chi Omega</option>
+                            <option>Alpha Phi</option>
+                            <option>Chi Omega</option>
+                            <option>Delta Gamma</option>
+                            <option>Kappa Kappa Gamma</option>
+                            <option>Pi Beta Phi</option>
                           </select>
-
-
-
-
-
-
-
-                        <select name='attend' class='form-control'>
-                            <option value='Sigma Nu'>Sigma Nu</option>
-                        </select>
                     </div>
 
                     <input type='submit' class='btn btn-info' value='Submit'>
