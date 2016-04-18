@@ -42,7 +42,9 @@ if (isset($_POST['submit'])) {
     $stmt->bindValue(3, $eventDescription);
     $stmt->bindValue(4, $eventLocation);
     $stmt->execute();
+    $db->commit();
 
+    $db->beginTransaction();
     // Insert into the permissions table
     for ($i = 0; $i < count($eventAttend); $i++)
     {
