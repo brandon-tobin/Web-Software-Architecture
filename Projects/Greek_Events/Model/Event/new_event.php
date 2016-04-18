@@ -19,69 +19,40 @@ if (isset($_POST['submit'])) {
 
     foreach ($_POST['attend'] as $names)
     {
-        //print "You are selected $names<br/>";
         array_push($eventAttend, $names);
     }
 
-    var_dump($eventAttend);
+    $db = openDBConnection();
 
-//    var_dump($eventAttend);
-//
-//    error_log($eventAttend);
+    // Get the id of the next event
+    $query = "SELECT COUNT(eventID) as eventID FROM Event";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+    foreach ($result as $row) {
+        $eventID = htmlspecialchars($row['eventID']) + 1;
+    }
 
+    // Insert into the event table
+    $db->beginTransaction();
+    $stmt = $db->prepare("INSERT INTO Event (name, date, description, location) values ('?', '?', '?', '?')");
+    $stmt->bindValue(1, $eventName);
+    $stmt->bindValue(2, $eventDate);
+    $stmt->bindValue(3, $eventDescription);
+    $stmt->bindValue(4, $eventLocation);
+    $stmt->execute();
 
-//    $student_ID = $_GET['id'];
-//    $advisor = trim($_REQUEST['advisor']);
-//    $committee1 = trim($_REQUEST['committee1']);
-//    $committee2 = trim($_REQUEST['committee2']);
-//    $committee3 = trim($_REQUEST['committee3']);
-//    $committee4 = trim($_REQUEST['committee4']);
-//    $activity1 = trim($_REQUEST['activity1']);
-//    $semester_completed1 = trim($_REQUEST['semester_completed1']);
-//    $activity2 = trim($_REQUEST['activity2']);
-//    $semester_completed2 = trim($_REQUEST['semester_completed2']);
-//    $activity3 = trim($_REQUEST['activity3']);
-//    $semester_completed3 = trim($_REQUEST['semester_completed3']);
-//    $activity4 = trim($_REQUEST['activity4']);
-//    $semester_completed4 = trim($_REQUEST['semester_completed4']);
-//    $activity5 = trim($_REQUEST['activity5']);
-//    $semester_completed5 = trim($_REQUEST['semester_completed5']);
-//    $activity6 = trim($_REQUEST['activity6']);
-//    $semester_completed6 = trim($_REQUEST['semester_completed6']);
-//    $activity7 = trim($_REQUEST['activity7']);
-//    $semester_completed7 = trim($_REQUEST['semester_completed7']);
-//    $activity8 = trim($_REQUEST['activity8']);
-//    $semester_completed8 = trim($_REQUEST['semester_completed8']);
-//    $activity9 = trim($_REQUEST['activity9']);
-//    $semester_completed9 = trim($_REQUEST['semester_completed9']);
-//    $requirements_met = trim($_REQUEST['requirements_met']);
-//    $comments = trim($_REQUEST['comments']);
-//
-//    // Get highest form number for user
-//    $db = openDBConnection();
-//
-//    // Get the id of the next form
-//    $query = "SELECT COUNT(fid) as fid FROM Forms WHERE uid = $student_ID";
-//    $statement = $db->prepare($query);
-//    $statement->execute();
-//    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-//
-//    foreach ($result as $row) {
-//        $form_ID = htmlspecialchars($row['fid']) + 1;
-//    }
-//
-//    date_default_timezone_set('America/Denver');
-//    $timestamp = time();
-//    $date_complete = date("Y-mm-dd", $timestamp);
-//
-//    // Insert into the forms table
-//    $db->beginTransaction();
-//    $stmt = $db->prepare("INSERT INTO Forms (fid, uid, date, meets_requirements, progress_description, modified_date) VALUES ($form_ID, $student_ID, CURDATE(),
-//              $requirements_met, ?, CURDATE())");
-//    $stmt->bindValue(1, $comments);
-//    $stmt->execute();
-//    $db->commit();
+    // Insert into the permissions table
+    for ($i = 0; $i < count($eventAttend); $i++)
+    {
+        $stmt = $db->prepare("INSERT INTO Event (name, date, description, location) values ('?', '?', '?', '?')");
+        $stmt->bindValue(1, $eventName);
+        $stmt->bindValue(2, $eventDate);
+        $stmt->bindValue(3, $eventDescription);
+        $stmt->bindValue(4, $eventLocation);
+        $stmt->execute();
+    }
 }
 
 class Event
