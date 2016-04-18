@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
     // Insert into the permissions table
     for ($i = 0; $i < count($eventAttend); $i++)
     {
-        $stmt = $db->prepare("INSERT INTO EventPermission VALUES ('?', '?')");
+        $stmt = $db->prepare("INSERT INTO EventPermission VALUES (?, ?)");
         $stmt->bindValue(1, $eventID);
         $stmt->bindValue(2, $eventAttend[$i]);
         $stmt->execute();
