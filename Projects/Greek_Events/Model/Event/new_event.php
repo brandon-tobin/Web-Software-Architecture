@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     foreach ($_POST['attend'] as $names)
     {
         //print "You are selected $names<br/>";
-        $eventAttend.array_push($names);
+        array_push($eventAttend, $names);
     }
 
     var_dump($eventAttend);
