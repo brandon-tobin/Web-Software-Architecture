@@ -45,6 +45,12 @@ echo "
             <form method='post'>
                 <label for='title'>Event Title:</label>
                 <input type='text' name='title'>
+                <label for='date'>Date:</label>
+                <input type='date' name='date'>
+                <label for='location'>Location:</label>
+                <input type='text' name='location'>
+                <label for=''attend'>Who Can Attend</label>
+
             </form>
 
             </body>
