@@ -62,6 +62,8 @@ echo "
                     </select>
                 </div>
 
+                <input type='submit' class='btn btn-info' value='Submit'>
+
             </form>
 
             </body>
