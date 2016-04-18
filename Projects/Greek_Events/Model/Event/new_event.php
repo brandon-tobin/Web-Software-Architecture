@@ -15,12 +15,15 @@ if (isset($_POST['submit'])) {
     $eventDate = trim($_REQUEST['date']);
     $eventLocation = trim($_REQUEST['location']);
     $eventDescription = trim($_REQUEST['description']);
-    //$eventAttend = trim($_REQUEST['attend']);
+    $eventAttend = array();
 
     foreach ($_POST['attend'] as $names)
     {
-        print "You are selected $names<br/>";
+        //print "You are selected $names<br/>";
+        $eventAttend.array_push($names);
     }
+
+    var_dump($eventAttend);
 
 //    var_dump($eventAttend);
 //
