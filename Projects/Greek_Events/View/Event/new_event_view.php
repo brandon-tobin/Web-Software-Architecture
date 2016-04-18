@@ -36,35 +36,57 @@ echo "
 
             <body>
 
-            <h1>Create New Event</h1>
+                <h1>Create New Event</h1>
 
-            <p>Name: $event->author_Name</p>
-            <p>Username: $event->author_Username</p>
-            <p>Organization: $event->author_Organization</p>
+                <p>Name: $event->author_Name</p>
+                <p>Username: $event->author_Username</p>
+                <p>Organization: $event->author_Organization</p>
 
-            <form method='post'>
-                <div class='form-group'>
-                    <label for='title'>Event Title:</label>
-                    <input type='text' name='title' class='form-control'>
-                </div>
-                <div class='form-group'>
-                    <label for='date'>Date:</label>
-                    <input type='date' name='date' placeholder='YYYY-MM-DD HH:MM:SS' class='form-control'>
-                </div>
-                <div class='form-group'>
-                    <label for='location'>Location:</label>
-                    <input type='text' name='location' class='form-control'>
-                </div>
-                <div class='form-group'>
-                    <label for='attend'>Who Can Attend</label>
-                    <select name='attend' class='form-control'>
-                        <option value='Sigma Nu'>Sigma Nu</option>
-                    </select>
-                </div>
+                <form method='post'>
+                    <div class='form-group'>
+                        <label for='title'>Event Title:</label>
+                        <input type='text' name='title' class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='date'>Date:</label>
+                        <input type='date' name='date' placeholder='YYYY-MM-DD HH:MM:SS' class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='location'>Location:</label>
+                        <input type='text' name='location' class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='description'>Description:</label>
+                        <input type='text' name='description' class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='attend'>Who Can Attend:</label>
+                        <select multiple class='form-control' name='attend'>
+                            <option>Beta Theta Pi</option>
+                            <option>Delta Sigma Phi</option>
+                            <option>Kappa Sigma</option>
+                            <option>Phi Delta Theta</option>
+                            <option>Pi Kappa Alpha</option>
+                            <option>Sigma Chi</option>
+                            <option>Sigma Nu</option>
+                            <option>Sigma Phi Epsilon</option>
+                            <option>Triangle</option>
+                          </select>
 
-                <input type='submit' class='btn btn-info' value='Submit'>
 
-            </form>
+
+
+
+
+
+                        <select name='attend' class='form-control'>
+                            <option value='Sigma Nu'>Sigma Nu</option>
+                        </select>
+                    </div>
+
+                    <input type='submit' class='btn btn-info' value='Submit'>
+
+                </form>
 
             </body>
             </html>";
