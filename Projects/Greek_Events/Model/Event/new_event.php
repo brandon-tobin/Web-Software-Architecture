@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 
     // Insert into the event table
     $db->beginTransaction();
-    $stmt = $db->prepare("INSERT INTO Event (name, date, description, location) values ('?', '?', '?', '?')");
+    $stmt = $db->prepare("INSERT INTO Event (name, date, description, location) values (?, ?, ?, ?)");
     $stmt->bindValue(1, $eventName);
     $stmt->bindValue(2, $eventDate);
     $stmt->bindValue(3, $eventDescription);
