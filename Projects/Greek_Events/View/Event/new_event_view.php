@@ -42,5 +42,10 @@ echo "
             <p>Username: $event->author_Username</p>
             <p>Organization: $event->author_Organization</p>
 
+            <form method='post'>
+                <label for='title'>Event Title:</label>
+                <input type='text' name='title'>
+            </form>
+
             </body>
             </html>";
