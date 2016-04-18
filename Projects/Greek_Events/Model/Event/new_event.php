@@ -17,6 +17,12 @@ if (isset($_POST['submit'])) {
     $eventDescription = trim($_REQUEST['description']);
     $eventAttend = array();
 
+    var_dump($eventName);
+    var_dump($eventDate);
+    var_dump($eventLocation);
+    var_dump($eventDescription);
+
+
     foreach ($_POST['attend'] as $names)
     {
         array_push($eventAttend, $names);
