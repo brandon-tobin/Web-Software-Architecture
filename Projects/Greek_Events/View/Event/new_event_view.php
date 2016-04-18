@@ -80,7 +80,7 @@ echo "
                           </select>
                     </div>
 
-                    <input type='submit' class='btn btn-info' value='Submit'>
+                    <input type='submit' class='btn btn-info' name='submit' value='Submit'>
 
                 </form>
 

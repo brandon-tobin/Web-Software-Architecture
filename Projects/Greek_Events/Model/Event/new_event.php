@@ -10,7 +10,7 @@
 
 require '../../Model/Functions/db.php';
 
-if (isset($_POST['Submit'])) {
+if (isset($_POST['submit'])) {
     $eventName = trim($_REQUEST['title']);
     $eventDate = trim($_REQUEST['date']);
     $eventLocation = trim($_REQUEST['location']);
@@ -18,6 +18,8 @@ if (isset($_POST['Submit'])) {
     $eventAttend = trim($_REQUEST['attend']);
 
     var_dump($eventAttend);
+
+    error_log($eventAttend);
 
 
 
