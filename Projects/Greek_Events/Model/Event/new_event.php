@@ -22,8 +22,6 @@ if (isset($_POST['submit'])) {
         array_push($eventAttend, $names);
     }
 
-    var_dump($eventAttend);
-
     $db = openDBConnection();
 
     // Get the id of the next event
@@ -48,13 +46,13 @@ if (isset($_POST['submit'])) {
     // Insert into the permissions table
     for ($i = 0; $i < count($eventAttend); $i++)
     {
-        $stmt = $db->prepare("INSERT INTO Event (name, date, description, location) values ('?', '?', '?', '?')");
-        $stmt->bindValue(1, $eventName);
-        $stmt->bindValue(2, $eventDate);
-        $stmt->bindValue(3, $eventDescription);
-        $stmt->bindValue(4, $eventLocation);
+        $stmt = $db->prepare("INSERT INTO EventPermission VALUES ('?', '?')");
+        $stmt->bindValue(1, $eventID);
+        $stmt->bindValue(2, $eventAttend[$i]);
         $stmt->execute();
     }
+
+    $db->commit();
 }
 
 class Event

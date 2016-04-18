@@ -63,20 +63,20 @@ echo "
                         <label for='attend[]'>Who Can Attend:</label>
                         <select multiple class='form-control' name='attend[]'>
                             <option value='1'>Beta Theta Pi</option>
-                            <option>Delta Sigma Phi</option>
-                            <option>Kappa Sigma</option>
-                            <option>Phi Delta Theta</option>
-                            <option>Pi Kappa Alpha</option>
-                            <option>Sigma Chi</option>
-                            <option>Sigma Nu</option>
-                            <option>Sigma Phi Epsilon</option>
-                            <option>Triangle</option>
-                            <option>Alpha Chi Omega</option>
-                            <option>Alpha Phi</option>
-                            <option>Chi Omega</option>
-                            <option>Delta Gamma</option>
-                            <option>Kappa Kappa Gamma</option>
-                            <option>Pi Beta Phi</option>
+                            <option value='2'>Delta Sigma Phi</option>
+                            <option value='3'>Kappa Sigma</option>
+                            <option value='4'>Phi Delta Theta</option>
+                            <option value='5'>Pi Kappa Alpha</option>
+                            <option value='6'>Sigma Chi</option>
+                            <option value='7'>Sigma Nu</option>
+                            <option value='8'>Sigma Phi Epsilon</option>
+                            <option value='9'>Triangle</option>
+                            <option value='10'>Alpha Chi Omega</option>
+                            <option value='11'>Alpha Phi</option>
+                            <option value='12'>Chi Omega</option>
+                            <option value='13'>Delta Gamma</option>
+                            <option value='14'>Kappa Kappa Gamma</option>
+                            <option value='15'>Pi Beta Phi</option>
                           </select>
                     </div>
 
