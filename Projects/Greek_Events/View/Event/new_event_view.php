@@ -43,13 +43,24 @@ echo "
             <p>Organization: $event->author_Organization</p>
 
             <form method='post'>
-                <label for='title'>Event Title:</label>
-                <input type='text' name='title'>
-                <label for='date'>Date:</label>
-                <input type='date' name='date'>
-                <label for='location'>Location:</label>
-                <input type='text' name='location'>
-                <label for=''attend'>Who Can Attend</label>
+                <div class='form-group'>
+                    <label for='title'>Event Title:</label>
+                    <input type='text' name='title' class='form-control'>
+                </div>
+                <div class='form-group'>
+                    <label for='date'>Date:</label>
+                    <input type='date' name='date' class='form-control'>
+                </div>
+                <div class='form-group'>
+                    <label for='location'>Location:</label>
+                    <input type='text' name='location' class='form-control'>
+                </div>
+                <div class='form-group'>
+                    <label for='attend'>Who Can Attend</label>
+                    <selection name='attend'>
+                        <option value='Sigma Nu'>Sigma Nu</option>
+                    </selection>
+                </div>
 
             </form>
 
