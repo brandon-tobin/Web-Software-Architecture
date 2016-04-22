@@ -1,0 +1,24 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+        <p>
+		<div class = "row">
+		  <div class = "form-group col-md-5">
+                	<%= f.label :commenter %><br>
+                	<%= f.text_field :commenter, :class=> 'form-control' %>
+        	  </div>
+		</div>
+	</p>
+
+        <p>
+		<div class = "row">
+		  <div class = "form-group col-md-5">
+                	<%= f.label :body %><br>
+                	<%= f.text_area :body, :class=> 'form-control' %>
+        	  </div>
+		</div>
+	</p>
+
+        <p>
+                <%= f.submit :class=> 'btn btn-s btn-primary' %>
+        </p>
+<% end %>
+
