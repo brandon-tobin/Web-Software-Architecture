@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * New Event Creater Controller
+ * View Event Controller
  *
  */
 
@@ -11,15 +11,19 @@
 set_include_path("../../Model/Event/" .PATH_SEPARATOR . "../../View/Event/");
 
 // Require the model file once
-require_once 'new_event.php';
+require_once 'view_event.php';
 
-// Get the user id out of the url
+// Get the user name out of the url
 $id = $_GET['id'];
 
+// Get the event id out of the url
+$eid = $_GET['event'];
+
+
 // Create a new student form object
-$event = new event($id);
+$event = new ViewEvent($id, $eid);
 
 // Require the form view for display
-require "new_event_view.php";
+require "view_event_view.php";
 
 ?>

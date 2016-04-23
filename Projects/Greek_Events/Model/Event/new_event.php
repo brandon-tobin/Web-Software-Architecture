@@ -17,12 +17,6 @@ if (isset($_POST['submit'])) {
     $eventDescription = trim($_REQUEST['description']);
     $eventAttend = array();
 
-//    var_dump($eventName);
-//    var_dump($eventDate);
-//    var_dump($eventLocation);
-//    var_dump($eventDescription);
-
-
     foreach ($_POST['attend'] as $names)
     {
         array_push($eventAttend, $names);
@@ -42,7 +36,7 @@ if (isset($_POST['submit'])) {
 
     // Insert into the event table
     $db->beginTransaction();
-    $stmt = $db->prepare("INSERT INTO Event (name, date, description, location) values (?, ?, ?, ?)");
+    $stmt = $db->prepare("INSERT INTO Event (name, date, description, location, creator) values (?, ?, ?, ?, ?)");
     $stmt->bindValue(1, $eventName);
     $stmt->bindValue(2, $eventDate);
     $stmt->bindValue(3, $eventDescription);
@@ -54,8 +48,6 @@ if (isset($_POST['submit'])) {
     // Insert into the permissions table
     for ($i = 0; $i < count($eventAttend); $i++)
     {
-//        var_dump($eventID);
-//        var_dump($eventAttend[$i]);
         $stmt = $db->prepare("INSERT INTO EventPermission VALUES (?, ?)");
         $stmt->bindValue(1, $eventID);
         $stmt->bindValue(2, $eventAttend[$i]);
@@ -70,10 +62,6 @@ class Event
     public $author_Name;
     public $author_Username;
     public $author_Organization;
-
-    //public $event_Name;
-    //public $event_Location;
-
 
     public function __construct($id)
     {
