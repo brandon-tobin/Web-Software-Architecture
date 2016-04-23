@@ -52,7 +52,6 @@ class ViewEvent
             }
             else {
 
-                var_dump("Made it here");
                 // Get all information required to display the event
                 $query = "SELECT * FROM Event WHERE eventID = ?";
                 $stmt = $db->prepare($query);
@@ -70,6 +69,8 @@ class ViewEvent
                     $this->event_Location = htmlspecialchars($row['location']);
                 }
 
+                var_dump($this->author_Username);
+
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1, $this->author_Username);
@@ -80,6 +81,8 @@ class ViewEvent
                     $this->author_Name = htmlspecialchars($row['name']);
                     $this->author_Organization = htmlspecialchars($row['orgName']);
                 }
+
+                var_dump($this->author_Organization);
             }
 
         } catch (PDOException $ex) {
