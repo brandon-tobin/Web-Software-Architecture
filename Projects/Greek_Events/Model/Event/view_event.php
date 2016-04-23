@@ -43,7 +43,6 @@ class ViewEvent
                 $eventID = htmlspecialchars($row['eventID']);
             }
 
-            //if (strcmp($eventID, "NULL") !== 0)
             if (empty($eventID))
             {
                 var_dump("Doesn't have permission!!!!!");
@@ -69,8 +68,6 @@ class ViewEvent
                     $this->event_Location = htmlspecialchars($row['location']);
                 }
 
-                var_dump($this->author_Username);
-
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1, $this->author_Username);
@@ -81,8 +78,6 @@ class ViewEvent
                     $this->author_Name = htmlspecialchars($row['name']);
                     $this->author_Organization = htmlspecialchars($row['orgName']);
                 }
-
-                var_dump($this->author_Organization);
             }
 
         } catch (PDOException $ex) {
