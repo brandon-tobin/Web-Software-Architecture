@@ -32,14 +32,13 @@ class ViewEvent
             $db = openDBConnection();
 
             // See if the user has permission to view the event
-            $query = "SELECT * FROM EventPermission WHERE eventID = ? and orgID IN (SELECT orgID FROM User WHERE username =  '" .$id ."')";
+            $query = "SELECT * FROM EventPermission WHERE eventID = 1 and orgID IN (SELECT orgID FROM User WHERE username =  'tobin')";
             $stmt = $db->prepare($query);
             $stmt->bindValue(1, $eid);
             $stmt->bindValue(2, $id);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $eventID = "";
             foreach ($result as $row) {
                 $eventID = htmlspecialchars($row['eventID']);
             }
