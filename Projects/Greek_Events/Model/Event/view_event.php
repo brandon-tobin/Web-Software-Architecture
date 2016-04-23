@@ -32,7 +32,7 @@ class ViewEvent
             $db = openDBConnection();
 
             // See if the user has permission to view the event
-            $query = "SELECT * FROM EventPermission WHERE eventID = ? and orgID IN (SELECT orgID FROM User WHERE username = ?)";
+            $query = "SELECT * FROM EventPermission WHERE eventID = ? and orgID IN (SELECT orgID FROM User WHERE username =  '" .$id ."')";
             $stmt = $db->prepare($query);
             $stmt->bindValue(1, $eid);
             $stmt->bindValue(2, $id);
