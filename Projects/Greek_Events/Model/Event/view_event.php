@@ -52,6 +52,7 @@ class ViewEvent
             }
             else {
 
+                var_dump("Made it here");
                 // Get all information required to display the event
                 $query = "SELECT * FROM Event WHERE eventID = ?";
                 $stmt = $db->prepare($query);
