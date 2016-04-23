@@ -35,18 +35,25 @@ echo "
 
             <body>
 
-                <h1>View Event</h1>
+                <div class=\"container - fluid\">
+                    <div class=\"row\">
+                        <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
+                        <div class=\"col-sm-12 col-md-10 col-lg-8\">
 
-                <p>Name: $event->author_Name</p>
-                <p>Username: $event->author_Username</p>
-                <p>Organization: $event->author_Organization</p>
-                <p>Event Name: $event->event_Name</p>
-                <p>Event Date: $event->event_Date</p>
-                <p>Event Description: $event->event_Description</p>
-                <p>Event Location: $event->event_Location</p>
+                            <h1>View Event</h1>
 
+                            <p>Name: $event->author_Name</p>
+                            <p>Username: $event->author_Username</p>
+                            <p>Organization: $event->author_Organization</p>
+                            <p>Event Name: $event->event_Name</p>
+                            <p>Event Date: $event->event_Date</p>
+                            <p>Event Description: $event->event_Description</p>
+                            <p>Event Location: $event->event_Location</p>
 
-
+                        </div>
+                        <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
+                    </div>
+                </div>
 
             </body>
-            </html>";
+        </html>";
