@@ -46,6 +46,7 @@ class ViewEvent
             if (strcmp($eventID, "0") !== 0)
             {
                 var_dump("Doesn't have permission!!!!!");
+                var_dump($eventID);
                 return;
             }
             else {
