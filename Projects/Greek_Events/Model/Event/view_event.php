@@ -39,6 +39,7 @@ class ViewEvent
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+            $eventID = "";
             foreach ($result as $row) {
                 $eventID = htmlspecialchars($row['eventID']);
             }
