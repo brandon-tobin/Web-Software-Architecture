@@ -43,7 +43,7 @@ class ViewEvent
                 $eventID = htmlspecialchars($row['eventID']);
             }
 
-            if (strcmp($eventID, "0") !== 0)
+            if (strcmp($eventID, "NULL") !== 0)
             {
                 var_dump("Doesn't have permission!!!!!");
                 var_dump($eventID);
