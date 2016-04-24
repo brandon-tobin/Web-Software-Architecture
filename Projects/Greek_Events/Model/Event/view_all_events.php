@@ -22,7 +22,7 @@ class ViewAllEvents
 //    public $event_Description;
 //    public $event_Location;
 
-    public function __construct($id, $eid)
+    public function __construct($id)
     {
         $this->view_all($id);
     }
