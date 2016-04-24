@@ -89,7 +89,7 @@ function verify_Login($role)
         }
         else{
             error_log("TOBIN User is logged but the Role is incorrect!!!!");
-            require ('../../View/Account/bad_role.php');
+            //require ('../../View/User/bad_role.php');
             exit();
         }
     }
@@ -138,14 +138,14 @@ function verify_Login($role)
                 else
                 {
                     $message = "Username or password is incorrect.";
-                    require ("../../View/Account/login_view.php");
+                    require ("../../View/User/login_view.php");
                     exit();
                 }
             }
             else
             {
                 $message = "Username or password is incorrect.";
-                require ("../../View/Account/login_view.php");
+                require ("../../View/User/login_view.php");
                 exit();
             }
         }
@@ -165,14 +165,14 @@ function verify_Login($role)
         else
         {
             error_log("TOBIN User is logged but the Role is incorrect!!!!");
-            require ('../../View/Account/bad_role.php');
+           // require ('../../View/Account/bad_role.php');
             exit();
         }
     }
     else
     {
        // error_log("TOBIN User is logged but the Role is incorrect!!!!");
-        require ("../../View/Account/login_view.php");
+        require ("../../View/User/login_view.php");
         exit();
     }
 
@@ -196,7 +196,7 @@ function navBar_Login($role)
         }
         else{
             error_log("TOBIN User is logged but the Role is incorrect!!!!");
-            require ('../View/Account/bad_role.php');
+            //require ('../View/Account/bad_role.php');
             exit();
         }
     }
@@ -245,14 +245,14 @@ function navBar_Login($role)
                 else
                 {
                     $message = "Username or password is incorrect.";
-                    require ("../View/Account/login_view.php");
+                    require ("../View/User/login_view.php");
                     exit();
                 }
             }
             else
             {
                 $message = "Username or password is incorrect.";
-                require ("../View/Account/login_view.php");
+                require ("../View/User/login_view.php");
                 exit();
             }
         }
@@ -272,14 +272,14 @@ function navBar_Login($role)
         else
         {
             error_log("TOBIN User is logged but the Role is incorrect!!!!");
-            require ('../View/Account/bad_role.php');
+            //require ('../View/Account/bad_role.php');
             exit();
         }
     }
     else
     {
         // error_log("TOBIN User is logged but the Role is incorrect!!!!");
-        require ("../View/Account/login_view.php");
+        require ("../View/User/login_view.php");
         exit();
     }
 
