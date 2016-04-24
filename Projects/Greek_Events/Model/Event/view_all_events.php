@@ -4,13 +4,13 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * View Event Model -- Retrieves the Event From the Database
+ * View All Events Model -- Retrieves the Event From the Database
  *
  */
 
 require '../../Model/Functions/db.php';
 
-class ViewEvent
+class ViewAllEvents
 {
     public $author_Name;
     public $author_Username;
@@ -22,16 +22,16 @@ class ViewEvent
 
     public function __construct($id, $eid)
     {
-        $this->view_event($id, $eid);
+        $this->view_all($id);
     }
 
-    // Method for creating a new event
-    function view_event($id, $eid)
+    // Method for viewing all events a user has access to
+    function view_all($id)
     {
         try {
             $db = openDBConnection();
 
-            // See if the user has permission to view the event
+            // Get all the eventID's the user is allowed to view
             $query = "SELECT * FROM EventPermission WHERE eventID = ? and orgID IN (SELECT orgID FROM User WHERE username = ?)";
             $stmt = $db->prepare($query);
             $stmt->bindValue(1, $eid);

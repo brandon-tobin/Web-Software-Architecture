@@ -41,6 +41,7 @@ if (isset($_POST['submit'])) {
     $stmt->bindValue(2, $eventDate);
     $stmt->bindValue(3, $eventDescription);
     $stmt->bindValue(4, $eventLocation);
+    $stmt->bindValue(5, 'tobin');
     $stmt->execute();
     $db->commit();
 
