@@ -53,7 +53,7 @@ echo "
                             <!-- Attending Button Group -->
                             <form method=\"post\">
                             <div class=\"btn-group btn-group-lg\" role=\"group\">
-                              <button type=\"submit\" class=\"btn btn-success\" value=\"Attending\">Attending</button>
+                              <button type=\"submit\" class=\"btn btn-success\" name=\"Attending\" value=\"Attending\">Attending</button>
                               <button type=\"button\" class=\"btn btn-warning\">Maybe Attending</button>
                               <button type=\"button\" class=\"btn btn-danger\">Not Attending</button>
                             </div>
