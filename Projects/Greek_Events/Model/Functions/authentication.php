@@ -121,7 +121,7 @@ function verify_Login()
                // if (computeHash($password, $hashedPassword) == $hashedPassword)
                 if ($password == $hashedPassword)
                 {
-                    $_SESSION['userid'] = $row['uid'];
+                  //  $_SESSION['userid'] = $row['uid'];
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
                     $_SESSION['login'] = $username;
                     $stmt->closeCursor();
@@ -228,7 +228,7 @@ function navBar_Login($role)
                 $hashedPassword = $row['password'];
                 if (computeHash($password, $hashedPassword) == $hashedPassword)
                 {
-                    $_SESSION['userid'] = htmlspecialchars($row['uid']);
+                   // $_SESSION['userid'] = htmlspecialchars($row['uid']);
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
                     $_SESSION['login'] = htmlspecialchars($username);
                     $stmt->closeCursor();
