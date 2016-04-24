@@ -17,15 +17,15 @@ echo "
                 <!-- Brandon Tobin -->
                 <!-- University of Utah -->
 
-                <!-- View Event -->
+                <!-- View All Events -->
 
-                <title>Event View</title>
+                <title>View All Events</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset=\"utf-8\"/>
                 <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"View Event \"/>
+                <meta name=\"description\" content=\"View All Events\"/>
 
                 <!-- ALL CSS FILES -->
                 <!-- Bootstrap Core CSS -->
@@ -42,13 +42,39 @@ echo "
 
                             <h1>View Event</h1>
 
-                            <p>Name: $event->author_Name</p>
+                            <div class=\"table - responsive\">
+                                <table class=\"table table - striped table - bordered table - condensed\">
+                                    <tr>
+                                        <th>Creator:</th>
+                                        <th>Creator Username:</th>
+                                        <th>Organization:</th>
+                                        <th>Event Name:</th>
+                                        <th>Event Date:</th>
+                                        <th>Event Description:</th>
+                                        <th>Event Location</th>
+                                    </tr>";
+                                // Echo out all entries in student array
+                                foreach ($events->events as $row)
+                                {
+                                    echo "<tr>";
+                                    foreach ($row as $value)
+                                    {
+                                        echo "<td>$value</td>";
+                                    }
+                                    echo "</tr>";
+                                }
+
+                                echo "
+                                </table>
+                            </div>
+
+                           <!-- <p>Name: $event->author_Name</p>
                             <p>Username: $event->author_Username</p>
                             <p>Organization: $event->author_Organization</p>
                             <p>Event Name: $event->event_Name</p>
                             <p>Event Date: $event->event_Date</p>
                             <p>Event Description: $event->event_Description</p>
-                            <p>Event Location: $event->event_Location</p>
+                            <p>Event Location: $event->event_Location</p> -->
 
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>

@@ -17,7 +17,7 @@ require_once 'view_all_events.php';
 $id = $_GET['id'];
 
 // Create a new student form object
-$event = new ViewAllEvents($id);
+$events = new ViewAllEvents($id);
 
 // Require the form view for display
 require "view_all_events_view.php";

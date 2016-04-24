@@ -12,13 +12,15 @@ require '../../Model/Functions/db.php';
 
 class ViewAllEvents
 {
-    public $author_Name;
-    public $author_Username;
-    public $author_Organization;
-    public $event_Name;
-    public $event_Date;
-    public $event_Description;
-    public $event_Location;
+    public $events = array();
+
+//    public $author_Name;
+//    public $author_Username;
+//    public $author_Organization;
+//    public $event_Name;
+//    public $event_Date;
+//    public $event_Description;
+//    public $event_Location;
 
     public function __construct($id, $eid)
     {
@@ -32,51 +34,50 @@ class ViewAllEvents
             $db = openDBConnection();
 
             // Get all the eventID's the user is allowed to view
-            $query = "SELECT * FROM EventPermission WHERE eventID = ? and orgID IN (SELECT orgID FROM User WHERE username = ?)";
+            $query = "SELECT * FROM EventPermission WHERE orgID IN (SELECT orgID FROM User WHERE username = ?)";
             $stmt = $db->prepare($query);
-            $stmt->bindValue(1, $eid);
-            $stmt->bindValue(2, $id);
+            $stmt->bindValue(1, $id);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+            $available_events = array();
+
             foreach ($result as $row) {
-                $eventID = htmlspecialchars($row['eventID']);
+                $available_events = array_push(htmlspecialchars($row['eventID']));
             }
 
-            if (empty($eventID))
+            // Get all information required to display all the events the user can attend
+            for ($i = 0; $i < count($available_events); $i++)
             {
-                var_dump("Doesn't have permission!!!!!");
-                var_dump($eventID);
-                return;
-            }
-            else {
-
-                // Get all information required to display the event
                 $query = "SELECT * FROM Event WHERE eventID = ?";
                 $stmt = $db->prepare($query);
-                $stmt->bindValue(1, $eid);
+                $stmt->bindValue(1,$available_events[$i]);
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($result as $row) {
-                    $this->author_Username = htmlspecialchars($row['creator']);
-                    $this->event_Name = htmlspecialchars($row['name']);
-                    $this->event_Date = htmlspecialchars($row['date']);
-                    $this->event_Description = htmlspecialchars($row['description']);
-                    $this->event_Location = htmlspecialchars($row['location']);
+                    $author_Username = htmlspecialchars($row['creator']);
+                    $event_Name = htmlspecialchars($row['name']);
+                    $event_Date = htmlspecialchars($row['date']);
+                    $event_Description = htmlspecialchars($row['description']);
+                    $event_Location = htmlspecialchars($row['location']);
                 }
 
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
                 $stmt = $db->prepare($query);
-                $stmt->bindValue(1, $this->author_Username);
+                $stmt->bindValue(1, $author_Username);
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($result as $row) {
-                    $this->author_Name = htmlspecialchars($row['name']);
-                    $this->author_Organization = htmlspecialchars($row['orgName']);
+                    $author_Name = htmlspecialchars($row['name']);
+                    $author_Organization = htmlspecialchars($row['orgName']);
                 }
+
+                    $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "<a href=\"view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."\">View</a>");
             }
+
+
 
         } catch (PDOException $ex) {
             error_log("Tobin bad happened! " . $ex->getMessage());
