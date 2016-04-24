@@ -14,10 +14,9 @@ require '../../Model/Functions/authentication.php';
 verify_Login();
 
 
-// Update RSVP for event
+// Update RSVP for event -- Attending
 if (isset($_POST['Attending']))
 {
-    var_dump($_SESSION);
     $eventID = $_GET['event'];
     $username = $_SESSION['login'];
 
@@ -25,6 +24,46 @@ if (isset($_POST['Attending']))
         $db = openDBConnection();
 
         $query = "UPDATE Attending SET rsvp = 1 WHERE eventID = ? AND username = ?;";
+        $stmt = $db->prepare($query);
+        $stmt->bindValue(1, $eventID);
+        $stmt->bindValue(2, $username);
+        $stmt->execute();
+    }
+    catch (PDOException $ex) {
+        error_log("Tobin bad happened! " . $ex->getMessage());
+    }
+}
+
+// Update RSVP for event -- Maybe Attending
+if (isset($_POST['Attending']))
+{
+    $eventID = $_GET['event'];
+    $username = $_SESSION['login'];
+
+    try {
+        $db = openDBConnection();
+
+        $query = "UPDATE Attending SET rsvp = 2 WHERE eventID = ? AND username = ?;";
+        $stmt = $db->prepare($query);
+        $stmt->bindValue(1, $eventID);
+        $stmt->bindValue(2, $username);
+        $stmt->execute();
+    }
+    catch (PDOException $ex) {
+        error_log("Tobin bad happened! " . $ex->getMessage());
+    }
+}
+
+// Update RSVP for event -- Not Attending
+if (isset($_POST['Attending']))
+{
+    $eventID = $_GET['event'];
+    $username = $_SESSION['login'];
+
+    try {
+        $db = openDBConnection();
+
+        $query = "UPDATE Attending SET rsvp = 3 WHERE eventID = ? AND username = ?;";
         $stmt = $db->prepare($query);
         $stmt->bindValue(1, $eventID);
         $stmt->bindValue(2, $username);
