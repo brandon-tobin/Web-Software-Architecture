@@ -13,7 +13,21 @@ require '../../Model/Functions/db.php';
 // Update RSVP for event
 if (isset($_POST['Attending']))
 {
-    var_dump("made it here bitches!");
+    $eventID = $_GET['event'];
+    $username = $_SESSION['login'];
+
+    try {
+        $db = openDBConnection();
+
+        $query = "UPDATE Attending SET rsvp = 1 WHERE eventID = ? AND username = ?;";
+        $stmt = $db->prepare($query);
+        $stmt->bindValue(1, $eventID);
+        $stmt->bindValue(2, $username);
+        $stmt->execute();
+    }
+    catch (PDOException $ex) {
+        error_log("Tobin bad happened! " . $ex->getMessage());
+    }
 }
 
 class ViewEvent
