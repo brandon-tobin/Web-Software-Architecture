@@ -109,7 +109,7 @@ function verify_Login($role)
             $DBH = openDBConnection();
 
             // Get information about the user
-            $stmt = $DBH->prepare("SELECT uid, name, position, password FROM Users WHERE username = ?");
+            $stmt = $DBH->prepare("SELECT uid, name, position, password FROM User WHERE username = ?");
             $stmt->bindValue(1, $username);
             $stmt->execute();
 
