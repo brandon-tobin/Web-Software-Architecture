@@ -71,7 +71,7 @@ function get_role()
 }
 
 
-function verify_Login($role)
+function verify_Login()
 {
     // Redirect to use HTTPS
     redirectToHTTPS();
@@ -82,16 +82,16 @@ function verify_Login($role)
     if (isset($_SESSION['userid']))
     {
         // Check to see if user belongs to role in parameter
-        if ($role == '' || (isset($_SESSION['roles']) && in_array($role, $_SESSION['roles'])))
-        {
-            error_log("TOBIN User is logged in and Role is correct!!!!");
-            return $_SESSION['realname'];
-        }
-        else{
-            error_log("TOBIN User is logged but the Role is incorrect!!!!");
-            //require ('../../View/User/bad_role.php');
-            exit();
-        }
+//        if ($role == '' || (isset($_SESSION['roles']) && in_array($role, $_SESSION['roles'])))
+//        {
+//            error_log("TOBIN User is logged in and Role is correct!!!!");
+//            return $_SESSION['realname'];
+//        }
+//        else{
+//            error_log("TOBIN User is logged but the Role is incorrect!!!!");
+//            //require ('../../View/User/bad_role.php');
+//            exit();
+//        }
     }
 
     // Empty error message
@@ -158,17 +158,17 @@ function verify_Login($role)
 
         // Logged in so change session ID.
         changeSessionID();
-        if ($role == '' || in_array($role, $_SESSION['roles']))
-        {
-            error_log("TOBIN RETURNING!!!!!");
-            return;
-        }
-        else
-        {
-            error_log("TOBIN User is logged but the Role is incorrect!!!!");
-           // require ('../../View/Account/bad_role.php');
-            exit();
-        }
+//        if ($role == '' || in_array($role, $_SESSION['roles']))
+//        {
+//            error_log("TOBIN RETURNING!!!!!");
+//            return;
+//        }
+//        else
+//        {
+//            error_log("TOBIN User is logged but the Role is incorrect!!!!");
+//           // require ('../../View/Account/bad_role.php');
+//            exit();
+//        }
     }
     else
     {
