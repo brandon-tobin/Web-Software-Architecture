@@ -13,6 +13,7 @@ require '../../Model/Functions/db.php';
 // Update RSVP for event
 if (isset($_POST['Attending']))
 {
+    var_dump($_SESSION);
     $eventID = $_GET['event'];
     $username = $_SESSION['login'];
 
