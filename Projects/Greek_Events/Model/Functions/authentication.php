@@ -79,7 +79,7 @@ function verify_Login()
     session_start();
 
     // Check to see if user is logged in
-    if (isset($_SESSION['userid']))
+    if (isset($_SESSION['login']))
     {
         // Check to see if user belongs to role in parameter
 //        if ($role == '' || (isset($_SESSION['roles']) && in_array($role, $_SESSION['roles'])))
@@ -92,6 +92,8 @@ function verify_Login()
 //            //require ('../../View/User/bad_role.php');
 //            exit();
 //        }
+
+        exit();
     }
 
     // Empty error message
