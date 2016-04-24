@@ -53,14 +53,13 @@ echo "
                             <div class=\"container\">
                                 <div id=\"content\">
                                     <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
-                                        <li class=\"active\"><a href=\"#red\" data-toggle=\"tab\">Red</a></li>
-                                        <li><a href=\"#orange\" data-toggle=\"tab\">Orange</a></li>
-                                        <li><a href=\"#yellow\" data-toggle=\"tab\">Yellow</a></li>
-                                        <li><a href=\"#green\" data-toggle=\"tab\">Green</a></li>
-                                        <li><a href=\"#blue\" data-toggle=\"tab\">Blue</a></li>
+                                        <li class=\"active\"><a href=\"#invited\" data-toggle=\"tab\">Invited</a></li>
+                                        <li><a href=\"#attending\" data-toggle=\"tab\">Attending</a></li>
+                                        <li><a href=\"#maybeAttending\" data-toggle=\"tab\">Maybe Attending</a></li>
+                                        <li><a href=\"#notAttending\" data-toggle=\"tab\">Not Attending</a></li>
                                     </ul>
                                     <div id=\"my-tab-content\" class=\"tab-content\">
-                                        <div class=\"tab-pane active\" id=\"red\">
+                                        <div class=\"tab-pane active\" id=\"invited\">
                                             <h1>Invited</h1>
                                             <div class=\"table - responsive\">
                                                 <table class=\"table table - striped table - bordered table - condensed\">
@@ -75,21 +74,50 @@ echo "
                                                 echo "</table>
                                             </div>
                                         </div>
-                                        <div class=\"tab-pane\" id=\"orange\">
-                                            <h1>Orange</h1>
-                                            <p>orange orange orange orange orange</p>
+                                        <div class=\"tab-pane\" id=\"attending\">
+                                            <h1>Attending</h1>
+                                            <div class=\"table - responsive\">
+                                                <table class=\"table table - striped table - bordered table - condensed\">
+                                                    <tr>
+                                                        <th>Name:</th>
+                                                    </tr>";
+                                                    // Echo out all entries in student array
+                                                    foreach ($event->attending_event as $row)
+                                                    {
+                                                        echo "<tr><td>$row</td></tr>";
+                                                    }
+                                                echo "</table>
+                                            </div>
                                         </div>
-                                        <div class=\"tab-pane\" id=\"yellow\">
-                                            <h1>Yellow</h1>
-                                            <p>yellow yellow yellow yellow yellow</p>
+                                        <div class=\"tab-pane\" id=\"maybeAttending\">
+                                            <h1>Maybe Attending</h1>
+                                            <div class=\"table - responsive\">
+                                                <table class=\"table table - striped table - bordered table - condensed\">
+                                                    <tr>
+                                                        <th>Name:</th>
+                                                    </tr>";
+                                                    // Echo out all entries in student array
+                                                    foreach ($event->maybe_attending_event as $row)
+                                                    {
+                                                        echo "<tr><td>$row</td></tr>";
+                                                    }
+                                                echo "</table>
+                                            </div>
                                         </div>
-                                        <div class=\"tab-pane\" id=\"green\">
-                                            <h1>Green</h1>
-                                            <p>green green green green green</p>
-                                        </div>
-                                        <div class=\"tab-pane\" id=\"blue\">
-                                            <h1>Blue</h1>
-                                            <p>blue blue blue blue blue</p>
+                                        <div class=\"tab-pane\" id=\"notAttending\">
+                                            <h1>Not Attending</h1>
+                                            <div class=\"table - responsive\">
+                                                <table class=\"table table - striped table - bordered table - condensed\">
+                                                    <tr>
+                                                        <th>Name:</th>
+                                                    </tr>";
+                                                    // Echo out all entries in student array
+                                                    foreach ($event->not_attending_event as $row)
+                                                    {
+                                                        echo "<tr><td>$row</td></tr>";
+                                                    }
+                                                echo "</table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
