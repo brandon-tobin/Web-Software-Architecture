@@ -61,8 +61,19 @@ echo "
                                     </ul>
                                     <div id=\"my-tab-content\" class=\"tab-content\">
                                         <div class=\"tab-pane active\" id=\"red\">
-                                            <h1>Red</h1>
-                                            <p>red red red red red red</p>
+                                            <h1>Invited</h1>
+                                            <div class=\"table - responsive\">
+                                                <table class=\"table table - striped table - bordered table - condensed\">
+                                                    <tr>
+                                                        <th>Name:</th>
+                                                    </tr>";
+                                                    // Echo out all entries in student array
+                                                    foreach ($event->invited_event as $row)
+                                                    {
+                                                        echo "<tr><td>$row</td></tr>";
+                                                    }
+                                                echo "</table>
+                                            </div>
                                         </div>
                                         <div class=\"tab-pane\" id=\"orange\">
                                             <h1>Orange</h1>
@@ -87,6 +98,7 @@ echo "
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                     </div>
                 </div>
+
 
                 <!-- jQuery -->
                 <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>

@@ -19,6 +19,10 @@ class ViewEvent
     public $event_Date;
     public $event_Description;
     public $event_Location;
+    public $invited_event = array();
+    public $attending_event = array();
+    public $maybe_attending_event = array();
+    public $not_attending_event = array();
 
     public function __construct($id, $eid)
     {
@@ -76,6 +80,50 @@ class ViewEvent
                     $this->author_Name = htmlspecialchars($row['name']);
                     $this->author_Organization = htmlspecialchars($row['orgName']);
                 }
+            }
+
+            // Get users that are inivted to event
+            $query = "SELECT name FROM User, (SELECT username FROM Attending WHERE eventID = ? AND rsvp = 0) as temp WHERE User.username = temp.username";
+            $stmt = $db->prepare($query);
+            $stmt->bindValue(1, $eventID);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                array_push($this->invited_event, htmlspecialchars($row['name']));
+            }
+
+            // Get users that are attending the event
+            $query = "SELECT name FROM User, (SELECT username FROM Attending WHERE eventID = ? AND rsvp = 1) as temp WHERE User.username = temp.username";
+            $stmt = $db->prepare($query);
+            $stmt->bindValue(1, $eventID);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                array_push($this->attending_event, htmlspecialchars($row['name']));
+            }
+
+            // Get users that are maybe attending the event
+            $query = "SELECT name FROM User, (SELECT username FROM Attending WHERE eventID = ? AND rsvp = 2) as temp WHERE User.username = temp.username";
+            $stmt = $db->prepare($query);
+            $stmt->bindValue(1, $eventID);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                array_push($this->maybe_attending_event, htmlspecialchars($row['name']));
+            }
+
+            // Get users that are not attending the event
+            $query = "SELECT name FROM User, (SELECT username FROM Attending WHERE eventID = ? AND rsvp = 3) as temp WHERE User.username = temp.username";
+            $stmt = $db->prepare($query);
+            $stmt->bindValue(1, $eventID);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                array_push($this->not_attending_event, htmlspecialchars($row['name']));
             }
 
         } catch (PDOException $ex) {
