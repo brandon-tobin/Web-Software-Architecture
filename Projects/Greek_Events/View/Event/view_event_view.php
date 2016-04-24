@@ -51,26 +51,28 @@ echo "
                             <p>Event Location: $event->event_Location</p>
 
                             <!-- Attendance Pills -->
-                            <ul class=\"nav nav-pills\">
-                                <li class=\"active\"><a href=\"tab1\">Invited</a></li>
-                                <li><a href=\"tab2\">Attending</a></li>
-                                <li><a href=\"tab3\">Maybe Attending</a></li>
-                                <li><a href=\"tab4\">Not Attending</a></li>
-                            </ul>
+                            <div id=\"rootwizard\">
+                                <ul class=\"nav nav-pills\">
+                                    <li class=\"active\"><a href=\"tab1\">Invited</a></li>
+                                    <li><a href=\"tab2\">Attending</a></li>
+                                    <li><a href=\"tab3\">Maybe Attending</a></li>
+                                    <li><a href=\"tab4\">Not Attending</a></li>
+                                </ul>
 
-                            <div class=\"tab-content\">
-	                            <div class=\"tab-pane\" id=\"tab1\">
-	                                1
-	                            </div>
-	                            <div class=\"tab-pane\" id=\"tab2\">
-	                                2
-	                            </div>
-		                        <div class=\"tab-pane\" id=\"tab3\">
-		    	                    3
-	                            </div>
-		                        <div class=\"tab-pane\" id=\"tab4\">
-			                        4
-	                            </div>
+                                <div class=\"tab-content\">
+                                    <div class=\"tab-pane\" id=\"tab1\">
+                                        1
+                                    </div>
+                                    <div class=\"tab-pane\" id=\"tab2\">
+                                        2
+                                    </div>
+                                    <div class=\"tab-pane\" id=\"tab3\">
+                                        3
+                                    </div>
+                                    <div class=\"tab-pane\" id=\"tab4\">
+                                        4
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
