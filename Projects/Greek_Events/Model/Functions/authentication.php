@@ -93,7 +93,7 @@ function verify_Login()
 //            exit();
 //        }
 
-        exit();
+    return $_SESSION['realname'];
     }
 
     // Empty error message
