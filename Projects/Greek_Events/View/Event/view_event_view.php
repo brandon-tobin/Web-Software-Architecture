@@ -50,29 +50,40 @@ echo "
                             <p>Event Description: $event->event_Description</p>
                             <p>Event Location: $event->event_Location</p>
 
-                            <!-- Attendance Pills -->
-                                <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
-                                <li class=\"active\"><a href=\"tab1\" data-toggle=\"tab\">Invited</a></li>
-                                <li><a href=\"tab2\" data-toggle=\"tab\">Attending</a></li>
-                                <li><a href=\"tab3\" data-toggle=\"tab\">Maybe Attending</a></li>
-                                <li><a href=\"tab4\" data-toggle=\"tab\">Not Attending</a></li>
-                            </ul>
-
-                            <div id=\"my-tab-content\" class=\"tab-content\">
-
-                                <div class=\"tab-pane\" id=\"tab1\">
-                                    1
-                                </div>
-                                <div class=\"tab-pane\" id=\"tab2\">
-                                    2
-                                </div>
-                                <div class=\"tab-pane\" id=\"tab3\">
-                                    3
-                                </div>
-                                <div class=\"tab-pane\" id=\"tab4\">
-                                    4
+                            <div class=\"container\">
+                                <div id=\"content\">
+                                    <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
+                                        <li class=\"active\"><a href=\"#red\" data-toggle=\"tab\">Red</a></li>
+                                        <li><a href=\"#orange\" data-toggle=\"tab\">Orange</a></li>
+                                        <li><a href=\"#yellow\" data-toggle=\"tab\">Yellow</a></li>
+                                        <li><a href=\"#green\" data-toggle=\"tab\">Green</a></li>
+                                        <li><a href=\"#blue\" data-toggle=\"tab\">Blue</a></li>
+                                    </ul>
+                                    <div id=\"my-tab-content\" class=\"tab-content\">
+                                        <div class=\"tab-pane active\" id=\"red\">
+                                            <h1>Red</h1>
+                                            <p>red red red red red red</p>
+                                        </div>
+                                        <div class=\"tab-pane\" id=\"orange\">
+                                            <h1>Orange</h1>
+                                            <p>orange orange orange orange orange</p>
+                                        </div>
+                                        <div class=\"tab-pane\" id=\"yellow\">
+                                            <h1>Yellow</h1>
+                                            <p>yellow yellow yellow yellow yellow</p>
+                                        </div>
+                                        <div class=\"tab-pane\" id=\"green\">
+                                            <h1>Green</h1>
+                                            <p>green green green green green</p>
+                                        </div>
+                                        <div class=\"tab-pane\" id=\"blue\">
+                                            <h1>Blue</h1>
+                                            <p>blue blue blue blue blue</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
 
 
                         </div>
