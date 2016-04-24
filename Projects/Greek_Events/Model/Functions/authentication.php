@@ -109,7 +109,7 @@ function verify_Login($role)
             $DBH = openDBConnection();
 
             // Get information about the user
-            $stmt = $DBH->prepare("SELECT uid, name, position, password FROM User WHERE username = ?");
+            $stmt = $DBH->prepare("SELECT name, account_level, password FROM User WHERE username = ?");
             $stmt->bindValue(1, $username);
             $stmt->execute();
 
@@ -124,15 +124,15 @@ function verify_Login($role)
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
                     $_SESSION['login'] = $username;
                     $stmt->closeCursor();
-                    $stmt = $DBH->prepare("SELECT role FROM Roles WHERE username = ?");
-                    $stmt->bindValue(1, $username);
-                    $stmt->execute();
-                    $roles = array();
-                    while ($row = $stmt->fetch())
-                    {
-                        $roles[] = htmlspecialchars($row['role']);
-                    }
-                    $_SESSION['roles'] = $roles;
+//                    $stmt = $DBH->prepare("SELECT role FROM Roles WHERE username = ?");
+//                    $stmt->bindValue(1, $username);
+//                    $stmt->execute();
+//                    $roles = array();
+//                    while ($row = $stmt->fetch())
+//                    {
+//                        $roles[] = htmlspecialchars($row['role']);
+//                    }
+//                    $_SESSION['roles'] = $roles;
 
                 }
                 else
