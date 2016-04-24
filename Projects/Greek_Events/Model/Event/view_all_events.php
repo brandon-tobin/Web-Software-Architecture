@@ -43,7 +43,7 @@ class ViewAllEvents
             $available_events = array();
 
             foreach ($result as $row) {
-                $available_events = array_push(htmlspecialchars($row['eventID']));
+                array_push($available_events, htmlspecialchars($row['eventID']));
             }
 
             // Get all information required to display all the events the user can attend
