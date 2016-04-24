@@ -10,6 +10,9 @@
 
 require '../../Model/Functions/db.php';
 
+verify_Login();
+
+
 // Update RSVP for event
 if (isset($_POST['Attending']))
 {
