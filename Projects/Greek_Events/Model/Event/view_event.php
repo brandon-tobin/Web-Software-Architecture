@@ -9,6 +9,7 @@
  */
 
 require '../../Model/Functions/db.php';
+require '../../Model/Functions/authentication.php';
 
 verify_Login();
 
