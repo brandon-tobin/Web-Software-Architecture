@@ -35,7 +35,7 @@ if (isset($_POST['Attending']))
 }
 
 // Update RSVP for event -- Maybe Attending
-if (isset($_POST['Attending']))
+if (isset($_POST['Maybe']))
 {
     $eventID = $_GET['event'];
     $username = $_SESSION['login'];
@@ -55,7 +55,7 @@ if (isset($_POST['Attending']))
 }
 
 // Update RSVP for event -- Not Attending
-if (isset($_POST['Attending']))
+if (isset($_POST['Not']))
 {
     $eventID = $_GET['event'];
     $username = $_SESSION['login'];

@@ -54,8 +54,8 @@ echo "
                             <form method=\"post\">
                             <div class=\"btn-group btn-group-lg\" role=\"group\">
                               <button type=\"submit\" class=\"btn btn-success\" name=\"Attending\" value=\"Attending\">Attending</button>
-                              <button type=\"button\" class=\"btn btn-warning\">Maybe Attending</button>
-                              <button type=\"button\" class=\"btn btn-danger\">Not Attending</button>
+                              <button type=\"submit\" class=\"btn btn-warning\" name=\"Maybe\" value=\"Maybe Attending\">Maybe Attending</button>
+                              <button type=\"submit\" class=\"btn btn-danger\" name=\"Not\" value=\"Not Attending\">Not Attending</button>
                             </div>
                             </form>
 
