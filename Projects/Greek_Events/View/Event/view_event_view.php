@@ -50,6 +50,13 @@ echo "
                             <p>Event Description: $event->event_Description</p>
                             <p>Event Location: $event->event_Location</p>
 
+                            <!-- Attending Button Group -->
+                            <div class=\"btn-group\" role=\"group\" aria-label=\"...\">
+                              <button type=\"button\" class=\"btn btn-success\">Attending</button>
+                              <button type=\"button\" class=\"btn btn-warning\">Maybe Attending</button>
+                              <button type=\"button\" class=\"btn btn-danger\">Not Attending</button>
+                            </div>
+
                             <div class=\"container\">
                                 <div id=\"content\">
                                     <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
