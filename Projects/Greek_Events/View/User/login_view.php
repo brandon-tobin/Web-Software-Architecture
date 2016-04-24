@@ -1,4 +1,4 @@
-<?php require('../../View/Partials/partial_view.php'); ?>
+<?php //require('../../View/Partials/partial_view.php'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html lang="en">
@@ -35,11 +35,11 @@
 
         <?php
 
-        echo (getHeader());
+       // echo (getHeader());
 
-        echo (getNavigation());
+       // echo (getNavigation());
 
-        echo (pageDataHeader("Please Log In"));
+      //  echo (pageDataHeader("Please Log In"));
 
         ?>
 
