@@ -51,11 +51,13 @@ echo "
                             <p>Event Location: $event->event_Location</p>
 
                             <!-- Attending Button Group -->
+                            <form method=\"post\">
                             <div class=\"btn-group btn-group-lg\" role=\"group\">
                               <input type=\"submit\" class=\"btn btn-success\" value=\"Attending\">Attending</input>
                               <button type=\"button\" class=\"btn btn-warning\">Maybe Attending</button>
                               <button type=\"button\" class=\"btn btn-danger\">Not Attending</button>
                             </div>
+                            </form>
 
                             <br /><br />
 
