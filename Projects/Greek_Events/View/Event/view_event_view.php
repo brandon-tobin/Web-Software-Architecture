@@ -52,7 +52,7 @@ echo "
 
                             <!-- Attending Button Group -->
                             <div class=\"btn-group btn-group-lg\" role=\"group\">
-                              <button type=\"button\" class=\"btn btn-success\">Attending</button>
+                              <input type=\"submit\" class=\"btn btn-success\" value=\"Attending\">Attending</input>
                               <button type=\"button\" class=\"btn btn-warning\">Maybe Attending</button>
                               <button type=\"button\" class=\"btn btn-danger\">Not Attending</button>
                             </div>
