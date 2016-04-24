@@ -85,8 +85,8 @@ echo "
                                                 echo "</table>
                                             </div>
                                         </div>
-                                        <div class=\"tab-pane\" id=\"attending\">
-                                            <h1>Attending</h1>
+                                        <div class=\"tab-pane\" id=\"attending\">";
+                                            echo "<h1>Attending (". count($event->attending_event) .")</h1>
                                             <div class=\"table - responsive\">
                                                 <table class=\"table table - striped table - bordered table - condensed\">
                                                     <tr>
@@ -100,8 +100,8 @@ echo "
                                                 echo "</table>
                                             </div>
                                         </div>
-                                        <div class=\"tab-pane\" id=\"maybeAttending\">
-                                            <h1>Maybe Attending</h1>
+                                        <div class=\"tab-pane\" id=\"maybeAttending\">";
+                                            echo "<h1>Maybe Attending (". count($event->maybe_attending_event) . ")</h1>
                                             <div class=\"table - responsive\">
                                                 <table class=\"table table - striped table - bordered table - condensed\">
                                                     <tr>
@@ -115,8 +115,8 @@ echo "
                                                 echo "</table>
                                             </div>
                                         </div>
-                                        <div class=\"tab-pane\" id=\"notAttending\">
-                                            <h1>Not Attending</h1>
+                                        <div class=\"tab-pane\" id=\"notAttending\">";
+                                            echo "<h1>Not Attending (". count($event->not_attending_event) . ")</h1>
                                             <div class=\"table - responsive\">
                                                 <table class=\"table table - striped table - bordered table - condensed\">
                                                     <tr>
