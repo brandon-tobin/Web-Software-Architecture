@@ -57,6 +57,8 @@ echo "
                               <button type=\"button\" class=\"btn btn-danger\">Not Attending</button>
                             </div>
 
+                            <br /><br />
+
                             <div class=\"container\">
                                 <div id=\"content\">
                                     <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
