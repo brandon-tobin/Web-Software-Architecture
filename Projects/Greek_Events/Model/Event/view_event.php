@@ -10,6 +10,12 @@
 
 require '../../Model/Functions/db.php';
 
+// Update RSVP for event
+if (isset($_POST['Attending']))
+{
+    var_dump("made it here bitches!");
+}
+
 class ViewEvent
 {
     public $author_Name;
