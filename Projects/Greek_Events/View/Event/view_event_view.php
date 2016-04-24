@@ -51,7 +51,7 @@ echo "
                             <p>Event Location: $event->event_Location</p>
 
                             <!-- Attending Button Group -->
-                            <div class=\"btn-group\" role=\"group\">
+                            <div class=\"btn-group btn-group-lg\" role=\"group\">
                               <button type=\"button\" class=\"btn btn-success\">Attending</button>
                               <button type=\"button\" class=\"btn btn-warning\">Maybe Attending</button>
                               <button type=\"button\" class=\"btn btn-danger\">Not Attending</button>
