@@ -156,7 +156,7 @@ echo "
 
                                     <!--<h2>Leave a Comment:</h2>-->
                                     <!-- Attending Button Group -->
-                                    <div class=\"container\">
+                                   <!-- <div class=\"container\">-->
                                         <h2>Leave a Comment</h2>
                                         <form role=\"form\">
                                             <div class=\"comment-form\">
@@ -164,7 +164,7 @@ echo "
                                                 <textarea class=\"comment-form\" rows=\"5\" id=\"comment\"></textarea>
                                             </div>
                                         </form>
-                                    </div>
+                                    <!--</div>-->
                                 </div>
                             </div>
                         </div>
