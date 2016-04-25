@@ -69,7 +69,7 @@ echo "
                                         <li><a href=\"#maybeAttending\" data-toggle=\"tab\">Maybe Attending (".count($event->maybe_attending_event).")</a></li>
                                         <li><a href=\"#notAttending\" data-toggle=\"tab\">Not Attending (".count($event->not_attending_event).")</a></li>
                                     </ul>
-                                    <div id=\"my-tab-content\" class=\"tab-content\">
+                                    <div id=\"my-tab-content\" class=\"col-sm-12 col-md-10 col-lg-8 tab-content\">
                                         <div class=\"tab-pane active\" id=\"invited\">
                                             <h1>Invited</h1>
                                             <div class=\"table - responsive\">
