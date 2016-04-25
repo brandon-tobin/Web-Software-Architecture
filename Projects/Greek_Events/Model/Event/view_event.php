@@ -216,7 +216,7 @@ class ViewEvent
             }
 
             // Get the event comments
-            $query = "SELECT name, comment, time FROM Comments, User where Comments.username = User.username AND eventID = ?";
+            $query = "SELECT name, comment, time FROM Comments, User where Comments.username = User.username AND eventID = ? ORDER BY time ASC";
             $stmt = $db->prepare($query);
             $stmt->bindValue(1, $eventID);
             $stmt->execute();
