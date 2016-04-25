@@ -127,10 +127,12 @@ echo "
                                                     {
                                                         echo "<tr><td>$row</td></tr>";
                                                     }
-                                                echo "</table>
+                                                    echo "</table>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <h2>Comments:</h2>
                                 </div>
                             </div>
                         </div>
