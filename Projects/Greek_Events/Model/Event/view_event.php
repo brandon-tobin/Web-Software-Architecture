@@ -78,7 +78,7 @@ if (isset($_POST['Not']))
 if (isset($_POST['Post']))
 {
     $eventID = $_GET['event'];
-    $comment = $_REQUEST['comment'];
+    $comment = trim($_REQUEST['comment']);
     $username = $_SESSION['login'];
 
     var_dump($comment);
