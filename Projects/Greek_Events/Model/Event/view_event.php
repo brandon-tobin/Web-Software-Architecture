@@ -81,8 +81,6 @@ if (isset($_POST['Post']))
     $comment = trim($_REQUEST['comment']);
     $username = $_SESSION['login'];
 
-    var_dump($comment);
-
     try {
         $db = openDBConnection();
 
