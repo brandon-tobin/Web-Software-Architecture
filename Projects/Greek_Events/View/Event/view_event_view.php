@@ -153,9 +153,8 @@ echo "
                                         echo "
                                     </table>
                                 </div>
-                            <!--</div>-->
 
-                            <!-- Comment Form -->
+                                <!-- Comment Form -->
                                 <h2>Leave a Comment</h2>
                                 <form method=\"post\">
                                     <div class=\"form-group\">
@@ -164,13 +163,11 @@ echo "
                                     </div>
                                     <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
                                 </form>
-                            <!--</div>-->
                             </div>
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-1\"></div>
                     </div>
                 </div>
-
 
                 <!-- jQuery -->
                 <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
