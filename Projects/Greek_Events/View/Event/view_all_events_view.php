@@ -53,18 +53,18 @@ echo "
                                         <th>Event Description:</th>
                                         <th>Event Location</th>
                                     </tr>";
-                                // Echo out all entries in student array
-                                foreach ($events->events as $row)
-                                {
-                                    echo "<tr>";
-                                    foreach ($row as $value)
+                                    // Echo out all entries in student array
+                                    foreach ($events->events as $row)
                                     {
-                                        echo "<td>$value</td>";
+                                        echo "<tr>";
+                                        foreach ($row as $value)
+                                        {
+                                            echo "<td>$value</td>";
+                                        }
+                                        echo "</tr>";
                                     }
-                                    echo "</tr>";
-                                }
 
-                                echo "
+                                    echo "
                                 </table>
                             </div>
                         </div>

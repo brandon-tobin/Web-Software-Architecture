@@ -157,10 +157,10 @@ echo "
                                     <!-- Comment Form -->
                                     <div class=\"container\">
                                         <h2>Leave a Comment</h2>
-                                        <form method=\"POST\">
+                                        <form method=\"post\">
                                             <div class=\"form-group\">
                                                 <label for=\"comment\">Comment:</label>
-                                                <textarea class=\"form-control\" rows=\"5\" id=\"comment\"></textarea>
+                                                <textarea class=\"form-control\" rows=\"5\" name=\"comment\" id=\"comment\"></textarea>
                                             </div>
                                             <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
                                         </form>
