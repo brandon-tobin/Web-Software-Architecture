@@ -87,6 +87,7 @@ class ViewEvent
     public $attending_event = array();
     public $maybe_attending_event = array();
     public $not_attending_event = array();
+    public $event_comments = array();
 
     public function __construct($id, $eid)
     {
@@ -188,6 +189,20 @@ class ViewEvent
 
             foreach ($result as $row) {
                 array_push($this->not_attending_event, htmlspecialchars($row['name']));
+            }
+
+            // Get the event comments
+            $query = "SELECT name, comment, time FROM Comments, User where Comments.username = User.username AND eventID = ?";
+            $stmt = $db->prepare($query);
+            $stmt->bindValue(1, $eventID);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                $commenter_name = htmlspecialchars($row['name']);
+                $comment = htmlspecialchars($row['comment']);
+                $time = htmlspecialchars($row['time']);
+                $this->event_comments[] = array($commenter_name, $comment, $time);
             }
 
         } catch (PDOException $ex) {

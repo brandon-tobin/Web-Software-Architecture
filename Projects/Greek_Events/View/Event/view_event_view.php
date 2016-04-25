@@ -133,6 +133,26 @@ echo "
                                     </div>
 
                                     <h2>Comments:</h2>
+                                    <div class=\"table - responsive\">
+                                        <table class=\"table table - striped table - bordered table - condensed\">
+                                            <tr>
+                                                <th>Name:</th>
+                                                <th>Comment:</th>
+                                                <th>Time:</th>
+                                            </tr>";
+                                            // Echo out all entries in student array
+                                            foreach ($event->event_comments as $row)
+                                            {
+                                                echo "<tr>";
+                                                foreach ($row as $value)
+                                                {
+                                                    echo "<td>$value</td>";
+                                                }
+                                                echo "</tr>";
+                                            }
+                                            echo "
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
