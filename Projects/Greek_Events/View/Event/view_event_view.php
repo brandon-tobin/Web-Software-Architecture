@@ -153,6 +153,18 @@ echo "
                                             echo "
                                         </table>
                                     </div>
+
+                                    <!--<h2>Leave a Comment:</h2>-->
+                                    <!-- Attending Button Group -->
+                                    <div class=\"container\">
+                                        <h2>Leave a Comment</h2>
+                                        <form role=\"form\">
+                                            <div class=\"comment-form\">
+                                                <label for=\"comment\">Comment:</label>
+                                                <textarea class=\"comment-form\" rows=\"5\" id=\"comment\"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
