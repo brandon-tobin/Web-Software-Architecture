@@ -62,8 +62,8 @@ echo "
                             <br /><br />
 
                             <div class=\"container\">
-                                <div id=\"col-sm-12 col-md-10 col-lg-8 content\">
-                                    <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
+                                <div id=\"content\">
+                                    <ul id=\"tabs\" class=\"col-sm-12 col-md-10 col-lg-8 nav nav-tabs\" data-tabs=\"tabs\">
                                         <li class=\"active\"><a href=\"#invited\" data-toggle=\"tab\">Invited</a></li>
                                         <li><a href=\"#attending\" data-toggle=\"tab\">Attending (".count($event->attending_event).")</a></li>
                                         <li><a href=\"#maybeAttending\" data-toggle=\"tab\">Maybe Attending (".count($event->maybe_attending_event).")</a></li>
