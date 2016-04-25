@@ -163,6 +163,8 @@ echo "
                                                 <label for=\"comment\">Comment:</label>
                                                 <textarea class=\"form-control\" rows=\"5\" id=\"comment\"></textarea>
                                             </div>
+
+                                            <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
                                         </form>
                                     </div>
                                 </div>
