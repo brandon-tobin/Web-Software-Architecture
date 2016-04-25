@@ -43,9 +43,10 @@ echo "
                             <h1 class=\"page-header\">View Event</h1>
 
                             <div class=\"panel panel-primary\">
-                                                        <p>Name: $event->author_Name</p>
-
+                                <div class=\"panel-heading\">Name</div>
+                                <div class=\"panel-body\">$event->author_Name</div>
                             </div>
+
                             <p>Name: $event->author_Name</p>
                             <p>Username: $event->author_Username</p>
                             <p>Organization: $event->author_Organization</p>
