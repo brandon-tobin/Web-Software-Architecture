@@ -40,7 +40,7 @@ echo "
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                         <div class=\"col-sm-12 col-md-10 col-lg-8\">
 
-                            <h1>View Event</h1>
+                            <h1 class=\"page-header\">View Event</h1>
 
                             <p>Name: $event->author_Name</p>
                             <p>Username: $event->author_Username</p>
