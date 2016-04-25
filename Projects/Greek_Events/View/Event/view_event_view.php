@@ -133,8 +133,8 @@ echo "
                                     </div>
 
                                     <h2>Comments:</h2>
-                                    <div class=\"table-responsive\">
-                                        <table class=\"table table-striped table-bordered table-condensed col-sm-12 col-md-10 col-lg-8\">
+                                    <div class=\"table-responsive col-sm-12 col-md-10 col-lg-8\">
+                                        <table class=\"table table-striped table-bordered table-condensed\">
                                             <tr>
                                                 <th>Name:</th>
                                                 <th>Comment:</th>
