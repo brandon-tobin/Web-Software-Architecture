@@ -61,8 +61,8 @@ echo "
 
                             <br /><br />
 
-                            <div class=\"col-sm-12 col-md-10 col-lg-8 container\">
-                                <div id=\"content\">
+                            <div class=\"container\">
+                                <div id=\"col-sm-12 col-md-10 col-lg-8 content\">
                                     <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
                                         <li class=\"active\"><a href=\"#invited\" data-toggle=\"tab\">Invited</a></li>
                                         <li><a href=\"#attending\" data-toggle=\"tab\">Attending (".count($event->attending_event).")</a></li>
@@ -153,19 +153,20 @@ echo "
                                             echo "
                                         </table>
                                     </div>
-
-                                    <!-- Comment Form -->
-                                    <div class=\"col-sm-12 col-md-10 col-lg-8 container\">
-                                        <h2>Leave a Comment</h2>
-                                        <form method=\"post\">
-                                            <div class=\"form-group\">
-                                                <label for=\"comment\">Comment:</label>
-                                                <textarea class=\"form-control\" rows=\"5\" name=\"comment\" id=\"comment\"></textarea>
-                                            </div>
-                                            <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
-                                        </form>
-                                    </div>
                                 </div>
+
+                                <!-- Comment Form -->
+                                <div class=\"col-sm-12 col-md-10 col-lg-8 container\">
+                                    <h2>Leave a Comment</h2>
+                                    <form method=\"post\">
+                                        <div class=\"form-group\">
+                                            <label for=\"comment\">Comment:</label>
+                                            <textarea class=\"form-control\" rows=\"5\" name=\"comment\" id=\"comment\"></textarea>
+                                        </div>
+                                        <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-1\"></div>
