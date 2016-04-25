@@ -156,7 +156,6 @@ echo "
                                 </div>
 
                                 <!-- Comment Form -->
-                                <div class=\"container\">
                                     <h2>Leave a Comment</h2>
                                     <form method=\"post\">
                                         <div class=\"form-group\">
@@ -165,7 +164,6 @@ echo "
                                         </div>
                                         <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
                                     </form>
-                                </div>
 
                             <!--</div>-->
                         </div>
