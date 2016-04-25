@@ -156,7 +156,7 @@ echo "
                                 </div>
 
                                 <!-- Comment Form -->
-                                <div class=\"col-sm-12 col-md-10 col-lg-8 container\">
+                                <div class=\"container\">
                                     <h2>Leave a Comment</h2>
                                     <form method=\"post\">
                                         <div class=\"form-group\">
