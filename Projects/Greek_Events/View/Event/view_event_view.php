@@ -131,8 +131,7 @@ echo "
                                             </div>
                                         </div>
                                     </div>
-                                    <div class=\"container\">
-                                    <div class=\"content\">
+                                    <br />
                                     <h2>Comments:</h2>
                                     <div class=\"table-responsive col-sm-12 col-md-10 col-lg-8\">
                                         <table class=\"table table-striped table-bordered table-condensed\">
@@ -153,8 +152,6 @@ echo "
                                             }
                                             echo "
                                         </table>
-                                        </div>
-                                        </div>
                                     </div>
                                 </div>
 
