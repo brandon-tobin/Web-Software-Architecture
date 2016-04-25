@@ -35,7 +35,7 @@ echo "
 
             <body>
 
-                <div class=\"container - fluid\">
+                <div class=\"container-fluid\">
                     <div class=\"row\">
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                         <div class=\"col-sm-12 col-md-10 col-lg-8\">
@@ -61,7 +61,7 @@ echo "
 
                             <br /><br />
 
-                            <div class=\"container\">
+                            <!--<div class=\"container\">-->
                                 <div id=\"content\">
                                     <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
                                         <li class=\"active\"><a href=\"#invited\" data-toggle=\"tab\">Invited</a></li>
@@ -167,7 +167,7 @@ echo "
                                     </form>
                                 </div>
 
-                            </div>
+                            <!--</div>-->
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-1\"></div>
                     </div>
