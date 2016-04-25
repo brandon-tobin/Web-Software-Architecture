@@ -46,10 +46,7 @@ echo "
                                 <div class=\"panel-heading\">Name</div>
                                 <div class=\"panel-body\">$event->author_Name</div>
                             </div>
-                            <div class=\"panel panel-primary\">
-                                <div class=\"panel-heading\">Author Organization</div>
-                                <div class=\"panel-body\">$event->author_Organization</div>
-                            </div>
+
 
                             <p>Name: $event->author_Name</p>
                             <p>Username: $event->author_Username</p>
