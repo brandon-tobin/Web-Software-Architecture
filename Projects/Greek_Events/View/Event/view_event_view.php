@@ -155,10 +155,10 @@ echo "
                                     </div>
 
                                     <!-- Comment Form -->
-                                    <div class=\"container\">
+                                    <div class=\"col-sm-12 col-md-10 col-lg-8 container\">
                                         <h2>Leave a Comment</h2>
                                         <form method=\"post\">
-                                            <div class=\"col-sm-12 col-md-10 col-lg-8 form-group\">
+                                            <div class=\"form-group\">
                                                 <label for=\"comment\">Comment:</label>
                                                 <textarea class=\"form-control\" rows=\"5\" name=\"comment\" id=\"comment\"></textarea>
                                             </div>
