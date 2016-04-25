@@ -45,9 +45,9 @@ echo "
                             <div class=\"panel panel-primary\">
                                 <div class=\"panel-heading\">Event Information:</div>
                                 <div class=\"panel-body\">
-                                    Author: $event->author_Name <br />
-                                    Author Organization: $event->author_Organization <br />
-                                    Event Name: $event->event_Name <br />
+                                    <b>Author:</b> $event->author_Name <br />
+                                    <b>Author Organization:</b> $event->author_Organization <br />
+                                    <b>Event Name:</b> $event->event_Name <br />
                                 </div>
                             </div>
 
