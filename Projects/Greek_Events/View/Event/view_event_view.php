@@ -62,110 +62,110 @@ echo "
                             <br /><br />
 
                             <!--<div class=\"container\">-->
-                                <div id=\"content\">
-                                    <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
-                                        <li class=\"active\"><a href=\"#invited\" data-toggle=\"tab\">Invited</a></li>
-                                        <li><a href=\"#attending\" data-toggle=\"tab\">Attending (".count($event->attending_event).")</a></li>
-                                        <li><a href=\"#maybeAttending\" data-toggle=\"tab\">Maybe Attending (".count($event->maybe_attending_event).")</a></li>
-                                        <li><a href=\"#notAttending\" data-toggle=\"tab\">Not Attending (".count($event->not_attending_event).")</a></li>
-                                    </ul>
-                                    <div id=\"my-tab-content\" class=\"tab-content\">
-                                        <div class=\"tab-pane active\" id=\"invited\">
-                                            <h1>Invited</h1>
-                                            <div class=\"table - responsive\">
-                                                <table class=\"table table - striped table - bordered table - condensed\">
-                                                    <tr>
-                                                        <th>Name:</th>
-                                                    </tr>";
-                                                    // Echo out all entries in student array
-                                                    foreach ($event->invited_event as $row)
-                                                    {
-                                                        echo "<tr><td>$row</td></tr>";
-                                                    }
-                                                echo "</table>
-                                            </div>
-                                        </div>
-                                        <div class=\"tab-pane\" id=\"attending\">";
-                                            echo "<h1>Attending (". count($event->attending_event) .")</h1>
-                                            <div class=\"table - responsive\">
-                                                <table class=\"table table - striped table - bordered table - condensed\">
-                                                    <tr>
-                                                        <th>Name:</th>
-                                                    </tr>";
-                                                    // Echo out all entries in student array
-                                                    foreach ($event->attending_event as $row)
-                                                    {
-                                                        echo "<tr><td>$row</td></tr>";
-                                                    }
-                                                echo "</table>
-                                            </div>
-                                        </div>
-                                        <div class=\"tab-pane\" id=\"maybeAttending\">";
-                                            echo "<h1>Maybe Attending (". count($event->maybe_attending_event) . ")</h1>
-                                            <div class=\"table - responsive\">
-                                                <table class=\"table table - striped table - bordered table - condensed\">
-                                                    <tr>
-                                                        <th>Name:</th>
-                                                    </tr>";
-                                                    // Echo out all entries in student array
-                                                    foreach ($event->maybe_attending_event as $row)
-                                                    {
-                                                        echo "<tr><td>$row</td></tr>";
-                                                    }
-                                                echo "</table>
-                                            </div>
-                                        </div>
-                                        <div class=\"tab-pane\" id=\"notAttending\">";
-                                            echo "<h1>Not Attending (". count($event->not_attending_event) . ")</h1>
-                                            <div class=\"table - responsive\">
-                                                <table class=\"table table - striped table - bordered table - condensed\">
-                                                    <tr>
-                                                        <th>Name:</th>
-                                                    </tr>";
-                                                    // Echo out all entries in student array
-                                                    foreach ($event->not_attending_event as $row)
-                                                    {
-                                                        echo "<tr><td>$row</td></tr>";
-                                                    }
-                                                    echo "</table>
-                                            </div>
+                            <div id=\"content\">
+                                <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
+                                    <li class=\"active\"><a href=\"#invited\" data-toggle=\"tab\">Invited</a></li>
+                                    <li><a href=\"#attending\" data-toggle=\"tab\">Attending (".count($event->attending_event).")</a></li>
+                                    <li><a href=\"#maybeAttending\" data-toggle=\"tab\">Maybe Attending (".count($event->maybe_attending_event).")</a></li>
+                                    <li><a href=\"#notAttending\" data-toggle=\"tab\">Not Attending (".count($event->not_attending_event).")</a></li>
+                                </ul>
+                                <div id=\"my-tab-content\" class=\"tab-content\">
+                                    <div class=\"tab-pane active\" id=\"invited\">
+                                        <h1>Invited</h1>
+                                        <div class=\"table - responsive\">
+                                            <table class=\"table table - striped table - bordered table - condensed\">
+                                                <tr>
+                                                    <th>Name:</th>
+                                                </tr>";
+                                                // Echo out all entries in student array
+                                                foreach ($event->invited_event as $row)
+                                                {
+                                                    echo "<tr><td>$row</td></tr>";
+                                                }
+                                            echo "</table>
                                         </div>
                                     </div>
-
-                                    <h2>Comments:</h2>
-                                    <div class=\"table-responsive\">
-                                        <table class=\"table table-striped table-bordered table-condensed\">
-                                            <tr>
-                                                <th>Name:</th>
-                                                <th>Comment:</th>
-                                                <th>Time:</th>
-                                            </tr>";
-                                            // Echo out all entries in student array
-                                            foreach ($event->event_comments as $row)
-                                            {
-                                                echo "<tr>";
-                                                foreach ($row as $value)
+                                    <div class=\"tab-pane\" id=\"attending\">";
+                                        echo "<h1>Attending (". count($event->attending_event) .")</h1>
+                                        <div class=\"table - responsive\">
+                                            <table class=\"table table - striped table - bordered table - condensed\">
+                                                <tr>
+                                                    <th>Name:</th>
+                                                </tr>";
+                                                // Echo out all entries in student array
+                                                foreach ($event->attending_event as $row)
                                                 {
-                                                    echo "<td>$value</td>";
+                                                    echo "<tr><td>$row</td></tr>";
                                                 }
-                                                echo "</tr>";
-                                            }
-                                            echo "
-                                        </table>
+                                            echo "</table>
+                                        </div>
+                                    </div>
+                                    <div class=\"tab-pane\" id=\"maybeAttending\">";
+                                        echo "<h1>Maybe Attending (". count($event->maybe_attending_event) . ")</h1>
+                                        <div class=\"table - responsive\">
+                                            <table class=\"table table - striped table - bordered table - condensed\">
+                                                <tr>
+                                                    <th>Name:</th>
+                                                </tr>";
+                                                // Echo out all entries in student array
+                                                foreach ($event->maybe_attending_event as $row)
+                                                {
+                                                    echo "<tr><td>$row</td></tr>";
+                                                }
+                                            echo "</table>
+                                        </div>
+                                    </div>
+                                    <div class=\"tab-pane\" id=\"notAttending\">";
+                                        echo "<h1>Not Attending (". count($event->not_attending_event) . ")</h1>
+                                        <div class=\"table - responsive\">
+                                            <table class=\"table table - striped table - bordered table - condensed\">
+                                                <tr>
+                                                    <th>Name:</th>
+                                                </tr>";
+                                                // Echo out all entries in student array
+                                                foreach ($event->not_attending_event as $row)
+                                                {
+                                                    echo "<tr><td>$row</td></tr>";
+                                                }
+                                                echo "</table>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <!-- Comment Form -->
-                                    <h2>Leave a Comment</h2>
-                                    <form method=\"post\">
-                                        <div class=\"form-group\">
-                                            <label for=\"comment\">Comment:</label>
-                                            <textarea class=\"form-control\" rows=\"5\" name=\"comment\" id=\"comment\"></textarea>
-                                        </div>
-                                        <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
-                                    </form>
-
+                                <h2>Comments:</h2>
+                                <div class=\"table-responsive\">
+                                    <table class=\"table table-striped table-bordered table-condensed\">
+                                        <tr>
+                                            <th>Name:</th>
+                                            <th>Comment:</th>
+                                            <th>Time:</th>
+                                        </tr>";
+                                        // Echo out all entries in student array
+                                        foreach ($event->event_comments as $row)
+                                        {
+                                            echo "<tr>";
+                                            foreach ($row as $value)
+                                            {
+                                                echo "<td>$value</td>";
+                                            }
+                                            echo "</tr>";
+                                        }
+                                        echo "
+                                    </table>
+                                </div>
                             <!--</div>-->
+
+                            <!-- Comment Form -->
+                                <h2>Leave a Comment</h2>
+                                <form method=\"post\">
+                                    <div class=\"form-group\">
+                                        <label for=\"comment\">Comment:</label>
+                                        <textarea class=\"form-control\" rows=\"5\" name=\"comment\" id=\"comment\"></textarea>
+                                    </div>
+                                    <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
+                                </form>
+                            <!--</div>-->
+                            </div>
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-1\"></div>
                     </div>
