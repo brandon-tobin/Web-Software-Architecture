@@ -158,7 +158,7 @@ echo "
                                     <div class=\"container\">
                                         <h2>Leave a Comment</h2>
                                         <form method=\"post\">
-                                            <div class=\"form-group\">
+                                            <div class=\"col-md-6 form-group\">
                                                 <label for=\"comment\">Comment:</label>
                                                 <textarea class=\"form-control\" rows=\"5\" name=\"comment\" id=\"comment\"></textarea>
                                             </div>
