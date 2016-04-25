@@ -61,7 +61,7 @@ echo "
 
                             <br /><br />
 
-                            <div class=\"container col-sm-12 col-md-10 col-lg-8\">
+                            <div class=\"container\">
                                 <div id=\"content\">
                                     <ul id=\"tabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">
                                         <li class=\"active\"><a href=\"#invited\" data-toggle=\"tab\">Invited</a></li>
