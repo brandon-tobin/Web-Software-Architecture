@@ -154,8 +154,7 @@ echo "
                                         </table>
                                     </div>
 
-                                    <!--<h2>Leave a Comment:</h2>-->
-                                    <!-- Attending Button Group -->
+                                    <!-- Comment Form -->
                                     <div class=\"container\">
                                         <h2>Leave a Comment</h2>
                                         <form method=\"POST\">
@@ -163,7 +162,6 @@ echo "
                                                 <label for=\"comment\">Comment:</label>
                                                 <textarea class=\"form-control\" rows=\"5\" id=\"comment\"></textarea>
                                             </div>
-
                                             <button type=\"submit\" class=\"btn btn-primary\" name=\"Post\" value=\"Post\">Post</button>
                                         </form>
                                     </div>

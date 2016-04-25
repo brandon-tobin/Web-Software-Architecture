@@ -74,6 +74,30 @@ if (isset($_POST['Not']))
     }
 }
 
+// Store comment in DB
+if (isset($_POST['Post']))
+{
+    $eventID = $_GET['event'];
+    $comment = $_GET['comment'];
+    $username = $_SESSION['login'];
+
+    var_dump($comment);
+
+    try {
+        $db = openDBConnection();
+
+        $query = "INSERT INTO Comments values (?, ?, ?, NOW())";
+        $stmt = $db->prepare($query);
+        $stmt->bindValue(1, $eventID);
+        $stmt->bindValue(2, $username);
+        $stmt->bindValue(3, $comment);
+        $stmt->execute();
+    }
+    catch (PDOException $ex) {
+        error_log("Tobin bad happened! " . $ex->getMessage());
+    }
+}
+
 class ViewEvent
 {
     public $author_Name;
