@@ -19,15 +19,15 @@ echo "
                 <!-- Brandon Tobin -->
                 <!-- University of Utah -->
 
-                <!-- New Due Process Form for   -->
+                <!-- Create New Event  -->
 
-                <title>Due Process Form</title>
+                <title>Create New Event</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset=\"utf-8\"/>
                 <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"New Due Process Form for \"/>
+                <meta name=\"description\" content=\"Create New Event \"/>
 
                 <!-- Bootstrap Core CSS -->
                 <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
@@ -45,7 +45,7 @@ echo "
 
                             echo "
 
-                            <h1>Create New Event</h1>
+                            <h1 class='page-header'>Create New Event</h1>
 
                             <p>Name: $event->author_Name</p>
                             <p>Username: $event->author_Username</p>
