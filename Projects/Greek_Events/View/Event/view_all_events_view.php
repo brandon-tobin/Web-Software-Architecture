@@ -68,17 +68,17 @@ echo "
                                     // Echo out all entries in student array
                                     foreach ($events->events as $row)
                                     {
-                                        echo "<div class=\"panel panel-success\"";
+                                        echo "<div class='panel panel-success'>";
                                         echo "<div class='panel-heading'>$row[3]</div>";
-
+                                        echo "<div class='panel-body'>$row[4]</div>";
+                                        echo "<div class='panel-body'>$row[6]</div>";
+                                        echo "<div class='panel-body'>$row[5]</div>";
+                                        echo "<div class='panel-body'>$row[0]</div>";
+                                        echo "<div class='panel-body'>$row[2]</div>";
+                                        echo "</div>";
                                     }
 
                                     echo "
-
-                                    <!--<div class=\"panel-heading\">Panel with panel-success class</div>
-                                    <div class=\"panel-body\">Panel Content</div>-->
-                                </div>
-
                                 </table>
                             </div>
                         </div>
