@@ -63,7 +63,6 @@ echo "
                                     }
 
                                     echo "
-                                <!--</table>-->
                             </div>
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
