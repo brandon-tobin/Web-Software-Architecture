@@ -176,7 +176,7 @@ echo "
                                 </form>
                             </div>
                         </div>
-                        <div class=\"col-sm-0 col-md-1 col-lg-1\"></div>
+                        <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                     </div>
                 </div>
 
