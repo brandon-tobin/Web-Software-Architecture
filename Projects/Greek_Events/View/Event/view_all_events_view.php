@@ -64,7 +64,21 @@ echo "
                                         echo "</tr>";
                                     }
 
+
+                                    // Echo out all entries in student array
+                                    foreach ($events->events as $row)
+                                    {
+                                        echo "<div class=\"panel panel-success\"";
+                                        echo "<div class='panel-heading'>$row[3]</div>";
+
+                                    }
+
                                     echo "
+
+                                    <!--<div class=\"panel-heading\">Panel with panel-success class</div>
+                                    <div class=\"panel-body\">Panel Content</div>-->
+                                </div>
+
                                 </table>
                             </div>
                         </div>
