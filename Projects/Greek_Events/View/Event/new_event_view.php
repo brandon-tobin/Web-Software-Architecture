@@ -58,7 +58,7 @@ echo "
                                 </div>
                                 <div class='form-group'>
                                     <label for='date'>Date:</label>
-                                    <input type='date' name='date' placeholder='YYYY-MM-DD HH:MM:SS' class='form-control'>
+                                    <input type='text' name='date' placeholder='YYYY-MM-DD HH:MM:SS' class='form-control'>
                                 </div>
                                 <div class='form-group'>
                                     <label for='location'>Location:</label>
