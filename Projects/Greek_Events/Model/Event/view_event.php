@@ -224,7 +224,7 @@ class ViewEvent
                 $commenter_name = htmlspecialchars($row['name']);
                 $comment = htmlspecialchars($row['comment']);
                 $time = htmlspecialchars($row['time']);
-                $this->event_comments[] = array($commenter_name, $comment, $time);
+                $this->event_comments[] = array($commenter_name, $time, $comment);
             }
 
         } catch (PDOException $ex) {
