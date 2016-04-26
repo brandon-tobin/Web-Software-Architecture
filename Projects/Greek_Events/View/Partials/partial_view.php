@@ -70,13 +70,13 @@ function getNavBarWithoutRoles()
         <div id=\"navbar\" class=\"navbar-collapse collapse\">
           <ul class=\"nav navbar-nav\">
             <li class=\"active\"><a href=\"#\">Home</a></li>
-            <li><a href=\"#about\">About</a></li>
+            <li><a href=\"#about\">User Actions</a></li>
             <li><a href=\"#contact\">Contact</a></li>
             <li class=\"dropdown\">
-              <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown <span class=\"caret\"></span></a>
+              <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Event Actions<span class=\"caret\"></span></a>
               <ul class=\"dropdown-menu\">
-                <li><a href=\"#\">Action</a></li>
-                <li><a href=\"#\">Another action</a></li>
+                <li><a href=\"#\">Create New Event</a></li>
+                <li><a href=\"#\">View All Events</a></li>
                 <li><a href=\"#\">Something else here</a></li>
                 <li role=\"separator\" class=\"divider\"></li>
                 <li class=\"dropdown-header\">Nav header</li>
