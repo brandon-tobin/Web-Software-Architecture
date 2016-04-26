@@ -70,7 +70,7 @@ echo "
                                 </div>
                                 <div class='form-group'>
                                     <label for='attend[]'>Who Can Attend:</label>
-                                    <select multiple rows='10' class='form-control' name='attend[]'>
+                                    <select multiple size='10' class='form-control' name='attend[]'>
                                         <option value='1'>Beta Theta Pi</option>
                                         <option value='2'>Delta Sigma Phi</option>
                                         <option value='3'>Kappa Sigma</option>
