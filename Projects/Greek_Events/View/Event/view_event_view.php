@@ -45,20 +45,18 @@ echo "
                             <div class=\"panel panel-primary\">
                                 <div class=\"panel-heading\">Event Information:</div>
                                 <div class=\"panel-body\">
-                                    <b>Author:</b> $event->author_Name <br />
-                                    <b>Author Organization:</b> $event->author_Organization <br />
                                     <b>Event Name:</b> $event->event_Name <br />
+                                    <b>Event Date:</b> $event->event_Date <br />
+                                    <b>Event Location:</b> $event->event_Location <br />
+                                    <b>Event Description:</b> $event->event_Description <br /><br />
+
+                                    <b>Name:</b> $event->author_Name <br />
+                                    <b>Organization:</b> $event->author_Organization <br />
                                 </div>
                             </div>
 
 
-                            <p>Name: $event->author_Name</p>
                             <p>Username: $event->author_Username</p>
-                            <p>Organization: $event->author_Organization</p>
-                            <p>Event Name: $event->event_Name</p>
-                            <p>Event Date: $event->event_Date</p>
-                            <p>Event Description: $event->event_Description</p>
-                            <p>Event Location: $event->event_Location</p>
 
                             <!-- Attending Button Group -->
                             <form method=\"post\">
