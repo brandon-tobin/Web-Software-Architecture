@@ -159,8 +159,8 @@ echo "
                                     </table>
                                 </div>
 
-                                <div class=\"table - responsive\">
-                                    <table class=\"table table - striped table - bordered table - condensed\">
+                                <div class=\"table-responsive\">
+                                    <table class=\"table table-striped table-bordered table-condensed\">
                                         <tr>
                                             <th>Name:</th>
                                             <th>Time:</th>
