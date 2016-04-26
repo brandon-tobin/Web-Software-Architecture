@@ -45,7 +45,7 @@ echo "
 
                             echo "
 
-                            <h1>View All Events</h1>
+                            <h1 class='page-header'>View All Events</h1>
 
                             <div class=\"table - responsive\">";
                                     foreach ($events->events as $row)

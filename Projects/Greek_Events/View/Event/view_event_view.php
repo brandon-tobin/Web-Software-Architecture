@@ -6,6 +6,8 @@
  * Time: 9:28 PM
  */
 
+require('../../View/Partials/partial_view.php');
+
 echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
@@ -38,7 +40,11 @@ echo "
                 <div class=\"container-fluid\">
                     <div class=\"row\">
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
-                        <div class=\"col-sm-12 col-md-10 col-lg-8\">
+                        <div class=\"col-sm-12 col-md-10 col-lg-8\">";
+
+                            echo getNavBarWithoutRoles();
+
+                            echo "
 
                             <h1 class=\"page-header\">View Event</h1>
 
