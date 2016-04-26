@@ -43,7 +43,7 @@ echo "
                             <h1>View All Events</h1>
 
                             <div class=\"table - responsive\">
-                                <table class=\"table table - striped table - bordered table - condensed\">
+                                <!--<table class=\"table table - striped table - bordered table - condensed\">
                                     <tr>
                                         <th>Creator:</th>
                                         <th>Creator Username:</th>
@@ -52,17 +52,17 @@ echo "
                                         <th>Event Date:</th>
                                         <th>Event Description:</th>
                                         <th>Event Location</th>
-                                    </tr>";
+                                    </tr>-->";
                                     // Echo out all entries in student array
-                                    foreach ($events->events as $row)
-                                    {
-                                        echo "<tr>";
-                                        foreach ($row as $value)
-                                        {
-                                            echo "<td>$value</td>";
-                                        }
-                                        echo "</tr>";
-                                    }
+//                                    foreach ($events->events as $row)
+//                                    {
+//                                        echo "<tr>";
+//                                        foreach ($row as $value)
+//                                        {
+//                                            echo "<td>$value</td>";
+//                                        }
+//                                        echo "</tr>";
+//                                    }
 
 
                                     // Echo out all entries in student array
@@ -80,7 +80,7 @@ echo "
                                     }
 
                                     echo "
-                                </table>
+                                <!--</table>-->
                             </div>
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
