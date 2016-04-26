@@ -69,7 +69,7 @@ echo "
                                     foreach ($events->events as $row)
                                     {
                                         echo "<div class='panel panel-success'>";
-                                        echo "<div class='panel-heading'>$row[3]</div>";
+                                        echo "<div class='panel-heading'><a href='$row[7]'>$row[3]</a></div>";
                                         echo "<div class='panel-body'>
                                                 <b>Event Date:</b> $row[4] <br />
                                                 <b>Event Location:</b> $row[6] <br />
