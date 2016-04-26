@@ -76,7 +76,8 @@ echo "
                                                 <b>Event Description:</b> $row[5] <br /><br />
                                                 <b>Creator:</b> $row[0] <br />
                                                 <b>Creator's Organization:</b> $row[2] <br />
-                                             </div>";
+                                             </div>
+                                         </div>";
                                     }
 
                                     echo "
