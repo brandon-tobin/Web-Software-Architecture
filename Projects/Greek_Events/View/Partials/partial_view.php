@@ -54,6 +54,7 @@ function getNavigation()
 
 function getNavBarWithoutRoles()
 {
+    $username = $_SESSION['login'];
     echo "
     <!-- Static navbar -->
     <nav class=\"navbar navbar-default navbar-static-top\">
@@ -80,8 +81,8 @@ function getNavBarWithoutRoles()
             <li class=\"dropdown\">
               <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Event Actions<span class=\"caret\"></span></a>
               <ul class=\"dropdown-menu\">
-                <li><a href=\"#\">Create New Event</a></li>
-                <li><a href=\"#\">View All Events</a></li>
+                <li><a href=\"../../View/Event/new_event.php?id=$username\">Create New Event</a></li>
+                <li><a href=\"../../View/Event/view_all_events.php?id=$username\">View All Events</a></li>
               </ul>
             </li>
           </ul>
