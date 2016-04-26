@@ -6,6 +6,8 @@
  * Time: 9:28 PM
  */
 
+require('../../View/Partials/partial_view.php');
+
 echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
@@ -33,8 +35,11 @@ echo "
 
             </head>
 
-            <body>
+            <body>";
 
+                echo getNavBarWithoutRoles();
+
+                echo "
                 <div class=\"container - fluid\">
                     <div class=\"row\">
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
