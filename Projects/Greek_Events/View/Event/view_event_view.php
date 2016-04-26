@@ -55,9 +55,6 @@ echo "
                                 </div>
                             </div>
 
-
-                            <p>Username: $event->author_Username</p>
-
                             <!-- Attending Button Group -->
                             <form method=\"post\">
                             <div class=\"btn-group btn-group-lg\" role=\"group\">
