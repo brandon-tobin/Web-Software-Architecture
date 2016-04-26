@@ -159,6 +159,24 @@ echo "
                                     </table>
                                 </div>
 
+                                <div class=\"table - responsive\">
+                                    <table class=\"table table - striped table - bordered table - condensed\">
+                                        <tr>
+                                            <th>Name:</th>
+                                            <th>Time:</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Anne</td>
+                                            <td>10/2/2015</td>
+                                        </tr>
+                                        <tr>
+                                        <td colspan='2'>Hello world this is a potential comment.</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+
                                 <!-- Comment Form -->
                                 <h2>Leave a Comment</h2>
                                 <form method=\"post\">
