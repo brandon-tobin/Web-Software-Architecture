@@ -70,12 +70,13 @@ echo "
                                     {
                                         echo "<div class='panel panel-success'>";
                                         echo "<div class='panel-heading'>$row[3]</div>";
-                                        echo "<div class='panel-body'>$row[4]</div>";
-                                        echo "<div class='panel-body'>$row[6]</div>";
-                                        echo "<div class='panel-body'>$row[5]</div>";
-                                        echo "<div class='panel-body'>$row[0]</div>";
-                                        echo "<div class='panel-body'>$row[2]</div>";
-                                        echo "</div>";
+                                        echo "<div class='panel-body'>
+                                                <b>Event Date:</b> $row[4] <br />
+                                                <b>Event Location:</b> $row[6] <br />
+                                                <b>Event Description:</b> $row[5] <br /><br />
+                                                <b>Creator:</b> $row[0] <br />
+                                                <b>Creator's Organization:</b> $row[2] <br />
+                                             </div>";
                                     }
 
                                     echo "
