@@ -6,6 +6,8 @@
  * Time: 10:43 PM
  */
 
+require('../../View/Partials/partial_view.php');
+
 echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
@@ -14,18 +16,18 @@ echo "
             <head>
 
                 <!-- Last Updated Spring 2016 -->
-                <!-- Brandon Tobin -->
+                <!-- Fumiko Anne Aoki -->
                 <!-- University of Utah -->
 
-                <!-- New Due Process Form for $form->student_Name  -->
+                <!-- Greek Event Homepage  -->
 
-                <title>Due Process Form</title>
+                <title>Greek Event Homepage</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset=\"utf-8\"/>
-                <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
+                <meta name=\"AUTHOR\"      content=\"Fumiko Aoki\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"New Due Process Form for $form->student_Name\"/>
+                <meta name=\"description\" content=\"Greek Event Homepage\"/>
 
                 <!-- ALL CSS FILES -->
                 <!--<link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/> -->
@@ -34,7 +36,11 @@ echo "
 
             </head>
 
-            <body>
+            <body>";
+
+                            echo getNavBarWithoutRoles();
+
+                            echo "
 
             <h1>Welcome!</h1>
 
