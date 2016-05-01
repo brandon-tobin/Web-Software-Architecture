@@ -19,7 +19,6 @@ if (isset($_POST['submit'])) {
         $cpassword = trim($_REQUEST['cpassword']);
         $name = trim($_REQUEST['name']);
         $organization = trim($_REQUEST['organization']);
-        $orgID;
 
         $db = openDBConnection();
         $query = "Select orgID from Organizations where name = '?'";
@@ -40,7 +39,7 @@ if (isset($_POST['submit'])) {
         $stmt->bindValue(2, $password);
         $stmt->bindValue(3, $name);
         $stmt->bindValue(4, $orgID);
-        $stmt->bindValue(4, 0);
+        $stmt->bindValue(5, 0);
         $stmt->execute();
         $db->commit();
 
