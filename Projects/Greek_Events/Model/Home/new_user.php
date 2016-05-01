@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
         $stmt = $db->prepare($query);
         $stmt->bindValue(1, $organization);
         $stmt->execute();
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($result as $row) {
             $this->orgID = htmlspecialchars($row['orgID']);
