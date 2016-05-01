@@ -140,8 +140,7 @@ function verify_Login($role)
                     $_SESSION['role'] = htmlspecialchars($row['account_level']);
 
                     error_log("Anne: real name is {$_SESSION['realname']}");
-                    error_log("Anne: real name is {$_SESSION['role']}");
-                    error_log("ANNE: test");
+                    error_log("Anne: role is {$_SESSION['role']}");
 
                     $stmt->closeCursor();
 //                    $stmt = $DBH->prepare("SELECT role FROM Roles WHERE username = ?");

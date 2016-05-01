@@ -46,7 +46,7 @@ echo "
 
             <p>You are not authorized to view this page.</p>
 
-            <a class=\"btn btn-default\" href=\"home.php\" role=\"button\">Go to Homepage</a>
+            <a class=\"btn btn-default\" href=\"../User/home.php\" role=\"button\">Go to Homepage</a>
 
             <!-- jQuery -->
     <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
