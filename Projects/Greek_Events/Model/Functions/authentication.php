@@ -111,6 +111,7 @@ function verify_Login($role)
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
 
+        error_log("ANNE: trying to log in");
 
         try
         {
