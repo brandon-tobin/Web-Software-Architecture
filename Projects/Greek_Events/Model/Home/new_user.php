@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
     error_log("ANNE: session real name {$_SESSION['role']}");
 
     includeInEvents($orgID);
-    getUserInfo();
+    //getUserInfo();
 
     require_once "../../Controller/User/success.php";
 }

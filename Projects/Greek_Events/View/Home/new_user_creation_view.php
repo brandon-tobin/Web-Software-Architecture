@@ -19,7 +19,7 @@ echo "
 
                 <!-- Create Account  -->
 
-                <title>Due Process Form</title>
+                <title>Create Account</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset=\"utf-8\"/>
@@ -36,7 +36,7 @@ echo "
 
             <body>
 
-            <h1>Welcome!</h1>
+            <h1>Create Account</h1>
 
             <form method='post'>
               <div class=\"form-group\">

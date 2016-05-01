@@ -6,7 +6,11 @@
  * Time: 3:24 AM
  */
 
+error_log("ANNE: in success.php");
+
 require('../../View/Partials/partial_view.php');
+
+error_log("ANNE: in success.php");
 
 echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
