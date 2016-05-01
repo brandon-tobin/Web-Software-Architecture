@@ -11,7 +11,7 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
-verify_Login();
+verify_Login("0");
 
 
 // Update RSVP for event -- Attending

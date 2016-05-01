@@ -37,21 +37,12 @@ if (isset($_POST['submit'])) {
     $stmt->bindValue(2, $password);
     $stmt->bindValue(3, $name);
     $stmt->bindValue(4, $orgID);
-    //$stmt->bindValue(5, 'tobin');
     $stmt->execute();
     $db->commit();
 
-    $db->beginTransaction();
-    // Insert into the permissions table
-    for ($i = 0; $i < count($eventAttend); $i++)
-    {
-        $stmt = $db->prepare("INSERT INTO EventPermission VALUES (?, ?)");
-        $stmt->bindValue(1, $eventID);
-        $stmt->bindValue(2, $eventAttend[$i]);
-        $stmt->execute();
-    }
-
-    $db->commit();
+    $_SESSION['realname'] = htmlspecialchars($row['name']);
+    $_SESSION['login'] = $username;
+    $_SESSION['roles'] = htmlspecialchars($row['account_level']);
 }
 
 class NewUser

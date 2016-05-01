@@ -37,19 +37,25 @@ function redirectToHTTPS()
 function verify_role($role)
 {
     // Check to see if user is logged in
-    if (isset($_SESSION['userid']))
+    if (isset($_SESSION['role']))
     {
         // Check to see if user belongs to role in parameter
-        if ($role == '' || (isset($_SESSION['roles']) && in_array($role, $_SESSION['roles'])))
+        if ($role == $_SESSION['role'])
+        {
+            return true;
+        }
+        else if($role == 0 && $_SESSION['role'] == 1)
         {
             return true;
         }
         else
         {
-            return false;
+            require_once "../../Controller/User/badRole.php";
+            exit();
         }
     }
-    return false;
+    require_once "../../Controller/User/badRole.php";
+    exit();
 }
 
 function get_role()
@@ -71,29 +77,29 @@ function get_role()
 }
 
 
-function verify_Login()
+function verify_Login($role)
 {
     // Redirect to use HTTPS
     redirectToHTTPS();
 
-    session_start();
+    //session_start();
 
     // Check to see if user is logged in
-    if (isset($_SESSION['username']))
-    {
+    if (isset($_SESSION['login'])) {
         // Check to see if user belongs to role in parameter
-//        if ($role == '' || (isset($_SESSION['roles']) && in_array($role, $_SESSION['roles'])))
-//        {
-//            error_log("TOBIN User is logged in and Role is correct!!!!");
-//            return $_SESSION['realname'];
-//        }
-//        else{
-//            error_log("TOBIN User is logged but the Role is incorrect!!!!");
-//            //require ('../../View/User/bad_role.php');
-//            exit();
-//        }
+        if ($role == $_SESSION['role'])
+        {
+            return true;
+        }
+        else if($role == "0" && $_SESSION['role'] == "1")
+        {
+            return true;
 
-    return $_SESSION['realname'];
+        } else {
+            error_log("TOBIN User is logged but the Role is incorrect!!!!");
+            require ('../../Controller/User/badRole.php');
+            exit();
+        }
     }
 
     // Empty error message
@@ -174,6 +180,7 @@ function verify_Login()
 //           // require ('../../View/Account/bad_role.php');
 //            exit();
 //        }
+        return true;
     }
     else
     {
@@ -181,6 +188,7 @@ function verify_Login()
         require ("../../View/Home/index.php");
         exit();
     }
+
 
 }
 

@@ -11,7 +11,8 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
-verify_Login();
+//verify_Login();
+verify_role("1");
 
 if (isset($_POST['submit'])) {
     $eventName = trim($_REQUEST['title']);
@@ -19,6 +20,7 @@ if (isset($_POST['submit'])) {
     $eventLocation = trim($_REQUEST['location']);
     $eventDescription = trim($_REQUEST['description']);
     $eventAttend = array();
+    $creator = $_SESSION['username'];
 
     foreach ($_POST['attend'] as $names)
     {
@@ -44,7 +46,7 @@ if (isset($_POST['submit'])) {
     $stmt->bindValue(2, $eventDate);
     $stmt->bindValue(3, $eventDescription);
     $stmt->bindValue(4, $eventLocation);
-    $stmt->bindValue(5, 'tobin'); 
+    $stmt->bindValue(5, $creator);
     $stmt->execute();
     $db->commit();
 

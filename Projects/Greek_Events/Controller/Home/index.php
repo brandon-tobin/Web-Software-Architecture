@@ -7,11 +7,8 @@
  */
 
 // Set the include path for the model and view
-set_include_path("../../Model/User/" .PATH_SEPARATOR .  "../../View/Home/");
+set_include_path("../../Model/User/");
 
 require_once 'login.php';
-
-// Require the model file once
-require_once 'index_view.php';
 
 
