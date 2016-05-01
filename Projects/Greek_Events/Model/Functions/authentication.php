@@ -84,6 +84,7 @@ function verify_Login($role)
 
     error_log("ANNE: in verify login");
     error_log("Anne: role is {$_SESSION['role']}");
+    error_log("Anne: role is {$role}");
 
     // Check to see if user is logged in
     if (isset($_SESSION['role'])) {
