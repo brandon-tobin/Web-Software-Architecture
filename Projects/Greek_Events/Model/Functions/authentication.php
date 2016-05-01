@@ -82,12 +82,13 @@ function verify_Login($role)
     // Redirect to use HTTPS
     redirectToHTTPS();
 
+    error_log("ANNE: in verify login");
     session_start();
 
     // Check to see if user is logged in
     if (isset($_SESSION['login'])) {
         // Check to see if user belongs to role in parameter
-        if ($role == $_SESSION['role'] || role =="")
+        if ($role == $_SESSION['role'] || $role =="")
         {
             return true;
         }
@@ -104,6 +105,7 @@ function verify_Login($role)
 
     // Empty error message
     $message = '';
+
 
     // User is attempting to log in. Need to verify credentials
     if (isset($_REQUEST['username']) && isset($_REQUEST['password']))
