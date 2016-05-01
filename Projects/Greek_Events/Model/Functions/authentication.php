@@ -83,17 +83,20 @@ function verify_Login($role)
     redirectToHTTPS();
 
     error_log("ANNE: in verify login");
+    error_log("Anne: role is {$_SESSION['role']}");
 
     // Check to see if user is logged in
-    if (isset($_SESSION['login'])) {
+    if (isset($_SESSION['role'])) {
         // Check to see if user belongs to role in parameter
         error_log("ANNE: login is set");
         if ($role == $_SESSION['role'] || $role =="")
         {
+            error_log("ANNE: role matches parameter");
             return true;
         }
         else if($role == "0" && $_SESSION['role'] == "1")
         {
+            error_log("ANNE: user is admin and wants user page");
             return true;
 
         } else {
@@ -316,4 +319,14 @@ function makeSalt()
 function computeHash($password, $salt)
 {
     return crypt($password, $salt);
+}
+
+function &getUserInfo () {
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        error_log("Anne: shouldn't be here.");
+        $_SESSION['role'] = 0;
+        $_SESSION['realname'] = "";
+    }
+    return $_SESSION['login'];
 }

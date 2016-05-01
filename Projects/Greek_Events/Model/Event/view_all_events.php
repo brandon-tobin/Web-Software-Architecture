@@ -11,6 +11,7 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
+getUserInfo();
 verify_Login("0");
 
 class ViewAllEvents

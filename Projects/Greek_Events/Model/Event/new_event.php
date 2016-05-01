@@ -13,6 +13,8 @@ require '../../Model/Functions/authentication.php';
 
 error_log("ANNE: in new event");
 //verify_Login();
+getUserInfo();
+
 verify_Login("1");
 
 if (isset($_POST['submit'])) {

@@ -74,7 +74,7 @@ function getNavBarWithoutRoles()
             <li class=\"dropdown\">
               <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">User Actions<span class=\"caret\"></span></a>
               <ul class=\"dropdown-menu\">
-                <li><a href=\"#\">User Event 1</a></li>
+                <li><a href=\"../../User/logout.php\">Logout</a></li>
                 <li><a href=\"#\">User Event 2</a></li>
               </ul>
             </li>

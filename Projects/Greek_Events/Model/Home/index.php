@@ -9,10 +9,11 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
+getUserInfo();
+
 if(isset($_POST['submit']))
 {
     error_log("ANNE: submit pressed");
-    session_start();
     if (verify_Login(""))
     {
         require_once '../../Controller/User/success.php';
