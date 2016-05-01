@@ -97,7 +97,7 @@ function verify_Login($role)
             error_log("ANNE: role matches parameter");
             return true;
         }
-        else if($role == "0" && $_SESSION['role'] == "1")
+        else if($role == "user" && $_SESSION['role'] == "admin")
         {
             error_log("ANNE: user is admin and wants user page");
             return true;

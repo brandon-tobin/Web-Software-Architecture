@@ -15,7 +15,7 @@ error_log("ANNE: in new event");
 //verify_Login();
 getUserInfo();
 
-verify_Login("1");
+verify_Login("admin");
 
 if (isset($_POST['submit'])) {
     $eventName = trim($_REQUEST['title']);

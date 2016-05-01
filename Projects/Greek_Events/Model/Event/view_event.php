@@ -12,7 +12,7 @@ require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
 getUserInfo();
-verify_Login("0");
+verify_Login("user");
 
 
 // Update RSVP for event -- Attending
