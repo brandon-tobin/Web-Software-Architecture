@@ -7,7 +7,7 @@
  */
 
 // Set the include path for the model and view
-set_include_path("../../Model/User/");
+set_include_path("../../Home/User/");
 
 require_once 'index.php';
 
