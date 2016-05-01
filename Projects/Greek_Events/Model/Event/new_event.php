@@ -12,7 +12,7 @@ require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
 //verify_Login();
-verify_role("1");
+verify_role(1);
 
 if (isset($_POST['submit'])) {
     $eventName = trim($_REQUEST['title']);
