@@ -89,7 +89,7 @@ function verify_Login($role)
     error_log("Anne: session role is {$_SESSION['realname']}");
 
     // Check to see if user is logged in
-    if (isset($_SESSION['role'])) {
+    if (isset($_SESSION['role']) && isset($_SESSION['login']) && isset($_SESSION['realname'])) {
         // Check to see if user belongs to role in parameter
         error_log("ANNE: login is set");
         if ($role == $_SESSION['role'] || $role =="")
@@ -142,7 +142,12 @@ function verify_Login($role)
                   //  $_SESSION['userid'] = $row['uid'];
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
                     $_SESSION['login'] = $username;
-                    $_SESSION['role'] = htmlspecialchars($row['account_level']);
+                    $rolefromquery = htmlspecialchars($row['account_level']);
+
+                    if ($rolefromquery == 1)
+                        $_SESSION['role'] = "admin";
+                    else
+                        $_SESSION['role'] = "user";
 
                     error_log("Anne: login is {$_SESSION['login']}");
                     error_log("Anne: real name is {$_SESSION['realname']}");
@@ -328,9 +333,7 @@ function computeHash($password, $salt)
 function &getUserInfo () {
     session_start();
     if (!isset($_SESSION['login'])) {
-        error_log("Anne: shouldn't be here.");
-        $_SESSION['role'] = 0;
-        $_SESSION['realname'] = "";
+        error_log("Anne: session variables not set.");
     }
     return $_SESSION['login'];
 }
