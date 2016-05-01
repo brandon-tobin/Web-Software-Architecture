@@ -55,7 +55,10 @@ if (isset($_POST['submit'])) {
 
     require_once "../../Controller/User/success.php";
 }
-
+else
+{
+    require_once "../../View/Home/new_user_creation_view.php";
+}
 class NewUser
 {
 
