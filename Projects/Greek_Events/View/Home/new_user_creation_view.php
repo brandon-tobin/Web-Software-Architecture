@@ -38,7 +38,7 @@ echo "
 
             <h1>Welcome!</h1>
 
-            <form>
+            <form method='post'>
               <div class=\"form-group\">
                 <label for=\"username\">Username</label>
                 <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"Username\">

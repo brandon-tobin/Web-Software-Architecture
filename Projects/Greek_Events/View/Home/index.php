@@ -46,7 +46,7 @@ echo "
 
             <p>Please log in or create an account.</p>
 
-            <form>
+            <form method='post'>
               <div class=\"form-group\">
                 <label for=\"username\">Username</label>
                 <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"Username\">
@@ -55,7 +55,7 @@ echo "
                 <label for=\"password\">Password</label>
                 <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Password\">
               </div>
-              <button type=\"submit\" class=\"btn btn-default\">Submit</button>
+              <button type=\"submit\" class=\"btn btn-default\" id=\"login\">Submit</button>
             </form>
 
             <a class=\"btn btn-default\" href=\"new_user.php\" role=\"button\">Create Account</a>
