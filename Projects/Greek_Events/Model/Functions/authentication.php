@@ -83,8 +83,8 @@ function verify_Login($role)
     redirectToHTTPS();
 
     error_log("ANNE: in verify login");
-    error_log("Anne: role is {$_SESSION['role']}");
-    error_log("Anne: role is {$role}");
+    error_log("Anne: session role is {$_SESSION['role']}");
+    error_log("Anne: parameter role is {$role}");
 
     // Check to see if user is logged in
     if (isset($_SESSION['role'])) {
