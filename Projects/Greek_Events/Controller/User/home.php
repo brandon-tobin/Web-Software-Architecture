@@ -8,6 +8,10 @@
 
 require('../../View/Partials/partial_view.php');
 
+if (verify_Login("user"))
+{
+$name = $_SESSION['realname'];
+
 echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
@@ -42,10 +46,9 @@ echo getNavBarWithoutRoles();
 
 echo "
 
-            <h1>Homepage</h1>
+            <h1>Welcome {$name}</h1>
 
 
-            <a class=\"btn btn-default\" href=\"home.php\" role=\"button\">Go to Homepage</a>
 
             <!-- jQuery -->
     <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
@@ -56,3 +59,8 @@ echo "
 
             </body>
             </html>";
+}
+else
+{
+    require_once "../../View/Home/index.php";
+}
