@@ -9,6 +9,6 @@
 // Set the include path for the model and view
 set_include_path("../../Model/User/");
 
-require_once 'login.php';
+require_once 'index.php';
 
 
