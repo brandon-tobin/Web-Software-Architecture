@@ -10,7 +10,7 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
-verify_Login();
+verify_Login("");
 
 if (isset($_POST['submit'])) {
     $username = trim($_REQUEST['username']);

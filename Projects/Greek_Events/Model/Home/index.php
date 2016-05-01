@@ -14,10 +14,10 @@ if(isset($_POST['submit']))
     error_log("ANNE: submit pressed");
     if (verify_Login(""))
     {
-        require_once "../../Controller/User/success.php";
+        require_once '../../Controller/User/success.php';
     }
 }
 else
 {
-    require_once "../../View/index.php";
+    require_once '../../View/Home/index.php';
 }
