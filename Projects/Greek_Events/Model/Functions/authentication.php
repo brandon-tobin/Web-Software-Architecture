@@ -139,6 +139,7 @@ function verify_Login($role)
 
                     error_log("Anne: real name is {$_SESSION['realname']}");
                     error_log("Anne: real name is {$_SESSION['role']}");
+                    error_log("ANNE: test");
 
                     $stmt->closeCursor();
 //                    $stmt = $DBH->prepare("SELECT role FROM Roles WHERE username = ?");
@@ -211,7 +212,7 @@ function navBar_Login($role)
         if ($role == '' || (isset($_SESSION['roles']) && in_array($role, $_SESSION['roles'])))
         {
             error_log("TOBIN User is logged in and Role is correct!!!!");
-            return $_SESSION['realname'];
+            return;
         }
         else{
             error_log("TOBIN User is logged but the Role is incorrect!!!!");

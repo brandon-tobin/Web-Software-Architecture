@@ -41,23 +41,23 @@ echo "
             <form method='post'>
               <div class=\"form-group\">
                 <label for=\"username\">Username</label>
-                <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"Username\">
+                <input type=\"text\" class=\"form-control\" id=\"username\" name=\"username\" placeholder=\"Username\">
               </div>
               <div class=\"form-group\">
                 <label for=\"password\">Password</label>
-                <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Password\">
+                <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" placeholder=\"Password\">
               </div>
               <div class=\"form-group\">
                 <label for=\"cpassword\">Confirm Password</label>
-                <input type=\"password\" class=\"form-control\" id=\"cpassword\" placeholder=\"Password\">
+                <input type=\"password\" class=\"form-control\" id=\"cpassword\" name=\"cpassword\" placeholder=\"Password\">
               </div>
               <div class=\"form-group\">
                 <label for=\"name\">Name</label>
-                <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\">
+                <input type=\"text\" class=\"form-control\" id=\"name\" class=\"name\" placeholder=\"Name\">
               </div>
               <div class=\"form-group\">
                 <label for=\"organization\">Greek Organization</label>
-                <select class=\"form-control\" id='organization'>
+                <select class=\"form-control\" id='organization' class='organization'>
                       <option>Alpha Chi Omega</option>
                       <option>Alpha Phi</option>
                       <option>Chi Omega</option>
@@ -76,7 +76,7 @@ echo "
                       <option>Triangle</option>
                 </select>
               </div>
-              <button type=\"submit\" class=\"btn btn-default\">Create Account</button>
+              <input type='submit' class='btn btn-info' name='submit' value='Submit'>
             </form>
 
             </body>
