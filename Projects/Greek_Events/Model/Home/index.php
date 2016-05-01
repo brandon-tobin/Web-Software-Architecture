@@ -19,5 +19,5 @@ if(isset($_POST['submit']))
 }
 else
 {
-    require_once '../../View/User/index.php';
+    require_once '../../View/Home/index.php';
 }
