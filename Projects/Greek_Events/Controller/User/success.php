@@ -8,10 +8,6 @@
 
 require('../../View/Partials/partial_view.php');
 
-require ('../../Model/Functions/authentication.php');
-
-verify_Login("user");
-
 echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 

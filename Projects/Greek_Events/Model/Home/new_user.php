@@ -12,16 +12,16 @@ require '../../Model/Functions/authentication.php';
 
 if (isset($_POST['submit'])) {
 
+    $username = trim($_REQUEST['username']);
+    $password = trim($_REQUEST['password']);
+    $cpassword = trim($_REQUEST['cpassword']);
+    $name = trim($_REQUEST['name']);
+    $organization = trim($_REQUEST['organization']);
+
     try {
-        $username = trim($_REQUEST['username']);
-        $password = trim($_REQUEST['password']);
-        $cpassword = trim($_REQUEST['cpassword']);
-        $name = trim($_REQUEST['name']);
-        $organization = trim($_REQUEST['organization']);
 
         $db = openDBConnection();
         $query = "Select orgID from Organizations where name = '{$organization}'";
-        error_log("ANNE: query is: {$query}");
         $stmt = $db->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -29,8 +29,6 @@ if (isset($_POST['submit'])) {
         foreach ($result as $row) {
             $orgID = htmlspecialchars($row['orgID']);
         }
-
-        error_log("ANNE: orgID is {$orgID}");
 
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO User (username, password, name, orgID, account_level) values (?, ?, ?, ?, ?)");
@@ -55,13 +53,14 @@ if (isset($_POST['submit'])) {
         exit();
     }
 
-    changeSessionID();
+    //changeSessionID();
 
     error_log("ANNE: session real name {$_SESSION['login']}");
     error_log("ANNE: session real name {$_SESSION['realname']}");
     error_log("ANNE: session real name {$_SESSION['role']}");
 
     includeInEvents($orgID);
+    getUserInfo();
 
     require_once "../../Controller/User/success.php";
 }
