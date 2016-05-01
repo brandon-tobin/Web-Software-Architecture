@@ -14,7 +14,7 @@
 //// Require the model file once
 //require_once 'index_view.php';
 
-require_once "../../Model/User/login.php";
+//require_once "../../Model/User/login.php";
 
 require_once "../../View/Home/index.php";
 
