@@ -10,7 +10,6 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
-
 if (isset($_POST['submit'])) {
 
     try {
@@ -53,12 +52,57 @@ if (isset($_POST['submit'])) {
         exit();
     }
 
+    $_SESSION['realname'] = $name;
+    $_SESSION['login'] = $username;
+    $_SESSION['role'] = "user";
+
+    changeSessionID();
+
+    includeInEvents($orgID);
+
     require_once "../../Controller/User/success.php";
 }
 else
 {
     require_once "../../View/Home/new_user_creation_view.php";
 }
+
+function includeInEvents($orgID)
+{
+    try {
+        $db = openDBConnection();
+        $query = "SELECT eventID FROM EventPermission where orgID = {$orgID}";
+        error_log("ANNE: query is: {$query}");
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $events = array();
+
+        foreach ($result as $row) {
+            array_push($events, htmlspecialchars($row['eventID']));
+        }
+
+        error_log("ANNE: orgID is {$orgID}");
+
+        $db->beginTransaction();
+
+        for ($i = 0; $i < count($events); $i++)
+        {
+            $stmt = $db->prepare("INSERT INTO Attending VALUES (?, ?, ?)");
+
+            $stmt->bindValue(1, $_SESSION['login']);
+            $stmt->bindValue(2, $events[$i]);
+            $stmt->bindValue(3, 0);
+            $stmt->execute();
+        }
+    }
+    catch (PDOException $ex)
+    {
+        error_log("ANNE: adding new user to events: " . $ex->getMessage());
+        exit();
+    }
+}
+
 class NewUser
 {
 
