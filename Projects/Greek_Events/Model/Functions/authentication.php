@@ -87,7 +87,7 @@ function verify_Login($role)
     // Check to see if user is logged in
     if (isset($_SESSION['login'])) {
         // Check to see if user belongs to role in parameter
-        if ($role == $_SESSION['role'])
+        if ($role == $_SESSION['role'] || role =="")
         {
             return true;
         }

@@ -11,12 +11,13 @@ require '../../Model/Functions/authentication.php';
 
 if(isset($_POST['submit']))
 {
-    if (verify_Login())
+    error_log("ANNE: submit pressed");
+    if (verify_Login(""))
     {
         require_once "../../Controller/User/success.php";
     }
 }
 else
 {
-    require_once "../../View/index";
+    require_once "../../View/index.php";
 }
