@@ -126,6 +126,9 @@ function verify_Login()
                   //  $_SESSION['userid'] = $row['uid'];
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
                     $_SESSION['login'] = $username;
+                    $_SESSION['roles'] = htmlspecialchars($row['account_level']);
+
+
                     $stmt->closeCursor();
 //                    $stmt = $DBH->prepare("SELECT role FROM Roles WHERE username = ?");
 //                    $stmt->bindValue(1, $username);

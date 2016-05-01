@@ -14,18 +14,18 @@ echo "
             <head>
 
                 <!-- Last Updated Spring 2016 -->
-                <!-- Brandon Tobin -->
+                <!-- Fumiko Anne Aoki -->
                 <!-- University of Utah -->
 
-                <!-- New Due Process Form for $form->student_Name  -->
+                <!-- Create Account  -->
 
                 <title>Due Process Form</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset=\"utf-8\"/>
-                <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
+                <meta name=\"AUTHOR\"      content=\"Fumiko Anne Aoki\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"New Due Process Form for $form->student_Name\"/>
+                <meta name=\"description\" content=\"Create Account\"/>
 
                 <!-- ALL CSS FILES -->
                 <!--<link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/> -->
@@ -41,11 +41,15 @@ echo "
             <form>
               <div class=\"form-group\">
                 <label for=\"username\">Username</label>
-                <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"username\">
+                <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"Username\">
               </div>
               <div class=\"form-group\">
                 <label for=\"password\">Password</label>
                 <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Password\">
+              </div>
+              <div class=\"form-group\">
+                <label for=\"name\">Name</label>
+                <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\">
               </div>
               <div class=\"form-group\">
                 <label for=\"organization\">Greek Organization</label>
