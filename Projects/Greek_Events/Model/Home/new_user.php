@@ -42,9 +42,12 @@ if (isset($_POST['submit'])) {
         $stmt->execute();
         $db->commit();
 
-        $_SESSION['realname'] = htmlspecialchars($row['name']);
+        error_log("ANNE: past commit.");
+
+        $_SESSION['realname'] = $name;
         $_SESSION['login'] = $username;
-        $_SESSION['roles'] = htmlspecialchars($row['account_level']);
+        $_SESSION['role'] = "user";
+
     }
     catch (PDOException $ex)
     {
@@ -52,11 +55,11 @@ if (isset($_POST['submit'])) {
         exit();
     }
 
-    $_SESSION['realname'] = $name;
-    $_SESSION['login'] = $username;
-    $_SESSION['role'] = "user";
-
     changeSessionID();
+
+    error_log("ANNE: session real name {$_SESSION['login']}");
+    error_log("ANNE: session real name {$_SESSION['realname']}");
+    error_log("ANNE: session real name {$_SESSION['role']}");
 
     includeInEvents($orgID);
 
@@ -69,6 +72,7 @@ else
 
 function includeInEvents($orgID)
 {
+    error_log("Anne: made it to include in events function");
     try {
         $db = openDBConnection();
         $query = "SELECT eventID FROM EventPermission where orgID = {$orgID}";
@@ -77,9 +81,12 @@ function includeInEvents($orgID)
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $events = array();
+        $rowcount = 0;
+        $insertcount = 0;
 
         foreach ($result as $row) {
             array_push($events, htmlspecialchars($row['eventID']));
+            $rowcount++;
         }
 
         error_log("ANNE: orgID is {$orgID}");
@@ -94,7 +101,12 @@ function includeInEvents($orgID)
             $stmt->bindValue(2, $events[$i]);
             $stmt->bindValue(3, 0);
             $stmt->execute();
+            $insertcount++;
         }
+
+        $db->commit();
+        error_log("ANNE: row count {$rowcount}");
+        error_log("ANNE: insert count {$insertcount}");
     }
     catch (PDOException $ex)
     {
