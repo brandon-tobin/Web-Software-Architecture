@@ -8,9 +8,9 @@
 
 require('../../View/Partials/partial_view.php');
 
-unset($_SESSION['uID']);
-unset($_SESSION['name']);
-unset($_SESSION['roles']);
+unset($_SESSION['login']);
+unset($_SESSION['realname']);
+unset($_SESSION['role']);
 
 session_unset();
 session_destroy();
