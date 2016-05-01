@@ -135,7 +135,7 @@ function verify_Login($role)
                   //  $_SESSION['userid'] = $row['uid'];
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
                     $_SESSION['login'] = $username;
-                    $_SESSION['roles'] = htmlspecialchars($row['account_level']);
+                    $_SESSION['role'] = htmlspecialchars($row['account_level']);
 
 
                     $stmt->closeCursor();
