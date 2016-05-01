@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     try {
         $username = trim($_REQUEST['username']);
         $password = trim($_REQUEST['password']);
-        $cpassword = trim($_REQUEST['cpassoword']);
+        $cpassword = trim($_REQUEST['cpassword']);
         $name = trim($_REQUEST['name']);
         $organization = trim($_REQUEST['organization']);
         $orgID;

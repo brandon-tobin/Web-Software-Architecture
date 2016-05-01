@@ -53,11 +53,11 @@ echo "
               </div>
               <div class=\"form-group\">
                 <label for=\"name\">Name</label>
-                <input type=\"text\" class=\"form-control\" id=\"name\" class=\"name\" placeholder=\"Name\">
+                <input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\" placeholder=\"Name\">
               </div>
               <div class=\"form-group\">
                 <label for=\"organization\">Greek Organization</label>
-                <select class=\"form-control\" id='organization' class='organization'>
+                <select class=\"form-control\" id='organization' name='organization'>
                       <option>Alpha Chi Omega</option>
                       <option>Alpha Phi</option>
                       <option>Chi Omega</option>
