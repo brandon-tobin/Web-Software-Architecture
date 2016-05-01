@@ -7,13 +7,19 @@
  */
 
 require('../../View/Partials/partial_view.php');
+require_once ('../../Model/Functions/authentication.php');
+
+getUserInfo();
 
 unset($_SESSION['login']);
 unset($_SESSION['realname']);
 unset($_SESSION['role']);
 
 session_unset();
-session_destroy();
+
+error_log("ANNE: session login {$_SESSION['login']}");
+error_log("ANNE: session name {$_SESSION['realname']}");
+error_log("ANNE: session role {$_SESSION['role']}");
 
 echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
