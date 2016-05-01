@@ -7,6 +7,7 @@
  */
 
 require('../../View/Partials/partial_view.php');
+require('../../Model/Functions/authentication.php');
 
 if (verify_Login("user"))
 {
@@ -62,5 +63,5 @@ echo "
 }
 else
 {
-    require_once "../../View/Home/index.php";
+    require_once ("../../View/Home/index.php");
 }
