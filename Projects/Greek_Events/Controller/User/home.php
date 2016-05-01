@@ -7,10 +7,5 @@
  */
 
 
-if (isset($_SESSION['realname']) && isset($_SESSION['login']) && isset($_SESSION['role'])) {
-    require_once ("../../View/User/home_view.php");
-}
-else
-{
-    require_once ("../Home/index.php");
-}
+require_once ("../../Model/User/home.php");
+

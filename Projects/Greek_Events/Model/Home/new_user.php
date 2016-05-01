@@ -10,6 +10,8 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
+getUserInfo();
+
 if (isset($_POST['submit'])) {
 
     $username = trim($_REQUEST['username']);
