@@ -85,6 +85,8 @@ function verify_Login($role)
     error_log("ANNE: in verify login");
     error_log("Anne: session role is {$_SESSION['role']}");
     error_log("Anne: parameter role is {$role}");
+    error_log("Anne: session role is {$_SESSION['login']}");
+    error_log("Anne: session role is {$_SESSION['realname']}");
 
     // Check to see if user is logged in
     if (isset($_SESSION['role'])) {
@@ -142,6 +144,7 @@ function verify_Login($role)
                     $_SESSION['login'] = $username;
                     $_SESSION['role'] = htmlspecialchars($row['account_level']);
 
+                    error_log("Anne: login is {$_SESSION['login']}");
                     error_log("Anne: real name is {$_SESSION['realname']}");
                     error_log("Anne: role is {$_SESSION['role']}");
 
