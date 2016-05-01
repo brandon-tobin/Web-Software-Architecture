@@ -16,6 +16,7 @@ unset($_SESSION['realname']);
 unset($_SESSION['role']);
 
 session_unset();
+changeSessionID();
 
 error_log("ANNE: session login {$_SESSION['login']}");
 error_log("ANNE: session name {$_SESSION['realname']}");

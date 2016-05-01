@@ -332,7 +332,7 @@ function computeHash($password, $salt)
 
 function &getUserInfo () {
     session_start();
-    if (!isset($_SESSION['login'])) {
+    if (!isset($_SESSION['login']) ) {
         error_log("Anne: session variables not set.");
     }
     return $_SESSION['login'];
