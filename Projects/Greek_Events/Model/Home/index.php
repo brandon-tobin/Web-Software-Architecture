@@ -12,6 +12,7 @@ require '../../Model/Functions/authentication.php';
 if(isset($_POST['submit']))
 {
     error_log("ANNE: submit pressed");
+    session_start();
     if (verify_Login(""))
     {
         require_once '../../Controller/User/success.php';
