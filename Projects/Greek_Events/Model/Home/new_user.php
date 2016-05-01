@@ -21,9 +21,9 @@ if (isset($_POST['submit'])) {
         $organization = trim($_REQUEST['organization']);
 
         $db = openDBConnection();
-        $query = "Select orgID from Organizations where name = '?'";
+        $query = "Select orgID from Organizations where name = '{$organization}'";
+        error_log("ANNE: query is: {$query}");
         $stmt = $db->prepare($query);
-        $stmt->bindValue(1, $organization);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
