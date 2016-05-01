@@ -22,7 +22,8 @@ if (isset($_POST['submit'])) {
         $orgID;
 
         $db = openDBConnection();
-        $query = "Select orgID from Organizations where name = ?";
+        $db->beginTransaction();
+        $query = "Select orgID from Organizations where name = '?'";
         $stmt = $db->prepare($query);
         $stmt->bindValue(1, $organization);
         $stmt->execute();
