@@ -88,6 +88,7 @@ function verify_Login($role)
     // Check to see if user is logged in
     if (isset($_SESSION['login'])) {
         // Check to see if user belongs to role in parameter
+        error_log("ANNE: login is set");
         if ($role == $_SESSION['role'] || $role =="")
         {
             return true;
@@ -127,6 +128,7 @@ function verify_Login($role)
             // Was the user real?
             if ($row = $stmt->fetch())
             {
+
                 // Validate the password
                 $hashedPassword = $row['password'];
                // if (computeHash($password, $hashedPassword) == $hashedPassword)
