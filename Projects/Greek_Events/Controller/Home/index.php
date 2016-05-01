@@ -12,5 +12,5 @@ set_include_path("../../Model/User/" .PATH_SEPARATOR .  "../../View/Home/");
 require_once 'login.php';
 
 // Require the model file once
-require_once 'index.php';
+require_once 'index_view.php';
 

@@ -49,7 +49,7 @@ echo "
             <form>
               <div class=\"form-group\">
                 <label for=\"username\">Username</label>
-                <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"username\">
+                <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"Username\">
               </div>
               <div class=\"form-group\">
                 <label for=\"password\">Password</label>
