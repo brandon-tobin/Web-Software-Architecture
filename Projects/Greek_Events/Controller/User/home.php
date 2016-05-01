@@ -6,58 +6,9 @@
  * Time: 3:23 AM
  */
 
-require('../../View/Partials/partial_view.php');
 
 if (isset($_SESSION['realname']) && isset($_SESSION['login']) && isset($_SESSION['role'])) {
-    $name = $_SESSION['realname'];
-
-    echo "
-        <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
-
-        <html lang=\"en\">
-
-            <head>
-
-                <!-- Last Updated Spring 2016 -->
-                <!-- Fumiko Anne Aoki -->
-                <!-- University of Utah -->
-
-                <!-- Greek Event Homepage  -->
-
-                <title>Greek Event Homepage</title>
-
-                <!-- Meta Information about Page -->
-                <meta charset=\"utf-8\"/>
-                <meta name=\"AUTHOR\"      content=\"Fumiko Aoki\"/>
-                <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"Greek Event Homepage\"/>
-
-                <!-- ALL CSS FILES -->
-                <!--<link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/> -->
-                <!-- Bootstrap Core CSS -->
-                <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
-
-            </head>
-
-            <body>";
-
-    echo getNavBarWithoutRoles();
-
-    echo "
-
-            <h1>Welcome {$name}</h1>
-
-
-
-            <!-- jQuery -->
-    <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js\"></script>
-
-
-            </body>
-            </html>";
+    require_once ("../../View/User/home_view.php");
 }
 else
 {

@@ -3,16 +3,14 @@
  * Created by PhpStorm.
  * User: Fumiko
  * Date: 5/1/2016
- * Time: 3:24 AM
+ * Time: 5:40 PM
  */
-
-error_log("ANNE: in success.php");
 
 require('../../View/Partials/partial_view.php');
 
-error_log("ANNE: in success.php");
+$name = $_SESSION['realname'];
 
-echo "
+    echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
         <html lang=\"en\">
@@ -44,11 +42,11 @@ echo "
 
     getNavBarWithoutRoles();
 
-echo "
+    echo "
 
-            <h1>Success!</h1>
+            <h1>Welcome {$name}</h1>
 
-            <a class=\"btn btn-default\" href=\"../User/home.php\" role=\"button\">Go to Homepage</a>
+
 
             <!-- jQuery -->
     <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
