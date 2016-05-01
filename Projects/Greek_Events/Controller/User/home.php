@@ -7,13 +7,11 @@
  */
 
 require('../../View/Partials/partial_view.php');
-require('../../Model/Functions/authentication.php');
 
-if (verify_Login("user"))
-{
-$name = $_SESSION['realname'];
+if (isset($_SESSION['realname']) && isset($_SESSION['login']) && isset($_SESSION['role'])) {
+    $name = $_SESSION['realname'];
 
-echo "
+    echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
         <html lang=\"en\">
@@ -43,9 +41,9 @@ echo "
 
             <body>";
 
-echo getNavBarWithoutRoles();
+    echo getNavBarWithoutRoles();
 
-echo "
+    echo "
 
             <h1>Welcome {$name}</h1>
 
@@ -63,5 +61,5 @@ echo "
 }
 else
 {
-    require_once ("../../View/Home/index.php");
+    require_once ("../Home/index.php");
 }
