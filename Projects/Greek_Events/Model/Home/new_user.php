@@ -22,7 +22,6 @@ if (isset($_POST['submit'])) {
         $orgID;
 
         $db = openDBConnection();
-        $db->beginTransaction();
         $query = "Select orgID from Organizations where name = '?'";
         $stmt = $db->prepare($query);
         $stmt->bindValue(1, $organization);
@@ -30,17 +29,18 @@ if (isset($_POST['submit'])) {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($result as $row) {
-            $this->orgID = htmlspecialchars($row['orgID']);
+            $orgID = htmlspecialchars($row['orgID']);
         }
 
         error_log("ANNE: orgID is {$orgID}");
 
         $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO User (username, password, name, orgID) values (?, ?, ?, ?)");
+        $stmt = $db->prepare("INSERT INTO User (username, password, name, orgID, account_level) values (?, ?, ?, ?, ?)");
         $stmt->bindValue(1, $username);
         $stmt->bindValue(2, $password);
         $stmt->bindValue(3, $name);
         $stmt->bindValue(4, $orgID);
+        $stmt->bindValue(4, 0);
         $stmt->execute();
         $db->commit();
 
