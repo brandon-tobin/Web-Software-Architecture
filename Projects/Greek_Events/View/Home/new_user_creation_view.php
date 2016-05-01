@@ -79,8 +79,6 @@ echo "
               <button type=\"submit\" class=\"btn btn-default\">Create Account</button>
             </form>
 
-            <a class=\"btn btn-default\" href=\"index.php\" role=\"button\">Log In</a>
-
             </body>
         </html>";
 
