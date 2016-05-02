@@ -44,6 +44,8 @@ class home
            // var_dump($available_events);
             error_log("ANNE: past 1st query.");
 
+            var_dump(count($available_events));
+
             // Get all information required to display all the events the user can attend
             for ($i = 0; $i < count($available_events); $i++)
             {
@@ -55,8 +57,6 @@ class home
                 $stmt->bindValue(2,$id);
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                var_dump($result);
 
                 foreach ($result as $row) {
                     $author_Username = htmlspecialchars($row['creator']);
