@@ -41,18 +41,11 @@ class home
                 array_push($available_events, htmlspecialchars($row['eventID']));
             }
 
-           // var_dump($available_events);
-            error_log("ANNE: past 1st query.");
-
-            var_dump(count($available_events));
-            var_dump($available_events);
-
             // Get all information required to display all the events the user can attend
             for ($i = 0; $i < count($available_events); $i++)
             {
 
                 $query = "SELECT * FROM Attending inner join Event where Attending.eventID = Event.eventID and Event.eventID = ? and Attending.username = ?";
-                error_log("ANNE: QUERY IS {$query}");
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1, $available_events[$i]);
                 $stmt->bindValue(2,$id);
@@ -66,17 +59,7 @@ class home
                     $event_Description = htmlspecialchars($row['description']);
                     $event_Location = htmlspecialchars($row['location']);
                     $rsvp = htmlspecialchars($row['rsvp']);
-                    error_log("ANNE: EVENT-{$event_Name} RSVP-{$rsvp}");
-
-
                 }
-
-//                var_dump($author_Username);
-//                var_dump($event_Name);
-//                var_dump($event_Date);
-//                var_dump($event_Description);
-//                var_dump($event_Location);
-//                var_dump($rsvp);
 
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
                 $stmt = $db->prepare($query);
@@ -89,15 +72,9 @@ class home
                     $author_Organization = htmlspecialchars($row['orgName']);
                 }
 
-                //$this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "<a href=\"view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."\">View</a>");
                 $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "../Event/view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."", $rsvp);
 
-               // var_dump(array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "../Event/view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."", $rsvp));
             }
-
-            //var_dump($this->events);
-
-            error_log("ANNE: end of try block");
 
         } catch (PDOException $ex) {
             error_log("Tobin bad happened! " . $ex->getMessage());
