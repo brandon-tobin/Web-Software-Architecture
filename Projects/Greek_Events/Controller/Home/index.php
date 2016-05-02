@@ -1,9 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: Fumiko Aoki
- * Date: 4/29/2016
- * Time: 2:47 PM
+ * Date: Spring 2016
+ *
+ * Project Home Page Controller
+ *
  */
 
 // Set the include path for the model and view

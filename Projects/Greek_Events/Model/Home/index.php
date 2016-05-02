@@ -1,9 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Fumiko
- * Date: 4/29/2016
- * Time: 3:33 PM
+ * User: Fumiko Aoki
+ * Date: Spring 2016
+ *
+ * Model logic for allowing a user to login to their account.
+ *
  */
 
 require '../../Model/Functions/db.php';
@@ -21,13 +22,11 @@ if(isset($_POST['submit']))
     if ($username == '') {
         $message = 'Enter your username.';
         $error = true;
-        error_log("ANNE: MISSING LOGIN");
     }
     // Complain if password is missing
     else if ($password == '') {
         $message = 'Enter your password.';
         $error = true;
-        error_log("ANNE: MISSING PW");
     }
 
     if($error)

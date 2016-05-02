@@ -24,7 +24,7 @@ if (isset($_POST['Attending']))
     try {
         $db = openDBConnection();
 
-        $query = "UPDATE Attending SET rsvp = 1 WHERE eventID = ? AND username = ?;";
+        $query = "UPDATE Attending SET rsvp = 1 WHERE eventID = ? AND username = ?";
         $stmt = $db->prepare($query);
         $stmt->bindValue(1, $eventID);
         $stmt->bindValue(2, $username);
@@ -44,7 +44,7 @@ if (isset($_POST['Maybe']))
     try {
         $db = openDBConnection();
 
-        $query = "UPDATE Attending SET rsvp = 2 WHERE eventID = ? AND username = ?;";
+        $query = "UPDATE Attending SET rsvp = 2 WHERE eventID = ? AND username = ?";
         $stmt = $db->prepare($query);
         $stmt->bindValue(1, $eventID);
         $stmt->bindValue(2, $username);
@@ -64,7 +64,7 @@ if (isset($_POST['Not']))
     try {
         $db = openDBConnection();
 
-        $query = "UPDATE Attending SET rsvp = 3 WHERE eventID = ? AND username = ?;";
+        $query = "UPDATE Attending SET rsvp = 3 WHERE eventID = ? AND username = ?";
         $stmt = $db->prepare($query);
         $stmt->bindValue(1, $eventID);
         $stmt->bindValue(2, $username);
@@ -158,7 +158,7 @@ class ViewEvent
                     $this->event_Location = htmlspecialchars($row['location']);
                 }
 
-                $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
+                $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?";
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1, $this->author_Username);
                 $stmt->execute();

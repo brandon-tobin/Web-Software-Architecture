@@ -1,10 +1,10 @@
 <?php
-
 /**
- * Created by PhpStorm.
- * User: Fumiko
- * Date: 4/30/2016
- * Time: 11:31 PM
+ * User: Fumiko Aoki
+ * Date: Spring 2016
+ *
+ * New Account Creation Model
+ *
  */
 
 require '../../Model/Functions/db.php';
@@ -26,28 +26,24 @@ if (isset($_POST['submit'])) {
     if ($name == '') {
         $nameError = 'Enter your name.';
         $error = true;
-        error_log("ANNE: MISSING NAME");
     }
 
     // Complain if password is missing
     if ($password == '') {
         $passwordError = 'Pick a password.';
         $error = true;
-        error_log("ANNE: MISSING PW");
     }
 
     // Complain if login is missing
     if ($username == '') {
         $usernameError = 'Enter a username.';
         $error = true;
-        error_log("ANNE: MISSING LOGIN");
     }
 
     if ($password != $cpassword)
     {
         $cpasswordError = "Password fields do not match.";
         $error = true;
-        error_log("ANNE: PW DONT MATCH");
     }
 
     if($error)
@@ -81,8 +77,6 @@ if (isset($_POST['submit'])) {
             $stmt->execute();
             $db->commit();
 
-            error_log("ANNE: past commit.");
-
             $_SESSION['realname'] = $name;
             $_SESSION['login'] = $username;
             $_SESSION['role'] = "user";
@@ -92,15 +86,7 @@ if (isset($_POST['submit'])) {
             exit();
         }
 
-        //changeSessionID();
-
-        error_log("ANNE: session real name {$_SESSION['login']}");
-        error_log("ANNE: session real name {$_SESSION['realname']}");
-        error_log("ANNE: session real name {$_SESSION['role']}");
-
         includeInEvents($orgID);
-        //getUserInfo();
-
         require_once "../../Controller/User/success.php";
     }
 }
@@ -109,13 +95,16 @@ else
     require_once "../../View/Home/new_user_creation_view.php";
 }
 
+/*
+ * This method places entries into the EventPermission table for the user
+ * so the user will be able to join an event even though the event was
+ * created before the user.
+ */
 function includeInEvents($orgID)
 {
-    error_log("Anne: made it to include in events function");
     try {
         $db = openDBConnection();
         $query = "SELECT eventID FROM EventPermission where orgID = {$orgID}";
-        error_log("ANNE: query is: {$query}");
         $stmt = $db->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -127,8 +116,6 @@ function includeInEvents($orgID)
             array_push($events, htmlspecialchars($row['eventID']));
             $rowcount++;
         }
-
-        error_log("ANNE: orgID is {$orgID}");
 
         $db->beginTransaction();
 
@@ -144,8 +131,6 @@ function includeInEvents($orgID)
         }
 
         $db->commit();
-        error_log("ANNE: row count {$rowcount}");
-        error_log("ANNE: insert count {$insertcount}");
     }
     catch (PDOException $ex)
     {

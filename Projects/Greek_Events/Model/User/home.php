@@ -1,10 +1,10 @@
 <?php
-
 /**
- * Created by PhpStorm.
- * User: Fumiko
- * Date: 5/1/2016
- * Time: 5:49 PM
+ * User: Fumiko Aoki
+ * Date: Spring 2016
+ *
+ * Model logic for displaying the home page for the user account.
+ *
  */
 
 require '../../Model/Functions/db.php';
@@ -44,7 +44,6 @@ class home
             // Get all information required to display all the events the user can attend
             for ($i = 0; $i < count($available_events); $i++)
             {
-
                 $query = "SELECT * FROM Attending inner join Event where Attending.eventID = Event.eventID and Event.eventID = ? and Attending.username = ?";
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1, $available_events[$i]);
@@ -61,7 +60,7 @@ class home
                     $rsvp = htmlspecialchars($row['rsvp']);
                 }
 
-                $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
+                $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?";
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1, $author_Username);
                 $stmt->execute();

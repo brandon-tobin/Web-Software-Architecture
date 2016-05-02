@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: brand
- * Date: 4/14/2016
- * Time: 9:28 PM
- */
 
 require('../../View/Partials/partial_view.php');
 

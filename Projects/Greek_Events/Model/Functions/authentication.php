@@ -34,31 +34,6 @@ function redirectToHTTPS()
     }
 }
 
-function verify_role($role)
-{
-    // Check to see if user is logged in
-    if (isset($_SESSION['role']))
-    {
-        // Check to see if user belongs to role in parameter
-        if ($role == $_SESSION['role'])
-        {
-            return true;
-        }
-        else if($role == 0 && $_SESSION['role'] == 1)
-        {
-            return true;
-        }
-        else
-        {
-            require_once "../../Controller/User/badRole.php";
-            exit();
-        }
-    }
-    require_once "../../Controller/User/badRole.php";
-    exit();
-}
-
-
 function verify_Login($role)
 {
     // Redirect to use HTTPS

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: brand
- * Date: 4/14/2016
- * Time: 9:28 PM
- */
 
 require('../../View/Partials/partial_view.php');
 
@@ -29,7 +23,6 @@ echo "
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
                 <meta name=\"description\" content=\"View Event \"/>
 
-                <!-- ALL CSS FILES -->
                 <!-- Bootstrap Core CSS -->
                 <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
 
@@ -64,9 +57,9 @@ echo "
                             <!-- Attending Button Group -->
                             <form method=\"post\">
                             <div class=\"btn-group btn-group-lg\" role=\"group\">
-                              <button type=\"submit\" class=\"btn btn-success\" name=\"Attending\" value=\"Attending\">Attending</button>
-                              <button type=\"submit\" class=\"btn btn-warning\" name=\"Maybe\" value=\"Maybe Attending\">Maybe Attending</button>
-                              <button type=\"submit\" class=\"btn btn-danger\" name=\"Not\" value=\"Not Attending\">Not Attending</button>
+                                <button type=\"submit\" class=\"btn btn-success\" name=\"Attending\" value=\"Attending\">Attending</button>
+                                <button type=\"submit\" class=\"btn btn-warning\" name=\"Maybe\" value=\"Maybe Attending\">Maybe Attending</button>
+                                <button type=\"submit\" class=\"btn btn-danger\" name=\"Not\" value=\"Not Attending\">Not Attending</button>
                             </div>
                             </form>
 

@@ -3,7 +3,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * View Event Controller
+ * View All Events Controller
  *
  */
 

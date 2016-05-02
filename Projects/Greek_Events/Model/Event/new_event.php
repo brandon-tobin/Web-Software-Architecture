@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Author: Brandon Tobin
  * Date: Spring 2016
@@ -14,9 +13,8 @@ require '../../Model/Functions/authentication.php';
 getUserInfo();
 verify_Login("admin");
 
+// Check to see if the form has been submitted, if so, process
 if (isset($_POST['submit'])) {
-
-    error_log("ANNE: in new event submit");
 
     $eventName = trim($_REQUEST['title']);
     $eventDate = trim($_REQUEST['date']);
@@ -24,8 +22,6 @@ if (isset($_POST['submit'])) {
     $eventDescription = trim($_REQUEST['description']);
     $eventAttend = array();
     $creator = $_SESSION['login'];
-
-    error_log("ANNE: creator is {$creator}");
 
     foreach ($_POST['attend'] as $names)
     {
@@ -55,10 +51,8 @@ if (isset($_POST['submit'])) {
     $stmt->execute();
     $db->commit();
 
-
-
-    $db->beginTransaction();
     // Insert into the permissions table
+    $db->beginTransaction();
     for ($i = 0; $i < count($eventAttend); $i++)
     {
         includeInEvents($eventAttend[$i], $eventID);
@@ -69,18 +63,18 @@ if (isset($_POST['submit'])) {
         $stmt->execute();
     }
 
-    error_log("ANNE: after 2nd insert");
-
     $db->commit();
 }
 
+/*
+ * Function for adding an entry for all people in an organization into the
+ * Attending table so they show up as invited.
+ */
 function includeInEvents($orgID, $eventID)
 {
-    error_log("Anne: made it to include in events function");
     try {
         $db = openDBConnection();
         $query = "SELECT username FROM User where orgID = {$orgID}";
-        error_log("ANNE: query is: {$query}");
         $stmt = $db->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -93,13 +87,11 @@ function includeInEvents($orgID, $eventID)
             $rowcount++;
         }
 
-
         $db->beginTransaction();
 
         for ($i = 0; $i < count($events); $i++)
         {
             $stmt = $db->prepare("INSERT INTO Attending VALUES (?, ?, ?)");
-
             $stmt->bindValue(1, $events[$i]);
             $stmt->bindValue(2, $eventID);
             $stmt->bindValue(3, 0);
@@ -111,7 +103,6 @@ function includeInEvents($orgID, $eventID)
     }
     catch (PDOException $ex)
     {
-        error_log("ANNE: adding new user to events: " . $ex->getMessage());
         exit();
     }
 }

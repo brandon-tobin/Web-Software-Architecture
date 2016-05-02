@@ -4,7 +4,7 @@
  * Author: Brandon Tobin
  * Date: Spring 2016
  *
- * View All Events Model -- Retrieves the Event From the Database
+ * View All Events Model -- Retrieves All Events From the Database For User
  *
  */
 
@@ -17,14 +17,6 @@ verify_Login("user");
 class ViewAllEvents
 {
     public $events = array();
-
-//    public $author_Name;
-//    public $author_Username;
-//    public $author_Organization;
-//    public $event_Name;
-//    public $event_Date;
-//    public $event_Description;
-//    public $event_Location;
 
     public function __construct($id)
     {
@@ -79,7 +71,6 @@ class ViewAllEvents
                 }
 
                 $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "view_event.php?id=$id&event=".htmlspecialchars($available_events[$i])."");
-
             }
 
 
