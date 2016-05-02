@@ -44,7 +44,7 @@ $name = $_SESSION['realname'];
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                         <div class=\"col-sm-12 col-md-10 col-lg-8\">";
 
-    getNavBarWithoutRoles();
+    echo getNavBarWithoutRoles();
 
     echo "<h1 class='page-header'>Welcome {$name}</h1>";
 
