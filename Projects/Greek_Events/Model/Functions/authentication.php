@@ -104,7 +104,7 @@ function verify_Login($role)
 
         } else {
             error_log("TOBIN User is logged but the Role is incorrect!!!!");
-            require ('../../Controller/User/badRole.php');
+            require ('../../View/User/badrole_view.php');
             exit();
         }
     }
