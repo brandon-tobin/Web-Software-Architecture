@@ -44,7 +44,7 @@ echo "
 echo getNavBarWithoutRoles();
 
 echo "
-                        <h1 class='page-header'>Welcome {$name}<h1>";
+                        <h1 class='page-header'>Welcome $name<h1>";
 
                         if($_SESSION['role'] == "admin")
                         {
