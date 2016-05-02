@@ -48,50 +48,8 @@ echo "
 
                             <h1 class='page-header'>Success</h1>
 
-                            <a class=\"btn btn-default\" href=\"../../Controller/User/home.php\" role=\"button\">Go to Homepage</a>
+                            <a class=\"btn btn-default\" href=\"../User/home.php\" role=\"button\">Go to Homepage</a>
 
-
-                            <form method='post'>
-                                <div class='form-group'>
-                                    <label for='title'>Event Title:</label>
-                                    <input type='text' name='title' class='form-control'>
-                                </div>
-                                <div class='form-group'>
-                                    <label for='date'>Date:</label>
-                                    <input type='text' name='date' placeholder='YYYY-MM-DD HH:MM:SS' class='form-control'>
-                                </div>
-                                <div class='form-group'>
-                                    <label for='location'>Location:</label>
-                                    <input type='text' name='location' class='form-control'>
-                                </div>
-                                <div class='form-group'>
-                                    <label for='description'>Description:</label>
-                                    <input type='text' name='description' class='form-control'>
-                                </div>
-                                <div class='form-group'>
-                                    <label for='attend[]'>Who Can Attend:</label>
-                                    <select multiple size='5' class='form-control' name='attend[]'>
-                                        <option value='1'>Beta Theta Pi</option>
-                                        <option value='2'>Delta Sigma Phi</option>
-                                        <option value='3'>Kappa Sigma</option>
-                                        <option value='4'>Phi Delta Theta</option>
-                                        <option value='5'>Pi Kappa Alpha</option>
-                                        <option value='6'>Sigma Chi</option>
-                                        <option value='7'>Sigma Nu</option>
-                                        <option value='8'>Sigma Phi Epsilon</option>
-                                        <option value='9'>Triangle</option>
-                                        <option value='10'>Alpha Chi Omega</option>
-                                        <option value='11'>Alpha Phi</option>
-                                        <option value='12'>Chi Omega</option>
-                                        <option value='13'>Delta Gamma</option>
-                                        <option value='14'>Kappa Kappa Gamma</option>
-                                        <option value='15'>Pi Beta Phi</option>
-                                      </select>
-                                </div>
-
-                                <input type='submit' class='btn btn-info' name='submit' value='Submit'>
-
-                            </form>
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                     </div>
