@@ -49,7 +49,6 @@ class home
 
                 $query = "SELECT * FROM Attending inner join Event where Attending.eventID = Event.eventID and Event.eventID = ? and Attending.username = ?";
                 error_log("ANNE: QUERY IS {$query}");
-                //$query = "SELECT * FROM Event WHERE eventID = ?";
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1, $available_events[$i]);
                 $stmt->bindValue(2,$id);
@@ -64,6 +63,13 @@ class home
                     $event_Location = htmlspecialchars($row['location']);
                     $rsvp = htmlspecialchars($row['rsvp']);
                     error_log("ANNE: EVENT-{$event_Name} RSVP-{$rsvp}");
+
+                    var_dump($author_Username);
+                    var_dump($event_Name);
+                    var_dump($event_Date);
+                    var_dump($event_Description);
+                    var_dump($event_Location);
+                    var_dump($rsvp);
                 }
 
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
