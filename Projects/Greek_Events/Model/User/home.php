@@ -88,7 +88,7 @@ class home
 
             }
 
-            var_dump($this->events);
+            //var_dump($this->events);
 
             error_log("ANNE: end of try block");
 
