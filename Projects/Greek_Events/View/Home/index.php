@@ -50,6 +50,8 @@ echo "
 
             <p>Please log in or create an account.</p>
 
+            <p class=\"text-danger\">{$message}</p>
+
             <form method='post'>
               <div class=\"form-group\">
                 <label for=\"username\">Username</label>
