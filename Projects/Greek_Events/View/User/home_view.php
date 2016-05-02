@@ -109,6 +109,26 @@ echo "
                                 echo "
                             </div>
 
+                        <h2>Events I've Been Invited To</h2>
+                            <div class=\"table - responsive\">";
+                                foreach ($events->events as $row)
+                                {
+                                    if ($row[8] == 0 || row[8] == 3) {
+                                        echo "<div class='panel panel-success'>";
+                                        echo "<div class='panel-heading'><a href='$row[7]'>$row[3]</a></div>";
+                                        echo "<div class='panel-body'>
+                                            <b>Event Date:</b> $row[4] <br />
+                                            <b>Event Location:</b> $row[6] <br />
+                                            <b>Event Description:</b> $row[5] <br /><br />
+                                            <b>Creator:</b> $row[0] <br />
+                                            <b>Creator's Organization:</b> $row[2] <br />
+                                         </div>
+                                     </div>";
+                                    }
+                                }
+                                echo "
+                            </div>
+
 
                         </div>
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
