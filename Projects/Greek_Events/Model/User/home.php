@@ -82,7 +82,7 @@ class home
                 }
 
                 //$this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "<a href=\"view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."\">View</a>");
-                $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."", $rsvp);
+                $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "../Event/view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."", $rsvp);
 
             }
 
