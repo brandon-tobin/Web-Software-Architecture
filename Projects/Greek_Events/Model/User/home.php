@@ -9,21 +9,13 @@
 
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
-getUserInfo();
 
+getUserInfo();
 verify_Login("user");
 
 class home
 {
     public $events = array();
-
-//    public $author_Name;
-//    public $author_Username;
-//    public $author_Organization;
-//    public $event_Name;
-//    public $event_Date;
-//    public $event_Description;
-//    public $event_Location;
 
     public function __construct($id)
     {
@@ -49,6 +41,8 @@ class home
                 array_push($available_events, htmlspecialchars($row['eventID']));
             }
 
+            error_log("ANNE: past 1st query.");
+
             // Get all information required to display all the events the user can attend
             for ($i = 0; $i < count($available_events); $i++)
             {
@@ -66,9 +60,8 @@ class home
                     $event_Description = htmlspecialchars($row['description']);
                     $event_Location = htmlspecialchars($row['location']);
                     $rsvp = htmlspecialchars($row['rsvp']);
+                    error_log("ANNE: EVENT-{$event_Name} RSVP-{$rsvp}");
                 }
-
-                error_log("Anne: rsvp value = {$rsvp}");
 
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
                 $stmt = $db->prepare($query);
