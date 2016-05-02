@@ -26,12 +26,12 @@ function usingHTTPS()
 
 function redirectToHTTPS()
 {
-//    if (!usingHTTPS())
-//    {
-//        $redirect = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-//        header("Location:$redirect");
-//        exit();
-//    }
+    if (!usingHTTPS())
+    {
+        $redirect = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        header("Location:$redirect");
+        exit();
+    }
 }
 
 function verify_role($role)
@@ -64,28 +64,18 @@ function verify_Login($role)
     // Redirect to use HTTPS
     redirectToHTTPS();
 
-//    error_log("ANNE: in verify login");
-//    error_log("Anne: session role is {$_SESSION['role']}");
-//    error_log("Anne: parameter role is {$role}");
-//    error_log("Anne: session role is {$_SESSION['login']}");
-//    error_log("Anne: session role is {$_SESSION['realname']}");
-
     // Check to see if user is logged in
     if (isset($_SESSION['role']) && isset($_SESSION['login']) && isset($_SESSION['realname'])) {
         // Check to see if user belongs to role in parameter
-        error_log("ANNE: login is set");
         if ($role == $_SESSION['role'] || $role =="")
         {
-            error_log("ANNE: role matches parameter");
             return true;
         }
         else if($role == "user" && $_SESSION['role'] == "admin")
         {
-            error_log("ANNE: user is admin and wants user page");
             return true;
 
         } else {
-            error_log("TOBIN User is logged but the Role is incorrect!!!!");
             require ('../../View/User/badrole_view.php');
             exit();
         }
@@ -94,14 +84,11 @@ function verify_Login($role)
     // Empty error message
     $message = '';
 
-
     // User is attempting to log in. Need to verify credentials
     if (isset($_REQUEST['username']) && isset($_REQUEST['password']))
     {
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
-
-        error_log("ANNE: trying to log in");
 
         try
         {
@@ -120,7 +107,6 @@ function verify_Login($role)
                 $hashedPassword = $row['password'];
                 if (computeHash($password, $hashedPassword) == $hashedPassword)
                 {
-                  //  $_SESSION['userid'] = $row['uid'];
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
                     $_SESSION['login'] = $username;
                     $rolefromquery = htmlspecialchars($row['account_level']);
@@ -130,12 +116,7 @@ function verify_Login($role)
                     else
                         $_SESSION['role'] = "user";
 
-//                    error_log("Anne: login is {$_SESSION['login']}");
-//                    error_log("Anne: real name is {$_SESSION['realname']}");
-//                    error_log("Anne: role is {$_SESSION['role']}");
-
                     $stmt->closeCursor();
-
                 }
                 else
                 {
@@ -161,23 +142,19 @@ function verify_Login($role)
         changeSessionID();
         if ($role == $_SESSION['role'] || $role =="")
         {
-            //error_log("ANNE: role matches parameter");
             return true;
         }
         else if($role == "user" && $_SESSION['role'] == "admin")
         {
-            //error_log("ANNE: user is admin and wants user page");
             return true;
 
         } else {
-            //error_log("TOBIN User is logged but the Role is incorrect!!!!");
             require ('../../View/User/badrole_view.php');
             exit();
         }
     }
     else
     {
-       // error_log("TOBIN User is logged but the Role is incorrect!!!!");
         require ("../../View/Home/index.php");
         exit();
     }
@@ -201,7 +178,7 @@ function computeHash($password, $salt)
 function &getUserInfo () {
     session_start();
     if (!isset($_SESSION['login']) ) {
-        error_log("Anne: session variables not set.");
+        error_log("Tobin: session variables not set.");
     }
     return $_SESSION['login'];
 }
