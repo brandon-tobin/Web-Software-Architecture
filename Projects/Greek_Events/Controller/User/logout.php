@@ -6,7 +6,6 @@
  * Time: 12:12 PM
  */
 
-require('../../View/Partials/partial_view.php');
 require_once ('../../Model/Functions/authentication.php');
 
 getUserInfo();
