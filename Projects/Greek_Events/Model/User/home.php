@@ -45,6 +45,7 @@ class home
             error_log("ANNE: past 1st query.");
 
             var_dump(count($available_events));
+            var_dump($available_events);
 
             // Get all information required to display all the events the user can attend
             for ($i = 0; $i < count($available_events); $i++)
