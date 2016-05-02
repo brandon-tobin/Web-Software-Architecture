@@ -5,12 +5,11 @@
  * Date: 5/1/2016
  * Time: 5:40 PM
  */
+$name = $_SESSION['realname'];
 
 require('../../View/Partials/partial_view.php');
 
-$name = $_SESSION['realname'];
-
-    echo "
+echo "
         <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
         <html lang=\"en\">
@@ -18,25 +17,25 @@ $name = $_SESSION['realname'];
             <head>
 
                 <!-- Last Updated Spring 2016 -->
-                <!-- Fumiko Anne Aoki -->
+                <!-- Brandon Tobin -->
                 <!-- University of Utah -->
 
-                <!-- Greek Event Homepage  -->
+                <!-- View All Events -->
 
-                <title>Greek Event Homepage</title>
+                <title>View All Events</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset=\"utf-8\"/>
-                <meta name=\"AUTHOR\"      content=\"Fumiko Aoki\"/>
+                <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"Greek Event Homepage\"/>
+                <meta name=\"description\" content=\"View All Events\"/>
 
                 <!-- ALL CSS FILES -->
-                <!--<link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/> -->
                 <!-- Bootstrap Core CSS -->
                 <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
 
             </head>
+
 
             <body>
                 <div class=\"container-fluid\">
@@ -44,14 +43,14 @@ $name = $_SESSION['realname'];
                         <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                         <div class=\"col-sm-12 col-md-10 col-lg-8\">";
 
-    echo getNavBarWithoutRoles();
+                        echo getNavBarWithoutRoles();
 
-    echo "<h1 class='page-header'>Welcome {$name}</h1>";
+                        echo "<h1 class='page-header'>Welcome {$name}</h1>";
 
-                if($_SESSION['role'] == "admin")
-                {
-                        echo"<h2>Events I Created</h2>
-                            <div class=\"table - responsive\">";
+                        if($_SESSION['role'] == "admin")
+                        {
+                            echo"<h2>Events I Created</h2>
+                                <div class=\"table - responsive\">";
                                 foreach ($events->events as $row)
                                 {
                                     if ($row[0] == $name)
@@ -64,12 +63,12 @@ $name = $_SESSION['realname'];
                                             <b>Event Description:</b> $row[5] <br /><br />
                                             <b>Creator:</b> $row[0] <br />
                                             <b>Creator's Organization:</b> $row[2] <br />
-                                         </div>
-                                     </div>";
+                                            </div>
+                                            </div>";
                                     }
                                 }
                                 echo "</div>";
-                    }
+                        }
 
                         echo"<h2>Events I'm Attending</h2>
                             <div class=\"table - responsive\">";
