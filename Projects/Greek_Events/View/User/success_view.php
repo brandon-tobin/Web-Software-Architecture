@@ -46,11 +46,10 @@ echo getNavBarWithoutRoles();
 
 echo "
 
-                            <h1 class='page-header'>Create New Event</h1>
+                            <h1 class='page-header'>Success</h1>
 
-                            <p>Name: $event->author_Name</p>
-                            <p>Username: $event->author_Username</p>
-                            <p>Organization: $event->author_Organization</p>
+                            <a class=\"btn btn-default\" href=\"../../Controller/User/home.php\" role=\"button\">Go to Homepage</a>
+
 
                             <form method='post'>
                                 <div class='form-group'>
