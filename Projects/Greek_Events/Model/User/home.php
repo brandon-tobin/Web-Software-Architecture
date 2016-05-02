@@ -64,12 +64,12 @@ class home
                     $rsvp = htmlspecialchars($row['rsvp']);
                     error_log("ANNE: EVENT-{$event_Name} RSVP-{$rsvp}");
 
-                    var_dump($author_Username);
-                    var_dump($event_Name);
-                    var_dump($event_Date);
-                    var_dump($event_Description);
-                    var_dump($event_Location);
-                    var_dump($rsvp);
+//                    var_dump($author_Username);
+//                    var_dump($event_Name);
+//                    var_dump($event_Date);
+//                    var_dump($event_Description);
+//                    var_dump($event_Location);
+//                    var_dump($rsvp);
                 }
 
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
@@ -86,6 +86,7 @@ class home
                 //$this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "<a href=\"view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."\">View</a>");
                 $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "../Event/view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."", $rsvp);
 
+                var_dump($this->events);
             }
 
             //var_dump($this->events);
