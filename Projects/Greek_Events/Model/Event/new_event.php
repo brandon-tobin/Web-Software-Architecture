@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     $eventLocation = trim($_REQUEST['location']);
     $eventDescription = trim($_REQUEST['description']);
     $eventAttend = array();
-    $creator = $_SESSION['username'];
+    $creator = $_SESSION['login'];
 
     error_log("ANNE: creator is {$creator}");
 
