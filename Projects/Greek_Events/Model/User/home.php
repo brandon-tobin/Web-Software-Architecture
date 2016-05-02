@@ -59,7 +59,8 @@ class home
             // Get all information required to display all the events the user can attend
             for ($i = 0; $i < count($available_events); $i++)
             {
-                $query = "SELECT * FROM Event WHERE eventID = ?";
+                $query = "SELECT * FROM Attending inner join Event where Attending.eventID = Event.eventID and Event.eventID =?";
+                //$query = "SELECT * FROM Event WHERE eventID = ?";
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1,$available_events[$i]);
                 $stmt->execute();
@@ -71,6 +72,7 @@ class home
                     $event_Date = htmlspecialchars($row['date']);
                     $event_Description = htmlspecialchars($row['description']);
                     $event_Location = htmlspecialchars($row['location']);
+                    $rsvp = htmlspecialchars($row['rsvp']);
                 }
 
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
@@ -85,7 +87,7 @@ class home
                 }
 
                 //$this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "<a href=\"view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."\">View</a>");
-                $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."");
+                $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."", $rsvp);
 
             }
 

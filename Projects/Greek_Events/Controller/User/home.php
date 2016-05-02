@@ -14,3 +14,5 @@ $id = $_GET['id'];
 
 // Create a new student form object
 $events = new home($id);
+
+require_once ("../../View/User/home_view.php");
