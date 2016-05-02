@@ -23,51 +23,58 @@ error_log("ANNE: session name {$_SESSION['realname']}");
 error_log("ANNE: session role {$_SESSION['role']}");
 
 echo "
-        <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
+        <!DOCTYPE html PUBLIC \" -//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
-        <html lang=\"en\">
+        <html lang = \"en\" >
 
-            <head>
+            <head >
 
-                <!-- Last Updated Spring 2016 -->
-                <!-- Fumiko Anne Aoki -->
-                <!-- University of Utah -->
+                <!--Last Updated Spring 2016-->
+                <!--Fumiko Anne Aoki-->
+                <!--University of Utah-->
 
-                <!-- Greek Event Homepage  -->
+                <!--Success-->
 
-                <title>Greek Event Homepage</title>
+                <title > Success </title >
 
-                <!-- Meta Information about Page -->
-                <meta charset=\"utf-8\"/>
-                <meta name=\"AUTHOR\"      content=\"Fumiko Aoki\"/>
-                <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"Greek Event Homepage\"/>
+                <!--Meta Information about Page-->
+                <meta charset = \"utf-8\" />
+                <meta name = \"AUTHOR\"      content = \"Brndon Tobin\" />
+                <meta name = \"keywords\"    content = \"HTML, Projects\" />
+                <meta name = \"description\" content = \"Success \" />
 
-                <!-- ALL CSS FILES -->
-                <!--<link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/> -->
-                <!-- Bootstrap Core CSS -->
-                <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
+                <!--Bootstrap Core CSS-->
+                <link href = \"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel = \"stylesheet\" >
 
-            </head>
+            </head >
 
-            <body>";
+            <body >
+
+                <div class=\"container-fluid\" >
+                    <div class=\"row\" >
+                        <div class=\"col-sm-0 col-md-1 col-lg-2\" ></div >
+                        <div class=\"col-sm-12 col-md-10 col-lg-8\" > ";
 
 echo getNavBarWithoutRoles();
 
 echo "
 
-            <h1>Logout Successful</h1>
+                         <h1>Logout Successful</h1>
 
             <p>You have been logged out.</p>
+            <a class=\"btn btn -default\" href=\" ../Home/index.php\" role=\"button\">Go to Main Page</a>
 
-            <a class=\"btn btn-default\" href=\"../Home/index.php\" role=\"button\">Go to Main Page</a>
+                        </div>
+                        <div class=\"col - sm - 0 col - md - 1 col - lg - 2\"></div>
+                    </div>
+                </div>
 
-            <!-- jQuery -->
-    <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
+                <!-- jQuery -->
+                <script src=\" ../../../Resources / Bootstrap / bootstrap - 3.3.6 - dist / js / jquery . js\"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js\"></script>
-
+                <!-- Bootstrap Core JavaScript -->
+                <script src=\" ../../../Resources / Bootstrap / bootstrap - 3.3.6 - dist / js / bootstrap . min . js\"></script>
 
             </body>
-            </html>";
+        </html>";
+

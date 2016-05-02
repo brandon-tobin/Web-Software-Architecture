@@ -6,56 +6,60 @@
  * Time: 3:24 AM
  */
 
-error_log("ANNE: in success.php");
-
 require('../../View/Partials/partial_view.php');
 
-error_log("ANNE: in success.php");
-
 echo "
-        <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
+        <!DOCTYPE html PUBLIC \" -//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">
 
-        <html lang=\"en\">
+        <html lang = \"en\" >
 
-            <head>
+            <head >
 
-                <!-- Last Updated Spring 2016 -->
-                <!-- Fumiko Anne Aoki -->
-                <!-- University of Utah -->
+                <!--Last Updated Spring 2016-->
+                <!--Fumiko Anne Aoki-->
+                <!--University of Utah-->
 
-                <!-- Greek Event Homepage  -->
+                <!--Success-->
 
-                <title>Greek Event Homepage</title>
+                <title > Success </title >
 
-                <!-- Meta Information about Page -->
-                <meta charset=\"utf-8\"/>
-                <meta name=\"AUTHOR\"      content=\"Fumiko Aoki\"/>
-                <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"Greek Event Homepage\"/>
+                <!--Meta Information about Page-->
+                <meta charset = \"utf-8\" />
+                <meta name = \"AUTHOR\"      content = \"Brndon Tobin\" />
+                <meta name = \"keywords\"    content = \"HTML, Projects\" />
+                <meta name = \"description\" content = \"Success \" />
 
-                <!-- ALL CSS FILES -->
-                <!--<link rel=\"stylesheet\" href=\"../../../../Resources/css/stylesheet.css\" type=\"text/css\"/> -->
-                <!-- Bootstrap Core CSS -->
-                <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
+                <!--Bootstrap Core CSS-->
+                <link href = \"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel = \"stylesheet\" >
 
-            </head>
+            </head >
 
-            <body>";
+            <body >
 
-    getNavBarWithoutRoles();
+                <div class=\"container-fluid\" >
+                    <div class=\"row\" >
+                        <div class=\"col-sm-0 col-md-1 col-lg-2\" ></div >
+                        <div class=\"col-sm-12 col-md-10 col-lg-8\" > ";
 
-echo "
+                            echo getNavBarWithoutRoles();
 
-            <h1>Success!</h1>
+                            echo "
 
-            <a class=\"btn btn-default\" href=\"../User/home.php\" role=\"button\">Go to Homepage</a>
+                            <h1>Success!</h1>
 
-            <!-- jQuery -->
-    <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
+                            <a class=\"btn btn-default\" href=\"../User/home.php\" role=\"button\">Go to Homepage</a>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js\"></script>
+                        </div>
+                        <div class=\"col - sm - 0 col - md - 1 col - lg - 2\"></div>
+                    </div>
+                </div>
 
+                <!-- jQuery -->
+                <script src=\" ../../../Resources / Bootstrap / bootstrap - 3.3.6 - dist / js / jquery . js\"></script>
+
+                <!-- Bootstrap Core JavaScript -->
+                <script src=\" ../../../Resources / Bootstrap / bootstrap - 3.3.6 - dist / js / bootstrap . min . js\"></script>
 
             </body>
-            </html>";
+        </html>";
+
