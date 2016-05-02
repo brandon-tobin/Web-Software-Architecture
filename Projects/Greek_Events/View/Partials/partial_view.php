@@ -55,6 +55,7 @@ function getNavigation()
 function getNavBarWithoutRoles()
 {
     $username = $_SESSION['login'];
+    $role = $_SESSION['role'];
     echo "
     <!-- Static navbar -->
     <nav class=\"navbar navbar-default navbar-static-top\">
@@ -67,8 +68,11 @@ function getNavBarWithoutRoles()
             <span class=\"icon-bar\"></span>
           </button>
           <a class=\"navbar-brand\" href=\"../Home/index.php\">Greek Events</a>
-        </div>
-        <div id=\"navbar\" class=\"navbar-collapse collapse\">
+        </div>";
+
+        if ($role == "user" || $role == "admin")
+        {
+        echo"<div id=\"navbar\" class=\"navbar-collapse collapse\">
           <ul class=\"nav navbar-nav\">
             <li class=\"active\"><a href=\"../User/home.php\">Home</a></li>
             <li class=\"dropdown\">
@@ -80,13 +84,16 @@ function getNavBarWithoutRoles()
             </li>
             <li class=\"dropdown\">
               <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Event Actions<span class=\"caret\"></span></a>
-              <ul class=\"dropdown-menu\">
-                <li><a href=\"../Event/new_event.php?id=$username\">Create New Event</a></li>
-                <li><a href=\"../Event/view_all_events.php?id=$username\">View All Events</a></li>
+              <ul class=\"dropdown-menu\">";
+                if ($role == "admin")
+                {echo"<li><a href=\"../Event/new_event.php?id=$username\">Create New Event</a></li>";}
+                echo"<li><a href=\"../Event/view_all_events.php?id=$username\">View All Events</a></li>
               </ul>
             </li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div><!--/.nav-collapse -->";
+        }
+      echo"
       </div>
     </nav>";
 }
