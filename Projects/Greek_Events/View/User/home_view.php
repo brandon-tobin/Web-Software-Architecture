@@ -75,7 +75,7 @@ echo "
                             <div class=\"table - responsive\">";
                                 foreach ($events->events as $row)
                                 {
-                                    if ($row[8] == 0) {
+                                    if ($row[8] == 1) {
                                         echo "<div class='panel panel-success'>";
                                         echo "<div class='panel-heading'><a href='$row[7]'>$row[3]</a></div>";
                                         echo "<div class='panel-body'>
@@ -95,7 +95,7 @@ echo "
                             <div class=\"table - responsive\">";
                                 foreach ($events->events as $row)
                                 {
-                                    if ($row[8] == 1) {
+                                    if ($row[8] == 2) {
                                         echo "<div class='panel panel-success'>";
                                         echo "<div class='panel-heading'><a href='$row[7]'>$row[3]</a></div>";
                                         echo "<div class='panel-body'>
