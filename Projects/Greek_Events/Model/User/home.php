@@ -56,6 +56,8 @@ class home
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+                var_dump($result);
+
                 foreach ($result as $row) {
                     $author_Username = htmlspecialchars($row['creator']);
                     $event_Name = htmlspecialchars($row['name']);
