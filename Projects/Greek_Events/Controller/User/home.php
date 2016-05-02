@@ -10,7 +10,7 @@
 require_once ("../../Model/User/home.php");
 
 // Get the user name out of the url
-$id = $_GET['id'];
+$id = $_SESSION['login'];
 
 // Create a new student form object
 $events = new home($id);
