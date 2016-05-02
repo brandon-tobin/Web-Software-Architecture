@@ -11,14 +11,7 @@ require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 getUserInfo();
 
-if(verify_Login("user"))
-{
-    require_once ("../../View/User/home_view.php");
-}
-else
-{
-    require_once ("../../View/Home/index.php");
-}
+verify_Login("user");
 
 class home
 {
@@ -75,6 +68,8 @@ class home
                     $rsvp = htmlspecialchars($row['rsvp']);
                 }
 
+                error_log("Anne: rsvp value = {$rsvp}");
+
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
                 $stmt = $db->prepare($query);
                 $stmt->bindValue(1, $author_Username);
@@ -91,7 +86,7 @@ class home
 
             }
 
-
+            error_log("ANNE: end of try block");
 
         } catch (PDOException $ex) {
             error_log("Tobin bad happened! " . $ex->getMessage());

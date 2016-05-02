@@ -90,7 +90,6 @@ $name = $_SESSION['realname'];
                                 }
                                 echo "
                             </div>
-                        </div>
 
                         <h2>Events I Might Attend</h2>
                             <div class=\"table - responsive\">";
