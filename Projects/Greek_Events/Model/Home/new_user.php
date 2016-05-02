@@ -19,6 +19,8 @@ if (isset($_POST['submit'])) {
     $cpassword = trim($_REQUEST['cpassword']);
     $name = trim($_REQUEST['name']);
     $organization = trim($_REQUEST['organization']);
+    $salt = makeSalt();
+    $hashedPassword = computeHash($password, $salt);
 
     try {
 
@@ -35,7 +37,7 @@ if (isset($_POST['submit'])) {
         $db->beginTransaction();
         $stmt = $db->prepare("INSERT INTO User (username, password, name, orgID, account_level) values (?, ?, ?, ?, ?)");
         $stmt->bindValue(1, $username);
-        $stmt->bindValue(2, $password);
+        $stmt->bindValue(2, $hashedPassword);
         $stmt->bindValue(3, $name);
         $stmt->bindValue(4, $orgID);
         $stmt->bindValue(5, 0);
@@ -114,9 +116,4 @@ function includeInEvents($orgID)
         error_log("ANNE: adding new user to events: " . $ex->getMessage());
         exit();
     }
-}
-
-class NewUser
-{
-
 }

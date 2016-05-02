@@ -136,8 +136,8 @@ function verify_Login($role)
 
                 // Validate the password
                 $hashedPassword = $row['password'];
-               // if (computeHash($password, $hashedPassword) == $hashedPassword)
-                if ($password == $hashedPassword)
+                if (computeHash($password, $hashedPassword) == $hashedPassword)
+                //if ($password == $hashedPassword)
                 {
                   //  $_SESSION['userid'] = $row['uid'];
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
