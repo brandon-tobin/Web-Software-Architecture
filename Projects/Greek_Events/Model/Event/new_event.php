@@ -61,6 +61,8 @@ if (isset($_POST['submit'])) {
     // Insert into the permissions table
     for ($i = 0; $i < count($eventAttend); $i++)
     {
+        includeInEvents($eventAttend[$i], $eventID);
+
         $stmt = $db->prepare("INSERT INTO EventPermission VALUES (?, ?)");
         $stmt->bindValue(1, $eventID);
         $stmt->bindValue(2, $eventAttend[$i]);
@@ -70,6 +72,48 @@ if (isset($_POST['submit'])) {
     error_log("ANNE: after 2nd insert");
 
     $db->commit();
+}
+
+function includeInEvents($orgID, $eventID)
+{
+    error_log("Anne: made it to include in events function");
+    try {
+        $db = openDBConnection();
+        $query = "SELECT username FROM User where orgID = {$orgID}";
+        error_log("ANNE: query is: {$query}");
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $events = array();
+        $rowcount = 0;
+        $insertcount = 0;
+
+        foreach ($result as $row) {
+            array_push($events, htmlspecialchars($row['username']));
+            $rowcount++;
+        }
+
+
+        $db->beginTransaction();
+
+        for ($i = 0; $i < count($events); $i++)
+        {
+            $stmt = $db->prepare("INSERT INTO Attending VALUES (?, ?, ?)");
+
+            $stmt->bindValue(1, $events[$i]);
+            $stmt->bindValue(2, $eventID);
+            $stmt->bindValue(3, 0);
+            $stmt->execute();
+            $insertcount++;
+        }
+
+        $db->commit();
+    }
+    catch (PDOException $ex)
+    {
+        error_log("ANNE: adding new user to events: " . $ex->getMessage());
+        exit();
+    }
 }
 
 class Event
