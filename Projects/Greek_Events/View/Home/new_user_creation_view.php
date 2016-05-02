@@ -21,7 +21,7 @@ echo "
 
                 <!-- Greek Event Homepage  -->
 
-                <title>Greek Event Homepage</title>
+                <title>Create Account</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset=\"utf-8\"/>
@@ -51,18 +51,22 @@ echo "
               <div class=\"form-group\">
                 <label for=\"username\">Username</label>
                 <input type=\"text\" class=\"form-control\" id=\"username\" name=\"username\" placeholder=\"Username\">
+                <p class=\"text-danger\">{$usernameError}</p>
               </div>
               <div class=\"form-group\">
                 <label for=\"password\">Password</label>
                 <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" placeholder=\"Password\">
+                <p class=\"text-danger\">{$passwordError}</p>
               </div>
               <div class=\"form-group\">
                 <label for=\"cpassword\">Confirm Password</label>
                 <input type=\"password\" class=\"form-control\" id=\"cpassword\" name=\"cpassword\" placeholder=\"Password\">
+                <p class=\"text-danger\">{$cpasswordError}</p>
               </div>
               <div class=\"form-group\">
                 <label for=\"name\">Name</label>
                 <input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\" placeholder=\"Name\">
+                <p class=\"text-danger\">{$nameError}</p>
               </div>
               <div class=\"form-group\">
                 <label for=\"organization\">Greek Organization</label>

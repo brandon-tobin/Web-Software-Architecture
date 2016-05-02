@@ -137,7 +137,6 @@ function verify_Login($role)
                 // Validate the password
                 $hashedPassword = $row['password'];
                 if (computeHash($password, $hashedPassword) == $hashedPassword)
-                //if ($password == $hashedPassword)
                 {
                   //  $_SESSION['userid'] = $row['uid'];
                     $_SESSION['realname'] = htmlspecialchars($row['name']);
@@ -154,15 +153,6 @@ function verify_Login($role)
                     error_log("Anne: role is {$_SESSION['role']}");
 
                     $stmt->closeCursor();
-//                    $stmt = $DBH->prepare("SELECT role FROM Roles WHERE username = ?");
-//                    $stmt->bindValue(1, $username);
-//                    $stmt->execute();
-//                    $roles = array();
-//                    while ($row = $stmt->fetch())
-//                    {
-//                        $roles[] = htmlspecialchars($row['role']);
-//                    }
-//                    $_SESSION['roles'] = $roles;
 
                 }
                 else
@@ -187,6 +177,21 @@ function verify_Login($role)
 
         // Logged in so change session ID.
         changeSessionID();
+        if ($role == $_SESSION['role'] || $role =="")
+        {
+            error_log("ANNE: role matches parameter");
+            return true;
+        }
+        else if($role == "user" && $_SESSION['role'] == "admin")
+        {
+            error_log("ANNE: user is admin and wants user page");
+            return true;
+
+        } else {
+            error_log("TOBIN User is logged but the Role is incorrect!!!!");
+            require ('../../View/User/badrole_view.php');
+            exit();
+        }
 //        if ($role == '' || in_array($role, $_SESSION['roles']))
 //        {
 //            error_log("TOBIN RETURNING!!!!!");
@@ -198,7 +203,6 @@ function verify_Login($role)
 //           // require ('../../View/Account/bad_role.php');
 //            exit();
 //        }
-        return true;
     }
     else
     {
@@ -207,113 +211,6 @@ function verify_Login($role)
         exit();
     }
 
-
-}
-
-function navBar_Login($role)
-{
-    // Redirect to use HTTPS
-    redirectToHTTPS();
-
-    session_start();
-
-    // Check to see if user is logged in
-    if (isset($_SESSION['userid']))
-    {
-        // Check to see if user belongs to role in parameter
-        if ($role == '' || (isset($_SESSION['roles']) && in_array($role, $_SESSION['roles'])))
-        {
-            error_log("TOBIN User is logged in and Role is correct!!!!");
-            return;
-        }
-        else{
-            error_log("TOBIN User is logged but the Role is incorrect!!!!");
-            //require ('../View/Account/bad_role.php');
-            exit();
-        }
-    }
-
-    // Empty error message
-    $message = '';
-
-    // User is attempting to log in. Need to verify credentials
-    if (isset($_REQUEST['username']) && isset($_REQUEST['password']))
-    {
-        $username = $_REQUEST['username'];
-        $password = $_REQUEST['password'];
-
-
-        try
-        {
-            $DBH = openDBConnection();
-
-            // Get information about the user
-            $stmt = $DBH->prepare("SELECT uid, name, position, password FROM Users WHERE username = ?");
-            $stmt->bindValue(1, $username);
-            $stmt->execute();
-
-            // Was the user real?
-            if ($row = $stmt->fetch())
-            {
-                // Validate the password
-                $hashedPassword = $row['password'];
-                if (computeHash($password, $hashedPassword) == $hashedPassword)
-                {
-                   // $_SESSION['userid'] = htmlspecialchars($row['uid']);
-                    $_SESSION['realname'] = htmlspecialchars($row['name']);
-                    $_SESSION['login'] = htmlspecialchars($username);
-                    $stmt->closeCursor();
-                    $stmt = $DBH->prepare("SELECT role FROM Roles WHERE username = ?");
-                    $stmt->bindValue(1, $username);
-                    $stmt->execute();
-                    $roles = array();
-                    while ($row = $stmt->fetch())
-                    {
-                        $roles[] = htmlspecialchars($row['role']);
-                    }
-                    $_SESSION['roles'] = $roles;
-
-                }
-                else
-                {
-                    $message = "Username or password is incorrect.";
-                    require ("../View/User/login_view.php");
-                    exit();
-                }
-            }
-            else
-            {
-                $message = "Username or password is incorrect.";
-                require ("../View/User/login_view.php");
-                exit();
-            }
-        }
-        catch (PDOException $ex)
-        {
-            error_log("TOBIN THERE WAS AN ERROR LOOKING UP USER : " . $ex->getMessage());
-            exit();
-        }
-
-        // Logged in so change session ID.
-        changeSessionID();
-        if ($role == '' || in_array($role, $_SESSION['roles']))
-        {
-            error_log("TOBIN RETURNING!!!!!");
-            return;
-        }
-        else
-        {
-            error_log("TOBIN User is logged but the Role is incorrect!!!!");
-            //require ('../View/Account/bad_role.php');
-            exit();
-        }
-    }
-    else
-    {
-        // error_log("TOBIN User is logged but the Role is incorrect!!!!");
-        require ("../View/User/login_view.php");
-        exit();
-    }
 
 }
 

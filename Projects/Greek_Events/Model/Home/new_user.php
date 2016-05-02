@@ -19,54 +19,90 @@ if (isset($_POST['submit'])) {
     $cpassword = trim($_REQUEST['cpassword']);
     $name = trim($_REQUEST['name']);
     $organization = trim($_REQUEST['organization']);
-    $salt = makeSalt();
-    $hashedPassword = computeHash($password, $salt);
 
-    try {
+    $error = false;
 
-        $db = openDBConnection();
-        $query = "Select orgID from Organizations where name = '{$organization}'";
-        $stmt = $db->prepare($query);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Complain if name is missing
+    if ($name == '') {
+        $nameError = 'Enter your name.';
+        $error = true;
+        error_log("ANNE: MISSING NAME");
+    }
 
-        foreach ($result as $row) {
-            $orgID = htmlspecialchars($row['orgID']);
+    // Complain if password is missing
+    if ($password == '') {
+        $passwordError = 'Pick a password.';
+        $error = true;
+        error_log("ANNE: MISSING PW");
+    }
+
+    // Complain if login is missing
+    if ($username == '') {
+        $usernameError = 'Enter a username.';
+        $error = true;
+        error_log("ANNE: MISSING LOGIN");
+    }
+
+    if ($password != $cpassword)
+    {
+        $cpasswordError = "Password fields do not match.";
+        $error = true;
+        error_log("ANNE: PW DONT MATCH");
+    }
+
+    if($error)
+    {
+        require_once ("../../View/Home/new_user_creation_view.php");
+    }
+    else {
+
+        $salt = makeSalt();
+        $hashedPassword = computeHash($password, $salt);
+
+        try {
+
+            $db = openDBConnection();
+            $query = "Select orgID from Organizations where name = '{$organization}'";
+            $stmt = $db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row) {
+                $orgID = htmlspecialchars($row['orgID']);
+            }
+
+            $db->beginTransaction();
+            $stmt = $db->prepare("INSERT INTO User (username, password, name, orgID, account_level) values (?, ?, ?, ?, ?)");
+            $stmt->bindValue(1, $username);
+            $stmt->bindValue(2, $hashedPassword);
+            $stmt->bindValue(3, $name);
+            $stmt->bindValue(4, $orgID);
+            $stmt->bindValue(5, 0);
+            $stmt->execute();
+            $db->commit();
+
+            error_log("ANNE: past commit.");
+
+            $_SESSION['realname'] = $name;
+            $_SESSION['login'] = $username;
+            $_SESSION['role'] = "user";
+
+        } catch (PDOException $ex) {
+            error_log("ANNE: error creating user : " . $ex->getMessage());
+            exit();
         }
 
-        $db->beginTransaction();
-        $stmt = $db->prepare("INSERT INTO User (username, password, name, orgID, account_level) values (?, ?, ?, ?, ?)");
-        $stmt->bindValue(1, $username);
-        $stmt->bindValue(2, $hashedPassword);
-        $stmt->bindValue(3, $name);
-        $stmt->bindValue(4, $orgID);
-        $stmt->bindValue(5, 0);
-        $stmt->execute();
-        $db->commit();
+        //changeSessionID();
 
-        error_log("ANNE: past commit.");
+        error_log("ANNE: session real name {$_SESSION['login']}");
+        error_log("ANNE: session real name {$_SESSION['realname']}");
+        error_log("ANNE: session real name {$_SESSION['role']}");
 
-        $_SESSION['realname'] = $name;
-        $_SESSION['login'] = $username;
-        $_SESSION['role'] = "user";
+        includeInEvents($orgID);
+        //getUserInfo();
 
+        require_once "../../Controller/User/success.php";
     }
-    catch (PDOException $ex)
-    {
-        error_log("ANNE: error creating user : " . $ex->getMessage());
-        exit();
-    }
-
-    //changeSessionID();
-
-    error_log("ANNE: session real name {$_SESSION['login']}");
-    error_log("ANNE: session real name {$_SESSION['realname']}");
-    error_log("ANNE: session real name {$_SESSION['role']}");
-
-    includeInEvents($orgID);
-    //getUserInfo();
-
-    require_once "../../Controller/User/success.php";
 }
 else
 {
