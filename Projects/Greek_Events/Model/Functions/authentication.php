@@ -58,35 +58,17 @@ function verify_role($role)
     exit();
 }
 
-function get_role()
-{
-    // Check to see if user is logged in
-    if (isset($_SESSION['userid']))
-    {
-        if (in_array("student", $_SESSION['roles']))
-            return "student";
-        else if (in_array("staff", $_SESSION['roles']))
-            return "staff";
-        else if (in_array("faculty", $_SESSION['roles']))
-            return "faculty";
-        else if (in_array("dgs", $_SESSION['roles']))
-            return "dgs";
-        else
-            return;
-    }
-}
-
 
 function verify_Login($role)
 {
     // Redirect to use HTTPS
     redirectToHTTPS();
 
-    error_log("ANNE: in verify login");
-    error_log("Anne: session role is {$_SESSION['role']}");
-    error_log("Anne: parameter role is {$role}");
-    error_log("Anne: session role is {$_SESSION['login']}");
-    error_log("Anne: session role is {$_SESSION['realname']}");
+//    error_log("ANNE: in verify login");
+//    error_log("Anne: session role is {$_SESSION['role']}");
+//    error_log("Anne: parameter role is {$role}");
+//    error_log("Anne: session role is {$_SESSION['login']}");
+//    error_log("Anne: session role is {$_SESSION['realname']}");
 
     // Check to see if user is logged in
     if (isset($_SESSION['role']) && isset($_SESSION['login']) && isset($_SESSION['realname'])) {
@@ -148,9 +130,9 @@ function verify_Login($role)
                     else
                         $_SESSION['role'] = "user";
 
-                    error_log("Anne: login is {$_SESSION['login']}");
-                    error_log("Anne: real name is {$_SESSION['realname']}");
-                    error_log("Anne: role is {$_SESSION['role']}");
+//                    error_log("Anne: login is {$_SESSION['login']}");
+//                    error_log("Anne: real name is {$_SESSION['realname']}");
+//                    error_log("Anne: role is {$_SESSION['role']}");
 
                     $stmt->closeCursor();
 
@@ -179,30 +161,19 @@ function verify_Login($role)
         changeSessionID();
         if ($role == $_SESSION['role'] || $role =="")
         {
-            error_log("ANNE: role matches parameter");
+            //error_log("ANNE: role matches parameter");
             return true;
         }
         else if($role == "user" && $_SESSION['role'] == "admin")
         {
-            error_log("ANNE: user is admin and wants user page");
+            //error_log("ANNE: user is admin and wants user page");
             return true;
 
         } else {
-            error_log("TOBIN User is logged but the Role is incorrect!!!!");
+            //error_log("TOBIN User is logged but the Role is incorrect!!!!");
             require ('../../View/User/badrole_view.php');
             exit();
         }
-//        if ($role == '' || in_array($role, $_SESSION['roles']))
-//        {
-//            error_log("TOBIN RETURNING!!!!!");
-//            return;
-//        }
-//        else
-//        {
-//            error_log("TOBIN User is logged but the Role is incorrect!!!!");
-//           // require ('../../View/Account/bad_role.php');
-//            exit();
-//        }
     }
     else
     {

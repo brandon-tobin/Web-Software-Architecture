@@ -11,19 +11,21 @@
 require '../../Model/Functions/db.php';
 require '../../Model/Functions/authentication.php';
 
-error_log("ANNE: in new event");
-//verify_Login();
 getUserInfo();
-
 verify_Login("admin");
 
 if (isset($_POST['submit'])) {
+
+    error_log("ANNE: in new event submit");
+
     $eventName = trim($_REQUEST['title']);
     $eventDate = trim($_REQUEST['date']);
     $eventLocation = trim($_REQUEST['location']);
     $eventDescription = trim($_REQUEST['description']);
     $eventAttend = array();
     $creator = $_SESSION['username'];
+
+    error_log("ANNE: creator is {$creator}");
 
     foreach ($_POST['attend'] as $names)
     {
@@ -53,6 +55,8 @@ if (isset($_POST['submit'])) {
     $stmt->execute();
     $db->commit();
 
+
+
     $db->beginTransaction();
     // Insert into the permissions table
     for ($i = 0; $i < count($eventAttend); $i++)
@@ -62,6 +66,8 @@ if (isset($_POST['submit'])) {
         $stmt->bindValue(2, $eventAttend[$i]);
         $stmt->execute();
     }
+
+    error_log("ANNE: after 2nd insert");
 
     $db->commit();
 }
