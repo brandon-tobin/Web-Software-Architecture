@@ -41,6 +41,8 @@ class home
                 array_push($available_events, htmlspecialchars($row['eventID']));
             }
 
+            var_dump($available_events);
+
             error_log("ANNE: past 1st query.");
 
             // Get all information required to display all the events the user can attend
