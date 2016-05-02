@@ -41,8 +41,6 @@ class home
                 array_push($available_events, htmlspecialchars($row['eventID']));
             }
 
-            var_dump($available_events);
-
             error_log("ANNE: past 1st query.");
 
             // Get all information required to display all the events the user can attend
@@ -82,6 +80,8 @@ class home
                 $this->events[] = array($author_Name, $author_Username, $author_Organization, $event_Name, $event_Date, $event_Description, $event_Location, "../Event/view_event.php?id=$author_Username&event=".htmlspecialchars($available_events[$i])."", $rsvp);
 
             }
+
+            var_dump($this->events);
 
             error_log("ANNE: end of try block");
 
