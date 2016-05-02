@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
     error_log("ANNE: submit pressed");
     if (verify_Login(""))
     {
-        require_once '../../View/Event/new_event_view.php';
+        require_once '../../View/User/success.php';
     }
 }
 else
