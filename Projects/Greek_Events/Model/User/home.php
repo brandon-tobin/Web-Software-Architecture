@@ -46,11 +46,11 @@ class home
             // Get all information required to display all the events the user can attend
             for ($i = 0; $i < count($available_events); $i++)
             {
-                $query = "SELECT * FROM Attending inner join Event where Attending.eventID = Event.eventID and Event.eventID = {$available_events[$i]} and Attending.username = '{$id}'";
+                $query = "SELECT * FROM Attending inner join Event where Attending.eventID = Event.eventID and Event.eventID = {$available_events[$i]} and Attending.username = ?";
                 error_log("ANNE: QUERY IS {$query}");
                 //$query = "SELECT * FROM Event WHERE eventID = ?";
                 $stmt = $db->prepare($query);
-                //$stmt->bindValue(1,$available_events[$i]);
+                $stmt->bindValue(1, $id);
                 //$stmt->bindValue(2,$id);
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
