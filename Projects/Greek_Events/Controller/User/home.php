@@ -15,4 +15,6 @@ $id = $_SESSION['login'];
 // Create a new student form object
 $events = new home($id);
 
+$name = $_SESSION['realname'];
+
 require_once ("../../View/User/home_view.php");

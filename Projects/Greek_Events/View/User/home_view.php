@@ -5,7 +5,6 @@
  * Date: 5/1/2016
  * Time: 5:40 PM
  */
-$name = $_SESSION['realname'];
 
 require('../../View/Partials/partial_view.php');
 
@@ -20,33 +19,32 @@ echo "
                 <!-- Brandon Tobin -->
                 <!-- University of Utah -->
 
-                <!-- View All Events -->
+                <!-- Create New Event  -->
 
-                <title>View All Events</title>
+                <title>Create New Event</title>
 
                 <!-- Meta Information about Page -->
                 <meta charset=\"utf-8\"/>
                 <meta name=\"AUTHOR\"      content=\"Brndon Tobin\"/>
                 <meta name=\"keywords\"    content=\"HTML, Projects\"/>
-                <meta name=\"description\" content=\"View All Events\"/>
+                <meta name=\"description\" content=\"Create New Event \"/>
 
-                <!-- ALL CSS FILES -->
                 <!-- Bootstrap Core CSS -->
                 <link href=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css\" rel=\"stylesheet\">
 
             </head>
 
-
             <body>
 
-                <div class=\"container - fluid\">
+                <div class=\"container-fluid\">
                     <div class=\"row\">
-                        <div class=\"col - sm - 0 col - md - 1 col - lg - 2\"></div>
-                        <div class=\"col - sm - 12 col - md - 10 col - lg - 8\">";
+                        <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
+                        <div class=\"col-sm-12 col-md-10 col-lg-8\">";
 
-                            echo getNavBarWithoutRoles();
+echo getNavBarWithoutRoles();
 
-                        echo "<h1 class='page-header'>Welcome {$name}</h1>";
+echo "
+                        <h1 class='page-header'>Welcome {$name}<h1>";
 
                         if($_SESSION['role'] == "admin")
                         {
@@ -110,18 +108,18 @@ echo "
                                 }
                                 echo "
                             </div>
+
+
                         </div>
-
-
-                        <div class=\"col - sm - 0 col - md - 1 col - lg - 2\"></div>
+                        <div class=\"col-sm-0 col-md-1 col-lg-2\"></div>
                     </div>
                 </div>
 
                 <!-- jQuery -->
-                <script src=\" ../../../Resources / Bootstrap / bootstrap - 3.3.6 - dist / js / jquery . js\"></script>
+                <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
 
                 <!-- Bootstrap Core JavaScript -->
-                <script src=\" ../../../Resources / Bootstrap / bootstrap - 3.3.6 - dist / js / bootstrap . min . js\"></script>
+                <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js\"></script>
 
             </body>
         </html>";
