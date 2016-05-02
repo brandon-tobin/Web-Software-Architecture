@@ -70,12 +70,12 @@ class home
 
                 }
 
-                var_dump($author_Username);
-                var_dump($event_Name);
-                var_dump($event_Date);
-                var_dump($event_Description);
-                var_dump($event_Location);
-                var_dump($rsvp);
+//                var_dump($author_Username);
+//                var_dump($event_Name);
+//                var_dump($event_Date);
+//                var_dump($event_Description);
+//                var_dump($event_Location);
+//                var_dump($rsvp);
 
                 $query = "SELECT User.name, Organizations.name AS orgName From User, Organizations WHERE User.orgID = Organizations.orgID AND username = ?;";
                 $stmt = $db->prepare($query);
