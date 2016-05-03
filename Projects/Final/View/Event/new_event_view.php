@@ -92,10 +92,10 @@ echo "
                 </div>
 
                 <!-- jQuery -->
-                <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
+                <script src=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/jquery.js\"></script>
 
                 <!-- Bootstrap Core JavaScript -->
-                <script src=\"../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js\"></script>
+                <script src=\"../../../../Resources/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js\"></script>
 
             </body>
         </html>";
