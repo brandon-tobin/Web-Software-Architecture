@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Brandon Tobin
+ * Author: Fumiko Anne Aoki
  * Date: Spring 2016
  *
  * Helper  functions for the system
@@ -133,8 +133,6 @@ function verify_Login($role)
         require ("../../View/Home/index.php");
         exit();
     }
-
-
 }
 
 // Generate random salt
